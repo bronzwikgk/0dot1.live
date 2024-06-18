@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar - Pari</title>
+    <link rel="stylesheet" href="../beauty/pari.css" />
+  </head>
+  <body>
+    <nav>
+      <header>
+        <h2>pari.css</h2>
+      </header>
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Products</a></li>
+        <li>
+          <details class="dropdown">
+            <summary>Account</summary>
+            <ul role="nav-drop">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><button class="primary-btn">Get Started</button></li>
+      </ul>
+    </nav>
+  </body>
+</html>

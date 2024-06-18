@@ -1,0 +1,12 @@
+#left{
+    width:15%;
+   
+    height: inherit;
+}
+
+#border{
+    border-style: solid;
+    border-width: thin;
+    border-color: var(--secondary);
+    
+}

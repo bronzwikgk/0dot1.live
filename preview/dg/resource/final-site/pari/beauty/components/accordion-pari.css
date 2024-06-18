@@ -1,0 +1,30 @@
+ details summary {
+     list-style: none;
+     padding: 1rem;
+
+     border-radius: 3px;
+
+ }
+
+ details:not(.dropdown) p {
+     padding: 1rem;
+     font-size: inherit;
+     line-height: 1.5rem;
+
+ }
+
+ details summary::after,
+ details>a::after,
+ details>button::after {
+     display: block;
+     width: 1rem;
+     height: calc(1rem * 1.5);
+     margin-inline-start: 0.25rem;
+     float: right;
+     transform: rotate(0) translateY(0rem);
+     background-image: var(--dropdown-icon-chevron);
+     background-position: right center;
+     background-size: 1rem auto;
+     background-repeat: no-repeat;
+     content: "";
+ }

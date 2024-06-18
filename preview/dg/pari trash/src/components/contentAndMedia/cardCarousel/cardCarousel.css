@@ -1,0 +1,61 @@
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card {
+    min-width: 300px; /* Minimum width of each card */
+    flex-shrink: 0; /* Prevents the card from shrinking */
+    margin: var(--spacing-xs);
+    /* ... your existing card styles ... */
+}
+
+/* Carousel controls */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondary-color);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    z-index: var(--zindex-modal);
+}
+
+.carousel-control-prev {
+    left: var(--spacing-md);
+}
+
+.carousel-control-next {
+    right: var(--spacing-md);
+}
+/* ... existing styles ... */
+
+.card-button {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: background-color var(--transition-default);
+    outline: none;
+}
+
+.card-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* ... existing responsive styles ... */
+
+/* Make sure to include responsive styles if needed */

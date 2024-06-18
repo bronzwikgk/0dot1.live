@@ -1,0 +1,131 @@
+
+:root{
+        /* Colors */
+
+      /*  dark and light */
+    --dark:#343a40ff;
+    --light:#f4f4ffff;
+    --black: #0d0d0dff;
+    --white:#ffffff;
+    --grey:#909090ff;
+
+    /* theme colors*/
+    --color-primary: #007affff;
+    --color-secondary-success:#27a844ff;
+    --color-danger:#dc3546ff;
+    --color-warning:#fec107ff;
+    --color-info:#17a2b7ff;
+
+    /*  Spacing :  Primarly used for margin and spacing.  */
+    --sp-extra-tight: 4px;
+    --sp-tight:8px;
+    --sp-mid:12px;
+    --sp-normal:16px;
+    --sp-loose: 20px;
+    --sp-extra-loose: 32px;
+
+
+    /*
+    sizes
+
+    */
+    --smallest: 13px;
+    --small:16px;
+    --normal: 21px;
+    --large:34px;
+    --largest:55px;
+    --gigantic: 89px;
+
+    @import url('https://fonts.googleapis.com/css2?family=Over+the+Rainbow&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    /*
+    sizes
+    Primarly used for text. 
+    */
+    --text-smallest: 13px;
+    --text-small:16px;
+    --text-normal: 21px;
+    --text-large:34px;
+    --text-largest:55px;
+    --text-gigantic: 89px;
+
+    --font-primary : 'Poiret One', cursive;
+    --font-secondary : 'Hind', sans-serif;
+    --font-highlight : 'Over The Rainbow', cursive;
+    --f-size-base: 16px;
+    --f-line-height-heading: 1.5;
+    --f-line-height-body: 1.5;
+    
+
+        
+    
+    /*
+    pari.theme.breakpoints	
+        */
+    --desktop-width: 1280px;
+    --sm-desktop-width: 980px;
+    --tab-width: 768px;
+    --phone-width:480px;
+    --sm-phone-width: 320px;
+
+ 
+}
+* {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    vertical-align: center;
+    text-align: left;
+    font-weight: normal;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 100%;		
+    font: inherit;		
+    vertical-align: baseline;	
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    }
+		
+    /* HTML5 display-role reset for older browsers */		
+    article,aside, details, figcaption, figure,		
+    footer, header, hgroup, menu, nav, section {		
+    display: block;		
+    }	
+  
+
+
+    html{
+    font-size: medium;
+      line-height: normal;
+    }
+    body {		
+    line-height: 1;		
+    font-family:poiretone;
+    font-weight: bold;
+    }	
+
+body{
+  margin-left: 13%;
+  margin-right: 13%;
+}
+
+article{
+border-style: dashed;
+padding-left: 8%;padding-top: 8%;
+padding-right: 8%;
+}
+section{
+  
+  border-style: dashed;
+}
+p{
+  display: block;
+  padding: 0px;
+}
+

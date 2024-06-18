@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pari-css</title>
+    <link rel="stylesheet" href="./beauty/pari.css" />
+  </head>
+  <body>
+    <div class="container">
+        <form>
+          <h2>Structure</h2>
+          <div>
+            <label>Basic form group</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+  
+          <div>
+            <label>Basic form group</label>
+            <small>With additional information below the label</small>
+            <input type="text" placeholder="Your name" />
+          </div>
+  
+          <div>
+            <label>My form group label</label>
+            <input type="text" placeholder="Your name" />
+            <small>Or additional text below</small>
+          </div>
+        </form>
+        <br>
+        <form>
+          <h2>Input Types</h2>
+          <small>Basic Input types</small>
+          <div>
+            <label>Text</label>
+            <input type="text" placeholder="Your name" value="" />
+          </div>
+  
+          <div>
+            <label>Email</label>
+            <input type="email" placeholder="Your email" value="" />
+          </div>
+  
+          <div>
+            <label>Phonenumber</label>
+            <input type="tel" placeholder="Your phonenumber" value="" />
+          </div>
+  
+          <div>
+            <label>Url</label>
+            <input type="url" placeholder="www.google.com" value="" />
+          </div>
+  
+          <div>
+            <label>Password</label>
+            <input type="password" placeholder="Your password" />
+          </div>
+  
+          <div>
+            <label>Search</label>
+            <input type="search" placeholder="Search all the things" value="" />
+          </div>
+  
+          <div>
+            <label>Disabled field</label>
+            <input type="text" disabled placeholder="Your name" value="" />
+          </div>
+        </form>
+        <br>
+        <form>
+          <h2>General Form</h2>
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form><br>
+  
+        <form>
+          <h2>Checkbox and Radio</h2>
+          <fieldset>
+            <div>
+              <input type="radio" name="radio" id="r-1" />
+              <label for="r-1">Radio button with label</label>
+            </div>
+  
+            <div>
+              <input type="radio" name="radio" id="r-2" />
+              <label for="r-2">
+                Radio button with label
+                <small>Radio can have additional information</small>
+              </label>
+            </div>
+          </fieldset>
+  
+          <fieldset>
+            <div>
+              <input type="checkbox" id="check-1" />
+              <label for="check-1">Checkbox with label</label>
+            </div>
+  
+            <div>
+              <input type="checkbox" id="check-2" />
+              <label for="check-2">
+                Checkbox with label
+                <small>I am additional information regarding this field</small>
+              </label>
+            </div>
+          </fieldset>
+  
+          <fieldset>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle" class="toggle" />
+              <label for="toggle"></label>
+              <span>Toggle Switch </span>
+            </div>
+  
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle" class="toggle" />
+              <label for="toggle"></label>
+              <span
+                >Toggle Switch <br /><small
+                  >I am additional information regarding this field</small
+                ></span
+              >
+            </div>
+          </fieldset>
+        </form><br>
+        <form>
+          <h2>Fieldset</h2>
+          <fieldset>
+            <legend>Select your favorite framework</legend>
+            <div>
+              <input type="radio" name="radio" id="react" />
+              <label for="react">React</label>
+            </div>
+  
+            <div>
+              <input type="radio" name="radio" id="vue" />
+              <label for="vue">Vue</label>
+            </div>
+  
+            <div>
+              <input type="radio" name="radio" id="angular" />
+              <label for="angular">Angular</label>
+            </div>
+          </fieldset>
+  
+          <fieldset>
+            <legend>Select your favorite languages</legend>
+            <div>
+              <input type="checkbox" id="css" />
+              <label for="css">CSS</label>
+            </div>
+  
+            <div>
+              <input type="checkbox" id="html" />
+              <label for="html">HTML</label>
+            </div>
+  
+            <div>
+              <input type="checkbox" id="js" />
+              <label for="js">Javascript</label>
+            </div>
+          </fieldset>
+        </form><br>
+        <form>
+          <h2>Input Types with Icons</h2>
+          <div>
+            <label>Phonenumber</label>
+            <input
+              type="tel"
+              placeholder="Your phonenumber"
+              value=""
+              class="icon-left"
+            />
+          </div>
+  
+          <div>
+            <label>Url</label>
+            <input
+              type="url"
+              placeholder="www.google.com"
+              value=""
+              class="icon-left"
+            />
+          </div>
+  
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value=""
+              class="icon-left"
+            />
+          </div>
+  
+          <div>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Your password"
+              class="icon-left"
+            />
+          </div>
+  
+          <div>
+            <label>Phonenumber</label>
+            <input
+              type="tel"
+              placeholder="Your phonenumber"
+              value=""
+              class="icon-right"
+            />
+          </div>
+  
+          <div>
+            <label>Url</label>
+            <input
+              type="url"
+              placeholder="www.google.com"
+              value=""
+              class="icon-right"
+            />
+          </div>
+  
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value=""
+              class="icon-right"
+            />
+          </div>
+  
+          <div>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Your password"
+              class="icon-right"
+            />
+          </div>
+        </form><br>
+        <form>
+          <h2>Input Fields with validation</h2>
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value="this is not a email adress"
+              required
+            />
+          </div>
+  
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value="n.voogt@gmail.com"
+              required
+            />
+          </div>
+        </form><br>
+        <form>
+          <div>
+            <label>Month</label>
+            <input type="month" value="2018-05" />
+          </div>
+  
+          <div>
+            <label>Week</label>
+            <input type="week" value="2017-W01" />
+          </div>
+  
+          <div>
+            <label>Date</label>
+            <input type="date" value="2018-07-22" />
+          </div>
+  
+          <div>
+            <label>Time</label>
+            <input type="time" value="13:30" />
+          </div>
+        </form><br>
+        <form>
+          <div>
+            <label>Textarea</label>
+            <textarea rows="5" value=""></textarea>
+          </div>
+  
+          <div>
+            <label>Select</label>
+            <select>
+              <option>Please select a value</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+  
+          <div>
+            <label>File upload</label>
+            <input type="file" />
+          </div>
+  
+          <div>
+            <label>Range slider</label>
+            <input type="range" min="0" max="15" />
+          </div>
+  
+          <div>
+            <label>Number</label>
+            <input type="number" placeholder="1234" />
+          </div>
+  
+          <div>
+            <label>Color</label>
+            <input type="color" />
+          </div>
+        </form><br>
+      </div>
+  </body>
+</html>

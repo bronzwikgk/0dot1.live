@@ -1,0 +1,106 @@
+/* navbar.css */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: var(--spacing-sm);
+}
+
+.navbar-brand a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+}
+
+.navbar-toggler {
+    display: none; /* Hidden by default, shown in mobile view */
+    background: none;
+    border: none;
+    color: var(--background-color);
+    font-size: var(--font-size-lg);
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: var(--spacing-md);
+}
+
+.nav-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.nav-item.active a {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default, shown on hover or click */
+    position: absolute;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-search input[type="search"] {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-default);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none; /* Hidden in mobile view */
+    }
+
+    .navbar-toggler.active + .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-item {
+        margin: var(--spacing-xs) 0;
+    }
+}

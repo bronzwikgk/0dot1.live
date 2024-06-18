@@ -1,0 +1,48 @@
+/* Default container */
+.container {
+  width: 100%;
+  max-width: 960px; /* Default max width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Widescreen container */
+.container.is-widescreen {
+  max-width: 1152px; /* Max width for widescreen */
+}
+
+/* FullHD container */
+.container.is-fullhd {
+  max-width: 1344px; /* Max width for FullHD */
+}
+
+/* Max Desktop container */
+.container.is-max-desktop {
+  max-width: 960px; /* Max width for desktop */
+}
+
+/* Max Widescreen container */
+.container.is-max-widescreen {
+  max-width: 1152px; /* Max width for widescreen */
+}
+
+/* Media queries */
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
+  .container {
+    max-width: 960px; /* Widescreen width */
+  }
+}
+
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
+  .container {
+    max-width: 1152px; /* FullHD width */
+  }
+}
+
+@media screen and (min-width: 1408px) {
+  .container {
+    max-width: 1344px; /* FullHD width */
+  }
+}

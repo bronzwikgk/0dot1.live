@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Services</title>
+    <link rel="stylesheet" href="../theme.css" />
+    <link
+      rel="stylesheet"
+      href="../../resource/final-site/pari/beauty/pari.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- <link rel="stylesheet" href="../offering.css" /> -->
+    <link rel="stylesheet" href="../atva.css" />
+
+    <style>
+        .grand-child-navbar li:hover {
+            background-color: var(--primary-color);
+        }
+    
+        .grand-child-navbar li {
+            padding: 5px;
+        }
+    
+        .grand-child-navbar li a {
+            /* background-color: transparent; */
+            padding: 0;
+        }
+      </style>
+  </head>
+  <body>
+    <header>
+      <span>
+        <img
+          src="../../assets/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp"
+          alt="Ducis Group Logo"
+        />
+      </span>
+      <nav>
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <ul class="main-nav">
+          <li>
+            <a href="#">About</a>
+            <ul class="nav-sub-menu">
+              <li><a href="#">Why us</a></li>
+              <li><a href="#">Who we are</a></li>
+              <li><a href="#">What we offer</a></li>
+              <li><a href="#">Our Accreditations</a></li>
+              <li><a href="#">Stats</a></li>
+              <li><a href="#">Our Clients</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./offering.html">Offering</a>
+            <ul class="nav-sub-menu">
+              <li>
+                <a href="./offering.html#training-and-certifications">Training & Certification</a>
+                <ul class="grand-child-navbar">
+                  <li><a href="./offering.html#training-and-certifications">Course Catalogue</a></li>
+                  <li><a href="./offering.html#hero-section-offering">Certifications</a></li>
+                  <li><a href="./offering.html#hero-section-offering">Open Courses</a></li>
+                  <li><a href="./offering.html#hero-section-offering">Self Paced Courses</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="./offering.html#hero-section-offering">Services</a>
+                <ul class="grand-child-navbar">
+                  <li><a href="./offering.html#itil-maturity-section-offering">ITIL Maturity Model</a></li>
+                  <li><a href="./offering.html#iso-section-offering">ISO Consulting</a></li>
+                  <li><a href="./offering.html#gen-ai-section-offering">Generative AI</a></li>
+                </ul>
+              </li>
+              <li><a href="#atva-hero-section">ATV</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Resources</a>
+            <ul class="nav-sub-menu">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Webinars</a></li>
+              <li><a href="#">Mock Tests</a></li>
+              <li><a href="#">YouTube Channel</a></li>
+              <li><a href="#">Guidelines</a></li>
+              <li><a href="#">Knowledge Center</a></li>
+              <li><a href="#">Open Positions</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search">
+          <input type="search" placeholder="Search Here" />
+        </form>
+        <ul class="main-nav">
+          <li>
+            <a href="#">SignUp</a>
+          </li>
+          <li>
+            <a href="#">SignIn</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-svg" id="atva-hero-section">
+        <img src="../../assets/atva/Hero.svg" alt="Hero-Section" />
+        <button class="get-conculatation-hero-section" onclick="openModal()">
+          Click Me For Navigation
+        </button>
+      </section>
+
+      <section class="accreditation-section">
+        <div class="container">
+          <div class="text-content">
+            <h1>Only Official Tool Vendor Accreditation</h1>
+            <p class="sub-heading">
+              Helping you align with ITIL® best practices.
+            </p>
+            <p>
+              As an accredited tool vendor assessor,
+              <strong>Ducis Group</strong> provides businesses with access to IT
+              service management tools, helping them meet the global highest
+              industry quality standards.
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="../../assets/peoplecert.svg" alt="PeopleCert ITIL4" />
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-section2">
+        <img src="../../assets/atva/third.svg" alt="Hero-Section" />
+      </section>
+
+      <section class="hero-section4">
+        <img
+          src="../../assets/atva/section4.svg"
+          alt="Hero-Section"
+          id="hero-image"
+        />
+        <button class="red-button" onclick="changeImage('red')">
+          Click Me For Navigation
+        </button>
+        <button class="blue-button" onclick="changeImage('blue')">
+          Click Me For Navigation
+        </button>
+      </section>
+
+      <section class="hero-section6">
+        <img src="../../assets/atva/section6.svg" alt="Hero-Section" />
+      </section>
+
+      <section class="hero-section7">
+        <img src="../../assets/atva/section7.svg" alt="Hero-Section" />
+      </section>
+
+      <section class="hero-section8">
+        <img src="../../assets/atva/section8.svg" alt="Hero-Section" />
+      </section>
+
+      <section class="hero-section9">
+        <img
+          src="../../assets/atva/section9.svg"
+          alt="Hero-Section"
+          id="get-consultation"
+        />
+        <button class="get-conculatation-ref" onclick="openModal()">
+          Click Me For Navigation
+        </button>
+      </section>
+
+      <!-- Modal Window -->
+      <div id="modal-window" class="modal-window">
+        <div class="modal-content">
+          <!-- <h2>Contact Us</h2> -->
+          <div class="modal-header">
+            <h2>Contact Us</h2>
+            <button class="close-button" onclick="closeModal()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" /><br /><br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" /><br /><br />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br /><br />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <div class="footer-container">
+        <footer id="footer" class="container is-fullhd">
+          <div class="footer-content content-1">
+            <div class="footer-title">
+              <h3>Follow us</h3>
+            </div>
+            <div class="footer-sm-icons">
+              <span><i class="fa-brands fa-facebook-f"></i></span>
+              <span><i class="fa-brands fa-twitter"></i></span>
+              <span><i class="fa-brands fa-instagram"></i></span>
+              <span><i class="fa-brands fa-youtube"></i></span>
+              <span><i class="fa-brands fa-linkedin-in"></i></span>
+              <span><i class="fa-brands fa-telegram"></i></span>
+            </div>
+            <p class="learn-on">Learn On The Go!</p>
+            <div class="btn-container">
+              <button class="outlined-btn">
+                <span><i class="fa-brands fa-android"></i></span> Get the
+                Android App
+              </button>
+              <button class="outlined-btn">
+                <span><i class="fa-brands fa-apple"></i></span> Get the iOS App
+              </button>
+            </div>
+          </div>
+          <div class="footer-content content-2">
+            <div class="footer-title">
+              <p>Company</p>
+            </div>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="../career/index.html">Careers</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Become a Consultant</a></li>
+            </ul>
+          </div>
+          <div class="footer-content content-3">
+            <div class="footer-title">
+              <p>Help Center</p>
+            </div>
+            <ul>
+              <li><a href="">FAQ</a></li>
+              <li><a href="">Generate Tickets</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-content content-5">
+            <div class="footer-title">
+              <p>For Business</p>
+            </div>
+            <ul>
+              <li><a href="#">Corporate Training</a></li>
+              <li><a href="">Partner Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-content content-3">
+            <div class="footer-title">
+              <p>Find Us</p>
+            </div>
+            <ul>
+              <li>
+                <a><b>Office Address:</b></a>
+              </li>
+              <li><a>D1/131, 1st Floor, Sector 16,</a></li>
+              <li><a>Rohini, New Delhi, North Delhi</a></li>
+              <li><a>Delhi, India, 110085</a></li>
+              <li><a>Email:</a></li>
+              <li><a>info@ducisgroup.com</a></li>
+              <li>
+                <a><b>Contact No:</b></a>
+              </li>
+              <li><a>+ 91-9818023130</a></li>
+            </ul>
+          </div>
+        </footer>
+        <section class="privacy-policy container is-fullhd">
+          <p><b>COMPANY REGISTRATION NO U93090DL2018PTC382922</b></p>
+        </section>
+
+        <section class="privacy-policy container is-fullhd">
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Refund Policy</li>
+            <li>Cookie Policy</li>
+            <li>Online Proctored Exams – Terms</li>
+          </ul>
+          <p>
+            © 200k-2024 – Ducis Groups. All Rights Reserved. The certification
+            names are the trademarks of their respective owners.
+          </p>
+
+          
+        </section>
+        <p class="Disclaimer">
+            <strong>Disclaimer: </strong> </br> ITIL® is a registered trademark of AXELOS Limited, used
+            under permission of AXELOS Limited. All rights reserved. The Swirl
+            logo™ is a trade mark of AXELOS Limited, used under permission of
+            AXELOS Limited. All rights reserved. PRINCE2® / MSP® 5 / MoP® / MoV
+            ®/ P3O ®/ MoR ®, are a registered trade mark of AXELOS Limited, used
+            under permission of AXELOS Limited. All rights reserved. COBIT® is a
+            trademark of ISACA® registered in the United States and other
+            countries.
+          </p>
+      </div>
+    </div>
+
+    <script>
+      function changeImage(color) {
+        const heroImage = document.getElementById("hero-image");
+        if (color === "red") {
+          heroImage.src = "../../assets/atva/section10.svg";
+        } else if (color === "blue") {
+          heroImage.src = "../../assets/atva/section4.svg";
+        }
+      }
+    </script>
+
+    <script>
+      function openModal() {
+        document.getElementById("modal-window").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("modal-window").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <section class="hero-section10">
+            <img src="../../assets/atva/section10.svg" alt="Hero-Section">
+        </section> -->
+
+<!-- <section class="growth-section">
+            <div class="container">
+                <div class="image-container">
+                    <img src="../../assets/hero-atva.svg" alt="Pathway to Growth">
+                </div>
+                <div class="content">
+                    <h1>Pathway to Growth</h1>
+                    <h2>with PeopleCert ITIL ATV Programme</h2>
+                    <p>
+                        Deliver High Quality Products, aligned with ITIL best practices.
+                        ATV Assessment is a Recognized framework for IT service management, aligning,
+                        IT services efficiently and effectively with business objectives.
+                        ITIL compliance builds trust, credibility, and provides a decisive competitive
+                        advantage in an increasingly demanding market.
+                    </p>
+                    <button class="btn-primary">Get Free Consultation</button>
+                </div>
+            </div>
+        </section> -->
+
+<!-- <section class="hero-section3">
+            <img src="../../assets/atva/section3.svg" alt="Hero-Section">
+        </section> -->

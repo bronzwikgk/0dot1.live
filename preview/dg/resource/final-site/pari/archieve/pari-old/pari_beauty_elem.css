@@ -1,0 +1,10 @@
+hr {
+    margin-top: var(--normal);
+    /* Horizontal rule */
+    height: 1px;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    flow:left;
+    width: 89%;
+}

@@ -1,0 +1,5 @@
+- file pari.css: line 22: Why is font defined here locally? Shouldn't it be a global variable.
+
+- line 27: should be global variable.
+- Theme : Units have to be relative/multiples to a base point for eg. Multiple of X for all fonts where x is the base font size.
+- Ideally we should have a theme config, where there are bare minimum variable that a user can customise and a theme file with those variable. With the objective that User doesnt touch/edit the theme file. ALso can we lock any  file while serving from https?

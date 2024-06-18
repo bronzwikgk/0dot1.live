@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pari - Navbar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/pari.css" />
+  </head>
+  <body>
+    <div class="table-container">
+      <input type="text" id="filterInput" placeholder="Filter by name..." />
+      <table class="data-table" id="dataTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">
+              Name<i class="ri-arrow-down-line"></i
+              ><i class="ri-arrow-up-line"></i>
+            </th>
+            <th onclick="sortTable(1)">
+              Owner <i class="ri-arrow-down-line"></i
+              ><i class="ri-arrow-up-line"></i>
+            </th>
+            <th onclick="sortTable(2)">
+              Last Modified <i class="ri-arrow-down-line"></i
+              ><i class="ri-arrow-up-line"></i>
+            </th>
+            <th onclick="sortTable(3)">
+              File Size <i class="ri-arrow-down-line"></i
+              ><i class="ri-arrow-up-line"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td>Document 1</td>
+            <td>User A</td>
+            <td>2023-03-01</td>
+            <td>1 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Spreadsheet 1</td>
+            <td>User B</td>
+            <td>2023-02-28</td>
+            <td>2 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Presentation 1</td>
+            <td>User C</td>
+            <td>2023-03-05</td>
+            <td>3 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Document 2</td>
+            <td>User D</td>
+            <td>2023-03-03</td>
+            <td>2.5 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Spreadsheet 2</td>
+            <td>User E</td>
+            <td>2023-02-27</td>
+            <td>1.5 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Presentation 2</td>
+            <td>User F</td>
+            <td>2023-03-06</td>
+            <td>2.2 MB</td>
+            <td class="menu-trigger-cell">
+              <div class="doc-icon">&#8942;</div>
+              <!-- This represents the three dots icon -->
+              <div class="row-hover-menu">
+                <!-- Menu items -->
+                <a href="#">View</a>
+                <a href="#">Edit</a>
+                <a href="#">Download</a>
+                <!-- More menu items -->
+              </div>
+            </td>
+          </tr>
+          <!-- More rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../../src/js/components/dataTable/dataTable.js"></script>
+  </body>
+</html>

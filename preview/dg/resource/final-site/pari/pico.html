@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+  <!-- With pico.classless.min.css -->
+  <body>
+    <nav>
+      <ul>
+        <li><strong>Acme Corp</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#" class="secondary">Services</a></li>
+        <li>
+          <details class="dropdown">
+            <summary>Account</summary>
+            <ul dir="rtl">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    <!-- Dropdown -->
+    <details class="dropdown">
+      <summary>Dropdown</summary>
+      <ul>
+        <li><a href="#">Solid</a></li>
+        <li><a href="#">Liquid</a></li>
+        <li><a href="#">Gas</a></li>
+        <li><a href="#">Plasma</a></li>
+      </ul>
+    </details>
+
+    <!-- Select -->
+    <select name="select" aria-label="Select" required>
+      <option selected disabled value="">Select</option>
+      <option>Solid</option>
+      <option>Liquid</option>
+      <option>Gas</option>
+      <option>Plasma</option>
+      false
+    </select>
+    <header><h1>I am the Header</h1></header>
+    <main><h1>I am the main area</h1></main>
+    <footer><h1>I am the footer</h1></footer>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Products</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Planet</th>
+          <th scope="col">Diameter (km)</th>
+          <th scope="col">Distance to Sun (AU)</th>
+          <th scope="col">Orbit (days)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Mercury</th>
+          <td>4,880</td>
+          <td>0.39</td>
+          <td>88</td>
+        </tr>
+        <tr>
+          <th scope="row">Venus</th>
+          <td>12,104</td>
+          <td>0.72</td>
+          <td>225</td>
+        </tr>
+        <tr>
+          <th scope="row">Earth</th>
+          <td>12,742</td>
+          <td>1.00</td>
+          <td>365</td>
+        </tr>
+        <tr>
+          <th scope="row">Mars</th>
+          <td>6,779</td>
+          <td>1.52</td>
+          <td>687</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Average</th>
+          <td>9,126</td>
+          <td>0.91</td>
+          <td>341</td>
+        </tr>
+      </tfoot>
+    </table>
+    <blockquote>
+      “Design is a funny word. Some people think design means how it looks. But
+      of course, if you dig deeper, it's really how it works.”
+      <footer>
+        <cite>— Steve Jobs</cite>
+      </footer>
+    </blockquote>
+    <p>Paragraph before the horizontal line.</p>
+    <hr />
+    <p>Paragraph after the horizontal line.</p>
+
+    <a href="#">Primary</a>
+    <a href="#" class="secondary">Secondary</a>
+    <a href="#" class="contrast">Contrast</a>
+
+    <hgroup>
+      <h2>Get inspired with CSS</h2>
+      <p>How to use CSS to add glam to your Website?</p>
+    </hgroup>
+    <hr />
+    <h1>This is a Heading Level 1</h1>
+    <p>
+      This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit.
+    </p>
+
+    <h2>This is a Heading Level 2</h2>
+    <p>
+      This is another paragraph of text. Sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua.
+    </p>
+
+    <h3>This is a Heading Level 3</h3>
+    <p>
+      Yet another paragraph of text. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <h4>This is a Heading Level 4</h4>
+    <p>
+      One more paragraph of text. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+
+    <h5>This is a Heading Level 5</h5>
+    <p>
+      Final paragraph of text. Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <h6>This is a Heading Level 6</h6>
+    <p>
+      This paragraph is the last one. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+
+    <hr />
+
+    <p><strong>This is a Strong Text</strong></p>
+    <p><em>This is an Emphasized Text</em></p>
+    <p>This is <u>Underlined Text</u></p>
+    <p>This is <del>Strikethrough Text</del></p>
+    <p>This is <sup>Superscript Text</sup></p>
+    <p>This is <sub>Subscript Text</sub></p>
+    <p>This is <code>Inline Code Text</code></p>
+    <p>This is <kbd>Keyboard Input Text</kbd></p>
+    <p>This is <samp>Sample Output Text</samp></p>
+    <p>This is <var>Variable Text</var></p>
+    <p>This is <abbr title="HyperText Markup Language">HTML</abbr></p>
+    <p>This is <cite>Citation Text</cite></p>
+    <p>This is <q>Quotation Text</q></p>
+    <p>This is <mark>Highlighted Text</mark></p>
+    <p>This is <b>Bold Text</b></p>
+    <p>This is <i>Italic Text</i></p>
+    <p>This is <small>Small Text</small></p>
+    <p>This is <big>Big Text</big></p>
+    <p>This is <strong>Strong Text</strong></p>
+    <p>This is <em>Emphasized Text</em></p>
+    <p>This is <cite>Citation Text</cite></p>
+    <p>This is <dfn>Definition Text</dfn></p>
+    <p>This is <code>Code Text</code></p>
+    <p>This is <samp>Sample Text</samp></p>
+    <p>This is <kbd>Keyboard Text</kbd></p>
+    <p>This is <var>Variable Text</var></p>
+  </body>
+</html>

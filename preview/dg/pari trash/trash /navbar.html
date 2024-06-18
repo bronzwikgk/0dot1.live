@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .nav-menu {
+            list-style-type: none;
+            /* Hide the dots */
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .nav-item:hover>.dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            list-style-type: none;
+            /* Hide the dots */
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown li {
+            width: 100%;
+            position: relative;
+        }
+
+        .dropdown li a {
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown .dropdown {
+            top: 30px;
+            left: 50%;
+            margin-left: 1px;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon .icon {
+            background-color: #fff;
+            width: 25px;
+            height: 3px;
+            margin: 4px 0;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-toggle:checked~.nav-menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            right: 0px;
+            position: fixed;
+            height: 100vh;
+            width: 250px;
+            top: 53px;
+            background: black;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .search-bar {
+                display: none;
+            }
+        }
+
+        .shortcut {
+            font-size: 10px;
+            font-family: monospace;
+            position: absolute;
+            right: 5px;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="brand-logo">Logo</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span class="icon"></span>
+                <span class="icon"></span>
+                <span class="icon"></span>
+            </label>
+            <ul class="nav-menu">
+
+                <li class="nav-item">
+                    <a href="#">Action</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Open<span class="shortcut">Ctrl+W</span></a></li>
+
+                        <li class="nav-item">
+                            <a href="#">Create<span class="shortcut">Ctrl+N</span></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Organisation<span class="shortcut">Ctrl+D</span></a></li>
+                                <li><a href="#">Project<span class="shortcut">Ctrl+C</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">People</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Share<span class="shortcut">Ctrl+T</span></a></li>
+                        <li><a href="#">Careers<span class="shortcut">Ctrl+R</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#">Setting</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>

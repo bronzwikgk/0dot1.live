@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Services</title>
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="../../resource/final-site/pari/beauty/pari.css">
+
+    <style>
+         nav {
+            width: 75%;
+        }
+
+        .nav-sub-menu li {
+            background-color: var(--background-color);
+            margin-right: 10px;
+        }
+      .hero {
+        padding: 2rem;
+        background-color: var(--surface-color);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-image: url("https://sigmatechnology.com/content/uploads/2022/12/Group-146-1.jpeg?x30768");
+        /* background-image: url("https://images.pexels.com/photos/7652179/pexels-photo-7652179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"); */
+      }
+
+      .hero h1 {
+        font-family: var(--font-secondary);
+        color: var(--text-color-disabled);
+        font-size: 5rem;
+        font-weight: var(--font-weight-bold);
+        margin-top: 80px;
+        margin-bottom: 100px;
+      }
+
+      .hero .tabs {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .hero .tabs .tab {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        color: var(--text-color-secondary);
+        cursor: pointer;
+      }
+
+      .hero .tabs .tab.active {
+        background-color: var(--secondary-color);
+        /* background-color: var(--primary-color); */
+        color: var(--primary-color);
+      }
+
+      .hero p {
+        font-family: var(--font-secondary);
+        color: var(--text-color-secondary);
+        margin-left: 10px;
+      }
+
+      .hero .sub-heading {
+        width: 60%;
+      }
+
+      .services,
+      .services-dg,
+      .services-atva {
+        display: flex;
+        width: 95vw;
+        overflow: scroll;
+        gap: 1rem;
+        margin-top: 40px;
+      }
+
+      .service-card {
+        background-color: var(--surface-color);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-width: 300px;
+        max-width: 300px;
+        box-sizing: border-box;
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-card img {
+        max-width: 100%;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .service-card h2 {
+        font-family: var(--font-primary);
+        font-size: 1.5rem;
+        font-weight: var(--font-weight-semi-bold);
+        color: var(--primary-color);
+        margin: 1rem 0;
+      }
+
+      .service-card p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      .service-card {
+        position: relative;
+      }
+
+      .service-card .learn-more {
+        font-family: var(--font-primary);
+        font-size: var(--font-size-sm);
+        color: var(--secondary-color);
+        text-decoration: none;
+        display: inline-block;
+        position: absolute;
+        padding: 10px;
+        bottom: 0;
+      }
+
+      .service-card .learn-more:hover {
+        color: var(--primary-color);
+      }
+
+      /* Global Local Section Styles */
+      .global-local-section {
+        background-image: url("https://sigmatechnology.com/content/uploads/2022/12/pexels-arthouse-studio-4344434-1-1.jpeg?x30768");
+        background-size: cover;
+        background-position: center;
+        padding: 50px 0;
+        color: var(--text-color-primary);
+      }
+
+      .global-local-section .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 40px;
+        /* background: rgba(229, 231, 234, 0.8); */
+        /* border-radius: 10px; */
+      }
+
+      .global-local-section .content {
+        max-width: 50%;
+      }
+
+      .global-local-section .content h1 {
+        font-size: 2.5em;
+        font-weight: var(--font-weight-light);
+        margin-bottom: 20px;
+      }
+
+      .global-local-section .content p {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 20px;
+        color: var(--text-color-primary);
+      }
+
+      .global-local-section .highlight {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--light);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 35%;
+        text-align: center;
+      }
+
+      .global-local-section .highlight h2 {
+        font-size: 1.8em;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+        color: var(--text-color-disabled);
+      }
+
+      .global-local-section .highlight p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: var(--light);
+      }
+
+      .global-local-section .contact-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--light);
+        color: var(--primary-color);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .global-local-section .contact-button:hover {
+        background-color: var(--secondary-color);
+        color: var(--light);
+      }
+
+      /* Checkmark Section Styles */
+      .checkmark-section {
+        padding: 40px;
+        margin-top: 20px;
+        padding: 50px 0;
+        background-color: var(--surface-color);
+      }
+
+      .checkmark-section .container {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 20px 200px;
+        background: var(--surface-color);
+        display: flex;
+        gap: 40px;
+        /* border-radius: 10px; */
+      }
+
+      .checkmark-section h2 {
+        font-size: 2em;
+        font-weight: var(--font-weight-medium);
+        margin-bottom: 20px;
+        color: var(--text-color-primary);
+        text-align: center;
+      }
+
+      .checkmark-section-img-right {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+      }
+
+      .checkmark-section-img-right img {
+        width: 100%;
+      }
+
+      .checkmark-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .checkmark-list li {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 40px;
+        color: var(--text-color-primary);
+      }
+
+      .checkmark-list li::before {
+        content: "✔";
+        font-size: 1.5em;
+        color: var(--success-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* ISO Consulting Section Styles */
+      .iso-consulting-section {
+        /* background-color: var(--background-color); */
+        background: var(--surface-color);
+        padding: 50px 0;
+      }
+
+      .iso-consulting-section .container {
+        /* background-image: url("https://images.pexels.com/photos/5324853/pexels-photo-5324853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"); */
+
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 20px;
+
+        /* border-radius: 10px; */
+      }
+
+      .iso-consulting-section .highlight {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--light);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 30%;
+        text-align: center;
+      }
+
+      .iso-consulting-section .highlight h2 {
+        font-size: 1.8em;
+        font-weight: var(--font-weight-medium);
+        margin-bottom: 20px;
+      }
+
+      .iso-consulting-section .highlight p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: var(--light);
+      }
+
+      .iso-consulting-section .contact-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--light);
+        color: var(--primary-color);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .iso-consulting-section .contact-button:hover {
+        background-color: var(--secondary-color);
+        color: var(--light);
+      }
+
+      .iso-consulting-section .content {
+        max-width: 65%;
+      }
+
+      .iso-consulting-section .content h1 {
+        font-size: 2.5em;
+        font-weight: var(--font-weight-light);
+        margin-bottom: 10px;
+      }
+
+      .iso-consulting-section .content h4 {
+        font-size: 1.5em;
+        font-weight: var(--font-weight-medium);
+        margin-bottom: 20px;
+        color: var(--text-color-secondary);
+      }
+
+      .iso-consulting-section .content p {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 20px;
+        color: var(--text-color-primary);
+      }
+
+      .iso-consulting-section .content h3 {
+        font-size: 1.8em;
+        font-weight: var(--font-weight-medium);
+        margin-bottom: 20px;
+        color: var(--text-color-primary);
+      }
+
+      .iso-standards-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+
+      .iso-standards-list li {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        color: var(--text-color-primary);
+      }
+
+      .iso-standards-list li::before {
+        content: "✔";
+        font-size: 1.2em;
+        color: var(--success-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .iso-consulting-section .iso-toolkit-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: var(--light);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        transition: background-color 0.3s, color 0.3s;
+        margin-left: 10px;
+      }
+
+      .iso-consulting-section .iso-toolkit-button:hover {
+        background-color: var(--secondary-color);
+      }
+
+      /* Strategic Plan Section Styles */
+      .strategic-plan-section {
+        background-color: var(--surface-color);
+        padding: 50px 200px;
+        text-align: center;
+        color: var(--text-color-primary);
+      }
+
+      .strategic-plan-section .container {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .strategic-plan-section h1 {
+        font-size: 2.5em;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+      }
+
+      .strategic-plan-section p {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 40px;
+      }
+
+      .values-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .value-box {
+        margin-right: 20px;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: var(--primary-color);
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+
+      .value-box::before,
+      .value-box::after {
+        /* content: ''; */
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: inherit;
+        clip-path: inherit;
+      }
+
+      .value-box.superior-supplier-value {
+        background-color: var(--error-color);
+      }
+
+      .value-box.third {
+        background-color: var(--primary-color);
+      }
+
+      .value-box.superior-employment {
+        background-color: var(--secondary-color);
+      }
+
+      .values-container .value-box h2 {
+        font-size: 1.2em;
+        font-weight: var(--font-weight-medium);
+        padding: 20px;
+        color: var(--text-color-disabled);
+      }
+
+      .attractiveness-section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .attractiveness-section h3 {
+        font-size: 1.8em;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+      }
+
+      .attractiveness-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .attractiveness-list li {
+        font-size: 1.2em;
+        line-height: var(--line-height-base);
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        color: var(--text-color-primary);
+      }
+
+      .attractiveness-list li::before {
+        content: "✔";
+        font-size: 1.2em;
+        color: var(--success-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+
+
+
+      /* Generative AI Section Styles */
+.sdlc-section {
+    margin: 40px 0px;
+    background-color: var(--surface-color);
+    padding: 50px 0;
+    color: var(--text-color-primary);
+}
+
+.sdlc-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sdlc-section .content {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.sdlc-section .content .explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sdlc-section .content .explore-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.sdlc-section .content h1 {
+    font-size: 2.5em;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 20px;
+}
+
+.sdlc-section .content h4 {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 20px;
+}
+
+.sdlc-section .content p {
+    font-size: 1.2em;
+    line-height: var(--line-height-base);
+    margin-bottom: 20px;
+}
+
+.sdlc-section .image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.sdlc-section .image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Dedicated Customer Support Team Section */
+.support-section {
+    background-color: var(--surface-color);
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--text-color-primary);
+}
+
+.support-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.support-section h1 {
+    font-size: 2.5em;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 20px;
+}
+
+.support-section h4 {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 20px;
+}
+
+.support-section p {
+    font-size: 1.2em;
+    line-height: var(--line-height-base);
+    margin-bottom: 20px;
+}
+
+.support-section .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.support-section .transform-button {
+    background-color: var(--background-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 20px;
+}
+
+.support-section .consult-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.support-section .consult-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .support-section .button-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .support-section .transform-button,
+    .support-section .consult-button {
+        margin-bottom: 0;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+        <span>
+            <img src="../../assets/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp" alt="Ducis Group Logo">
+        </span>
+        <nav>
+            <input type="checkbox" id="nav-check" />
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+            <ul class="main-nav">
+                <li>
+                    <a href="#">About</a>
+                    <ul class="nav-sub-menu">
+                        <li><a href="#">Why us</a></li>
+                        <li><a href="#">Who we are</a></li>
+                        <li><a href="#">What we offer</a></li>
+                        <li><a href="#">Our Accreditations</a></li>
+                        <li><a href="#">Stats</a></li>
+                        <li><a href="#">Our Clients</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Offering</a>
+                    <ul class="nav-sub-menu">
+                        <li>
+                            <a href="#">Training & Certification</a>
+                            <ul>
+                                <li><a href="#">Course Catalogue</a></li>
+                                <li><a href="#">Certifications</a></li>
+                                <li><a href="#">Open Courses</a></li>
+                                <li><a href="#">Self Paced Courses</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                            <ul>
+                                <li><a href="#">ITIL Maturity Model</a></li>
+                                <li><a href="#">ISO Consulting</a></li>
+                                <li><a href="#">Generative AI</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ATV</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Resources</a>
+                    <ul class="nav-sub-menu">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Mock Tests</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                        <li><a href="#">Knowledge Center</a></li>
+                        <li><a href="#">Open Positions</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-search">
+                <input type="search" placeholder="Search Here">
+            </form>
+            <ul class="main-nav">
+                <li>
+                    <a href="#">SignUp</a>
+                </li>
+                <li>
+                    <a href="#">SignIn</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+
+
+     
+
+      <section class="global-local-section">
+        <div class="container">
+          <div class="content">
+            <h1>ITIL Maturity Model</h1>
+            <h4><i>Achieve operational excellence </i></h4>
+            <p>
+              Our ITIL Maturity Modelling helps organizations assess and enhance
+              their IT service management (ITSM) processes and the maturity of
+              their Service Value System(SVS).
+            </p>
+            <p>
+              Our structured approach evaluates the effectiveness of your IT
+              services, identifies areas for improvement, and guides the
+              implementation of best practices to achieve operational
+              excellence.
+            </p>
+          </div>
+          <div class="highlight">
+            <h2>Accredited Partner</h2>
+            <p>
+              Ducisgroup is an Accredited Consulting Partner with
+              <strong><i>Axelos for the ITIL Maturity Model</i></strong
+              >.
+            </p>
+            <p>
+              IT service management (ITSM) processes and the maturity of their
+              Service Value System(SVS). Our structured approach evaluates the
+              effectiveness of your IT services, identifies areas for
+              improvement, and guides the implementation of best practices to
+              achieve operational excellence.
+            </p>
+            <a href="#" class="contact-button">CONTACT US</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkmark-section">
+        <h2>Key Benefits of ITIL Maturity Model</h2>
+        <div class="container">
+          <div class="checkmark-section-img-right">
+            <img
+              src="https://images.credly.com/images/a6dcdcea-f9b9-43a0-8057-a0dd3932f72d/ACP_assessor_badge_masters_RGB-01.png"
+              alt=""
+            />
+            <p><i>Accreditation Partner For ITIL Maturity Model</i></p>
+          </div>
+          <ul class="checkmark-list">
+            <li>
+              <strong>Enhanced Efficiency and Service Quality:</strong>
+              Streamline workflows, eliminate inefficiencies, and deliver
+              consistent, reliable IT services with quicker resolutions and
+              fewer incidents, leading to improved customer satisfaction.
+            </li>
+            <li>
+              <strong>Strategic Business Alignment:</strong> Ensure IT services
+              closely align with business objectives, supporting growth,
+              adaptability, and more informed strategic decision-making
+              regarding IT investments and initiatives.
+            </li>
+            <li>
+              <strong>Increased Accountability and Governance:</strong>
+              Establish clear roles, responsibilities, and robust governance
+              structures for better management, accountability, and risk
+              management, ensuring compliance and data protection.
+            </li>
+            <li>
+              <strong>Optimized Resource Utilization and Cost Savings:</strong>
+              Plan and utilize resources effectively, achieving cost savings and
+              better asset use through optimized resource allocation and
+              management.
+            </li>
+            <li>
+              <strong>Culture of Continuous Improvement:</strong> Foster a
+              culture of ongoing assessment and enhancement, staying ahead of
+              industry trends, proactively managing problems, and driving
+              continuous service improvement.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="global-local-section">
+        <div class="container">
+          <div class="highlight">
+            <h2>Accredited Partner</h2>
+            <p>
+              Ducisgroup is an Accredited Consulting Partner with
+              <strong><i>Axelos for the ITIL Maturity Model</i></strong
+              >.
+            </p>
+            <p>
+              IT service management (ITSM) processes and the maturity of their
+              Service Value System(SVS). Our structured approach evaluates the
+              effectiveness of your IT services, identifies areas for
+              improvement, and guides the implementation of best practices to
+              achieve operational excellence.
+            </p>
+            <a href="#" class="contact-button">CONTACT US</a>
+          </div>
+          <div class="content">
+            <h1>ISO Consulting</h1>
+            <h4><i>Your Compliance Partner</i></h4>
+            <p>
+              ISO standards make things work by facilitating business operations
+              and sales and at the same time serve as proof of quality, safety,
+              and efficiency. The legal, industry, customers’, and internal
+              requirements are becoming increasingly complicated, and ISO
+              certification becomes a required element, not optional. By nearly
+              approaching the ISO implementation, an ISO certification will
+              provide great benefit to your organization.
+            </p>
+            <p>
+              We at Ducis Group aim to help you get it done efficiently and take
+              care of all the routine processes. Within our ISO consulting
+              services, our expert team offers services for Quality,
+              Environment, Work Environment, and Information Security standards
+              that can save time and cost, improve efficiency, and boost
+              customer satisfaction and retention.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ISO Consulting Section -->
+      <section class="iso-consulting-section">
+        <div class="container">
+          <div class="content">
+            <h3>Some commonly used ISO Standards are as follows:</h3>
+            <ul class="iso-standards-list">
+              <li>ISO 9001:2015: Standard for Quality Management System</li>
+              <li>
+                ISO 14001:2015: Standard for Environmental Management System
+              </li>
+              <li>ISO/IEC 19770-1:2017: IT asset management system</li>
+              <li>ISO 20000-1:2018: Management Service management system</li>
+              <li>
+                ISO 21001:2018: Management systems for educational organizations
+              </li>
+              <li>ISO 22301:2012: Business continuity management systems</li>
+              <li>
+                ISO/IEC 27001:2022: Information Security management system
+              </li>
+              <li>ISO 31000:2018: Risk management – Guidelines</li>
+              <li>
+                ISO 45001:2018: Occupational Health & Safety Management System
+              </li>
+              <li>ISO 50001:2011: Energy Management</li>
+              <li>ISO 55001:2014: Asset management – Management systems</li>
+            </ul>
+            <p>
+              If you require consultancy for a Standard not listed above, please
+              contact our team as we may still be able to support you.
+            </p>
+            <a href="#" class="contact-button">Book a discovery call</a>
+            <a href="#" class="iso-toolkit-button">ISO TOOLKIT</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="sdlc-section">
+        <div class="container">
+            <div class="content">
+                <h1>Generative AI</h1>
+                <h4><i>Partner with us for expert training of Gen AI</i></h4>
+                <p>Generative AI  is artificial intelligence capable of generating text, images, videos, or other data using generative models. Generative AI models learn the patterns and structure of their input training data and then generate new data that has similar characteristics.</p>
+                <a href="#" class="explore-button">Explore More</a>
+            </div>
+            <div class="image">
+                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Software Development">
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+
+
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".hero .tabs .tab");
+        const services = document.querySelector(".services");
+        const servicesDg = document.querySelector(".services-dg");
+        const servicesAtva = document.querySelector(".services-atva");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("active"));
+
+            // Add active class to the clicked tab
+            this.classList.add("active");
+
+            // Hide all content sections
+            services.style.display = "none";
+            servicesDg.style.display = "none";
+            servicesAtva.style.display = "none";
+
+            // Show the corresponding content section based on data-target attribute
+            const target = this.getAttribute("data-target");
+            document.querySelector(`.${target}`).style.display = "flex";
+          });
+        });
+
+        // Initialize the first tab as active
+        tabs[0].click();
+      });
+    </script>
+  </body>
+</html>

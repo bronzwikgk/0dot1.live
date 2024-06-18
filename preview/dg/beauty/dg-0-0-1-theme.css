@@ -1,0 +1,215 @@
+
+/* Brand Theme */
+  
+/* Base Colors */
+:root {
+    --dark:#010d1dff;
+    --light-grey:#a8a9abff;
+    --light:#e5e7eaff;
+    
+    --primary-color: #012f6bff;      /* Primary brand color */
+    --secondary-color: #f5991eff;    /* Secondary accent color */
+    --background-color: #a8a9abff;   /* Background color */
+    --surface-color: #e5e7eaff;      /* Surface color */
+    --error-color: #d32f2f;        /* Error color */
+    --success-color: #388e3c;      /* Success color */
+    --warning-color: #f6ca19ff;      /* Warning color */
+    --info-color: #012f6bff;         /* Info color */
+    
+    /* Text Colors */
+    --text-primary: #var(--dark);       /* Primary text color */
+    --text-secondary:var(--light-grey);     /* Secondary text color */
+    --text-disabled: #bdbdbd;      /* Disabled text color */
+    
+    /* State Colors */
+    --hover-color: #e0e0e0;        /* Hover state color */
+    --focus-color: #c5cae9;        /* Focus state color */
+    --active-color: #bbdefb;       /* Active state color */
+    --disabled-color: #e0e0e0;     /* Disabled state color */
+    
+  }
+
+
+  /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Root Variables */
+:root {
+  --font-primary: 'Rubik', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-sm: 14px;
+
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+
+  --text-color-primary: var(--dark);
+  --text-color-secondary: var(--light-grey);
+  --text-color-disabled: var(--light);
+}
+
+
+/* Base Styles */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--text-color-primary);
+    line-height: var(--line-height-base);
+    background-color: var(--background-color);
+    margin: 100px;
+    padding: 0;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    line-height: var(--line-height-heading);
+    color: var(--text-color-primary);
+    margin: 0.5em 0;
+    
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: var(--font-weight-light);
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: var(--font-weight-medium;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h4 {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-semi-bold);
+  }
+  
+  h5 {
+    font-size: 1.25em;
+    font-weight: var(--font-weight-medium);
+  }
+  
+  h6 {
+    font-size: 1em;
+    font-weight: var(--font-weight-regular);
+  }
+  
+  /* Paragraphs */
+  p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--text-color-primary);
+    margin: 1em 0;
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Lists */
+  ul, ol {
+    font-family: var(--font-primary);
+    margin: 1em 0;
+    padding-left: 1.5em;
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-light);
+    color: var(--text-color-secondary);
+    border-left: 4px solid var(--text-color-disabled);
+    padding-left: 1em;
+    margin: 1em 0;
+  }
+  
+  /* Code */
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--surface-color);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    color: var(--text-color-primary);
+  }
+  
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--surface-color);
+    padding: 1em;
+    border-radius: 4px;
+    overflow: auto;
+  }
+  
+  /* Forms */
+  input, textarea {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--text-color-secondary);
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  /* Buttons */
+  button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  button:focus {
+    outline: 2px solid var(--focus-color);
+  }
+  
+  button:active {
+    background-color: var(--active-color);
+  }
+  
+  button:disabled {
+    background-color: var(--disabled-color);
+    color: var(--text-color-disabled);
+    cursor: not-allowed;
+  }

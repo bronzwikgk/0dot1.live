@@ -1,0 +1,75 @@
+  /* Importing Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+  --dark:#010d1dff;
+  --light-grey:#a8a9ab;
+  --light:#e5e7eaff;
+  
+  --primary-color: #012f6bff;      /* Primary brand color */
+  --secondary-color: #f5991eff;    /* Secondary accent color */
+  --background-color: var(--light);   /* Background color */
+
+  
+  
+  --accent-color: #eeeeee; /* Accent color for highlighting elements */
+  
+  --text-color: rgba(0, 0, 0, 0.84); /* Primary text color */
+  --text-secondary-color: #767676; /* Secondary text color */
+  --border-color: #e1e1e1; /* Default color for borders */
+  --error-color: #ff0033; /* Color used for error messages and icons */
+  --success-color: #28a745; /* Color used for success messages and icons */
+  --warning-color: #ffc107; /* Color used for warnings and cautionary messages */
+  --info-color: #17a2b8; /* Color used for informational messages */
+  --nested-menu-bg-color: #f8f8f8; /* Slightly different background color for nested menu items */
+  --nested-menu-text-color: #8c8c8c; /* Slightly darker text color for nested menu items */
+
+  /* Typography */
+  --font-family: "Rubik", sans-serif; /* Primary font family */
+  --font-size-root: 16px; /* Root font size (for rem calculations) */
+  --font-size-base: 1rem; /* Base font size for regular text */
+  --font-size-sm: 0.875rem; /* Small font size for less important text */
+  --font-size-lg: 1.25rem; /* Large font size for headings */
+  --font-size-xl: 1.5rem; /* Extra large font size for major headings */
+  --line-height-base: 1.5; /* Default line height */
+  --heading-font-family: "Rubik", sans-serif; /* Font family for headings */
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* Extra small spacing */
+  --spacing-sm: 0.5rem; /* Small spacing */
+  --spacing-xm: 0.75rem;
+  --spacing-md: 1rem; /* Medium spacing (default for margins and paddings) */
+  --spacing-lg: 1.5rem; /* Large spacing */
+  --spacing-xl: 2rem; /* Extra large spacing */
+  --spacing-xxl: 3rem; /* Extra extra large spacing */
+
+  /* Borders and Radius */
+  --border-width: 1px; /* Default border width */
+  --border-style: solid; /* Default border style */
+  --border-radius: 0.25rem; /* Default border radius for rounded corners */
+  --border-radius-lg: 0.5rem; /* Larger border radius for elements like buttons, inputs */
+
+  /* Box Shadows */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Default box shadow */
+  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for hover states */
+
+  /* Transitions */
+  --transition-default: all 0.3s ease; /* Default transition for hover effects and similar */
+
+  /* Z-index */
+  --zindex-dropdown: 1000; /* Z-index for dropdown menus */
+  --zindex-sticky: 1020; /* Z-index for sticky elements */
+  --zindex-fixed: 1030; /* Z-index for fixed elements */
+  --zindex-modal-backdrop: 1040; /* Z-index for modal backdrops */
+  --zindex-modal: 1050; /* Z-index for modals */
+  --zindex-popover: 1060; /* Z-index for popovers */
+  --zindex-tooltip: 1070; /* Z-index for tooltips */
+
+  /* Responsive Breakpoints */
+  --breakpoint-xs: 0; /* Extra small devices (portrait phones) */
+  --breakpoint-sm: 576px; /* Small devices (landscape phones) */
+  --breakpoint-md: 768px; /* Medium devices (tablets) */
+  --breakpoint-lg: 992px; /* Large devices (desktops) */
+  --breakpoint-xl: 1200px; /* Extra large devices (large desktops) */
+}

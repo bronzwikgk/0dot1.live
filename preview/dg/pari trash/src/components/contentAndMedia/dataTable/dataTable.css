@@ -1,0 +1,159 @@
+.table-container {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+  /* position: relative; */
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+}
+
+.data-table thead {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+  position: sticky;
+  top: 0; /* Make the header sticky */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection on click */
+  font-size: var(--font-size-lg);
+}
+
+.data-table th:hover {
+  background-color: darken(var(--secondary-color), 5%);
+}
+
+.data-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--accent-color);
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background-color: lighten(var(--background-color), 5%);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+/* Input for filtering */
+#filterInput {
+  font-family: var(--font-family);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 100%;
+  box-sizing: border-box; /* Ensures the input does not overflow its container */
+  outline: none;
+}
+
+#filterInput:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color), 0.2);
+}
+
+/* ... existing styles ... */
+
+.menu-trigger-cell {
+  /* position: relative;  */
+}
+
+.doc-icon {
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.row-hover-menu {
+  display: none; /* Hide the menu by default */
+  position: absolute;
+  right: 0;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  z-index: 100; /* Ensure it's above other items */
+  white-space: nowrap; /* Prevents menu items from wrapping */
+  box-shadow: var(--box-shadow);
+}
+
+.row-hover-menu a {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
+}
+
+.row-hover-menu a:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.menu-trigger-cell:hover .row-hover-menu {
+  display: block; /* Show the menu on hover */
+}
+
+/* Ensure that table rows and cells do not hide overflowed submenu */
+.data-table tr,
+.data-table td {
+  overflow: visible;
+  /* position: relative; */
+  /* ... */
+}
+
+.menu-trigger-cell .row-hover-menu {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 100%; /* Adjust if necessary */
+  z-index: 1000; /* Higher index to be on top */
+  /* ... */
+}
+
+/* Make sure the submenu is not too wide for mobile screens */
+.row-hover-menu {
+  max-width: 90vw; /* Max width to respect the viewport width */
+}
+
+/* Adjustments for when the submenu is too close to the table bottom */
+@media screen and (max-height: 800px) {
+  /* Example media query for smaller viewports */
+  .menu-trigger-cell .row-hover-menu {
+    top: 0px; /* Flip the menu to display above the row */
+    top: auto;
+  }
+}
+
+/* ... */
+
+/* Responsive adjustments */
+@media (max-width: var(--breakpoint-md)) {
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .data-table th {
+    font-size: var(--font-size-base);
+  }
+}

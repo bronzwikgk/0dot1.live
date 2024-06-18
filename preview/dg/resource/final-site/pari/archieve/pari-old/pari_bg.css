@@ -1,0 +1,67 @@
+/*
+https://codepen.io/iceable/pen/yLBrZOd
+https://codepen.io/AgnusDei/pen/NWPbOxL
+https://codepen.io/mikegolus/pen/Jegvym
+https://codepen.io/agoodwin/pen/NMJoER
+https://codepen.io/osorina/pen/PQdMOO
+*/
+
+
+.container {
+    /* Lined background */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 0px);
+    background-size: 100% 2em;
+
+    /*
+    Display the content on top of the lines.
+    The line height must be the same as the background size defined above
+    */
+    background-position-y: 24px;
+    line-height: 2em;
+}
+
+
+
+/*
+
+
+
+body  {
+    background-image: url("/assests/graphics/noisy-texture-100x100-o5-d21-c-000000-t1.png");
+    background-repeat: repeat;
+    background-color: var(--dark);
+  }
+
+*/
+
+  
+  
+body  {
+    background-image: url("/assests/graphics/bg/pari_wallpaper_opt_2_1920x1080.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+/*
+body  {
+    background-image: url("/assests/graphics/bg/pari wallpaper-bg-1920x1080 bg.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }*/
+
+
+
+  /*http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=626262&density=15&opacity=15*/
+
+  #example1 {
+    background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+  }
+
+  #borderimg {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(border.png) 30 round;
+  }
