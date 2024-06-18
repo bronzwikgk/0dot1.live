@@ -1,0 +1,16 @@
+{
+    "admins": [
+      {
+        "username": "Nagesh89",
+        "email": "gitesh@example.com",
+        "password": "hashed_password1",
+        "role": "admin"
+      },
+      {
+        "username": "drmDemo",
+        "email": "gitesh@example.com",
+        "password": "demo123",
+        "role": "admin"
+      }
+    ]
+}

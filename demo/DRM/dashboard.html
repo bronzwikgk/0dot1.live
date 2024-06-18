@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>DRM Dashboard</h1>
+        <div id="profile">
+            <img src="images.png" alt="Profile Logo" id="profileLogo">
+            <span id="username">Loading...</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="buttons">
+            <button id="newRecordBtn">New Record</button>
+            <button id="importRecordBtn">Import Record</button>
+            <button id="addUserBtn">Add User</button>
+            <button id="userlist">User List</button>
+        </div>
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Search by Registration No...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="recordFormContainer" class="form-container">
+            <form id="recordForm">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" name="customerName" required>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+                <label for="registrationNo">Registration No:</label>
+                <input type="text" id="registrationNo" name="registrationNo" required>
+                <label for="chassisNo">Chassis No:</label>
+                <input type="text" id="chassisNo" name="chassisNo" required>
+                <label for="engineNo">Engine No:</label>
+                <input type="text" id="engineNo" name="engineNo" required>
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" required>
+                <label for="segment">Segment:</label>
+                <input type="text" id="segment" name="segment" required>
+                <button type="submit">Create Record</button>
+                <button type="button" id="updateRecord" style="display:none">Update Record</button>
+            </form>
+        </div>
+        <div id="importFormContainer" class="form-container">
+            <h2>Import CSV</h2>
+            <input type="file" id="csvFileInput" accept=".csv">
+            <button type="button" id="importCSV">Import CSV</button>
+        </div>
+        <div id="userFormContainer" class="form-container" style="display:none;">
+            <h2>Add User</h2>
+            <form id="userForm">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" id="createUserBtn">Create</button>
+            </form>
+        </div>
+        <div id="user-list">
+            <table id="userTable">
+                <tbody>
+                    <!-- Table for displaying CRUD records -->
+                </tbody>
+            </table>
+        </div>
+        <div id="csvFilesContainer">
+            <!-- Icons for displaying CSV files -->
+        </div>
+        <h2>Imported Records</h2>
+        <table id="csvTable">
+            <!-- Table for displaying CSV data -->
+        </table>
+        <div id="recordsContainer">
+            <h2>Records</h2>
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Company</th>
+                        <th>Registration No</th>
+                        <th>Chassis No</th>
+                        <th>Engine No</th>
+                        <th>Branch</th>
+                        <th>Segment</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table for displaying CRUD records -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('addUserBtn').addEventListener('click', function() {
+            var userFormContainer = document.getElementById('userFormContainer');
+            if (userFormContainer.style.display === 'none' || userFormContainer.style.display === '') {
+                userFormContainer.style.display = 'block';
+            } else {
+                userFormContainer.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userForm = document.getElementById('userForm');
+            const userNameInput = document.getElementById('userName');
+            const passwordInput = document.getElementById('password');
+            const createUserBtn = document.getElementById('createUserBtn');
+            const userListBtn = document.getElementById('userlist');
+            const userTableBody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+            
+            const dbName = 'userDatabase';
+            const dbVersion = 1;
+            const request = window.indexedDB.open(dbName, dbVersion);
+            let db;
+        
+            request.onerror = function(event) {
+                console.error('Database error: ' + event.target.errorCode);
+            };
+        
+            request.onsuccess = function(event) {
+                db = event.target.result;
+            };
+        
+            request.onupgradeneeded = function(event) {
+                db = event.target.result;
+                const objectStore = db.createObjectStore('users', { keyPath: 'id', autoIncrement: true });
+                objectStore.createIndex('userName', 'userName', { unique: true });
+                objectStore.createIndex('password', 'password', { unique: false });
+            };
+        
+            function addUserToDB(userName, password) {
+                const transaction = db.transaction(['users'], 'readwrite');
+                const objectStore = transaction.objectStore('users');
+                const newUser = { userName: userName, password: password };
+                const request = objectStore.add(newUser);
+        
+                request.onsuccess = function(event) {
+                    console.log('User added to database');
+                    userNameInput.value = '';
+                    passwordInput.value = '';
+                };
+        
+                request.onerror = function(event) {
+                    console.error('Error adding user to database: ' + event.target.errorCode);
+                };
+            }
+        
+            createUserBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                const userName = userNameInput.value.trim();
+                const password = passwordInput.value.trim();
+        
+                if (userName && password) {
+                    addUserToDB(userName, password);
+                } else {
+                    alert('Please fill out all fields.');
+                }
+            });
+        
+            userListBtn.addEventListener('click', function() {
+                displayUsers();
+            });
+        
+            function displayUsers() {
+                userTableBody.innerHTML = '';
+                const transaction = db.transaction(['users'], 'readonly');
+                const objectStore = transaction.objectStore('users');
+                const request = objectStore.getAll();
+        
+                request.onsuccess = function(event) {
+                    const users = event.target.result;
+                    users.forEach(user => {
+                        const row = document.createElement('tr');
+                        const userNameCell = document.createElement('td');
+                        userNameCell.textContent = user.userName;
+                        row.appendChild(userNameCell);
+        
+                        const actionsCell = document.createElement('td');
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.addEventListener('click', function() {
+                            deleteUser(user.id);
+                        });
+                        actionsCell.appendChild(deleteButton);
+                        row.appendChild(actionsCell);
+        
+                        userTableBody.appendChild(row);
+                    });
+                };
+        
+                request.onerror = function(event) {
+                    console.error('Error fetching users from database: ' + event.target.errorCode);
+                };
+            }
+        
+            function deleteUser(userId) {
+                const transaction = db.transaction(['users'], 'readwrite');
+                const objectStore = transaction.objectStore('users');
+                const request = objectStore.delete(userId);
+        
+                request.onsuccess = function(event) {
+                    console.log('User deleted from database');
+                    displayUsers();
+                };
+        
+                request.onerror = function(event) {
+                    console.error('Error deleting user from database: ' + event.target.errorCode);
+                };
+            }
+        });
+        document.getElementById('userlist').addEventListener('click', function() {
+            var userFormContainer = document.getElementById('user-list');
+            if (userFormContainer.style.display === 'none' || userFormContainer.style.display === '') {
+                userFormContainer.style.display = 'block';
+            } else {
+                userFormContainer.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="./dashboard.js"></script>
+</body>
+</html>
