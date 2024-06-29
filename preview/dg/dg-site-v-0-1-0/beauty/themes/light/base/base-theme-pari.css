@@ -1,0 +1,249 @@
+/* Base-theme file for CSS library */
+
+/* Font Imports */
+/* Importing fonts from Google Fonts for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tilt+Neon&display=swap');
+
+/* Light Theme */
+
+/* Colors */
+:root {
+  /* Primary color used for main elements and accents */
+  --primary-color: rgb(97, 82, 255);
+  /* Secondary color for complementary elements */
+  --secondary-color: rgb(48, 57, 86);
+  /* Background color for the page */
+  --background-color: #ffffff;
+  /* Text color for regular text */
+  --text-color: #000;
+  /* Text color for secondary elements like buttons and links */
+  --secondary-text: #fff;
+  /* Color for headings */
+  --heading-color: #000000;
+  /* Color for links */
+  --link-color: #007bff;
+  /* Color for indicating errors */
+  --error-color: #dc3545;
+}
+
+/* Typography */
+:root {
+  /* Base font family used throughout the UI */
+  --font-family: "Open Sans", sans-serif;
+  --font-family-heading: "Roboto", sans-serif;
+  --font-family-body: "Open Sans", sans-serif;
+  /* Base font size for regular text */
+  --font-size-base: 1rem;
+  /* Font size for headings and titles */
+  --font-size-heading: 1.5rem;
+  /* Line height for text elements */
+  --line-height-base: 1.5;
+  --font-size-xs: 0.75rem;
+  /* Extra small */
+  --font-size-sm: 0.875rem;
+  /* Small */
+  --font-size-md: 1rem;
+  /* Medium */
+  --font-size-lg: 1.25rem;
+  /* Large */
+  --font-size-xl: 1.5rem;
+  /* Extra large */
+  --font-size-xxl: 2rem;
+  /* Double Extra large */
+  /* font-weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  /* Line Height */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.5;
+  /* Letter Spacing */
+  --letter-spacing-normal: normal;
+  --letter-spacing-wide: 0.1em;
+  /* Text Color */
+  --text-color-heading: #333333;
+  --text-color-body: #666666;
+  --text-color-accent: #007bff;
+  /* Accent color for links and highlights */
+  /* Text Decoration */
+  --text-decoration-link: underline;
+  /* Text Transform */
+  --text-transform-uppercase: uppercase;
+  --text-transform-lowercase: lowercase;
+  --text-transform-capitalize: capitalize;
+}
+
+/* Spacing */
+:root {
+  /* Base unit of spacing used for margins, padding, etc. */
+  --spacing-unit: 1rem;
+  --spacing-xs: calc(var(--spacing-unit) * 0.5);
+  /* 0.5rem */
+  --spacing-sm: calc(var(--spacing-unit) * 0.75);
+  /* 0.75rem */
+  --spacing-md: var(--spacing-unit);
+  /* 1rem */
+  --spacing-lg: calc(var(--spacing-unit) * 1.25);
+  /* 1.25rem */
+  --spacing-xl: calc(var(--spacing-unit) * 1.5);
+  /* 1.5rem */
+  --spacing-2xl: calc(var(--spacing-unit) * 2);
+  /* 2rem */
+  --spacing-3xl: calc(var(--spacing-unit) * 3);
+  /* 3rem */
+  /* Static spacing unit used for fixed-size elements */
+  --static-spacing-unit: 8px;
+  /* Static extra small spacing unit */
+  --static-spacing-small: var(--spacing-unit);
+  /* Static small spacing unit */
+  --static-spacing-medium: calc(var(--spacing-unit) * 2);
+  /* Static large spacing unit */
+  --static-spacing-large: calc(var(--spacing-unit) * 3);
+}
+
+/* Border and Shadow */
+:root {
+  /* Border radius for rounded corners */
+  --border-radius: 0.25rem;
+  /* Shadow effect applied to elements */
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Forms */
+:root {
+  /* Border color for form inputs */
+  --form-input-border-color: #ced4da;
+  /* Background color for form inputs */
+  --form-input-background-color: #ffffff;
+  /* Border color for focused form inputs */
+  --form-input-focus-color: #80bdff;
+}
+
+/* Buttons */
+:root {
+  /* Background color for buttons */
+  --button-background-color: var(--primary-color);
+  /* Text color for buttons */
+  --button-text-color: #ffffff;
+  /* Background color for buttons on hover */
+  --button-hover-background-color: #0056b3;
+  /* Text color for buttons on hover */
+  --button-hover-text-color: #ffffff;
+}
+
+/* Navigation */
+:root {
+  /* Background color for the navbar */
+  --navbar-background-color: var(--background-color);
+  /* Text color for navbar links */
+  --navbar-text-color: var(--text-color);
+  /* Color for active navbar links */
+  --navbar-active-color: var(--primary-color);
+}
+
+/* Alerts */
+:root {
+  /* Background color for alerts */
+  --alert-background-color: #f8d7da;
+  /* Text color for alerts */
+  --alert-text-color: #721c24;
+  /* Border color for alerts */
+  --alert-border-color: #f5c6cb;
+}
+
+/* Modals */
+:root {
+  /* Color for modal overlay */
+  --modal-overlay-color: rgba(0, 0, 0, 0.5);
+  /* Background color for modals */
+  --modal-background-color: #ffffff;
+  /* Text color for modals */
+  --modal-text-color: #333333;
+}
+
+/* Breakpoints */
+:root {
+  /* Breakpoint for extra small screens */
+  --breakpoint-xs: 576px;
+  /* Breakpoint for small screens */
+  --breakpoint-sm: 768px;
+  /* Breakpoint for medium screens */
+  --breakpoint-md: 992px;
+  /* Breakpoint for large screens */
+  --breakpoint-lg: 1200px;
+  /* Breakpoint for extra large screens */
+  --breakpoint-xl: 1400px;
+  /* Breakpoint for the navbar collapse */
+  --navbar-breakpoint: 900px;
+}
+
+/* Responsive Grid */
+:root {
+  /* Number of columns in the grid system */
+  --grid-columns: 12;
+  /* Width of the gutter between grid columns */
+  --grid-gutter: 1rem;
+  /* Maximum width of the container */
+  --container-max-width: 1140px;
+}
+
+/* Responsive Components */
+:root {
+  /* Height of the navbar */
+  --navbar-height: 60px;
+  /* Maximum width of modals */
+  --modal-max-width: 600px;
+}
+
+/* Customization for Different States */
+:root {
+  /* Color on hover for interactive elements */
+  --hover-color: #007bff;
+  /* Outline color when an element is focused */
+  --focus-outline-color: #007bff;
+  /* Color when an element is active */
+  --active-color: #0056b3;
+}
+
+/* Accessibility Enhancements */
+:root {
+  /* Minimum contrast ratio for text readability */
+  --contrast-ratio: 4.5;
+  /* Color for the focus ring around focused elements */
+  --focus-ring-color: rgba(0, 123, 255, 0.5);
+}
+
+/* Animation Parameters */
+:root {
+  /* Duration of animations */
+  --animation-duration: 0.3s;
+  /* Timing function for animations */
+  --animation-timing-function: ease;
+}
+
+/* Flexbox Settings */
+:root {
+  /* Direction of flex container */
+  --flex-container-direction: row;
+  /* Whether flex items should wrap */
+  --flex-container-wrap: nowrap;
+  /* Flex grow factor for flex items */
+  --flex-item-grow: 1;
+  /* Flex shrink factor for flex items */
+  --flex-item-shrink: 1;
+}
+
+/* Z-index Values */
+:root {
+  /* Z-index for modals */
+  --zindex-modal: 1000;
+  /* Z-index for the navbar */
+  --zindex-navbar: 100;
+  /* Z-index for dropdown menus */
+  --zindex-dropdown: 200;
+}
+
+/* other */
+:root {
+  --dropdown-icon-chevron: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANZJREFUSEvt081pAlEUhuFHsIcEVBJMmggi9mEDggXYRlZu3KWUECRN+I+C6SGIHBhBYmbmuhBczF0O33zvOe/Mrbnxqd24XwUoNVwpun9FI3zgJ2fUB/TxnrdK0UceYow5etj9KWngEy8YYPIfpAjwiC+8Yo3OGSTKp3jCDF3srwVEPiDfeD6DxPNT+QpveeURTLkHzUxFG0vU0cIiU7ct+pVSAPF+QEJXbBInJg8theWpG5wGDEjo+k0tvxYQ+djggE3pDcsCqYpS+y5yFaBUXaWoVNERTkIfGckggW4AAAAASUVORK5CYII=");
+}

@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+  margin-top: 1rem;
+}
+
+table th {
+  font-weight: 600;
+}
+
+td,
+th {
+  padding: calc(1rem / 2) 1rem;
+  border-bottom: 0.185rem solid #ccc;
+  background-color: #fff;
+  color: #373c44;
+  font-weight: 600;
+  text-align: left;
+  text-align: start;
+}

@@ -1,0 +1,81 @@
+aside {
+  position: relative;
+  width: 250px;
+  height: inherit;
+  min-height: 100vh;
+}
+
+aside nav {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  ;
+  left: 0;
+  overflow-y: auto;
+}
+
+aside nav ul {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+aside nav ul li {
+  width: 100%;
+}
+
+/* Styling for the collapsed sidebar */
+.sidebar .collapseButton-rotate {
+  transform: rotate(180deg);
+  /* Rotate the button when the sidebar is collapsed */
+}
+
+.toggle-sidebar-btn {
+  background-color: black;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  top: 20px;
+  right: -35px;
+  z-index: 100;
+  display: none;
+  
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  border: 2px solid black;
+}
+
+
+
+
+@media screen and (max-width:1000px) {
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  aside>nav>ul {
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  .toggle-sidebar-btn {
+    display: flex;
+  }
+
+  .sidebar {
+    position: absolute;
+    left: calc(-1 * 250px);
+    top: 0;
+    transition: left 0.3s ease;
+  }
+}

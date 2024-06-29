@@ -1,0 +1,80 @@
+/* Popover Component */
+.popover {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popover-content {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden; /* Hide popover content by default */
+    opacity: 0;
+    background-color: var(--popover-background-color); /* Popover background color */
+    color: var(--popover-text-color); /* Popover text color */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .popover-show .popover-content {
+    visibility: visible; /* Make popover content visible when popover is shown */
+    opacity: 1;
+  }
+  
+  /* Positioning */
+  .popover.top .popover-content {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .popover.bottom .popover-content {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .popover.left .popover-content {
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
+  }
+  
+  .popover.right .popover-content {
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%);
+  }
+  
+  /* Variations */
+  /* Primary Color */
+  .popover-primary .popover-content {
+    background-color: var(--primary-color);
+  }
+  
+  /* Secondary Color */
+  .popover-secondary .popover-content {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Success Color */
+  .popover-success .popover-content {
+    background-color: #28a745; /* Custom success color */
+  }
+  
+  /* Info Color */
+  .popover-info .popover-content {
+    background-color: #17a2b8; /* Custom info color */
+  }
+  
+  /* Warning Color */
+  .popover-warning .popover-content {
+    background-color: #ffc107; /* Custom warning color */
+  }
+  
+  /* Danger Color */
+  .popover-danger .popover-content {
+    background-color: #dc3545; /* Custom danger color */
+  }
+  

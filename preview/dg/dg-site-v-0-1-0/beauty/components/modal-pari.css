@@ -1,0 +1,79 @@
+/* Modal Component */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-color); /* Overlay color */
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: var(--modal-background-color); /* Modal background color */
+    color: var(--modal-text-color); /* Modal text color */
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Variations */
+  /* Primary Color */
+  .modal-primary .modal-content {
+    background-color: var(--primary-color);
+  }
+  
+  /* Secondary Color */
+  .modal-secondary .modal-content {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Success Color */
+  .modal-success .modal-content {
+    background-color: #28a745; /* Custom success color */
+  }
+  
+  /* Info Color */
+  .modal-info .modal-content {
+    background-color: #17a2b8; /* Custom info color */
+  }
+  
+  /* Warning Color */
+  .modal-warning .modal-content {
+    background-color: #ffc107; /* Custom warning color */
+  }
+  
+  /* Danger Color */
+  .modal-danger .modal-content {
+    background-color: #dc3545; /* Custom danger color */
+  }
+  
+  /* Size Variations */
+  .modal-small .modal-content {
+    max-width: 400px;
+  }
+  
+  .modal-medium .modal-content {
+    max-width: 600px;
+  }
+  
+  .modal-large .modal-content {
+    max-width: 800px;
+  }
+  
+  /* Animation */
+  .modal-fade {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Usage */
+.close{
+    cursor: pointer;
+}  

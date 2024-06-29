@@ -1,0 +1,137 @@
+:root {
+  /* Colors */
+  --form-background-color: #2b2b2b;
+  /* Background color of the form */
+  --form-text-color: #ccc;
+  /* Text color of the form */
+  --form-label-color: #ddd;
+  /* Label color of the form */
+  --form-input-background-color: #444;
+  /* Background color of form inputs */
+  --form-input-border-color: #666;
+  /* Border color of form inputs */
+  --form-input-shadow-color: rgba(255, 255, 255, 0.15);
+  /* Shadow color of form inputs */
+  --form-input-disabled-background-color: #333;
+  /* Background color of disabled form inputs */
+  --form-input-invalid-border-color: #ff7f7f;
+  /* Border color of invalid form inputs */
+  --form-input-valid-border-color: #7fff7f;
+  /* Border color of valid form inputs */
+
+  /* Fonts */
+  --form-font-family: "Open Sans", sans-serif;
+  /* Font family for form elements */
+  --form-font-size-label: 0.85rem;
+  /* Font size for form labels */
+  --form-font-size-small: 0.8em;
+  /* Font size for small text in form */
+  --form-font-weight-label: bold;
+  /* Font weight for form labels */
+
+  /* Spacing */
+  --form-container-padding: 2rem;
+  /* Padding for form container */
+  --form-container-gap-top: 1.5rem;
+  /* Gap at the top of form container */
+  --form-input-padding: 8px;
+  /* Padding for form inputs */
+  --form-input-margin-top: 0.5rem;
+  /* Margin top for form inputs */
+  --form-label-margin-bottom: 0.5rem;
+  /* Margin bottom for form labels */
+
+  /* Border */
+  --form-border-radius: 5px;
+  /* Border radius for form elements */
+
+  /* Box Shadow */
+  --form-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* Box shadow for form */
+
+  /* Icons */
+  --form-icon-url: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdxJREFUSEvV1U+ITmEUx/HPEGOlUGNhQ7FDykqasmFhI1mIYUUS5W8sREokyb8kJBuTElaItRRmNpaSHYvZTRElf+I5em49c3tn3MtMjWf33vc+53vO7/zOuV0m+HRNcHyTFrAIKzAPQxjA605q/E0FO3AJM4qA33AoPx/BaQvYiav4gQt4ipU4iGnYg8sloS1gDu7hKJ4XgZbjGaYg5Htf/dcWMJbpTqTKjqVebMTdNoDpKaNtSZq5SefPuI6PHUhb0J+rO9UUsDeVHZnNLAJ+wbUEOYCfxfNb2IpNuNMEcCQ1rsok9H6BxUn7Nfyen9OId+JU2YebFuLdnwDncoZxYR2eFJkuxUWsxwesxQNMbeqi/UmS80nL7zn44+TvWSn7+9iVJHhTwFbjYaqmG2dxuN6buosW4G3OptTyTL78Kfv8K2Zjd7ZmuOdkk0mutLyJ7cWFSCRkiUELV1Un3BR9uDKaf+sVRCbhmhFeLi7HeujFktz0wTzVo85HHbA5TeLtDDk+Hqu8Dpifmxi7JnbMqwISv0PnDcktw03hnVZF5aJoZDjjJVZhX25+bNMb/wKIu33Zqj1FoFhgYdNHTYPHe2Mtu3BLyLIsDVM0Mz4qMRutznhu047g/x/wCwXEVBnPOi9cAAAAAElFTkSuQmCC");
+  /* URL for form icons */
+  --form-icon-phone: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYVJREFUSEvF1DFIVXEUx/HP20ShQHTQoS0KQQeRBrfAkogWp7bARSmxsUB0KYqGxmoMl4LaGgRxKsLFIQgcxCXBtUURJAy9/7gX/v15t/fufT08cJf/vef7u+d/zvk1dDkaXeY7F4Eg+hiX8RCHnVSZVnABHzCdQzdxHb/qiqQC3zGawD5hBr/riKQCpyWQt5j9HwJH6C0BLeFZVZG0gu2sByMlkDXc7lTgPe42gexgCvudCszjTQL5hhv4WRUevk+v6BL2EtBVhApqRbNNDmN5J6Kt4EktepMKAmcia+ZWBDzOz8IAxDGEl1jHatkPlHnRK9yPkn7gJnbzs0F8Qbi+EE+zRVxuJlIm0JNZxGdci5LCjjzHx/wZS4CvsYC/lvVfbjqQjeZXXKlw/+9wDydFTiu7vpj/bRjTdiNU8qBdgWKUF3ObKLORWPxFbvd/zlpVECeGxj5CWMa+knI2cCt23ioCBbMfc5jEOIbzF2EZw1AcxOJ1BNrtReUrqgSu0uRa4CLpDBORNRkbOkH4AAAAAElFTkSuQmCC");
+  /* URL for phone icon */
+  --form-icon-email: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUlJREFUSEvd1T8ohWEUx/GPJIPBZJBSMmCwW2xGpbBSNmVSBhbJRCmTsilWfxaZbBYzA5OQMpgMBsmfe/S8um73ute93eWe5an3vM/5nt/vvM/zNqlzNNW5vsYCjGEN/TXadoUFnESdfIse0FVj8Wz7DXoLAZ8pO4DrKkGhPhT81M5XkAFeMI3Df0LGsYu2coCs7gYW8V4G1JxmF77nx3fzxRTMYButOMMEnkpAOnCAYbxiFjvlFAR0EMfoxiNC/nkBZCjZ2Il7jOaauURmdUkFmap27GMEb5jHVoLMYRMtOMVkLv+cchUDMgtXsJw276V1Kq2RW83rOh7/C5C5EipCTaiKiG6j6+i+MKoCRJEeHOXUfKSZ3JYYfNWASo9FAwPu0ndfqRV/vRfziZn9OslxXa+jr0bCRe5ULxW7rmusW3x7Y/0y62LRF2qEQhkl8rgIAAAAAElFTkSuQmCC");
+  /* URL for email icon */
+  --form-icon-password: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPpJREFUSEvt1T1KA0EYxvFfvIKkECEgFrH1CjbapRHvIFiJjdgoWiRYWJk7pLITFLyChY2dKIRU4g1EDYwQl9282Q0LFplqmI/n/87DMzMNNbdGzfpmBexiH1upoAdc4yYqcBbAJY4KhE5xNg0SAfYwSALn6Kf+AU5Sfxv3RZAI8IhNHOIqIzIGXOAOO1UBn1j68buJ94zICkb4wHJVwFfaWHTSaD5MUSgwb4pqAXTQxUZUXWb+OcX5dnI8z9shVkuK/y5/wXoEqGpL7r68EywAf1xZWDSZyP+Toje0Kl60V6xFF238VPTQLgl5wjHCp6Kk7vTl0Y82N+wb4oIvGagsHzgAAAAASUVORK5CYII=");
+  /* URL for password icon */
+
+  /* Other */
+  --form-container-width: 100vw;
+  /* Width of the form container */
+  --form-container-max-width: 80%;
+  /* Maximum width of the form container */
+  --form-input-width: 100%;
+  /* Width of form inputs */
+  --form-mob-width: 90%;
+  /* Width of form on mobile devices */
+  --form-fieldset-border: none;
+  /* Border of form fieldset */
+  --form-fieldset-margin: 0;
+  /* Margin of form fieldset */
+  --form-fieldset-padding: 0;
+  /* Padding of form fieldset */
+  --form-fieldset-margin-top: 1.5rem;
+  /* Margin top of form fieldset */
+  --form-legend-font-weight: bold;
+  /* Font weight of form legend */
+  --form-toggle-switch-label-width: 40px;
+  /* Width of toggle switch label */
+  --form-toggle-switch-label-height: 20px;
+  /* Height of toggle switch label */
+  --form-toggle-switch-label-bg: #555;
+  /* Background color of toggle switch label */
+  --form-toggle-switch-label-border-radius: 10px;
+  /* Border radius of toggle switch label */
+  --form-toggle-switch-label-position: relative;
+  /* Position of toggle switch label */
+  --form-toggle-switch-label-cursor: pointer;
+  /* Cursor style of toggle switch label */
+  --form-toggle-switch-label-transition: transform 0.3s;
+  /* Transition effect for toggle switch label */
+  --form-toggle-switch-label-before-width: 16px;
+  /* Width of toggle switch label before */
+  --form-toggle-switch-label-before-height: 16px;
+  /* Height of toggle switch label before */
+  --form-toggle-switch-label-before-bg: white;
+  /* Background color of toggle switch label before */
+  --form-toggle-switch-label-before-border-radius: 50%;
+  /* Border radius of toggle switch label before */
+  --form-toggle-checked-label-bg: #007bff;
+  /* Background color of checked toggle switch label */
+  --form-toggle-checked-label-before-transform: translateX(20px);
+  /* Transformation of checked toggle switch label before */
+  --form-input-icon-left-background-position: 5px center;
+  /* Background position of left-aligned input icon */
+  --form-input-icon-background-repeat: no-repeat;
+  /* Background repeat of input icon */
+  --form-input-icon-padding-left: 40px;
+  /* Padding left for input icon */
+  --form-input-icon-padding-right: 30px;
+  /* Padding right for input icon */
+  --form-input-icon-right-background-position: calc(100% - 10px) center;
+  /* Background position of right-aligned input icon */
+  --form-input-icon-right-background-repeat: no-repeat;
+  /* Background repeat of right-aligned input icon */
+
+  /* New CSS variables for submit button */
+  --form-submit-button-padding: 8px 16px;
+  /* Padding for submit button */
+  --form-submit-button-border: none;
+  /* Border of submit button */
+  --form-submit-button-border-radius: 4px;
+  /* Border radius of submit button */
+  --form-submit-button-background-color: #007bff;
+  /* Background color of submit button */
+  --form-submit-button-color: #fff;
+  /* Text color of submit button */
+  --form-submit-button-cursor: pointer;
+  /* Cursor style of submit button */
+  --form-submit-button-transition: background-color 0.3s ease;
+  /* Transition effect for submit button */
+  --form-submit-button-hover-background-color: #0056b3;
+  /* Background color of submit button on hover */
+}

@@ -1,0 +1,55 @@
+@import url(./themes/light/light-theme-pari.css);
+@import url(./elements/semantics-pari.css);
+@import url(./elements/typography-pari.css);
+@import url(./elements/button-pari.css);
+@import url(./elements/table-pari.css);
+@import url(./elements/form-pari.css);
+@import url(./elements/embedded-elemnets-pari.css);
+@import url(./components/navbar-pari.css);
+@import url(./components/sidebar-pari.css);
+@import url(./components/accordion-pari.css);
+@import url(./components/dropdown-pari.css);
+@import url(./components/tabs-pari.css);
+@import url(./layout/container.css);
+@import url(./helpers/flexbox.css);
+@import url(./components/hero-section.css);
+@import url(./components/light-card.css);
+@import url(./components/dark-card.css);
+@import url(./components/carousel-pari.css);
+@import url(./components/loader-pari.css);
+@import url(./components/alert-pari.css);
+@import url(./components/tooltip-pari.css);
+@import url(./components/progressBar-pari.css);
+@import url(./components/toast-pari.css);
+@import url(./components/modal-pari.css);
+@import url(./components/popover-pari.css);
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: aliceblue;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width:500px) {
+  html {
+    font-size: 12px;
+  }
+}

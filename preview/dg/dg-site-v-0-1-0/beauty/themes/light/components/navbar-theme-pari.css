@@ -1,0 +1,34 @@
+:root {
+  /* Colors */
+  --navbar-background-color: #ffffff;
+  /* Background color of the navbar */
+  --navbar-text-color: #676e78;
+  /* Text color of the navbar */
+  --navbar-hover-background-color: #ebeaea;
+  /* Background color of navbar items on hover */
+  --navbar-horizontal-alignment: space-between;
+  --navbar-flex-gap: 1.5rem;
+
+  /* Margins and paddings */
+  --navbar-padding-horizontal: 1rem;
+  /* Horizontal padding of the navbar */
+  --navbar-padding-vertical: 0rem;
+  /* Vertical padding of the navbar items */
+  --navbar-button-padding: 13px;
+  /* Padding for the hamburger button */
+
+  /* Sizing and spacing */
+  --navbar-height: 75px;
+  /* Height of the navbar */
+  --navbar-item-padding: 0.5rem;
+  --navbar-item-border-radius: 3px;
+  /* Border radius of navbar items */
+  --navbar-item-font-size: 1rem;
+  /* Font size of navbar items */
+  --navbar-item-gap: 1rem;
+  /* Gap between navbar items */
+  --navbar-menu-width: 260px;
+  /* Width of the menu in mobile view */
+  --navbar-menu-transition-speed: 0.3s;
+  /* Transition speed for the menu */
+}

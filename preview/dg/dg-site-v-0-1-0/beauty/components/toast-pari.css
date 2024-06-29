@@ -1,0 +1,76 @@
+/* Toast Component */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--background-color); /* Default background color */
+  color: var(--text-color); /* Default text color */
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Variations */
+/* Primary Color */
+.toast-primary {
+  background-color: var(--primary-color);
+}
+
+/* Secondary Color */
+.toast-secondary {
+  background-color: var(--secondary-color);
+}
+
+/* Success Color */
+.toast-success {
+  background-color: #28a745; /* Custom success color */
+}
+
+/* Info Color */
+.toast-info {
+  background-color: #17a2b8; /* Custom info color */
+}
+
+/* Warning Color */
+.toast-warning {
+  background-color: #ffc107; /* Custom warning color */
+}
+
+/* Danger Color */
+.toast-danger {
+  background-color: #dc3545; /* Custom danger color */
+}
+
+/* Position Variations */
+.toast-top {
+  bottom: auto;
+  top: 20px;
+}
+
+.toast-bottom {
+  top: auto;
+  bottom: 20px;
+}
+
+/* Animation */
+.toast-fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .toast {
+    width: 80%;
+    max-width: 300px; /* Adjust maximum width as needed */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

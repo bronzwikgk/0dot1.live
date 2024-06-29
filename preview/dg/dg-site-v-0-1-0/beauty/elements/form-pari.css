@@ -1,0 +1,274 @@
+form {
+    font-family: var(--form-font-family);
+    width: var(--form-container-width);
+    margin: 0 auto;
+    max-width: var(--form-container-max-width);
+    background-color: var(--form-background-color);
+    border-radius: var(--form-border-radius);
+    padding: var(--form-container-padding);
+    box-shadow: var(--form-box-shadow);
+  }
+  form div {
+    margin-top: var(--form-container-gap-top);
+  }
+  form label {
+    display: block;
+    margin-bottom: var(--form-label-margin-bottom);
+    font-weight: var(--form-font-weight-label);
+    color: var(--form-label-color);
+    font-size: var(--form-font-size-label);
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="url"],
+  form input[type="password"],
+  form input[type="search"] {
+    width: var(--form-input-width);
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--form-border-radius);
+    box-shadow: var(--form-input-shadow-color) 2.4px 2.4px 3.2px;
+    background-color: var(--form-input-background-color);
+    outline: none;
+    color: var(--form-text-color);
+  }
+  form h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--form-text-color);
+  }
+  
+  form small {
+    display: block;
+    font-size: var(--form-font-size-small);
+    color: var(--form-text-color);
+    margin: var(--form-input-margin-top) auto;
+  }
+  form input[type="text"]:disabled {
+    background-color: var(--form-input-disabled-background-color);
+  }
+  
+  form fieldset {
+    border: var(--form-fieldset-border);
+    margin: var(--form-fieldset-margin);
+    padding: var(--form-fieldset-padding);
+    margin-top: var(--form-fieldset-margin-top);
+  }
+  
+  fieldset legend {
+    font-weight: var(--form-legend-font-weight);
+    color: var(--form-label-color);
+    font-size: var(--form-font-size-label);
+  }
+  
+  form fieldset div {
+    margin-top: var(--form-input-margin-top);
+  }
+  
+  form input[type="radio"],
+  form input[type="checkbox"] {
+    margin: 4px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Display label as inline-block only when it's next to radio or checkbox */
+  form input[type="radio"] + label,
+  form input[type="checkbox"] + label {
+    display: inline-block;
+  }
+  
+  form input[type="checkbox"].toggle {
+    display: none;
+  }
+  
+  .toggle-switch {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .toggle-switch span {
+    margin-bottom: var(--form-input-margin-top);
+    font-weight: var(--form-font-weight-label);
+    color: var(--form-label-color);
+    font-size: var(--form-font-size-label);
+  }
+  
+  .toggle-switch label {
+    display: inline-block;
+    width: var(--form-toggle-switch-label-width);
+    height: var(--form-toggle-switch-label-height);
+    background-color: var(--form-toggle-switch-label-bg);
+    border-radius: var(--form-toggle-switch-label-border-radius);
+    position: var(--form-toggle-switch-label-position);
+    cursor: var(--form-toggle-switch-label-cursor);
+    margin-bottom: 0;
+  }
+  
+  .toggle-switch label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: var(--form-toggle-switch-label-before-width);
+    height: var(--form-toggle-switch-label-before-height);
+    background-color: var(--form-toggle-switch-label-before-bg);
+    border-radius: var(--form-toggle-switch-label-before-border-radius);
+    transition: var(--form-toggle-switch-label-transition);
+  }
+  
+  .toggle:checked + label {
+    background-color: var(--form-toggle-checked-label-bg);
+  }
+  
+  .toggle:checked + label::before {
+    transform: var(--form-toggle-checked-label-before-transform);
+  }
+  
+  form input[type="tel"].icon-left,
+  form input[type="url"].icon-left,
+  form input[type="email"].icon-left,
+  form input[type="password"].icon-left {
+    background-position: var(--form-input-icon-left-background-position);
+    background-repeat: var(--form-input-icon-background-repeat);
+    padding-left: var(--form-input-icon-padding-left);
+  }
+  form input[type="tel"].icon-right,
+  form input[type="url"].icon-right,
+  form input[type="email"].icon-right,
+  form input[type="password"].icon-right {
+    background-position: var(--form-input-icon-right-background-position);
+    background-repeat: var(--form-input-icon-right-background-repeat);
+    padding-right: var(--form-input-icon-padding-right);
+  }
+  
+  form input[type="url"].icon-right,
+  form input[type="url"].icon-left {
+    background-image: var(--form-icon-url);
+  }
+  
+  form input[type="tel"].icon-right,
+  form input[type="tel"].icon-left {
+    background-image: var(--form-icon-phone);
+  }
+  
+  form input[type="email"].icon-right,
+  form input[type="email"].icon-left {
+    background-image: var(--form-icon-email);
+  }
+  
+  form input[type="password"].icon-right,
+  form input[type="password"].icon-left {
+    background-image: var(--form-icon-password);
+  }
+  
+  /* Valid fields */
+  /* input:valid,
+      textarea:valid,
+      select:valid {
+        border-color: green !important; 
+      } */
+  
+  /* Invalid fields */
+  input:invalid,
+  textarea:invalid,
+  select:invalid {
+    border-color: var(
+      --form-input-invalid-border-color
+    ) !important; /* Red border for invalid fields */
+  }
+  
+  /* Styling for Month, Week, Date, and Time input types */
+  input[type="month"],
+  input[type="week"],
+  input[type="date"],
+  input[type="time"] {
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--form-border-radius);
+    width: var(--form-input-width);
+  }
+  
+  /* Media Query for Responsive Design */
+  @media (max-width: 768px) {
+    input[type="month"],
+    input[type="week"],
+    input[type="date"],
+    input[type="time"] {
+      width: 90%; /* Adjust as needed */
+    }
+  }
+  
+  /* Styling for Textarea */
+  textarea {
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--form-border-radius);
+    width: var(--form-input-width);
+  }
+  
+  /* Styling for Select */
+  select {
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--form-border-radius);
+    width: var(--form-input-width);
+  }
+  
+  /* Styling for File Input */
+  input[type="file"] {
+    margin-top: 5px; /* Adjust as needed */
+  }
+  
+  /* Styling for Range Input */
+  input[type="range"] {
+    width: var(--form-input-width);
+  }
+  
+  /* Styling for Number Input */
+  input[type="number"] {
+    padding: var(--form-input-padding);
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--form-border-radius);
+    width: var(--form-input-width);
+  }
+  
+  /* Styling for Color Input */
+  input[type="color"] {
+    width: 20%;
+    display: inline-block;
+  }
+  
+  /* Styling for Submit Button */
+  input[type="submit"] {
+    padding: var(--form-submit-button-padding);
+    border: var(--form-submit-button-border);
+    border-radius: var(--form-submit-button-border-radius);
+    background-color: var(--form-submit-button-background-color);
+    color: var(--form-submit-button-color);
+    cursor: var(--form-submit-button-cursor);
+    transition: var(--form-submit-button-transition);
+  }
+  
+  input[type="submit"]:hover {
+    background-color: var(--form-submit-button-hover-background-color);
+  }
+  
+  /* Media Query for Responsive Design */
+  @media (max-width: 768px) {
+    textarea,
+    select,
+    input[type="number"],
+    input[type="color"] {
+      width: 100%; /* Adjust as needed */
+    }
+  }
+  
+  /* Media Query for Responsive Design */
+  @media (max-width: 768px) {
+    form {
+      width: var(--form-mob-width); /* Adjust as needed */
+    }
+  }
+  
