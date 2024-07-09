@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DG-Group</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./beauty/styles.css">
+</head>
+
+<body>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-5 ">
+      <img class="mx-3" src="https://0dot1.live/preview/dg/dg-site-v-0-1-0/assets/company_logo.png" alt="" width="100">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- About Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">About</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+              <li><a class="dropdown-item" href="blog-home.html">Why Us</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">Who We Are</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">What We Offer</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">Our Accreditations</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">Stats</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">Our Clients</a></li>
+              <li><a class="dropdown-item" href="blog-post.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <!-- Offering Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Offering</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+              <li><a class="dropdown-item" href="./offering.html">Training & certifications</a></li>
+              <li><a class="dropdown-item" href="./offering.html">Consultancy</a></li>
+              <li><a class="dropdown-item" href="./offering.html">ATVA</a></li>
+            </ul>
+          </li>
+          <!-- Resources Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+              <li><a class="dropdown-item" href="portfolio-overview.html">Webinar</a></li>
+              <li><a class="dropdown-item" href="portfolio-item.html">Community Forums</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a class="btn btn-primary " href="cta-page.html">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header-->
+  <header class="bg-primary py-5">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="my-5 text-center text-xl-start">
+            <h1 class="display-5 fw-bolder text-white mb-2">Helping Businesses Stay Relevant, Consistent,
+              and Growing
+
+            </h1>
+            <p class="lead fw-normal text-white-50 mb-4">Deliver High Quality Products, aligned with ITIL
+              best practices. ATV Assessment is a Recognized framework for IT service management,
+              aligning, IT services efficiently and effectively with business objectives. ITIL compliance
+              builds trust, and credibility,
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">For Business </a>
+              <a class="btn btn-outline-light btn-lg px-4" href="#!">For Individual</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-xxl-6 d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+            src="./img/banner-1.svg" alt="..." /></div>
+      </div>
+    </div>
+  </header>
+  <ul class="nav pt-3" style="background-color: #F0F8FF;">
+    <li class="nav-item">
+      <a class="nav-link tab active" aria-current="page" href="#">Why </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab" href="#">Who We Are</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab" href="#">What we offer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab">Stats</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab">Our Clients</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab">Our Accredations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab">Contact Us</a>
+    </li>
+  </ul>
+
+  <!-- About section one-->
+  <section class="py-5 bg-light" id="scroll-target">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="./img/who_we_are.png" alt="..." /></div>
+        <div class="col-lg-6">
+          <h2 class="fw-bolder">Why Us</h2>
+          <p class="lead fw-normal text-muted mb-0">Choosing Ducisgroup means partnering with a leader in
+            corporate training and consultancy. We believe in adopting a collaborative, supportive approach
+            where our consultancy clients receive as much assistance as they require to achieve their goals.
+            We simplify the entire process, ensuring it remains straightforward and stress-free for you
+            throughout.</p>
+          <button type="button" class="btn btn-outline-primary mt-4 mb-4">Discover More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About section two-->
+  <section class="py-5">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0"
+            src="./img/why_us.png" alt="..." /></div>
+        <div class="col-lg-6">
+          <h2 class="fw-bolder">Who We Are</h2>
+          <p class="lead fw-normal text-muted mb-0">Since 2018, Ducisgroup has been equipping professionals
+            and organizations with the tools, essential skills, knowledge, and certifications needed to
+            thrive in a competitive marketplace. As a trusted partner of PeopleCert, we specialize in
+            delivering world-class corporate training and certification services.
+          </p>
+          <button type="button" class="btn btn-outline-primary mt-4 mb-4">Read Stories</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog preview section-->
+  <section class="py-5">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <div class="text-center">
+            <h2 class="fw-bolder">What We Offer</h2>
+
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-5">
+          <div class="card h-100 shadow border-0">
+            <img class="card-img-top" src="./img/training_certifications.svg" alt="..." />
+            <div class="card-body p-4">
+              <!-- <div class="badge bg-primary bg-gradient rounded-pill mb-2">Enhance Performance with Expert Training</div> -->
+              <a class="text-decoration-none link-dark stretched-link" href="#!">
+                <h5 class="card-title mb-3">Training & Certifications</h5>
+              </a>
+              <p class="card-text mb-0">Enhance your team's capabilities with our comprehensive training
+                and certification programs. We provide practical and relevant training solutions
+                tailored to meet the unique needs of your organization.</p>
+              <a href="#" class="btn btn-primary mt-3">Explore</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+          <div class="card h-100 shadow border-0">
+            <img class="card-img-top" src="./img/consultancy.svg" alt="..." />
+            <div class="card-body p-4">
+              <!-- <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div> -->
+              <a class="text-decoration-none link-dark stretched-link" href="#!">
+                <h5 class="card-title mb-3">Consultancy</h5>
+              </a>
+              <p class="card-text mb-0">Our strong focus on operational efficiency through ITIL Maturity
+                Modeling and thorough software tool assessments ensures your processes are optimized for
+                maximum productivity..</p>
+              <a href="#" class="btn btn-primary mt-3">Explore</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+          <div class="card h-100 shadow border-0">
+            <img class="card-img-top" src="./img/atva.svg" alt="..." />
+            <div class="card-body p-4">
+              <!-- <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div> -->
+              <a class="text-decoration-none link-dark stretched-link" href="#!">
+                <h5 class="card-title mb-3">ATVA</h5>
+              </a>
+              <p class="card-text mb-0">We at Ducisgroup aim to help you get it done efficiently and take
+                care of all the routine processes. Within our ISO consulting services, our expert team
+                offers services for Quality, Environment.</p>
+              <a href="#" class="btn btn-primary mt-3">Explore</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class=" py-5 bg-primary">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 text-white">Section Heading</h2>
+      <p class="text-center mb-4 text-white">This is a paragraph describing the content of the section. It
+        provides more
+        details and context for the heading above.</p>
+      <div class="text-center text-white">
+        <a href="#" class="text-dark fw-bold text-decoration-none text-white">
+          Explore More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="py-1 mb-4">
+    <div class="container px-5 ">
+      <h2 class="text-center mb-4">Stats</h2>
+      <div class="row">
+        <div class="col mb-3 mb-sm-0 ">
+          <div class="card text-center bg-orange border-0">
+            <div class="card-body">
+              <h3 class="card-titl fw-bolder">100 +</h3>
+              <h5 class="card-text">Courses</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3 mb-sm-0">
+          <div class="card text-center bg-orange border-0">
+            <div class="card-body">
+              <h3 class="card-title fw-bolder">20 +</h3>
+              <h5 class="card-text">Accredations </h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3 mb-sm-0">
+          <div class="card text-center bg-orange border-0">
+            <div class="card-body">
+              <h3 class="card-title fw-bolder">25,000 +</h3>
+              <h5 class="card-text">Proffesional Certified</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3 mb-sm-0">
+          <div class="card text-center bg-orange border-0">
+            <div class="card-body">
+              <h3 class="card-title">8 +</h3>
+              <h5 class="card-text">Countries Reached</h5>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-4">
+    <div class="container px-5">
+      <h2 class="text-center mb-2">Our Clients</h2>
+      <div class="d-flex flex-wrap justify-content-center">
+        <div class="m-3">
+          <img src="./img/twitter.png" alt="">
+        </div>
+        <div class="m-3">
+          <img src="./img/fb.png" alt="">
+        </div>
+        <div class="m-3">
+          <img src="./img/youtube.png" alt="">
+        </div>
+        <div class="m-3">
+          <img src="./img/linkedin.png" alt="">
+        </div>
+
+        <div class="m-3">
+          <img src="./img/instagram.png" alt="">
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <section class="py-4" style="background-color: #F0F8FF ;">
+    <div class=" py-5">
+      <div class="container px-5 rounded-4" style=" background: linear-gradient(to right, #010D1D, #012F6B);
+">
+        <div class="row gx-5 align-items-center justify-content-start">
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-center text-xl-start">
+              <h4 class="display-5 text-white mb-2">Get Started with Ducis Group
+              </h4>
+              <p class="lead  text-white-50 mb-4">We believe in adopting a collaborative, supportive
+                approach where our consultancy clients receive as much assistance as they require to
+                achieve their goals. We simplify the entire process, ensuring it remains straightforward
+                and stress-free for you throughout.
+              </p>
+              <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Join Us</a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="py-5 team3 bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-7 text-center">
+          <h3 class="mb-3">Experienced & Professional Team</h3>
+          <h6 class="subtitle font-weight-normal">You can rely on our amazing features list and also our customer
+            services will be a great experience for you without doubt and in no-time.</h6>
+        </div>
+      </div>
+      <div class="row">
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Sunil Mohal" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Sunil Mohal</h5>
+                <h6 class="subtitle">Founding Member, Ducis Management Consulting</h6>
+                <p>Sunil is a founding member of Ducis Management Consulting Private Limited. As an ITIL 4 Master, he
+                  has extensive industry experience supporting global organizations and customers worldwide. Championing
+                  service support and service delivery since the late 1980s, Sunil is based in Delhi, India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Puneet Bareja" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Puneet Bareja</h5>
+                <h6 class="subtitle">Sales Professional</h6>
+                <p>Puneet is a seasoned Sales Professional with extensive experience in building relations with
+                  CxO-level executives. Having worked with global leaders like Adobe, Fidelity, Telstra, and IBM, Puneet
+                  brings unique insights into fulfilling demanding customer requirements. He is based in New Delhi,
+                  India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Rajwardhan Purohit" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Rajwardhan Purohit</h5>
+                <h6 class="subtitle">IT Leader</h6>
+                <p>Rajwardhan is a seasoned IT leader with over 30 years of global experience in the IT industry. He has
+                  successfully transformed IT delivery and managed capability across organizations like the British
+                  Council, Coforge, HCL Technologies, DXC, Infosys, and IBM. Rajwardhan is an ITIL 4 Maturity Model
+                  Assessor and Software Tools Auditor.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Deepak Kumar Das" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Deepak Kumar Das</h5>
+                <h6 class="subtitle">People-Skills Development Specialist</h6>
+                <p>Deepak's strengths lie in People-Skills Development. He has held senior positions in Talent
+                  Management and L&D for organizations such as HCL, Muthoot, Syntel, and Sutherland Global Services.
+                  With a strong background in Quality, Service Management, and Service Delivery, Deepak brings a great
+                  deal of passion to training delivery.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Thomas Komban" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Thomas Komban</h5>
+                <h6 class="subtitle">Service and Project Management Professional</h6>
+                <p>Thomas is a service and project management professional with extensive cross-industrial experience,
+                  including roles in organizations such as Maersk, CP Ships, Reed Elsevier, and HTC Global Services. He
+                  is an accredited trainer for ITIL and Prince2, with experience delivering to global audiences. Thomas
+                  is based in Chennai, India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Ajai Srivastava" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Ajai Srivastava</h5>
+                <h6 class="subtitle">ISO Champion</h6>
+                <p>Ajai is an ISO champion with over 33 years of industry experience in senior management positions at
+                  companies like Philips, GE, Sanyo, and BSI. His expertise encompasses Quality, Risk Management,
+                  Information Security, and Business Continuity. Ajai is based in Delhi, India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Vipin Bhardwaj" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Vipin Bhardwaj</h5>
+                <h6 class="subtitle">Senior Consultant and Trainer</h6>
+                <p>Vipin is a Senior Consultant and trainer par excellence, with expertise in IT Governance, ITSM, ISMS,
+                  and Project Management. With extensive experience in global companies like Infosys, Standard
+                  Chartered, and IBM, his skills include process audit, assessment, and GAP analysis. Vipin is based in
+                  Delhi-NCR, India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Richa Thapliyal" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Richa Thapliyal</h5>
+                <h6 class="subtitle">Service Delivery Expert</h6>
+                <p>Richa is an ITIL 4 Master with extensive practical service delivery experience across various service
+                  management tools. She has managed complex projects from both onshore and offshore locations in global
+                  organizations such as Ericsson and IBM. Richa has been delivering training for global audiences. Based
+                  in Delhi NCR.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Tapti Chowdhry" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Tapti Chowdhry</h5>
+                <h6 class="subtitle">Trainer, Consultant, and Auditor</h6>
+                <p>Tapti has over 15 years of expertise in auditing and consulting across various service management
+                  tools. She brings a wealth of experience in training and consulting, having worked with diverse
+                  audiences globally. Tapti is known for her insightful and effective training methods. Based in Mumbai,
+                  India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Nirmalan Nagarajah" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Nirmalan Nagarajah</h5>
+                <h6 class="subtitle">Chartered IT Professional</h6>
+                <p>Nirmalan is a Chartered IT Professional with extensive experience in IT Service Management, ITIL, and
+                  ISO standards. He has led ITSM initiatives for numerous organizations, enhancing service delivery and
+                  operational efficiency. Nirmalan's expertise lies in integrating IT processes with business
+                  objectives. Based in Chennai, India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Dixon Karami" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Dixon Karami</h5>
+                <h6 class="subtitle">ITIL Accredited Trainer</h6>
+                <p>Dixon is an ITIL Accredited Trainer with significant experience in ITIL implementation and training.
+                  He has helped various organizations in aligning their IT services with business goals. Dixon is known
+                  for his practical and engaging training sessions, which have received high praise from participants.
+                  Based in Nairobi, Kenya.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Daniel Gichuki" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Daniel Gichuki</h5>
+                <h6 class="subtitle">Project Management Consultant</h6>
+                <p>Daniel is a seasoned Project Management Consultant with a strong background in ITIL, Prince2, and
+                  Agile methodologies. He has successfully managed large-scale projects across various sectors, ensuring
+                  timely delivery and stakeholder satisfaction. Daniel is based in Nairobi, Kenya.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Rohinton Dumasia" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Rohinton Dumasia</h5>
+                <h6 class="subtitle">Enterprise Architecture Expert</h6>
+                <p>Rohinton is an Enterprise Architecture Expert with over 20 years of experience in aligning IT
+                  strategies with business goals. He has worked with leading organizations to develop and implement
+                  enterprise architecture frameworks that drive efficiency and innovation. Rohinton is based in Mumbai,
+                  India.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Irfan Hidayat" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Irfan Hidayat</h5>
+                <h6 class="subtitle">ITIL and ISO Specialist</h6>
+                <p>Irfan is an ITIL and ISO Specialist with extensive experience in implementing ITIL and ISO standards
+                  across various industries. He has a proven track record of enhancing service delivery and operational
+                  efficiency through effective process improvements. Irfan is based in Jakarta, Indonesia.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-4 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12 pro-pic">
+              <img src="https://dummyimage.com/300x300/ced4da/6c757d" alt="Tony Albert" class="img-fluid" />
+            </div>
+            <div class="col-md-12">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Tony Albert</h5>
+                <h6 class="subtitle">ITSM Consultant and Trainer</h6>
+                <p>Tony is an ITSM Consultant and Trainer with over 15 years of experience in IT Service Management. He
+                  has successfully led ITSM implementations and delivered training for global audiences, receiving high
+                  praise for his engaging and insightful sessions. Tony is based in Sydney, Australia.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+    <div class="container text-center p-4">
+      <h4 class="fw-bold mb-4">Get the latest Ducisgroup Updates</h4>
+      <div class="row mw-75 m-auto ">
+        <div class="col-12 col-md-6 mb-2 mb-md-0">
+          <input type="email" class="form-control p-3" placeholder="Enter your email" aria-label="Email"
+            aria-describedby="basic-addon1">
+        </div>
+        <div class="col-12 col-md-6">
+          <button class="btn btn-secondary btn-md rounded-pill shadow w-100 fw-400 p-3">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <hr class="mb-4 mx-4 bg-light" />
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Ducis Management Consulting</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              Find us at our office or contact us through email or phone for any inquiries. We are dedicated to
+              providing the best service and support.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Quick Links</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-dark">About us</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Partner us</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Become a Consultant</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">FAQ</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">News & Announcements</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Policies</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-dark">Cookie Policy</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Refund Policy</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Privacy Policy</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Online Proctored Exams – Terms</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark">Terms & Conditions</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p><i class="fas fa-home mr-3"></i> D1/131, 1st Floor, Sector 16, Rohini, New Delhi, North Delhi, Delhi,
+              India, 110085</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@ducisgroup.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 91-9818023130</p>
+            <p><i class="fas fa-building mr-3"></i> COMPANY REGISTRATION NO U93090DL2018PTC382922</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+
+    <hr class="mb-4 mx-4" />
+    <!-- Section: CTA -->
+    <section class="">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <h4 class="mb-4 fw-bold">Request Info or Schedule a Demo</h4>
+
+        <button type="button" class="btn btn-outline-primary btn-rounded fw-bold">
+          Contact Us
+        </button>
+      </div>
+    </section>
+    <!-- Section: CTA -->
+
+
+
+
+    <div class="row align-items-center mx-2 mt-5">
+      <div
+        class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center mb-3 mb-md-0">
+        <img style="width: 100px;" src="https://0dot1.live/preview/dg/dg-site-v-0-1-0/assets/company_logo.png"
+          alt="Company Logo" class="me-3">
+        <b class="mx-3">|</b>
+        <div>
+          <h5 class="mb-0 fw-bold">The World Works With Ducis Group</h5>
+
+        </div>
+      </div>
+      <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end my-4">
+        <a href="#" class="text-dark me-3"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#" class="text-dark me-3"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#" class="text-dark me-3"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#" class="text-dark"><i class="fab fa-linkedin fa-2x"></i></a>
+      </div>
+    </div>
+
+    <!-- Links Collection Row -->
+    <div class="row justify-content-center mw-100">
+      <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-center">
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Terms & Conditions</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Refund Policy</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Online Proctored Exams - Terms</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Sitemap</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Accessebility</a>
+          <a href="#" class="text-dark mx-2 my-1 text-decoration-none">Website Feedback</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3">
+      © 2024 Ducis Group:
+      <a class="text-dark text-decoration-none text-xs" href="https://mdbootstrap.com/">All Rights Reserved</a>
+    </div>
+    <!-- Copyright -->
+
+    <!-- Section: Text -->
+    <section class="mb-5">
+      <div class="row d-flex justify-content-center mw-100 px-3 m-auto">
+        <div>
+          <p style="font-size: 14px;">
+            <b>Disclaimer:</b> ITIL® is a registered trademark of AXELOS Limited, used under permission of AXELOS
+            Limited. All rights reserved. The Swirl logo™ is a trade mark of AXELOS Limited, used under permission of
+            AXELOS Limited. All rights reserved. PRINCE2® / MSP® 5 / MoP® / MoV ®/ P3O ®/ MoR ®, are a registered trade
+            mark of AXELOS Limited, used under permission of AXELOS Limited. All rights reserved. COBIT® is a trademark
+            of ISACA® registered in the United States and other countries.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Text -->
+
+
+    <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+
+
+
+
+  </footer>
+  <!-- Footer -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
