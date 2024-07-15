@@ -1,0 +1,16 @@
+about
+    Header_Nav_site
+    Hero_Page_About[Template,Content]
+        Heading:Content
+        Subtile:Content
+        Para:[Content,]
+        Button: [Content,Command]
+        Image: [Source ]
+    Collection Content Page about [ Layout:Col]
+        Nav-Page-Collection [ layout:Row ],
+        Section Who we Are,
+		Section Why Us,
+		Section Our Team,
+		Section Our Accreditations #navigate
+		Section Contact Us #FormNavigate
+    Footer [ footer_dg_site ]

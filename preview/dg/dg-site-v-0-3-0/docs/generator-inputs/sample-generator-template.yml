@@ -1,0 +1,156 @@
+tag: nav
+attributes:
+  class: "navbar navbar-expand-lg navbar-light bg-light"
+children:
+  - tag: div
+    attributes:
+      class: "container px-5"
+    children:
+      - tag: a
+        attributes:
+          class: "navbar-brand"
+          href: "{{brand_link}}"
+        children:
+          - tag: img
+            attributes:
+              src: "{{navbar_logo}}"
+              width: "100"
+      - tag: button
+        attributes:
+          class: "navbar-toggler"
+          type: "button"
+          data-bs-toggle: "collapse"
+          data-bs-target: "#navbarSupportedContent"
+          aria-controls: "navbarSupportedContent"
+          aria-expanded: "false"
+          aria-label: "Toggle navigation"
+        children:
+          - tag: span
+            attributes:
+              class: "navbar-toggler-icon"
+      - tag: div
+        attributes:
+          class: "collapse navbar-collapse"
+          id: "navbarSupportedContent"
+        children:
+          - tag: ul
+            attributes:
+              class: "navbar-nav ms-auto mb-2 mb-lg-0"
+            children:
+              - tag: li
+                attributes:
+                  class: "nav-item"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link"
+                      href: "{{home_link}}"
+                    content: "Home"
+              - tag: li
+                attributes:
+                  class: "nav-item"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link"
+                      href: "{{about_link}}"
+                    content: "About"
+              - tag: li
+                attributes:
+                  class: "nav-item"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link"
+                      href: "{{contact_link}}"
+                    content: "Contact"
+              - tag: li
+                attributes:
+                  class: "nav-item"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link"
+                      href: "{{pricing_link}}"
+                    content: "Pricing"
+              - tag: li
+                attributes:
+                  class: "nav-item"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link"
+                      href: "{{faq_link}}"
+                    content: "FAQ"
+              - tag: li
+                attributes:
+                  class: "nav-item dropdown"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link dropdown-toggle"
+                      id: "navbarDropdownBlog"
+                      href: "#"
+                      role: "button"
+                      data-bs-toggle: "dropdown"
+                      aria-expanded: "false"
+                    content: "Blog"
+                  - tag: ul
+                    attributes:
+                      class: "dropdown-menu dropdown-menu-end"
+                      aria-labelledby: "navbarDropdownBlog"
+                    children:
+                      - tag: li
+                        children:
+                          - tag: a
+                            attributes:
+                              class: "dropdown-item"
+                              href: "{{blog_home_link}}"
+                            content: "Blog Home"
+                      - tag: li
+                        children:
+                          - tag: a
+                            attributes:
+                              class: "dropdown-item"
+                              href: "{{blog_post_link}}"
+                            content: "Blog Post"
+              - tag: li
+                attributes:
+                  class: "nav-item dropdown"
+                children:
+                  - tag: a
+                    attributes:
+                      class: "nav-link dropdown-toggle"
+                      id: "navbarDropdownPortfolio"
+                      href: "#"
+                      role: "button"
+                      data-bs-toggle: "dropdown"
+                      aria-expanded: "false"
+                    content: "Portfolio"
+                  - tag: ul
+                    attributes:
+                      class: "dropdown-menu dropdown-menu-end"
+                      aria-labelledby: "navbarDropdownPortfolio"
+                    children:
+                      - tag: li
+                        children:
+                          - tag: a
+                            attributes:
+                              class: "dropdown-item"
+                              href: "{{portfolio_overview_link}}"
+                            content: "Portfolio Overview"
+                      - tag: li
+                        children:
+                          - tag: a
+                            attributes:
+                              class: "dropdown-item"
+                              href: "{{portfolio_item_link}}"
+                            content: "Portfolio Item"
+
+
+
+
+
+
+
+

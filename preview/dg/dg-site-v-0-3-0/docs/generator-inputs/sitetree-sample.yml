@@ -1,0 +1,61 @@
+type: folder
+name: DG-Site
+children:
+  - type: file
+    outputFormat: html
+    name: index.html
+    template: "./templates/navbarTemplate.json"
+    data: "./data/navbarData.json"
+  - type: folder
+    name: pages
+    children:
+      - type: file
+        outputFormat: html
+        name: about.html
+        template: "./templates/pageTemplate.json"
+        data: "./data/aboutPageData.json"
+      - type: file
+        outputFormat: html
+        name: contact.html
+        template: "./templates/pageTemplate.json"
+        data: "./data/contactPageData.json"
+  - type: folder
+    name: assets
+    children:
+      - type: folder
+        name: images
+        children:
+          - type: file
+            outputFormat: jpg
+            name: logo.jpg
+            template: null
+            data: null
+      - type: folder
+        name: css
+        children:
+          - type: file
+            outputFormat: css
+            name: styles.css
+            template: null
+            data: null
+      - type: folder
+        name: js
+        children:
+          - type: file
+            outputFormat: js
+            name: scripts.js
+            template: null
+            data: null
+  - type: folder
+    name: blog
+    children:
+      - type: file
+        outputFormat: html
+        name: blogHome.html
+        template: "./templates/blogTemplate.json"
+        data: "./data/blogHomeData.json"
+      - type: file
+        outputFormat: html
+        name: blogPost.html
+        template: "./templates/blogTemplate.json"
+        data: "./data/blogPostData.json"
