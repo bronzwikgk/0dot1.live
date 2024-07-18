@@ -50,7 +50,7 @@
               <a
                 class="nav-link dropdown-toggle"
                 id="navbarDropdown0"
-                href="./about.html"
+                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -60,21 +60,21 @@
                 class="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdown0"
               >
-                <li><a class="dropdown-item" href="#wu">Why Us</a></li>
-                <li><a class="dropdown-item" href="#wwa">Who We Are</a></li>
-                <li><a class="dropdown-item" href="#wwo">What We Offer</a></li>
+                <li><a class="dropdown-item" href="./about.html">Why Us</a></li>
+                <li><a class="dropdown-item" href="./about.html">Who We Are</a></li>
+                <li><a class="dropdown-item" href="./about.html#wwo">What We Offer</a></li>
                 <li>
-                  <a class="dropdown-item" href="#oa">Our Accreditations</a>
+                  <a class="dropdown-item" href="./about.html#oa">Our Accreditations</a>
                 </li>
-                <li><a class="dropdown-item" href="#st">Stats</a></li>
-                <li><a class="dropdown-item" href="#cu">Contact Us</a></li>
+                <li><a class="dropdown-item" href="./about.html#st">Stats</a></li>
+                <li><a class="dropdown-item" href="./about.html#cu">Contact Us</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 id="navbarDropdown1"
-                href="./offering.html"
+                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -85,15 +85,19 @@
                 aria-labelledby="navbarDropdown1"
               >
                 <li>
-                  <a class="dropdown-item" href="#t&c"
+                  <a class="dropdown-item" href="./offering.html#t&c"
                     >Training &amp; certifications</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#cons">Consultancy</a>
+                  <a class="dropdown-item" href="./offering.html#cons"
+                    >Consultancy</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#atva">ATVA</a>
+                  <a class="dropdown-item" href="./offering.html#atva"
+                    >ATVA</a
+                  >
                 </li>
               </ul>
             </li>
@@ -101,7 +105,7 @@
               <a
                 class="nav-link dropdown-toggle"
                 id="navbarDropdown2"
-                href="./resource.html"
+                href="./page-dg-site-empty-page.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -112,27 +116,27 @@
                 aria-labelledby="navbarDropdown2"
               >
                 <li>
-                  <a class="dropdown-item" href="./page-dg-site-empty-page.html"
+                  <a class="dropdown-item" href="#webinar"
                     >Webinar</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./page-dg-site-empty-page.html"
+                  <a class="dropdown-item" href="#mock"
                     >Mock Test</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./page-dg-site-empty-page.html"
+                  <a class="dropdown-item" href="#cf"
                     >Case Studies</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./page-dg-site-empty-page.html"
+                  <a class="dropdown-item" href="#blog"
                     >Blog</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./page-dg-site-empty-page.html"
+                  <a class="dropdown-item" href="#polc"
                     >Policy</a
                   >
                 </li>
@@ -141,7 +145,7 @@
           </ul>
 
           <!-- CTA Button -->
-          <a class="btn btn-primary" href="./page-dg-site-empty-page.html"
+          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal"
             >Get in touch</a
           >
         </div>
@@ -154,16 +158,17 @@
           <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-xl-start">
               <h1 class="display-5 text-white mb-5">
-                Discover How World works with Ducis Group
+                Resources
               </h1>
               <p class="fw-normal text-white text-white-80 mb-5">
-                We provide practical and relevant training solutions tailored to
-                meet the unique needs of your organization.
+                Explore our comprehensive resources to drive your success.
+
+                
               </p>
               <div
                 class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start"
               >
-                <a class="btn btn-primary btn-lg px-4" href="#ContactUsBusiness"
+                <a class="btn btn-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#contactModal"
                   >Get In Touch</a
                 >
               </div>
@@ -200,7 +205,43 @@
         <a class="nav-link tab" href="#polc">Policies</a>
       </li>
     </ul>
-
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="py-5" id="webinar">
       <div class="container px-1 my-5">
         <div class="row gx-5 justify-content-center">

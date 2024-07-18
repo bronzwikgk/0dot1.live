@@ -146,7 +146,7 @@
           </ul>
 
           <!-- CTA Button -->
-          <a class="btn btn-primary" href="./page-dg-site-empty-page.html"
+          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal"
             >Get in touch</a
           >
         </div>
@@ -858,7 +858,7 @@
                 >
                   <a
                     class="btn btn-primary btn-lg px-4 me-sm-3"
-                    href="./page-dg-site-empty-page.html"
+                    data-bs-toggle="modal" data-bs-target="#contactModal"
                     >Contact Us</a
                   >
                 </div>
@@ -877,6 +877,43 @@
       </div>
     </section>
 
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <section id="template-ui-section-footer-option1-sample">
       <footer
         class="text-center text-lg-start text-dark"

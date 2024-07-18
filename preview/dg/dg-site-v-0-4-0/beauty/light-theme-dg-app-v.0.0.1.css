@@ -165,6 +165,10 @@
     --transition-slow: 1s;
 }
 
+html{
+    font-size: 12px;
+}
+
 /* Body Styles */
 body {
     font-family: var(--font-content);
