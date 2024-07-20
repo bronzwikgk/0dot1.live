@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DG APP</title>
+    <link rel="stylesheet" href="../../beauty/dark-theme-dg-app-v.0.0.1.css" />
+    <!-- Include the Pari Theme CSS file -->
+    <style>
+      body {
+        background-color: var(--surface-color);
+      }
+
+      p {
+        text-align: left;
+      }
+
+      .dg-app-layout-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-largest);
+      }
+
+      .title-container p {
+        font-size: calc(var(--size-mid) * 0.75);
+      }
+
+      .starter-template {
+        text-align: center;
+        padding: var(--spacing-largest) 0;
+        background-color: var(--surface-color);
+        box-shadow: var(--box-shadow-md);
+        border-radius: var(--border-radius-md);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .starter-template h1 {
+        font-size: var(--size-mid);
+        margin-bottom: var(--spacing-large);
+      }
+
+      .starter-template p {
+        font-size: var(--size-small);
+        margin-bottom: var(--spacing-large);
+        color: var(--font-color-hint);
+        width: 60%;
+      }
+
+      .starter-template a.button {
+        text-decoration: none;
+        background-color: var(--primary-color);
+        color: var(--font-color-light);
+        padding: var(--spacing-smallest) var(--spacing-mid);
+        border-radius: var(--border-radius-md);
+        transition: background-color var(--transition-fast);
+      }
+
+      .starter-template a.button:hover {
+        background-color: var(--primary-variant);
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: var(--spacing-mid) 0;
+      }
+
+      .row {
+        display: flex;
+        gap: var(--size-mid);
+      }
+
+      .use-cases-list {
+        padding-left: var(--spacing-large);
+      }
+
+      footer {
+        text-align: center;
+        padding: var(--spacing-small);
+        margin-top: var(--spacing-large);
+        color: var(--font-color-hint);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container px-5">
+        <a href="https://ducisgroup.com/"
+          ><img
+            style="width: 100px"
+            src="../assets/assets_dg-site/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp"
+            alt="Company Logo"
+            class="me-3"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown0"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >About</a
+              >
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown0"
+              >
+                <li>
+                  <a class="dropdown-item" href="./about.html#wu">Why Us</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./about.html#wwa"
+                    >Who We Are</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./about.html#wwo"
+                    >What We Offer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./about.html#oa"
+                    >Our Accreditations</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./about.html#st">Stats</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./about.html">Contact Us</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown1"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Offering</a
+              >
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown1"
+              >
+                <li>
+                  <a class="dropdown-item" href="./offering.html#t&c"
+                    >Training &amp; certifications</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./offering.html#cons"
+                    >Consultancy</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./offering.html#atva">ATVA</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown2"
+                href="./page-dg-site-empty-page.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Resources</a
+              >
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown2"
+              >
+                <li>
+                  <a class="dropdown-item" href="./resource.html#webinar"
+                    >Webinar</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./resource.html#mock"
+                    >Mock Test</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./resource.html#cf"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./resource.html#blog">Blog</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./resource.html#polc"
+                    >Policy</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <a
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#contactModal"
+            >Get in touch</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="dg-app-layout-container">
+      <div class="title-container">
+        <p>Starter Template</p>
+        <hr />
+      </div>
+
+      <div class="starter-template">
+        <h1>Welcome to YERMS - Your Entity Record Management System!</h1>
+        <p>
+          Effortlessly manage and organize all your entity records at one place.
+          Whether you're handling customer information, employee data, or
+          project details, YERMS is designed to streamline your workflow and
+          boost productivity. Embrace the simplicity and efficiency of YERMS and
+          take control of your data like never before!
+        </p>
+        <a href="#" class="button">Get Started</a>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <h3>Use cases</h3>
+          <p>
+            Discover how YERMS can streamline your workflows across various
+            applications. Here are some use cases to get you started:
+          </p>
+          <ul class="column use-cases-list">
+            <li>
+              <a href="#">Customer Relationship Management (CRM)</a>
+              <p>
+                Efficiently track customer information, sales pipelines, and
+                interaction history.
+              </p>
+            </li>
+            <li>
+              <a href="#">Human Resources (HR) Management</a>
+              <p>
+                Manage employee records, recruitment processes, and performance
+                reviews.
+              </p>
+            </li>
+            <li>
+              <a href="#">Inventory Management</a>
+              <p>
+                Keep track of inventory levels, orders, and supplier
+                information.
+              </p>
+            </li>
+            <li>
+              <a href="#">Project Management</a>
+              <p>
+                Assign and monitor tasks, deaadlines, and project milestones.
+              </p>
+            </li>
+            <li>
+              <a href="#">Compliance and Regulatory Management</a>
+              <p>
+                Maintain detailed records for compliance and regulatory
+                requirements.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <h3>Guides</h3>
+          <p>
+            Read more detailed instructions and documentation on using or
+            contributing to YERMS.
+          </p>
+          <a href="#">Product Doc</a>
+          <a href="#">User Doc</a>
+          <a href="#">Dev Doc</a>
+        </div>
+      </div>
+
+      <footer>A tool by team@Shunya.Ek © 2024</footer>
+    </div>
+  </body>
+</html>
