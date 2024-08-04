@@ -1,0 +1,93 @@
+/* 
+<a>
+<br>
+<span>
+<i>
+<kbd>
+<mark>
+<q>
+<s>
+<b>
+<strong>
+<u>
+<small>
+<samp>
+<em>
+<ul>
+<ol>
+<li>
+*/
+a {
+    font-family: var(--font-content);
+    font-size: var(--font-size-anchor);
+    color: var(--font-color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--link-color);
+}
+
+b, strong {
+    font-family: var(--font-content);
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-secondary);
+}
+
+mark {
+    font-family: var(--font-content);
+    background-color: var(--secondary-color);
+    color: var(--color-light);
+    padding: var(--spacing-smallest) var(--spacing-small);
+    border-radius: var(--border-radius-sm);
+}
+
+small {
+    display: block;
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--font-color-hint);
+}
+
+u {
+    font-family: var(--font-content);
+    text-decoration: var(--text-underline);
+    color: var(--font-color-secondary);
+}
+
+del {
+    font-family: var(--font-content);
+    text-decoration: line-through;
+    color: var(--error-color);
+}
+
+i, em {
+    font-family: var(--font-content);
+    font-style: var(--font-style-italic);
+    color: var(--font-color-secondary);
+}
+
+s {
+    font-family: var(--font-content);
+    text-decoration: line-through;
+    color: var(--font-color-hint);
+}
+
+
+ul, ol {
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+}
+
+li {
+    font-size: var(--font-size-para);
+    /* padding-top: var(--spacing-mid);
+    padding-bottom: var(--spacing-mid); */
+    padding: var(--spacing-smallest) var(--spacing-small);
+}
+
+li:hover,
+li:focus {
+  /* background-color: var(--hover-color); */
+}

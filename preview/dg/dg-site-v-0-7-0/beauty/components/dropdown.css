@@ -1,0 +1,123 @@
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-content);
+    cursor: pointer;
+    min-width: 200px;
+    /* width: max-content; */
+  }
+
+  .dropdown button {
+    width: 100%;
+  }
+  
+  .dropdown-title {
+    padding: var(--spacing-smallest) var(--spacing-small);
+    /* background-color: var(--surface-color); */
+    /* font-size: var(--font-size-para); */
+    font-size: var(--font-size-anchor);
+    /* color: var(--font-color-primary); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .dropdown-icon {
+    margin-left: var(--spacing-small);
+    font-size: var(--font-size-h6);
+    transition: transform var(--transition-fast);
+  }
+  
+  .dropdown-content {
+    display: none;
+    /* background-color: var(--background-color); */
+    z-index: 1;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-fast) ease-out;
+  }
+  
+  .dropdown.open .dropdown-content {
+    display: block;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .dropdown.open .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown.open .dropdown-title {
+    background-color: var(--secondary-color);
+  }
+  
+  .dropdown-child {
+    padding: var(--spacing-smallest);
+    border-bottom: calc(var(--border-width-thin) * 0.5) solid var(--border-color-muted);
+    /* color: var(--font-color-secondary); */
+    /* background-color: var(--surface-color); */
+  }
+  
+  .dropdown-child:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-child:hover {
+    background-color: var(--primary-color);
+    /* color: var(--secondary-color); */
+  }
+
+
+
+        /* Dropdown Component Styles */
+fieldset.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-primary);
+  border: none; /* Remove the border */
+  padding: 0; /* Remove padding to avoid extra space */
+  margin: 0; /* Remove margin if needed */
+}
+
+
+/* Dropdown menu styles */
+fieldset.dropdown ul {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  /* width: max-content; */
+  width: 100%;
+}
+
+fieldset.dropdown ul[aria-hidden="false"] {
+  display: block;
+}
+
+/* Rotate the dropdown icon */
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive adjustments */
+@media (max-width: var(--breakpoint-sm)) {
+  fieldset.dropdown {
+    width: 100%;
+  }
+
+  fieldset.dropdown ul {
+    width: 100%;
+    left: 0;
+  }
+}
+  
