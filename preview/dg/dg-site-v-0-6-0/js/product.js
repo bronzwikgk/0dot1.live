@@ -36,6 +36,7 @@ function renderProducts(page) {
           </div>
         </div>
       </div>`;
+      console.log(productCard);
         productContainer.innerHTML += productCard;
     });
 }
