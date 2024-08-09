@@ -32,7 +32,7 @@ function renderProducts(page) {
             <p class="card-text">${product.description}</p>
           </div>
           <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-            <a href="./shiv-pages/page-dg-site-offering-product.html" type="button" class="btn btn-light">Know More</button>
+            <a href="./shiv-pages/page-dg-site-offering-product.html" type="button" class="btn btn-light">Know More</button></a>
           </div>
         </div>
       </div>`;
