@@ -90,7 +90,9 @@ function renderProducts(page) {
         const productCard = `
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm h-100" style="display: flex; flex-direction: column; ">
-          <img class="p-3" style="width: 300px; height: 200px; object-fit: contain; margin: 0 auto; " src="${product.imgSrc}" alt="">
+            <div style="width: 100%; height: 200px; display: flex; justify-content: center; align-items: center;">
+                    <img class="p-3" style="max-width: 100%; max-height: 100%; object-fit: contain;" src="${product.imgSrc}" alt="">
+                </div>
           <div class="card-body" style="flex-grow: 1">
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">${product.description}</p>
@@ -102,6 +104,7 @@ function renderProducts(page) {
       </div>`;
         productContainer.innerHTML += productCard;
     });
+
 }
 
 function renderPagination() {
