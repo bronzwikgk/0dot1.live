@@ -1,0 +1,61 @@
+/* Section container */
+section {
+  font-family: var(--font-content);
+  font-size: var(--font-size-para);
+  padding: var(--spacing-mid);
+  margin: var(--spacing-smallest) 0;
+  border-radius: var(--border-radius-md);
+}
+
+/* Article container */
+article {
+  font-family: var(--font-content);
+  font-size: var(--font-size-para);
+  padding: var(--spacing-mid);
+  margin: var(--spacing-mid) 0;
+  border-radius: var(--border-radius-md);
+}
+
+/* Aside container */
+/* aside {
+    font-family: var(--font-content);
+    font-size: var(--font-size-para);
+    color: var(--font-color-secondary);
+    padding: var(--spacing-mid);
+    margin: var(--spacing-mid) 0;
+    background-color: var(--color-light-grey);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-xs);
+} */
+
+aside {
+  width: 350px;
+  background-color: var(--color-dark);
+  color: var(--font-color-light);
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+aside i {
+  color: var(--color-light-grey);
+}
+
+/* Header container */
+header {
+  font-family: var(--font-primary);
+  color: var(--color-light);
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-mid);
+  display: flex;
+  gap: var(--spacing-smallest);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-smallest);
+  background-color: var(--color-light);
+}

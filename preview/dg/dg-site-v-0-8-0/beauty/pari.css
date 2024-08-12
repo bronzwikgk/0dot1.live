@@ -1,0 +1,50 @@
+@import url(./theme/light-theme-pari-v.1.0.0.css);
+@import url(./elements/elements.css);
+@import url(./components/pari-component.css);
+@import url(./utilities/utilities.css);
+
+
+.hero {
+    margin: 0;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    height: 80vh;
+}
+
+.rating {
+    font-size: var(--font-size-para);
+    color: var(--secondary-color);
+}
+
+
+.hero-video-container {
+    width: 50%;
+    /* flex: 1; */
+    position: relative;
+    /* height: 60vh; */
+    /* padding: 50px; */
+    object-fit: cover;
+    overflow: hidden;
+}
+
+ img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-video-container .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--border-radius-full);
+}
+
+.hero-video-container .play-button button {
+    font-size: var(--font-size-h1);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+

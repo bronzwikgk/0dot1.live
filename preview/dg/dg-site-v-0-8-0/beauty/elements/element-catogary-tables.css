@@ -1,0 +1,132 @@
+/* 
+<table>
+<thead>
+<tbody>
+<tfoot>
+<tr>
+<td>
+<th>
+<colgroup>
+<legend>
+<track>
+<param>
+<source> */
+
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-large) 0;
+    font-family: var(--font-content);
+    font-size: var(--font-size-para);
+    background-color: var(--color-light);
+    box-shadow: var(--box-shadow-sm);
+}
+
+th, td {
+    padding: var(--spacing-small);
+    text-align: left;
+    /* border: var(--border-width-thin) solid var(--border-color-muted); */
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--font-color-light);
+    font-weight: var(--font-weight-bold);
+}
+
+tr:nth-child(even) {
+    /* background-color: var(--color-light-grey); */
+}
+
+tbody tr {
+    border-bottom: 0.3px solid var(--border-color-muted);
+}
+
+tr:hover {
+    background-color: var(--hover-color);
+}
+
+/* Center first column */
+th:first-child,
+td:first-child {
+    text-align: center;
+}
+
+/* Table Header */
+thead {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h6);
+    background-color: var(--primary-variant);
+    color: var(--font-color-light);
+}
+
+table[aria-label="Product Catalog"] {
+    margin: 0 auto;
+}
+
+table[aria-label="Product Catalog"] thead th:first-child {
+    text-align: center;
+}
+
+table[aria-label="Product Catalog"] thead th {
+    background-color: var(--primary-color);
+    padding: var(--spacing-small);
+    text-align: left;
+    color: var(--font-color-light);
+}
+
+table[aria-label="Product Catalog"] tbody tr {
+    border-bottom: 1px solid var(--border-color-muted);
+}
+
+table[aria-label="Product Catalog"] tbody td {
+    padding: var(--spacing-small);
+}
+
+table[aria-label="Product Catalog"] tbody td figure {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+table[aria-label="Product Catalog"] tbody td figure img {
+    width: 40px;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+table[aria-label="Product Catalog"] tbody td figure figcaption {
+    margin: 0;
+}
+
+table[aria-label="Product Catalog"] tbody td button {
+    background-color: var(--primary-color);
+    color: var(--font-color-light);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table[aria-label="Product Catalog"] tbody td button:hover {
+    /* background-color: var(--hover-color); */
+}
+
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    border-radius: 50%;
+    border: 1px solid var(--border-color-muted);
+}
+
+/* Checkbox Hover Effect */
+input[type="checkbox"]:hover {
+    border-color: var(--hover-color);
+}
