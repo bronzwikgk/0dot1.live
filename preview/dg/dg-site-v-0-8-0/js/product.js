@@ -76,8 +76,10 @@ const products = [
 ];
 
 
-const cardsPerPage = 6;
+const cardsPerPage = 10;
 let currentPage = 1;
+// let totalItems = 63; // Example total number of items
+
 
 function renderProducts(page) {
     const startIndex = (page - 1) * cardsPerPage;
@@ -97,9 +99,11 @@ function renderProducts(page) {
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">${product.description}</p>
           </div>
-          <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-            <a href="./page-dg-app-course-detail-page-dev-shiv.html" type="button" class="btn btn-light">Know More</button></a>
-          </div>
+         <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
+    <a href="./page-dg-app-course-detail-page-dev-shiv.html" class="btn btn-light">Know More</a>
+    <a href="#" class="btn btn-light">Add to cart</a>
+</div>
+
         </div>
       </div>`;
         productContainer.innerHTML += productCard;
