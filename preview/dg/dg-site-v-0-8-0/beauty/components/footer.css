@@ -1,0 +1,196 @@
+
+footer {
+    background-color: var(--surface-color);
+    padding: var(--spacing-large) 0;
+    color: var(--font-color-primary);
+    text-align: center;
+  }
+
+  .footer-newsletter {
+    /* background-color: var(--background-color); */
+    padding: var(--spacing-large);
+  }
+
+  .footer-heading {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .footer-form {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    padding: var(--spacing-mid);
+  }
+
+  .footer-input {
+    padding: var(--spacing-small);
+    border: 1px solid var(--border-color-muted);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--input-box-shadow);
+    width: 100%;
+    max-width: 400px;
+    /* margin-bottom: var(--spacing-small); */
+  }
+
+  .footer-button {
+    /* padding: var(--spacing-small); */
+    background-color: var(--secondary-color);
+    color: var(--color-light);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+    width: 100%;
+    max-width: 200px;
+    transition: background-color var(--transition-fast);
+  }
+
+  .footer-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+  .footer-divider {
+    margin: var(--spacing-medium) auto;
+    border: 0;
+    height: 1px;
+    background-color: var(--color-light-grey);
+    max-width: 100%;
+  }
+
+  .footer-links {
+    padding: var(--spacing-large) 0;
+  }
+
+  .footer-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-largest);
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .footer-link-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* flex: 1; */
+    max-width: 300px;
+  }
+
+  .footer-link-heading {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-small);
+    text-align: left;
+  }
+
+  .footer-link-divider {
+    text-align: left;
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 0.5px;
+    margin: var(--spacing-small) auto;
+  }
+
+  .footer-link-text,
+  .footer-link-item {
+    margin-bottom: var(--spacing-small);
+    text-align: justify;
+  }
+
+  .footer-link {
+    color: var(--font-color-primary);
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-medium);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+  }
+
+  .footer-logo-img {
+    width: 100px;
+  }
+
+  .footer-separator {
+    margin: 0 var(--spacing-small);
+    font-size: var(--font-size-h5);
+  }
+
+  .footer-slogan {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-mid);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: var(--spacing-small);
+  }
+
+  .footer-social-link {
+    color: var(--font-color-primary);
+    text-decoration: none;
+  }
+
+  .footer-social-link i {
+    font-size: 2rem;
+  }
+
+  .footer-copyright {
+    padding: var(--spacing-medium);
+    background-color: var(--background-color);
+    color: var(--font-color-primary);
+  }
+
+  .footer-copyright-link {
+    color: var(--font-color-primary);
+    text-decoration: none;
+  }
+
+  .footer-copyright-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer-disclaimer {
+    padding: var(--spacing-large);
+  }
+
+  .footer-disclaimer-text {
+    font-size: var(--font-size-small);
+  }
+
+
+
+  @media (max-width: 768px) {
+    .footer-logo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: var(--spacing-medium);
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
