@@ -8,7 +8,7 @@
     margin: 0;
     background-color: var(--primary-color);
     overflow: hidden;
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .rating {
