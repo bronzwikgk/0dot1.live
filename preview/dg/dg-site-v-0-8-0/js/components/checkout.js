@@ -95,7 +95,7 @@ async function fetchAndRenderOrderSummary() {
         const html = template({
             items: cartItems.map(item => ({
                 image: item.image || 'https://via.placeholder.com/100', // Default image if not provided
-                product: item.product,
+                title: item.title,
                 quantity: item.CartItem.quantity,
                 price: item.price
             })),
