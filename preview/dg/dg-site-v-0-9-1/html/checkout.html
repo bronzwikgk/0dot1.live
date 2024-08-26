@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMS Checkout Flow</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .timeline-step {
+      text-align: center;
+      position: relative;
+      flex: 1;
+    }
+
+    .timeline-step::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #ddd;
+      z-index: 0;
+    }
+
+    .timeline-step .step-number {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      z-index: 1;
+      position: relative;
+      height: 40px;
+      width: 40px;
+    }
+
+    .timeline-step.active .step-number,
+    .timeline-step.completed .step-number {
+      background-color: #007bff;
+      color: white;
+      height: 40px;
+      width: 40px;
+    }
+
+    .timeline-step.active .step-title,
+    .timeline-step.completed .step-title {
+      font-weight: bold;
+    }
+
+    .timeline-step:first-child::before {
+      left: 50%;
+    }
+
+    .timeline-step:last-child::before {
+      right: 50%;
+    }
+
+    .payment-summary {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .order-summary-header,
+    .order-summary-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr 1fr;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .order-summary-header span {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .order-summary-item span {
+      text-align: center;
+    }
+
+    .product-image {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <!-- Timeline Component -->
+    <div class="timeline">
+      <div id="step1" class="timeline-step">
+        <div class="step-number">1</div>
+        <div class="step-title">Sign In</div>
+      </div>
+      <div id="step2" class="timeline-step">
+        <div class="step-number">2</div>
+        <div class="step-title">Payment</div>
+      </div>
+      <div id="step3" class="timeline-step">
+        <div class="step-number">3</div>
+        <div class="step-title">Review</div>
+      </div>
+      <div id="step4" class="timeline-step">
+        <div class="step-number">4</div>
+        <div class="step-title">Complete</div>
+      </div>
+    </div>
+
+    <!-- Checkout Flow Sections -->
+    <div id="sign-in" class="checkout-section">
+      <h2>Sign In</h2>
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="handleSignIn()">
+          Sign In
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="handleGuestCheckout()">
+          Continue as Guest
+        </button>
+      </form>
+    </div>
+
+    <div class="payment-section checkout-section d-none" id="payment">
+      <h2 class="mb-4">Payment Information</h2>
+      <form>
+        <!-- Payment Details -->
+        <div class="mb-3">
+          <label for="cardNumber" class="form-label">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9123 4567" required />
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="expiryDate" class="form-label">Expiry Date</label>
+            <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required />
+          </div>
+          <div class="col-md-6">
+            <label for="cvc" class="form-label">CVC</label>
+            <input type="text" class="form-control" id="cvc" placeholder="123" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="cardHolderName" class="form-label">Card Holder Name</label>
+          <input type="text" class="form-control" id="cardHolderName" placeholder="John Doe" required />
+        </div>
+
+        <!-- Billing Address -->
+        <h4 class="mt-4">Billing Address</h4>
+        <div class="mb-3">
+          <label for="billingAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="billingAddress" placeholder="1234 Main St" required />
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="billingCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="billingCity" required />
+          </div>
+          <div class="col-md-6">
+            <label for="billingZip" class="form-label">ZIP Code</label>
+            <input type="text" class="form-control" id="billingZip" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="billingCountry" class="form-label">Country</label>
+          <select id="billingCountry" class="form-select" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <!-- Add more countries as needed -->
+          </select>
+        </div>
+
+        <!-- Payment Method -->
+        <h4 class="mt-4">Payment Method</h4>
+        <div class="mb-3">
+          <label class="form-label">Select Payment Method</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked />
+            <label class="form-check-label" for="creditCard">
+              Credit/Debit Card
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" />
+            <label class="form-check-label" for="paypal"> PayPal </label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+      </form>
+
+      <!-- Payment Summary -->
+      <!-- Payment Summary -->
+      <div id="order-summary-container"></div>
+      <button type="submit" class="btn btn-primary" onclick="goToSection('review', 3)">
+        Complete Payment
+      </button>
+      <br />
+      <br />
+    </div>
+
+    <div id="review" class="checkout-section d-none">
+      <h2>Review Order</h2>
+      <div id="order-summary-container2"></div>
+      <button type="button" class="btn btn-secondary" onclick="goToSection('payment', 2)">
+        Previous
+      </button>
+      <button type="button" id="placeOrderButton" class="btn btn-primary" onclick="goToSection('complete', 4)">
+        Place Order
+      </button>
+    </div>
+
+    <div id="complete" class="checkout-section d-none">
+      <h2>Order Complete!</h2>
+      <p>
+        Thank you for your purchase. You are now enrolled in the Full-Stack
+        Development Bootcamp.
+      </p>
+      <a href="dashboard.html" class="btn btn-success">Go to My Courses</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function checkSignIn() {
+      const token = localStorage.getItem("token");
+      if (token) {
+        // Skip sign-in step and go to payment
+        goToSection("payment", 2);
+      } else {
+        // Show sign-in step
+        goToSection("sign-in", 1);
+      }
+    }
+
+    function goToSection(sectionId, step) {
+      // Check if signed in to prevent going back to sign-in
+      const token = localStorage.getItem("token");
+      if (sectionId === "sign-in" && token) {
+        return; // Do nothing if signed in
+      }
+
+      // Hide all sections
+      document.querySelectorAll(".checkout-section").forEach((section) => {
+        section.classList.add("d-none");
+      });
+
+      // Show the selected section
+      document.getElementById(sectionId).classList.remove("d-none");
+
+      // Update the timeline
+      updateTimeline(step);
+    }
+
+    function updateTimeline(step) {
+      const timelineSteps = document.querySelectorAll(".timeline-step");
+
+      timelineSteps.forEach((timelineStep, index) => {
+        if (index + 1 < step) {
+          timelineStep.classList.add("completed");
+          timelineStep.classList.remove("active");
+        } else if (index + 1 === step) {
+          timelineStep.classList.add("active");
+          timelineStep.classList.remove("completed");
+        } else {
+          timelineStep.classList.remove("completed");
+          timelineStep.classList.remove("active");
+        }
+      });
+    }
+
+    function handleSignIn() {
+      // Assuming sign-in is successful
+      localStorage.setItem("authToken", "dummyToken"); // Set token
+      goToSection("payment", 2); // Navigate to payment
+    }
+
+    function handleGuestCheckout() {
+      goToSection("payment", 2); // Navigate to payment as guest
+    }
+
+    // Check sign-in status when the page loads
+    document.addEventListener("DOMContentLoaded", checkSignIn);
+  </script>
+  <script id="order-summary-template" type="text/x-handlebars-template">
+      <div class="payment-summary mt-4">
+        <h4>Order Summary</h4>
+
+        <div class="order-summary-header">
+          <span>Image</span>
+          <span>Product</span>
+          <span>Quantity</span>
+          <span>Price Total</span>
+        </div>
+
+        {{#each items}}
+          <div class="order-summary-item">
+            <span><img
+                src="{{this.image}}"
+                alt="{{this.product}}"
+                class="product-image"
+              /></span>
+            <span>{{this.title}}</span>
+            <span>{{this.quantity}}</span>
+            <span>${{calculateTotal this.price this.quantity}}</span>
+          </div>
+        {{/each}}
+
+        <hr />
+
+        <div class="order-summary-item">
+          <span></span>
+          <!-- Empty span for alignment -->
+          <span></span>
+          <span>Tax:</span>
+          <span>{{tax}}</span>
+        </div>
+
+        <div class="order-summary-item total">
+          <span></span>
+          <!-- Empty span for alignment -->
+          <span></span>
+          <span>Total Amount:</span>
+          <span>${{totalAmount}}</span>
+        </div>
+      </div>
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+    integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../js/components/checkout.js"></script>
+</body>
+
+</html>

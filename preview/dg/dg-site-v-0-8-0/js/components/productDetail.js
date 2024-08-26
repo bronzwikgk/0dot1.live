@@ -27,13 +27,13 @@ let source = `
       <span>{{{rating}}}</span>
     </span>
 
-    <h5 id="product-title" class="p-mid" style="
+    <h2 id="product-title" class="p-mid" style="
           color: var(--color-light-grey);
           line-height: 1.4;
           padding-bottom: 0;
         ">
       {{{title}}}
-    </h5>
+    </h2>
 
     <span style="
           padding-left: var(--spacing-mid);
@@ -42,13 +42,7 @@ let source = `
           padding-top: var(--spacing-small);
         ">{{{price}}}</span>
 
-    <p style="
-          color: var(--color-light-grey);
-          padding-left: var(--spacing-mid);
-          padding-top: var(--spacing-small);
-        ">
-      {{{description}}}
-    </p>
+   
 
     <span class="flex p-mid gap-large" style="color: var(--color-light-grey)">
       <span class="flex gap-small align-center">
@@ -64,18 +58,7 @@ let source = `
         </span>
       </span>
 
-      <span class="flex gap-small align-center">
-        <i class="fa-solid fa-user-group" style="
-              color: var(--color-light-grey);
-              font-size: var(--font-size-h6);
-            "></i>
-        <span class="flex flex-column">
-          <p style="color: var(--color-light-grey); font-weight: bold">
-            Students Enrolled
-          </p>
-          <span>{{{studentsEnrolled}}}</span>
-        </span>
-      </span>
+    
     </span>
 
     <button type="form" style="

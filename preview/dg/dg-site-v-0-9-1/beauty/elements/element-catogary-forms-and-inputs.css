@@ -1,0 +1,45 @@
+/* <form>
+<input>
+<select>
+<textarea>
+<fieldset>
+<datalist>
+<output>
+<progress>
+<keygen>
+<button> */
+
+
+
+button, .button {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-light);
+    background-color: var(--primary-color);
+    border: var(--border-width-thin) solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: calc(var(--spacing-mid) * 0.7) var(--spacing-mid);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+
+input, .input {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-dark-grey);
+    background-color: var(--color-light);
+    border: var(--border-width-thin) solid var(--border-color-muted);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-small);
+    box-shadow: var(--input-box-shadow);
+}
+
+
+button[disabled] {
+    /* background-color: var(--button-disabled-bg); */
+    /* color: var(--color-dark-grey); */
+    opacity: 0.6;
+    cursor: not-allowed;
+  }

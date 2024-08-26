@@ -11,6 +11,7 @@ async function fetchProducts(page = 1) {
     const data = await response.json();
     products = data.products;
     totalPages = Math.ceil(data.totalCount / pageSize);
+    console.log(products);
     renderProducts();
     renderPagination();
 }
@@ -47,7 +48,7 @@ function renderProducts() {
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm h-100" style="display: flex; flex-direction: column;">
                     <div style="width: 100%; height: 200px; display: flex; justify-content: center; align-items: center;">
-                        <img class="p-3" style="max-width: 100%; max-height: 100%; object-fit: contain;" src="${product.imgSrc}" alt="">
+                        <img class="p-3" style="max-width: 100%; max-height: 100%; object-fit: contain;" src="${product.image}" alt="">
                     </div>
                     <div class="card-body" style="flex-grow: 1">
                         <h5 class="card-title">${product.title}</h5>

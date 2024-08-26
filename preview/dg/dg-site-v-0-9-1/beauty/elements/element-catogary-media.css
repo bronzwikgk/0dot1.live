@@ -1,0 +1,91 @@
+/* 
+<video>
+<audio>
+<source>
+<canvas>
+<figcaption>
+<figure>
+<legend>
+<area>
+<map>
+<svg> */
+
+
+/* Figure container */
+figure {
+    /* font-family: var(--font-content); */
+    font-size: var(--font-size-para);
+    color: var(--font-color-primary);
+    background-color: var(--color-light-grey);
+    /* padding: var(--spacing-mid); */
+    margin: var(--spacing-mid) 0;
+    border-radius: var(--border-radius-md);
+    /* box-shadow: var(--box-shadow-xs); */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+}
+
+figure img{
+    border-radius: var(--border-radius-md);
+    width: 100%;
+    /* height: auto; */
+    object-fit: cover;
+    /* border-bottom: var(--border-width-thin) solid var(--border-color-muted); */
+}
+
+/* Figcaption container */
+figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-secondary);
+    font-size: calc(var(--font-size-para) * 0.8);
+    color: var(--font-color-hint);
+    text-align: center;
+    margin-top: var(--spacing-small);
+    background-color: var(--surface-color);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+    background-color: var(--color-light);
+    box-shadow: var(--box-shadow-md);
+    border-radius: var(--border-radius-md);
+}
+
+legend {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-small);
+    color: var(--font-color-secondary);
+}
+
+label {
+    display: block;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-smallest);
+    color: var(--font-color-secondary);
+}
+
+input, textarea {
+    width: 100%;
+    padding: var(--spacing-small);
+    border: 1px solid var(--border-color-muted);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-xs);
+    font-size: var(--font-size-para);
+}
+
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: var(--input-box-shadow);
+}
+
+textarea {
+    resize: vertical;
+}
