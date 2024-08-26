@@ -1,12 +1,12 @@
 /* Card Styles */
 .card {
     padding: var(--spacing-mid);
-    border: var(--border-width-thin) solid var(--border-color-muted); /* Light border */
+    /* border: var(--border-width-thin) solid var(--border-color-muted); */
     /* border-radius: var(--border-radius-md);  */
     overflow: hidden;
     background-color: var(--color-light); /* White background */
     width: 100%;
-    max-width: 300px; 
+    max-width: 500px; 
   }
 
   /* Card Header Styles */
@@ -64,7 +64,10 @@
   .card-horizontal {
     display: flex;
     flex-direction: row;
-    max-width: 800px; /* Max width for horizontal cards */
+    max-width: 100%; 
+    margin: 0;
+    /* padding-left: 0; */
+    /* padding-right: 0; */
   }
 
   .card-horizontal figure {

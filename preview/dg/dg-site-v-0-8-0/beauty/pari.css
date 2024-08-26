@@ -4,11 +4,16 @@
 @import url(./utilities/utilities.css);
 
 
+
 .hero {
     margin: 0;
     background-color: var(--primary-color);
     overflow: hidden;
-    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 80vh;
+    padding: var(--spacing-small);
 }
 
 .rating {
@@ -17,19 +22,24 @@
 }
 
 
+.hero-video-container,
+.hero article {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-mid);
+}
+
 .hero-video-container {
-    width: 50%;
-    /* flex: 1; */
     position: relative;
-    /* height: 60vh; */
-    /* padding: 50px; */
-    object-fit: cover;
     overflow: hidden;
 }
 
- img {
+.hero-video-container img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 .hero-video-container .play-button {
@@ -48,3 +58,75 @@
     color: var(--primary-color);
 }
 
+/* Responsive Styles for Breakpoints */
+@media (max-width: 1400px) {
+    .hero {
+        height: auto;
+        padding: var(--spacing-mid);
+    }
+
+    .hero-video-container,
+    .hero article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        height: auto;
+        padding: var(--spacing-mid);
+    }
+
+    .hero-video-container,
+    .hero article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        height: auto;
+        padding: var(--spacing-mid);
+    }
+
+    .hero-video-container,
+    .hero article {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: var(--spacing-small);
+    }
+
+    .hero-video-container,
+    .hero article {
+        width: 90%;
+        padding: var(--spacing-small);
+    }
+
+    .hero-video-container img {
+        height: auto;
+
+    }
+
+    .hero-video-container .play-button button {
+        font-size: var(--font-size-h2);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: var(--spacing-xsmall);
+        height: auto;
+    }
+
+    .hero-video-container,
+    .hero article {
+        padding: var(--spacing-xsmall);
+        width: 90%;
+    }
+}

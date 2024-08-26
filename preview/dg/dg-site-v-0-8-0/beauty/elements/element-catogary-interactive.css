@@ -9,3 +9,60 @@
 <summary>
 <option>
 <track> */
+
+
+
+details {
+    margin-bottom: 1rem;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-sm);
+    overflow: hidden;
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-normal);
+}
+
+summary {
+    padding: 1rem;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--font-color-light);
+    transition: background-color var(--transition-fast);
+    list-style: none;
+    user-select: none;
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+summary:hover {
+    /* background-color: var(--primary-variant); */
+}
+
+details[open] summary {
+    /* background-color: var(--primary-variant); */
+    border-bottom: 1px solid var(--border-color-muted);
+}
+
+details > :not(summary) {
+    padding: 1rem;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color-muted);
+}
+
+/* Icon for Plus and Minus */
+summary::before {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-right: 1rem;
+    color: var(--font-color-light);
+    transition: transform var(--transition-fast);
+}
+
+details[open] summary::before {
+    content: '-';
+    transform: rotate(180deg);
+}
