@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-small) var(--spacing-mid);
+  padding: var(--spacing-small) var(--spacing-largest);
   box-shadow: var(--box-shadow-md);
   position: relative;
 }
@@ -99,7 +99,7 @@
   background-color: var(--hover-color);
 }
 
-.btn-primary {
+/* .btn-primary {
   background-color: var(--primary-color);
   color: var(--font-color-light);
   padding: var(--spacing-small) var(--spacing-mid);
@@ -114,7 +114,7 @@
 .btn-primary:focus {
   background-color: var(--hover-color);
   color: var(--font-color-dark);
-}
+} */
 
 /* Sidebar Styles */
 .sidebar {
@@ -181,6 +181,11 @@
 
 /* Responsive Styles */
 @media (max-width: 786px) {
+
+  .navbar {
+    padding: var(--spacing-small) var(--spacing-mid);
+  }
+
   .navbar-toggler {
       display: block; /* Show the toggler button on small screens */
   }

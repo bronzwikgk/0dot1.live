@@ -28,7 +28,7 @@ article {
     box-shadow: var(--box-shadow-xs);
 } */
 
-aside {
+/* aside {
   width: 350px;
   background-color: var(--color-dark);
   color: var(--font-color-light);
@@ -39,11 +39,11 @@ aside {
 
 aside::-webkit-scrollbar {
   display: none;
-}
+} */
 
-aside i {
+/* aside i {
   color: var(--color-light-grey);
-}
+} */
 
 /* Header container */
 header {
@@ -58,4 +58,63 @@ header {
   justify-content: space-between;
   padding: var(--spacing-smallest);
   background-color: var(--color-light);
+}
+
+
+aside {
+  width: 350px;
+  background-color: var(--color-dark);
+  color: var(--font-color-light);
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+  transition: width 0.3s ease-in-out;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+aside i {
+  color: var(--color-light-grey);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  aside {
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* Optionally hide sidebar on mobile view and add toggle button */
+@media (max-width: 576px) {
+  aside {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: var(--color-dark);
+    color: var(--font-color-light);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  aside.open {
+    display: block;
+    width: 250px;
+  }
 }
