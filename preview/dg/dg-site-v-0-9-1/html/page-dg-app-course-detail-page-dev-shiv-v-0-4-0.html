@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail Page @DUCISGROUP</title>
+    <link rel="stylesheet" href="../beauty/pari.css" />
+    <script src="https://kit.fontawesome.com/a6ceddd31d.js" crossorigin="anonymous"></script>
+
+    <style>
+
+.dropdown-container {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-button:hover {
+    background-color: #e0e0e0;
+}
+
+.dropdown-menu-product-type-selection {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.dropdown-menu-product-type-selection-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu-product-type-selection-item:hover {
+    background-color: #f0f0f0;
+}
+
+#dropdown-arrow {
+    transition: transform 0.3s;
+}
+
+.dropdown-open #dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+        menu {
+            gap: var(--spacing-mid);
+        }
+
+        .tab-button.active.active {
+            border-bottom: 5px solid #f5991e;
+            background-color: transparent;
+            color: var(--font-color-primary);
+        }
+
+        .tab-button {
+            flex: none;
+            padding: var(--spacing-mid);
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--font-color-primary);
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: var(--font-size-small);
+        }
+
+        .tabs {
+            border-bottom: 0;
+        }
+
+        
+
+        /* Flex Container Base Styles */
+        .flex-container {
+            display: flex;
+            gap: 1rem;
+            /* Space between items */
+        }
+
+        /* Default Flex Container */
+        .flex-container.default {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-container.default .flex-item {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Responsive Flex Container */
+        .flex-container.responsive {
+            flex-direction: row;
+        }
+
+        @media (max-width: 768px) {
+            .flex-container.responsive {
+                flex-direction: column;
+            }
+        }
+
+        /* Centered Flex Container */
+        .flex-container.centered {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+        }
+
+        .flex-container.centered .flex-item {
+            background-color: #e0e0e0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        /* Navigation Menu */
+        .flex-container.navigation-menu {
+            flex-direction: column;
+            align-items: start;
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .flex-container.navigation-menu .nav-item {
+            color: #fff;
+            padding: 0.5rem;
+            text-decoration: none;
+        }
+
+        .flex-container.navigation-menu .nav-item:hover {
+            background-color: #555;
+        }
+
+        .hero {
+            height: 500px;
+        }
+
+        @media (max-width: 1200px) {
+            .hero {
+                height: auto;
+                padding: var(--spacing-mid);
+            }
+        }
+
+        @media (max-width: 768px) {
+    .row {
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+
+.tab-container {
+    width: auto;
+    margin: 0;
+    padding: var(--spacing-small);
+    padding-left: var(--spacing-large);
+}
+
+@media (max-width: 768px) {
+    .tab-container {
+    margin: 0;
+    padding: var(--spacing-small);
+}
+        }
+
+
+
+        .responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.responsive-table th {
+  background-color: #f8f8f8;
+  font-size: 16px; /* Default font size */
+}
+
+.responsive-table td p {
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-buttons button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .responsive-table table,
+  .responsive-table thead,
+  .responsive-table tbody,
+  .responsive-table th,
+  .responsive-table td,
+  .responsive-table tr {
+    display: block;
+  }
+
+  .responsive-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .responsive-table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none; /* Remove borders for a cleaner look */
+  }
+
+  .responsive-table td:before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--color-dark); /* Ensure labels are visible */
+  }
+
+  .responsive-table th {
+    font-size: 14px; /* Adjust font size for mobile */
+    text-align: left;
+  }
+
+  .responsive-table td[data-label="Action"] .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Align buttons horizontally */
+  }
+
+  .action-buttons button {
+    flex: 1; /* Make buttons take equal space */
+    margin: 0 5px; /* Add some margin between buttons */
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="https://ducisgroup.com/" class="flex align-center">
+          <img
+            src="../assets/assets_dg-site/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp"
+            alt="Company Logo"
+            class="navbar-logo"
+          />
+        </a>
+  
+        <button
+          class="navbar-toggler"
+          id="navbar-toggler"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+  
+        <div
+          class="navbar-collapse"
+          id="navbarSupportedContent"
+          style="width: 100%"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >About <i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Who We Are</a></li>
+                <li><a class="dropdown-item" href="#">What We Offer</a></li>
+                <li><a class="dropdown-item" href="#">Our Accreditations</a></li>
+                <li><a class="dropdown-item" href="#">Stats</a></li>
+                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >Offering <i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Training &amp; Certifications</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Consultancy</a></li>
+                <li><a class="dropdown-item" href="#">ATVA</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="./page-dg-site-empty-page.html"
+                role="button"
+                aria-expanded="false"
+                >Resources <i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Webinar</a></li>
+                <li><a class="dropdown-item" href="#">Mock Test</a></li>
+                <li><a class="dropdown-item" href="#">Case Studies</a></li>
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Policy</a></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+              </ul>
+            </li>
+          </ul>
+  
+          <span class="flex gap-mid">
+            <a
+            class="btn btn-primary"
+            href="#contactModal"
+            style="text-wrap: nowrap; padding: calc(var(--spacing-small)*1.2); font-size: var(--font-size-para); background-color: var(--primary-color); color: var(--color-light); border-radius: var(--border-radius-lg);"
+            >Get in touch</a
+          >
+  
+          <a
+            class="btn btn-primary"
+            href="#contactModal"
+            style="text-wrap: nowrap; padding: calc(var(--spacing-small)*1.2); font-size: var(--font-size-para); background-color: var(--primary-color); color: var(--color-light); border-radius: var(--border-radius-lg);"
+            >Login</a
+          >
+  
+          <a
+            class="btn btn-primary"
+            href="#contactModal"
+            style="text-wrap: nowrap; padding: calc(var(--spacing-small)*1.2); font-size: var(--font-size-para); background-color: transparent; color: var(--color-light);"
+            ><i class="fa-solid fa-cart-shopping"></i></a
+          >
+  
+          </span>
+          
+        </div>
+      </div>
+  
+      <div class="sidebar flex flex-column justify-between" id="sidebar">
+        <span>
+          <button class="close-btn" id="close-btn">&times;</button>
+          <ul class="sidebar-nav">
+            <li class="sidebar-item dropdown">
+              <a
+                class="sidebar-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                About <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul class="sidebar-dropdown-menu">
+                <li><a class="sidebar-dropdown-item" href="#">Who We Are</a></li>
+                <li>
+                  <a class="sidebar-dropdown-item" href="#">What We Offer</a>
+                </li>
+                <li>
+                  <a class="sidebar-dropdown-item" href="#">Our Accreditations</a>
+                </li>
+                <li><a class="sidebar-dropdown-item" href="#">Stats</a></li>
+                <li><a class="sidebar-dropdown-item" href="#">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item dropdown">
+              <a
+                class="sidebar-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                Offering <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul class="sidebar-dropdown-menu">
+                <li>
+                  <a class="sidebar-dropdown-item" href="#"
+                    >Training &amp; Certifications</a
+                  >
+                </li>
+                <li><a class="sidebar-dropdown-item" href="#">Consultancy</a></li>
+                <li><a class="sidebar-dropdown-item" href="#">ATVA</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item dropdown">
+              <a
+                class="sidebar-link dropdown-toggle"
+                href="./page-dg-site-empty-page.html"
+                role="button"
+                aria-expanded="false"
+              >
+                Resources <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul class="sidebar-dropdown-menu">
+                <li><a class="sidebar-dropdown-item" href="#">Webinar</a></li>
+                <li><a class="sidebar-dropdown-item" href="#">Mock Test</a></li>
+                <li>
+                  <a class="sidebar-dropdown-item" href="#">Case Studies</a>
+                </li>
+                <li><a class="sidebar-dropdown-item" href="#">Blog</a></li>
+                <li><a class="sidebar-dropdown-item" href="#">Policy</a></li>
+                <li><a class="sidebar-dropdown-item" href="#">FAQ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </span>
+  
+        <div
+          class="flex flex-column"
+          style="padding: var(--spacing-mid); gap: var(--spacing-small)"
+        >
+          <a
+            class="btn btn-primary"
+            href="#contactModal"
+            style="
+              background-color: transparent;
+              color: var(--secondary-color);
+              border: 1px solid var(--secondary-color);
+            "
+            >Login</a
+          >
+          <a class="btn btn-primary" href="#contactModal">Get in touch</a>
+        </div>
+      </div>
+
+    <section class="hero">
+        <article class="flex justify-center flex-column" style="overflow: visible">
+            <!-- <span class="rating" style="padding-left: var(--spacing-mid)">
+          <span>&#9733; &#9733; &#9733; &#9733; &#9734; 4.0 (2 ratings)</span>
+        </span> -->
+
+            <h5 class="p-mid" style="
+            color: var(--color-light-grey);
+            line-height: 1.4;
+            padding-bottom: var(--spacing-mid);
+            padding-left: var(--spacing-mid);
+          ">
+                ITIL® Foundation: ITIL 4 Edition
+            </h5>
+
+            <!-- <span
+          style="
+            padding-left: var(--spacing-mid);
+            color: var(--color-light-grey);
+            font-size: var(--font-size-subheading);
+            padding-top: var(--spacing-small);
+          "
+          >₹ 7,950.00</span
+        > -->
+
+        <p
+        style="
+          color: var(--color-light-grey);
+          padding-left: var(--spacing-mid);
+          padding-top: var(--spacing-small);
+          line-height: 1.6;
+        "
+      >
+        The ITIL® Foundation: ITIL 4 Edition is a comprehensive introduction
+        to ITIL (Information Technology Infrastructure Library), a globally
+        recognized framework for IT service management.
+      </p>
+
+            <span
+          class="flex p-mid gap-large"
+          style="
+            color: var(--color-light-grey);
+            padding-left: var(--spacing-mid);
+          "
+        >
+          <span class="flex flex-column align-start">
+            <span class="flex justify-center align-center gap-small">
+                <i
+              class="fa-solid fa-folder-open"
+              style="
+                color: var(--color-light-grey);
+                font-size: var(--font-size-h6);
+              "
+            ></i>
+            <p style="color: var(--color-light-grey); font-weight: bold">
+                Category
+              </p>
+            </span>
+
+            <span class="flex justify-center align-center gap-small">
+                <i
+              class="fa-solid fa-folder-open"
+              style="
+                color: var(--primary-color);
+                font-size: var(--font-size-h6);
+                
+              "
+            ></i>
+            <p style="color: var(--color-light-grey); font-weight: medium">
+                IT Service Management – ITIL
+              </p>
+            </span>
+              
+          </span>
+
+          <!-- <span class="flex gap-small align-center">
+            <i
+              class="fa-solid fa-user-group"
+              style="
+                color: var(--color-light-grey);
+                font-size: var(--font-size-h6);
+              "
+            ></i>
+            <span class="flex flex-column">
+              <p style="color: var(--color-light-grey); font-weight: bold">
+                Students Enrolled
+              </p>
+              <span>541</span>
+            </span>
+          </span> -->
+        </span>
+
+            <!-- <button
+          type="form"
+          style="
+            width: 30%;
+            background-color: var(--secondary-color);
+            margin-left: var(--spacing-mid);
+            margin-top: var(--spacing-mid);
+          "
+        >
+          Enroll Now
+        </button> -->
+        </article>
+
+        <article class="hero-video-container flex justify-center align-center">
+            <img
+              src="../assets/assets_dg-site/logo/LOGO'S/ITIL_Logo-Without_border.png"
+              alt="Course Preview"
+              style="width: 60%;"
+            />
+          </article>
+    </section>
+
+    <article class="tab-container" style="height: auto; overflow: hidden;">
+        <menu class="tabs" role="tablist">
+            <button
+              class="tab-button active"
+              role="tab"
+              aria-controls="course-overview"
+              aria-selected="true"
+              onclick="showTab('course-overview')"
+            >
+              Course Overview
+            </button>
+            <button
+              class="tab-button"
+              role="tab"
+              aria-controls="description"
+              aria-selected="false"
+              onclick="showTab('description')"
+            >
+              Description
+            </button>
+            <button
+              class="tab-button"
+              role="tab"
+              aria-controls="target-group"
+              aria-selected="false"
+              onclick="showTab('target-group')"
+            >
+              Target Group
+            </button>
+            <button
+              class="tab-button"
+              role="tab"
+              aria-controls="concepts-covered"
+              aria-selected="false"
+              onclick="showTab('concepts-covered')"
+            >
+              Concepts Covered
+            </button>
+            <button
+              class="tab-button"
+              role="tab"
+              aria-controls="exam-format"
+              aria-selected="false"
+              onclick="showTab('exam-format')"
+            >
+              Exam Format
+            </button>
+          </menu>
+        <span class="grid-container grid-2-1" style="padding: 0">
+            <span>
+                <span class="tab-content">
+                    <article id="course-overview" class="tab-pane active" role="tabpanel">
+                      <h5>Course Overview</h5>
+                      <p>
+                        <strong>ITIL 4 Foundation</strong> is the latest evolution of the
+                        most widely adopted guidance for ITSM. Its audience ranges from IT
+                        and business students taking their first steps in service
+                        management to seasoned professionals familiar with earlier
+                        versions of ITIL and other sources of industry best practice.
+                      </p>
+          
+                      <p>
+                        ITIL certification is an essential requirement for professionals
+                        who need to learn the fundamentals of ITIL frameworks and how they
+                        may be used to enhance the quality of IT service management. The
+                        ITIL® 4 Foundation certificate is a requirement for attending any
+                        of the advanced level or “<strong>specialist</strong>” courses.
+                      </p>
+          
+                      <p>
+                        The ITIL® 4 Foundation guidance introduces an end-to-end operating
+                        model for the creation, delivery, and continual improvement of
+                        technology-enabled products and services.
+                      </p>
+                    </article>
+          
+                    <article id="description" class="tab-pane" role="tabpanel">
+                      <h5>Course Description</h5>
+                      <p>
+                        The ITIL ®4 Foundation guidance introduces an end-to-end operating
+                        model for the creation, delivery, and continual improvement of
+                        technology-enabled products and services.
+                      </p>
+          
+                      <p>The guidance will help you to understand:</p>
+          
+                      <ul>
+                        <li>how modern IT and digital service organizations operate</li>
+                        <li>how value streams increase speed and efficiency</li>
+                        <li>
+                          how cultural or behavioral principles guide work that benefits
+                          the wider organization
+                        </li>
+                        <li>
+                          how to use commonly used service management terms and concepts
+                        </li>
+                      </ul>
+          
+                      <p>Publisher: PeopleCert</p>
+                      <p>Author: Axelos</p>
+                      <p>Language: English (UK)</p>
+                      <p>Type: Book</p>
+                      <p>ISBN: 978-9925-600-00-7</p>
+                      <p>Delivery : Printed Paperback</p>
+                    </article>
+          
+                    <article id="target-group" class="tab-pane" role="tabpanel">
+                      <h5>Target Group</h5>
+                      <p>
+                        This certification is best suited for Professionals engaged in
+                        Service Delivery. The audience also includes IT Managers/ Support
+                        Teams, System Administrators/ Analysts, Operations Managers,
+                        Database Administrators, Service Delivery Professionals.
+                      </p>
+                    </article>
+          
+                    <article id="concepts-covered" class="tab-pane" role="tabpanel">
+                      <h5>Concepts Covered</h5>
+                      <p>
+                        Holders of the ITIL ® 4 Foundation certification, will be able to
+                        demonstrate their knowledge and understanding of:
+                      </p>
+          
+                      <ul>
+                        <li>IT service management in the modern world</li>
+                        <li>The ITIL Service Value system or SVS</li>
+                        <li>The four dimensions model</li>
+                        <li>
+                          Key concepts of service management such as Value and value
+                          co-creation, stakeholders, Service consumers and stakeholders,
+                          Costs, Risks, Utility and warranty
+                        </li>
+                        <li>
+                          Guiding Principles, and the Service Value Chain along with the
+                          continuous Improvement Model
+                        </li>
+                        <li>
+                          ITIL management practices such as, General management practices,
+                          Service management practices and technical management practices
+                        </li>
+                      </ul>
+                    </article>
+          
+                    <article id="exam-format" class="tab-pane" role="tabpanel">
+                      <h5>Exam Format</h5>
+                      <p>ITIL ® 4 Foundation certification exam format is following:</p>
+          
+                      <ul>
+                        <li>Multiple choice format</li>
+                        <li>40 questions per paper</li>
+                        <li>65% to pass, or 26/40</li>
+                        <li>60 minutes’ duration</li>
+                        <li>Closed book</li>
+                        <li>Prerequisite – None</li>
+                      </ul>
+                    </article>
+                  </span>
+
+                  <span>
+                    <div class="responsive-table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th style="width: 5%; color: var(--color-dark);">SI</th>
+                              <th style="width: 22%; color: var(--color-dark);">Title</th>
+                              <th style="width: 25%; color: var(--color-dark);">Description</th>
+                              <th style="width: 15%; color: var(--color-dark);">Price</th>
+                              <th style="width: 15%; color: var(--color-dark);">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td data-label="SI No">01</td>
+                              <td data-label="Title">ITIL® Foundation: ITIL 4 Edition</td>
+                              <td data-label="Description">The ITIL® Foundation: ITIL 4 Edition is a comprehensive introduction to ITIL (Information Technology Infrastructure Library), a globally recognized framework for IT service management.</td>
+                              <td data-label="Price">
+                                ₹ 7,950.00
+                              </td>
+                              <td data-label="Action">
+                                <span class="action-buttons">
+                                  <button>Add to cart</button>
+                                  <button>Know More</button>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td data-label="SI No">02</td>
+                                <td data-label="Title">ITIL® Foundation: ITIL 4 Edition</td>
+                                <td data-label="Description">The ITIL® Foundation: ITIL 4 Edition is a comprehensive introduction to ITIL (Information Technology Infrastructure Library), a globally recognized framework for IT service management.</td>
+                                <td data-label="Price">
+                                  ₹ 7,950.00
+                                </td>
+                                <td data-label="Action">
+                                  <span class="action-buttons">
+                                    <button>Add to cart</button>
+                                    <button>Know More</button>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td data-label="SI No">03</td>
+                                <td data-label="Title">ITIL® Foundation: ITIL 4 Edition</td>
+                                <td data-label="Description">The ITIL® Foundation: ITIL 4 Edition is a comprehensive introduction to ITIL (Information Technology Infrastructure Library), a globally recognized framework for IT service management.</td>
+                                <td data-label="Price">
+                                  ₹ 7,950.00
+                                </td>
+                                <td data-label="Action">
+                                  <span class="action-buttons">
+                                    <button>Add to cart</button>
+                                    <button>Know More</button>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td data-label="SI No">04</td>
+                                <td data-label="Title">ITIL® Foundation: ITIL 4 Edition</td>
+                                <td data-label="Description">The ITIL® Foundation: ITIL 4 Edition is a comprehensive introduction to ITIL (Information Technology Infrastructure Library), a globally recognized framework for IT service management.</td>
+                                <td data-label="Price">
+                                  ₹ 7,950.00
+                                </td>
+                                <td data-label="Action">
+                                  <span class="action-buttons">
+                                    <button>Add to cart</button>
+                                    <button>Know More</button>
+                                  </span>
+                                </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </span>
+            </span>
+            <article class="card" style="max-width: 400px; overflow: visible; padding: 0;">
+                <section class="card-body">
+                    <ul class="card-list">
+                      <li class="flex align-center justify-between" style="width: 100%;">
+                        <div class="dropdown-container">
+                          <button id="dropdown-trigger" class="dropdown-button" aria-haspopup="true" aria-controls="dropdown-menu-product-type-selection" aria-expanded="false">
+                            <span class="flex align-center gap-small" style="background-color: var(--surface-color);">
+                              <i class="fa-solid fa-layer-group" style="color: #333; margin-right: 5px;"></i>
+                              <span style="color: var(--font-color-primary);">Select Product Type</span>
+                            </span>
+                            <i class="fa-solid fa-chevron-down" id="dropdown-arrow" style="margin-left: 5px;"></i>
+                          </button>
+                          <ul id="dropdown-menu-product-type-selection" class="dropdown-menu-product-type-selection" style="display: none;">
+                            <li class="dropdown-menu-product-type-selection-item flex align-center justify-between" style="padding: var(--spacing-small);">
+                              <span>
+                                <input type="checkbox" id="option-book" name="product" value="Book" style="display: none;"/>
+                                <label for="option-book">Book</label>
+                              </span>
+                              <span>₹ 7,950.00</span>
+                            </li>
+                            <li class="dropdown-menu-product-type-selection-item flex align-center justify-between" style="padding: var(--spacing-small);">
+                              <span>
+                                <input type="checkbox" id="option-mock-test" name="product" value="Mock Test" style="display: none;"/>
+                                <label for="option-mock-test">Mock Test</label>
+                              </span>
+                              <span>₹ 7,950.00</span>
+                            </li>
+                            <li class="dropdown-menu-product-type-selection-item flex align-center justify-between" style="padding: var(--spacing-small);">
+                              <span>
+                                <input type="checkbox" id="option-online-bootcamp" name="product" value="Online BootCamp" style="display: none;"/>
+                                <label for="option-online-bootcamp">Online BootCamp</label>
+                              </span>
+                              <span>₹ 7,950.00</span>
+                            </li>
+                            <li class="dropdown-menu-product-type-selection-item flex align-center justify-between" style="padding: var(--spacing-small);">
+                              <span>
+                                <input type="checkbox" id="option-voucher" name="product" value="Voucher" style="display: none;"/>
+                                <label for="option-voucher">Voucher</label>
+                              </span>
+                              <span>₹ 7,950.00</span>
+                            </li>
+                            <li class="dropdown-menu-product-type-selection-item flex align-center justify-between" style="padding: var(--spacing-small);">
+                              <span>
+                                <input type="checkbox" id="option-self-paced-learning" name="product" value="Self Paced Learning" style="display: none;"/>
+                                <label for="option-self-paced-learning">Self Paced Learning</label>
+                              </span>
+                              <span>₹ 7,950.00</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  
+                    <table>
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;">SI</th>
+                          <th style="width: 40%;">Product Title</th>
+                          <th style="width: 20%;">Qty</th>
+                          <th style="width: 30%;">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody id="product-list-body">
+                        <!-- Items will be dynamically added here -->
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td colspan="3" style="text-align: right"><b>Grand Total: </b></td>
+                          <td id="grand-total"><span>₹</span> 0</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </section>
+              
+                <span class="card-footer" style="display: flex; flex-direction: column; gap: var(--spacing-small); padding-bottom: var(--spacing-mid);">
+                  <!-- <button style="background-color: var(--info-color);">Add to Cart</button> -->
+                  <button style="background-color: var(--error-color);">Buy Now</button>
+                </span>
+              </article>
+        </span>
+    </article>
+
+
+
+    <h5 class="text-center p-mid">Related Courses</h5>
+    <section class="flex justify-center flex-wrap gap-mid" style="
+        padding-left: var(--spacing-large);
+        padding-right: var(--spacing-large);
+      ">
+        <article class="card" style="
+          background-color: transparent;
+          padding: 0;
+          border: none;
+          box-shadow: none;
+          width: 300px;
+        ">
+            <figure class="card-img" style="height: 220px; overflow: hidden">
+                <img src="https://ducisgroup.com/wp-content/uploads/2022/07/ITIL-Foundation-elearning.png"
+                    style="height: 100%" />
+            </figure>
+            <div>
+                <h6 style="
+              font-weight: var(--font-weight-bold);
+              padding-top: var(--spacing-small);
+              padding-bottom: var(--spacing-small);
+            ">
+                    ITIL®4 Foundation e-Learning + Exam Bundle
+                </h6>
+                <span> Author: Axelos @PeopleCert </span>
+                <br />
+                <div class="p-small" style="
+              font-size: var(--font-size-para);
+              margin-left: 0;
+              padding-left: 0;
+            ">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9734; 4.0 (2 ratings)</span>
+                </div>
+                <span>
+                    <span style="
+                font-size: var(--font-size-h6);
+                font-weight: var(--font-weight-bold);
+              ">₹ 22,500.00</span>
+                    <span style="
+                font-size: var(--font-size-anchor);
+                text-decoration: line-through;
+                color: var(--font-color-hint);
+              ">₹ 30,500.00</span>
+                </span>
+            </div>
+        </article>
+
+        <article class="card" style="
+          background-color: transparent;
+          padding: 0;
+          border: none;
+          box-shadow: none;
+          width: 300px;
+        ">
+            <figure class="card-img" style="height: 220px; overflow: hidden">
+                <img src="https://ducisgroup.com/wp-content/uploads/2022/07/ITIL-Foundation-Exam-Simulator.png"
+                    style="height: 100%" />
+            </figure>
+            <div>
+                <h6 style="
+              font-weight: var(--font-weight-bold);
+              padding-top: var(--spacing-small);
+              padding-bottom: var(--spacing-small);
+            ">
+                    ITIL®4 Foundation Exam Simulator
+                </h6>
+                <span> Author: Axelos @PeopleCert </span>
+                <br />
+                <div class="p-small" style="
+              font-size: var(--font-size-para);
+              margin-left: 0;
+              padding-left: 0;
+            ">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9734; 4.0 (2 ratings)</span>
+                </div>
+                <span>
+                    <span style="
+                font-size: var(--font-size-h6);
+                font-weight: var(--font-weight-bold);
+              ">₹ 175.00</span>
+                    <span style="
+                font-size: var(--font-size-anchor);
+                text-decoration: line-through;
+                color: var(--font-color-hint);
+              ">₹ 275.00</span>
+                </span>
+            </div>
+        </article>
+
+        <article class="card" style="
+          background-color: transparent;
+          padding: 0;
+          border: none;
+          box-shadow: none;
+          width: 300px;
+        ">
+            <figure class="card-img" style="height: 220px; overflow: hidden">
+                <img src="https://ducisgroup.com/wp-content/uploads/2022/07/PRINCE2_English_cover.jpg"
+                    style="height: 100%" />
+            </figure>
+            <div>
+                <h6 style="
+              font-weight: var(--font-weight-bold);
+              padding-top: var(--spacing-small);
+              padding-bottom: var(--spacing-small);
+            ">
+                    PROJECT MANAGEMENT WITH PRINCE2®, 6TH ED
+                </h6>
+                <span> Author: Axelos @PeopleCert </span>
+                <br />
+                <div class="p-small" style="
+              font-size: var(--font-size-para);
+              margin-left: 0;
+              padding-left: 0;
+            ">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9734; 4.0 (2 ratings)</span>
+                </div>
+                <span>
+                    <span style="
+                font-size: var(--font-size-h6);
+                font-weight: var(--font-weight-bold);
+              ">₹ 7,950.00</span>
+                    <span style="
+                font-size: var(--font-size-anchor);
+                text-decoration: line-through;
+                color: var(--font-color-hint);
+              ">₹ 8,950.00</span>
+                </span>
+            </div>
+        </article>
+
+        <article class="card" style="
+          background-color: transparent;
+          padding: 0;
+          border: none;
+          box-shadow: none;
+          width: 300px;
+        ">
+            <figure class="card-img" style="height: 220px; overflow: hidden">
+                <img src="https://ducisgroup.com/wp-content/uploads/2022/07/Prince2_Agile_11191-COVER.jpg"
+                    style="height: 100%" />
+            </figure>
+            <div>
+                <h6 style="
+              font-weight: var(--font-weight-bold);
+              padding-top: var(--spacing-small);
+              padding-bottom: var(--spacing-small);
+            ">
+                    PRINCE2 AGILE®
+                </h6>
+                <span> Author: Axelos @PeopleCert </span>
+                <br />
+                <div class="p-small" style="
+              font-size: var(--font-size-para);
+              margin-left: 0;
+              padding-left: 0;
+            ">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9734; 4.0 (2 ratings)</span>
+                </div>
+                <span>
+                    <span style="
+                font-size: var(--font-size-h6);
+                font-weight: var(--font-weight-bold);
+              ">₹ 7,950.00</span>
+                    <span style="
+                font-size: var(--font-size-anchor);
+                text-decoration: line-through;
+                color: var(--font-color-hint);
+              ">₹ 8,950.00</span>
+                </span>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="footer-newsletter">
+            <h4 class="footer-heading">Get the latest Ducisgroup Updates</h4>
+            <div class="footer-form">
+                <input type="email" class="footer-input" placeholder="Enter your email" aria-label="Email" />
+                <button class="footer-button">Subscribe</button>
+            </div>
+        </div>
+        <hr class="footer-divider" />
+
+        <!-- Section: Links -->
+        <section class="footer-links">
+            <div class="footer-links-container">
+                <div class="footer-link-column">
+                    <span>
+                        <h6 class="footer-link-heading">
+                            Ducis Management Consulting Private Limited
+                        </h6>
+                        <hr class="footer-link-divider" />
+                    </span>
+                    <p class="footer-link-text">
+                        <i class="fas fa-home"></i> D1/131, 1st Floor, Sector 16, Rohini,
+                        New Delhi, North Delhi, Delhi, India, 110085
+                    </p>
+                    <p class="footer-link-text">
+                        <i class="fas fa-envelope"></i> info@ducisgroup.com
+                    </p>
+                    <p class="footer-link-text">
+                        <i class="fas fa-phone"></i> +91-9818023130
+                    </p>
+                    <p class="footer-link-text">
+                        <i class="fas fa-building"></i> COMPANY REGISTRATION NO
+                        U93090DL2018PTC382922
+                    </p>
+                </div>
+                <div class="footer-link-column">
+                    <span>
+                        <h6 class="footer-link-heading">Quick Links</h6>
+                        <hr class="footer-link-divider" />
+                    </span>
+                    <p class="footer-link-item">
+                        <a href="./offering.html" class="footer-link">Our Offering</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./offering.html#t&c" class="footer-link">Get Certified</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./resource.html#webinar" class="footer-link">Open Batches</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="../html/shiv-pages/page-dg-site-Partner-us.html" class="footer-link">Partner us</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./offering.html#cons" class="footer-link">Become a Consultant</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./resource.html#faq" class="footer-link">FAQ</a>
+                    </p>
+                </div>
+                <div class="footer-link-column">
+                    <span>
+                        <h6 class="footer-link-heading">Policies</h6>
+                        <hr class="footer-link-divider" />
+                    </span>
+                    <p class="footer-link-item">
+                        <a href="./shiv-pages/page-dg-site-cookie-policy-dev-shiv.html" class="footer-link">Cookie
+                            Policy</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./shiv-pages/page-dg-site-refund-policy-dev-shiv.html" class="footer-link">Refund
+                            Policy</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./shiv-pages/page-dg-site-privacy-policy-dev-shiv.html" class="footer-link">Privacy
+                            Policy</a>
+                    </p>
+                    <p class="footer-link-item">
+                        <a href="./shiv-pages/page-dg-site-terms-and-conditions-policy-dev-shiv.html"
+                            class="footer-link">Terms &
+                            Conditions</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-between align-center flex-wrap" style="
+          padding-left: var(--spacing-large);
+          padding-right: var(--spacing-large);
+        ">
+            <div class="footer-logo">
+                <a href="https://ducisgroup.com/"><img class="footer-logo-img"
+                        src="../assets/assets_dg-site/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp"
+                        alt="Company Logo" /></a>
+                <b class="footer-separator">|</b>
+                <h6 class="footer-slogan" style="text-align: left">
+                    Staying relevant in a VUCA world
+                </h6>
+            </div>
+            <div class="footer-social">
+                <a href="./page-dg-site-empty-page.html" class="footer-social-link"><i class="fab fa-facebook"></i></a>
+                <a href="./page-dg-site-empty-page.html" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                <a href="./page-dg-site-empty-page.html" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="./page-dg-site-empty-page.html" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <span class="flex flex-column align-center">
+            <p style="padding: var(--spacing-mid)">
+                ©2024 Ducisgroup:
+                <a class="footer-copyright-link" href="">All Rights Reserved</a>
+            </p>
+
+            <p style="
+            padding-left: var(--spacing-large);
+            padding-right: var(--spacing-large);
+            text-align: justify;
+          ">
+                <b>Disclaimer:</b> ITIL® is a registered trademark of PeopleCert
+                Group, used under permission of PeopleCert Group. All rights reserved.
+                The Swirl logo™ is a trademark of PeopleCert Group, used under
+                permission of PeopleCert Group. All rights reserved. PRINCE2® / MSP® 5
+                / MoP® / MoV ®/ P3O ®/ MoR ®, are a registered trademark of PeopleCert
+                Group, used under permission of PeopleCert Group. All rights reserved.
+                COBIT® is a trademark of ISACA® registered in the United States and
+                other countries.
+            </p>
+        </span>
+    </footer>
+
+    <script>
+        function showTab(tab) {
+            var tabs = document.querySelectorAll(".tab-button");
+            var panes = document.querySelectorAll(".tab-pane");
+
+            tabs.forEach(function (tab) {
+                tab.classList.remove("active");
+            });
+            panes.forEach(function (pane) {
+                pane.classList.remove("active");
+            });
+
+            document
+                .querySelector(".tab-button[onclick=\"showTab('" + tab + "')\"]")
+                .classList.add("active");
+            document.getElementById(tab).classList.add("active");
+        }
+
+        document
+            .getElementById("navbar-toggler")
+            .addEventListener("click", function () {
+                var sidebar = document.getElementById("sidebar");
+                sidebar.classList.toggle("show");
+            });
+
+        document
+            .getElementById("close-btn")
+            .addEventListener("click", function () {
+                var sidebar = document.getElementById("sidebar");
+                sidebar.classList.remove("show");
+            });
+
+    </script>
+
+
+
+<script>
+const dropdownTrigger = document.getElementById("dropdown-trigger");
+const dropdownMenu = document.getElementById("dropdown-menu-product-type-selection");
+const dropdownArrow = document.getElementById("dropdown-arrow");
+
+dropdownTrigger.addEventListener("click", function () {
+  const isExpanded = dropdownTrigger.getAttribute("aria-expanded") === "true";
+  dropdownTrigger.setAttribute("aria-expanded", !isExpanded);
+  dropdownMenu.style.display = isExpanded ? "none" : "block";
+  dropdownArrow.classList.toggle("dropdown-open", !isExpanded);
+});
+
+const products = {
+  "Book": { price: 7950, qty: 1 },
+  "Mock Test": { price: 7950, qty: 1 },
+  "Online BootCamp": { price: 7950, qty: 1 },
+  "Voucher": { price: 7950, qty: 1 },
+  "Self Paced Learning": { price: 7950, qty: 1 },
+};
+
+let selectedProducts = [];
+
+// Update the product table
+function updateTable() {
+  const tableBody = document.getElementById("product-list-body");
+  const grandTotalCell = document.getElementById("grand-total");
+  
+  tableBody.innerHTML = ""; // Clear existing rows
+  let grandTotal = 0;
+  
+  selectedProducts.forEach((product, index) => {
+    const price = products[product].price;
+    const qty = products[product].qty;
+    const row = `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${product}</td>
+        <td><input type="number" value="${qty}" min="1" data-product="${product}" class="qty-input" /></td>
+        <td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
+      </tr>
+    `;
+    tableBody.insertAdjacentHTML("beforeend", row);
+    grandTotal += price * qty;
+  });
+  
+  grandTotalCell.innerHTML = `Total: ₹${grandTotal}`;
+  
+  // Attach event listeners to quantity input fields
+  const qtyInputs = document.querySelectorAll(".qty-input");
+  qtyInputs.forEach((input) => {
+    input.addEventListener("input", function () {
+      const product = this.getAttribute("data-product");
+      const newQty = parseInt(this.value);
+      products[product].qty = newQty;
+      updateTable();
+    });
+  });
+}
+
+// Checkbox change event
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    const productName = checkbox.value;
+    if (checkbox.checked) {
+      selectedProducts.push(productName);
+    } else {
+      selectedProducts = selectedProducts.filter((p) => p !== productName);
+    }
+    updateTable();
+  });
+});
+
+// Close dropdown when clicking outside
+window.addEventListener("click", function(event) {
+  const dropdown = document.getElementById("dropdown-menu-product-type-selection");
+  const button = document.getElementById("dropdown-trigger");
+  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+    button.setAttribute("aria-expanded", "false");
+  }
+});
+</script>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- comment area -->
+
+
+<!-- 
+
+// const products = {
+    //   Book: { price: 400, qty: 1 },
+    //   "Online Training": { price: 20000, qty: 1 },
+    //   "Offline Training": { price: 40000, qty: 1 },
+    // };
+    
+    // let selectedProducts = [];
+    
+    // const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
+    // const tableBody = document.getElementById("product-list-body");
+    // const grandTotalCell = document.getElementById("grand-total");
+    
+    // checkboxes.forEach((checkbox) => {
+    //   checkbox.addEventListener("change", function () {
+    //     const productName = checkbox.value;
+    //     if (checkbox.checked) {
+    //       selectedProducts.push(productName);
+    //     } else {
+    //       selectedProducts = selectedProducts.filter((p) => p !== productName);
+    //     }
+    //     updateTable();
+    //   });
+    // });
+    
+    // function updateTable() {
+    //   tableBody.innerHTML = ""; 
+    //   let grandTotal = 0;
+    //   selectedProducts.forEach((product, index) => {
+    //     const { price, qty } = products[product];
+    //     const row = `
+    //       <tr>
+    //         <td>${index + 1}</td>
+    //         <td>${product}</td>
+    //         <td>${qty}</td>
+    //         <td><span>₹</span> ${price}</td>
+    //       </tr>
+    //     `;
+    //     tableBody.insertAdjacentHTML("beforeend", row);
+    //     grandTotal += price;
+    //   });
+    //   grandTotalCell.innerHTML = `<span>₹</span> ${grandTotal}`;
+    // }
+
+
+
+
+
+        // document.querySelectorAll('[aria-haspopup="true"]').forEach((button) => {
+        //     button.addEventListener("click", function () {
+        //         const menu = document.getElementById(
+        //             this.getAttribute("aria-controls")
+        //         );
+        //         const isExpanded = this.getAttribute("aria-expanded") === "true";
+        //         this.setAttribute("aria-expanded", !isExpanded);
+        //         menu.style.display = isExpanded ? "none" : "block";
+        //     });
+        // });
+
+        // document
+        //     .querySelectorAll('.dropdown li input[type="checkbox"]')
+        //     .forEach((checkbox) => {
+        //         checkbox.addEventListener("change", function () {
+        //             const selectedOptions = [];
+        //             const button = this.closest("fieldset").querySelector("button");
+
+        //             this.closest("ul")
+        //                 .querySelectorAll('input[type="checkbox"]:checked')
+        //                 .forEach((checkedBox) => {
+        //                     selectedOptions.push(checkedBox.value);
+        //                 });
+
+        //             button.textContent =
+        //                 selectedOptions.length > 0
+        //                     ? selectedOptions.join(", ")
+        //                     : "Select options";
+        //         });
+        //     });
+
+        // Search functionality (if applicable)
+        // const searchInputs = document.querySelectorAll(
+        //     '.dropdown.search input[type="text"]'
+        // );
+        // searchInputs.forEach((searchInput) => {
+        //     searchInput.addEventListener("input", function () {
+        //         const filter = this.value.toLowerCase();
+        //         const menuItems = this.nextElementSibling.querySelectorAll("li");
+
+        //         menuItems.forEach((item) => {
+        //             const text = item.textContent.toLowerCase();
+        //             item.style.display = text.includes(filter) ? "" : "none";
+        //         });
+        //     });
+        // });
+    
+     -->
+
+
+     <!-- 
+<script>
+    const dropdownTrigger = document.getElementById("multi-select-dropdown-trigger");
+    const dropdownMenu = document.getElementById("multi-select-dropdown-menu-product-type-selection");
+  
+    dropdownTrigger.addEventListener("click", function () {
+      const isVisible = dropdownMenu.style.display === "block";
+      dropdownMenu.style.display = isVisible ? "none" : "block";
+    });
+  
+    const products = {
+      Book: { price: 400, qty: 1 },
+      "Online Training": { price: 20000, qty: 1 },
+      "Offline Training": { price: 40000, qty: 1 },
+    };
+  
+    let selectedProducts = [];
+  
+    const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
+    const tableBody = document.getElementById("product-list-body");
+    const grandTotalCell = document.getElementById("grand-total");
+  
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", function () {
+        const productName = checkbox.value;
+        if (checkbox.checked) {
+          selectedProducts.push(productName);
+        } else {
+          selectedProducts = selectedProducts.filter((p) => p !== productName);
+        }
+        updateTable();
+      });
+    });
+  
+    function updateTable() {
+      tableBody.innerHTML = ""; // Clear existing rows
+      let grandTotal = 0;
+      selectedProducts.forEach((product, index) => {
+        const price = products[product].price;
+        const qty = products[product].qty;
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${product}</td>
+            <td>${qty}</td>
+            <td><span>₹</span> ${price}</td>
+          </tr>
+        `;
+        tableBody.insertAdjacentHTML("beforeend", row);
+        grandTotal += price;
+      });
+      grandTotalCell.innerHTML = `<span>₹</span> ${grandTotal}`;
+    }
+  </script>
+
+<script>
+    document.querySelectorAll('[aria-haspopup="true"]').forEach((button) => {
+        button.addEventListener("click", function () {
+            const menu = document.getElementById(this.getAttribute("aria-controls"));
+            const isExpanded = this.getAttribute("aria-expanded") === "true";
+            this.setAttribute("aria-expanded", !isExpanded);
+            menu.style.display = isExpanded ? "none" : "block";
+        });
+    });
+
+    document.querySelectorAll('.dropdown-menu-product-type-selection-item input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+            const selectedOptions = [];
+            const button = this.closest(".dropdown-container").querySelector(".dropdown-button span:last-child");
+
+            this.closest(".dropdown-menu-product-type-selection")
+                .querySelectorAll('input[type="checkbox"]:checked')
+                .forEach((checkedBox) => {
+                    selectedOptions.push(checkedBox.value);
+                });
+
+            button.textContent =
+                selectedOptions.length > 0
+                    ? selectedOptions.join(", ")
+                    : "Select Product Type";
+        });
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener("click", function(event) {
+        const dropdown = document.getElementById("dropdown-menu-product-type-selection");
+        const button = document.getElementById("dropdown-trigger");
+        if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.style.display = "none";
+            button.setAttribute("aria-expanded", "false");
+        }
+    });
+</script> -->
