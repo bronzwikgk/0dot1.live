@@ -5,7 +5,7 @@
 
 
 
-.hero {
+ .hero {
     margin: 0;
     background-color: var(--primary-color);
     overflow: hidden;
@@ -14,6 +14,7 @@
     align-items: center;
     height: 80vh;
     padding: var(--spacing-small);
+    padding-left: var(--spacing-largest);
 }
 
 .rating {
@@ -22,9 +23,9 @@
 }
 
 
-.hero-video-container,
+.hero-video-container, 
 .hero article {
-    width: 45%;
+    width: 45%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,8 +65,7 @@
         height: auto;
         padding: var(--spacing-mid);
     }
-
-    .hero-video-container,
+    .hero-video-container, 
     .hero article {
         width: 45%;
     }
@@ -76,8 +76,7 @@
         height: auto;
         padding: var(--spacing-mid);
     }
-
-    .hero-video-container,
+    .hero-video-container, 
     .hero article {
         width: 45%;
     }
@@ -88,8 +87,7 @@
         height: auto;
         padding: var(--spacing-mid);
     }
-
-    .hero-video-container,
+    .hero-video-container, 
     .hero article {
         width: 80%;
     }
@@ -101,18 +99,15 @@
         height: auto;
         padding: var(--spacing-small);
     }
-
-    .hero-video-container,
+    .hero-video-container, 
     .hero article {
         width: 90%;
         padding: var(--spacing-small);
     }
-
     .hero-video-container img {
         height: auto;
-
+        
     }
-
     .hero-video-container .play-button button {
         font-size: var(--font-size-h2);
     }
@@ -123,8 +118,7 @@
         padding: var(--spacing-xsmall);
         height: auto;
     }
-
-    .hero-video-container,
+    .hero-video-container, 
     .hero article {
         padding: var(--spacing-xsmall);
         width: 90%;

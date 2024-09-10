@@ -43,3 +43,33 @@ button[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+
+
+  form {
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+  }
+  
+  form input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+  }
+  
+  form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }

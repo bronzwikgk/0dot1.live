@@ -48,14 +48,14 @@ figcaption {
     background-color: var(--surface-color);
 }
 
-form {
+/* form {
     max-width: 600px;
     margin: 0 auto;
     padding: var(--spacing-large);
     background-color: var(--color-light);
     box-shadow: var(--box-shadow-md);
     border-radius: var(--border-radius-md);
-}
+} */
 
 legend {
     font-size: var(--font-size-h5);
