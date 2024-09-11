@@ -1,29 +1,37 @@
 import { ProductCard } from '../components/ProductCard/ProductCard.js';
 import { Pagination } from '../Utils/Pagination.js';
 import { Search } from '../Utils/Search.js';
+import { ProductService } from '../services/ProductService.js';
+import { CartService } from '../services/CartService.js';
 
+// Define page size globally or pass it as a parameter
 let products = [];
 const pageSize = 6;
 let currentPage = 1;
 let totalPages = 1;
 
 // Fetch products from the backend for a specific page
-async function fetchProducts(page = 1, query) {
-    console.log(query);
-    let response
-    const offset = (page - 1) * pageSize;
-    if (query && query !== "") {
-        response = await fetch(`http://localhost:3000/products?search=${encodeURIComponent(query)}&limit=${pageSize}&offset=${offset}`);
-    } else {
-        response = await fetch(`http://localhost:3000/products?limit=${pageSize}&offset=${offset}`);
+async function fetchProducts(page = 1, query = '') {
+    try {
+        console.log('Query:', query);
+
+        // Call the ProductService to get products with search and pagination
+        const data = await ProductService.getProducts({ page, limit: pageSize, query });
+
+        console.log("Fetching Products");
+
+        // Update products and total pages using the fetched data
+        products = data.products;
+        totalPages = Math.ceil(data.totalCount / pageSize);
+
+        // Render the products and pagination controls
+        renderProducts();
+        renderPagination();
+    } catch (error) {
+        console.error('Error fetching products:', error);
     }
-    console.log("Fetching Products");
-    const data = await response.json();
-    products = data.products;
-    totalPages = Math.ceil(data.totalCount / pageSize);
-    renderProducts();
-    renderPagination();
 }
+
 
 // Render products on the current page
 function renderProducts() {
@@ -36,10 +44,12 @@ function renderProducts() {
     });
 
     // Event Delegation for Add to Cart
-    productContainer.addEventListener('click', (event) => {
+    productContainer.addEventListener('click', async (event) => {
         const addToCartButton = event.target.closest('.add-to-cart');
         if (addToCartButton) {
             const productId = addToCartButton.dataset.id;
+            let cartId = localStorage.getItem("cartId")
+            await CartService.addItemToCart(cartId, productId, 1)
             console.log(`Product ${productId} added to cart`);
             // Add your add-to-cart logic here
         }
