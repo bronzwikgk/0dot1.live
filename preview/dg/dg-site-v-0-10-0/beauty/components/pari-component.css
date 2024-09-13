@@ -1,0 +1,39 @@
+/* @import url(./dropdown.css); */
+@import url(./tab.css);
+@import url(./tree.css);
+@import url(./carousel.css);
+@import url(./navbar.css);
+@import url(./footer.css);
+@import url(./autoScrollableContainer.css);
+@import url(./pagination.css);
+@import url(./modal.css);
+
+
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-mid);
+    width: 90%;
+    padding: var(--spacing-small);
+}
+
+.row > * {
+    flex: 1; 
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

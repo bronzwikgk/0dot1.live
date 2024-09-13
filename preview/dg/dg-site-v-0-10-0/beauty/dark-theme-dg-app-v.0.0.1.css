@@ -1,0 +1,312 @@
+/* Theme file for Pari @Shunya.Ek */
+
+/* Importing fonts from Google Fonts for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Colors */
+:root {
+    --primary-color: #012f6bff;
+    --primary-variant: rgb(103, 106, 233)ff;
+    --secondary-color: #f5991eff;
+    --secondary-variant: rgb(246, 178, 90);
+    --background-color: #fff;
+    --surface-color: #222529;
+
+    --color-dark: #0b0f19;
+    --color-dark-grey: #333333;
+    --color-neutral: #9397ad;
+    --color-light-grey: #E0E0E0;
+    --color-light: #ffffff;
+
+    --focus-color: rgba(84, 87, 205, 0.5);
+    --button-hover-bg: #D1C4E9;
+    --button-disabled-bg: #ebebeb;
+    --input-box-shadow: 0 0 0 1px #666;
+    --link-color: #6366f1;
+    
+    --error-color: #D32F2F;
+    --success-color: #388E3C;
+    --warning-color: #FFA000;
+    --info-color: #1976D2;
+    
+    --hover-color: #EDEDED;
+    --active-color: #D1C4E9;
+    --disabled-color: #BDBDBD;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Typography */
+:root {
+    --font-primary: 'Rubic', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-content: 'Inter', sans-serif;
+
+    /* Font Weights */
+    --font-weight-thin: 100;
+    --font-weight-thin-slightly: 200;
+    --font-weight-normal: 400;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
+
+    --font-color-primary: #565973;
+    --font-color-secondary: #0b0f19;
+    --font-color-hint: var(--color-neutral);
+    --font-color-light: var(--color-light);
+
+    /* Line Heights */
+    --line-height-base: 1.6;
+    --line-height-heading: 1.3;
+    --line-height-body: 1.6;
+
+    /* Letter Spacing */
+    --letter-spacing-normal: normal;
+    --letter-spacing-wide: 0.1em;
+}
+
+/* Sizes */
+:root {
+    --size-smallest: 0.5rem;
+    --size-small: 1rem;
+    --size-mid: 2rem;
+    --size-large: 3rem;
+    --size-largest: 4rem;
+}
+
+/* Additional Font Properties */
+:root {
+    --text-underline: underline;
+    --text-transform-uppercase: uppercase;
+    --text-transform-lowercase: lowercase;
+    --text-transform-capitalize: capitalize;
+
+    --font-style-normal: normal;
+    --font-style-italic: italic;
+    --font-variant-normal: normal;
+    --font-variant-small-caps: small-caps;
+}
+
+/* Spacing */
+:root {
+    --spacing-unit: 1rem;
+
+    --spacing-smallest: calc(var(--spacing-unit) * 0.25);
+    --spacing-small: calc(var(--spacing-unit) * 0.5);
+    --spacing-mid: var(--spacing-unit);
+    --spacing-large: calc(var(--spacing-unit) * 1.5);
+    --spacing-largest: calc(var(--spacing-unit) * 2);
+}
+
+/* Breakpoints */
+:root {
+    --breakpoint-xs: 576px;
+    --breakpoint-sm: 768px;
+    --breakpoint-md: 992px;
+    --breakpoint-lg: 1200px;
+    --breakpoint-xl: 1400px;
+}
+
+/* Shadow */
+:root {
+    --shadow-sm: 0 1px 2px var(--shadow-color);
+    --shadow-md: 0 4px 6px var(--shadow-color);
+    --shadow-lg: 0 10px 20px var(--shadow-color);
+    --shadow-xl: 0 15px 25px var(--shadow-color);
+}
+
+/* Borders */
+:root {
+    --border-radius-sm: 0.125rem;
+    --border-radius-md: 0.25rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-xl: 1rem;
+    --border-radius-full: 50%;
+
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    --border-width-thick: 4px;
+
+    --border-color-primary: var(--primary-color);
+    --border-color-secondary: var(--secondary-color);
+    --border-color-muted: #dddddd;
+}
+
+/* Box Shadows */
+:root {
+    --box-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Transitions */
+:root {
+    --transition-fast: 0.2s;
+    --transition-medium: 0.5s;
+    --transition-slow: 1s;
+}
+
+/* Body Styles */
+body {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-light);
+    background-color: var(--background-color);
+    line-height: var(--line-height-base);
+    margin: 0;
+    padding: 0;
+}
+
+/* Font Styles */
+.Title {
+    font-family: var(--font-primary);
+    font-size: var(--size-mid);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+}
+
+.subheading {
+    font-family: var(--font-secondary);
+    font-size: calc(var(--size-small) * 0.25);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--font-color-secondary);
+}
+
+h1, .h1 {
+    /* font-family: var(--font-primary); */
+    font-size: var(--size-largest);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+h2, .h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--size-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+h3, .h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--size-mid);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+h4, .h4 {
+    font-family: var(--font-secondary);
+    font-size: var(--size-small);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+h5, .h5 {
+    font-family: var(--font-secondary);
+    font-size: var(--size-smallest);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+h6, .h6 {
+    font-family: var(--font-secondary);
+    font-size: var(--size-smallest);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--color-light);
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
+}
+
+p {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    line-height: var(--line-height-body);
+    color: var(--color-light);
+    margin-top: var(--spacing-mid);
+    margin-bottom: var(--spacing-mid);
+}
+
+a {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-light-grey);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--link-color);
+}
+
+button, .button {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-light);
+    background-color: var(--primary-color);
+    border: var(--border-width-thin) solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-small) var(--spacing-mid);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+input, .input {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-light);
+    background-color: var(--color-light);
+    border: var(--border-width-thin) solid var(--border-color-muted);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-small);
+    box-shadow: var(--input-box-shadow);
+}
+
+.alert {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    padding: var(--spacing-mid);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-large);
+}
+
+.card-title {
+    font-family: var(--font-primary);
+    font-size: var(--size-mid);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-light);
+}
+
+.card-content {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-light);
+    line-height: var(--line-height-body);
+}
+
+ul {
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+}
+
+li {
+    padding-top: var(--spacing-mid);
+    padding-bottom: var(--spacing-mid);
+}
