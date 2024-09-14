@@ -45,6 +45,10 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
+        .product-item img {
+            width: 60px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +61,7 @@
 
     <div class="row mt-4">
         <!-- Left Side - Customer Information -->
-        <div class="col-md-8">
+        <div class="col-lg-8 col-md-7 col-sm-12 mb-4">
             <!-- Shipping Information Card -->
             <div class="card">
                 <div class="card-header">
@@ -98,43 +102,10 @@
                     </form>
                 </div>
             </div>
-
-            <!-- Payment Method Card -->
-            <div class="card">
-                <div class="card-header">
-                    <h5>2. Payment Method</h5>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="cardName" class="form-label">Name on Card</label>
-                            <input type="text" class="form-control" id="cardName" placeholder="John Doe" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="cardNumber" class="form-label">Card Number</label>
-                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9123 4567" required>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="expiryDate" class="form-label">Expiry Date</label>
-                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cvv" placeholder="123" required>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
 
         <!-- Right Side - Order Summary -->
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-5 col-sm-12">
             <div class="card">
                 <div class="card-header">
                     <h5>3. Order Summary</h5>
@@ -213,11 +184,11 @@
         
             <!-- Place Order Button -->
             <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-primary btn-lg"><a href="./razorpay.html" style="color: white;text-decoration: none;">Place Your Order</a></button>
+                <button class="btn btn-primary btn-lg">
+                    <a href="./razorpay.html" style="color: white;text-decoration: none;">Place Your Order</a>
+                </button>
             </div>
         </div>
-        
-        
     </div>
 </div>
 
