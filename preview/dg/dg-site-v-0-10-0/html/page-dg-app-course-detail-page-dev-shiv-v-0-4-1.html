@@ -333,6 +333,64 @@
         }
       }
     </style>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+      
+      .dropdown-container {
+        position: relative;
+      }
+      
+      .dropdown-menu-product-type-selection {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+      
+      .dropdown-item {
+        padding: 10px;
+        cursor: pointer;
+      }
+      
+      .dropdown-item:hover {
+        background-color: #f0f0f0;
+      }
+      
+      #course-card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+       
+      }
+      
+      #course-card h2 {
+        margin: 0 0 10px;
+      }
+      
+      #course-card p {
+        margin: 4px 0;
+      }
+      
+      #dropdown-menu-product-type-selection li{
+        font-size: 15px;
+      }
+      #dropdown-menu-product-type-selection li:hover{
+        background-color: #ececec;
+      }
+      #dropdown-trigger span{
+        color: #333;
+      }
+
+    </style>
+
   </head>
 
   <body>
@@ -1613,140 +1671,42 @@
                     </div>
                 </span> -->
         </span>
-        <article
-          class="card"
-          style="max-width: 400px; overflow: visible; padding: 0"
-        >
+        
+        <article class="card" style="max-width: 400px; overflow: visible; padding: 0">
           <section class="card-body">
             <ul class="card-list">
               <li class="flex align-center justify-between" style="width: 100%">
                 <div class="dropdown-container">
-                  <button
-                    id="dropdown-trigger"
-                    class="dropdown-button"
-                    aria-haspopup="true"
-                    aria-controls="dropdown-menu-product-type-selection"
-                    aria-expanded="false"
-                  >
-                    <span
-                      class="flex align-center gap-small"
-                      style="background-color: var(--surface-color)"
-                    >
-                      <i
-                        class="fa-solid fa-layer-group"
-                        style="color: #333; margin-right: 5px"
-                      ></i>
-                      <span style="color: var(--font-color-primary)"
-                        >Select Product Type</span
-                      >
-                    </span>
-                    <i
-                      class="fa-solid fa-chevron-down"
-                      id="dropdown-arrow"
-                      style="margin-left: 5px"
-                    ></i>
+                  <button id="dropdown-trigger" class="dropdown-button">
+                    <span class="flex align-center gap-small">Select Product Type</span>
+                    <i class="fa-solid fa-chevron-down"></i>
                   </button>
-                  <ul
-                    id="dropdown-menu-product-type-selection"
-                    class="dropdown-menu-product-type-selection"
-                    style="display: none"
-                  >
-                    <li
-                      class="dropdown-menu-product-type-selection-item flex align-center justify-between"
-                      style="padding: var(--spacing-small)"
-                    >
-                      <span>
-                        <input
-                          type="checkbox"
-                          id="option-book"
-                          name="product"
-                          value="Book"
-                          style="display: none"
-                        />
-                        <label for="option-book">Book</label>
-                      </span>
-                      <span>₹ 7,950.00</span>
-                    </li>
-                    <li
-                      class="dropdown-menu-product-type-selection-item flex align-center justify-between"
-                      style="padding: var(--spacing-small)"
-                    >
-                      <span>
-                        <input
-                          type="checkbox"
-                          id="option-mock-test"
-                          name="product"
-                          value="Mock Test"
-                          style="display: none"
-                        />
-                        <label for="option-mock-test">Mock Test</label>
-                      </span>
-                      <span>₹ 7,950.00</span>
-                    </li>
-                    <li
-                      class="dropdown-menu-product-type-selection-item flex align-center justify-between"
-                      style="padding: var(--spacing-small)"
-                    >
-                      <span>
-                        <input
-                          type="checkbox"
-                          id="option-online-bootcamp"
-                          name="product"
-                          value="Online BootCamp"
-                          style="display: none"
-                        />
-                        <label for="option-online-bootcamp"
-                          >Online BootCamp</label
-                        >
-                      </span>
-                      <span>₹ 7,950.00</span>
-                    </li>
-                    <li
-                      class="dropdown-menu-product-type-selection-item flex align-center justify-between"
-                      style="padding: var(--spacing-small)"
-                    >
-                      <span>
-                        <input
-                          type="checkbox"
-                          id="option-voucher"
-                          name="product"
-                          value="Voucher"
-                          style="display: none"
-                        />
-                        <label for="option-voucher">Voucher</label>
-                      </span>
-                      <span>₹ 7,950.00</span>
-                    </li>
-                    <li
-                      class="dropdown-menu-product-type-selection-item flex align-center justify-between"
-                      style="padding: var(--spacing-small)"
-                    >
-                      <span>
-                        <input
-                          type="checkbox"
-                          id="option-self-paced-learning"
-                          name="product"
-                          value="Self Paced Learning"
-                          style="display: none"
-                        />
-                        <label for="option-self-paced-learning"
-                          >Self Paced Learning</label
-                        >
-                      </span>
-                      <span>₹ 7,950.00</span>
-                    </li>
+                  <ul id="dropdown-menu-product-type-selection" class="hidden">
+                    <!-- Dynamic Dropdown Content -->
                   </ul>
                 </div>
               </li>
             </ul>
-
+            <div class="card-detail" id="course-card" style="display: none;">
+              <section class="card-body">
+                <h6 id="course-title"></h6>
+                <p><strong>Price:</strong> <span id="course-price"></span></p>
+                <p><strong>Overview:</strong> <span id="course-overview-1"></span></p>
+                <p><strong>SKU:</strong> <span id="course-sku"></span></p>
+                <p><strong>Publisher:</strong> <span id="course-publisher"></span></p>
+                <p><strong>Author:</strong> <span id="course-author"></span></p>
+                <p><strong>Language:</strong> <span id="course-language"></span></p>
+                <p><strong>ISBN:</strong> <span id="course-isbn"></span></p>
+                <p><strong>Delivery:</strong> <span id="course-delivery"></span></p>
+              </section>
+            </div>
             <table>
               <thead>
                 <tr>
-                  <th style="width: 10%">SI</th>
-                  <th style="width: 40%">Product Title</th>
-                  <th style="width: 20%">Qty</th>
-                  <th style="width: 30%">Price</th>
+                  <th>SI</th>
+                  <th>Product Title</th>
+                  <th>Qty</th>
+                  <th>Price</th>
                 </tr>
               </thead>
               <tbody id="product-list-body">
@@ -1754,30 +1714,15 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="3" style="text-align: right">
-                    <b>Grand Total: </b>
-                  </td>
+                  <td colspan="3" style="text-align: right"><b>Grand Total:</b></td>
                   <td id="grand-total"><span>₹</span> 0</td>
                 </tr>
               </tfoot>
             </table>
+        
           </section>
+        </article>        
 
-          <span
-            class="card-footer"
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: var(--spacing-small);
-              padding-bottom: var(--spacing-mid);
-            "
-          >
-            <!-- <button style="background-color: var(--info-color);">Add to Cart</button> -->
-            <button style="background-color: var(--error-color)">
-              Buy Now
-            </button>
-          </span>
-        </article>
       </span>
     </article>
 
@@ -3250,99 +3195,125 @@
         });
     </script>
 
-    <script>
-      const dropdownTrigger = document.getElementById("dropdown-trigger");
-      const dropdownMenu = document.getElementById(
-        "dropdown-menu-product-type-selection"
-      );
-      const dropdownArrow = document.getElementById("dropdown-arrow");
+   <script>
+    let db;
 
-      dropdownTrigger.addEventListener("click", function () {
-        const isExpanded =
-          dropdownTrigger.getAttribute("aria-expanded") === "true";
-        dropdownTrigger.setAttribute("aria-expanded", !isExpanded);
-        dropdownMenu.style.display = isExpanded ? "none" : "block";
-        dropdownArrow.classList.toggle("dropdown-open", !isExpanded);
-      });
+window.onload = () => {
+  const request = indexedDB.open("CoursesDB", 1);
 
-      const products = {
-        Book: { price: 7950, qty: 1 },
-        "Mock Test": { price: 7950, qty: 1 },
-        "Online BootCamp": { price: 7950, qty: 1 },
-        Voucher: { price: 7950, qty: 1 },
-        "Self Paced Learning": { price: 7950, qty: 1 },
-      };
+  request.onupgradeneeded = (event) => {
+    db = event.target.result;
+    const objectStore = db.createObjectStore("courses", { keyPath: "sku" });
 
-      let selectedProducts = [];
+    // Add initial data to IndexedDB (upload data)
+    objectStore.transaction.oncomplete = function () {
+      const courseObjectStore = db.transaction("courses", "readwrite").objectStore("courses");
 
-      // Update the product table
-      function updateTable() {
-        const tableBody = document.getElementById("product-list-body");
-        const grandTotalCell = document.getElementById("grand-total");
-
-        tableBody.innerHTML = ""; // Clear existing rows
-        let grandTotal = 0;
-
-        selectedProducts.forEach((product, index) => {
-          const price = products[product].price;
-          const qty = products[product].qty;
-          const row = `
-      <tr>
-        <td>${index + 1}</td>
-        <td>${product}</td>
-        <td><input type="number" value="${qty}" min="1" data-product="${product}" class="qty-input" /></td>
-        <td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
-      </tr>
-    `;
-          tableBody.insertAdjacentHTML("beforeend", row);
-          grandTotal += price * qty;
-        });
-
-        grandTotalCell.innerHTML = `Total: ₹${grandTotal}`;
-
-        // Attach event listeners to quantity input fields
-        const qtyInputs = document.querySelectorAll(".qty-input");
-        qtyInputs.forEach((input) => {
-          input.addEventListener("input", function () {
-            const product = this.getAttribute("data-product");
-            const newQty = parseInt(this.value);
-            products[product].qty = newQty;
-            updateTable();
-          });
-        });
-      }
-
-      // Checkbox change event
-      const checkboxes = document.querySelectorAll("input[type='checkbox']");
-      checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener("change", function () {
-          const productName = checkbox.value;
-          if (checkbox.checked) {
-            selectedProducts.push(productName);
-          } else {
-            selectedProducts = selectedProducts.filter(
-              (p) => p !== productName
-            );
-          }
-          updateTable();
-        });
-      });
-
-      // Close dropdown when clicking outside
-      window.addEventListener("click", function (event) {
-        const dropdown = document.getElementById(
-          "dropdown-menu-product-type-selection"
-        );
-        const button = document.getElementById("dropdown-trigger");
-        if (
-          !button.contains(event.target) &&
-          !dropdown.contains(event.target)
-        ) {
-          dropdown.style.display = "none";
-          button.setAttribute("aria-expanded", "false");
+      const courses = [
+        {
+          category: "IT Services Management Books",
+          title: "M_O_R® 4: MANAGEMENT OF RISK: CREATING AND PROTECTING VALUE",
+          price: "₹ 7,950.00",
+          overview: "Management of Risk: Creating and Protecting Value...",
+          sku: "DG-MOR-CPV-E",
+          publisher: "PeopleCert",
+          author: "Axelos",
+          language: "English (UK)",
+          isbn: "978-9925-600-55-7",
+          delivery: "Printed Paperback"
+        },
+        {
+          category: "IT Services Management Books",
+          title: "Service Desk Manager V8",
+          price: "₹ 375.00",
+          overview: "The Service Desk Management Certification...",
+          sku: "DG-SDM-E",
+          publisher: "Ducis Management Consulting P. Ltd",
+          language: "English (UK)",
+          delivery: "ebook"
         }
+      ];
+
+      courses.forEach((course) => {
+        courseObjectStore.add(course);
       });
-    </script>
+    };
+  };
+
+  request.onsuccess = (event) => {
+    db = event.target.result;
+    populateDropdownFromDB();
+  };
+
+  request.onerror = (event) => {
+    console.log("Error opening DB", event);
+  };
+};
+
+// Function to retrieve data from IndexedDB and populate the dropdown
+function populateDropdownFromDB() {
+  const transaction = db.transaction("courses", "readonly");
+  const objectStore = transaction.objectStore("courses");
+
+  const dropdownMenu = document.getElementById('dropdown-menu-product-type-selection');
+  dropdownMenu.innerHTML = ''; // Clear existing dropdown items
+
+  objectStore.getAll().onsuccess = (event) => {
+    const courses = event.target.result;
+    courses.forEach((course) => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('dropdown-item');
+      listItem.setAttribute('data-sku', course.sku);
+      listItem.textContent = course.title;
+      listItem.onclick = () => {
+        handleCourseSelection(course.sku);
+        dropdownMenu.classList.add('hidden'); // Close the dropdown after selection
+      };
+      dropdownMenu.appendChild(listItem);
+    });
+  };
+}
+
+// Function to handle course selection from IndexedDB
+function handleCourseSelection(sku) {
+  const transaction = db.transaction("courses", "readonly");
+  const objectStore = transaction.objectStore("courses");
+
+  const request = objectStore.get(sku);
+
+  request.onsuccess = (event) => {
+    const selectedCourse = event.target.result;
+    const courseCard = document.getElementById('course-card');
+
+    if (selectedCourse) {
+      // Update card details
+      document.getElementById('course-title').textContent = selectedCourse.title;
+      document.getElementById('course-price').textContent = selectedCourse.price;
+      document.getElementById('course-overview-1').textContent = selectedCourse.overview;
+      document.getElementById('course-sku').textContent = selectedCourse.sku;
+      document.getElementById('course-publisher').textContent = selectedCourse.publisher || 'N/A';
+      document.getElementById('course-author').textContent = selectedCourse.author || 'N/A';
+      document.getElementById('course-language').textContent = selectedCourse.language || 'N/A';
+      document.getElementById('course-isbn').textContent = selectedCourse.isbn || 'N/A';
+      document.getElementById('course-delivery').textContent = selectedCourse.delivery || 'N/A';
+
+      // Show the card
+      courseCard.style.display = 'block';
+    }
+  };
+}
+
+// Show/Hide dropdown menu
+const dropdownTrigger = document.getElementById('dropdown-trigger');
+const dropdownMenu = document.getElementById('dropdown-menu-product-type-selection');
+
+dropdownTrigger.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('hidden');
+});
+
+   </script>
+    
+      
   </body>
 </html>
 
