@@ -16,7 +16,7 @@ export class ProductCard {
                         <p class="card-text">${truncatedDescription}</p>
                     </div>
                     <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-                        <a href="./page-dg-app-course-detail-page-dev-shiv.html?productId=${this.product.id}" class="btn btn-light">Know More</a>
+                        <a href="./productPage.html?productId=${this.product.id}" class="btn btn-light">Know More</a>
                         <a class="btn btn-light add-to-cart" data-id="${this.product.id}">Add to cart</a>
                     </div>
                 </div>
