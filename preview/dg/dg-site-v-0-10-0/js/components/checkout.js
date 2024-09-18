@@ -1,7 +1,7 @@
 let netTotal
 // Get Cart Items
 async function getCartItems(cartId) {
-    const response = await fetch(`http://localhost:3000/cart/items/${cartId}`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/items/${cartId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ async function getCartItems(cartId) {
 
 async function placeOrder(userId, paymentMethod, amount) {
     try {
-        const response = await fetch('http://localhost:3000/placeOrder', {
+        const response = await fetch('https://dg-back.onrender.com/placeOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

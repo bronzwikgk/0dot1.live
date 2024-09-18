@@ -7,7 +7,7 @@ let totalPages = 1;
 async function fetchProducts(page = 1) {
     console.log("Fething Products");
     const offset = (page - 1) * pageSize;
-    const response = await fetch(`http://localhost:3000/products?limit=${pageSize}&offset=${offset}`);
+    const response = await fetch(`https://dg-back.onrender.com/products?limit=${pageSize}&offset=${offset}`);
     const data = await response.json();
     products = data.products;
     totalPages = Math.ceil(data.totalCount / pageSize);
@@ -20,7 +20,7 @@ async function fetchProducts(page = 1) {
 async function searchProducts(query, page = 1) {
     try {
         const offset = (page - 1) * pageSize;
-        const response = await fetch(`http://localhost:3000/products?search=${encodeURIComponent(query)}&limit=${pageSize}&offset=${offset}`);
+        const response = await fetch(`https://dg-back.onrender.com/products?search=${encodeURIComponent(query)}&limit=${pageSize}&offset=${offset}`);
         if (!response.ok) {
             throw new Error('Failed to fetch products');
         }

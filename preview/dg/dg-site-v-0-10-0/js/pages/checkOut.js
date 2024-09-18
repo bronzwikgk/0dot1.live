@@ -62,7 +62,7 @@ function calculateTotals(cartData) {
     document.getElementById("total").textContent = `₹${total.toFixed(2)}`;
 }
 
-const httpService = new HttpService('http://localhost:3000');
+const httpService = new HttpService('https://dg-back.onrender.com');
 
 // On Checkout Page
 async function initiatePayment() {

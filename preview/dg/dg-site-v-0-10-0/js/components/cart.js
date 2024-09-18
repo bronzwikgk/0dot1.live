@@ -2,7 +2,7 @@
 
 // Delete a Product
 async function deleteProduct(productId) {
-    const response = await fetch(`http://localhost:3000/products/${productId}`, {
+    const response = await fetch(`https://dg-back.onrender.com/products/${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ async function deleteProduct(productId) {
 
 // Get Cart Items
 async function getCartItems(cartId) {
-    const response = await fetch(`http://localhost:3000/cart/items/${cartId}`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/items/${cartId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ async function getCartItems(cartId) {
 
 // Add Cart Item
 async function addCartItem(cartId, productId, quantity) {
-    const response = await fetch(`http://localhost:3000/cart/add`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/add`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ async function createCart() {
         ? { userId: parseInt(userId) }
         : { sessionId: sessionId };
 
-    const response = await fetch(`http://localhost:3000/cart/create`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/create`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ async function createCart() {
 
 // Decrease Cart Item Quantity
 async function decreaseCartItem(cartId, productId, quantity) {
-    const response = await fetch(`http://localhost:3000/cart/decrease`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/decrease`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ async function decreaseCartItem(cartId, productId, quantity) {
 
 // Remove Cart Item
 async function removeCartItem(cartId, productId) {
-    const response = await fetch(`http://localhost:3000/cart/remove`, {
+    const response = await fetch(`https://dg-back.onrender.com/cart/remove`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

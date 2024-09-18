@@ -1,5 +1,5 @@
 import { HttpService } from "../services/HttpService.js";
-const httpService = new HttpService('http://localhost:3000');
+const httpService = new HttpService('https://dg-back.onrender.com');
 async function verifyPayment() {
   console.log("Verify Pyament run");
 

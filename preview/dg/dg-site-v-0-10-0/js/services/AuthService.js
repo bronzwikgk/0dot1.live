@@ -72,7 +72,7 @@ class AuthService {
 }
 
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('http://localhost:3000');
+const httpService = new HttpService('https://dg-back.onrender.com');
 const authService = new AuthService(httpService);
 
 export default authService;

@@ -7,7 +7,7 @@ function getProductIdFromUrl() {
 // Function to fetch the product data from the backend
 async function fetchProductData(productId) {
   try {
-    const response = await fetch(`http://localhost:3000/products/${productId}`);
+    const response = await fetch(`https://dg-back.onrender.com/products/${productId}`);
     if (!response.ok) {
       throw new Error(`Network response was not ok: ${response.statusText}`);
     }

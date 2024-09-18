@@ -1,7 +1,7 @@
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:3000/products');
+        const response = await fetch('https://dg-back.onrender.com/products');
         if (!response.ok) {
             throw new Error('Failed to fetch products');
         }
@@ -21,7 +21,7 @@ async function fetchProducts() {
 // Function to fetch a single product by ID
 async function fetchProductById(productId) {
     try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        const response = await fetch(`https://dg-back.onrender.com/products/${productId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch product');
         }
@@ -52,7 +52,7 @@ async function createProduct(event) {
     const categoryId = document.getElementById('product-category-id').value;
 
     try {
-        const response = await fetch('http://localhost:3000/products', {
+        const response = await fetch('https://dg-back.onrender.com/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ async function updateProduct(productId, event) {
     const categoryId = document.getElementById('update-product-category-id').value;
 
     try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`, {
+        const response = await fetch(`https://dg-back.onrender.com/products/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ async function updateProduct(productId, event) {
 // Function to delete a product
 async function deleteProduct(productId) {
     try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`, {
+        const response = await fetch(`https://dg-back.onrender.com/products/${productId}`, {
             method: 'DELETE',
         });
 

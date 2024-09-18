@@ -1,6 +1,6 @@
 import { HttpService } from "./HttpService.js";
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('http://localhost:3000');
+const httpService = new HttpService('https://dg-back.onrender.com');
 
 export class CartService {
 
