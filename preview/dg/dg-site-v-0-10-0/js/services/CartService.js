@@ -106,15 +106,10 @@ export class CartService {
         }
     }
 
-    // Remove an item from the cart
-    static async removeCartItem(cartId, productId) {
-        const url = `/cart/remove`;
-        const data = {
-            cartId,
-            productId
-        };
+    static async removeCartItem(userId, productId, type) {
+        const url = `/api/cart/${userId}/item/${productId}/${type}`;
         try {
-            return await httpService.delete(url, data);
+            return await httpService.delete(url);
         } catch (error) {
             console.error('Error removing item from cart:', error);
             throw error;

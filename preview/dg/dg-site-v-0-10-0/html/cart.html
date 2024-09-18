@@ -353,7 +353,7 @@
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
             <th scope="col">Total</th>
-            <th scope="col">Action</th>
+            <!-- <th scope="col">Action</th> -->
           </tr>
         </thead>
         <tbody>
@@ -380,13 +380,8 @@
             </td>
             <td>₹ {{this.price}}</td>
             <td>₹ {{calculateTotal this.price this.quantity}}</td>
-            <td>
-              <button
-                class="btn btn-danger"
-                data-id="{{this.productId}}"
-                data-type="{{this.type}}"
-              >Remove</button>
-            </td>
+          
+            
           </tr>
           {{/each}}
         </tbody>
