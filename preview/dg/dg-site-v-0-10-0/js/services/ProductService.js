@@ -5,13 +5,18 @@ const httpService = new HttpService('http://localhost:3000');
 
 export class ProductService {
     // Get products with optional search and pagination parameters
-    static async getProducts({ page = 1, limit = 10, query = '' } = {}) {
-        const offset = (page - 1) * limit;
-        let url = `/api/products?limit=${limit}&offset=${offset}`;
+    // Get products with optional search, category, and pagination parameters
+    static async getProducts({ page = 1, limit = 10, query = '', categories = [] } = {}) {
+        let url = `/api/products?limit=${limit}&page=${page}`;
 
         // Add search query to the URL if it's provided
         if (query) {
-            url += `&search=${encodeURIComponent(query)}`;
+            url += `&q=${encodeURIComponent(query)}`;
+        }
+
+        // Add category filters to the URL if provided
+        if (categories.length > 0) {
+            url += `&category=${categories.map(encodeURIComponent).join(',')}`;
         }
 
         try {
@@ -22,13 +27,16 @@ export class ProductService {
         }
     }
 
+
     // Get a specific product by ID
-    static async getProductById(id) {
-        const url = `/products/${id}`;
+    static async getProductById() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('productId');
+        const url = `/api/products/${productId}`;
         try {
             return await httpService.get(url);
         } catch (error) {
-            console.error(`Error fetching product with ID ${id}:`, error);
+            console.error(`Error fetching product with ID ${productId}:`, error);
             throw error;
         }
     }

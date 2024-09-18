@@ -39,5 +39,11 @@ export class Pagination {
                 }
             }
         });
+        const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="category"]');
+        const getSelectedCategories = () => {
+            return Array.from(categoryCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+        };
     }
 }

@@ -270,13 +270,30 @@
           step2Tab.classList.add("active");
         });
 
-      // Confirm Payment
-      document
-        .getElementById("confirmPayment")
-        .addEventListener("click", function () {
-          alert("Payment Confirmed! Thank you for your purchase.");
-          window.location.href = "./orderPlaced.html";
-        });
+  
+
+      // On Razorpay UI Page (Your Dummy Razorpay Page)
+      function completePayment() {
+        const paymentId = getQueryParam("paymentId"); // Get paymentId from URL
+        const userId = currentUserId; // Assuming user is logged in
+
+        // Simulate payment success (you can do actual Razorpay logic here)
+        fetch("/payment/success", {
+          method: "POST",
+          body: JSON.stringify({ paymentId, userId }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((orderData) => {
+            // Redirect to order confirmation page with the order ID
+            window.location.href = `./orderPlaced.html?orderId=${orderData.orderId}`;
+          })
+          .catch((error) => {
+            console.error("Error processing payment:", error);
+            // Handle error (e.g., show error message on UI)
+          });
+      }
     </script>
+    <script type="module" src="../js/pages/razorypay.js"></script>
   </body>
 </html>

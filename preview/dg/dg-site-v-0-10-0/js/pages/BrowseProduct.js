@@ -11,18 +11,18 @@ let currentPage = 1;
 let totalPages = 1;
 
 // Fetch products from the backend for a specific page
-async function fetchProducts(page = 1, query = '') {
+async function fetchProducts(page = 1, query = '',categories=[]) {
     try {
         console.log('Query:', query);
 
         // Call the ProductService to get products with search and pagination
-        const data = await ProductService.getProducts({ page, limit: pageSize, query });
+        const data = await ProductService.getProducts({ page, limit: pageSize, query ,categories});
 
         console.log("Fetching Products");
 
         // Update products and total pages using the fetched data
         products = data.products;
-        totalPages = Math.ceil(data.totalCount / pageSize);
+        totalPages = data.totalPages;
 
         // Render the products and pagination controls
         renderProducts();
@@ -70,11 +70,26 @@ function handleSearch(query) {
     fetchProducts(1, query);
 }
 
-
-
 // Initialize the search component
 const search = new Search(handleSearch);
 search.render();
+
+const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="category"]');
+
+
+const getSelectedCategories = () => {
+    return Array.from(categoryCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+};
+
+    // Handle category filter changes (on checkbox click)
+    categoryCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            fetchProducts(currentPage,null,getSelectedCategories())
+        });
+    });
+
 
 // Initial fetch of products
 fetchProducts();

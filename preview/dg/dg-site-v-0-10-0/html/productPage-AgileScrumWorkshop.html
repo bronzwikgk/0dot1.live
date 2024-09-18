@@ -104,16 +104,16 @@
               aria-expanded="false">Offering</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
               <li>
-                <a class="dropdown-item" href="#t&c">Training &amp; certifications</a>
+                <a class="dropdown-item" href="./offering.html">Training &amp; certifications</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#cons">Consultancy</a>
+                <a class="dropdown-item" href="./offering.html#cons">Consultancy</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#atva">ATVA</a>
+                <a class="dropdown-item" href="./offering.html#atva">ATVA</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#shop">Shop</a>
+                <a class="dropdown-item" href="./offering.html#shop">Shop</a>
               </li>
             </ul>
           </li>
@@ -153,7 +153,7 @@
   </nav>
   <header class="bg-primary py-5">
     <div class="container px-5">
-      <div class="row gx-5 align-items-center justify-content-center">
+      <div class="row align-items-center justify-content-center">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
           <div class="my-5 text-xl-start">
             <h1 class="display-5 text-white mb-5">
@@ -283,6 +283,7 @@ and encourages rapid and flexible response to change.
                 <li>60 minutes’ duration</li>
                 <li>Closed book</li>
                 <li>Prerequisite – None</li>
+                </ul>
             </div>
           </div>
 
@@ -599,45 +600,30 @@ and encourages rapid and flexible response to change.
                   <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
                 </button>
                 <ul id="dropdown-menu-product-type-selection" class="dropdown-menu-product-type-selection">
-                  <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
-                    <div>
-                      <input type="checkbox" id="option-book" name="product" value="Book" style="display: none;" />
-                      <label for="option-book">Book</label>
-                    </div>
-                    <span>₹ 7,950.00</span>
-                  </li>
-                  <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
-                    <div>
-                      <input type="checkbox" id="option-mock-test" name="product" value="Mock Test"
-                        style="display: none;" />
-                      <label for="option-mock-test">Mock Test</label>
-                    </div>
-                    <span>₹ 7,950.00</span>
-                  </li>
-                  <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
-                    <div>
-                      <input type="checkbox" id="option-online-bootcamp" name="product" value="Online BootCamp"
-                        style="display: none;" />
-                      <label for="option-online-bootcamp">Online BootCamp</label>
-                    </div>
-                    <span>₹ 7,950.00</span>
-                  </li>
-                  <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
-                    <div>
-                      <input type="checkbox" id="option-voucher" name="product" value="Voucher"
-                        style="display: none;" />
-                      <label for="option-voucher">Voucher</label>
-                    </div>
-                    <span>₹ 7,950.00</span>
-                  </li>
-                  <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
-                    <div>
-                      <input type="checkbox" id="option-self-paced-learning" name="product" value="Self Paced Learning"
-                        style="display: none;" />
-                      <label for="option-self-paced-learning">Self Paced Learning</label>
-                    </div>
-                    <span>₹ 7,950.00</span>
-                  </li>
+                   <!-- Handlebars template -->
+                   <script
+                   id="product-type-template"
+                   type="text/x-handlebars-template"
+                 >
+                   {{#each options}}
+                     <li
+                       class="dropdown-menu-product-type-selection-item d-flex justify-content-between"
+                     >
+                       <div>
+                         <input
+                           type="checkbox"
+                           id="option-{{@index}}"
+                           name="product"
+                           value="{{type}}"
+                           data-price="{{price}}"
+                           style="display: none;"
+                         />
+                         <label for="option-{{@index}}">{{type}}</label>
+                       </div>
+                       <span>₹ {{price}}</span>
+                     </li>
+                   {{/each}}
+                 </script>
                 </ul>
               </div>
 
@@ -1306,102 +1292,9 @@ and encourages rapid and flexible response to change.
     crossorigin="anonymous"></script>
   <!-- <script type="module" src="../js/pages/BrowseProduct.js"></script> -->
   <script src="../js/components/navbar.js"></script>
-  <script>
-    const dropdownTrigger = document.getElementById("dropdown-trigger");
-    const dropdownMenu = document.getElementById(
-      "dropdown-menu-product-type-selection"
-    );
-    const dropdownArrow = document.getElementById("dropdown-arrow");
-
-    dropdownTrigger.addEventListener("click", function () {
-      const isExpanded =
-        dropdownTrigger.getAttribute("aria-expanded") === "true";
-      dropdownTrigger.setAttribute("aria-expanded", !isExpanded);
-      dropdownMenu.style.display = isExpanded ? "none" : "block";
-      dropdownArrow.classList.toggle("dropdown-open", !isExpanded);
-    });
-
-    const products = {
-      Book: { price: 7950, qty: 1 },
-      "Mock Test": { price: 7950, qty: 1 },
-      "Online BootCamp": { price: 7950, qty: 1 },
-      Voucher: { price: 7950, qty: 1 },
-      "Self Paced Learning": { price: 7950, qty: 1 },
-    };
-
-    let selectedProducts = [];
-
-    // Update the product table
-    function updateTable() {
-      const tableBody = document.getElementById("product-list-body");
-      const grandTotalCell = document.getElementById("grand-total");
-
-      tableBody.innerHTML = ""; // Clear existing rows
-      let grandTotal = 0;
-
-      selectedProducts.forEach((product, index) => {
-        const price = products[product].price;
-        const qty = products[product].qty;
-        const row = `
-      <tr>
-        <td>${index + 1}</td>
-        <td>${product}</td>
-        <td><input type="number" value="${qty}" min="1" data-product="${product}" class="qty-input" /></td>
-        <td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
-      </tr>
-    `;
-        tableBody.insertAdjacentHTML("beforeend", row);
-        grandTotal += price * qty;
-      });
-
-      grandTotalCell.innerHTML = `Total: ₹${grandTotal}`;
-
-      // Attach event listeners to quantity input fields
-      const qtyInputs = document.querySelectorAll(".qty-input");
-      qtyInputs.forEach((input) => {
-        input.addEventListener("input", function () {
-          const product = this.getAttribute("data-product");
-          const newQty = parseInt(this.value);
-          products[product].qty = newQty;
-          updateTable();
-        });
-      });
-    }
-
-
-
-    // Checkbox change event
-    const checkboxes = document.querySelectorAll("input[type='checkbox']");
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", function () {
-        const productName = checkbox.value;
-        if (checkbox.checked) {
-          selectedProducts.push(productName);
-        } else {
-          selectedProducts = selectedProducts.filter(
-            (p) => p !== productName
-          );
-        }
-        updateTable();
-      });
-    });
-
-    // Close dropdown when clicking outside
-    window.addEventListener("click", function (event) {
-      const dropdown = document.getElementById(
-        "dropdown-menu-product-type-selection"
-      );
-      const button = document.getElementById("dropdown-trigger");
-      if (
-        !button.contains(event.target) &&
-        !dropdown.contains(event.target)
-      ) {
-        dropdown.style.display = "none";
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
-   
-  </script>
+  <script type="module" src="../js/pages/productPage.js"></script>
+    <script type="module" src="../js/pages/salesCard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
   <script type="module" src="../js/pages/productPage.js"></script>
 </body>
 
