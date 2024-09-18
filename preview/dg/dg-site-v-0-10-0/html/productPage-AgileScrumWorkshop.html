@@ -157,7 +157,7 @@
         <div class="col-lg-8 col-xl-7 col-xxl-6">
           <div class="my-5 text-xl-start">
             <h1 class="display-5 text-white mb-5">
-              ITIL® Foundation: ITIL 4 Edition
+                Agile Scrum Workshop
             </h1>
      
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
@@ -214,26 +214,21 @@
 
                 <div class="text-xl-start">
                   <h3 class="mb-5">Course Overview</h3>
+                  
+
+
                   <p>
-                    ITIL 4 Foundation is the latest evolution of the most widely
-                    adopted guidance for ITSM. Its audience ranges from IT and
-                    business students taking their first steps in service
-                    management to seasoned professionals familiar with earlier
-                    versions of ITIL and other sources of industry best practice.
+                    Agile software development is a group of software development methods in which requirements
+and solutions evolve through collaboration between self-organizing, cross-functional teams. It
+promotes adaptive planning, evolutionary development, early delivery, continuous improvement,
+and encourages rapid and flexible response to change.
                   </p>
                   <p>
-                    ITIL certification is an essential requirement for
-                    professionals who need to learn the fundamentals of ITIL
-                    frameworks and how they may be used to enhance the quality of
-                    IT service management. The ITIL® 4 Foundation certificate is a
-                    requirement for attending any of the advanced level or
-                    “specialist” courses.
+                    The Agile workshop is based on “The Professional Scrum Master (PSM)” course; which is a 2-day
+                    course that covers the principles and (empirical) process theory underpinning the mechanics, rules
+                    and roles of the Scrum framework"
                   </p>
-                  <p>
-                    The ITIL® 4 Foundation guidance introduces an end-to-end
-                    operating model for the creation, delivery, and continual
-                    improvement of technology-enabled products and services.
-                  </p>
+                 
                 </div>
               </div>
             </div>
@@ -243,10 +238,9 @@
             <div class="album py-4 mx-5">
               <h3>Target Group</h3>
               <p>
-                This certification is best suited for Professionals engaged in
-                Service Delivery. The audience also includes IT Managers/ Support
-                Teams, System Administrators/ Analysts, Operations Managers,
-                Database Administrators, Service Delivery Professionals.
+                Intended for anyone involved in product delivery using the Scrum framework. It is beneficial for
+                those people within an organization accountable for getting the most out of Scrum, including Scrum
+                Masters, managers, and Scrum Team members.
               </p>
             </div>
           </div>
@@ -255,29 +249,21 @@
           <div class="tab-pane" id="simple-tabpanel-2" role="tabpanel" aria-labelledby="simple-tab-2">
             <div class="album py-4 mx-5">
               <h3>Concepts Covered</h3>
+              "
+
+
               <p>
-                Holders of the ITIL ® 4 Foundation certification, will be able
-                to demonstrate their knowledge and understanding of:
+                When you complete this Professional Scrum Master course, you will be able to accomplish the following:
               </p>
 
               <ul>
-                <li>IT service management in the modern world</li>
-                <li>The ITIL Service Value system or SVS</li>
-                <li>The four dimensions model</li>
-                <li>
-                  Key concepts of service management such as Value and value
-                  co-creation, stakeholders, Service consumers and stakeholders,
-                  Costs, Risks, Utility and warranty
-                </li>
-                <li>
-                  Guiding Principles, and the Service Value Chain along with the
-                  continuous Improvement Model
-                </li>
-                <li>
-                  ITIL management practices such as, General management
-                  practices, Service management practices and technical
-                  management practices
-                </li>
+                <li>Agile Introduction and Overview</li>
+                <li>The basics of the scrum framework</li>
+                <li> The Agile Team</li>
+                 <li>Agile Planning Framework</li>
+                <li> Learn how to lead a team, understand your roles as a scrum master, settle conflicts, and
+                increase the efficiency of the scrum</li>
+                 <li>Create the Product Backlog</li>
               </ul>
             </div>
           </div>
@@ -286,12 +272,14 @@
           <div class="tab-pane" id="simple-tabpanel-3" role="tabpanel" aria-labelledby="simple-tab-3">
             <div class="album py-4 mx-5">
               <h3>Exam Format</h3>
-              <p>ITIL ® 4 Foundation certification exam format is following:</p>
+              <p>Agile Scrum WorkShop certification exam format is following:</p>
 
               <ul>
                 <li>Multiple choice format</li>
-                <li>40 questions per paper</li>
-                <li>65% to pass, or 26/40</li>
+                
+
+                <li>80 questions per paper</li>
+                <li>85% to pass</li>
                 <li>60 minutes’ duration</li>
                 <li>Closed book</li>
                 <li>Prerequisite – None</li>
@@ -677,7 +665,7 @@
 
             <!-- Buy Now Button -->
             <div class="card-footer text-center">
-              <button class="btn btn-danger w-100">Add To Cart</button>
+              <button id="add_to_cart_btn" class="btn btn-danger w-100">Add To Cart</button>
             </div>
           </div>
         </div>
@@ -1316,7 +1304,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <script type="module" src="../js/pages/BrowseProduct.js"></script>
+  <!-- <script type="module" src="../js/pages/BrowseProduct.js"></script> -->
   <script src="../js/components/navbar.js"></script>
   <script>
     const dropdownTrigger = document.getElementById("dropdown-trigger");
@@ -1380,6 +1368,8 @@
       });
     }
 
+
+
     // Checkbox change event
     const checkboxes = document.querySelectorAll("input[type='checkbox']");
     checkboxes.forEach((checkbox) => {
@@ -1410,7 +1400,9 @@
         button.setAttribute("aria-expanded", "false");
       }
     });
+   
   </script>
+  <script type="module" src="../js/pages/productPage.js"></script>
 </body>
 
 </html>

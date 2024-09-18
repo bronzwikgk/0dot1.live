@@ -1,8 +1,7 @@
 export const loginRules = {
-    username: {
+    email: {
         required: true,
-        minLength: 3,
-        maxLength: 20
+     
     },
     password: {
         required: true,

@@ -2,7 +2,7 @@
 async function loginUser(event) {
     event.preventDefault(); // Prevent default form submission behavior
 
-    const username = document.getElementById('username').value;
+    const username = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
@@ -11,7 +11,7 @@ async function loginUser(event) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ email, password }),
         });
 
         if (!response.ok) {
@@ -38,7 +38,7 @@ async function loginUser(event) {
 async function registerUser(event) {
     event.preventDefault(); // Prevent default form submission behavior
 
-    const username = document.getElementById('reg-username').value;
+    
     const password = document.getElementById('reg-password').value;
     const email = document.getElementById('reg-email').value;
     const confirmPassword = document.getElementById('confirm-password').value;
@@ -50,12 +50,12 @@ async function registerUser(event) {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/auth/register', {
+        const response = await fetch('http://localhost:3000/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password, email }),
+            body: JSON.stringify({ password, email }),
         });
 
         if (!response.ok) {

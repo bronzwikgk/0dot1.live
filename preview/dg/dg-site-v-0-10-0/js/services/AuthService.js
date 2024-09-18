@@ -6,9 +6,9 @@ class AuthService {
     }
 
     // Login Method
-    async login(username, password) {
+    async login(email, password) {
         try {
-            const response = await this.httpService.post('/auth/login', { username, password });
+            const response = await this.httpService.post('/api/auth/login', { email, password });
 
             if (!response) {
                 throw new Error('Login failed');
@@ -16,7 +16,7 @@ class AuthService {
 
             // Assuming response contains { token, cartId, userId }
             localStorage.setItem('token', response.token);
-            localStorage.setItem('cartId', response.cartId);
+            // localStorage.setItem('cartId', response.cartId);
             localStorage.setItem('userId', response.userId);
 
             console.log('Login successful:', response);
@@ -30,13 +30,13 @@ class AuthService {
     }
 
     // Registration Method
-    async register(username, password, confirmPassword, email) {
+    async register(password, confirmPassword, email) {
         if (password !== confirmPassword) {
             throw new Error('Passwords do not match');
         }
 
         try {
-            const response = await this.httpService.post('/auth/register', { username, password, email });
+            const response = await this.httpService.post('/api/auth/register', { password, email });
 
             if (!response) {
                 throw new Error('Registration failed');
@@ -62,8 +62,13 @@ class AuthService {
     // Method to check if the user is authenticated
     isAuthenticated() {
         const token = localStorage.getItem('token');
-        return token !== null;
+        if (!token) return false;
+
+        // Optionally, decode the JWT and check the expiration
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        return payload.exp > Date.now() / 1000;
     }
+
 }
 
 // Create an instance of HttpService and pass it to AuthService

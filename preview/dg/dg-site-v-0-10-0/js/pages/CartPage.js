@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    const cartId = localStorage.getItem('cartId');
+    // const cartId = localStorage.getItem('cartId');
 
     try {
-        const cartItems = await CartService.getCartItems(cartId);
+        const cartItems = await CartService.getCartItems();
         console.log(cartItems);
         UIService.registerHandlebarsHelpers();
         await UIService.renderCartTemplate(cartItems);

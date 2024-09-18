@@ -12,19 +12,19 @@ export class ProductCard {
                         <img class="p-3" style="max-width: 100%; max-height: 100%; object-fit: contain;" src="${this.product.image}" alt="${this.product.title}">
                     </div>
                     <div class="card-body" style="flex-grow: 1">
-                        <h5 class="card-title">${this.product.title}</h5>
+                        <h5 class="card-title">${this.product.name}</h5>
                         <p class="card-text">${truncatedDescription}</p>
                     </div>
                     <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-                        <a href="./productPage.html?productId=${this.product.id}" class="btn btn-light">Know More</a>
-                        <a class="btn btn-light add-to-cart" data-id="${this.product.id}">Add to cart</a>
+                        <a href="./productPage-${this.product.name.replace(/\s/g, "")}.html?productId=${this.product._id}" class="btn btn-light">Know More</a>
+                       
                     </div>
                 </div>
             </div>
         `;
     }
 
-    truncateDescription(description, maxLength = 100) {
+    truncateDescription(description, maxLength = 50) {
         if (description.length <= maxLength) return description;
         return description.slice(0, maxLength) + '...';
     }

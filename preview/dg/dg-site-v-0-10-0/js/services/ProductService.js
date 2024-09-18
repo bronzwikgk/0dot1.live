@@ -7,7 +7,7 @@ export class ProductService {
     // Get products with optional search and pagination parameters
     static async getProducts({ page = 1, limit = 10, query = '' } = {}) {
         const offset = (page - 1) * limit;
-        let url = `/products?limit=${limit}&offset=${offset}`;
+        let url = `/api/products?limit=${limit}&offset=${offset}`;
 
         // Add search query to the URL if it's provided
         if (query) {
