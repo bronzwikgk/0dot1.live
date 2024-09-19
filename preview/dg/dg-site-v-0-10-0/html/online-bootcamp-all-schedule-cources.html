@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mock Test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Course Schedule</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -12,20 +12,69 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../beauty/bootstrap/bootstrap-dg-site-theme.css" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .question {
-            margin-bottom: 1.5rem;
+        /* Minimal Custom CSS */
+        td .btn {
+            margin-bottom: 5px;
         }
 
-        .form-check {
-            margin-bottom: 0.5rem;
+        th,
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Add padding to increase action column height */
+        td.actions {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        /* Center the Course Schedule title */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Ensure proper table visibility and borders */
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        /* Horizontal line */
+        hr {
+            border-top: 2px solid #000;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Styling for the "Standard Deliverables" section */
+        h4 {
+            margin-top: 30px;
+        }
+
+        /* Responsive table */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table th,
+        .table td {
+            white-space: nowrap;
+        }
+
+
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-5">
             <a href="./landing.html"><img style="width: 100px"
@@ -81,8 +130,8 @@
                                 <a class="dropdown-item" href="./resource.html#webinar">Webinar</a>
                             </li>
                             <!-- <li>
-                    <a class="dropdown-item" href="./resource.html#comm">Community Forum</a>
-                  </li> -->
+                <a class="dropdown-item" href="./resource.html#comm">Community Forum</a>
+              </li> -->
                             <li>
                                 <a class="dropdown-item" href="./resource.html#mock">Mock Test</a>
                             </li>
@@ -111,69 +160,116 @@
     </nav>
 
     <div class="container mt-4">
-        <h1 class="text-center"> This is Dummy Mock Test Page</h1>
-        <form>
-            <div class="question">
-                <h4>Question 1</h4>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
-                    <label class="form-check-label" for="q1a">
-                        Option A
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
-                    <label class="form-check-label" for="q1b">
-                        Option B
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
-                    <label class="form-check-label" for="q1c">
-                        Option C
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
-                    <label class="form-check-label" for="q1d">
-                        Option D
-                    </label>
-                </div>
-            </div>
+        <h1 class="text-center">Course Schedule</h1>
+        <hr>
+        <p class="text-center">The course schedule provides details to the classes conducted in a live online
+            environment, delivered by accredited trainers.</p>
 
-            <div class="question">
-                <h4>Question 2</h4>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
-                    <label class="form-check-label" for="q2a">
-                        Option A
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
-                    <label class="form-check-label" for="q2b">
-                        Option B
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
-                    <label class="form-check-label" for="q2c">
-                        Option C
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2d" value="d">
-                    <label class="form-check-label" for="q2d">
-                        Option D
-                    </label>
-                </div>
-            </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Duration</th>
+                        <th>Dates</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ITIL ® 4 Leader: Digital & IT Strategy</td>
+                        <td>4 Weekend Sessions of 6 Hours each</td>
+                        <td>21-22 Sept, 27-28 Sept</td>
+                        <td>
+                            IST – 6.00 PM<br>
+                            GMT – 12.30 PM<br>
+                            EST – 8.30 AM
+                        </td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                            <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                            <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ITIL ® 4 Specialist: High Velocity IT</td>
+                        <td>5 Sessions of 4 Hours Each</td>
+                        <td>10-11-12-12-14 Oct</td>
+                        <td>
+                            IST – 6.00 PM<br>
+                            GMT – 12.30 PM<br>
+                            EST – 8.30 AM
+                        </td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                            <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                            <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Peoplecert Devops: Site Reliability Engineering - SRE</td>
+                        <td>4 Weekend Sessions of 4 Hours each</td>
+                        <td>17-18 Sept, 25-26 Sept</td>
+                        <td>
+                            IST – 6.00 PM<br>
+                            GMT – 12.30 PM<br>
+                            EST – 8.30 AM
+                        </td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                            <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                            <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ITIL ® 4 Foundation Live</td>
+                        <td>4 Full day Sessions of 4 hours each</td>
+                        <td>22-25 Sept</td>
+                        <td>
+                            IST – 06.00 PM<br>
+                            GMT – 12.30 PM (22nd Sept)<br>
+                            EST – 08.30 PM (22nd Sept)
+                        </td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                            <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                            <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SDI: Service Desk Manager</td>
+                        <td>3 Full day Sessions of 8 hours each</td>
+                        <td>19-21 Sept</td>
+                        <td>
+                            IST – 09.30 AM<br>
+                            GMT – 04.00 AM (19th Sept)<br>
+                            EST – 12.00 AM (19th Sept)
+                        </td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                            <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                            <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
+        <h4>Standard Deliverables are:</h4>
+        <ul>
+            <li>Accredited Courseware for courses in a downloadable eBook format.</li>
+            <li>For Axelos training such as ITIL / MSP / Prince2 – the original official Manual from Axelos is provided.
+            </li>
+            <li>One exam voucher for each training module is provided.</li>
+            <li>Live training provided by accredited trainers.</li>
+            <li>For courses like ITIL 4 Foundation, HVIT, CDS, DPI, DSV, we offer eLearning as a special offering.</li>
+            <li>We provide online sample papers to practice for the official certification exam.</li>
+        </ul>
+
+        <p>For more information, <a href="../html/contactus.html">contact us now.</a></p>
     </div>
+
 
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -422,9 +518,6 @@
     </section>
 
     <script src="../js/contact-us-form.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
