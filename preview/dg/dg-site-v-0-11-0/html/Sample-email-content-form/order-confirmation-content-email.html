@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #28a745;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .order-summary {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary th,
+        .order-summary td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .order-summary th {
+            background-color: #f8f8f8;
+        }
+
+        .total {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Hello [Customer Name],</p>
+        <p>We’re excited to let you know that your order has been confirmed. Below are the details of your purchase.</p>
+
+        <h2>Order Details</h2>
+        <p><strong>Order Number:</strong> #12345</p>
+        <p><strong>Order Date:</strong> [Order Date]</p>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Name 1</td>
+                        <td>1</td>
+                        <td>$50.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product Name 2</td>
+                        <td>2</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2">Subtotal</td>
+                        <td>$150.00</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2">Shipping</td>
+                        <td>$10.00</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2">Tax</td>
+                        <td>$12.00</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2">Total</td>
+                        <td>$172.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Shipping Information</h2>
+        <p><strong>Shipping Address:</strong></p>
+        <p>[Customer Address]</p>
+        <p><strong>Shipping Method:</strong> [Shipping Method]</p>
+        <p><strong>Estimated Delivery Date:</strong> [Delivery Date]</p>
+
+        <p>We will send you a tracking number once your order has shipped.</p>
+
+        <a href="#" class="btn">Visit Your Account</a>
+
+        <p>If you have any questions about your order, feel free to contact us at support@ducisgroup.com or call us at
+            [Phone Number].</p>
+
+        <p>Thank you for shopping with us!</p>
+        <p>Best Regards,<br>The Ducis Group Team</p>
+
+        <footer style="margin-top: 20px; font-size: 12px; color: #888;">
+            <p>To manage your preferences or unsubscribe from promotional emails, click <a href="#">here</a>.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

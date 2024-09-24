@@ -1,0 +1,58 @@
+
+/* Footer container */
+footer {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-h5);
+    color: var(--color-light);
+    background-color: var(--secondary-color);
+    padding: var(--spacing-mid);
+    margin-top: var(--spacing-large);
+    text-align: center;
+    border-radius: var(--border-radius-md);
+}
+
+/* Nav container */
+nav {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-para);
+    color: var(--font-color-primary);
+    background-color: var(--primary-variant);
+    padding: var(--spacing-mid);
+    margin-bottom: var(--spacing-mid);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-sm);
+    position: fixed;
+    top: 0;
+    width: calc(100% - 380px);
+    z-index: 1000;
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    color: var(--color-dark-grey);
+            list-style: none;
+            display: flex;
+            padding: var(--spacing-smallest);
+            margin-top: var(--spacing-smallest);
+            margin-bottom: var(--spacing-smallest);
+}
+
+nav li {
+    padding: var(--spacing-smallest); margin: var(--spacing-smallest);
+}
+
+nav li a {
+    color: var(--color-dark-grey);
+}
+
+nav i {
+    font-size: calc(var(--font-size-para) * 1.3);
+}
+
+/* Div container */
+div {
+    /* color: var(--font-color-primary); */
+}

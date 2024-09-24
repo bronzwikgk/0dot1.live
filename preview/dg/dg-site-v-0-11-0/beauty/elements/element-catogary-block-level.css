@@ -1,0 +1,120 @@
+/* Section container */
+section {
+  font-family: var(--font-content);
+  font-size: var(--font-size-para);
+  padding: var(--spacing-mid);
+  margin: var(--spacing-smallest) 0;
+  border-radius: var(--border-radius-md);
+}
+
+/* Article container */
+article {
+  font-family: var(--font-content);
+  font-size: var(--font-size-para);
+  padding: var(--spacing-mid);
+  margin: var(--spacing-mid) 0;
+  border-radius: var(--border-radius-md);
+}
+
+/* Aside container */
+/* aside {
+    font-family: var(--font-content);
+    font-size: var(--font-size-para);
+    color: var(--font-color-secondary);
+    padding: var(--spacing-mid);
+    margin: var(--spacing-mid) 0;
+    background-color: var(--color-light-grey);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-xs);
+} */
+
+/* aside {
+  width: 350px;
+  background-color: var(--color-dark);
+  color: var(--font-color-light);
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+} */
+
+/* aside i {
+  color: var(--color-light-grey);
+} */
+
+/* Header container */
+header {
+  font-family: var(--font-primary);
+  color: var(--color-light);
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-mid);
+  display: flex;
+  gap: var(--spacing-smallest);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-smallest);
+  background-color: var(--color-light);
+}
+
+
+aside {
+  width: 350px;
+  background-color: var(--color-dark);
+  color: var(--font-color-light);
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+  transition: width 0.3s ease-in-out;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+aside i {
+  color: var(--color-light-grey);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  aside {
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* Optionally hide sidebar on mobile view and add toggle button */
+@media (max-width: 576px) {
+  aside {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: var(--color-dark);
+    color: var(--font-color-light);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  aside.open {
+    display: block;
+    width: 250px;
+  }
+}

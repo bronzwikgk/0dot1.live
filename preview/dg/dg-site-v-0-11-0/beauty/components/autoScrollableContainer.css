@@ -1,0 +1,28 @@
+.scroll-container {
+    overflow-x: auto;
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  
+  .scroll-content {
+    display: flex;
+    gap: calc(var(--spacing-large)*3);
+    padding-right: var(--spacing-large); /* Ensures the right padding is included */
+    scroll-behavior: smooth;
+    animation: scroll-images 50s linear infinite;
+  }
+  
+  @keyframes scroll-images {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
