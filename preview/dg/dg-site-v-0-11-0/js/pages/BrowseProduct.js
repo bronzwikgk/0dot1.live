@@ -12,7 +12,8 @@ let products = [
         "truncatedDescription": "ITIL® 4 Create, Deliver and Support addresses the...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL®4CreateDeliverandSupport.html?productId=66eb5723c40e0b0b76fe0a3e",
-        "_id": "66eb5723c40e0b0b76fe0a3e"
+        "_id": "66eb5723c40e0b0b76fe0a3e",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "SDI – Service Desk Analyst",
@@ -20,7 +21,8 @@ let products = [
         "truncatedDescription": "The Service Desk Institute (SDI) ® is the leading...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/MSP_ATO_Logo.png",
         "productUrl": "./productPage-SDI–ServiceDeskAnalyst.html?productId=66eb5723c40e0b0b76fe0a48",
-        "_id": "66eb5723c40e0b0b76fe0a48"
+        "_id": "66eb5723c40e0b0b76fe0a48",
+        "category": "SDI – Service Desk Manager"
     },
     {
         "name": "Agile Scrum Workshop",
@@ -28,7 +30,8 @@ let products = [
         "truncatedDescription": "An in-depth workshop on Agile and Scrum methodolog...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/PRINCE2Agile_ATO logo.png",
         "productUrl": "./productPage-AgileScrumWorkshop.html?productId=66eb5723c40e0b0b76fe0a39",
-        "_id": "66eb5723c40e0b0b76fe0a39"
+        "_id": "66eb5723c40e0b0b76fe0a39",
+        "category": "Scrum and Agile"
     },
     {
         "name": "MSP ® 5 Foundation",
@@ -36,15 +39,8 @@ let products = [
         "truncatedDescription": "MSP (Managing Successful Programmes), 5th edition...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/MSP_ATO_Logo.png",
         "productUrl": "./productPage-MSP®5Foundation.html?productId=66eb5723c40e0b0b76fe0a44",
-        "_id": "66eb5723c40e0b0b76fe0a44"
-    },
-    {
-        "name": "Agile Scrum Workshop",
-        "description": "",
-        "truncatedDescription": "",
-        "image": "No Image",
-        "productUrl": "./productPage-AgileScrumWorkshop.html?productId=66eb5723c40e0b0b76fe0a3e",
-        "_id": "66eb5723c40e0b0b76fe0a3e"
+        "_id": "66eb5723c40e0b0b76fe0a44",
+        "category": "Project Management"
     },
     {
         "name": "Peoplecert SCRUM Master 1",
@@ -52,7 +48,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Scrum fullLogo.png",
         "productUrl": "./productPage-PeoplecertSCRUMMaster1.html?productId=66eb5723c40e0b0b76fe0a3f",
-        "_id": "66eb5723c40e0b0b76fe0a3f"
+        "_id": "66eb5723c40e0b0b76fe0a3f",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Peoplecert SCRUM Master 2",
@@ -60,7 +57,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Scrum fullLogo.png",
         "productUrl": "./productPage-PeoplecertSCRUMMaster2.html?productId=66eb5723c40e0b0b76fe0a40",
-        "_id": "66eb5723c40e0b0b76fe0a40"
+        "_id": "66eb5723c40e0b0b76fe0a40",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Peoplecert SCRUM PRODUCT OWNER I",
@@ -68,7 +66,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Scrum fullLogo.png",
         "productUrl": "./productPage-SCRUMProductOwner1.html?productId=66eb5723c40e0b0b76fe0a41",
-        "_id": "66eb5723c40e0b0b76fe0a41"
+        "_id": "66eb5723c40e0b0b76fe0a41",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Peoplecert SCRUM PRODUCT OWNER II",
@@ -76,7 +75,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Scrum fullLogo.png",
         "productUrl": "./productPage-SCRUMProductOwner2.html?productId=66eb5723c40e0b0b76fe0a42",
-        "_id": "66eb5723c40e0b0b76fe0a42"
+        "_id": "66eb5723c40e0b0b76fe0a42",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Peoplecert SCRUM Developer",
@@ -84,7 +84,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Scrum fullLogo.png",
         "productUrl": "./productPage-SCRUMDeveloper.html?productId=66eb5723c40e0b0b76fe0a43",
-        "_id": "66eb5723c40e0b0b76fe0a43"
+        "_id": "66eb5723c40e0b0b76fe0a43",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Prince2 ® Agile Foundation",
@@ -92,7 +93,8 @@ let products = [
         "truncatedDescription": "PRINCE2 is a project management method...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/PRINCE2Agile_ATO logo.png",
         "productUrl": "./productPage-PRINCE2AgileFoundation.html?productId=66eb5723c40e0b0b76fe0a44",
-        "_id": "66eb5723c40e0b0b76fe0a44"
+        "_id": "66eb5723c40e0b0b76fe0a44",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Prince2 ® Agile Practitioner",
@@ -100,7 +102,8 @@ let products = [
         "truncatedDescription": "PRINCE2 is a project management method...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/PRINCE2Agile_ATO logo.png",
         "productUrl": "./productPage-PRINCE2AgilePractitioner.html?productId=66eb5723c40e0b0b76fe0a45",
-        "_id": "66eb5723c40e0b0b76fe0a45"
+        "_id": "66eb5723c40e0b0b76fe0a45",
+        "category": "Scrum and Agile"
     },
     {
         "name": "Prince2 ® 7 Foundation",
@@ -108,7 +111,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/PRINCE2_ATO logo.png",
         "productUrl": "./productPage-PRINCE27Foundation.html?productId=66eb5723c40e0b0b76fe0a46",
-        "_id": "66eb5723c40e0b0b76fe0a46"
+        "_id": "66eb5723c40e0b0b76fe0a46",
+        "category": "Project Management"
     },
     {
         "name": "Prince2 ® 7 Practitioner",
@@ -116,7 +120,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/PRINCE2_ATO logo.png",
         "productUrl": "./productPage-PRINCE27Practitioner.html?productId=66eb5723c40e0b0b76fe0a47",
-        "_id": "66eb5723c40e0b0b76fe0a47"
+        "_id": "66eb5723c40e0b0b76fe0a47",
+        "category": "Project Management"
     },
     {
         "name": "MSP ® 5 Foundation",
@@ -124,7 +129,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/MSP_ATO_Logo.png",
         "productUrl": "./productPage-MSP5Foundation.html?productId=66eb5723c40e0b0b76fe0a48",
-        "_id": "66eb5723c40e0b0b76fe0a48"
+        "_id": "66eb5723c40e0b0b76fe0a48",
+        "category": "Project Management"
     },
     {
         "name": "MSP ® 5 Practitioner",
@@ -132,7 +138,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/MSP_ATO_Logo.png",
         "productUrl": "./productPage-MSP5Practitioner.html?productId=66eb5723c40e0b0b76fe0a49",
-        "_id": "66eb5723c40e0b0b76fe0a49"
+        "_id": "66eb5723c40e0b0b76fe0a49",
+        "category": "Project Management"
     },
     {
         "name": "Six Sigma Green Belt",
@@ -140,7 +147,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-green-belt.jpg",
         "productUrl": "./productPage-SixSigmaGreenBelt.html?productId=66eb5723c40e0b0b76fe0a50",
-        "_id": "66eb5723c40e0b0b76fe0a50"
+        "_id": "66eb5723c40e0b0b76fe0a50",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Six Sigma Black Belt",
@@ -148,7 +156,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-black-belt.jpg",
         "productUrl": "./productPage-SixSigmaBlackBelt.html?productId=66eb5723c40e0b0b76fe0a51",
-        "_id": "66eb5723c40e0b0b76fe0a51"
+        "_id": "66eb5723c40e0b0b76fe0a51",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "ITIL ® 4 Foundation",
@@ -156,7 +165,8 @@ let products = [
         "truncatedDescription": "Technology has transformed the way we work...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4Foundation.html?productId=66eb5723c40e0b0b76fe0a52",
-        "_id": "66eb5723c40e0b0b76fe0a52"
+        "_id": "66eb5723c40e0b0b76fe0a52",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist - Create Deliver Support",
@@ -164,7 +174,8 @@ let products = [
         "truncatedDescription": "Based on the ITIL 4 framework...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4CreateDeliverSupport.html?productId=66eb5723c40e0b0b76fe0a53",
-        "_id": "66eb5723c40e0b0b76fe0a53"
+        "_id": "66eb5723c40e0b0b76fe0a53",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – Direct Plan Improve",
@@ -172,7 +183,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4DirectPlanImprove.html?productId=66eb5723c40e0b0b76fe0a54",
-        "_id": "66eb5723c40e0b0b76fe0a54"
+        "_id": "66eb5723c40e0b0b76fe0a54",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – High Velocity IT",
@@ -180,7 +192,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4HighVelocityIT.html?productId=66eb5723c40e0b0b76fe0a55",
-        "_id": "66eb5723c40e0b0b76fe0a55"
+        "_id": "66eb5723c40e0b0b76fe0a55",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist - Drive Stakeholder Value",
@@ -188,7 +201,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4DriveStakeholderValue.html?productId=66eb5723c40e0b0b76fe0a56",
-        "_id": "66eb5723c40e0b0b76fe0a56"
+        "_id": "66eb5723c40e0b0b76fe0a56",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Strategic Leader – Digital and IT Strategy",
@@ -196,7 +210,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4DigitalITStrategy.html?productId=66eb5723c40e0b0b76fe0a57",
-        "_id": "66eb5723c40e0b0b76fe0a57"
+        "_id": "66eb5723c40e0b0b76fe0a57",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – Acquiring and Managing Cloud Services",
@@ -204,7 +219,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4CloudServices.html?productId=66eb5723c40e0b0b76fe0a58",
-        "_id": "66eb5723c40e0b0b76fe0a58"
+        "_id": "66eb5723c40e0b0b76fe0a58",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – Sustainability in Digital and IT",
@@ -212,7 +228,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4SustainabilityDigitalIT.html?productId=66eb5723c40e0b0b76fe0a59",
-        "_id": "66eb5723c40e0b0b76fe0a59"
+        "_id": "66eb5723c40e0b0b76fe0a59",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – IT Asset Management",
@@ -220,7 +237,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ITAssetManagement.html?productId=66eb5723c40e0b0b76fe0a60",
-        "_id": "66eb5723c40e0b0b76fe0a60"
+        "_id": "66eb5723c40e0b0b76fe0a60",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Specialist – BRM",
@@ -228,7 +246,8 @@ let products = [
         "truncatedDescription": "Business relationship management (BRM)...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4BRM.html?productId=66eb5723c40e0b0b76fe0a61",
-        "_id": "66eb5723c40e0b0b76fe0a61"
+        "_id": "66eb5723c40e0b0b76fe0a61",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL® 4 Monitor Support Fulfil",
@@ -236,7 +255,8 @@ let products = [
         "truncatedDescription": "This module compiles the understanding of...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4MonitorSupportFulfil.html?productId=66eb5723c40e0b0b76fe0a62",
-        "_id": "66eb5723c40e0b0b76fe0a62"
+        "_id": "66eb5723c40e0b0b76fe0a62",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Incident Management",
@@ -244,7 +264,8 @@ let products = [
         "truncatedDescription": "This module focuses on providing the understanding...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4IncidentManagement.html?productId=66eb5723c40e0b0b76fe0a63",
-        "_id": "66eb5723c40e0b0b76fe0a63"
+        "_id": "66eb5723c40e0b0b76fe0a63",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Problem Management",
@@ -252,7 +273,8 @@ let products = [
         "truncatedDescription": "This module focuses on providing the understanding...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ProblemManagement.html?productId=66eb5723c40e0b0b76fe0a64",
-        "_id": "66eb5723c40e0b0b76fe0a64"
+        "_id": "66eb5723c40e0b0b76fe0a64",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Service Request Management",
@@ -260,7 +282,8 @@ let products = [
         "truncatedDescription": "This module focuses on providing the understanding...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ServiceRequestManagement.html?productId=66eb5723c40e0b0b76fe0a65",
-        "_id": "66eb5723c40e0b0b76fe0a65"
+        "_id": "66eb5723c40e0b0b76fe0a65",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Monitoring & Event Management",
@@ -268,7 +291,8 @@ let products = [
         "truncatedDescription": "This module focuses on providing the understanding...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4MonitoringEventManagement.html?productId=66eb5723c40e0b0b76fe0a66",
-        "_id": "66eb5723c40e0b0b76fe0a66"
+        "_id": "66eb5723c40e0b0b76fe0a66",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Service Desk",
@@ -276,7 +300,8 @@ let products = [
         "truncatedDescription": "This module focuses on providing the understanding...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ServiceDesk.html?productId=66eb5723c40e0b0b76fe0a67",
-        "_id": "66eb5723c40e0b0b76fe0a67"
+        "_id": "66eb5723c40e0b0b76fe0a67",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 Specialist: PIC",
@@ -284,7 +309,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Specialist Plan Implement Control Practices...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4PIC.html?productId=66eb5723c40e0b0b76fe0a68",
-        "_id": "66eb5723c40e0b0b76fe0a68"
+        "_id": "66eb5723c40e0b0b76fe0a68",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Release Management",
@@ -292,7 +318,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Release Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ReleaseManagement.html?productId=66eb5723c40e0b0b76fe0a69",
-        "_id": "66eb5723c40e0b0b76fe0a69"
+        "_id": "66eb5723c40e0b0b76fe0a69",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Deployment Management",
@@ -300,7 +327,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Deployment Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4DeploymentManagement.html?productId=66eb5723c40e0b0b76fe0a70",
-        "_id": "66eb5723c40e0b0b76fe0a70"
+        "_id": "66eb5723c40e0b0b76fe0a70",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Change Enablement",
@@ -308,7 +336,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Change Enablement Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ChangeEnablement.html?productId=66eb5723c40e0b0b76fe0a71",
-        "_id": "66eb5723c40e0b0b76fe0a71"
+        "_id": "66eb5723c40e0b0b76fe0a71",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : ITAM",
@@ -316,7 +345,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 IT Asset Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ITAM.html?productId=66eb5723c40e0b0b76fe0a72",
-        "_id": "66eb5723c40e0b0b76fe0a72"
+        "_id": "66eb5723c40e0b0b76fe0a72",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Service Configuration",
@@ -324,7 +354,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Service Configuration Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ServiceConfiguration.html?productId=66eb5723c40e0b0b76fe0a73",
-        "_id": "66eb5723c40e0b0b76fe0a73"
+        "_id": "66eb5723c40e0b0b76fe0a73",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 Specialist: CAI",
@@ -332,7 +363,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Specialist Collaborate, Assure and Improve...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4CAI.html?productId=66eb5723c40e0b0b76fe0a74",
-        "_id": "66eb5723c40e0b0b76fe0a74"
+        "_id": "66eb5723c40e0b0b76fe0a74",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM: Relationship Management",
@@ -340,7 +372,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Relationship Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4RelationshipManagement.html?productId=66eb5723c40e0b0b76fe0a75",
-        "_id": "66eb5723c40e0b0b76fe0a75"
+        "_id": "66eb5723c40e0b0b76fe0a75",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM: Supplier Management",
@@ -348,7 +381,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Supplier Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4SupplierManagement.html?productId=66eb5723c40e0b0b76fe0a76",
-        "_id": "66eb5723c40e0b0b76fe0a76"
+        "_id": "66eb5723c40e0b0b76fe0a76",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Service Level Management",
@@ -356,7 +390,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Service Level Management Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ServiceLevelManagement.html?productId=66eb5723c40e0b0b76fe0a77",
-        "_id": "66eb5723c40e0b0b76fe0a77"
+        "_id": "66eb5723c40e0b0b76fe0a77",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Continual Improvement",
@@ -364,7 +399,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Continual Improvement Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4ContinualImprovement.html?productId=66eb5723c40e0b0b76fe0a78",
-        "_id": "66eb5723c40e0b0b76fe0a78"
+        "_id": "66eb5723c40e0b0b76fe0a78",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "ITIL ® 4 PM : Information Security",
@@ -372,7 +408,8 @@ let products = [
         "truncatedDescription": "The ITIL 4 Information Security Practice...",
         "image": "../assets/assets_dg-site/logo/new logo for cources/ITIL_ATO logo.png",
         "productUrl": "./productPage-ITIL4InformationSecurity.html?productId=66eb5723c40e0b0b76fe0a79",
-        "_id": "66eb5723c40e0b0b76fe0a79"
+        "_id": "66eb5723c40e0b0b76fe0a79",
+        "category": "IT Service Management – ITIL ®"
     },
     {
         "name": "SDI – Service Desk Analyst",
@@ -380,7 +417,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/SDI_ANALYST ATO.png",
         "productUrl": "./productPage-SDIServiceDeskAnalyst.html?productId=66eb5723c40e0b0b76fe0a80",
-        "_id": "66eb5723c40e0b0b76fe0a80"
+        "_id": "66eb5723c40e0b0b76fe0a80",
+        "category": "SDI – Service Desk Manager"
     },
     {
         "name": "SDI – Service Desk Manager",
@@ -388,7 +426,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/SDI_MANAGER ATO.png",
         "productUrl": "./productPage-SDIServiceDeskManager.html?productId=66eb5723c40e0b0b76fe0a81",
-        "_id": "66eb5723c40e0b0b76fe0a81"
+        "_id": "66eb5723c40e0b0b76fe0a81",
+        "category": "SDI – Service Desk Manager"
     },
     {
         "name": "SIAM™ Foundation (SIAMF)",
@@ -396,7 +435,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/SIAM™ Foundation (SIAMF).jpg",
         "productUrl": "./productPage-SIAMFoundation.html?productId=66eb5723c40e0b0b76fe0a82",
-        "_id": "66eb5723c40e0b0b76fe0a82"
+        "_id": "66eb5723c40e0b0b76fe0a82",
+        "category": "SIAM"
     },
     {
         "name": "SIAM™ Professional (SIAMP)",
@@ -404,7 +444,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/SIAM™ Professional (SIAMP).jpg",
         "productUrl": "./productPage-SIAMProfessional.html?productId=66eb5723c40e0b0b76fe0a83",
-        "_id": "66eb5723c40e0b0b76fe0a83"
+        "_id": "66eb5723c40e0b0b76fe0a83",
+        "category": "SIAM"
     },
     {
         "name": "ISO9001 Lead Auditor Training Course",
@@ -412,7 +453,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-ISO9001LeadAuditor.html?productId=66eb5723c40e0b0b76fe0a84",
-        "_id": "66eb5723c40e0b0b76fe0a84"
+        "_id": "66eb5723c40e0b0b76fe0a84",
+        "category": "ISO Trainings"
     },
     {
         "name": "ISO 14001 Lead Auditor Training Course",
@@ -420,7 +462,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-ISO14001LeadAuditor.html?productId=66eb5723c40e0b0b76fe0a85",
-        "_id": "66eb5723c40e0b0b76fe0a85"
+        "_id": "66eb5723c40e0b0b76fe0a85",
+        "category": "ISO Trainings"
     },
     {
         "name": "ISO27001 Foundations Training Course",
@@ -428,7 +471,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-ISO27001Foundations.html?productId=66eb5723c40e0b0b76fe0a86",
-        "_id": "66eb5723c40e0b0b76fe0a86"
+        "_id": "66eb5723c40e0b0b76fe0a86",
+        "category": "ISO Trainings"
     },
     {
         "name": "ISO27001 Lead Auditor Training Course",
@@ -436,7 +480,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-ISO27001LeadAuditor.html?productId=66eb5723c40e0b0b76fe0a87",
-        "_id": "66eb5723c40e0b0b76fe0a87"
+        "_id": "66eb5723c40e0b0b76fe0a87",
+        "category": "ISO Trainings"
     },
     {
         "name": "ISO 45001 Lead Auditor Training Course",
@@ -444,7 +489,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-ISO45001LeadAuditor.html?productId=66eb5723c40e0b0b76fe0a88",
-        "_id": "66eb5723c40e0b0b76fe0a88"
+        "_id": "66eb5723c40e0b0b76fe0a88",
+        "category": "ISO Trainings"
     },
     {
         "name": "EU GDPR Awareness",
@@ -452,7 +498,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/EU GDPR Awareness .png",
         "productUrl": "./productPage-EUGDPRAwareness.html?productId=66eb5723c40e0b0b76fe0a89",
-        "_id": "66eb5723c40e0b0b76fe0a89"
+        "_id": "66eb5723c40e0b0b76fe0a89",
+        "category": "ISO Trainings"
     },
     {
         "name": "DOI – Devops Foundation",
@@ -460,7 +507,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops Insitute - DOI.jpg",
         "productUrl": "./productPage-DOIDevopsFoundation.html?productId=66eb5723c40e0b0b76fe0a90",
-        "_id": "66eb5723c40e0b0b76fe0a90"
+        "_id": "66eb5723c40e0b0b76fe0a90",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - DevOps Leader (DOL)®",
@@ -468,7 +516,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops-2nd logo Gold ATO Logo.png",
         "productUrl": "./productPage-DOIDevopsLeader.html?productId=66eb5723c40e0b0b76fe0a91",
-        "_id": "66eb5723c40e0b0b76fe0a91"
+        "_id": "66eb5723c40e0b0b76fe0a91",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - Site Reliability Engineering (SRE) Foundation",
@@ -476,7 +525,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops Insitute - DOI.jpg",
         "productUrl": "./productPage-DOISREFoundation.html?productId=66eb5723c40e0b0b76fe0a92",
-        "_id": "66eb5723c40e0b0b76fe0a92"
+        "_id": "66eb5723c40e0b0b76fe0a92",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - Site Reliability Engineering (SRE) Practitioner℠",
@@ -484,7 +534,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops-2nd logo Gold ATO Logo.png",
         "productUrl": "./productPage-DOISREPractitioner.html?productId=66eb5723c40e0b0b76fe0a93",
-        "_id": "66eb5723c40e0b0b76fe0a93"
+        "_id": "66eb5723c40e0b0b76fe0a93",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - DevSecOps Foundation℠",
@@ -492,7 +543,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops Insitute - DOI.jpg",
         "productUrl": "./productPage-DOIDevSecOpsFoundation.html?productId=66eb5723c40e0b0b76fe0a94",
-        "_id": "66eb5723c40e0b0b76fe0a94"
+        "_id": "66eb5723c40e0b0b76fe0a94",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - DevSecOps Practitioner℠",
@@ -500,7 +552,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops-2nd logo Gold ATO Logo.png",
         "productUrl": "./productPage-DOIDevSecOpsPractitioner.html?productId=66eb5723c40e0b0b76fe0a95",
-        "_id": "66eb5723c40e0b0b76fe0a95"
+        "_id": "66eb5723c40e0b0b76fe0a95",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - AIOps Foundation℠",
@@ -508,7 +561,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops Insitute - DOI.jpg",
         "productUrl": "./productPage-DOIAIOpsFoundation.html?productId=66eb5723c40e0b0b76fe0a96",
-        "_id": "66eb5723c40e0b0b76fe0a96"
+        "_id": "66eb5723c40e0b0b76fe0a96",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - Continuous Testing Foundation (CTF)℠",
@@ -516,7 +570,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops-2nd logo Gold ATO Logo.png",
         "productUrl": "./productPage-DOIContinuousTestingFoundation.html?productId=66eb5723c40e0b0b76fe0a97",
-        "_id": "66eb5723c40e0b0b76fe0a97"
+        "_id": "66eb5723c40e0b0b76fe0a97",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - DevOps Engineering Foundation℠",
@@ -524,7 +579,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops Insitute - DOI.jpg",
         "productUrl": "./productPage-DOIDevOpsEngineeringFoundation.html?productId=66eb5723c40e0b0b76fe0a98",
-        "_id": "66eb5723c40e0b0b76fe0a98"
+        "_id": "66eb5723c40e0b0b76fe0a98",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "DOI - Observability Foundation℠",
@@ -532,7 +588,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/Devops-2nd logo Gold ATO Logo.png",
         "productUrl": "./productPage-DOIObservabilityFoundation.html?productId=66eb5723c40e0b0b76fe0a99",
-        "_id": "66eb5723c40e0b0b76fe0a99"
+        "_id": "66eb5723c40e0b0b76fe0a99",
+        "category": "Devops Insitute - DOI"
     },
     {
         "name": "P3O ® Foundation",
@@ -540,7 +597,8 @@ let products = [
         "truncatedDescription": "",
         "image": "P3 ATO Logo",
         "productUrl": "./productPage-P3OFoundation.html?productId=66eb5723c40e0b0b76fe0a100",
-        "_id": "66eb5723c40e0b0b76fe0a100"
+        "_id": "66eb5723c40e0b0b76fe0a100",
+        "category": "Project Management"
     },
     {
         "name": "P3O ® Practitioner",
@@ -548,7 +606,8 @@ let products = [
         "truncatedDescription": "",
         "image": "P3 ATO Logo",
         "productUrl": "./productPage-P3OPractitioner.html?productId=66eb5723c40e0b0b76fe0a101",
-        "_id": "66eb5723c40e0b0b76fe0a101"
+        "_id": "66eb5723c40e0b0b76fe0a101",
+        "category": "Project Management"
     },
     {
         "name": "MoP ® Foundation",
@@ -556,7 +615,8 @@ let products = [
         "truncatedDescription": "",
         "image": "MoP AEO Logo",
         "productUrl": "./productPage-MoPFoundation.html?productId=66eb5723c40e0b0b76fe0a102",
-        "_id": "66eb5723c40e0b0b76fe0a102"
+        "_id": "66eb5723c40e0b0b76fe0a102",
+        "category": "Project Management"
     },
     {
         "name": "MoP ® Practitioner",
@@ -564,7 +624,8 @@ let products = [
         "truncatedDescription": "",
         "image": "MoP AEO Logo",
         "productUrl": "./productPage-MoPPractitioner.html?productId=66eb5723c40e0b0b76fe0a103",
-        "_id": "66eb5723c40e0b0b76fe0a103"
+        "_id": "66eb5723c40e0b0b76fe0a103",
+        "category": "Project Management"
     },
     {
         "name": "MoV ® Foundation",
@@ -572,7 +633,8 @@ let products = [
         "truncatedDescription": "",
         "image": "MoV AEO Logo",
         "productUrl": "./productPage-MoVFoundation.html?productId=66eb5723c40e0b0b76fe0a104",
-        "_id": "66eb5723c40e0b0b76fe0a104"
+        "_id": "66eb5723c40e0b0b76fe0a104",
+        "category": "Project Management"
     },
     {
         "name": "MoV ® Practitioner",
@@ -580,7 +642,8 @@ let products = [
         "truncatedDescription": "",
         "image": "MoV AEO Logo",
         "productUrl": "./productPage-MoVPractitioner.html?productId=66eb5723c40e0b0b76fe0a105",
-        "_id": "66eb5723c40e0b0b76fe0a105"
+        "_id": "66eb5723c40e0b0b76fe0a105",
+        "category": "Project Management"
     },
     {
         "name": "Cobit 5 ® Foundation",
@@ -588,7 +651,8 @@ let products = [
         "truncatedDescription": "",
         "image": "Cobit Logo",
         "productUrl": "./productPage-Cobit5Foundation.html?productId=66eb5723c40e0b0b76fe0a106",
-        "_id": "66eb5723c40e0b0b76fe0a106"
+        "_id": "66eb5723c40e0b0b76fe0a106",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Cobit 5 ® Assessor",
@@ -596,7 +660,8 @@ let products = [
         "truncatedDescription": "",
         "image": "Cobit Logo",
         "productUrl": "./productPage-Cobit5Assessor.html?productId=66eb5723c40e0b0b76fe0a107",
-        "_id": "66eb5723c40e0b0b76fe0a107"
+        "_id": "66eb5723c40e0b0b76fe0a107",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Cobit 5 ® Implementation",
@@ -604,7 +669,8 @@ let products = [
         "truncatedDescription": "",
         "image": "Cobit Logo",
         "productUrl": "./productPage-Cobit5Implementation.html?productId=66eb5723c40e0b0b76fe0a108",
-        "_id": "66eb5723c40e0b0b76fe0a108"
+        "_id": "66eb5723c40e0b0b76fe0a108",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Six Sigma Yellow Belt - IASSC",
@@ -612,7 +678,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/No Image.png",
         "productUrl": "./productPage-SixSigmaYellowBelt.html?productId=66eb5723c40e0b0b76fe0a109",
-        "_id": "66eb5723c40e0b0b76fe0a109"
+        "_id": "66eb5723c40e0b0b76fe0a109",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Six Sigma Green Belt - IASSC",
@@ -620,7 +687,8 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-green-belt.jpg",
         "productUrl": "./productPage-SixSigmaGreenBeltIASSC.html?productId=66eb5723c40e0b0b76fe0a110",
-        "_id": "66eb5723c40e0b0b76fe0a110"
+        "_id": "66eb5723c40e0b0b76fe0a110",
+        "category": "Six Sigma and Quality"
     },
     {
         "name": "Six Sigma Black Belt - IASSC",
@@ -628,19 +696,17 @@ let products = [
         "truncatedDescription": "",
         "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-black-belt.jpg",
         "productUrl": "./productPage-SixSigmaBlackBeltIASSC.html?productId=66eb5723c40e0b0b76fe0a111",
-        "_id": "66eb5723c40e0b0b76fe0a111"
+        "_id": "66eb5723c40e0b0b76fe0a111",
+        "category": "Six Sigma and Quality"
     }
 ]
-
-
-    ;
+;
 
 // Pagination Settings
 const pageSize = 6; // Number of products to display per page
 let currentPage = 1; // Current page
 let totalPages = Math.ceil(products.length / pageSize); // Calculate total pages
 
-// Function to filter products based on search term and selected categories
 function filterProducts() {
     const searchQuery = document.getElementById('searchBar').value.toLowerCase();
     const selectedCategories = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
@@ -688,14 +754,19 @@ function renderPagination(totalPages, currentPage) {
         currentPage = page;
         const searchQuery = document.getElementById('searchBar').value;
         const selectedCategories = getSelectedCategories();
-        fetchProducts(currentPage, searchQuery, selectedCategories);
+        fetchProducts(currentPage, searchQuery, selectedCategories); // Pass selected categories to fetchProducts
     });
     pagination.render();
 }
 
 // Fetch products based on the current page
 function fetchProducts(page = 1, query = '', categories = []) {
-    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+    const filteredProducts = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(query.toLowerCase());
+        const matchesCategory = categories.length === 0 || categories.includes(product.category);
+        return matchesSearch && matchesCategory;
+    });
+
     const totalFilteredProducts = filteredProducts.length; // Get the number of filtered products
     totalPages = Math.ceil(totalFilteredProducts / pageSize); // Update total pages based on filtered products
 
@@ -717,7 +788,7 @@ const getSelectedCategories = () => {
         .map(checkbox => checkbox.value);
 };
 
-// Event listeners for category checkboxes and search input
+// Event listeners for category checkboxes
 document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', filterProducts); // Call filterProducts to update the display
 });
