@@ -635,29 +635,32 @@ let products = [
 
     ;
 
+// Pagination Settings
 const pageSize = 6; // Number of products to display per page
 let currentPage = 1; // Current page
 let totalPages = Math.ceil(products.length / pageSize); // Calculate total pages
 
-// Fetch products from the backend or filter from local products
-async function fetchProducts(page = 1, query = '', categories = []) {
-    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
-    const totalFilteredProducts = filteredProducts.length; // Get the number of filtered products
-    totalPages = Math.ceil(totalFilteredProducts / pageSize); // Update total pages based on filtered products
+// Function to filter products based on search term and selected categories
+function filterProducts() {
+    const searchQuery = document.getElementById('searchBar').value.toLowerCase();
+    const selectedCategories = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(checkbox => checkbox.value);
 
-    // Check if the requested page is valid
-    if (page > totalPages) {
-        page = totalPages; // If the page is out of bounds, reset to the last page
-    } else if (page < 1) {
-        page = 1; // Reset to the first page if negative
-    }
+    // Filter products based on the search query and selected categories
+    const filteredProducts = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchQuery);
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+        return matchesSearch && matchesCategory;
+    });
 
-    const paginatedProducts = filteredProducts.slice((page - 1) * pageSize, page * pageSize); // Paginate filtered results
-    renderProducts(paginatedProducts);
-    renderPagination(totalPages, page);
+    // Update pagination and render products
+    totalPages = Math.ceil(filteredProducts.length / pageSize);
+    currentPage = 1; // Reset to first page when filtering
+    renderProducts(filteredProducts.slice(0, pageSize));
+    renderPagination(totalPages, currentPage);
 }
 
-// Render products on the current page
+// Function to render products on the current page
 function renderProducts(productsToRender) {
     const productContainer = document.getElementById('product-container');
     productContainer.innerHTML = '';
@@ -683,10 +686,47 @@ function renderProducts(productsToRender) {
 function renderPagination(totalPages, currentPage) {
     const pagination = new Pagination(totalPages, currentPage, (page) => {
         currentPage = page;
-        fetchProducts(currentPage, document.getElementById('searchBar').value); // Re-fetch products with current page
+        const searchQuery = document.getElementById('searchBar').value;
+        const selectedCategories = getSelectedCategories();
+        fetchProducts(currentPage, searchQuery, selectedCategories);
     });
     pagination.render();
 }
+
+// Fetch products based on the current page
+function fetchProducts(page = 1, query = '', categories = []) {
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+    const totalFilteredProducts = filteredProducts.length; // Get the number of filtered products
+    totalPages = Math.ceil(totalFilteredProducts / pageSize); // Update total pages based on filtered products
+
+    // Check if the requested page is valid
+    if (page > totalPages) {
+        page = totalPages; // If the page is out of bounds, reset to the last page
+    } else if (page < 1) {
+        page = 1; // Reset to the first page if negative
+    }
+
+    const paginatedProducts = filteredProducts.slice((page - 1) * pageSize, page * pageSize); // Paginate filtered results
+    renderProducts(paginatedProducts);
+    renderPagination(totalPages, page);
+}
+
+// Helper to get selected categories
+const getSelectedCategories = () => {
+    return Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(checkbox => checkbox.value);
+};
+
+// Event listeners for category checkboxes and search input
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', filterProducts); // Call filterProducts to update the display
+});
+
+// Initial fetch of products when the page loads
+window.onload = () => {
+    renderProducts(products.slice(0, pageSize)); // Render first page of products
+    renderPagination(Math.ceil(products.length / pageSize), 1); // Calculate and render pagination
+};
 
 // Handle search
 document.getElementById('searchBar').addEventListener('input', function () {
@@ -698,25 +738,6 @@ document.getElementById('searchIcon').addEventListener('click', function () {
     fetchProducts(1, document.getElementById('searchBar').value); // Reset to first page on icon click
 });
 
-// Initialize the search component
+// Initialize search component
 const search = new Search(fetchProducts);
 search.render();
-
-// Handle category filter changes
-const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="category"]');
-
-const getSelectedCategories = () => {
-    return Array.from(categoryCheckboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
-};
-
-// Handle category filter changes (on checkbox click)
-categoryCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        fetchProducts(currentPage, document.getElementById('searchBar').value, getSelectedCategories());
-    });
-});
-
-// Initial fetch of products
-fetchProducts();
