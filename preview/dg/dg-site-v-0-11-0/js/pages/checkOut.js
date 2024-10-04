@@ -62,29 +62,46 @@ function calculateTotals(cartData) {
     document.getElementById("total").textContent = `₹${total.toFixed(2)}`;
 }
 
-const httpService = new HttpService('https://dg-back.onrender.com');
+const httpService = new HttpService('http://localhost:3007');
 
 // On Checkout Page
 async function initiatePayment() {
-    console.log("initiate payment ");
+    console.log("Initiating payment...");
 
     try {
-        const userId = localStorage.getItem("userId");
-        if (!userId) {
-            throw new Error('User ID is not available.');
+        const totalAmount = document.getElementById("total").textContent.replace('₹', '');
+        const response = await httpService.post('/api/payment/createOrder', { amount: 100 });
+
+        if (response && response.success) {
+            // Initialize Razorpay instance inside the function
+            const options = {
+                key: response.key_id, // Razorpay Key ID
+                amount: response.amount * 100, // Amount in paise
+                currency: 'INR',
+                name: 'Your App Name',
+                description: 'Payment for your order',
+                order_id: response.orderId,
+                handler: function (response) {
+                    alert('Payment successful!');
+                    // Optional: Save the payment response to your backend if needed
+
+                    window.location.href = 'orderPlaced.html'; 
+                },
+                prefill: {
+                    name: document.getElementById("fullName").value,
+                    email: "customer@example.com",
+                    contact: "7281972289"
+                },
+                theme: {
+                    color: '#F37254'
+                }
+            };
+
+            const razorpay = new Razorpay(options); // Make sure Razorpay is available here
+            razorpay.open();
+        } else {
+            alert('Failed to create order. Please try again.');
         }
-
-        // Use HttpService to initiate payment
-        const paymentData = await httpService.post('/api/checkout/payment/initiate', { userId });
-        console.log(paymentData);
-
-
-        if (!paymentData) {
-            throw new Error('Failed to initiate payment.');
-        }
-
-        // Redirect to Razorpay UI page with paymentId and amount
-        window.location.href = `./razorpay.html?paymentId=${paymentData.razorpayOrderId}&amount=${paymentData.amount}`;
     } catch (error) {
         console.error('Error initiating payment:', error);
         alert('Error initiating payment. Please try again.');

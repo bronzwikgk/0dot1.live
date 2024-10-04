@@ -251,8 +251,8 @@
           </p>
         </div>
         <div class="col-lg-6 text-end">
-          <img src="../assets/assets_dg-site/Training&certification/business-man-8429442_1280.jpg" class="img-fluid"
-            style="max-height: 300px; object-fit: cover;" alt="Training and Certifications Image">
+          <img src="../assets/assets_dg-site/Training&certification/online-3412498_1280.jpg" class="img-fluid"
+            style="max-height: 350px; object-fit: cover;" alt="Training and Certifications Image">
           <!-- Adjusted max height and added object-fit -->
         </div>
       </div>
@@ -274,6 +274,7 @@
             <i class="fas fa-search position-absolute" id="searchIcon"
               style="cursor:pointer;top: 50%; right: 10px; transform: translateY(-50%);"></i>
           </div>
+
           <h5 class="mb-4">Filters</h5>
           <form>
             <!-- Category Filter -->
@@ -321,33 +322,6 @@
               </div>
             </div>
 
-            <!-- Rating Filter -->
-            <div class="form-group mb-4">
-              <label for="rating" class="font-weight-bold">Rating</label>
-              <div class="ml-2">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="ratingAll" value="All" />
-                  <label class="form-check-label" for="ratingAll">All</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="rating1Star" value="1" />
-                  <label class="form-check-label" for="rating1Star">1 star & up</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="rating2Stars" value="2" />
-                  <label class="form-check-label" for="rating2Stars">2 stars & up</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="rating3Stars" value="3" />
-                  <label class="form-check-label" for="rating3Stars">3 stars & up</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="rating4Stars" value="4" />
-                  <label class="form-check-label" for="rating4Stars">4 stars & up</label>
-                </div>
-              </div>
-            </div>
-
             <!-- Apply Button -->
             <button type="submit" class="btn btn-primary w-100">Apply</button>
           </form>
@@ -361,11 +335,15 @@
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Products</h1>
         </div>
-        <div id="product-container" class="row"></div>
+        <div id="product-container" class="row">
+
+
+        </div>
         <nav aria-label="Page navigation example">
           <ul class="pagination"></ul>
         </nav>
       </main>
+      
     </div>
   </div>
   <hr class="mb-4 mx-4 bg-light" />
@@ -735,6 +713,8 @@
     crossorigin="anonymous"></script>
   <script type="module" src="../js/pages/BrowseProduct.js"></script>
   <script src="../js/components/navbar.js"></script>
+  <script src="/dot/dg-site-v-0-11-0/js/pages/Search.js"></script>
+  <script src="/dot/dg-site-v-0-11-0/js/pages/ProductFilter.js"></script>
 </body>
 
 </html>
