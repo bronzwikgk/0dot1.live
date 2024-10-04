@@ -120,6 +120,36 @@
             text-decoration: none;
         }
     </style>
+
+    <style>
+        .table-responsive {
+            overflow-x: hidden; /* Hides horizontal scrollbar */
+        }
+    
+        .table {
+            width: 100%; /* Makes table take full width of its container */
+            table-layout: auto; /* Allows the table to resize automatically */
+        }
+    
+        th, td {
+            white-space: normal; /* Prevents content from overflowing the cell */
+            word-wrap: break-word; /* Allows long words to be broken to fit */
+        }
+    
+        @media (max-width: 768px) {
+            .table-container {
+                display: block; /* Makes the container block element */
+                overflow: auto; /* Allows vertical scrolling on smaller screens */
+            }
+    
+            .table {
+                display: block; /* Makes the table block element for better responsiveness */
+                overflow-x: auto; /* Allows horizontal scrolling if necessary */
+                white-space: nowrap; /* Prevents table cells from wrapping */
+            }
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -225,104 +255,99 @@
             environment,
             delivered by accredited trainers.</p>
 
-        <div class="table-container">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Course Name</th>
-                            <th>Duration</th>
-                            <th>Dates</th>
-                            <th>Time</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ITIL ® 4 Leader: Digital & IT Strategy</td>
-                            <td>4 Weekend Sessions of 6 Hours each</td>
-                            <td>21-22 Sept, 27-28 Sept</td>
-                            <td>
-                                IST – 6.00 PM<br>
-                                GMT – 12.30 PM<br>
-                                EST – 8.30 AM
-                            </td>
-                            <td class="actions">
-                                <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
-                                <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
-                                <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>ITIL ® 4 Specialist: High Velocity IT</td>
-                            <td>5 Sessions of 4 Hours Each</td>
-                            <td>10-11-12-12-14 Oct</td>
-                            <td>
-                                IST – 6.00 PM<br>
-                                GMT – 12.30 PM<br>
-                                EST – 8.30 AM
-                            </td>
-                            <td class="actions">
-                                <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
-                                <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
-                                <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Peoplecert Devops: Site Reliability <br>Engineering - SRE</td>
-                            <td>4 Weekend Sessions of 4 Hours each</td>
-                            <td>17-18 Sept, 25-26 Sept</td>
-                            <td>
-                                IST – 6.00 PM<br>
-                                GMT – 12.30 PM<br>
-                                EST – 8.30 AM
-                            </td>
-                            <td class="actions">
-                                <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
-                                <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
-                                <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>ITIL ® 4 Foundation Live</td>
-                            <td>4 Full day Sessions of 4 Hours each</td>
-                            <td>22-25 Sept</td>
-                            <td>
-                                IST – 6.00 PM<br>
-                                GMT – 12.30 PM (22nd Sept)<br>
-                                EST – 8.30 PM (22nd Sept)
-                            </td>
-                            <td class="actions">
-                                <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
-                                <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
-                                <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>SDI: Service Desk Manager</td>
-                            <td>3 Full day Sessions of 8 Hours each</td>
-                            <td>19-21 Sept</td>
-                            <td>
-                                IST – 9.30 AM<br>
-                                GMT – 4.00 AM (19th Sept)<br>
-                                EST – 12.00 AM (19th Sept)
-                            </td>
-                            <td class="actions">
-                                <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
-                                <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
-                                <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
-                            </td>
-
-                        </tr>
-                        <!-- Other rows -->
-                    </tbody>
-                </table>
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Duration</th>
+                                <th>Dates</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ITIL ® 4 Leader: Digital & IT Strategy</td>
+                                <td>4 Weekend Sessions of 6 Hours each</td>
+                                <td>21-22 Sept, 27-28 Sept</td>
+                                <td>
+                                    IST – 6.00 PM<br>
+                                    GMT – 12.30 PM<br>
+                                    EST – 8.30 AM
+                                </td>
+                                <td class="actions">
+                                    <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ITIL ® 4 Specialist: High Velocity IT</td>
+                                <td>5 Sessions of 4 Hours Each</td>
+                                <td>10-11-12-12-14 Oct</td>
+                                <td>
+                                    IST – 6.00 PM<br>
+                                    GMT – 12.30 PM<br>
+                                    EST – 8.30 AM
+                                </td>
+                                <td class="actions">
+                                    <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Peoplecert Devops: Site Reliability <br>Engineering - SRE</td>
+                                <td>4 Weekend Sessions of 4 Hours each</td>
+                                <td>17-18 Sept, 25-26 Sept</td>
+                                <td>
+                                    IST – 6.00 PM<br>
+                                    GMT – 12.30 PM<br>
+                                    EST – 8.30 AM
+                                </td>
+                                <td class="actions">
+                                    <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ITIL ® 4 Foundation Live</td>
+                                <td>4 Full day Sessions of 4 Hours each</td>
+                                <td>22-25 Sept</td>
+                                <td>
+                                    IST – 6.00 PM<br>
+                                    GMT – 12.30 PM (22nd Sept)<br>
+                                    EST – 8.30 PM (22nd Sept)
+                                </td>
+                                <td class="actions">
+                                    <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SDI: Service Desk Manager</td>
+                                <td>3 Full day Sessions of 8 Hours each</td>
+                                <td>19-21 Sept</td>
+                                <td>
+                                    IST – 9.30 AM<br>
+                                    GMT – 4.00 AM (19th Sept)<br>
+                                    EST – 12.00 AM (19th Sept)
+                                </td>
+                                <td class="actions">
+                                    <a href="#" class="btn btn-outline-info btn-sm d-block">Course Info</a>
+                                    <a href="#" class="btn btn-outline-warning btn-sm d-block">Enquire Now</a>
+                                    <a href="#" class="btn btn-outline-success btn-sm d-block">Book Now</a>
+                                </td>
+                            </tr>
+                            <!-- Other rows -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
 
         <h4>Standard Deliverables are:</h4>
         <ul>
