@@ -16,8 +16,8 @@ export class ProductCard {
                         <p class="card-text">${truncatedDescription}</p>
                     </div>
                     <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-                        <a href="./productPage-${this.product.name.replace(/[\s,]/g, "")
-                        }.html?productId=${this.product._id}" class="btn btn-light">Know More</a>
+                        <a href="./${this.product.product_id
+                        }.html?productId=${this.product.product_id}" class="btn btn-light">Know More</a>
                        
                     </div>
                 </div>
