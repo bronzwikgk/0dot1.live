@@ -268,65 +268,54 @@
       <!-- Filter Sidebar -->
       <nav class="col-md-2 col-lg-3 d-md-block bg-light sidebar collapse" id="sidebarMenu" style="padding-left: 2rem">
         <div class="sidebar-sticky pt-3">
-          <!-- Search Bar -->
-          <div class="mb-4 position-relative">
-            <input type="text" class="form-control pl-5" id="searchBar" placeholder="Search...">
-            <i class="fas fa-search position-absolute" id="searchIcon"
-              style="cursor:pointer;top: 50%; right: 10px; transform: translateY(-50%);"></i>
-          </div>
-
-          <h5 class="mb-4">Filters</h5>
-          <form>
-            <!-- Category Filter -->
-            <div class="form-group mb-4">
-              <label for="category" class="font-weight-bold">Category</label>
-              <div class="ml-2">
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categoryITIL"
-                    value="IT Service Management – ITIL ®" />
-                  <label class="form-check-label" for="categoryITIL">IT Service Management – ITIL ®</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categoryScrumAgile" value="Scrum and Agile" />
-                  <label class="form-check-label" for="categoryScrumAgile">Scrum and Agile</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categoryProjectManagement"
-                    value="Project Management" />
-                  <label class="form-check-label" for="categoryProjectManagement">Project Management</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categorySDI" value="SDI – Service Desk Manager" />
-                  <label class="form-check-label" for="categorySDI">SDI – Service Desk Manager</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categorySIAM" value="SIAM" />
-                  <label class="form-check-label" for="categorySIAM">SIAM</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categoryISOTrainings" value="ISO Trainings" />
-                  <label class="form-check-label" for="categoryISOTrainings">ISO Trainings</label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="categoryDevopsDOI"
-                    value="Devops Insitute - DOI" />
-                  <label class="form-check-label" for="categoryDevopsDOI">Devops Insitute - DOI</label>
-                </div>
-              </div>
+            <!-- Search Bar -->
+            <div class="mb-4 position-relative">
+                <input type="text" class="form-control pl-5" id="searchBar" placeholder="Search...">
             </div>
-
-            <!-- Apply Button -->
-            <button type="submit" class="btn btn-primary w-100">Apply</button>
-          </form>
+    
+            <h5 class="mb-4">Filters</h5>
+            <form id="filterForm">
+                <!-- Category Filter -->
+                <div class="form-group mb-4">
+                    <label for="category" class="font-weight-bold">Category</label>
+                    <div class="ml-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="categoryITIL" value="IT Service Management – ITIL ®" />
+                        <label class="form-check-label" for="categoryITIL">IT Service Management – ITIL ®</label>
+                    </div>
+                    
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categoryScrumAgile" value="Scrum and Agile" />
+                            <label class="form-check-label" for="categoryScrumAgile">Scrum and Agile</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categoryProjectManagement" value="Project Management" />
+                            <label class="form-check-label" for="categoryProjectManagement">Project Management</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categorySDI" value="SDI – Service Desk Manager" />
+                            <label class="form-check-label" for="categorySDI">SDI – Service Desk Manager</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categorySIAM" value="SIAM" />
+                            <label class="form-check-label" for="categorySIAM">SIAM</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categoryISOTrainings" value="ISO Trainings" />
+                            <label class="form-check-label" for="categoryISOTrainings">ISO Trainings</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="categoryDevopsDOI" value="Devops Insitute - DOI" />
+                            <label class="form-check-label" for="categoryDevopsDOI">Devops Insitute - DOI</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Apply Button -->
+                <button type="submit" class="btn btn-primary w-100">Apply</button>
+            </form>
         </div>
-      </nav>
+    </nav>    
 
 
       <!-- Main Content -->

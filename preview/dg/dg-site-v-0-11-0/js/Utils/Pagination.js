@@ -13,9 +13,11 @@ export class Pagination {
 
         const createButton = (text, pageNumber, isDisabled = false) => {
             return `
-                <button class="btn ${isDisabled ? 'btn-secondary' : 'btn-primary'} mx-1" ${isDisabled ? 'disabled' : ''} data-page="${pageNumber}">
-                    ${text}
-                </button>`;
+                <li class="page-item">
+                    <button class="btn ${isDisabled ? 'btn-secondary' : 'btn-primary'} mx-1" ${isDisabled ? 'disabled' : ''} data-page="${pageNumber}">
+                        ${text}
+                    </button>
+                </li>`;
         };
 
         // Create Previous button
@@ -39,11 +41,5 @@ export class Pagination {
                 }
             }
         });
-        const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="category"]');
-        const getSelectedCategories = () => {
-            return Array.from(categoryCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-        };
     }
 }
