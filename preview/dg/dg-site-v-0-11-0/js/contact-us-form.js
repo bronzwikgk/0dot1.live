@@ -22,82 +22,115 @@ fetch('https://restcountries.com/v3.1/all')
 // Update country code span based on selected country
 countrySelect.addEventListener('change', (event) => {
   const countryCode = event.target.value;
-  countryCodeSpan.textContent = countryCode;
+  countryCodeSpan.textContent = countryCode; // This line displays the country code in the span
+
+  // Also, set the value of the country select
+  countrySelect.value = countryCode; // Ensure the country select reflects the chosen value
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('form'); // Select the form
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
+
+    console.log('Form Data:', data); // Log the data being sent
+
+    try {
+        const response = await fetch('http://localhost:3007/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data), // Send the data as JSON
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        alert(result.message); // Display success message
+        contactForm.reset(); // Reset the form after submission
+
+        // Optionally, close the modal if needed
+        const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+        modal.hide();
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was a problem submitting your form. Please try again.'); // Display error message
+    }
+});
 
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  var registerButtons = document.querySelectorAll('.register-btn');
-  var modalTitle = document.getElementById('webinarName');
-  var modalDate = document.getElementById('webinarDate');
+document.addEventListener('DOMContentLoaded', () => {
+  const countrySelect = document.getElementById('countrys');
+  const countryCodeSpan = document.getElementById('country-codes');
+  const phoneInput = document.getElementById('phones');
 
-  registerButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      var webinarTitle = this.getAttribute('data-title');
-      var webinarDate = this.getAttribute('data-date') + " at " + this.getAttribute('data-time') + " for " + this.getAttribute('data-duration');
+  // Fetch country data from Restcountries API
+  fetch('https://restcountries.com/v3.1/all')
+    .then(response => response.json())
+    .then(data => {
+      // Sort countries by name
+      const sortedCountries = data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+      
+      // Populate the country dropdown
+      sortedCountries.forEach(country => {
+        const option = document.createElement('option');
+        const countryCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
+        option.value = countryCode;
+        option.textContent = country.name.common;
+        countrySelect.appendChild(option);
+      });
+    })
+    .catch(error => console.error('Error fetching country data:', error));
 
-      modalTitle.value = webinarTitle;
-      modalDate.value = webinarDate;
-    });
+  // Update country code span based on selected country
+  countrySelect.addEventListener('change', (event) => {
+    const selectedCountryCode = event.target.value;
+    countryCodeSpan.textContent = selectedCountryCode || '00'; // Display the country code in the span next to the phone input
+    phoneInput.placeholder = selectedCountryCode; // Optional: set phone input placeholder to reflect country code
   });
 });
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const registerButtons = document.querySelectorAll('.register-btn');
+  const contactForm = document.getElementById('contactForm');
 
-  // Attach event listener to all "Register Now" buttons
-  registerButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const webinarTitle = this.getAttribute('data-title');
-      const webinarDate = this.getAttribute('data-date');
+  contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent the default form submission
 
-      // Set the modal's hidden input values
-      document.getElementById('webinarTitle').value = webinarTitle;
-      document.getElementById('webinarDate').value = webinarDate;
-    });
-  });
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
 
-  // Handle the form submission
-  document.getElementById('submitRegistration').addEventListener('click', function () {
-    const form = document.getElementById('webinarForm');
-    
-    // Collect form data
-    const formData = {
-      webinarTitle: form.webinarTitle.value,
-      webinarDate: form.webinarDate.value,
-      name: form.name.value,
-      email: form.email.value,
-      country: form.country.value,
-      phoneNumber: form.phoneNumber.value,
-      company: form.company.value,
-      designation: form.designation.value
-    };
+      try {
+          const response = await fetch('http://localhost:3007/api/get-in-touch', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data), // Send the data as JSON
+          });
 
-    // Send data to backend using fetch
-    fetch('http://localhost:3007/webinars/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.message) {
-        alert(data.message);  // Show success message
-        form.reset();  // Clear form
-        const modalElement = document.querySelector('#registerModal');
-        const modalInstance = bootstrap.Modal.getInstance(modalElement);
-        modalInstance.hide();  // Close modal
-      } else {
-        alert('Registration failed: ' + data.error);
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+
+          const result = await response.json();
+          alert(result.message); // Display success message
+          contactForm.reset(); // Reset the form after submission
+      } catch (error) {
+          console.error('Error:', error);
+          alert('There was a problem submitting your form. Please try again.'); // Display error message
       }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('An error occurred while submitting the registration.');
-    });
   });
 });
