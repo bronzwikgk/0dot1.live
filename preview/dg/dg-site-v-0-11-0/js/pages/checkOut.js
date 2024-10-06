@@ -3,7 +3,7 @@ import { CartService } from "../services/CartService.js";
 import { HttpService } from "../services/HttpService.js";
 
 // Create an instance of HttpService
-
+const httpService = new HttpService('http://localhost:3007');
 
 // Wait until the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,27 +20,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Handle the "Place Your Order" button click event
-    // document.getElementById("place-order").addEventListener("click", async () => {
-    //     try {
-    //         const shippingInfo = getShippingInfo();
-    //         const totalAmount = document.getElementById("total").textContent.replace('₹', '');
-
-    //         const response = await CartService.placeOrder(shippingInfo, totalAmount);
-
-    //         if (response.success) {
-    //             alert("Order placed successfully!");
-    //             window.location.href = `/order/${response.orderId}`;
-    //         } else {
-    //             alert('Error placing order. Please try again.');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error placing order:', error);
-    //         alert('Failed to place the order.');
-    //     }
-    // });
+    document.getElementById("place-order").addEventListener("click", initiatePayment);
 });
-
-
 
 // Render cart items dynamically using Handlebars.js
 function renderCartItems(cartData) {
@@ -62,15 +43,21 @@ function calculateTotals(cartData) {
     document.getElementById("total").textContent = `₹${total.toFixed(2)}`;
 }
 
-const httpService = new HttpService('http://localhost:3007');
-
 // On Checkout Page
 async function initiatePayment() {
     console.log("Initiating payment...");
 
     try {
-        const totalAmount = document.getElementById("total").textContent.replace('₹', '');
-        const response = await httpService.post('/api/payment/createOrder', { amount: 100 });
+        const totalAmount = 100
+        const email = document.getElementById("email").value; // Get email from input field
+        const items = []; // Prepare the items array from the cart data
+
+        // Ensure items are gathered from cartData or state
+        const response = await httpService.post('/api/payment/createOrder', { 
+            amount: totalAmount, 
+            email: email, 
+            items: items // Pass the items to the backend
+        });
 
         if (response && response.success) {
             // Initialize Razorpay instance inside the function
@@ -89,8 +76,8 @@ async function initiatePayment() {
                 },
                 prefill: {
                     name: document.getElementById("fullName").value,
-                    email: "customer@example.com",
-                    contact: "7281972289"
+                    email: email, // Use the captured email
+                    contact: "7281972289" // You can also change this to capture from another input if necessary
                 },
                 theme: {
                     color: '#F37254'
@@ -107,5 +94,3 @@ async function initiatePayment() {
         alert('Error initiating payment. Please try again.');
     }
 }
-
-document.getElementById("place-order").addEventListener("click", initiatePayment);

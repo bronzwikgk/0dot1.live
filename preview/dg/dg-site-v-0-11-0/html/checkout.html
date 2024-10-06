@@ -53,104 +53,96 @@
 </head>
 <body>
 
-<div class="container">
-    <!-- Checkout Header -->
-    <div class="checkout-header">
-        <h2>Checkout</h2>
-    </div>
-
-    <div class="row mt-4">
-        <!-- Left Side - Customer Information -->
-        <div class="col-lg-8 col-md-7 col-sm-12 mb-4">
-            <!-- Shipping Information Card -->
-            <div class="card">
-                <div class="card-header">
-                    <h5>1. Shipping Information</h5>
+    <div class="container">
+        <!-- Checkout Header -->
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+        </div>
+    
+        <div class="row mt-4">
+            <!-- Left Side - Customer Information -->
+            <div class="col-lg-8 col-md-7 col-sm-12 mb-4">
+                <!-- Shipping Information Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>1. Shipping Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="shipping-form">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="state" class="form-label">State</label>
+                                        <input type="text" class="form-control" id="state" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="zip" class="form-label">Zip Code</label>
+                                        <input type="text" class="form-control" id="zip" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="country" value="India" required>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form id="shipping-form">
-                        <div class="mb-3">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+            </div>
+    
+            <!-- Right Side - Order Summary -->
+            <div class="col-lg-4 col-md-5 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>2. Order Summary</h5>
+                    </div>
+                    <div class="card-body order-summary">
+                        <div id="product-list"></div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0"><strong>Subtotal</strong></p>
+                            <p id="subtotal" class="mb-0">₹0</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0"><strong>Shipping</strong></p>
+                            <p id="shipping" class="mb-0">₹50</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control" id="city" required>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0"><strong>Tax</strong></p>
+                            <p id="tax" class="mb-0">₹0</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="state" class="form-label">State</label>
-                                    <input type="text" class="form-control" id="state" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="zip" class="form-label">Zip Code</label>
-                                    <input type="text" class="form-control" id="zip" required>
-                                </div>
-                            </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <h5><strong>Total</strong></h5>
+                            <h5 id="total"><strong>₹0</strong></h5>
                         </div>
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Country</label>
-                            <input type="text" class="form-control" id="country" value="India" required>
-                        </div>
-                    </form>
+                    </div>
+                </div>
+    
+                <div class="d-grid gap-2 mt-3">
+                    <button id="place-order" class="btn btn-primary btn-lg">Place Your Order</button>
                 </div>
             </div>
         </div>
-
-        <!-- Right Side - Order Summary -->
-        <div class="col-lg-4 col-md-5 col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>2. Order Summary</h5>
-                </div>
-                <div class="card-body order-summary">
-                    <!-- Product List (Handlebars Template) -->
-                    <div id="product-list"></div>
-                    <hr>
-                    <!-- Subtotal -->
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0"><strong>Subtotal</strong></p>
-                        <p id="subtotal" class="mb-0">₹0</p>
-                    </div>
-
-                    <!-- Shipping -->
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0"><strong>Shipping</strong></p>
-                        <p id="shipping" class="mb-0">₹50</p>
-                    </div>
-
-                    <!-- Tax -->
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0"><strong>Tax</strong></p>
-                        <p id="tax" class="mb-0">₹0</p>
-                    </div>
-
-                    <!-- Total -->
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <h5><strong>Total</strong></h5>
-                        <h5 id="total"><strong>₹0</strong></h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Place Order Button -->
-            <div class="d-grid gap-2 mt-3">
-                <button id="place-order" class="btn btn-primary btn-lg">
-                  Place Your Order
-                </button>
-            </div>
-
-        </div>
-    </div>
-</div>
+    </div>    
 
 <!-- Handlebars Template for Cart Items -->
 <!-- Handlebars Template for Cart Items -->
