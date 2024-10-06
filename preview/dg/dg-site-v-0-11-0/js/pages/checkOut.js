@@ -1,6 +1,52 @@
-import { HttpService } from "../Utils/HttpHelper.js";
+// Import necessary services
+import { CartService } from "../services/CartService.js";
+import { HttpService } from "../services/HttpService.js";
+
 // Create an instance of HttpService and pass it to AuthService
 const httpService = new HttpService('http://localhost:4000');
+
+// Utility function to strip non-numeric characters from prices
+function parsePrice(price) {
+    return parseFloat(price.replace(/[^\d.-]/g, ''));  // Remove any currency symbol and commas
+}
+
+// Wait until the DOM content is fully loaded
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        // Fetch and render cart items when the page loads
+        const cartData = await CartService.getCartItems();
+        console.log(cartData);
+
+        renderCartItems(cartData);
+        calculateTotals(cartData);
+    } catch (error) {
+        console.error('Error fetching cart data:', error);
+        alert('Failed to load cart data. Please try again later.');
+    }
+
+    // Handle the "Place Your Order" button click event
+    document.getElementById("place-order").addEventListener("click", initiatePayment);
+});
+
+// Render cart items dynamically using Handlebars.js
+function renderCartItems(cartData) {
+    const templateSource = document.getElementById("cart-items-template").innerHTML;
+    const template = Handlebars.compile(templateSource);
+    const html = template({ cartItems: cartData.items });
+    document.getElementById("product-list").innerHTML = html;
+}
+
+// Calculate and update subtotal, shipping, tax, and total amounts
+function calculateTotals(cartData) {
+    let subtotal = cartData.items.reduce((acc, item) => acc + item.totalPrice, 0);
+    let shipping = 50; // Flat shipping rate
+    let tax = subtotal * 0.05; // 5% tax
+    let total = subtotal + shipping + tax;
+
+    document.getElementById("subtotal").textContent = `₹${subtotal}`;
+    document.getElementById("tax").textContent = `₹${tax.toFixed(2)}`;
+    document.getElementById("total").textContent = `₹${total.toFixed(2)}`;
+}
 
 // On Checkout Page
 async function initiatePayment() {
@@ -9,56 +55,54 @@ async function initiatePayment() {
     try {
         const email = document.getElementById("email").value; // Get email from input field
         const cartData = await CartService.getCartItems(); // Get items from the cart
-        const totalAmount = cartData.items.reduce((acc, item) => acc + item.totalPrice, 0); // Calculate total amount from cart
+        const totalAmount = document.getElementById("total").textContent.replace(/[^\d.-]/g, ''); // Calculate total amount from cart
         const items = cartData.items.map(item => ({
             product_id: item.product_id,
             optionTitle: item.optionTitle,
             quantity: item.quantity,
-            region_price: item.region_price
+            region_price: parseFloat(item.region_price.replace(/[^\d.-]/g, '')),
+            totalPrice: parseFloat(item.region_price.replace(/[^\d.-]/g, '')) * item.quantity // Calculate totalPrice for each item
         }));
 
-        // Initiate payment by calling the backend's createPayment endpoint
-        const response = await httpService.post('/api/payment/createPayment', {
-            amount: totalAmount,
-            email: email,
-            items: items // Pass the items to the backend
+        // Send the items with the totalPrice to the backend
+        const orderResponse = await httpService.post('/api/payment/order', {
+            amount: parseFloat(totalAmount),  // Amount in rupees
+            userId: localStorage.getItem("userId"), // Fetch the userId from local storage
+            items: items // Pass the items with totalPrice to the backend
         });
 
-        if (response && response.success) {
-            // Initialize Razorpay instance with the response from backend
+        if (orderResponse && orderResponse.data) {
+            // Step 2: Initialize Razorpay instance with the order details from backend
             const options = {
-                key: response.key_id, // Razorpay Key ID
-                amount: response.amount * 100, // Amount in paise
+                key: orderResponse.data.key_id, // Razorpay Key ID
+                amount: orderResponse.data.amount, // Amount in paise
                 currency: 'INR',
-                name: 'Your App Name',
+                name: 'Ducisgroup',
                 description: 'Payment for your order',
-                order_id: response.orderId,
+                order_id: orderResponse.data.id, // Razorpay order ID
                 handler: async function (razorpayResponse) {
                     alert('Payment successful!');
 
-                    // After successful payment, send the payment details to the backend
-                    const paymentData = {
-                        razorpayOrderId: razorpayResponse.razorpay_order_id,
-                        razorpayPaymentId: razorpayResponse.razorpay_payment_id,
-                        razorpaySignature: razorpayResponse.razorpay_signature,
-                        email: email
-                    };
+                    // After successful payment, verify the payment on the backend
+                    const paymentVerificationResponse = await httpService.post('/api/payment/verify', {
+                        razorpay_order_id: razorpayResponse.razorpay_order_id,
+                        razorpay_payment_id: razorpayResponse.razorpay_payment_id,
+                        razorpay_signature: razorpayResponse.razorpay_signature,
+                        userId: localStorage.getItem("userId"), // Pass the userId for verification
+                        orderId: orderResponse.orderId, // Pass the order ID from backend
+                    });
 
-                    // Complete the payment and create the order
-                    const orderResponse = await httpService.post('/api/payment/completePayment', paymentData);
-
-                    if (orderResponse && orderResponse.success) {
-
-                        alert('Payment successful! Your order has been placed.');
-                        window.location.href = './orderPlaced.html'// Redirect to order confirmation page
+                    if (paymentVerificationResponse && paymentVerificationResponse.success) {
+                        alert('Order placed successfully!');
+                        window.location.href = './orderPlaced.html'; // Redirect to order confirmation page
                     } else {
-                        alert('Failed to create order. Please contact support.');
+                        alert('Failed to place order. Please contact support.');
                     }
                 },
                 prefill: {
                     name: document.getElementById("fullName").value,
                     email: email, // Use the captured email
-                    contact: "7281972289" // Capture contact number from input if necessary
+                    contact: "7281972289" // Capture contact number if necessary
                 },
                 theme: {
                     color: '#F37254'

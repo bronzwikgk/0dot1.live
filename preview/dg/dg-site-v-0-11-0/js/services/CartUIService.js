@@ -22,15 +22,22 @@ export class UIService {
     
 
     static async renderCartTemplate(cartData) {
-        const cartItems = cartData.items.map(item => {
-            const selectedOption = item.productId.options.find(option => option.type === item.type);
+        console.log(cartData);
+        
+        const cartItems = cartData.map(item => {
+            // Find the selected training option within productDetails based on optionTitle
+            const selectedOption = item.productDetails.trainingOptions.find(option => option.title === item.optionTitle);
+            
+            // If no selectedOption is found, handle the error case gracefully (fallback or default)
+            const price = parseFloat(item.region_price.replace(/[^\d.-]/g, '')); // Extract numeric price
             return {
-                name: item.productId.name,
-                type: item.type,
-                price: selectedOption.price,
-                quantity: item.quantity,
-                totalPrice: (selectedOption.price * item.quantity).toFixed(2),  // Calculate the total price for this item
-                image: item.productId.image  // Use the image if needed in the template
+                id:item.productDetails.product_id,
+                name: item.productDetails.title,  // Use the product title from productDetails
+                type: item.optionTitle,           // The option title (e.g., "Books", "elearning + Exam bundle")
+                price: price,                     // Price based on region_price
+                quantity: item.quantity,          // Quantity
+                totalPrice: (price * item.quantity).toFixed(2),  // Calculate the total price for this item
+                image: item.productDetails.image  // Use the image if needed in the template
             };
         });
     
@@ -58,5 +65,6 @@ export class UIService {
         // Inject the HTML into the body or specific cart container
         document.body.innerHTML = html;
     }
+    
     
 }

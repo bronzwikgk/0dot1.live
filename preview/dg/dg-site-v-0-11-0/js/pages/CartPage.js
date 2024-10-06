@@ -31,33 +31,36 @@ document.addEventListener('DOMContentLoaded', async () => {
         const cartItems = await CartService.getCartItems();
         console.log(cartItems);
         UIService.registerHandlebarsHelpers();
-        await UIService.renderCartTemplate(cartItems);
+        await UIService.renderCartTemplate(cartItems.items);
     } catch (error) {
         console.error('Error fetching or rendering cart items:', error);
     }
 
+    // Add event listeners to the remove buttons
+    document.querySelectorAll(".remove-item-btn").forEach(button => {
+        button.addEventListener("click", async (event) => {
+            const productId = event.target.getAttribute("data-id");
+            const optionTitle = event.target.getAttribute("data-type");  // this is now the optionTitle
+            const userId = localStorage.getItem("userId");
 
-});
+            try {
+                await CartService.removeCartItem(userId, productId, optionTitle);
+                alert("Item removed successfully!");
 
-
-// Add event listeners to the remove buttons
-document.querySelectorAll(".remove-item-btn").forEach(button => {
-    button.addEventListener("click", async (event) => {
-        const productId = event.target.getAttribute("data-id");
-        const productType = event.target.getAttribute("data-type");
-        const userId = localStorage.getItem("userId");
-
-        try {
-            await CartService.removeCartItem(userId, productId, productType);
-            alert("Item removed successfully!");
-
-            // Re-fetch and render the updated cart
-            const updatedCart = await CartService.getCartItems();
-            renderCart(updatedCart.items);
-        } catch (error) {
-            console.error("Error removing item from cart:", error);
-            alert("Failed to remove item.");
-        }
+                // Re-fetch and render the updated cart
+                const updatedCart = await CartService.getCartItems();
+                console.log(updatedCart);
+                
+                window.location.reload()
+            } catch (error) {
+                console.error("Error removing item from cart:", error);
+                alert("Failed to remove item.");
+            }
+        });
     });
+
+
+
 });
+
 

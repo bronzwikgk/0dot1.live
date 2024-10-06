@@ -30,10 +30,10 @@ export class CartService {
         document.querySelectorAll('#product-list-body tr').forEach((row) => {
             const optionTitle = row.querySelector('td:nth-child(2)').textContent; // Get product type (e.g., "Book")
             const quantity = row.querySelector('input.qty-input').value; // Get quantity
-            const region_price = row.querySelector('td:nth-child(4)').textContent; // Get price
+            const region_price = row.querySelector('td:nth-child(4)').textContent
 
             // Check if the product type checkbox is checked
-            const checkbox = row.querySelector(`input[name="product"][value="${optionTitle}"]`); // Ensure this selects the correct checkbox
+            const checkbox = document.querySelector(`input[name="product"][value="${optionTitle}"]`);
             if (checkbox && checkbox.checked) {
                 selectedOptions.push({
                     optionTitle: optionTitle,
@@ -60,7 +60,6 @@ export class CartService {
                 region_price: option.price
             }))
         };
-
         console.log(cartData);
 
         try {
@@ -71,26 +70,21 @@ export class CartService {
                 throw new Error('Failed to add items to cart.');
             }
 
-            // If successful, show an alert
             alert('Items added to cart successfully!');
-
             // **Clear the table after adding to the cart**
             CartService.clearCartTable();
-
         } catch (error) {
             console.error(error);
             alert('Error adding items to cart.');
         }
+
     }
 
-    // Function to clear the table contents
-   static clearCartTable() {
+    static clearCartTable() {
         const tableBody = document.querySelector('#product-list-body');
         tableBody.innerHTML = ''; // Clear all rows in the table
 
-        // Optionally reset any inputs related to the table
-        document.querySelectorAll('input.qty-input').forEach(input => input.value = 0); // Reset all quantity inputs
-        document.querySelectorAll('input[name="product"]').forEach(checkbox => checkbox.checked = false); // Uncheck all checkboxes
+
     }
 
 
@@ -125,13 +119,16 @@ export class CartService {
         }
     }
 
-    static async removeCartItem(userId, productId, type) {
-        const url = `/api/cart/${userId}/item/${productId}/${type}`;
+    // Updated function to remove item from cart
+    static async removeCartItem(userId, productId, optionTitle) {
+        const url = `/api/cart/${userId}/item/${productId}/${optionTitle}`;
         try {
-            return await httpService.delete(url);
+            const response = await httpService.delete(url);
+            return response;
         } catch (error) {
             console.error('Error removing item from cart:', error);
             throw error;
         }
     }
+
 }

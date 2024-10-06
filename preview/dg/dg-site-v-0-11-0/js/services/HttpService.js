@@ -22,7 +22,7 @@ export class HttpService {
     }
 
     async delete(url, headers = {}) {
-        return this.request(url, 'DELETE', null, headers);
+        return this.request(url, 'DELETE', {}, headers);
     }
 
     // Main request method with improved error handling, global config, timeout, and request cancellation
