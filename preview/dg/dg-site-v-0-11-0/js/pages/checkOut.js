@@ -93,11 +93,13 @@ async function initiatePayment() {
                     });
 
                     if (paymentVerificationResponse && paymentVerificationResponse.success) {
+                        const orderId = paymentVerificationResponse.order._id; // Assuming the response includes the order object
                         alert('Order placed successfully!');
-                        window.location.href = './orderPlaced.html'; // Redirect to order confirmation page
+                        window.location.href = `./orderPlaced.html?orderId=${paymentVerificationResponse.order._id}`; // Redirect with orderId in query string
                     } else {
                         alert('Failed to place order. Please contact support.');
                     }
+
                 },
                 prefill: {
                     name: document.getElementById("fullName").value,
