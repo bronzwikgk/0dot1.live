@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Form Data:', data); // Log the data being sent
 
     try {
-        const response = await fetch('http://localhost:3007/api/contact', {
+        const response = await fetch('http://localhost:4000/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
 
       try {
-          const response = await fetch('http://localhost:3007/api/get-in-touch', {
+          const response = await fetch('http://localhost:4000/api/get-in-touch', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

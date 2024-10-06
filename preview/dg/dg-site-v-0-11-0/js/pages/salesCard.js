@@ -10,15 +10,42 @@ let products
 async function loadProductDetails() {
     const productData = await ProductService.getProductById();
 
-    products = productData.options
-    renderProductOptions(productData.options);
+    products = productData.trainingOptions.filter(item =>
+        item.title !== "Mock Tests" &&
+        item.title !== "Online Bootcamp" &&
+        item.title !== "Corporate Training"
+    );
+
+    renderProductOptions(products);
 }
 
 loadProductDetails()
 // Function to render product options using Handlebars
 function renderProductOptions(options) {
+
+    console.log(options);
+
     // Get the Handlebars template from the script tag
-    const templateSource = document.getElementById('product-type-template').innerHTML;
+    const templateSource = `
+      {{#each options}}
+        <li
+          class="dropdown-menu-product-type-selection-item d-flex justify-content-between"
+        >
+          <div>
+            <input
+              type="checkbox"
+              id="option-{{@index}}"
+              name="product"
+              value="{{title}}"
+              data-price="{{price}}"
+              style="display: none;"
+            />
+            <label for="option-{{@index}}">{{title}}</label>
+          </div>
+          <span>₹ {{india_price}}</span>
+        </li>
+      {{/each}}
+    `;
     const template = Handlebars.compile(templateSource);
 
     // Generate HTML from the template and product options data
@@ -69,16 +96,21 @@ function updateTable() {
     tableBody.innerHTML = ""; // Clear existing rows
     let grandTotal = 0;
 
-    selectedProducts.forEach((product, index) => {
+    selectedProducts.forEach((productName, index) => {
         let price = null;
         let qty = 1;  // Default quantity
 
         for (let i = 0; i < products.length; i++) {
             const product = products[i];
 
+            console.log(product, productName);
+
             // Check if the product type matches
-            if (product.type === product) {
-                price = product.price || 0; // Set price to 0 if price field is missing
+            if (product.title === productName) {
+                console.log("Matched");
+               let priceString = product.india_price.replace(/[₹$£€]/g, '')
+
+                price = parseFloat(priceString.replace(/,/g, '')) || 0; // Set price to 0 if price field is missing
                 break; // Exit loop once the product is found
             }
         }
@@ -86,8 +118,8 @@ function updateTable() {
         const row = `
 <tr>
 <td>${index + 1}</td>
-<td>${product}</td>
-<td><input type="number" value="${qty}" min="1" data-product="${product}" class="qty-input" /></td>
+<td>${productName}</td>
+<td><input type="number" value="${qty}" min="1" data-product="${productName}" class="qty-input" /></td>
 <td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
 </tr>
 `;

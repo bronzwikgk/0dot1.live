@@ -1,6 +1,6 @@
 import { HttpService } from "./HttpService.js";
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('https://dg-back.onrender.com');
+const httpService = new HttpService('http://localhost:4000');
 
 export class CartService {
 
@@ -28,15 +28,17 @@ export class CartService {
 
         // Loop through each row in the table
         document.querySelectorAll('#product-list-body tr').forEach((row) => {
-            const productType = row.querySelector('td:nth-child(2)').textContent; // Get product type (e.g., "Book")
+            const optionTitle = row.querySelector('td:nth-child(2)').textContent; // Get product type (e.g., "Book")
             const quantity = row.querySelector('input.qty-input').value; // Get quantity
+            const region_price = row.querySelector('td:nth-child(4)').textContent; // Get price
 
             // Check if the product type checkbox is checked
-            const checkbox = document.querySelector(`input[name="product"][value="${productType}"]`);
+            const checkbox = row.querySelector(`input[name="product"][value="${optionTitle}"]`); // Ensure this selects the correct checkbox
             if (checkbox && checkbox.checked) {
                 selectedOptions.push({
-                    type: productType,
-                    quantity: parseInt(quantity, 10)
+                    optionTitle: optionTitle,
+                    quantity: parseInt(quantity, 10),
+                    price: region_price
                 });
             }
         });
@@ -52,11 +54,13 @@ export class CartService {
         const cartData = {
             userId,
             items: selectedOptions.map(option => ({
-                productId,
-                type: option.type,
-                quantity: option.quantity
+                product_id: productId,
+                optionTitle: option.optionTitle,
+                quantity: option.quantity,
+                region_price: option.price
             }))
         };
+
         console.log(cartData);
 
         try {
@@ -67,13 +71,28 @@ export class CartService {
                 throw new Error('Failed to add items to cart.');
             }
 
+            // If successful, show an alert
             alert('Items added to cart successfully!');
+
+            // **Clear the table after adding to the cart**
+            CartService.clearCartTable();
+
         } catch (error) {
             console.error(error);
             alert('Error adding items to cart.');
         }
-
     }
+
+    // Function to clear the table contents
+   static clearCartTable() {
+        const tableBody = document.querySelector('#product-list-body');
+        tableBody.innerHTML = ''; // Clear all rows in the table
+
+        // Optionally reset any inputs related to the table
+        document.querySelectorAll('input.qty-input').forEach(input => input.value = 0); // Reset all quantity inputs
+        document.querySelectorAll('input[name="product"]').forEach(checkbox => checkbox.checked = false); // Uncheck all checkboxes
+    }
+
 
     // Create a new cart for a user
     static async createCart(userId, sessionId) {
