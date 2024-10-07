@@ -3,7 +3,7 @@ import { CartService } from "../services/CartService.js";
 import { HttpService } from "../services/HttpService.js";
 
 // Create an instance of HttpService
-const httpService = new HttpService('http://localhost:3007');
+const httpService = new HttpService('https://68.183.94.77');
 
 // Wait until the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {

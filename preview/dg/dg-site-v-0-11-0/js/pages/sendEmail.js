@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
   
       // Send data to backend using fetch
-      fetch('http://localhost:3007/webinars/register', {
+      fetch('https://68.183.94.77/webinars/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

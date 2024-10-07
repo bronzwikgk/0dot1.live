@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
   
         try {
-            const response = await fetch('http://localhost:3007/api/get-in-touch', {
+            const response = await fetch('https://68.183.94.77/api/get-in-touch', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
