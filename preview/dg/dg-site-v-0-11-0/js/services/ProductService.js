@@ -1,7 +1,7 @@
 import { HttpService } from "./HttpService.js";
 
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('http://68.183.94.77:4000');
+const httpService = new HttpService('https://68.183.94.77');
 
 export class ProductService {
     // Get products with optional search and pagination parameters
