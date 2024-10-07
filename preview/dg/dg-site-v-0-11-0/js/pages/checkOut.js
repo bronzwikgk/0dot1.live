@@ -3,7 +3,7 @@ import { CartService } from "../services/CartService.js";
 import { HttpService } from "../services/HttpService.js";
 
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('http://localhost:4000');
+const httpService = new HttpService('https://68.183.94.77');
 
 // Utility function to strip non-numeric characters from prices
 function parsePrice(price) {
