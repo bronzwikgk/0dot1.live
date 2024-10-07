@@ -28,15 +28,17 @@ export class CartService {
 
         // Loop through each row in the table
         document.querySelectorAll('#product-list-body tr').forEach((row) => {
-            const productType = row.querySelector('td:nth-child(2)').textContent; // Get product type (e.g., "Book")
+            const optionTitle = row.querySelector('td:nth-child(2)').textContent; // Get product type (e.g., "Book")
             const quantity = row.querySelector('input.qty-input').value; // Get quantity
+            const region_price = row.querySelector('td:nth-child(4)').textContent
 
             // Check if the product type checkbox is checked
-            const checkbox = document.querySelector(`input[name="product"][value="${productType}"]`);
+            const checkbox = document.querySelector(`input[name="product"][value="${optionTitle}"]`);
             if (checkbox && checkbox.checked) {
                 selectedOptions.push({
-                    type: productType,
-                    quantity: parseInt(quantity, 10)
+                    optionTitle: optionTitle,
+                    quantity: parseInt(quantity, 10),
+                    price: region_price
                 });
             }
         });
@@ -52,9 +54,10 @@ export class CartService {
         const cartData = {
             userId,
             items: selectedOptions.map(option => ({
-                productId,
-                type: option.type,
-                quantity: option.quantity
+                product_id: productId,
+                optionTitle: option.optionTitle,
+                quantity: option.quantity,
+                region_price: option.price
             }))
         };
         console.log(cartData);
@@ -68,12 +71,22 @@ export class CartService {
             }
 
             alert('Items added to cart successfully!');
+            // **Clear the table after adding to the cart**
+            CartService.clearCartTable();
         } catch (error) {
             console.error(error);
             alert('Error adding items to cart.');
         }
 
     }
+
+    static clearCartTable() {
+        const tableBody = document.querySelector('#product-list-body');
+        tableBody.innerHTML = ''; // Clear all rows in the table
+
+
+    }
+
 
     // Create a new cart for a user
     static async createCart(userId, sessionId) {
@@ -106,13 +119,16 @@ export class CartService {
         }
     }
 
-    static async removeCartItem(userId, productId, type) {
-        const url = `/api/cart/${userId}/item/${productId}/${type}`;
+    // Updated function to remove item from cart
+    static async removeCartItem(userId, productId, optionTitle) {
+        const url = `/api/cart/${userId}/item/${productId}/${optionTitle}`;
         try {
-            return await httpService.delete(url);
+            const response = await httpService.delete(url);
+            return response;
         } catch (error) {
             console.error('Error removing item from cart:', error);
             throw error;
         }
     }
+
 }
