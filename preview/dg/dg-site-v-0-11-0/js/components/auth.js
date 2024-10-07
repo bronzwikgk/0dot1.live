@@ -6,7 +6,7 @@ async function loginUser(event) {
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('https://68.183.94.77/auth/login', {
+        const response = await fetch('http://68.183.94.77:4000/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ async function registerUser(event) {
     }
 
     try {
-        const response = await fetch('https://68.183.94.77/api/auth/register', {
+        const response = await fetch('http://68.183.94.77:4000/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 // Function to fetch all categories
 async function fetchCategories() {
     try {
-        const response = await fetch('https://68.183.94.77/categories');
+        const response = await fetch('http://68.183.94.77:4000/categories');
         if (!response.ok) {
             throw new Error('Failed to fetch categories');
         }
@@ -21,7 +21,7 @@ async function fetchCategories() {
 // Function to fetch a single category by ID
 async function fetchCategoryById(categoryId) {
     try {
-        const response = await fetch(`https://68.183.94.77/categories/${categoryId}`);
+        const response = await fetch(`http://68.183.94.77:4000/categories/${categoryId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch category');
         }
@@ -46,7 +46,7 @@ async function createCategory(event) {
     const description = document.getElementById('category-description').value;
 
     try {
-        const response = await fetch('https://68.183.94.77/categories', {
+        const response = await fetch('http://68.183.94.77:4000/categories', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ async function updateCategory(categoryId, event) {
     const description = document.getElementById('update-category-description').value;
 
     try {
-        const response = await fetch(`https://68.183.94.77/categories/${categoryId}`, {
+        const response = await fetch(`http://68.183.94.77:4000/categories/${categoryId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ async function updateCategory(categoryId, event) {
 // Function to delete a category
 async function deleteCategory(categoryId) {
     try {
-        const response = await fetch(`https://68.183.94.77/categories/${categoryId}`, {
+        const response = await fetch(`http://68.183.94.77:4000/categories/${categoryId}`, {
             method: 'DELETE',
         });
 

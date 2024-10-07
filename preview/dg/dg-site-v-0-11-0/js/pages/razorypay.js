@@ -1,5 +1,5 @@
 import { HttpService } from "../services/HttpService.js";
-const httpService = new HttpService('https://68.183.94.77');
+const httpService = new HttpService('http://68.183.94.77:4000');
 async function verifyPayment() {
   console.log("Verify Pyament run");
 

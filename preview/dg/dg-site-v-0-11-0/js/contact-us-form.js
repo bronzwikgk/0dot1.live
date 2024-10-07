@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
 
       try {
-          const response = await fetch('https://68.183.94.77/api/contact', {
+          const response = await fetch('http://68.183.94.77:4000/api/contact', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

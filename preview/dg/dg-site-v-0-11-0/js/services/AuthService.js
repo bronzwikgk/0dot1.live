@@ -72,7 +72,7 @@ class AuthService {
 }
 
 // Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('https://68.183.94.77');
+const httpService = new HttpService('http://68.183.94.77:4000');
 const authService = new AuthService(httpService);
 
 export default authService;

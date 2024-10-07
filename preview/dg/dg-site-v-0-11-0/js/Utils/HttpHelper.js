@@ -74,6 +74,6 @@ export class HttpService {
     }
 }
 
-const api = new HttpService('https://68.183.94.77');
+const api = new HttpService('http://68.183.94.77:4000');
 
 export default api
