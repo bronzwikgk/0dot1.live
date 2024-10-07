@@ -7,7 +7,7 @@ let totalPages = 1;
 async function fetchProducts(page = 1) {
     console.log("Fething Products");
     const offset = (page - 1) * pageSize;
-    const response = await fetch(`http://68.183.94.77:4000/products?limit=${pageSize}&offset=${offset}`);
+    const response = await fetch(`https://unbelong.in/products?limit=${pageSize}&offset=${offset}`);
     const data = await response.json();
     products = data.products;
     totalPages = Math.ceil(data.totalCount / pageSize);
@@ -20,7 +20,7 @@ async function fetchProducts(page = 1) {
 async function searchProducts(query, page = 1) {
     try {
         const offset = (page - 1) * pageSize;
-        const response = await fetch(`http://68.183.94.77:4000/products?search=${encodeURIComponent(query)}&limit=${pageSize}&offset=${offset}`);
+        const response = await fetch(`https://unbelong.in/products?search=${encodeURIComponent(query)}&limit=${pageSize}&offset=${offset}`);
         if (!response.ok) {
             throw new Error('Failed to fetch products');
         }

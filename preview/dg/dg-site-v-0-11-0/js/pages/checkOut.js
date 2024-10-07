@@ -2,18 +2,15 @@
 import { CartService } from "../services/CartService.js";
 import { HttpService } from "../services/HttpService.js";
 
-<<<<<<< HEAD
+
 // Create an instance of HttpService
-const httpService = new HttpService('https://68.183.94.77');
-=======
-// Create an instance of HttpService and pass it to AuthService
-const httpService = new HttpService('https://68.183.94.77');
+const httpService = new HttpService('https://unbelong.in');
+
 
 // Utility function to strip non-numeric characters from prices
 function parsePrice(price) {
     return parseFloat(price.replace(/[^\d.-]/g, ''));  // Remove any currency symbol and commas
 }
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
 
 // Wait until the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {

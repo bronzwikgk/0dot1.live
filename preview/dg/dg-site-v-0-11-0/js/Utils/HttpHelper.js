@@ -74,6 +74,6 @@ export class HttpService {
     }
 }
 
-const api = new HttpService('https://68.183.94.77');
+const api = new HttpService('https://unbelong.in');
 
 export default api

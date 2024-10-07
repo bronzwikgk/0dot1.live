@@ -7,7 +7,7 @@ function getProductIdFromUrl() {
 // Function to fetch the product data from the backend
 async function fetchProductData(productId) {
   try {
-    const response = await fetch(`https://68.183.94.77/products/${productId}`);
+    const response = await fetch(`https://unbelong.in/products/${productId}`);
     if (!response.ok) {
       throw new Error(`Network response was not ok: ${response.statusText}`);
     }

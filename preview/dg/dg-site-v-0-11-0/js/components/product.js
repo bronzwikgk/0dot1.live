@@ -1,11 +1,9 @@
 // Function to fetch all products
 async function fetchProducts() {
     try {
-<<<<<<< HEAD
-        const response = await fetch('http://68.183.94.77:4000/products');
-=======
-        const response = await fetch('http://localhost:4000/products');
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+
+        const response = await fetch('https://unbelong.in/products');
+
         if (!response.ok) {
             throw new Error('Failed to fetch products');
         }
@@ -25,11 +23,8 @@ async function fetchProducts() {
 // Function to fetch a single product by ID
 async function fetchProductById(productId) {
     try {
-<<<<<<< HEAD
-        const response = await fetch(`http://68.183.94.77:4000/products/${productId}`);
-=======
-        const response = await fetch(`http://localhost:4000/products/${productId}`);
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+        const response = await fetch(`https://unbelong.in/products/${productId}`);
+
         if (!response.ok) {
             throw new Error('Failed to fetch product');
         }
@@ -60,11 +55,8 @@ async function createProduct(event) {
     const categoryId = document.getElementById('product-category-id').value;
 
     try {
-<<<<<<< HEAD
-        const response = await fetch('http://68.183.94.77:4000/products', {
-=======
-        const response = await fetch('http://localhost:4000/products', {
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+
+        const response = await fetch('https://unbelong.in/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -102,11 +94,8 @@ async function updateProduct(productId, event) {
     const categoryId = document.getElementById('update-product-category-id').value;
 
     try {
-<<<<<<< HEAD
-        const response = await fetch(`http://68.183.94.77:4000/products/${productId}`, {
-=======
-        const response = await fetch(`http://localhost:4000/products/${productId}`, {
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+        const response = await fetch(`https://unbelong.in/products/${productId}`, {
+
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -133,7 +122,7 @@ async function updateProduct(productId, event) {
 // Function to delete a product
 async function deleteProduct(productId) {
     try {
-        const response = await fetch(`http://68.183.94.77:4000/products/${productId}`, {
+        const response = await fetch(`https://unbelong.in/products/${productId}`, {
             method: 'DELETE',
         });
 

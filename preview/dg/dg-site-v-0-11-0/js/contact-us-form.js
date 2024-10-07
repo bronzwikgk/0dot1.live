@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Form Data:', data); // Log the data being sent
 
     try {
-        const response = await fetch('https://68.183.94.77/api/contact', {
+        const response = await fetch('https://unbelong.in/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -113,11 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
 
       try {
-<<<<<<< HEAD
-          const response = await fetch('http://68.183.94.77:4000/api/contact', {
-=======
-          const response = await fetch('http://localhost:3007/api/get-in-touch', {
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+
+          const response = await fetch('https://unbelong.in/api/contact', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

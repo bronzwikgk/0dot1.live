@@ -1,7 +1,7 @@
 let netTotal
 // Get Cart Items
 async function getCartItems(cartId) {
-    const response = await fetch(`http://68.183.94.77:4000/cart/items/${cartId}`, {
+    const response = await fetch(`https://unbelong.in/cart/items/${cartId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ async function getCartItems(cartId) {
 
 async function placeOrder(userId, paymentMethod, amount) {
     try {
-        const response = await fetch('http://68.183.94.77:4000/placeOrder', {
+        const response = await fetch('https://unbelong.in/placeOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

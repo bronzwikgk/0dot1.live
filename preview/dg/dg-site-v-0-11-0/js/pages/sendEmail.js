@@ -47,12 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         designation: form.designation.value
       };
   
-      // Send data to backend using fetch
-<<<<<<< HEAD
-      fetch('http://68.183.94.77:4000/webinars/register', {
-=======
-      fetch('https://68.183.94.77/webinars/register', {
->>>>>>> b2eed0a27df998ad5d498346afb47e34f2589846
+      fetch('https://unbelong.in/webinars/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
