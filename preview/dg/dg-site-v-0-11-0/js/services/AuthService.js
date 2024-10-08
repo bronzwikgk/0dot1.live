@@ -1,4 +1,5 @@
 import { HttpService } from "./HttpService.js"; // Ensure you import your HttpService class
+import { CartService } from './CartService.js'; // Import CartService for pushing local cart items
 
 class AuthService {
     constructor(httpService) {
@@ -16,11 +17,14 @@ class AuthService {
 
             // Assuming response contains { token, cartId, userId }
             localStorage.setItem('token', response.token);
-            // localStorage.setItem('cartId', response.cartId);
             localStorage.setItem('userId', response.userId);
 
             console.log('Login successful:', response);
-            window.location.href = "./offering.html"
+
+            // Push any local cart items to the database
+            await CartService.pushLocalCartToDatabase(response.userId);
+
+            window.location.href = "./offering.html";
             return response; // Return the user data for further processing
 
         } catch (error) {
@@ -43,7 +47,7 @@ class AuthService {
             }
 
             console.log('Registration successful:', response);
-            window.location.href = "./checkEmail.html"
+            window.location.href = "./checkEmail.html";
             return response; // Return the success message or user data
         } catch (error) {
             console.error('Error registering:', error);
@@ -54,9 +58,9 @@ class AuthService {
     // Logout Method
     logout() {
         localStorage.removeItem('token');
-        localStorage.removeItem('cartId');
-        localStorage.removeItem('userId');
+        localStorage.removeItem('userId'); // Keep this as cartId is commented out
         console.log('User logged out');
+        window.location.href = "./login.html"; // Optionally redirect to login page
     }
 
     // Method to check if the user is authenticated
@@ -64,11 +68,15 @@ class AuthService {
         const token = localStorage.getItem('token');
         if (!token) return false;
 
-        // Optionally, decode the JWT and check the expiration
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.exp > Date.now() / 1000;
+        try {
+            // Optionally, decode the JWT and check the expiration
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            return payload.exp > Date.now() / 1000;
+        } catch (error) {
+            console.error('Invalid token:', error);
+            return false;
+        }
     }
-
 }
 
 // Create an instance of HttpService and pass it to AuthService
