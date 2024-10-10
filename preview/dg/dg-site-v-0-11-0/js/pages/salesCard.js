@@ -1,5 +1,30 @@
 import { ProductService } from "../services/ProductService.js";
 
+// Simulated function to detect user region
+function detectRegion() {
+    // Replace this logic with actual geolocation code if necessary
+    return "USA"; // Assume "India" for this example
+}
+
+// Map region to corresponding price field in product data
+const regionPriceMap = {
+    "India": "india_price",
+    "USA": "region_1_usa",
+    "Europe": "region_2_euro",
+    "UK": "uk_price",
+    "Region 3": "region_3_usd_price"
+};
+
+// Function to get the price for the user region
+function getPriceForRegion(product) {
+    const userRegion = detectRegion();
+
+    const priceField = regionPriceMap[userRegion];
+    console.log(priceField);
+    
+    return product[priceField] || "Price not available";
+}
+
 const dropdownTrigger = document.getElementById("dropdown-trigger");
 const dropdownMenu = document.getElementById(
     "dropdown-menu-product-type-selection"
@@ -9,6 +34,8 @@ let products
 // Function to display product details on the page
 async function loadProductDetails() {
     const productData = await ProductService.getProductById();
+    console.log("Get Product Deatils");
+    
 
     products = productData.trainingOptions.filter(item =>
         item.title !== "Mock Tests" &&
@@ -21,59 +48,47 @@ async function loadProductDetails() {
 
 loadProductDetails()
 // Function to render product options using Handlebars
+// Function to render product options using Handlebars
 function renderProductOptions(options) {
-
-    console.log(options);
-
-    // Get the Handlebars template from the script tag
+    // Updated template to use dynamic pricing based on user region
     const templateSource = `
       {{#each options}}
-        <li
-          class="dropdown-menu-product-type-selection-item d-flex justify-content-between"
-        >
+        <li class="dropdown-menu-product-type-selection-item d-flex justify-content-between">
           <div>
-            <input
-              type="checkbox"
-              id="option-{{@index}}"
-              name="product"
-              value="{{title}}"
-              data-price="{{price}}"
-              style="display: none;"
-            />
+            <input type="checkbox" id="option-{{@index}}" name="product" value="{{title}}" data-price="{{price}}" style="display: none;" />
             <label for="option-{{@index}}">{{title}}</label>
           </div>
-          <span>₹ {{india_price}}</span>
+          <span>{{getPrice this}}</span> <!-- Display region-specific price -->
         </li>
       {{/each}}
     `;
+    
+    // Register a helper in Handlebars for region-specific pricing
+    Handlebars.registerHelper("getPrice", function(product) {
+        return getPriceForRegion(product); // Call function to get region-based price
+    });
+
     const template = Handlebars.compile(templateSource);
-
-    // Generate HTML from the template and product options data
     const html = template({ options });
-
-    // Insert the generated HTML into the dropdown menu
     document.getElementById('dropdown-menu-product-type-selection').innerHTML = html;
+
     // Checkbox change event
     const checkboxes = document.querySelectorAll("input[type='checkbox']");
-    console.log(checkboxes);
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", function () {
-            console.log("Change checkbox");
-
             const productName = checkbox.value;
             if (checkbox.checked) {
                 selectedProducts.push(productName);
             } else {
-                selectedProducts = selectedProducts.filter(
-                    (p) => p !== productName
-                );
+                selectedProducts = selectedProducts.filter((p) => p !== productName);
             }
             updateTable();
-            dropdownMenu.style.display = "none"
-            dropdownTrigger.setAttribute("aria-expanded", false)
+            dropdownMenu.style.display = "none";
+            dropdownTrigger.setAttribute("aria-expanded", false);
         });
     });
 }
+
 
 
 dropdownTrigger.addEventListener("click", function () {
@@ -88,7 +103,6 @@ dropdownTrigger.addEventListener("click", function () {
 
 let selectedProducts = [];
 
-// Update the product table
 function updateTable() {
     const tableBody = document.getElementById("product-list-body");
     const grandTotalCell = document.getElementById("grand-total");
@@ -103,33 +117,27 @@ function updateTable() {
         for (let i = 0; i < products.length; i++) {
             const product = products[i];
 
-            console.log(product, productName);
-
-            // Check if the product type matches
             if (product.title === productName) {
-                console.log("Matched");
-               let priceString = product.india_price.replace(/[₹$£€]/g, '')
-
-                price = parseFloat(priceString.replace(/,/g, '')) || 0; // Set price to 0 if price field is missing
-                break; // Exit loop once the product is found
+                const priceString = getPriceForRegion(product).replace(/[₹$£€]/g, '');
+                price = parseFloat(priceString.replace(/,/g, '')) || 0; // Set price to 0 if missing
+                break;
             }
         }
 
         const row = `
-<tr>
-<td>${index + 1}</td>
-<td>${productName}</td>
-<td><input type="number" value="${qty}" min="1" data-product="${productName}" class="qty-input" /></td>
-<td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
-</tr>
-`;
+            <tr>
+                <td>${index + 1}</td>
+                <td>${productName}</td>
+                <td><input type="number" value="${qty}" min="1" data-product="${productName}" class="qty-input" /></td>
+                <td style="padding-left: var(--spacing-mid);">₹${price * qty}</td>
+            </tr>
+        `;
         tableBody.insertAdjacentHTML("beforeend", row);
         grandTotal += price * qty;
     });
 
-    grandTotalCell.innerHTML = `Total: ₹${grandTotal}`;
+    grandTotalCell.innerHTML = `Total: ${grandTotal}`;
 
-    // Attach event listeners to quantity input fields
     const qtyInputs = document.querySelectorAll(".qty-input");
     qtyInputs.forEach((input) => {
         input.addEventListener("input", function () {
@@ -140,9 +148,6 @@ function updateTable() {
         });
     });
 }
-
-
-
 
 
 // Close dropdown when clicking outside
