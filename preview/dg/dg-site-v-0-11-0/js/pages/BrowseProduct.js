@@ -156,26 +156,7 @@ let products = [
         "category": "Project Management",
         "product_id": "dg-training-012"
     },
-    {
-        "name": "Six Sigma Green Belt",
-        "description": "",
-        "truncatedDescription": "",
-        "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-green-belt.jpg",
-        "productUrl": "./productPage-SixSigmaGreenBelt.html?productId=66eb5723c40e0b0b76fe0a50",
-        "_id": "66eb5723c40e0b0b76fe0a50",
-        "category": "Six Sigma and Quality",
-        "product_id": "dg-training-013"
-    },
-    {
-        "name": "Six Sigma Black Belt",
-        "description": "",
-        "truncatedDescription": "",
-        "image": "../assets/assets_dg-site/logo/new logo for cources/six-sigma-black-belt.jpg",
-        "productUrl": "./productPage-SixSigmaBlackBelt.html?productId=66eb5723c40e0b0b76fe0a51",
-        "_id": "66eb5723c40e0b0b76fe0a51",
-        "category": "Six Sigma and Quality",
-        "product_id": "dg-training-014"
-    },
+  
     {
         "name": "ITIL ® 4 Foundation",
         "description": "Technology has transformed the way we work, socialize, purchase goods, and interact with services...",
