@@ -9,6 +9,7 @@ class ProductFilter {
         if (!this.form || !this.productContainer) {
             console.error("Form or Product Container not found. Please check the provided IDs.");
             return;
+            
         }
         
         this.products = Array.from(this.productContainer.children); // Use existing product elements from the DOM
