@@ -1,0 +1,41 @@
+privacy_policy:
+  effective_date: [Insert Date]
+  information_collection:
+    - user_account_information: "We collect your username and any preferences related to chat interactions."
+    - session_information: "We maintain session records, including chat tone preferences and chat history."
+    - system_logs: "We store logs of interactions, including task requests, file uploads, and system-generated outputs."
+  data_usage:
+    - personalization: "Usernames and preferences are used to personalize the experience."
+    - task_management: "Collected data ensures accurate task processing and session continuity."
+    - service_improvement: 
+        - note: "We may use anonymized, aggregated data to improve services."
+        - condition: "Personal information is not shared for any purpose other than improving the user experience."
+  data_security:
+    encryption:
+      - data_in_transit: "All data, including user credentials and files, is encrypted during transmission."
+      - data_at_rest: "Sensitive data is encrypted at rest to prevent unauthorized access."
+    access_control: 
+      - description: "Role-based access control limits data access to authorized personnel (e.g., Admin, Developer)."
+    audits: "Regular system audits ensure vulnerability assessment and breach handling."
+  user_rights:
+    - data_access: "Users can request access to their stored data."
+    - data_deletion: "Users can request permanent deletion of their personal data."
+    - account_management: 
+        - registration_optional: "Users may choose to register an account for personalized experiences, but it is not mandatory."
+  data_retention:
+    session_data: "Session data is retained for 30 minutes for continuity; beyond this period, it is stored securely or deleted."
+    backups: 
+      - description: "Data is regularly backed up and encrypted."
+      - recovery: "Data recovery is available in case of system failures."
+  information_sharing:
+    - description: "We do not share or sell personal information to third parties."
+    - anonymized_data: "Aggregated statistics or anonymized data may be shared for research purposes."
+    - personal_information_exclusion: "Personal identifiable information is never shared."
+  third_party_services:
+    - description: "Users are encouraged to review the privacy policies of any third-party services used with Dumb.ai."
+    - responsibility: "We are not responsible for the privacy practices of third-party services."
+  updates:
+    - description: "The privacy policy may be updated to reflect changes in practices or legal requirements."
+    - notification: "Significant changes will be communicated via the platform or email."
+  contact:
+    - description: "For questions or concerns about data handling, users can contact us at [Insert Contact Information]."
