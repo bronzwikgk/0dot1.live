@@ -16,8 +16,8 @@ export class ProductCard {
                         <p class="card-text">${truncatedDescription}</p>
                     </div>
                     <div class="card-footer" style="margin-top: auto; display: flex; justify-content: space-between;">
-                        <a href="./${this.product.product_id
-                        }.html?productId=${this.product.product_id}" class="btn btn-light">Know More</a>
+                        <a target="_blank" href="./${this.product.product_id
+            }.html?productId=${this.product.product_id}" class="btn btn-light">Know More</a>
                        
                     </div>
                 </div>

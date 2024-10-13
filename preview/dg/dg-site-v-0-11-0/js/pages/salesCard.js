@@ -1,10 +1,51 @@
 import { ProductService } from "../services/ProductService.js";
 
+
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            // You can reverse geocode to find the region/country based on latitude and longitude
+            getRegionFromCoordinates(lat, lon);
+        });
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+
+
+async function getRegionFromCoordinates(lat, lon) {
+    const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+    const data = await response.json();
+    console.log(data.countryCode); // Use this code as your region
+}
+
+
+
+getLocation()
+
+
+
+
+
+
+
+
+
+
+
+
 // Simulated function to detect user region
 function detectRegion() {
     // Replace this logic with actual geolocation code if necessary
-    return "USA"; // Assume "India" for this example
+    return "India"; // Assume "India" for this example
 }
+
+
 
 // Map region to corresponding price field in product data
 const regionPriceMap = {
