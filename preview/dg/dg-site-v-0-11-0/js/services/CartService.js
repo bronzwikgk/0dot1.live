@@ -25,6 +25,22 @@ export class CartService {
         }
     }
 
+    // Send cart data to the backend using httpService
+    static async sendCartData(cartData) {
+        try {
+            const response = await httpService.post('/api/cart', cartData);
+
+            if (!response) {
+                throw new Error('Failed to add item to cart.');
+            }
+
+            alert('Item added to cart successfully!');
+        } catch (error) {
+            console.error(error);
+            alert('Error adding item to cart.');
+        }
+    }
+
     // Add a new item to the cart
     static async addItemToCart() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -96,6 +112,40 @@ export class CartService {
             console.error(error);
             alert('Error adding items to cart.');
         }
+    }
+    // Add an item to the cart from a card view
+    async addItemToCartFromCard(event) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('productId');
+        const button = event.target;
+        const cardBody = button.closest('.card-body');
+
+        const optionTitle = cardBody.querySelector('.card-title').textContent.trim();
+        const optionSubtitle = cardBody.querySelector('.card-subtitle').textContent.trim();
+        const region_price = cardBody.querySelector('.card-text').textContent.trim().replace(/[^0-9.]/g, '');
+
+        // If user is not logged in, store in local storage
+        if (!this.userId) {
+            CartService.addToLocalStorage(optionTitle, optionSubtitle, region_price);
+            alert('Item added to local storage cart. Please log in to save it to your cart.');
+            return;
+        }
+
+        console.log(optionSubtitle,optionTitle,region_price,productId)
+        // Prepare and send cart data to backend
+        // const cartData = this.prepareCartData(optionTitle, optionSubtitle, region_price);
+        // await this.sendCartData(cartData);
+    }
+
+   static addToLocalStorage(optionTitle, optionSubtitle, region_price) {
+        const localCart = JSON.parse(localStorage.getItem('localCart')) || [];
+        localCart.push({
+            productId: optionTitle, // Use optionTitle as a product identifier here
+            optionTitle,
+            subtitle: optionSubtitle,
+            price: parseFloat(region_price)
+        });
+        localStorage.setItem('localCart', JSON.stringify(localCart));
     }
 
     // Push local cart items to database after login
