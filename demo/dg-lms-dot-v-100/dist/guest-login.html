@@ -112,7 +112,7 @@
 
 
     <script type="module">
-      import BASE_URL from "/dist/assets/js/config.js";
+      import BASE_URL from "assets/js/config.js";
     
       const loginForm = document.getElementById("login-form");
       loginForm.addEventListener("submit", async (e) => {
@@ -138,12 +138,12 @@
             if (userRole === "Admin") {
               localStorage.setItem("adminToken", result.token);
               setTimeout(() => {
-                window.location.href = "/dist/admin-add-course.html";
+                window.location.href = "/demo/dg-lms-dot-v-100/dist/admin-add-course.html";
               }, 2000);
             } else if (userRole === "Learner") {
               localStorage.setItem("studentToken", result.token);
               setTimeout(() => {
-                window.location.href = "/dist/student-my-courses.html";
+                window.location.href = "/demo/dg-lms-dot-v-100/dist/student-my-courses.html";
               }, 2000);
             } else {
               statusElement.innerText = "Error: Unknown user role.";
