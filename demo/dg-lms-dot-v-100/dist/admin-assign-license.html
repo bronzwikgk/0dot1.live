@@ -149,12 +149,12 @@
                         <form id="assign-license-form">
                             <div class="form-group">
                                 <label for="license-course-select">Select Course:</label>
-                                <select id="license-course-select" name="course_id" class="form-control" required></select>
+                                <select id="license-course-select" name="courseId" class="form-control" required></select>
                             </div>
         
                             <div class="form-group">
                                 <label for="learner-select">Select Learner:</label>
-                                <select id="learner-select" name="student_id" class="form-control" required></select>
+                                <select id="learner-select" name="userId" class="form-control" required></select>
                             </div>
         
                             <button type="submit" class="btn btn-success btn-block">Assign License</button>
@@ -350,7 +350,7 @@
                         Authorization: `Bearer ${adminToken}`,
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ courseId, studentId }),
+                    body: JSON.stringify({ courseId, userId:studentId }),
                 });
 
                 const result = await response.json();

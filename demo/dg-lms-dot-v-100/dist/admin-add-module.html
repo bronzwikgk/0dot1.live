@@ -337,7 +337,7 @@
         })
           .then((response) => response.json())
           .then((data) => {
-            const courseDropdown = document.getElementById("course");
+            const courseDropdown = document.getElementById("course_id");
             data.courses.forEach((course) => {
               const option = document.createElement("option");
               option.value = course._id;
