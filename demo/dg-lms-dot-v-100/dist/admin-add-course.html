@@ -575,7 +575,7 @@
 
       // Fetch and list courses on page load
       document.addEventListener("DOMContentLoaded", () => {
-        fetch("http://localhost:5000/api/courses", {
+        fetch("https://lms.unbelong.in/api/courses", {
           headers: {
             Authorization: `Bearer ${adminToken}`,
           },
@@ -604,7 +604,7 @@
       courseForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const formData = new FormData(courseForm);
-        fetch("http://localhost:5000/api/courses", {
+        fetch("https://lms.unbelong.in/api/courses", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -622,7 +622,7 @@
 
       // Fetch and display a course by ID
       function viewCourse(courseId) {
-        fetch(`http://localhost:5000/api/courses/${courseId}`, {
+        fetch(`https://lms.unbelong.in/api/courses/${courseId}`, {
           headers: {
             Authorization: `Bearer ${adminToken}`,
           },
