@@ -102,7 +102,6 @@
 
               <div class="flex"></div>
 
-          
               <!-- // END Menu -->
             </div>
           </nav>
@@ -134,10 +133,10 @@
                   <h2 class="text-center mb-4">Create New Module</h2>
                   <form id="add-module-form">
                     <div class="form-group">
-                      <label for="course" class="form-label">Course:</label>
+                      <label for="course_id" class="form-label">Course:</label>
                       <select
-                        id="course"
-                        name="course"
+                        id="course_id"
+                        name="course_id"
                         class="form-control custom-select"
                         required
                       >
@@ -198,118 +197,118 @@
 
           <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
             <div class="mdk-drawer__content">
-                <div
-                  class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
-                  data-perfect-scrollbar
-                >
-                  <div class="sidebar-p-y">
-                    <!-- Account menu -->
-                    <div class="sidebar-heading">Admin</div>
-                    <ul class="sidebar-menu">
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button sidebar-js-collapse"
-                          data-toggle="collapse"
-                          href="#account_menu"
+              <div
+                class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
+                data-perfect-scrollbar
+              >
+                <div class="sidebar-p-y">
+                  <!-- Account menu -->
+                  <div class="sidebar-heading">Admin</div>
+                  <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button sidebar-js-collapse"
+                        data-toggle="collapse"
+                        href="#account_menu"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >person_outline</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >person_outline</i
+                        User
+                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                      </a>
+                      <ul
+                        class="sidebar-submenu sm-indent collapse"
+                        id="account_menu"
+                      >
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
                           >
-                          User
-                          <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                        </a>
-                        <ul
-                          class="sidebar-submenu sm-indent collapse"
-                          id="account_menu"
-                        >
-                          <li class="sidebar-menu-item">
-                            <a
-                              class="sidebar-menu-button"
-                              href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
-                            >
-                              <span class="sidebar-menu-text">Add User</span>
-                            </a>
-                          </li>
-                          <li class="sidebar-menu-item">
-                            <a
-                              class="sidebar-menu-button"
-                              href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
-                            >
-                              <span class="sidebar-menu-text">User List</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-  
-                    <ul class="sidebar-menu sm-active-button-bg">
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
-                        >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >search</i
+                            <span class="sidebar-menu-text">Add User</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
                           >
-                          Add Courses
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
+                            <span class="sidebar-menu-text">User List</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul class="sidebar-menu sm-active-button-bg">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >search</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >import_contacts</i
-                          >
-                          Add Module
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-scorm.html"
+                        Add Courses
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >import_contacts</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >class</i
-                          >
-                          Add Scorm
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
+                        Add Module
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-scorm.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >dvr</i
-                          >
-                          Assign Licence
-                        </a>
-                      </li>
-  
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
+                        Add Scorm
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >dvr</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >lock_open</i
-                          >
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                    <!-- Components menu -->
-                  </div>
+                        Assign Licence
+                      </a>
+                    </li>
+
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >lock_open</i
+                        >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Components menu -->
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
