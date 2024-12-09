@@ -172,112 +172,142 @@
                   class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
                   data-perfect-scrollbar
                 >
-                  <div class="sidebar-p-y">
-                    <!-- Account menu -->
-                    <div class="sidebar-heading">Admin</div>
-                    <ul class="sidebar-menu">
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button sidebar-js-collapse"
-                          data-toggle="collapse"
-                          href="#account_menu"
+                <div class="sidebar-p-y">
+                  <!-- Account menu -->
+                  <div class="sidebar-heading">Admin</div>
+                  <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button sidebar-js-collapse"
+                        data-toggle="collapse"
+                        href="#account_menu"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >person_outline</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >person_outline</i
+                        User
+                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                      </a>
+                      <ul
+                        class="sidebar-submenu sm-indent collapse"
+                        id="account_menu"
+                      >
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
                           >
-                          User
-                          <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                        </a>
-                        <ul
-                          class="sidebar-submenu sm-indent collapse"
-                          id="account_menu"
-                        >
-                          <li class="sidebar-menu-item">
-                            <a
-                              class="sidebar-menu-button"
-                              href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
-                            >
-                              <span class="sidebar-menu-text">Add User</span>
-                            </a>
-                          </li>
-                          <li class="sidebar-menu-item">
-                            <a
-                              class="sidebar-menu-button"
-                              href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
-                            >
-                              <span class="sidebar-menu-text">User List</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-  
-                    <ul class="sidebar-menu sm-active-button-bg">
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
-                        >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >search</i
+                            <span class="sidebar-menu-text">Add User</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
                           >
-                          Add Courses
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
-                        >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >import_contacts</i
+                            <span class="sidebar-menu-text">User List</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-import-user.html"
                           >
-                          Add Module
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-scorm.html"
+                            <span class="sidebar-menu-text">Import Users</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="sidebar-menu sm-active-button-bg">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >search</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >class</i
-                          >
-                          Add Scorm
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
+                        Add Courses
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >import_contacts</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >dvr</i
-                          >
-                          Assign Licence
-                        </a>
-                      </li>
-  
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
+                        Add Module
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-lesson.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
                         >
-                          <i
-                            class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                            >lock_open</i
-                          >
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                    <!-- Components menu -->
-                  </div>
+                        Add Lesson
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-content.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
+                        >
+                        Add Content
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-quiz.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
+                        >
+                        Add Test Paper
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >dvr</i
+                        >
+                        Assign Licence
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >lock_open</i
+                        >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Components menu -->
+                </div>
                 </div>
               </div>
           </div>
@@ -397,12 +427,6 @@
     <script src="assets/vendor/moment.min.js"></script>
     <script src="assets/vendor/moment-range.js"></script>
 
-    <!-- Chart.js -->
-    <script src="assets/vendor/Chart.min.js"></script>
-    <script src="assets/js/chartjs.js"></script>
 
-    <!-- Student Dashboard Page JS -->
-    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
-    <script src="assets/js/page.student-dashboard.js"></script>
   </body>
 </html>

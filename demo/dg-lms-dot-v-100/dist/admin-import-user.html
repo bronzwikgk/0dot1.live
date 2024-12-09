@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Student - Add User</title>
+    <title>Student - Import Users</title>
 
     <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
     <meta name="robots" content="noindex" />
@@ -102,7 +102,17 @@
 
               <div class="flex"></div>
 
-       
+              <!-- Menu -->
+              <ul class="nav navbar-nav flex-nowrap d-none d-lg-flex">
+                <li class="nav-item">
+                  <a class="nav-link" href="student-help-center.html"
+                    >Get Help</a
+                  >
+                </li>
+              </ul>
+
+              <!-- Menu -->
+
               <!-- // END Menu -->
             </div>
           </nav>
@@ -125,69 +135,90 @@
                 <li class="breadcrumb-item">
                   <a href="student-dashboard.html">Home</a>
                 </li>
-                <li class="breadcrumb-item active">Add User</li>
+                <li class="breadcrumb-item active">Import Users</li>
               </ol>
-              <h1 class="h2">Add User</h1>
+              <h1 class="h2">Import Users</h1>
               <main class="container my-5">
-                <div class="card card-body">
-                  <form id="add-user-form">
-                    <div class="form-group">
-                      <label for="name" class="form-label">Name:</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="form-control"
-                        placeholder="Enter full name"
-                        required
-                      />
+                <div class="container">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      <h3>Import Students</h3>
                     </div>
-
-                    <div class="form-group">
-                      <label for="email" class="form-label">Email:</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-control"
-                        placeholder="Enter email address"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="password" class="form-label">Password:</label>
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        class="form-control"
-                        placeholder="Enter password"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="role" class="form-label">Role:</label>
-                      <select
-                        id="role"
-                        name="role"
-                        class="form-control custom-select"
-                        required
+                    <div class="card-body">
+                      <form
+                        id="importStudentsForm"
+                        enctype="multipart/form-data"
                       >
-                        <option value="">Select a role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Learner">Learner</option>
-                      </select>
+                        <div class="mb-3">
+                          <label for="csvFile" class="form-label"
+                            >Upload CSV File</label
+                          >
+                          <input
+                            class="form-control"
+                            type="file"
+                            id="csvFile"
+                            name="file"
+                            accept=".csv"
+                            required
+                            style="border: 1px solid black"
+                          />
+                        </div>
+                        <div class="text-end">
+                          <button type="submit" class="btn btn-primary">
+                            Upload
+                          </button>
+                        </div>
+                      </form>
                     </div>
+                  </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">
-                      Add User
-                    </button>
-                  </form>
-
-                  <div id="message" class="alert alert-success mt-3 d-none">
-                    User added successfully!
+                  <div class="card mt-4">
+                    <div class="card-header">
+                      <h5>Instructions</h5>
+                    </div>
+                    <div class="card-body instructions">
+                      <p>
+                        Please ensure the uploaded CSV file follows this format:
+                      </p>
+                      <ul>
+                        <li>
+                          <strong>Name:</strong> Full name of the student
+                          (required).
+                        </li>
+                        <li>
+                          <strong>Email:</strong> Valid email address
+                          (required).
+                        </li>
+                        <li>
+                          <strong>Password:</strong> Password for the student
+                          account (required).
+                        </li>
+                        <li>
+                          <strong>Country:</strong> Select a country from the
+                          dropdown (required).
+                        </li>
+                        <li>
+                          <strong>Phone:</strong> Phone number (optional).
+                        </li>
+                        <li>
+                          <strong>Batch:</strong> Batch name or ID (optional).
+                        </li>
+                        <li>
+                          <strong>Company:</strong> Name of the company
+                          (optional).
+                        </li>
+                        <li>
+                          <strong>Employee ID:</strong> Employee ID if
+                          applicable (optional).
+                        </li>
+                      </ul>
+                      <p>Example CSV structure:</p>
+                      <pre>
+              Name,Email,Password,Country,Phone,Batch,Company,Employee ID
+              John Doe,john.doe@example.com,password123,USA,1234567890,Batch A,Company X,EMP001
+              Jane Smith,jane.smith@example.com,password456,India,,Batch B,,EMP002
+                      </pre>
+                    </div>
                   </div>
                 </div>
               </main>
@@ -356,44 +387,44 @@
     </div>
 
     <script>
-        const adminToken = localStorage.getItem('adminToken'); // Assuming the admin token is stored in localStorage
+      document
+        .getElementById("importStudentsForm")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const formData = new FormData();
+          const fileInput = document.getElementById("csvFile");
+          if (fileInput.files.length === 0) {
+            alert("Please upload a file.");
+            return;
+          }
 
-        const form = document.getElementById('add-user-form');
-        const message = document.getElementById('message');
+          formData.append("file", fileInput.files[0]);
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-console.log(adminToken);
+          try {
+            const response = await fetch(
+              "https://lms.unbelong.in/api/admin/import-students",
+              {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+                },
+                body: formData,
+              }
+            );
 
-            const formData = new FormData(form);
-            const user = Object.fromEntries(formData);
+            const result = await response.json();
 
-            try {
-                const response = await fetch('https://lms.unbelong.in/api/admin/add-user', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${adminToken}`
-                    },
-                    body: JSON.stringify(user)
-                });
-
-                if (response.ok) {
-                    const alert = document.createElement('div');
-                    alert.className = 'alert alert-success alert-dismissible fade show';
-                    alert.role = 'alert';
-                    alert.innerHTML = `User added successfully! <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>`;
-                    form.parentElement.insertBefore(alert, form);
-                    form.reset();
-                    form.reset();
-                } else {
-                    const errorData = await response.json();
-                    alert(`Error: ${errorData.message}`);
-                }
-            } catch (error) {
-                console.error('Error adding user:', error);
-                alert('An error occurred while adding the user.');
+            if (response.ok) {
+              alert(`Import successful! Total imported: ${result.imported}`);
+            } else {
+              alert(`Import failed: ${result.message}`);
             }
+          } catch (error) {
+            console.error("Error importing students:", error);
+            alert(
+              "An error occurred while uploading the file. Please try again."
+            );
+          }
         });
     </script>
 
@@ -427,6 +458,9 @@ console.log(adminToken);
     <script src="assets/vendor/moment.min.js"></script>
     <script src="assets/vendor/moment-range.js"></script>
 
- 
+    
+    <!-- Student Dashboard Page JS -->
+    <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
+    
   </body>
 </html>
