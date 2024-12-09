@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Student - Take course</title>
+    <title>Student - View Quiz</title>
 
     <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
     <meta name="robots" content="noindex" />
@@ -131,19 +131,39 @@
             <div class="container-fluid page__container">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="student-dashboard.html">Home</a>
+                  <a href="student-my-courses.html">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="student-browse-courses.html">Courses</a>
+                  <a href="student-browse-courses.html">View Quiz</a>
                 </li>
                 <li class="breadcrumb-item active" id="course-name"></li>
               </ol>
-              <h1 class="h2" id="course-title">
-                ITIL® 4 Foundation
-              </h1>
-              <div id="courseContainer">
-                <div class="alert alert-info">Loading course details...</div>
-              </div>
+              <main>
+                <!-- Main Content -->
+                <div class="container-fluid p-4">
+                  <h1>Quiz Details</h1>
+                  <div class="quiz-details">
+                    <h2 id="quizTitle">Loading...</h2>
+                    <p>
+                      <strong>Description:</strong>
+                      <span id="quizDescription">Loading...</span>
+                    </p>
+                    <p>
+                      <strong>Total Marks:</strong>
+                      <span id="totalMarks">Loading...</span>
+                    </p>
+                    <p>
+                      <strong>Time Limit:</strong>
+                      <span id="timeLimit">Loading...</span> minutes
+                    </p>
+                    <p>
+                      <strong>Maximum Attempts:</strong>
+                      <span id="maxAttempts">Loading...</span>
+                    </p>
+                    <a id="startQuizButton" class="btn btn-primary">Start Quiz</a>
+                  </div>
+                </div>
+              </main>
             </div>
           </div>
 
@@ -183,68 +203,24 @@
     <script type="module">
       import BASE_URL from "/demo/dg-lms-dot-v-100/dist/assets/js/config.js";
 
-      async function fetchModulesAndLessons() {
-        const courseId = getCourseIdFromURL();
-        const courseContainer = document.getElementById("courseContainer");
 
-        if (!courseId) {
-          courseContainer.innerHTML =
-            '<div class="alert alert-warning">Course ID is missing in the URL.</div>';
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      async function fetchQuizDetails() {
+        const contentId = getQueryParam("contentId");
+        if (!contentId) {
+          alert("Lesson ID is missing in the URL.");
+          window.history.back();
           return;
         }
 
         try {
           const response = await fetch(
-            `${BASE_URL}/courses/${courseId}/modules-lessons`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
-              },
-            }
-          );
-          const modules = await response.json();
-
-          if (modules.length === 0) {
-            courseContainer.innerHTML =
-              '<div class="alert alert-info">No modules available for this course.</div>';
-            return;
-          }
-
-          courseContainer.innerHTML = ""; // Clear content
-          modules.forEach((module) => {
-            const accordion = document.createElement("div");
-            accordion.className = "card";
-
-            const header = document.createElement("div");
-            header.className = "card-header";
-            header.textContent = module.title;
-            header.style.cursor = "pointer";
-            header.onclick = () => {
-              const body = header.nextElementSibling;
-              body.classList.toggle("d-none");
-            };
-
-            const body = document.createElement("div");
-            body.className = "card-body d-none";
-            body.innerHTML = "<p>Loading lessons...</p>";
-
-            accordion.appendChild(header);
-            accordion.appendChild(body);
-            courseContainer.appendChild(accordion);
-
-            fetchLessons(module.module_id, body);
-          });
-        } catch (error) {
-          console.error("Error fetching modules:", error);
-          courseContainer.innerHTML =
-            '<div class="alert alert-danger">Error loading course details. Please try again later.</div>';
-        }
-      }
-
-      async function fetchLessons(moduleId, container) {
-        try {
-          const response = await fetch(
-            `${BASE_URL}/lesson/modules/${moduleId}`,
+            `${BASE_URL}/test/details/content/${contentId}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
@@ -253,55 +229,56 @@
           );
           const data = await response.json();
 
-          if (data.lessons.length === 0) {
-            container.innerHTML = "<p>No lessons available.</p>";
+          if (!data) {
+            alert("Quiz details could not be retrieved.");
+            window.history.back();
             return;
           }
 
-          const ul = document.createElement("ul");
-          ul.className = "list-group";
-          data.lessons.forEach((lesson) => {
-            const li = document.createElement("li");
-            li.className = "list-group-item";
+          document.getElementById("quizTitle").textContent =
+            data.test.title || "Untitled Quiz";
+          document.getElementById("quizDescription").textContent =
+            data.test.description || "No description available.";
+          document.getElementById("totalMarks").textContent = data.test.totalMarks;
+          document.getElementById("timeLimit").textContent =
+            data.test.timeLimit || "No limit";
+          document.getElementById("maxAttempts").textContent =
+            data.test.maxAttempts || "Unlimited";
 
-            const a = document.createElement("a");
-            if (lesson.content && lesson.content.content_type === "PDF") {
-              a.href = `/demo/dg-lms-dot-v-100/dist/showPdf.html?lessonId=${lesson._id}`;
-            } else if (
-              lesson.content &&
-              lesson.content.content_type === "SCORM"
-            ) {
-              a.href = `${BASE_URL}/scorm/${lesson._id}/launch`;
-            } else if (
-              lesson.content &&
-              lesson.content.content_type === "TestPaper"
-            ) {
-              a.href = `/demo/dg-lms-dot-v-100/dist/student-view-quiz.html?contentId=${lesson.content._id}`;
-            } else {
-              a.href = `#`; // Fallback
-            }
-
-            a.textContent = lesson.title;
-            a.target = "_blank";
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-
-          container.innerHTML = "";
-          container.appendChild(ul);
+          document.getElementById("startQuizButton").onclick = () =>
+            startTest(data.test.id);
         } catch (error) {
-          console.error("Error fetching lessons:", error);
-          container.innerHTML =
-            "<p>Error loading lessons. Please try again later.</p>";
+          console.error("Error fetching quiz details:", error);
+          alert("An error occurred while fetching quiz details.");
+          window.history.back();
         }
       }
-      function getCourseIdFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get("courseId");
+
+      async function startTest(testId) {
+        try {
+          const response = await fetch(`${BASE_URL}/test/start`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
+            },
+            body: JSON.stringify({ test_id: testId }),
+          });
+          const result = await response.json();
+
+          if (response.status === 201) {
+            alert("Quiz started successfully!");
+            window.location.href = `/demo/dg-lms-dot-v-100/dist/student-take-quiz.html?attemptId=${result.attempt._id}`;
+          } else {
+            alert(result.message || "Failed to start the quiz.");
+          }
+        } catch (error) {
+          console.error("Error starting the quiz:", error);
+          alert("An error occurred while starting the quiz.");
+        }
       }
 
-      // Call the function on page load
-      window.onload = fetchModulesAndLessons;
+      window.onload = fetchQuizDetails;     
     </script>
 
     <!-- jQuery -->
