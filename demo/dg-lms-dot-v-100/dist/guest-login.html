@@ -138,7 +138,7 @@
             if (userRole === "Admin") {
               localStorage.setItem("adminToken", result.token);
               setTimeout(() => {
-                window.location.href = "/demo/dg-lms-dot-v-100/dist/admin-add-course.html";
+                window.location.href = "/demo/dg-lms-dot-v-100/dist/admin-dashboard.html";
               }, 2000);
             } else if (userRole === "Learner") {
               localStorage.setItem("studentToken", result.token);
