@@ -83,7 +83,7 @@
               </button>
 
               <!-- Brand -->
-              <a href="student-dashboard.html" class="navbar-brand">
+              <a href="admin-dashboard.html" class="navbar-brand">
                 <img
                   src="assets/images/logo/logo.png"
                   class="mr-2"
@@ -92,13 +92,12 @@
               </a>
 
               <!-- Search -->
-            
+
               <!-- // END Search -->
 
               <div class="flex"></div>
 
               <!-- Menu -->
-            
 
               <!-- Menu -->
               <ul class="nav navbar-nav flex-nowrap">
@@ -313,17 +312,21 @@
           <div class="mdk-drawer-layout__content page">
             <div class="container-fluid page__container">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admin-dashboard.html">Home</a></li>
+                <li class="breadcrumb-item">
+                  <a href="admin-dashboard.html">Home</a>
+                </li>
                 <li class="breadcrumb-item active">Add Content</li>
               </ol>
               <h1 class="h2">Add Content</h1>
-             
+
               <main class="container my-5">
                 <div class="card card-body">
                   <h2 class="text-center mb-4">Upload Content</h2>
                   <form id="add-content-form">
                     <div class="form-group">
-                      <label for="courseList" class="form-label">Select Course:</label>
+                      <label for="courseList" class="form-label"
+                        >Select Course:</label
+                      >
                       <select
                         id="courseList"
                         name="course"
@@ -334,9 +337,11 @@
                         <option value="">Loading...</option>
                       </select>
                     </div>
-  
+
                     <div class="form-group">
-                      <label for="moduleList" class="form-label">Select Module:</label>
+                      <label for="moduleList" class="form-label"
+                        >Select Module:</label
+                      >
                       <select
                         id="moduleList"
                         name="module"
@@ -347,9 +352,11 @@
                         <option value="">Select a Course First</option>
                       </select>
                     </div>
-  
+
                     <div class="form-group">
-                      <label for="lessonList" class="form-label">Select Lesson:</label>
+                      <label for="lessonList" class="form-label"
+                        >Select Lesson:</label
+                      >
                       <select
                         id="lessonList"
                         name="lesson"
@@ -359,9 +366,11 @@
                         <option value="">Select a Module First</option>
                       </select>
                     </div>
-  
+
                     <div class="form-group">
-                      <label for="contentType" class="form-label">Content Type:</label>
+                      <label for="contentType" class="form-label"
+                        >Content Type:</label
+                      >
                       <select
                         id="contentType"
                         name="content_type"
@@ -373,9 +382,11 @@
                         <option value="SCORM">SCORM</option>
                       </select>
                     </div>
-  
+
                     <div class="form-group">
-                      <label for="contentFile" class="form-label">Upload File:</label>
+                      <label for="contentFile" class="form-label"
+                        >Upload File:</label
+                      >
                       <input
                         type="file"
                         id="contentFile"
@@ -384,9 +395,11 @@
                         required
                       />
                     </div>
-  
+
                     <div class="form-group">
-                      <label for="contentDescription" class="form-label">Content Description:</label>
+                      <label for="contentDescription" class="form-label"
+                        >Content Description:</label
+                      >
                       <textarea
                         id="contentDescription"
                         name="description"
@@ -394,8 +407,12 @@
                         placeholder="Enter content description"
                       ></textarea>
                     </div>
-  
-                    <button type="button" class="btn btn-primary btn-block" onclick="addContent()">
+
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-block"
+                      onclick="addContent()"
+                    >
                       Add Content
                     </button>
                   </form>
@@ -410,280 +427,289 @@
                 class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
                 data-perfect-scrollbar
               >
-              <div class="sidebar-p-y">
-                <!-- Account menu -->
-                <div class="sidebar-heading">Admin</div>
-                <ul class="sidebar-menu">
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button sidebar-js-collapse"
-                      data-toggle="collapse"
-                      href="#account_menu"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >person_outline</i
+                <div class="sidebar-p-y">
+                  <!-- Account menu -->
+                  <div class="sidebar-heading">Admin</div>
+                  <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button sidebar-js-collapse"
+                        data-toggle="collapse"
+                        href="#account_menu"
                       >
-                      User
-                      <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                    </a>
-                    <ul
-                      class="sidebar-submenu sm-indent collapse"
-                      id="account_menu"
-                    >
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >person_outline</i
                         >
-                          <span class="sidebar-menu-text">Add User</span>
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
+                        User
+                        <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                      </a>
+                      <ul
+                        class="sidebar-submenu sm-indent collapse"
+                        id="account_menu"
+                      >
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-add-user.html"
+                          >
+                            <span class="sidebar-menu-text">Add User</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-view-user.html"
+                          >
+                            <span class="sidebar-menu-text">User List</span>
+                          </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                          <a
+                            class="sidebar-menu-button"
+                            href="/demo/dg-lms-dot-v-100/dist/admin-import-user.html"
+                          >
+                            <span class="sidebar-menu-text">Import Users</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="sidebar-menu sm-active-button-bg">
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-view-course.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >search</i
                         >
-                          <span class="sidebar-menu-text">User List</span>
-                        </a>
-                      </li>
-                      <li class="sidebar-menu-item">
-                        <a
-                          class="sidebar-menu-button"
-                          href="/demo/dg-lms-dot-v-100/dist/admin-import-user.html"
+                        View Courses
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
+                      >
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >search</i
                         >
-                          <span class="sidebar-menu-text">Import Users</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul class="sidebar-menu sm-active-button-bg">
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-view-course.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >search</i
+                        Add Courses
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
                       >
-                      View Courses
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-add-course.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >search</i
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >import_contacts</i
+                        >
+                        Add Module
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-lesson.html"
                       >
-                      Add Courses
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-add-module.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >import_contacts</i
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
+                        >
+                        Add Lesson
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-content.html"
                       >
-                      Add Module
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-add-lesson.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >class</i
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
+                        >
+                        Add Content
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-add-quiz.html"
                       >
-                      Add Lesson
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-add-content.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >class</i
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >class</i
+                        >
+                        Add Test Paper
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
                       >
-                      Add Content
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-add-quiz.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >class</i
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >dvr</i
+                        >
+                        Assign Licence
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        class="sidebar-menu-button"
+                        href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
                       >
-                      Add Test Paper
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/admin-assign-license.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >dvr</i
-                      >
-                      Assign Licence
-                    </a>
-                  </li>
-                  <li class="sidebar-menu-item">
-                    <a
-                      class="sidebar-menu-button"
-                      href="/demo/dg-lms-dot-v-100/dist/guest-login.html"
-                    >
-                      <i
-                        class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
-                        >lock_open</i
-                      >
-                      Logout
-                    </a>
-                  </li>
-                </ul>
-                <!-- Components menu -->
-              </div>
+                        <i
+                          class="sidebar-menu-icon sidebar-menu-icon--left material-icons"
+                          >lock_open</i
+                        >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Components menu -->
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- App Settings FAB -->
-        <div id="app-settings">
-          <app-settings
-            layout-active="default"
-            :layout-location="{
-      'fixed': 'fixed-student-dashboard.html',
-      'default': 'student-dashboard.html'
-    }"
-            sidebar-variant="bg-transparent border-0"
-          ></app-settings>
-        </div>
+     
       </div>
     </div>
 
     <script>
-        async function fetchCourses() {
-          const courseDropdown = document.getElementById('courseList');
-          try {
-            const response = await fetch('https://lms.unbelong.in/api/courses', {
-              headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
-            });
-            const courses = await response.json();
-            courseDropdown.innerHTML = '<option value="">Select a Course</option>';
-            courses.courses.forEach((course) => {
-              const option = document.createElement('option');
-              option.value = course._id;
-              option.textContent = course.title;
-              courseDropdown.appendChild(option);
-            });
-          } catch (error) {
-            console.error('Error fetching courses:', error);
-          }
+      async function fetchCourses() {
+        const courseDropdown = document.getElementById("courseList");
+        try {
+          const response = await fetch("https://lms.unbelong.in/api/courses", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+            },
+          });
+          const courses = await response.json();
+          courseDropdown.innerHTML =
+            '<option value="">Select a Course</option>';
+          courses.courses.forEach((course) => {
+            const option = document.createElement("option");
+            option.value = course._id;
+            option.textContent = course.title;
+            courseDropdown.appendChild(option);
+          });
+        } catch (error) {
+          console.error("Error fetching courses:", error);
         }
-      
-        async function fetchModules() {
-          const courseId = document.getElementById('courseList').value;
-          const moduleDropdown = document.getElementById('moduleList');
-          if (!courseId) {
-            moduleDropdown.innerHTML = '<option value="">Select a Module</option>';
-            document.getElementById('lessonList').innerHTML = '<option value="">Select a Module First</option>';
-            return;
-          }
-      
-          try {
-            const response = await fetch(`https://lms.unbelong.in/api/admin/modules/${courseId}`, {
-              headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
-            });
-            const modules = await response.json();
-            moduleDropdown.innerHTML = '<option value="">Select a Module</option>';
-            modules.modules.forEach((module) => {
-              const option = document.createElement('option');
-              option.value = module._id;
-              option.textContent = module.title;
-              moduleDropdown.appendChild(option);
-            });
-          } catch (error) {
-            console.error('Error fetching modules:', error);
-          }
+      }
+
+      async function fetchModules() {
+        const courseId = document.getElementById("courseList").value;
+        const moduleDropdown = document.getElementById("moduleList");
+        if (!courseId) {
+          moduleDropdown.innerHTML =
+            '<option value="">Select a Module</option>';
+          document.getElementById("lessonList").innerHTML =
+            '<option value="">Select a Module First</option>';
+          return;
         }
-      
-        async function fetchLessons() {
-          const moduleId = document.getElementById('moduleList').value;
-          const lessonDropdown = document.getElementById('lessonList');
-          if (!moduleId) {
-            lessonDropdown.innerHTML = '<option value="">Select a Lesson</option>';
-            return;
-          }
-      
-          try {
-            const response = await fetch(`https://lms.unbelong.in/api/lesson/modules/${moduleId}`, {
-              headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
-            });
-            const lessons = await response.json();
-            lessonDropdown.innerHTML = '<option value="">Select a Lesson</option>';
-            lessons.lessons.forEach((lesson) => {
-              const option = document.createElement('option');
-              option.value = lesson._id;
-              option.textContent = lesson.title;
-              lessonDropdown.appendChild(option);
-            });
-          } catch (error) {
-            console.error('Error fetching lessons:', error);
-          }
+
+        try {
+          const response = await fetch(
+            `https://lms.unbelong.in/api/admin/modules/${courseId}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+              },
+            }
+          );
+          const modules = await response.json();
+          moduleDropdown.innerHTML =
+            '<option value="">Select a Module</option>';
+          modules.modules.forEach((module) => {
+            const option = document.createElement("option");
+            option.value = module._id;
+            option.textContent = module.title;
+            moduleDropdown.appendChild(option);
+          });
+        } catch (error) {
+          console.error("Error fetching modules:", error);
         }
-      
-        async function addContent() {
-          const lessonId = document.getElementById('lessonList').value;
-          const contentType = document.getElementById('contentType').value;
-          const file = document.getElementById('contentFile').files[0];
-          const description = document.getElementById('contentDescription').value;
-      
-          if (!lessonId || !contentType || !file) {
-            alert('Please fill all fields and select a file.');
-            return;
-          }
-      
-          const formData = new FormData();
-          formData.append('lesson_id', lessonId);
-          formData.append('content_type', contentType);
-          formData.append('file', file);
-          formData.append('description', description);
-      
-          try {
-            const response = await fetch('https://lms.unbelong.in/api/content/upload-content', {
-              method: 'POST',
+      }
+
+      async function fetchLessons() {
+        const moduleId = document.getElementById("moduleList").value;
+        const lessonDropdown = document.getElementById("lessonList");
+        if (!moduleId) {
+          lessonDropdown.innerHTML =
+            '<option value="">Select a Lesson</option>';
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            `https://lms.unbelong.in/api/lesson/modules/${moduleId}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+              },
+            }
+          );
+          const lessons = await response.json();
+          lessonDropdown.innerHTML =
+            '<option value="">Select a Lesson</option>';
+          lessons.lessons.forEach((lesson) => {
+            const option = document.createElement("option");
+            option.value = lesson._id;
+            option.textContent = lesson.title;
+            lessonDropdown.appendChild(option);
+          });
+        } catch (error) {
+          console.error("Error fetching lessons:", error);
+        }
+      }
+
+      async function addContent() {
+        const lessonId = document.getElementById("lessonList").value;
+        const contentType = document.getElementById("contentType").value;
+        const file = document.getElementById("contentFile").files[0];
+        const description = document.getElementById("contentDescription").value;
+
+        if (!lessonId || !contentType || !file) {
+          alert("Please fill all fields and select a file.");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("lesson_id", lessonId);
+        formData.append("content_type", contentType);
+        formData.append("file", file);
+        formData.append("description", description);
+
+        try {
+          const response = await fetch(
+            "https://lms.unbelong.in/api/content/upload-content",
+            {
+              method: "POST",
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
               },
               body: formData,
-            });
-            const result = await response.json();
-            alert(result.message || 'Content added successfully!');
-          } catch (error) {
-            console.error('Error adding content:', error);
-          }
+            }
+          );
+          const result = await response.json();
+          alert(result.message || "Content added successfully!");
+        } catch (error) {
+          console.error("Error adding content:", error);
         }
-      
-        window.onload = fetchCourses;
-      </script>
-      
-    
+      }
+
+      window.onload = fetchCourses;
+    </script>
 
     <!-- jQuery -->
     <script src="assets/vendor/jquery.min.js"></script>
@@ -706,7 +732,7 @@
     <script src="assets/js/hljs.js"></script>
 
     <!-- App Settings (safe to remove) -->
-    <script src="assets/js/app-settings.js"></script>
+    
 
     <!-- Global Settings -->
     <script src="assets/js/settings.js"></script>
@@ -714,7 +740,5 @@
     <!-- Moment.js -->
     <script src="assets/vendor/moment.min.js"></script>
     <script src="assets/vendor/moment-range.js"></script>
-
-  
   </body>
 </html>
