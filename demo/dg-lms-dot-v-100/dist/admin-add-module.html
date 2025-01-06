@@ -355,7 +355,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         const adminToken = localStorage.getItem("adminToken");
 
-        fetch("https://lms.unbelong.in/api/courses", {
+        fetch("https://test.unbelong.in/api/courses", {
           headers: {
             Authorization: `Bearer ${adminToken}`,
           },
@@ -376,7 +376,7 @@
         moduleForm.addEventListener("submit", (event) => {
           event.preventDefault();
           const formData = new FormData(moduleForm);
-          fetch("https://lms.unbelong.in/api/admin/modules", {
+          fetch("https://test.unbelong.in/api/admin/modules", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

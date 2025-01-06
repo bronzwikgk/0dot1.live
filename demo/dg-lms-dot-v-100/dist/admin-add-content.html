@@ -588,7 +588,7 @@
       async function fetchCourses() {
         const courseDropdown = document.getElementById("courseList");
         try {
-          const response = await fetch("https://lms.unbelong.in/api/courses", {
+          const response = await fetch("https://test.unbelong.in/api/courses", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
             },
@@ -620,7 +620,7 @@
 
         try {
           const response = await fetch(
-            `https://lms.unbelong.in/api/admin/modules/${courseId}`,
+            `https://test.unbelong.in/api/admin/modules/${courseId}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -652,7 +652,7 @@
 
         try {
           const response = await fetch(
-            `https://lms.unbelong.in/api/lesson/modules/${moduleId}`,
+            `https://test.unbelong.in/api/lesson/modules/${moduleId}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -692,7 +692,7 @@
 
         try {
           const response = await fetch(
-            "https://lms.unbelong.in/api/content/upload-content",
+            "https://test.unbelong.in/api/content/upload-content",
             {
               method: "POST",
               headers: {
