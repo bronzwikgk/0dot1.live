@@ -177,10 +177,27 @@
     <script type="module">
       import BASE_URL from "/demo/dg-lms-dot-v-100/dist/assets/js/config.js";
 
+        async function fetchCourse(id) {
+      try {
+        const response = await fetch(
+          `${BASE_URL}/courses/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
+            },
+          }
+        );
+        const course = await response.json();
+        document.getElementById("course-title").textContent = course.course.title
+      } catch (err) {
+        console.log(err);
+      }
+    }
+      
       async function fetchModulesAndLessons() {
         const courseId = getCourseIdFromURL();
         const courseContainer = document.getElementById("courseContainer");
-
+fetchCourse(courseId)
         if (!courseId) {
           courseContainer.innerHTML =
             '<div class="alert alert-warning">Course ID is missing in the URL.</div>';
