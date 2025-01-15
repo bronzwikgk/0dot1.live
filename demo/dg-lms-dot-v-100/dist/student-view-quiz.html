@@ -230,7 +230,7 @@
           }
 
           document.getElementById("quizTitle").textContent =
-            data.test.title || "Untitled Quiz";
+            data.test.title || data.test.description || "Untitled Quiz";
           document.getElementById("quizDescription").textContent =
             data.test.description || "No description available.";
           document.getElementById("totalMarks").textContent = data.test.totalMarks;
