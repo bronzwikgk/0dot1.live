@@ -1,0 +1,20 @@
+/* Gap Utilities */
+.gap-smallest {
+    gap: var(--spacing-smallest);
+}
+
+.gap-small {
+    gap: var(--spacing-small);
+}
+
+.gap-mid {
+    gap: var(--spacing-mid);
+}
+
+.gap-large {
+    gap: var(--spacing-large);
+}
+
+.gap-largest {
+    gap: var(--spacing-largest);
+}

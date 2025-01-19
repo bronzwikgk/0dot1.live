@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three-Step Razorpay-like Checkout</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        margin-top: 20px;
+      }
+
+      .checkout-header {
+        background-color: #232f3e;
+        padding: 15px;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        border-radius: 8px;
+      }
+
+      .step-container {
+        display: none;
+      }
+
+      .step-container.active {
+        display: block;
+      }
+
+      .btn-primary {
+        background-color: #ff9900;
+        border-color: #ff9900;
+      }
+
+      .btn-primary:hover {
+        background-color: #e68a00;
+        border-color: #e68a00;
+      }
+
+      .card-header {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Checkout Header -->
+      <div class="checkout-header">
+        <h2>Three-Step Payment Process</h2>
+      </div>
+
+      <!-- Step Indicator -->
+      <ul class="nav nav-pills nav-fill my-4">
+        <li class="nav-item">
+          <a class="nav-link active" id="step1-tab">Step 1: Customer Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="step2-tab">Step 2: Payment Method</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="step3-tab">Step 3: Confirmation</a>
+        </li>
+      </ul>
+
+      <!-- Step 1: Customer Info -->
+      <div class="step-container active" id="step1">
+        <div class="card">
+          <div class="card-header">
+            <h5>Customer Information</h5>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="9876543210"
+                  required
+                />
+              </div>
+              <div class="text-end">
+                <button type="button" class="btn btn-primary" id="nextStep1">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Payment Method -->
+      <div class="step-container" id="step2">
+        <div class="card">
+          <div class="card-header">
+            <h5>Payment Method</h5>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardNumber"
+                  placeholder="1234 5678 9123 4567"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="expiryDate" class="form-label">Expiry Date</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="expiryDate"
+                  placeholder="MM/YY"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cvv"
+                  placeholder="123"
+                  required
+                />
+              </div>
+              <div class="text-end">
+                <button type="button" class="btn btn-secondary" id="prevStep2">
+                  Previous
+                </button>
+                <button type="button" class="btn btn-primary" id="nextStep2">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirmation -->
+      <div class="step-container" id="step3">
+        <div class="card">
+          <div class="card-header">
+            <h5>Confirm Payment</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Name:</strong> <span id="confirmName"></span></p>
+            <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="confirmPhone"></span></p>
+            <p><strong>Card Number:</strong> <span id="confirmCard"></span></p>
+            <div class="text-end">
+              <button type="button" class="btn btn-secondary" id="prevStep3">
+                Previous
+              </button>
+              <button type="button" class="btn btn-success" id="confirmPayment">
+                Confirm Payment
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Step Navigation
+      const step1 = document.getElementById("step1");
+      const step2 = document.getElementById("step2");
+      const step3 = document.getElementById("step3");
+
+      // Tab Navigation
+      const step1Tab = document.getElementById("step1-tab");
+      const step2Tab = document.getElementById("step2-tab");
+      const step3Tab = document.getElementById("step3-tab");
+
+      // Form Data
+      let customerInfo = {
+        fullName: "",
+        email: "",
+        phone: "",
+        cardNumber: "",
+      };
+
+      // Step 1 to Step 2
+      document
+        .getElementById("nextStep1")
+        .addEventListener("click", function () {
+          customerInfo.fullName = document.getElementById("fullName").value;
+          customerInfo.email = document.getElementById("email").value;
+          customerInfo.phone = document.getElementById("phone").value;
+
+          step1.classList.remove("active");
+          step2.classList.add("active");
+          step1Tab.classList.remove("active");
+          step2Tab.classList.add("active");
+        });
+
+      // Step 2 to Step 1
+      document
+        .getElementById("prevStep2")
+        .addEventListener("click", function () {
+          step2.classList.remove("active");
+          step1.classList.add("active");
+          step2Tab.classList.remove("active");
+          step1Tab.classList.add("active");
+        });
+
+      // Step 2 to Step 3
+      document
+        .getElementById("nextStep2")
+        .addEventListener("click", function () {
+          customerInfo.cardNumber = document.getElementById("cardNumber").value;
+
+          document.getElementById("confirmName").textContent =
+            customerInfo.fullName;
+          document.getElementById("confirmEmail").textContent =
+            customerInfo.email;
+          document.getElementById("confirmPhone").textContent =
+            customerInfo.phone;
+          document.getElementById("confirmCard").textContent =
+            "**** **** **** " + customerInfo.cardNumber.slice(-4);
+
+          step2.classList.remove("active");
+          step3.classList.add("active");
+          step2Tab.classList.remove("active");
+          step3Tab.classList.add("active");
+        });
+
+      // Step 3 to Step 2
+      document
+        .getElementById("prevStep3")
+        .addEventListener("click", function () {
+          step3.classList.remove("active");
+          step2.classList.add("active");
+          step3Tab.classList.remove("active");
+          step2Tab.classList.add("active");
+        });
+
+  
+
+      // On Razorpay UI Page (Your Dummy Razorpay Page)
+      function completePayment() {
+        const paymentId = getQueryParam("paymentId"); // Get paymentId from URL
+        const userId = currentUserId; // Assuming user is logged in
+
+        // Simulate payment success (you can do actual Razorpay logic here)
+        fetch("/payment/success", {
+          method: "POST",
+          body: JSON.stringify({ paymentId, userId }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((orderData) => {
+            // Redirect to order confirmation page with the order ID
+            window.location.href = `./orderPlaced.html?orderId=${orderData.orderId}`;
+          })
+          .catch((error) => {
+            console.error("Error processing payment:", error);
+            // Handle error (e.g., show error message on UI)
+          });
+      }
+    </script>
+    <script type="module" src="../js/pages/razorypay.js"></script>
+  </body>
+</html>

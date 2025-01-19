@@ -1,0 +1,29 @@
+
+/* Body Styles */
+body {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    color: var(--color-dark-grey);
+    background-color: var(--surface-color);
+    /* line-height: var(--line-height-base); */
+    margin: 0;
+    padding: 0;
+}
+
+/* Font Styles */
+.Title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-dark-grey);
+}
+
+.subheading {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-subheading);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--font-color-secondary);
+}
+

@@ -1,0 +1,123 @@
+/* Card Styles */
+.card {
+    padding: var(--spacing-mid);
+    /* border: var(--border-width-thin) solid var(--border-color-muted); */
+    /* border-radius: var(--border-radius-md);  */
+    overflow: hidden;
+    background-color: var(--color-light); /* White background */
+    width: 100%;
+    max-width: 500px; 
+  }
+
+
+
+  /* Card Header Styles */
+  .card-header {
+    background-color: var(--surface-color); /* Surface color */
+    padding: var(--spacing-small);
+    border-bottom: var(--border-width-thin) solid var(--border-color-muted); /* Border below header */
+  }
+
+  /* Card Body Styles */
+  .card-body {
+    /* padding: var(--spacing-small); */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+  }
+
+  /* Card Footer Styles */
+  .card-footer {
+    padding: var(--spacing-small);
+    color: var(--font-color-hint); /* Muted text color */
+  }
+
+  /* List Styles */
+  .card-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-list li {
+    border-bottom: var(--border-width-thin) solid var(--border-color-muted); /* Divider between list items */
+    padding: var(--spacing-small) 0; /* Padding for list items */
+  }
+
+  /* Card Group Styles */
+  .card-group {
+    display: flex;
+    gap: var(--spacing-large); /* Space between cards */
+    flex-wrap: wrap; /* Wrap cards to next line */
+    justify-content: center; /* Center cards */
+  }
+
+  /* Card Grid Styles */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(300px, 1fr)
+    ); /* Responsive grid */
+    gap: var(--spacing-large); /* Space between grid items */
+  }
+
+  /* Horizontal Card Styles */
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%; 
+  margin: 0;
+  gap: var(--spacing-mid);
+}
+
+.card-horizontal > * {
+  flex: 1; /* Distribute equal width to each child */
+}
+
+  .card-horizontal figure {
+    /* width: 50%; */
+  }
+
+  .card-horizontal .card-body {
+    flex: 1; /* Fill remaining space */
+    padding: var(--spacing-small);
+  }
+
+  /* Card Header Color Variants */
+  .card-header-primary {
+    background-color: var(--primary-color); /* Primary color */
+    color: var(--color-light); /* White text */
+  }
+
+  .card-header-secondary {
+    background-color: var(--secondary-color); /* Secondary color */
+    color: var(--color-light); /* White text */
+  }
+
+  /* Image Styles */
+  .card-img {
+    margin: 0; /* Reset margin for images */
+  }
+
+  .card-img img {
+    width: 100%; /* Responsive image */
+    border-radius: var(--border-radius-md); /* Rounded corners */
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .card {
+      max-width: 100%; /* Full width on small screens */
+    }
+
+    .card-horizontal {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    article {
+      padding: 0;
+    }
+  }

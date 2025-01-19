@@ -1,0 +1,11 @@
+
+/* Main container */
+main {
+    font-family: var(--font-content);
+    font-size: var(--font-size-para);
+    /* color: var(--font-color-primary); */
+    /* background-color: var(--background-color); */
+    padding: var(--spacing-large);
+    /* margin: var(--spacing-mid) auto; */
+    /* max-width: 1200px; */
+}

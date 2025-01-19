@@ -1,0 +1,47 @@
+.blockquote-footer {
+    margin-top: var(--spacing-small);
+    font-family: var(--font-family-primary);
+    font-size: calc(var(--font-size-para) * 0.8);
+    color: var(--font-color-secondary);
+    text-align: left;
+}
+
+
+.noborder {
+    border: none;
+}
+
+
+.file-upload-icon {
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    top: -12px;
+    left: 255px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.file-upload-icon input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0; 
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 1000;
+    
+}
+
+.file-upload-edit-icon {
+    font-size: 24px; 
+    color: #012f6b;
+    padding: 0;
+    margin: 0;
+  }

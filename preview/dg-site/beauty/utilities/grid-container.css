@@ -1,0 +1,148 @@
+/* Base grid container styles */
+.grid-container {
+    display: grid;
+    gap: var(--spacing-mid);
+    padding: var(--spacing-large);
+    background-color: var(--surface-color);
+    align-items: flex-start; /* Vertically center items within each grid cell */
+    justify-items: flex-start; /* Horizontally center items within each grid cell */
+}
+
+/* Default grid column layouts */
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Default grid ratios */
+.grid-1-2 {
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-2-1 {
+    grid-template-columns: 2fr 1fr;
+}
+
+.grid-1-3 {
+    grid-template-columns: 1fr 3fr;
+}
+
+.grid-3-1 {
+    grid-template-columns: 3fr 1fr;
+}
+
+.grid-1-4 {
+    grid-template-columns: 1fr 4fr;
+}
+
+.grid-4-1 {
+    grid-template-columns: 4fr 1fr;
+}
+
+.grid-2-3 {
+    grid-template-columns: 2fr 3fr;
+}
+
+.grid-3-2 {
+    grid-template-columns: 3fr 2fr;
+}
+
+.grid-1-1 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-1-1-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-1-2-1 {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.grid-1-1-2 {
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.grid-2-1-1 {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-1-3-1 {
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .grid-cols-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-1-4, .grid-4-1 {
+        grid-template-columns: 1fr 3fr;
+    }
+    .grid-1-2, .grid-2-1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-1-3, .grid-3-1 {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .grid-1-2, .grid-2-1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        align-items: center; /* Vertically center items within each grid cell */
+        justify-items: center; /* Horizontally center items within each grid cell */    
+        padding: 0;
+    }
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-1-2, .grid-2-1, .grid-1-3, .grid-3-1, .grid-1-4, .grid-4-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-1-1-1, .grid-1-2-1, .grid-1-1-2, .grid-2-1-1, .grid-1-3-1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .p-small {
+        padding: var(--spacing-xsmall);
+    }
+
+    .p-mid {
+        padding: var(--spacing-small);
+    }
+
+    .p-large {
+        padding: var(--spacing-mid);
+    }
+
+    .grid-gap-small {
+        gap: var(--spacing-xsmall);
+    }
+
+    .grid-gap-large {
+        gap: var(--spacing-small);
+    }
+}

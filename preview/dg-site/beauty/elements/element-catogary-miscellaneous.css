@@ -1,0 +1,27 @@
+/* 
+<base>
+<dfn>
+<shadow>
+<cite>
+<command>
+<keygen>
+<nobr>
+<sub>
+<strike>
+<var>
+<mark> */
+
+
+/* Cite Element */
+cite {
+    font-style: italic;
+    color: var(--font-color-secondary);
+}
+
+.alert {
+    font-family: var(--font-content);
+    font-size: var(--size-small);
+    padding: var(--spacing-mid);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-large);
+}

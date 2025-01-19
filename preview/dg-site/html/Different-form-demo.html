@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ducis Group Forms</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Ducis Group Forms</h1>
+
+        <!-- Appointment for Consulting Form -->
+        <h2 class="mb-3">Appointment for Consulting</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="consultingName">Full Name</label>
+                <input type="text" class="form-control" id="consultingName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="consultingEmail">Email address</label>
+                <input type="email" class="form-control" id="consultingEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="consultingDate">Preferred Appointment Date</label>
+                <input type="date" class="form-control" id="consultingDate" required>
+            </div>
+            <div class="form-group">
+                <label for="consultingDetails">Details about Consulting</label>
+                <textarea class="form-control" id="consultingDetails" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Book Appointment</button>
+        </form>
+
+        <!-- Cancellation Form -->
+        <h2 class="mb-3">Cancellation Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="cancellationOrder">Order Number</label>
+                <input type="text" class="form-control" id="cancellationOrder" placeholder="Enter order number"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="cancellationReason">Reason for Cancellation</label>
+                <textarea class="form-control" id="cancellationReason" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit Cancellation</button>
+        </form>
+
+        <!-- Complaint Form -->
+        <h2 class="mb-3">Complaint Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="complaintName">Full Name</label>
+                <input type="text" class="form-control" id="complaintName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="complaintEmail">Email address</label>
+                <input type="email" class="form-control" id="complaintEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="complaintDetails">Complaint Details</label>
+                <textarea class="form-control" id="complaintDetails" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit Complaint</button>
+        </form>
+
+        <!-- Refund Request Form -->
+        <h2 class="mb-3">Refund Request Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="refundOrderNumber">Order Number</label>
+                <input type="text" class="form-control" id="refundOrderNumber" placeholder="Enter your order number"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="refundReason">Reason for Refund</label>
+                <select class="form-control" id="refundReason" required>
+                    <option value="" disabled selected>Select a reason</option>
+                    <option value="defective">Defective Product</option>
+                    <option value="serviceIssue">Service Issue</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="refundDetails">Additional Details</label>
+                <textarea class="form-control" id="refundDetails" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit Refund Request</button>
+        </form>
+
+        <!-- Appointment Scheduling Form -->
+        <h2 class="mb-3">Appointment Scheduling Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="appointmentName">Full Name</label>
+                <input type="text" class="form-control" id="appointmentName" placeholder="Enter your full name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="appointmentEmail">Email</label>
+                <input type="email" class="form-control" id="appointmentEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="appointmentDate">Preferred Appointment Date</label>
+                <input type="date" class="form-control" id="appointmentDate" required>
+            </div>
+            <div class="form-group">
+                <label for="appointmentTime">Preferred Appointment Time</label>
+                <input type="time" class="form-control" id="appointmentTime" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+        </form>
+
+        <!-- Newsletter Signup Form -->
+        <h2 class="mb-3">Newsletter Signup Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="newsletterEmail">Email</label>
+                <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+
+        <!-- Feedback Form -->
+        <h2 class="mb-3">Feedback Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="feedbackName">Full Name</label>
+                <input type="text" class="form-control" id="feedbackName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedbackEmail">Email address</label>
+                <input type="email" class="form-control" id="feedbackEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedbackMessage">Message</label>
+                <textarea class="form-control" id="feedbackMessage" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Submit Feedback</button>
+        </form>
+
+        <!-- Order Confirmation Email Form -->
+        <h2 class="mb-3">Order Confirmation Email Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="orderConfirmationNumber">Order Number</label>
+                <input type="text" class="form-control" id="orderConfirmationNumber"
+                    placeholder="Enter your order number" required>
+            </div>
+            <div class="form-group">
+                <label for="orderEmail">Email address</label>
+                <input type="email" class="form-control" id="orderEmail" placeholder="Enter email" required>
+            </div>
+            <button type="submit" class="btn btn-info">Send Order Confirmation</button>
+        </form>
+        <!-- forgot passoword -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Forgot Password</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Enter your email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Survey Form -->
+        <h2 class="mb-3">Survey Form</h2>
+        <form class="mb-5">
+            <div class="form-group">
+                <label for="surveyName">Full Name</label>
+                <input type="text" class="form-control" id="surveyName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="surveyEmail">Email</label>
+                <input type="email" class="form-control" id="surveyEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="surveyFeedback">How satisfied are you with our service?</label>
+                <select class="form-control" id="surveyFeedback" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="verySatisfied">Very Satisfied</option>
+                    <option value="satisfied">Satisfied</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="dissatisfied">Dissatisfied</option>
+                    <option value="veryDissatisfied">Very Dissatisfied</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="surveyComments">Additional Comments</label>
+                <textarea class="form-control" id="surveyComments" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Survey</button>
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
