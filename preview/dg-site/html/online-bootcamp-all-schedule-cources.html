@@ -834,71 +834,93 @@
       </script>
       
       <script>
-        // Function to parse the starting date from "Dates" column
         function parseStartDate(dateRange) {
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            
-            // Extract the starting date from the range (e.g., "1-Jan to 15-Jan" -> "1-Jan")
-            const startDatePart = dateRange.trim().split(" ")[0].replace(",", ""); // Handle cases like "1-Jan,"
-            const [day, month] = startDatePart.split("-");
-            const monthIndex = months.indexOf(month.trim());
-            return new Date(2023, monthIndex, parseInt(day)); // Use the current year; adjust if needed
+    // Extract the first date from the string (e.g., "11-Jan" or "11-Jan to 12-Jan")
+    const regex = /(\d{1,2})[-\s]?([A-Za-z]+)/;
+    const match = dateRange.match(regex);
+
+    if (match) {
+        const day = parseInt(match[1], 10);
+        const month = match[2];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const monthIndex = months.indexOf(month);
+
+        if (monthIndex !== -1) {
+            return new Date(new Date().getFullYear(), monthIndex, day);
         }
-    
-        // Function to sort table rows by starting date
-        function sortTableByStartDate() {
-            const table = document.querySelector(".table-container .table tbody");
-            if (!table) {
-                console.error("Table body not found!");
-                return;
-            }
-    
-            const rows = Array.from(table.rows);
-    
-            // Sort rows based on the parsed starting date
-            rows.sort((rowA, rowB) => {
-                const dateA = parseStartDate(rowA.cells[2].textContent.trim()); // "Dates" is the 3rd column
-                const dateB = parseStartDate(rowB.cells[2].textContent.trim());
-                return dateA - dateB;
+    }
+
+    return new Date(0); // Default date for invalid parsing
+}
+
+function isSingleDate(dateRange) {
+    // Check if the "Dates" value contains a range (e.g., "11-Jan to 12-Jan")
+    return !dateRange.includes("to") && !dateRange.includes("-");
+}
+
+function sortTableByStartDate() {
+    const table = document.querySelector(".table-container .table tbody");
+    if (!table) {
+        console.error("Table body not found!");
+        return;
+    }
+
+    const rows = Array.from(table.rows);
+
+    rows.sort((rowA, rowB) => {
+        const dateA = parseStartDate(rowA.cells[2].textContent.trim());
+        const dateB = parseStartDate(rowB.cells[2].textContent.trim());
+
+        // Compare start dates first
+        const dateComparison = dateA - dateB;
+
+        if (dateComparison === 0) {
+            // If dates are the same, prioritize single dates over ranges
+            const isSingleA = isSingleDate(rowA.cells[2].textContent.trim());
+            const isSingleB = isSingleDate(rowB.cells[2].textContent.trim());
+
+            return isSingleA === isSingleB ? 0 : isSingleA ? -1 : 1;
+        }
+
+        return dateComparison;
+    });
+
+    // Reattach sorted rows to the table
+    table.innerHTML = "";
+    rows.forEach((row) => table.appendChild(row));
+}
+
+// Fetch data and populate table, then sort
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://app.ducisgroup.com/getopenBatch") // Replace with the correct API endpoint
+        .then((response) => response.json())
+        .then((data) => {
+            const courses = data.courses; // Replace with actual API response structure
+            const tableBody = document.querySelector(".table-container .table tbody");
+            tableBody.innerHTML = ""; // Clear any existing content
+
+            courses.forEach((course) => {
+                const row = `
+                    <tr>
+                        <td>${course.courseName}</td>
+                        <td>${course.duration}</td>
+                        <td>${course.dates}</td>
+                        <td>${course.time}</td>
+                        <td class="actions">
+                            <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</a>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row; // Append rows dynamically
             });
-    
-            // Clear the table body and re-append the sorted rows
-            table.innerHTML = "";
-            rows.forEach(row => table.appendChild(row));
-        }
-    
-        // Fetch data from API and populate the table
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("https://app.ducisgroup.com/getopenBatch") // Adjust the API endpoint if necessary
-                .then((response) => response.json())
-                .then((data) => {
-                    const courses = data.courses; // Adjust to actual API response structure
-                    const tableBody = document.querySelector(".table-container .table tbody");
-                    tableBody.innerHTML = ""; // Clear existing content
-    
-                    // Populate rows dynamically
-                    courses.forEach((course) => {
-                        const row = `
-                            <tr>
-                                <td>${course.courseName}</td>
-                                <td>${course.duration}</td>
-                                <td>${course.dates}</td>
-                                <td>${course.time}</td>
-                                <td class="actions">
-                                    <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</a>
-                                </td>
-                            </tr>
-                        `;
-                        tableBody.innerHTML += row; // Append the new row
-                    });
-    
-                    // Sort the table rows after they are added
-                    sortTableByStartDate();
-                })
-                .catch((error) => {
-                    console.error("Error fetching courses:", error);
-                });
+
+            sortTableByStartDate(); // Sort rows after adding them
+        })
+        .catch((error) => {
+            console.error("Error fetching courses:", error);
         });
+});
+
     </script>    
 
     <script>
