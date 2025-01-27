@@ -3,7 +3,7 @@ const siteNav = `
 <nav>
 
 <div>
-SAYA
+DIA
 
 </div>
  
