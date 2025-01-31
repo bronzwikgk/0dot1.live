@@ -441,10 +441,10 @@ class TreeEditor {
 
             const requests = [];
             if (newDocsToSync.length) {
-                requests.push(this.apiRequest('https://saya.unbelong.in//api/uploadDocuments', 'POST', newDocsToSync));
+                requests.push(this.apiRequest('https://saya.unbelong.in/api/uploadDocuments', 'POST', newDocsToSync));
             }
             if (updatedDocsToSync.length) {
-                requests.push(this.apiRequest('https://saya.unbelong.in//api/updateDocuments', 'PUT', updatedDocsToSync));
+                requests.push(this.apiRequest('https://saya.unbelong.in/api/updateDocuments', 'PUT', updatedDocsToSync));
             }
 
             await Promise.all(requests);

@@ -24,7 +24,7 @@ let saveTimeoutId;
 let selectedDocId
 let timeoutId
 // const baseUrl = "https://tiny-tan-jay-fez.cyclic.app"
-const baseUrl = "https://saya.unbelong.in/"
+const baseUrl = "https://saya.unbelong.in"
 let syncTimeout = null
 let clickedDoc
 

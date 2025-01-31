@@ -6,7 +6,7 @@ import { Auth } from "./auth.js";
 import { TreeEditor } from "./tree.js";
 
 // const baseUrl = "https://tiny-tan-jay-fez.cyclic.app"
-const baseUrl = "https://saya.unbelong.in/"
+const baseUrl = "https://saya.unbelong.in"
 const auth = new Auth()
 const tree = new TreeEditor()
 
