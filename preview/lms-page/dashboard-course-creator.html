@@ -16,6 +16,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom Style -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body x-data="main"
@@ -35,235 +38,73 @@
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
         <!-- Start Sidebar -->
-          <nav class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+        <nav class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
             <div class="bg-white dark:bg-black h-full">
                 <!-- Start Logo -->
                 <div class="flex p-4">
-                    <a class="main-logo flex-1 w-full" href="/creator">
-                        <img src="./images/creator-logo.svg" alt="logo" class="block dark:hidden">
-                        <img src="../images/creator-dark-logo.svg" alt="logo" class="hidden dark:block">
+                    <a class="main-logo flex-1 w-full" href="/admin">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp" alt="logo" class="block dark:hidden">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp" alt="logo" class="hidden dark:block">
                     </a>
                 </div>
                 <!-- End Logo -->
     
                 <!-- Start Menu -->
-                <ul class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-                    x-data="{ activeMenu: null }">
+                <ul class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0" x-data="{ activeMenu: null }">
                     
-                    <!-- Menu Item -->
-                    <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'dashboard'}"
-                           @click="activeMenu === 'dashboard' ? activeMenu = null : activeMenu = 'dashboard'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'dashboard'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Dashboard</span>
-                            </div>
-                        </a>
-                        <ul x-show="activeMenu === 'dashboard'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/dashboard">Creator Overview</a></li>
-                            <li><a href="/creator/analytics">Course Performance</a></li>
-                            <li><a href="/creator/engagement">Student Engagement</a></li>
-                        </ul>
-                    </li>
                     <!-- Section Header -->
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
                         <span>Course Management</span>
                     </h2>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'my_courses'}"
-                           @click="activeMenu === 'my_courses' ? activeMenu = null : activeMenu = 'my_courses'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'my_courses'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'new-course'}" @click="activeMenu === 'new-course' ? activeMenu = null : activeMenu = 'new-course'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'new-course'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
                             </svg>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">My Courses</span>
+                                <i class="ri-add-circle-line"></i>
+                                <span class="pl-1">New</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'my_courses'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/courses">All Courses</a></li>
-                            <li><a href="/creator/courses/create">Create New Course</a></li>
-                            <li><a href="/creator/courses/drafts">Drafts</a></li>
-                            <li><a href="/creator/courses/published">Published Courses</a></li>
-                            <li><a href="/creator/courses/reviews">Course Reviews</a></li>
+                        <ul x-show="activeMenu === 'new-course'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="height: 0px; overflow: hidden; display: none;" hidden="">
+                            <li><a href="/course-creator/new/course">Course</a></li>
+                            <li><a href="/course-creator/new/module">Module</a></li>
+                            <li><a href="/course-creator/new/lesson">Lesson</a></li>
+                            <li><a href="/course-creator/new/quiz">Quiz</a></li>
+                            <li><a href="/course-creator/new/assignment">Assignment</a></li>
+                            <li><a href="/course-creator/new/certificate">Certificate</a></li>
+                            <li><a href="/course-creator/new/category">Category</a></li>
                         </ul>
                     </li>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'content_library'}"
-                           @click="activeMenu === 'content_library' ? activeMenu = null : activeMenu = 'content_library'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'content_library'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Content Library</span>
+                        <a href="/course-creator/activity/recent" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-time-line"></i>
+                                <span class="pl-1">Recent Activity</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'content_library'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/library">My Uploads</a></li>
-                            <li><a href="/creator/library/upload">Add New Content</a></li>
-                            <li><a href="/creator/library/shared">Shared Resources</a></li>
-                        </ul>
                     </li>
-                    <!-- Section Header -->
-                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                        <span>Assessments &amp; Quizzes</span>
-                    </h2>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'assessments'}"
-                           @click="activeMenu === 'assessments' ? activeMenu = null : activeMenu = 'assessments'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'assessments'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Assessments</span>
+                        <a href="/course-creator/activity/drafts" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-file-edit-line"></i>
+                                <span class="pl-1">Drafts</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'assessments'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/assessments">All Assessments</a></li>
-                            <li><a href="/creator/assessments/create">Create New Assessment</a></li>
-                            <li><a href="/creator/assessments/quiz-bank">Quiz Bank</a></li>
-                        </ul>
                     </li>
-                    <!-- Section Header -->
-                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                        <span>Student Management</span>
-                    </h2>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'students'}"
-                           @click="activeMenu === 'students' ? activeMenu = null : activeMenu = 'students'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'students'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Students</span>
+                        <a href="/course-creator/inbox" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-inbox-line"></i>
+                                <span class="pl-1">Inbox</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'students'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/students">Enrolled Students</a></li>
-                            <li><a href="/creator/students/progress">Progress Tracking</a></li>
-                            <li><a href="/creator/students/feedback">Student Feedback</a></li>
-                        </ul>
-                    </li>
-                    <!-- Section Header -->
-                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                        <span>Certifications &amp; Achievements</span>
-                    </h2>
-                    <!-- Menu Item -->
-                    <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'certificates'}"
-                           @click="activeMenu === 'certificates' ? activeMenu = null : activeMenu = 'certificates'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'certificates'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Certificates</span>
-                            </div>
-                        </a>
-                        <ul x-show="activeMenu === 'certificates'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/certificates">Issued Certificates</a></li>
-                            <li><a href="/creator/certificates/create">Create Certificate</a></li>
-                        </ul>
                     </li>
                     <!-- Section Header -->
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
@@ -271,105 +112,135 @@
                     </h2>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'forums'}"
-                           @click="activeMenu === 'forums' ? activeMenu = null : activeMenu = 'forums'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'forums'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'forums'}" @click="activeMenu === 'forums' ? activeMenu = null : activeMenu = 'forums'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'forums'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
                             </svg>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
+                                <i class="ri-group-line"></i>
                                 <span class="pl-1">Community</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'forums'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/community/forums">Discussion Forums</a></li>
-                            <li><a href="/creator/community/qa">Q&amp;A Sessions</a></li>
+                        <ul x-show="activeMenu === 'forums'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="/course-creator/community/forums">Discussion Forums</a></li>
+                            <li><a href="/course-creator/community/qa">Q&amp;A Moderation</a></li>
+                            <li><a href="/course-creator/community/groups">User Groups</a></li>
                         </ul>
                     </li>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'support'}"
-                           @click="activeMenu === 'support' ? activeMenu = null : activeMenu = 'support'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'support'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'support'}" @click="activeMenu === 'support' ? activeMenu = null : activeMenu = 'support'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'support'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
                             </svg>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
+                                <i class="ri-customer-service-2-line"></i>
                                 <span class="pl-1">Support</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'support'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/support">Help Center</a></li>
-                            <li><a href="/creator/support/contact">Contact Admin</a></li>
-                            <li><a href="/creator/support/faqs">FAQs</a></li>
+                        <ul x-show="activeMenu === 'support'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="/course-creator/support">Help Center</a></li>
+                            <li><a href="/course-creator/support/tickets">Instructor Tickets</a></li>
+                            <li><a href="/course-creator/support/faqs">FAQs</a></li>
                         </ul>
                     </li>
                     <!-- Section Header -->
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                        <span>Settings</span>
+                        <span>Reports &amp; Analytics</span>
                     </h2>
                     <!-- Menu Item -->
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                           :class="{'active' : activeMenu === 'settings'}"
-                           @click="activeMenu === 'settings' ? activeMenu = null : activeMenu = 'settings'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'settings'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'reports'}" @click="activeMenu === 'reports' ? activeMenu = null : activeMenu = 'reports'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'reports'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
                             </svg>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-5 h-5" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
-                                </svg>
-                                <span class="pl-1">Profile &amp; Settings</span>
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Reports</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'settings'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="/creator/settings/profile">Profile</a></li>
-                            <li><a href="/creator/settings/preferences">Course Preferences</a></li>
-                            <li><a href="/creator/settings/notifications">Notification Settings</a></li>
+                        <ul x-show="activeMenu === 'reports'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="/course-creator/reports/progress">Student Progress</a></li>
+                            <li><a href="/course-creator/reports/analytics">Course Analytics</a></li>
+                            <li><a href="/course-creator/reports/revenue">Revenue Reports</a></li>
                         </ul>
+                    </li>
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                        <span>My Account</span>
+                    </h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'settings'}" @click="activeMenu === 'settings' ? activeMenu = null : activeMenu = 'settings'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'settings'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
+                            </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-settings-3-line"></i>
+                                <span class="pl-1">Settings</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'settings'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="/course-creator/settings/profile">Profile Settings</a></li>
+                            <li><a href="/course-creator/settings/payments">Payment Preferences</a></li>
+                            <li><a href="/course-creator/settings/notifications">Notification Preferences</a></li>
+                        </ul>
+                    </li>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'subscriptions'}" @click="activeMenu === 'subscriptions' ? activeMenu = null : activeMenu = 'subscriptions'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'subscriptions'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
+                            </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span class="pl-1">Subscriptions</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'subscriptions'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="/course-creator/subscriptions/payouts">Payout Settings</a></li>
+                            <li><a href="/course-creator/subscriptions/plans">Subscription Plans</a></li>
+                            <li><a href="/course-creator/subscriptions/billing">Billing History</a></li>
+                        </ul>
+                    </li>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'integrated-services'}" @click="activeMenu === 'integrated-services' ? activeMenu = null : activeMenu = 'integrated-services'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'integrated-services'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor"></path>
+                            </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-cloud-line"></i>
+                                <span class="pl-1">Integrated Services</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'integrated-services'" x-collapse="" class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" style="height: 0px; overflow: hidden; display: none;" hidden="">
+                            <li><a href="/course-creator/integrated-services/onedrive">OneDrive</a></li>
+                            <li><a href="/course-creator/integrated-services/gdrive">Google Drive</a></li>
+                            <li><a href="/course-creator/integrated-services/zoom">Zoom</a></li>
+                            <li><a href="/course-creator/integrated-services/email">Email Configuration</a></li>
+                        </ul>
+                    </li>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="/course-creator/roles" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-user-settings-line"></i>
+                                <span class="pl-1">Instructor Roles</span>
+                            </div>
+                        </a>
                     </li>
     
                 </ul>
