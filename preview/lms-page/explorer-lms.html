@@ -555,17 +555,19 @@
             <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
                 <div class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
                     <div class="px-2 py-1 mb-4">
-
-                        <!-- Toolbar -->
                         <div class="flex justify-between items-center mb-4">
                             <h2 class="text-lg font-semibold">Explorer</h2>
                             <div>
-                                <button @click="view = 'grid'"
-                                    class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 mr-2">Grid</button>
-                                <button @click="view = 'list'"
-                                    class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">List</button>
+                                <button @click="setGridView()"
+                                    class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 mr-2">
+                                    Grid
+                                </button>
+                                <button @click="setListView()" class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">
+                                    List
+                                </button>
                             </div>
                         </div>
+
                     </div>
                     <div class="grid grid-cols-1 gap-7">
 
@@ -946,7 +948,7 @@
     <script>
         function tableData() {
             return {
-                view: 'list',
+                view: 'list', // Default to list view
                 search: '',
                 sortColumn: '',
                 sortDirection: 'asc',
@@ -964,31 +966,17 @@
 
                 paginatedItems: [],
 
-                sortTable(column) {
-                    if (this.sortColumn === column) {
-                        this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-                    } else {
-                        this.sortColumn = column;
-                        this.sortDirection = 'asc';
-                    }
-                    this.updatePagination();
+                // View toggle functions
+                setGridView() {
+                    this.view = 'grid';
                 },
 
-                sortIcon(column) {
-                    if (this.sortColumn === column) {
-                        return this.sortDirection === 'asc' ? '▲' : '▼';
-                    }
-                    return '';
+                setListView() {
+                    this.view = 'list';
                 },
 
                 filteredItems() {
-                    return this.items
-                        .filter(item => Object.values(item).some(value => String(value).toLowerCase().includes(this.search.toLowerCase())))
-                        .sort((a, b) => {
-                            if (!this.sortColumn) return 0;
-                            let modifier = this.sortDirection === 'asc' ? 1 : -1;
-                            return a[this.sortColumn] > b[this.sortColumn] ? modifier : -modifier;
-                        });
+                    return this.items.filter(item => Object.values(item).some(value => String(value).toLowerCase().includes(this.search.toLowerCase())));
                 },
 
                 totalPages() {
@@ -1014,19 +1002,6 @@
                         this.currentPage++;
                         this.updatePagination();
                     }
-                },
-
-                startIndex() {
-                    return (this.currentPage - 1) * this.itemsPerPage;
-                },
-
-                endIndex() {
-                    return Math.min(this.currentPage * this.itemsPerPage, this.filteredItems().length);
-                },
-
-                resetPagination() {
-                    this.currentPage = 1;
-                    this.updatePagination();
                 },
 
                 init() {
