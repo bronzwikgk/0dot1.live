@@ -14,7 +14,7 @@ async function getLocationFromIP(ip) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ip: "20.74.211.96" }),
+            body: JSON.stringify({ ip: ip }),
         });
 
         const backendData = await backendResponse.json();
