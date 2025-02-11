@@ -118,7 +118,7 @@ const NEW_FOOTER = `
 
         <!-- Copyright -->
         <div class="text-center p-3">
-          ©2024 Ducisgroup:
+          ©2025 Ducisgroup:
           <a class="text-dark text-decoration-none text-xs" href=""
             >All Rights Reserved</a
           >
