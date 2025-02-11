@@ -7,7 +7,7 @@ export class Footer {
         return `
              <footer
         class="text-center text-lg-start text-dark"
-        style="background-color: #eceff1"
+        style="background-color: #eceff1;padding-top:1rem"
       >
         <div class="container text-center p-4">
           <h4 class="fw-bold mb-4">Get the latest Ducisgroup Updates</h4>
