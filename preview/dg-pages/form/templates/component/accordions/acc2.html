@@ -1,0 +1,56 @@
+<div class="border border-black/20 dark:border-white/20 rounded font-semibold divide-y divide-black/20 dark:divide-white/20" x-data="{ current: 1 }">
+    <div class="">
+        <button type="button" class="p-4 w-full flex items-center text-black/70 dark:text-white/70 !text-black dark:!text-white" :class="{'!text-black dark:!text-white' : current === 1}" x-on:click="current === 1 ? current = null : current = 1">
+            Accordion Item #1
+            <div class="ml-auto rotate-180" :class="{'rotate-180' : current === 1}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z" fill="currentcolor"></path>
+                </svg>
+            </div>
+        </button>
+        <div x-show="current === 1" x-collapse="">
+            <div class="space-y-2 p-4 text-black dark:text-white text-sm border-t border-black/10 dark:border-white/10">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <button type="button" class="p-4 w-full flex items-center text-black/70 dark:text-white/70" :class="{'!text-black dark:!text-white' : current === 2}" x-on:click="current === 2 ? current = null : current = 2">
+            Accordion Item #2
+            <div class="ml-auto" :class="{'rotate-180' : current === 2}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z" fill="currentcolor"></path>
+                </svg>
+            </div>
+        </button>
+        <div x-show="current === 2" x-collapse="" style="display: none; height: 0px; overflow: hidden;" hidden="">
+            <div class="space-y-2 p-4 text-black dark:text-white text-sm border-t border-black/10 dark:border-white/10">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <button type="button" class="p-4 w-full flex items-center text-black/70 dark:text-white/70" :class="{'!text-black dark:!text-white' : current === 3}" x-on:click="current === 3 ? current = null : current = 3">
+            Accordion Item #3
+            <div class="ml-auto" :class="{'rotate-180' : current === 3}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z" fill="currentcolor"></path>
+                </svg>
+            </div>
+        </button>
+        <div x-show="current === 3" x-collapse="" style="display: none; height: 0px; overflow: hidden;" hidden="">
+            <div class="space-y-2 p-4 text-black dark:text-white text-sm border-t border-black/10 dark:border-white/10">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

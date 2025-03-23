@@ -1,0 +1,8 @@
+<ul class="flex flex-wrap items-center space-x-2">
+    {{#each breadcrumbs}}
+    <li class="flex items-center space-x-2">
+        <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white" href="#">{{this}}</a>
+        <span class="text-xs font-light"> / </span>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,106 @@
+{
+    "formId":"sampleId",
+    "inputs": [
+        {
+            "label": "Basic Input Text",
+            "type": "text",
+            "id": "basic-text",
+            "name": "basicText",
+            "placeholder": "Enter text",
+            "required": true
+        },
+        {
+            "label": "Email Input",
+            "type": "email",
+            "id": "email",
+            "name": "email",
+            "placeholder": "Enter email"
+        },
+        {
+            "label": "Password Input",
+            "type": "password",
+            "id": "password",
+            "name": "password",
+            "placeholder": "Enter password"
+        },
+        {
+            "label": "Number Input",
+            "type": "number",
+            "id": "number",
+            "name": "number",
+            "placeholder": "Enter number"
+        },
+        {
+            "label": "Date Input",
+            "type": "date",
+            "id": "date",
+            "name": "date"
+        },
+        {
+            "label": "Datetime-local Input",
+            "type": "datetime-local",
+            "id": "datetime-local",
+            "name": "datetimeLocal"
+        },
+        {
+            "label": "Week Input",
+            "type": "week",
+            "id": "week",
+            "name": "week"
+        },
+        {
+            "label": "Month Input",
+            "type": "month",
+            "id": "month",
+            "name": "month"
+        },
+        {
+            "label": "File Input",
+            "type": "file",
+            "id": "file",
+            "name": "file"
+        },
+        {
+            "label": "Image Upload",
+            "type": "file",
+            "id": "image-upload",
+            "name": "imageUpload",
+            "isImage": true
+        },
+        {
+            "label": "Color Picker",
+            "type": "color",
+            "id": "color",
+            "name": "color"
+        },
+        {
+            "label": "Range Input",
+            "type": "range",
+            "id": "range",
+            "name": "range"
+        },
+        {
+            "label": "Dropdown Select",
+            "isSelect": true,
+            "id": "dropdown",
+            "name": "dropdown",
+            "options": [
+                "Option 1",
+                "Option 2",
+                "Option 3"
+            ]
+        },
+        {
+            "label": "Submit Button",
+            "type": "submit",
+            "id": "submit",
+            "name": "submit"
+        },
+        {
+            "label": "Reset Button",
+            "type": "reset",
+            "id": "reset",
+            "name": "reset"
+        }
+    ]
+}

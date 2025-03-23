@@ -1,0 +1,44 @@
+{
+    "modules": [
+      {
+        "title": "Module 1: Introduction to ITIL 4",
+        "lessons": [
+          {
+            "title": "Lesson 1: Overview",
+            "url": "#"
+          },
+          {
+            "title": "Lesson 2: Key Concepts",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Module 2: ITIL Guiding Principles",
+        "lessons": [
+          {
+            "title": "Lesson 1: Principles in Practice",
+            "url": "#"
+          },
+          {
+            "title": "Lesson 2: Case Studies",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Module 3: ITIL Service Value System",
+        "lessons": [
+          {
+            "title": "Lesson 1: Value Chains",
+            "url": "#"
+          },
+          {
+            "title": "Lesson 2: Continual Improvement",
+            "url": "#"
+          }
+        ]
+      }
+    ]
+  }
+  

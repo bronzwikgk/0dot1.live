@@ -1,0 +1,16 @@
+{{#each alerts}}
+<div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6 relative">
+    <h3 class="font-semibold">Recent Alerts</h3>
+    <div class="flex flex-col gap-4">
+        <div class="flex-1 min-h-[100px] flex items-center">
+            <p class="text-xs text-black/40 dark:text-white/40">
+                {{content}}
+            </p>
+        </div>
+        <div class="flex flex-none gap-4 items-center justify-between">
+            <p class="text-xs text-black/40 dark:text-white/40">{{date}}</p>
+            <a href="javaScript:;" class="btn">Learn More</a>
+        </div>
+    </div>
+</div>
+{{/each}}

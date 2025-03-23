@@ -1,0 +1,31 @@
+{
+    "tabs": [
+        {
+            "label": "Learning Hours",
+            "active": true
+        },
+        {
+            "label": "Course Completion Progress",
+            "active": false
+        },
+        {
+            "label": "Quizzes Attempted",
+            "active": false
+        },
+        {
+            "label": "Certificates Earned",
+            "active": false
+        }
+    ],
+    "timeFilters": [
+        {
+            "period": "Current Week",
+            "color": "#1C1C1C"
+        },
+        {
+            "period": "Previous Week",
+            "color": "#A8C5DA"
+        }
+    ],
+    "dropdownItems": ["Weekly", "Monthly", "Yearly"]
+}

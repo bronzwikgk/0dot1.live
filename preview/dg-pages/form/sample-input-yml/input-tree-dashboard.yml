@@ -1,0 +1,53 @@
+type: "folder"
+name: "dashboard-pages"
+children:
+  - type: "page"
+    name: "dashboard-admin"
+    pageTemplate: "./form/templates/page/dashboard-layout.hbs"
+    components:
+      - name: "sidebar"
+        template: "./form/templates/component/sidebar/sidebar.hbs"
+        data: "./form/templates/component/sidebar/sidebar-lms-admin.json"
+      - name: "dashcards"
+        template: "./form/templates/component/dash-card/dash-card.hbs"
+        data: "./form/templates/component/dash-card/dash-card-lms-admin.json"
+      - name: "linechart"
+        template: "./form/templates/component/charts/dash-line-chart.hbs"
+        data: "./form/templates/component/charts/dash-line-chart.json"
+    output:
+      format: "html"
+      outputPath: "./lms-pages/dashboard-pages/dashboard-admin.html"
+
+  - type: "page"
+    name: "dashboard-course-creator"
+    pageTemplate: "./form/templates/page/dashboard-layout.hbs"
+    components:
+      - name: "sidebar"
+        template: "./form/templates/component/sidebar/sidebar.hbs"
+        data: "./form/templates/component/sidebar/sidebar-lms-course-creator.jsonl"
+      - name: "dashcards"
+        template: "./form/templates/component/dash-card/dash-card.hbs"
+        data: "./form/templates/component/dash-card/dash-card-lms-course-creator.json"
+      - name: "linechart"
+        template: "./form/templates/component/charts/dash-line-chart.hbs"
+        data: "./form/templates/component/charts/dash-line-chart-course-creator.json"
+    output:
+      format: "html"
+      outputPath: "./lms-pages/dashboard-pages/dashboard-course-creator.html"
+
+  - type: "page"
+    name: "dashboard-learner"
+    pageTemplate: "./form/templates/page/dashboard-layout.hbs"
+    components:
+      - name: "sidebar"
+        template: "./form/templates/component/sidebar/sidebar.hbs"
+        data: "./form/templates/component/sidebar/sidebar-lms-learner.json"
+      - name: "dashcards"
+        template: "./form/templates/component/dash-card/dash-card.hbs"
+        data: "./form/templates/component/dash-card/dash-card-lms-learner.json"
+      - name: "linechart"
+        template: "./form/templates/component/charts/dash-line-chart.hbs"
+        data: "./form/templates/component/charts/dash-line-chart-learner.json"
+    output:
+      format: "html"
+      outputPath: "./lms-pages/dashboard-pages/dashboard-learner.html"

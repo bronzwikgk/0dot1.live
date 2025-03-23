@@ -1,0 +1,17 @@
+{
+  "loaderTypes": [
+    {
+      "type": "Border Spinner"
+    },
+    {
+      "type": "Size Spinner"
+    },
+    {
+      "type": "Custom Spinner"
+    },
+    {
+      "type": "Button Loader"
+    }
+  ],
+  "buttonText": "Loading"
+}

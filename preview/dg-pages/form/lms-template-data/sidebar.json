@@ -1,0 +1,87 @@
+{
+    "logo": {
+      "link": "../dashboard-pages/dashboard-admin.html",
+      "light": "https://ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp",
+      "dark": "../../beauty/images/logo-dark.png"
+    },
+    "menuItems": [
+      {
+        "id": "dashboard",
+        "title": "Dashboard",
+        "icon": "fas fa-tachometer-alt",
+        "link": "../dashboard-pages/dashboard-admin.html"
+      },
+      {
+        "id": "view-course",
+        "title": "View Course",
+        "icon": "fas fa-eye",
+        "link": "../detail-view-pages/view-course.html"
+      },
+      {
+        "id": "course-management",
+        "title": "Courses",
+        "icon": "fas fa-book",
+        "submenus": [
+          {
+            "title": "Add",
+            "link": "../form-pages/add-course.html"
+          },
+          {
+            "title": "Edit",
+            "link": "../form-pages/edit-course.html"
+          },
+          {
+            "title": "Upload",
+            "link": "../form-pages/upload-course-content.html"
+          }
+        ]
+      },
+      {
+        "id": "quiz-management",
+        "title": "Quizzes",
+        "icon": "fas fa-question-circle",
+        "submenus": [
+          {
+            "title": "Add",
+            "link": "../form-pages/add-quiz.html"
+          },
+          {
+            "title": "Edit",
+            "link": "../form-pages/edit-quiz.html"
+          }
+        ]
+      },
+      {
+        "id": "users",
+        "title": "Users",
+        "icon": "fas fa-user",
+        "submenus": [
+          {
+            "title": "Add",
+            "link": "../form-pages/add-user.html"
+          },
+          {
+            "title": "Assign Licence",
+            "link": "../form-pages/assign-licence.html"
+          },
+          {
+            "title": "Edit Profile",
+            "link": "../form-pages/edit-profile.html"
+          }
+        ]
+      },
+      {
+        "id": "bulk-actions",
+        "title": "Bulk Upload",
+        "icon": "fas fa-upload",
+        "link": "../form-pages/add-bulk.html"
+      },
+      {
+        "id": "settings",
+        "title": "Settings",
+        "icon": "fas fa-cogs",
+        "link": "../form-pages/lms-settings.html"
+      }
+    ]
+  }
+  

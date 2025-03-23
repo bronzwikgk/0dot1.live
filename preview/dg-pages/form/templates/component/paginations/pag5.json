@@ -1,0 +1,39 @@
+{
+  "buttons": [
+    {
+      "label": "1",
+      "size": "3.5",
+      "textColor": "black",
+      "borderColor": "black",
+      "textColorDark": "white",
+      "borderColorDark": "white"
+    },
+    {
+      "label": "2",
+      "size": "3.5",
+      "textColor": "black",
+      "borderColor": "black",
+      "textColorDark": "white",
+      "borderColorDark": "white"
+    },
+    {
+      "label": "3",
+      "size": "3.5",
+      "textColor": "black",
+      "borderColor": "black",
+      "textColorDark": "white",
+      "borderColorDark": "white"
+    },
+    {
+      "isDots": true
+    },
+    {
+      "label": "9",
+      "size": "3.5",
+      "textColor": "black",
+      "borderColor": "black",
+      "textColorDark": "white",
+      "borderColorDark": "white"
+    }
+  ]
+}

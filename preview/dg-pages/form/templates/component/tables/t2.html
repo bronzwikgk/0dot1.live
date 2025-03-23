@@ -1,0 +1,22 @@
+<div class="table-responsive">
+    <table class="table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td class="whitespace-nowrap">{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{quantity}}</td>
+                <td>{{amount}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

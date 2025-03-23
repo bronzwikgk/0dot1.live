@@ -1,0 +1,45 @@
+<!-- Start Content -->
+<div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+    <div class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+        <div class="px-2 py-1 mb-4">
+            <h2 class="text-lg font-semibold">Input Group</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+            {{#each inputGroups}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{title}}</p>
+                </div>
+                {{#each inputs}}
+                <div class="mb-4">
+                    <label class="mt-1.5 flex -space-x-px">
+                        {{#if leftIcon}}
+                        <div class="flex items-center justify-center rounded-l-lg border border-black/10 dark:border-white/10 px-3.5 font-inter">
+                            <span class="-mt-1">{{leftIcon}}</span>
+                        </div>
+                        {{/if}}
+                        <input class="form-input w-full {{#if leftIcon}}rounded-r-none{{else}}rounded-l-lg{{/if}} border border-black/10 dark:border-white/10 bg-transparent px-3 py-2.5 placeholder:text-black/60 dark:placeholder:text-white/60 hover:z-10 hover:border-black dark:hover:border-white focus:z-10 focus:border-black dark:focus:border-white" placeholder="{{placeholder}}" type="text">
+                        {{#if rightIcon}}
+                        <div class="flex items-center justify-center rounded-r-lg border border-black/10 dark:border-white/10 px-3.5">
+                            <span>{{rightIcon}}</span>
+                        </div>
+                        {{/if}}
+                    </label>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- Start Footer -->
+    <footer class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+        <p class="text-xs text-black/40 dark:text-white/40">© {{year}} {{company}}</p>
+        <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+            {{#each footerLinks}}
+            <li><a href="{{url}}" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">{{label}}</a></li>
+            {{/each}}
+        </ul>
+    </footer>
+    <!-- End Footer -->
+</div>
+<!-- End Content -->

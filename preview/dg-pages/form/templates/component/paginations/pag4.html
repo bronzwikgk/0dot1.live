@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center justify-center gap-3">
+    <ul class="inline-flex items-center space-x-1 m-auto mb-4">
+        {{#each buttons}}
+        <li>
+            <button type="button" class="flex justify-center px-{{button.width}} py-{{button.height}} rounded-full transition text-{{button.text_color}} hover:text-{{button.hover_text_color}} bg-{{button.bg_color}} hover:bg-{{button.hover_bg_color}} dark:text-{{button.dark_text_color}} dark:hover:text-{{button.dark_hover_text_color}} dark:bg-{{button.dark_bg_color}} dark:hover:bg-{{button.dark_hover_bg_color}}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="{{button.path}}" fill="currentColor"></path>
+                </svg>
+                {{#if button.label}}
+                {{button.label}}
+                {{/if}}
+            </button>
+        </li>
+        {{/each}}
+    </ul>
+</div>

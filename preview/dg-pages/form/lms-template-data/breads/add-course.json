@@ -1,0 +1,13 @@
+{
+  "menuItems": [
+    {
+      "label": "Courses",
+      "url": "/courses"
+    },
+    {
+      "label": "Add Course",
+      "url": "/courses/add"
+    }
+  ],
+  "breadcrumb": "Add Course"
+}

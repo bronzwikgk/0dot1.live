@@ -1,0 +1,39 @@
+<form id="{{formId}}" class="bg-white-100 p-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+        {{#each inputs}}
+        <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+            <label for="{{id}}" class="text-sm font-semibold mb-2 block">{{label}}</label>
+            {{#if isSelect}}
+            <select id="{{id}}" name="{{name}}" class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg"
+                {{#if required}}required{{/if}}>
+                {{#each options}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            {{else if isSubmit}}
+            <!-- Submit Button -->
+            <button type="submit" id="{{id}}" name="{{name}}"
+                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md 
+                        hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-full">
+                {{label}}
+            </button>
+
+            {{else if isReset}}
+            <!-- Reset Button -->
+            <button type="reset" id="{{id}}" name="{{name}}"
+                class="px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md 
+                        hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 w-full">
+                {{label}}
+            </button>
+            {{else}}
+            <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}"
+                class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" {{#if required}}required{{/if}}>
+            {{/if}}
+            {{#if isImage}}
+            <img id="preview-{{id}}" src="#" alt="Image Preview"
+                class="mt-2 hidden w-full h-32 object-cover border border-black/10 rounded-lg">
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</form>

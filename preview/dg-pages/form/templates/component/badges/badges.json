@@ -1,0 +1,150 @@
+{
+  "badges": [
+    {
+      "name": "Default",
+      "color": "bg-lightwhite"
+    },
+    {
+      "name": "Primary",
+      "color": "bg-indigo-300"
+    },
+    {
+      "name": "Secondary",
+      "color": "bg-lightpurple-300"
+    },
+    {
+      "name": "Info",
+      "color": "bg-lightblue-200"
+    },
+    {
+      "name": "Success",
+      "color": "bg-lightgreen-100"
+    },
+    {
+      "name": "Warning",
+      "color": "bg-lightyellow"
+    },
+    {
+      "name": "Error",
+      "color": "bg-lightred"
+    }
+  ],
+  "roundedBadges": [
+    {
+      "name": "Default",
+      "color": "bg-lightwhite"
+    },
+    {
+      "name": "Primary",
+      "color": "bg-indigo-300"
+    },
+    {
+      "name": "Secondary",
+      "color": "bg-lightpurple-300"
+    },
+    {
+      "name": "Info",
+      "color": "bg-lightblue-200"
+    },
+    {
+      "name": "Success",
+      "color": "bg-lightgreen-100"
+    },
+    {
+      "name": "Warning",
+      "color": "bg-lightyellow"
+    },
+    {
+      "name": "Error",
+      "color": "bg-lightred"
+    }
+  ],
+  "glowBadges": [
+    {
+      "name": "Default",
+      "color": "bg-lightwhite",
+      "shadow": "shadow-lightwhite/50"
+    },
+    {
+      "name": "Primary",
+      "color": "bg-indigo-300",
+      "shadow": "shadow-indigo-300/50"
+    },
+    {
+      "name": "Secondary",
+      "color": "bg-lightpurple-300",
+      "shadow": "shadow-lightpurple-300/50"
+    },
+    {
+      "name": "Info",
+      "color": "bg-lightblue-200",
+      "shadow": "shadow-lightblue-200/50"
+    },
+    {
+      "name": "Success",
+      "color": "bg-lightgreen-100",
+      "shadow": "shadow-lightgreen-100/50"
+    },
+    {
+      "name": "Warning",
+      "color": "bg-lightyellow",
+      "shadow": "shadow-lightyellow/50"
+    },
+    {
+      "name": "Error",
+      "color": "bg-lightred",
+      "shadow": "shadow-lightred/50"
+    }
+  ],
+  "badgesInButtons": [
+    {
+      "name": "Notifications",
+      "count": "4",
+      "color": "bg-lightgreen-100"
+    },
+    {
+      "name": "Messages",
+      "count": "2",
+      "color": "bg-lightred"
+    },
+    {
+      "name": "Draft",
+      "count": "2",
+      "color": "bg-lightgreen-100"
+    }
+  ],
+  "roundedBadgesWithSize": [
+    {
+      "size": "Small",
+      "color": "bg-violet-500"
+    },
+    {
+      "size": "Large",
+      "color": "bg-violet-500"
+    },
+    {
+      "size": "Small",
+      "color": "bg-green-500"
+    },
+    {
+      "size": "Large",
+      "color": "bg-green-500"
+    },
+    {
+      "size": "Small",
+      "color": "bg-yellow-500"
+    },
+    {
+      "size": "Large",
+      "color": "bg-yellow-500"
+    },
+    {
+      "size": "Small",
+      "color": "bg-red-500"
+    },
+    {
+      "size": "Large",
+      "color": "bg-red-500"
+    }
+  ]
+}

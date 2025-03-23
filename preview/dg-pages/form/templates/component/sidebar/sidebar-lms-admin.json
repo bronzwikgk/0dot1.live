@@ -1,0 +1,124 @@
+{
+    "logo": {
+      "link": "/admin",
+      "light": "https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp",
+      "dark": "https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+    },
+    "menuItems": [
+      {
+        "header": true,
+        "title": "Action"
+      },
+      {
+        "id": "new",
+        "title": "New",
+        "icon": "ri-add-circle-line",
+        "submenus": [
+          { "title": "Course", "link": "/admin/action/new/course" },
+          { "title": "Module", "link": "/admin/action/new/module" },
+          { "title": "Lesson", "link": "/admin/action/new/lesson" },
+          { "title": "Quiz", "link": "/admin/action/new/quiz" },
+          { "title": "Assignment", "link": "/admin/action/new/assignment" },
+          { "title": "Certificate", "link": "/admin/action/new/certificate" },
+          { "title": "Category", "link": "/admin/action/new/category" },
+          { "title": "Instructor", "link": "/admin/action/new/instructor" },
+          { "title": "Learner", "link": "/admin/action/new/learner" },
+          { "title": "Discussion Forum", "link": "/admin/action/new/discussion" }
+        ]
+      },
+      {
+        "title": "Recent Activity",
+        "icon": "ri-time-line",
+        "link": "/admin/activity/recent"
+      },
+      {
+        "title": "Draft",
+        "icon": "ri-file-edit-line",
+        "link": "/admin/activity/draft"
+      },
+      {
+        "title": "Inbox",
+        "icon": "ri-inbox-line",
+        "link": "/admin/activity/inbox"
+      },
+      {
+        "header": true,
+        "title": "Chat"
+      },
+      {
+        "id": "chat",
+        "title": "Chat",
+        "icon": "ri-chat-3-line",
+        "submenus": [
+          { "title": "Chat Collection", "link": "/admin/chat/collection" },
+          { "title": "Chat Thread", "link": "/admin/chat/thread" }
+        ]
+      },
+      {
+        "header": true,
+        "title": "My Collection"
+      },
+      {
+        "id": "my-collection",
+        "title": "My Collection",
+        "icon": "ri-folder-line",
+        "submenus": [
+          { "title": "Team", "link": "/admin/my-collection/team" },
+          { "title": "Catalogue", "link": "/admin/my-collection/catalogue" },
+          { "title": "Lead", "link": "/admin/my-collection/lead" },
+          { "title": "Contact", "link": "/admin/my-collection/contact" }
+        ]
+      },
+      {
+        "title": "My Calendar",
+        "icon": "ri-calendar-line",
+        "link": "/admin/my-calendar"
+      },
+      {
+        "header": true,
+        "title": "My Account"
+      },
+      {
+        "id": "settings",
+        "title": "Settings",
+        "icon": "ri-settings-3-line",
+        "submenus": [
+          { "title": "Add Service", "link": "/admin/account/settings/add-service" },
+          { "title": "Add Tokens", "link": "/admin/account/settings/add-tokens" }
+        ]
+      },
+      {
+        "id": "subscriptions",
+        "title": "Subscriptions",
+        "icon": "ri-money-dollar-circle-line",
+        "submenus": [
+          { "title": "DO", "link": "/admin/account/subscriptions/do" },
+          { "title": "GoDaddy", "link": "/admin/account/subscriptions/godaddy" },
+          { "title": "Microsoft", "link": "/admin/account/subscriptions/microsoft" },
+          { "title": "CDN", "link": "/admin/account/subscriptions/cdn" },
+          { "title": "GitHub", "link": "/admin/account/subscriptions/github" },
+          { "title": "Razorpay", "link": "/admin/account/subscriptions/razorpay" },
+          { "title": "GitLab API", "link": "https://docs.gitlab.com/ee/api/get_started/get_started_extending.html" },
+          { "title": "Authenticate Service", "link": "/admin/account/subscriptions/authenticate-service" }
+        ]
+      },
+      {
+        "id": "integrated-services",
+        "title": "Integrated Services",
+        "icon": "ri-cloud-line",
+        "submenus": [
+          { "title": "OneDrive", "link": "/admin/account/integrated-services/onedrive" },
+          { "title": "Outlook", "link": "/admin/account/integrated-services/outlook" },
+          { "title": "Google Drive", "link": "/admin/account/integrated-services/gdrive" },
+          { "title": "Gmail", "link": "/admin/account/integrated-services/gmail" },
+          { "title": "Configure Service", "link": "/admin/account/integrated-services/configure-service" }
+        ]
+      },
+      {
+        "title": "Roles",
+        "icon": "ri-user-settings-line",
+        "link": "http://127.0.0.1:5501/Ui_templates_mtronic_8/theme/demo5/dist/apps/user-management/roles/list.html"
+      }
+    ]
+  }
+  

@@ -1,0 +1,12 @@
+{
+  "accountTypes": [
+    {
+      "name": "Personal Account",
+      "description": "If you need more info, please check it out."
+    },
+    {
+      "name": "Corporate Account",
+      "description": "Create corporate account for many users."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<!-- template.hbs -->
+
+<div class="table-responsive">
+    <table class="table-hover">
+        <thead>
+            <tr>
+                <th class="flex items-center">
+                    <input id="all" name="remember-me" type="checkbox" class="h-3 w-3 rounded border bg-white dark:bg-white/20 border-black/20 dark:border-white/20 text-black focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                    <label for="all" class="ml-4 block">Order ID</label>
+                </th>
+                <th>Email</th>
+                <th>Registration Date</th>
+                <th class="w-12"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each orders}}
+            <tr class="group text-xs border-b border-black/20">
+                <td class="whitespace-nowrap">
+                    <div class="flex items-center">
+                        <input id="order{{@index}}" name="remember-me" type="checkbox" class="h-3 w-3 rounded border bg-white dark:bg-white/20 border-black/20 dark:border-white/20 text-black focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                        <div class="flex items-center gap-2 ml-4">
+                            <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="{{avatar}}" alt="">
+                            <p class="flex-1">{{name}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="whitespace-nowrap">{{email}}</td>
+                <td class="whitespace-nowrap">
+                    <div class="flex items-center gap-1">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="{{clockIconPath}}" fill="currentColor" fill-opacity="0.4"></path>
+                        </svg>
+                        <p>{{registrationDate}}</p>
+                    </div>
+                </td>
+                <td>
+                    <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="{{moreIconPath}}" fill="currentcolor"></path>
+                        </svg>
+                    </button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

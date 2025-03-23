@@ -1,0 +1,12 @@
+<div class="flex flex-wrap items-center justify-center sm:justify-between gap-3">
+    <div class="text-sm text-black/60 dark:text-white/60 text-left">
+        Showing <span class="font-semibold text-black dark:text-white">1</span> to <span class="font-semibold text-black dark:text-white">10</span> of <span class="font-semibold text-black dark:text-white">{{results}}</span> results
+    </div>
+    <ul class="inline-flex -space-x-px list-inside my-2">
+        <li><a href="#" class="py-2 px-3 ml-0  text-black/60 bg-white rounded-l-lg border border-black/10 hover:bg-black hover:text-white  dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black">Previous</a></li>
+        {{#each (generateSequence 1 5)}}
+            <li><a href="#" class="py-2 px-3 text-black/50 bg-white border border-black/10 hover:bg-black hover:text-white {{#if (isEqual this 3)}}text-white bg-black{{/if}}  dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black">{{this}}</a></li>
+        {{/each}}
+        <li><a href="#" class="py-2 px-3  text-black/50 bg-white rounded-r-lg border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black">Next</a></li>
+    </ul>
+</div>

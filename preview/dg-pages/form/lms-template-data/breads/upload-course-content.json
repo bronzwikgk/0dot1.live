@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "label": "Dashboard",
+      "url": "/dashboard"
+    },
+    {
+      "label": "Courses",
+      "url": "/courses"
+    },
+    {
+      "label": "Upload Course Content",
+      "url": "/upload"
+    }
+  ],
+  "breadcrumb": "Upload Course Content"
+}

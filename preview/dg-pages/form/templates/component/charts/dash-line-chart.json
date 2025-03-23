@@ -1,0 +1,27 @@
+{
+    "tabs": [
+        {
+            "label": "Total Learners",
+            "active": true
+        },
+        {
+            "label": "Total Courses",
+            "active": false
+        },
+        {
+            "label": "Course Completion Rate",
+            "active": false
+        }
+    ],
+    "timeFilters": [
+        {
+            "period": "Current Week",
+            "color": "#1C1C1C"
+        },
+        {
+            "period": "Previous Week",
+            "color": "#A8C5DA"
+        }
+    ],
+    "dropdownItems": ["Weekly", "Monthly", "Yearly"]
+}

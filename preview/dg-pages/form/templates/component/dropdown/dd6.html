@@ -1,0 +1,38 @@
+<div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">Dropdown With icons</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3">
+        <div class="dropdown">
+            <button class="btn flex bg-indigo-300 dark:bg-indigo-300 items-center border border-indigo-300 hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white justify-center" onclick="toggleDropdown()" onkeydown="handleKeydown(event)">
+                Dropdown Menu
+                <svg class="w-4 h-4 ml-1" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z" fill="currentColor"></path>
+                </svg>
+            </button>
+            <ul id="dropdownMenu" class="right-0 whitespace-nowrap" style="display: none;">
+                <li><a href="javascript:;" class="flex items-center gap-1">
+                        <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.7071 8.70711L16.7071 20.7071C16.5196 20.8946 16.2652 21 16 21H12C11.4477 21 11 20.5523 11 20V16C11 15.7348 11.1054 15.4804 11.2929 15.2929L23.2929 3.29289C23.4804 3.10536 23.7348 3 24 3C24.2652 3 24.5196 3.10536 24.7071 3.29289L28.7071 7.29289C29.0976 7.68342 29.0976 8.31658 28.7071 8.70711ZM24 5.41421L26.5858 8L15.5858 19H13V16.4142L24 5.41421Z" fill="currentColor"></path>
+                        </svg>
+                        Edit
+                    </a></li>
+                <li><a href="javascript:;" class="flex items-center gap-1">
+                        <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 11C4 10.4477 4.44772 10 5 10H10V5C10 4.4477 10.4477 4 11 4H27C27.5523 4 28 4.4477 28 5V21C28 21.5523 27.5523 22 27 22H22V27C22 27.5523 21.5523 28 21 28H5C4.44772 28 4 27.5523 4 27V11ZM22 11C22 10.4477 21.5523 10 21 10H12V6H26V20H22V11ZM6 12V26H20V12H6Z" fill="currentColor"></path>
+                        </svg>
+                        Duplicate</a></li>
+                <hr class="my-1 border-black/10 dark:border-white/10">
+                <li><a href="javascript:;" class="flex items-center gap-1">
+                        <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27 6H5C4.44772 6 4 6.44772 4 7C4 7.55228 4.44772 8 5 8H27C27.5523 8 28 7.55228 28 7C28 6.44772 27.5523 6 27 6Z" fill="currentColor"></path>
+                            <path d="M12 13V21C12 21.5523 12.4477 22 13 22C13.5523 22 14 21.5523 14 21V13C14 12.4477 13.5523 12 13 12C12.4477 12 12 12.4477 12 13Z" fill="currentColor"></path>
+                            <path d="M18 13V21C18 21.5523 18.4477 22 19 22C19.5523 22 20 21.5523 20 21V13C20 12.4477 19.5523 12 19 12C18.4477 12 18 12.4477 18 13Z" fill="currentColor"></path>
+                            <path d="M8 26V7C8 6.44772 7.55228 6 7 6C6.44772 6 6 6.44772 6 7V26C6 26.8284 6.58579 27.4142 6.58579 27.4142C7.17157 28 8 28 8 28H24C24.8284 28 25.4142 27.4142 25.4142 27.4142C26 26.8284 26 26 26 26V7C26 6.44772 25.5523 6 25 6C24.4477 6 24 6.44772 24 7V26H8Z" fill="currentColor"></path>
+                            <path d="M10.8787 2.87868C10 3.75736 10 5 10 5V7C10 7.55228 10.4477 8 11 8C11.5523 8 12 7.55228 12 7V5C12 4.58579 12.2929 4.29289 12.2929 4.29289C12.5858 4 13 4 13 4H19C19.4142 4 19.7071 4.29289 19.7071 4.29289C20 4.58579 20 5 20 5V7C20 7.55228 20.4477 8 21 8C21.5523 8 22 7.55228 22 7V5C22 3.75736 21.1213 2.87868 21.1213 2.87868C20.2426 2 19 2 19 2H13C11.7574 2 10.8787 2.87868 10.8787 2.87868Z" fill="currentColor"></path>
+                        </svg>
+                        Delete</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

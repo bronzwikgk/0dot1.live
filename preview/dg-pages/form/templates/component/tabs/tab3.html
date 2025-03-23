@@ -1,0 +1,20 @@
+<div x-data="{activetabwithicon='profile'}">
+    <ul class="flex flex-wrap -mb-px text-sm text-center text-black/50 dark:text-white/50 border-b border-gray-200">
+        {{#each tabs}}
+        <li class="mr-2">
+            <a href="javaScript:;" @click="activetabwithicon = '{{name}}'" 
+                :class="activetabwithicon === '{{name}}' ? 'text-black dark:text-white border-b-2 border-black dark:border-white' : 'text-black/40 dark:text-white/40 border-b-2 border-transparent rounded-t-lg hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white'" 
+                class="inline-flex p-4 text-black dark:text-white border-b-2 border-black dark:border-white">
+                {{name}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="tab-content mt-3 text-[13px]">
+        {{#each tabs}}
+        <div x-show="activetabwithicon === '{{name}}'" class="">
+            <p>{{content}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>

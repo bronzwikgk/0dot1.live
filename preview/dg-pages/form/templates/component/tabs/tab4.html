@@ -1,0 +1,20 @@
+<div x-data="{activepillstabs: 'profile'}">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-black/50">
+        {{#each tabs}}
+            <li class="mr-2">
+                <a href="javaScript:;" @click="activepillstabs = '{{id}}'" :class="activepillstabs === '{{id}}' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'" class="inline-block rounded-lg px-4 py-3 text-white dark:text-black bg-black dark:bg-white">
+                    {{name}}
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+    <div class="tab-content mt-3 text-[13px]">
+        {{#each tabs}}
+            <div x-show="activepillstabs === '{{id}}'" class="">
+                <p>
+                    {{content}}
+                </p>
+            </div>
+        {{/each}}
+    </div>
+</div>

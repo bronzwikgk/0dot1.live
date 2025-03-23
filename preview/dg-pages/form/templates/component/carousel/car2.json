@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "imgSrc": "../images/carousel1.jpeg",
+      "active": true,
+      "next": false,
+      "total": 3
+    },
+    {
+      "imgSrc": "../images/carousel2.jpeg",
+      "active": false,
+      "next": true,
+      "total": 3
+    },
+    {
+      "imgSrc": "../images/carousel3.jpeg",
+      "active": false,
+      "next": false,
+      "total": 3
+    }
+  ]
+}

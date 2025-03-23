@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center justify-center gap-3">
+    <ul class="inline-flex items-center space-x-1 m-auto mb-4">
+        {{#each buttons}}
+            <li>
+                <button type="button" class="flex justify-center px-3.5 py-2{{#if isRounded}}.5 rounded{{/if}}{{#if isTransition}} transition{{/if}} text-{{textColor}} {{bgColor}} dark:{{darkTextColor}} dark:{{darkBgColor}}">
+                    {{#if svgIcon}}
+                        <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="{{svgPath}}" fill="currentColor"></path>
+                        </svg>
+                    {{/if}}
+                    {{label}}
+                </button>
+            </li>
+        {{/each}}
+    </ul>
+</div>

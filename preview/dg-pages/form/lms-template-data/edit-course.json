@@ -1,0 +1,140 @@
+{
+    "formId": "edit-course-form",
+    "inputs": [
+      {
+        "id": "courseId",
+        "label": "Course ID",
+        "name": "courseId",
+        "type": "text",
+        "placeholder": "Enter Course ID",
+        "required": true,
+        "disabled": true
+      },
+      {
+        "id": "courseTitle",
+        "label": "Course Title",
+        "name": "courseTitle",
+        "type": "text",
+        "placeholder": "Enter the course title",
+        "required": true
+      },
+      {
+        "id": "courseDescription",
+        "label": "Course Description",
+        "name": "courseDescription",
+        "type": "textarea",
+        "placeholder": "Update the course description",
+        "required": true
+      },
+      {
+        "id": "courseCategory",
+        "label": "Category",
+        "name": "courseCategory",
+        "isSelect": true,
+        "options": ["Programming", "Design", "Marketing", "Business", "Data Science", "Health & Fitness", "Finance", "Language Learning", "Other"],
+        "required": true
+      },
+      {
+        "id": "courseLevel",
+        "label": "Difficulty Level",
+        "name": "courseLevel",
+        "isSelect": true,
+        "options": ["Beginner", "Intermediate", "Advanced"],
+        "required": true
+      },
+      {
+        "id": "courseLanguage",
+        "label": "Course Language",
+        "name": "courseLanguage",
+        "isSelect": true,
+        "options": ["English", "Hindi", "Spanish", "French", "German", "Chinese", "Other"],
+        "required": true
+      },
+      {
+        "id": "courseDuration",
+        "label": "Duration (in hours)",
+        "name": "courseDuration",
+        "type": "number",
+        "placeholder": "Update estimated course duration",
+        "required": true
+      },
+      {
+        "id": "coursePrice",
+        "label": "Course Price (INR)",
+        "name": "coursePrice",
+        "type": "number",
+        "placeholder": "Update course price",
+        "required": true
+      },
+      {
+        "id": "courseThumbnail",
+        "label": "Update Course Thumbnail",
+        "name": "courseThumbnail",
+        "type": "file",
+        "isImage": true
+      },
+      {
+        "id": "courseInstructor",
+        "label": "Instructor Name",
+        "name": "courseInstructor",
+        "type": "text",
+        "placeholder": "Update instructor's full name",
+        "required": true
+      },
+      {
+        "id": "instructorBio",
+        "label": "Instructor Bio",
+        "name": "instructorBio",
+        "type": "textarea",
+        "placeholder": "Update instructor bio",
+        "required": false
+      },
+      {
+        "id": "startDate",
+        "label": "Start Date",
+        "name": "startDate",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "endDate",
+        "label": "End Date",
+        "name": "endDate",
+        "type": "date",
+        "required": false
+      },
+      {
+        "id": "enrollmentStatus",
+        "label": "Enrollment Status",
+        "name": "enrollmentStatus",
+        "isSelect": true,
+        "options": ["Open", "Closed", "Upcoming"],
+        "required": true
+      },
+      {
+        "id": "courseMaterials",
+        "label": "Upload Additional Course Materials",
+        "name": "courseMaterials",
+        "type": "file",
+        "isFile": true,
+        "required": false
+      },
+      {
+        "id": "prerequisites",
+        "label": "Course Prerequisites",
+        "name": "prerequisites",
+        "type": "textarea",
+        "placeholder": "Update the prerequisites for this course",
+        "required": false
+      },
+      {
+        "id": "certification",
+        "label": "Certification Available",
+        "name": "certification",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      }
+    ]
+  }
+  

@@ -1,0 +1,12 @@
+<!-- Start Content -->
+<div class="min-h-[calc(100vh-134px)] py-4 px-4 sm:px-12 flex justify-center items-center">
+    <div class="text-center sm:flex-none">
+        <h2 class="text-5xl font-semibold mb-10">{{pageTitle}}</h2>
+        {{#if showMaintenanceImage}}
+            <img src="../images/maintanence{{darkModeSuffix}}.svg" class="mb-10 mx-auto {{darkModeClass}}" alt="images">
+        {{/if}}
+        <p class="text-black/40 dark:text-white/40">{{supportText}}</p>
+        <a href="{{supportEmail}}" class="text-lightpurple-300">{{supportEmail}}</a>
+    </div>
+</div>
+<!-- End Content -->

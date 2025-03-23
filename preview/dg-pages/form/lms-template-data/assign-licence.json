@@ -1,0 +1,84 @@
+{
+    "formId": "assign-license-form",
+    "inputs": [
+      {
+        "id": "licenseId",
+        "label": "License ID",
+        "name": "licenseId",
+        "type": "text",
+        "placeholder": "Enter License ID",
+        "required": true
+      },
+      {
+        "id": "userId",
+        "label": "User ID",
+        "name": "userId",
+        "type": "text",
+        "placeholder": "Enter User ID",
+        "required": true
+      },
+      {
+        "id": "userEmail",
+        "label": "User Email",
+        "name": "userEmail",
+        "type": "email",
+        "placeholder": "Enter User's Email Address",
+        "required": true
+      },
+      {
+        "id": "courseId",
+        "label": "Course ID",
+        "name": "courseId",
+        "type": "text",
+        "placeholder": "Enter Course ID",
+        "required": true
+      },
+      {
+        "id": "courseTitle",
+        "label": "Course Title",
+        "name": "courseTitle",
+        "type": "text",
+        "placeholder": "Enter Course Title",
+        "required": true
+      },
+      {
+        "id": "licenseType",
+        "label": "License Type",
+        "name": "licenseType",
+        "isSelect": true,
+        "options": ["Single User", "Multi-User", "Enterprise"],
+        "required": true
+      },
+      {
+        "id": "validFrom",
+        "label": "Valid From",
+        "name": "validFrom",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "validUntil",
+        "label": "Valid Until",
+        "name": "validUntil",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "licenseStatus",
+        "label": "License Status",
+        "name": "licenseStatus",
+        "isSelect": true,
+        "options": ["Active", "Expired", "Revoked"],
+        "required": true
+      },
+      {
+        "id": "notes",
+        "label": "Notes",
+        "name": "notes",
+        "type": "textarea",
+        "placeholder": "Add any additional notes (optional)",
+        "required": false
+      }
+    ]
+  }
+  

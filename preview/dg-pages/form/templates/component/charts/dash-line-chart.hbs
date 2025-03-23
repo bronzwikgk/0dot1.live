@@ -1,0 +1,52 @@
+ <div class="md:col-span-3 bg-lightwhite dark:bg-white/5 p-6 rounded-2xl">
+        <div class="flex justify-between gap-3 items-start md:items-center mb-4">
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <ul id="tabs" class="inline-flex gap-1 text-sm font-normal">
+                    {{#each tabs}}
+                    <li class="px-1.5 py-1 {{#if this.active}}text-black dark:text-white font-semibold{{else}}text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white{{/if}}">
+                        <a href="javascript:;">{{this.label}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+                <p class="hidden md:block">|</p>
+                <div class="flex gap-4 items-center flex-none">
+                    {{#each timeFilters}}
+                    <div class="flex items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="{{this.color}}"></path>
+                        </svg>
+                        <p class="text-xs">{{this.period}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div x-data="{ dropdown: false}" class="dropdown ml-auto">
+                                        <a href="javascript:;" class="text-black dark:text-white"
+                                            @click="dropdown = !dropdown" @keydown.escape="dropdown = false">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 12.75C9.69036 12.75 10.25 13.3096 10.25 14C10.25 14.6904 9.69036 15.25 9 15.25C8.30964 15.25 7.75 14.6904 7.75 14C7.75 13.3096 8.30964 12.75 9 12.75Z"
+                                                    fill="currentColor"></path>
+                                                <path
+                                                    d="M14 12.75C14.6904 12.75 15.25 13.3096 15.25 14C15.25 14.6904 14.6904 15.25 14 15.25C13.3096 15.25 12.75 14.6904 12.75 14C12.75 13.3096 13.3096 12.75 14 12.75Z"
+                                                    fill="currentColor"></path>
+                                                <path
+                                                    d="M20.25 14C20.25 13.3096 19.6904 12.75 19 12.75C18.3096 12.75 17.75 13.3096 17.75 14C17.75 14.6904 18.3096 15.25 19 15.25C19.6904 15.25 20.25 14.6904 20.25 14Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </a>
+                                        <ul x-show="dropdown" @click.away="dropdown = false" x-transition=""
+                                            x-transition.duration.300ms="" class="right-0 whitespace-nowrap"
+                                            style="display: none;">
+                                            <li><a href="javascript:;">Weekly</a></li>
+                                            <li><a href="javascript:;">Monthly</a></li>
+                                            <li><a href="javascript:;">Yearly</a></li>
+                                        </ul>
+                                    </div>
+        </div>
+        <div x-ref="userchart" class="text-black dark:text-white">
+            <!-- Dynamic graph content will be loaded here -->
+        </div>
+    </div>

@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Vertical",
+  "uniqueId": "3410168d43b191108d",
+  "slides": [
+    {
+      "imagePath": "../images/carousel1.jpeg",
+      "active": true,
+      "next": false,
+      "slideNumber": 1,
+      "totalSlides": 5
+    },
+    {
+      "imagePath": "../images/carousel2.jpeg",
+      "active": false,
+      "next": true,
+      "slideNumber": 2,
+      "totalSlides": 5
+    },
+    {
+      "imagePath": "../images/carousel3.jpeg",
+      "active": false,
+      "next": false,
+      "slideNumber": 3,
+      "totalSlides": 5
+    },
+    {
+      "imagePath": "../images/carousel1.jpeg",
+      "active": false,
+      "next": false,
+      "slideNumber": 4,
+      "totalSlides": 5
+    },
+    {
+      "imagePath": "../images/carousel2.jpeg",
+      "active": false,
+      "next": false,
+      "slideNumber": 5,
+      "totalSlides": 5
+    }
+  ]
+}

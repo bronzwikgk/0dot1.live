@@ -1,0 +1,28 @@
+<div class="bg-lightwhite dark:bg-white/5 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{chartTitle}}</p>
+    </div>
+    <div id="basicdonut" style="min-height: 267.7px;">
+        <div id="apexchartsnjc4lkdt" class="apexcharts-canvas apexchartsnjc4lkdt apexcharts-theme-light" style="width: 704px; height: 267.7px;">
+            <svg id="SvgjsSvg1428" width="704" height="267.70000000000005" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                {{#each chartData}}
+                <g id="SvgjsG{{@index}}" class="apexcharts-series apexcharts-pie-series" seriesName="{{name}}" rel="{{@index}}" data:realIndex="{{@index}}">
+                    <path id="SvgjsPath{{@index}}" d="{{path}}" fill="{{color}}" fill-opacity="1" stroke-opacity="1" stroke-linecap="butt" stroke-width="0" stroke-dasharray="0" class="apexcharts-pie-area apexcharts-donut-slice-{{@index}}" index="{{@index}}" j="{{@index}}" data:angle="{{angle}}" data:startAngle="{{startAngle}}" data:strokeWidth="0" data:value="{{value}}" data:pathOrig="{{path}}">
+                    </path>
+                </g>
+                <g id="SvgjsG{{@index}}" class="apexcharts-datalabels">
+                    <text id="SvgjsText{{@index}}" font-family="Helvetica, Arial, sans-serif" x="{{labelX}}" y="{{labelY}}" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="600" fill="#ffffff" class="apexcharts-text apexcharts-pie-label" filter="url(#SvgjsFilter{{@index}})" style="font-family: Helvetica, Arial, sans-serif;">{{value}}%</text>
+                </g>
+                {{/each}}
+            </svg>
+            <div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom" style="inset: auto 0px 1px; position: absolute; max-height: 150px;">
+                {{#each chartData}}
+                <div class="apexcharts-legend-series" rel="{{@index}}" seriesname="{{name}}" data:collapsed="false" style="margin: 2px 5px;">
+                    <span class="apexcharts-legend-marker" rel="{{@index}}" data:collapsed="false" style="background: {{color}} !important; color: {{color}}; height: 12px; width: 12px; left: 0px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span>
+                    <span class="apexcharts-legend-text" rel="{{@index}}" i="{{@index}}" data:default-text="{{name}}" data:collapsed="false" style="color: rgb(55, 61, 63); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">{{name}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

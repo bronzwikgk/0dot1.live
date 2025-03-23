@@ -1,0 +1,125 @@
+{
+    "formId": "edit-quiz-form",
+    "inputs": [
+      {
+        "id": "quizId",
+        "label": "Quiz ID",
+        "name": "quizId",
+        "type": "text",
+        "placeholder": "Enter Quiz ID",
+        "required": true,
+        "disabled": true
+      },
+      {
+        "id": "quizTitle",
+        "label": "Quiz Title",
+        "name": "quizTitle",
+        "type": "text",
+        "placeholder": "Enter quiz title",
+        "required": true
+      },
+      {
+        "id": "quizDescription",
+        "label": "Quiz Description",
+        "name": "quizDescription",
+        "type": "textarea",
+        "placeholder": "Update the quiz description",
+        "required": false
+      },
+      {
+        "id": "courseId",
+        "label": "Associated Course ID",
+        "name": "courseId",
+        "type": "text",
+        "placeholder": "Enter the Course ID",
+        "required": true
+      },
+      {
+        "id": "courseTitle",
+        "label": "Associated Course Title",
+        "name": "courseTitle",
+        "type": "text",
+        "placeholder": "Enter the Course Title",
+        "required": true
+      },
+      {
+        "id": "quizType",
+        "label": "Quiz Type",
+        "name": "quizType",
+        "isSelect": true,
+        "options": ["Multiple Choice", "True/False", "Short Answer", "Mixed"],
+        "required": true
+      },
+      {
+        "id": "totalQuestions",
+        "label": "Total Questions",
+        "name": "totalQuestions",
+        "type": "number",
+        "placeholder": "Enter updated number of questions",
+        "required": true
+      },
+      {
+        "id": "quizDuration",
+        "label": "Time Limit (Minutes)",
+        "name": "quizDuration",
+        "type": "number",
+        "placeholder": "Enter updated time limit in minutes",
+        "required": true
+      },
+      {
+        "id": "quizPassingScore",
+        "label": "Passing Score (%)",
+        "name": "quizPassingScore",
+        "type": "number",
+        "placeholder": "Enter updated passing percentage",
+        "required": true
+      },
+      {
+        "id": "quizAttempts",
+        "label": "Allowed Attempts",
+        "name": "quizAttempts",
+        "type": "number",
+        "placeholder": "Enter updated number of allowed attempts",
+        "required": true
+      },
+      {
+        "id": "quizStartDate",
+        "label": "Quiz Start Date",
+        "name": "quizStartDate",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "quizEndDate",
+        "label": "Quiz End Date",
+        "name": "quizEndDate",
+        "type": "date",
+        "required": false
+      },
+      {
+        "id": "quizRandomOrder",
+        "label": "Randomize Question Order",
+        "name": "quizRandomOrder",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "quizFeedback",
+        "label": "Show Feedback After Submission",
+        "name": "quizFeedback",
+        "isSelect": true,
+        "options": ["Immediately", "After Quiz Ends", "Do Not Show"],
+        "required": true
+      },
+      {
+        "id": "quizStatus",
+        "label": "Quiz Status",
+        "name": "quizStatus",
+        "isSelect": true,
+        "options": ["Active", "Draft", "Archived"],
+        "required": true
+      }
+    ]
+  }
+  

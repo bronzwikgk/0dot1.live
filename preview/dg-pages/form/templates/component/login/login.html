@@ -1,0 +1,38 @@
+<!-- Start Content -->
+<div class="min-h-[calc(100vh-134px)] py-4 px-4 sm:px-12 flex justify-center items-center">
+    <div class="max-w-[680px] flex-none w-full {{styles.bgColor}} p-4 sm:p-10 lg:px-[146px] lg:py-[107px] rounded-2xl loginform">
+        <h1 class="text-2xl font-semibold mb-2 text-center">Sign In</h1>
+        <p class="text-center {{styles.textColor}} mb-7">Your Social Campaigns</p>
+        <div class="flex flex-wrap items-center gap-4 mb-7">
+            {{#each socialButtons}}
+            <a href="javaScript:;" class="flex flex-1 items-center gap-1 py-1 pl-2 pr-3 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white rounded-lg transition-all duration-300">
+                <div class="w-8 h-8 flex-none bg-white rounded-full p-2">
+                    <img src="{{icon}}">
+                </div>
+                <p class="whitespace-nowrap">{{text}}</p>
+            </a>
+            {{/each}}
+        </div>
+        <div class="flex items-center mb-7">
+            <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+            <div class="{{styles.textColor}} px-5 whitespace-nowrap">{{emailButtonText}}</div>
+            <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+        </div>
+        <form class="mb-4">
+            <div class="mb-4">
+                <input type="text" value="" placeholder="Email" class="{{styles.formClasses}}">
+            </div>
+            <div class="mb-2">
+                <input type="password" value="" placeholder="Password" class="{{styles.formClasses}}">
+            </div>
+            <div class="mb-7 text-right">
+                <a class="{{styles.lightpurpleColor}}" href="{{forgotPasswordLink}}">{{forgotPasswordText}}</a>
+            </div>
+            <button type="button" class="{{styles.buttonClasses}}">
+                {{signInButtonText}}
+            </button>
+        </form>
+        <p class="text-center {{styles.textColor}}">{{notMemberText}} <a class="{{styles.lightpurpleColor}}" href="{{signUpLink}}">Sign Up</a></p>
+    </div>
+</div>
+<!-- End Content -->

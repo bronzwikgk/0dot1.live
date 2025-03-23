@@ -1,0 +1,32 @@
+{
+    "cards": [
+        {
+            "title": "Total Enrollments",
+            "value": "15,230",
+            "percentageChange": "+8.45%",
+            "isPositive": true,
+            "color": "lightblue-100"
+        },
+        {
+            "title": "Courses Completed",
+            "value": "9,876",
+            "percentageChange": "+12.30%",
+            "isPositive": true,
+            "color": "lightpurple-100"
+        },
+        {
+            "title": "New Registrations",
+            "value": "2,134",
+            "percentageChange": "+5.20%",
+            "isPositive": true,
+            "color": "lightblue-100"
+        },
+        {
+            "title": "Active Learners",
+            "value": "8,945",
+            "percentageChange": "-2.10%",
+            "isPositive": false,
+            "color": "lightpurple-100"
+        }
+    ]
+}

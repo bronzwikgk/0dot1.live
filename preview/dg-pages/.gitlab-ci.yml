@@ -1,0 +1,13 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    - mkdir build
+    - find . -maxdepth 1 -mindepth 1 ! -name public ! -name build ! -name . -exec cp -r {} build/ \;
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - dg-app-pages  # Change to 'master' if your default branch is named master

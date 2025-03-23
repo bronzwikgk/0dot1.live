@@ -1,0 +1,9 @@
+{
+  "menuItems": [
+    {
+      "url": "/add-quiz",
+      "label": "Add Quiz"
+    }
+  ],
+  "breadcrumb": "Add Quiz"
+}

@@ -1,0 +1,8 @@
+{
+  "pageTitle": "500 Not Found",
+  "errorMessage": "Sorry, we can’t find that page.",
+  "imageLight": "../images/image404.svg",
+  "imageDark": "../images/image404-dark.svg",
+  "buttonText": "Back to Home Page",
+  "buttonLink": "/"
+}

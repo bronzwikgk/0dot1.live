@@ -1,0 +1,109 @@
+{
+    "formId": "add-user-form",
+    "inputs": [
+      {
+        "id": "fullName",
+        "label": "Full Name",
+        "name": "fullName",
+        "type": "text",
+        "placeholder": "Enter full name",
+        "required": true
+      },
+      {
+        "id": "email",
+        "label": "Email Address",
+        "name": "email",
+        "type": "email",
+        "placeholder": "Enter email address",
+        "required": true
+      },
+      {
+        "id": "phone",
+        "label": "Phone Number",
+        "name": "phone",
+        "type": "tel",
+        "placeholder": "Enter phone number",
+        "required": true
+      },
+      {
+        "id": "password",
+        "label": "Password",
+        "name": "password",
+        "type": "password",
+        "placeholder": "Enter password",
+        "required": true
+      },
+      {
+        "id": "confirmPassword",
+        "label": "Confirm Password",
+        "name": "confirmPassword",
+        "type": "password",
+        "placeholder": "Re-enter password",
+        "required": true
+      },
+      {
+        "id": "userRole",
+        "label": "User Role",
+        "name": "userRole",
+        "isSelect": true,
+        "options": ["Student", "Instructor", "Admin"],
+        "required": true
+      },
+      {
+        "id": "gender",
+        "label": "Gender",
+        "name": "gender",
+        "isSelect": true,
+        "options": ["Male", "Female", "Other"],
+        "required": false
+      },
+      {
+        "id": "dob",
+        "label": "Date of Birth",
+        "name": "dob",
+        "type": "date",
+        "required": false
+      },
+      {
+        "id": "country",
+        "label": "Country",
+        "name": "country",
+        "isSelect": true,
+        "options": ["USA", "UK", "Canada", "India", "Australia", "Germany", "Other"],
+        "required": true
+      },
+      {
+        "id": "timezone",
+        "label": "Time Zone",
+        "name": "timezone",
+        "isSelect": true,
+        "options": ["UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5", "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC+0", "UTC+1", "UTC+2", "UTC+3", "UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"],
+        "required": true
+      },
+      {
+        "id": "profilePic",
+        "label": "Profile Picture",
+        "name": "profilePic",
+        "type": "file",
+        "isImage": true,
+        "required": false
+      },
+      {
+        "id": "bio",
+        "label": "Bio",
+        "name": "bio",
+        "type": "textarea",
+        "placeholder": "Write a short bio about the user",
+        "required": false
+      },
+      {
+        "id": "enrollmentStatus",
+        "label": "Enrollment Status",
+        "name": "enrollmentStatus",
+        "isSelect": true,
+        "options": ["Active", "Pending", "Suspended"],
+        "required": true
+      }
+    ]
+  }
+  

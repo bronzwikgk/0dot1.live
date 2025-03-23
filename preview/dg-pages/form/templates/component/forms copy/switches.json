@@ -1,0 +1,35 @@
+{
+  "switches": [
+    {
+      "id": "toggleD1",
+      "label": "Solid"
+    },
+    {
+      "id": "toggleD2",
+      "label": "Solid Rounded"
+    },
+    {
+      "id": "toggleD3",
+      "label": "Outline"
+    },
+    {
+      "id": "toggleD4",
+      "label": "Outline Rounded"
+    }
+  ],
+  "footerText": "© 2025 shunya.ek",
+  "footerLinks": [
+    {
+      "text": "About",
+      "url": "#"
+    },
+    {
+      "text": "Support",
+      "url": "#"
+    },
+    {
+      "text": "Contact Us",
+      "url": "#"
+    }
+  ]
+}

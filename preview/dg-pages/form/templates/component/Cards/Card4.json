@@ -1,0 +1,43 @@
+{
+  "projects": [
+    {
+      "title": "Poster illustation design",
+      "dueDate": "Nov 10, 2022",
+      "progress": {
+        "status": "In Progress",
+        "percentage": 75
+      },
+      "tasks": {
+        "completed": 13,
+        "total": 49
+      },
+      "avatarSrc": "../images/avatar-16.png"
+    },
+    {
+      "title": "Coffee detail page - Main Page",
+      "dueDate": "Jun 20, 2022",
+      "progress": {
+        "status": "Completed",
+        "percentage": 100
+      },
+      "tasks": {
+        "completed": 56,
+        "total": 56
+      },
+      "avatarSrc": "../images/avatar-20.png"
+    },
+    {
+      "title": "Drinking bottle graphics",
+      "dueDate": "Nov 10, 2022",
+      "progress": {
+        "status": "Rejected",
+        "percentage": 45
+      },
+      "tasks": {
+        "completed": 16,
+        "total": 65
+      },
+      "avatarSrc": "../images/avatar-9.png"
+    }
+  ]
+}

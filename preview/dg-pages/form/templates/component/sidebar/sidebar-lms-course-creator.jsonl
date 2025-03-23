@@ -1,0 +1,96 @@
+{
+    "logo": {
+        "link": "/creator",
+        "light": "./images/creator-logo.svg",
+        "dark": "../images/creator-dark-logo.svg"
+    },
+    "menuItems": [
+        {
+            "id": "dashboard",
+            "title": "Dashboard",
+            "submenus": [
+                { "title": "Creator Overview", "link": "/creator/dashboard" },
+                { "title": "Course Performance", "link": "/creator/analytics" },
+                { "title": "Student Engagement", "link": "/creator/engagement" }
+            ]
+        },
+        { "header": true, "title": "Course Management" },
+        {
+            "id": "my_courses",
+            "title": "My Courses",
+            "submenus": [
+                { "title": "All Courses", "link": "/creator/courses" },
+                { "title": "Create New Course", "link": "/creator/courses/create" },
+                { "title": "Drafts", "link": "/creator/courses/drafts" },
+                { "title": "Published Courses", "link": "/creator/courses/published" },
+                { "title": "Course Reviews", "link": "/creator/courses/reviews" }
+            ]
+        },
+        {
+            "id": "content_library",
+            "title": "Content Library",
+            "submenus": [
+                { "title": "My Uploads", "link": "/creator/library" },
+                { "title": "Add New Content", "link": "/creator/library/upload" },
+                { "title": "Shared Resources", "link": "/creator/library/shared" }
+            ]
+        },
+        { "header": true, "title": "Assessments & Quizzes" },
+        {
+            "id": "assessments",
+            "title": "Assessments",
+            "submenus": [
+                { "title": "All Assessments", "link": "/creator/assessments" },
+                { "title": "Create New Assessment", "link": "/creator/assessments/create" },
+                { "title": "Quiz Bank", "link": "/creator/assessments/quiz-bank" }
+            ]
+        },
+        { "header": true, "title": "Student Management" },
+        {
+            "id": "students",
+            "title": "Students",
+            "submenus": [
+                { "title": "Enrolled Students", "link": "/creator/students" },
+                { "title": "Progress Tracking", "link": "/creator/students/progress" },
+                { "title": "Student Feedback", "link": "/creator/students/feedback" }
+            ]
+        },
+        { "header": true, "title": "Certifications & Achievements" },
+        {
+            "id": "certificates",
+            "title": "Certificates",
+            "submenus": [
+                { "title": "Issued Certificates", "link": "/creator/certificates" },
+                { "title": "Create Certificate", "link": "/creator/certificates/create" }
+            ]
+        },
+        { "header": true, "title": "Community & Support" },
+        {
+            "id": "forums",
+            "title": "Community",
+            "submenus": [
+                { "title": "Discussion Forums", "link": "/creator/community/forums" },
+                { "title": "Q&A Sessions", "link": "/creator/community/qa" }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "Support",
+            "submenus": [
+                { "title": "Help Center", "link": "/creator/support" },
+                { "title": "Contact Admin", "link": "/creator/support/contact" },
+                { "title": "FAQs", "link": "/creator/support/faqs" }
+            ]
+        },
+        { "header": true, "title": "Settings" },
+        {
+            "id": "settings",
+            "title": "Profile & Settings",
+            "submenus": [
+                { "title": "Profile", "link": "/creator/settings/profile" },
+                { "title": "Course Preferences", "link": "/creator/settings/preferences" },
+                { "title": "Notification Settings", "link": "/creator/settings/notifications" }
+            ]
+        }
+    ]
+}

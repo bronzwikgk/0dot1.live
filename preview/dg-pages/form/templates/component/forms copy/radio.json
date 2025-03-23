@@ -1,0 +1,144 @@
+{
+  "radios": [
+    {
+      "type": "Default",
+      "groupName": "default_radio",
+      "options": [
+        {
+          "label": "Primary",
+          "colorClass": "text-indigo-300",
+          "checked": true
+        },
+        {
+          "label": "Success",
+          "colorClass": "text-lightgreen-200"
+        },
+        {
+          "label": "Secondary",
+          "colorClass": "text-lightpurple-200"
+        },
+        {
+          "label": "Danger",
+          "colorClass": "text-lightred"
+        },
+        {
+          "label": "Warning",
+          "colorClass": "text-lightyellow"
+        },
+        {
+          "label": "Info",
+          "colorClass": "text-lightblue-200"
+        },
+        {
+          "label": "Dark",
+          "colorClass": "text-black"
+        }
+      ]
+    },
+    {
+      "type": "Square",
+      "groupName": "default_radio",
+      "options": [
+        {
+          "label": "Primary",
+          "colorClass": "text-indigo-300 rounded-none",
+          "checked": true
+        },
+        {
+          "label": "Success",
+          "colorClass": "text-lightgreen-200 rounded-none"
+        },
+        {
+          "label": "Secondary",
+          "colorClass": "text-lightpurple-200 rounded-none"
+        },
+        {
+          "label": "Danger",
+          "colorClass": "text-lightred rounded-none"
+        },
+        {
+          "label": "Warning",
+          "colorClass": "text-lightyellow rounded-none"
+        },
+        {
+          "label": "Info",
+          "colorClass": "text-lightblue-200 rounded-none"
+        },
+        {
+          "label": "Dark",
+          "colorClass": "text-black rounded-none"
+        }
+      ]
+    },
+    {
+      "type": "Outline",
+      "groupName": "default_radio",
+      "options": [
+        {
+          "label": "Primary",
+          "colorClass": "outline-primary",
+          "checked": true
+        },
+        {
+          "label": "Success",
+          "colorClass": "outline-success"
+        },
+        {
+          "label": "Secondary",
+          "colorClass": "outline-secondary"
+        },
+        {
+          "label": "Danger",
+          "colorClass": "outline-danger"
+        },
+        {
+          "label": "Warning",
+          "colorClass": "outline-warning"
+        },
+        {
+          "label": "Info",
+          "colorClass": "outline-info"
+        },
+        {
+          "label": "Dark",
+          "colorClass": "outline-dark"
+        }
+      ]
+    },
+    {
+      "type": "Text Color",
+      "groupName": "default_text_color",
+      "options": [
+        {
+          "label": "Primary",
+          "colorClass": "peer text-indigo-300",
+          "checked": true
+        },
+        {
+          "label": "Success",
+          "colorClass": "text-lightgreen-200 peer"
+        },
+        {
+          "label": "Secondary",
+          "colorClass": "text-lightpurple-300 peer"
+        },
+        {
+          "label": "Danger",
+          "colorClass": "text-lightred peer"
+        },
+        {
+          "label": "Warning",
+          "colorClass": "text-lightyellow peer"
+        },
+        {
+          "label": "Info",
+          "colorClass": "text-lightblue-200 peer"
+        },
+        {
+          "label": "Dark",
+          "colorClass": "text-black peer"
+        }
+      ]
+    }
+  ]
+}

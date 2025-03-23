@@ -1,0 +1,13 @@
+{
+  "menuItems": [
+    {
+      "label": "Home",
+      "url": "#"
+    },
+    {
+      "label": "Elements",
+      "url": "#"
+    }
+  ],
+  "breadcrumb": "Breadcrumb"
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Split Button Dropdowns",
+  "buttons": [
+    {
+      "text": "Button",
+      "icon": "M6.70711 11.2929C6.51957 11.1054 ...",
+      "actions": [
+        "Action",
+        "Another action",
+        "Something else here"
+      ]
+    },
+    {
+      "text": "Primary",
+      "icon": "M6.70711 11.2929C6.51957 11.1054 ...",
+      "actions": [
+        "Action",
+        "Another action",
+        "Something else here"
+      ]
+    },
+    {
+      "text": "Success",
+      "icon": "M6.70711 11.2929C6.51957 11.1054 ...",
+      "actions": [
+        "Action",
+        "Another action",
+        "Something else here"
+      ]
+    }
+  ]
+}

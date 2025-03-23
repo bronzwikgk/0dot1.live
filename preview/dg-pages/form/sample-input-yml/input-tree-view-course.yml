@@ -1,0 +1,21 @@
+type: "folder"
+name: "detail-view-pages"
+children:
+  - type: "page"
+    name: "view-course"
+    pageTemplate: "./form/templates/page/dashboard-layout.hbs"
+    components:
+      - name: "sidebar"
+        template: "./form/templates/component/sidebar/sidebar.hbs"
+        data: "./form/templates/component/sidebar/sidebar-lms-admin.json"
+      - name: "view-course"
+        template: "./form/templates/component/course-detail/course-detail.hbs"
+        data: "./form/templates/component/course-detail/course-detail.json"
+      - name: "accordion"
+        template: "./form/templates/component/accordions/v5.hbs"
+        data: "./form/templates/component/accordions/v5.json"
+    output:
+      format: "html"
+      outputPath: "./lms-pages/detail-view-pages/view-course.html"
+
+ 

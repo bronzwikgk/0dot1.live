@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <table class="table-hover text-xs">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td class="whitespace-nowrap">{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{quantity}}</td>
+                <td class="whitespace-nowrap">
+                    {{#if (eq status "In Progress")}}
+                        <p class="px-1.5 text-[#8A8CD9] bg-[#EDEDFF] text-xs rounded-[18px] inline-block">{{status}}</p>
+                    {{/if}}
+                    {{#if (eq status "Competed")}}
+                        <p class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px] inline-block">{{status}}</p>
+                    {{/if}}
+                    {{#if (eq status "Pending")}}
+                        <p class="px-1.5 text-[#59A8D4] bg-[#E2F5FF] text-xs rounded-[18px] inline-block">{{status}}</p>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

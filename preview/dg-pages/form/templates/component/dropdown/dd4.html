@@ -1,0 +1,23 @@
+<div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">Icon with Dropdowns</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3">
+        {{#each dropdownButtons}}
+            <div x-data="{ dropdown: false}" class="dropdown">
+                <button class="btn px-2 bg-transparent items-center border border-black/20 dark:border-white/20 justify-center" @click="dropdown = !dropdown" @keydown.escape="dropdown = false">
+                    <svg class="w-4 h-4" width="{{this.iconWidth}}" height="{{this.iconHeight}}" viewBox="0 0 {{this.iconWidth}} {{this.iconHeight}}" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {{#each this.paths}}
+                            <path d="{{this}}" fill="currentColor"></path>
+                        {{/each}}
+                    </svg>
+                </button>
+                <ul x-show="dropdown" @click.away="dropdown = false" x-transition="" x-transition.duration.300ms="" class="right-0 whitespace-nowrap" style="display: none;">
+                    {{#each this.dropdownItems}}
+                        <li><a href="javascript:;">{{this}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}
+    </div>
+</div>

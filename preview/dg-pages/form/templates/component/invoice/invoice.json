@@ -1,0 +1,67 @@
+{
+  "invoiceDetails": {
+    "companyLogo": "../images/snow-logo.svg",
+    "companyName": "Snow UI",
+    "invoiceType": "Invoice",
+    "invoiceID": "#VL25000355",
+    "invoiceDate": "Feb 2, 2023, 8:00 AM",
+    "invoiceTo": "Natali Craig",
+    "paymentMethod": {
+      "logo": "../images/paypal.svg",
+      "email": "stevens@snowui.com"
+    },
+    "totalDue": "$432.35",
+    "subtotal": "$375.96",
+    "tax": "$56.39",
+    "address": "One Apple Park Way Cupertino, CA 95014",
+    "contactDetails": {
+      "phone": "(408) 996–1010",
+      "email": "byewind@gmail.com",
+      "website": "snow.byewind.com"
+    }
+  },
+  "products": [
+    {
+      "name": "ASOS Ridley High Waist",
+      "SKU": "Black/28",
+      "price": "$79.49",
+      "quantity": 1,
+      "amount": "$79.49"
+    },
+    {
+      "name": "Marco Lightweight Shirt",
+      "SKU": "White/32",
+      "price": "$128.50",
+      "quantity": 1,
+      "amount": "$128.50"
+    },
+    {
+      "name": "Half Sleeve Shirt",
+      "SKU": "White/29",
+      "price": "$39.9",
+      "quantity": 1,
+      "amount": "$39.9"
+    },
+    {
+      "name": "Lightweight Jacket",
+      "SKU": "Black/30",
+      "price": "$20.00",
+      "quantity": 1,
+      "amount": "$20.00"
+    },
+    {
+      "name": "Marco Shoes",
+      "SKU": "Black/29",
+      "price": "$28.48",
+      "quantity": 1,
+      "amount": "$28.48"
+    },
+    {
+      "name": "ASOS Ridley High Waist",
+      "SKU": "White/21",
+      "price": "$79.49",
+      "quantity": 1,
+      "amount": "$79.49"
+    }
+  ]
+}

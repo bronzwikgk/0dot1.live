@@ -1,0 +1,12 @@
+<div class="bg-lightwhite dark:bg-white/5 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{chartTitle}}</p>
+    </div>
+    <div id="simplebarchart" style="min-height: 315px;">
+        {{#each dataPoints}}
+            <div class="bar" style="width: {{value}}px;">
+                <span>{{label}}</span>
+            </div>
+        {{/each}}
+    </div>
+</div>

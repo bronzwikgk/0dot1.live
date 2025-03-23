@@ -1,0 +1,8 @@
+{
+  "pageTitle": "Site is Under Maintenance",
+  "showMaintenanceImage": true,
+  "darkModeSuffix": "-dark",
+  "darkModeClass": "dark:hidden",
+  "supportText": "Need support?",
+  "supportEmail": "no-reply@domain.com"
+}

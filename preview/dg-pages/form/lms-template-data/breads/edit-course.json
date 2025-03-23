@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "/courses/123/edit",
+      "label": "Course Details"
+    },
+    {
+      "url": "/courses/123/edit/instructors",
+      "label": "Instructors"
+    },
+    {
+      "url": "/courses/123/edit/students",
+      "label": "Students"
+    }
+  ],
+  "breadcrumb": "Edit Course"
+}

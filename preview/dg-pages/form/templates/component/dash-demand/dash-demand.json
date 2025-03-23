@@ -1,0 +1,36 @@
+{
+    "courses": [
+        {
+            "name": "IT Service Management – ITIL ®",
+            "width": 10
+        },
+        {
+            "name": "Scrum and Agile",
+            "width": 9
+        },
+        {
+            "name": "Project Management",
+            "width": 8
+        },
+        {
+            "name": "SDI – Service Desk Manager",
+            "width": 6
+        },
+        {
+            "name": "SIAM",
+            "width": 7
+        },
+        {
+            "name": "ISO Trainings",
+            "width": 5
+        },
+        {
+            "name": "DevOps Institute - DOI",
+            "width": 6
+        },
+        {
+            "name": "Six Sigma and Quality",
+            "width": 5
+        }
+    ]
+}

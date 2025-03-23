@@ -1,0 +1,522 @@
+
+            <!-- Start Content -->
+            <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+                <div class="p-7 min-h-[calc(100vh-145px)]">
+                    <div class="px-2 py-1 mb-4">
+                        <p class="text-sm font-semibold">Order List</p>
+                    </div>
+                    <div class="p-2 bg-lightwhite dark:bg-white/5 rounded-lg flex gap-2 justify-between mb-2">
+                        <div class="flex items-center gap-4">
+                            <div class="flex gap-2 items-center">
+                                <button type="button" class="p-1 rounded-lg bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.625 4.375C10.625 4.02982 10.3452 3.75 10 3.75C9.65482 3.75 9.375 4.02982 9.375 4.375V9.375H4.375C4.02982 9.375 3.75 9.65482 3.75 10C3.75 10.3452 4.02982 10.625 4.375 10.625H9.375V15.625C9.375 15.9702 9.65482 16.25 10 16.25C10.3452 16.25 10.625 15.9702 10.625 15.625V10.625H15.625C15.9702 10.625 16.25 10.3452 16.25 10C16.25 9.65482 15.9702 9.375 15.625 9.375H10.625V4.375Z" fill="currentcolor"></path>
+                                    </svg>
+                                </button>
+                                <button type="button" class="p-1 rounded-lg bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 9.375H5C4.83424 9.375 4.67527 9.44085 4.55806 9.55806C4.44085 9.67527 4.375 9.83424 4.375 10C4.375 10.1658 4.44085 10.3247 4.55806 10.4419C4.67527 10.5592 4.83424 10.625 5 10.625H15C15.1658 10.625 15.3247 10.5592 15.4419 10.4419C15.5592 10.3247 15.625 10.1658 15.625 10C15.625 9.83424 15.5592 9.67527 15.4419 9.55806C15.3247 9.44085 15.1658 9.375 15 9.375Z" fill="currentcolor"></path>
+                                        <path d="M18.125 5.625H1.875C1.70924 5.625 1.55027 5.69085 1.43306 5.80806C1.31585 5.92527 1.25 6.08424 1.25 6.25C1.25 6.41576 1.31585 6.57473 1.43306 6.69194C1.55027 6.80915 1.70924 6.875 1.875 6.875H18.125C18.2908 6.875 18.4497 6.80915 18.5669 6.69194C18.6842 6.57473 18.75 6.41576 18.75 6.25C18.75 6.08424 18.6842 5.92527 18.5669 5.80806C18.4497 5.69085 18.2908 5.625 18.125 5.625Z" fill="currentcolor"></path>
+                                        <path d="M11.875 13.125H8.125C7.95924 13.125 7.80027 13.1908 7.68306 13.3081C7.56585 13.4253 7.5 13.5842 7.5 13.75C7.5 13.9158 7.56585 14.0747 7.68306 14.1919C7.80027 14.3092 7.95924 14.375 8.125 14.375H11.875C12.0408 14.375 12.1997 14.3092 12.3169 14.1919C12.4342 14.0747 12.5 13.9158 12.5 13.75C12.5 13.5842 12.4342 13.4253 12.3169 13.3081C12.1997 13.1908 12.0408 13.125 11.875 13.125Z" fill="currentcolor"></path>
+                                    </svg>
+                                </button>
+                                <button type="button" class="p-1 rounded-lg bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.19194 13.3081C4.07473 13.1908 3.91576 13.125 3.75 13.125C3.58424 13.125 3.42527 13.1908 3.30806 13.3081C3.19085 13.4253 3.125 13.5842 3.125 13.75C3.125 13.9158 3.19085 14.0747 3.30806 14.1919L5.80806 16.6919C5.92527 16.8092 6.08424 16.875 6.25 16.875C6.41576 16.875 6.57473 16.8092 6.69194 16.6919L9.19171 14.1922L9.19194 14.1919C9.30915 14.0747 9.375 13.9158 9.375 13.75C9.375 13.5842 9.30915 13.4253 9.19194 13.3081C9.07473 13.1908 8.91576 13.125 8.75 13.125C8.58424 13.125 8.42527 13.1908 8.30806 13.3081L8.30782 13.3083L6.25 15.3661L4.19194 13.3081Z" fill="currentcolor"></path>
+                                        <path d="M5.625 3.75V16.25C5.625 16.5952 5.90482 16.875 6.25 16.875C6.59518 16.875 6.875 16.5952 6.875 16.25V3.75C6.875 3.40482 6.59518 3.125 6.25 3.125C5.90482 3.125 5.625 3.40482 5.625 3.75Z" fill="currentcolor"></path>
+                                        <path d="M15.8077 6.69162L15.8081 6.69194C15.9253 6.80915 16.0842 6.875 16.25 6.875C16.4158 6.875 16.5747 6.80915 16.6919 6.69194C16.8092 6.57473 16.875 6.41576 16.875 6.25C16.875 6.08424 16.8092 5.92527 16.6919 5.80806L14.1919 3.30806C14.0747 3.19085 13.9158 3.125 13.75 3.125C13.5842 3.125 13.4253 3.19085 13.3081 3.30806L10.8081 5.80806C10.6908 5.92527 10.625 6.08424 10.625 6.25C10.625 6.26001 10.6252 6.27002 10.6257 6.28002C10.6332 6.43522 10.6982 6.58207 10.8081 6.69194C10.9253 6.80915 11.0842 6.875 11.25 6.875C11.4158 6.875 11.5747 6.80915 11.6919 6.69194L11.6922 6.69171L13.75 4.63388L15.8077 6.69162Z" fill="currentcolor"></path>
+                                        <path d="M14.375 16.25V3.75C14.375 3.40482 14.0952 3.125 13.75 3.125C13.4048 3.125 13.125 3.40482 13.125 3.75V16.25C13.125 16.5952 13.4048 16.875 13.75 16.875C14.0952 16.875 14.375 16.5952 14.375 16.25Z" fill="currentcolor"></path>
+                                    </svg>
+                                </button>
+                                <button type="button" class="p-1 rounded-lg bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 8.75C5.69036 8.75 6.25 9.30964 6.25 10C6.25 10.6904 5.69036 11.25 5 11.25C4.30964 11.25 3.75 10.6904 3.75 10C3.75 9.30964 4.30964 8.75 5 8.75Z" fill="currentcolor"></path>
+                                        <path d="M10 8.75C10.6904 8.75 11.25 9.30964 11.25 10C11.25 10.6904 10.6904 11.25 10 11.25C9.30964 11.25 8.75 10.6904 8.75 10C8.75 9.30964 9.30964 8.75 10 8.75Z" fill="currentcolor"></path>
+                                        <path d="M16.25 10C16.25 9.30964 15.6904 8.75 15 8.75C14.3096 8.75 13.75 9.30964 13.75 10C13.75 10.6904 14.3096 11.25 15 11.25C15.6904 11.25 16.25 10.6904 16.25 10Z" fill="currentcolor"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                        </div>
+                        <form class="md:flex items-center hidden">
+                            <label for="voice-search" class="sr-only">Search</label>
+                            <div class="relative w-full">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-[6px] pointer-events-none">
+                                    <svg class="text-black/20 dark:text-white/20" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.3496 14.3563C14.2563 14.4483 14.1306 14.4999 13.9996 14.5001C13.8668 14.4995 13.7393 14.4481 13.6434 14.3563L10.9434 11.6501C9.80622 12.6052 8.34425 13.0845 6.86236 12.9879C5.38046 12.8913 3.99306 12.2264 2.98951 11.1317C1.98596 10.0371 1.44375 8.59729 1.47597 7.1126C1.50818 5.62791 2.11233 4.21298 3.16241 3.1629C4.21249 2.11282 5.62743 1.50867 7.11212 1.47645C8.59681 1.44424 10.0366 1.98645 11.1313 2.99C12.2259 3.99355 12.8908 5.38095 12.9874 6.86285C13.084 8.34474 12.6047 9.80671 11.6496 10.9438L14.3496 13.6438C14.3969 13.6904 14.4344 13.7458 14.46 13.807C14.4856 13.8681 14.4988 13.9338 14.4988 14.0001C14.4988 14.0664 14.4856 14.132 14.46 14.1932C14.4344 14.2544 14.3969 14.3098 14.3496 14.3563ZM7.24961 12.0001C8.18907 12.0001 9.10743 11.7215 9.88857 11.1996C10.6697 10.6776 11.2785 9.93579 11.638 9.06784C11.9976 8.19989 12.0916 7.24483 11.9083 6.32342C11.7251 5.40201 11.2727 4.55564 10.6084 3.89134C9.94407 3.22704 9.0977 2.77465 8.17629 2.59137C7.25488 2.40809 6.29981 2.50215 5.43186 2.86167C4.56391 3.22119 3.82206 3.83001 3.30013 4.61114C2.77819 5.39227 2.49961 6.31064 2.49961 7.2501C2.50126 8.50937 3.00224 9.71659 3.89268 10.607C4.78312 11.4975 5.99034 11.9984 7.24961 12.0001Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" id="voice-search" class="bg-black/5 dark:bg-white/5 border-0 text-sm rounded-lg block max-w-[160px] w-full pl-[26px] p-1 focus:ring-0 focus:outline-0" placeholder="Search..." required="">
+                                <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-2">
+                                    <svg aria-hidden="true" class="w-4 h-4 text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="table-responsive">
+                            <table class="table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="flex items-center">
+                                            <input id="all" name="remember-me" type="checkbox" class="h-3 w-3 rounded border border-black/20 text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:border-black/20 dark:focus:border-white/20 focus:outline-0">
+                                            <label for="all" class="ml-1.5 block">Order ID</label>
+                                        </th>
+                                        <th>User</th>
+                                        <th>Project</th>
+                                        <th>Address</th>
+                                        <th>Date Order</th>
+                                        <th>Order Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order1" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order1" class="ml-1.5 block">#CM9801</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-10.png" alt="">
+                                                <p class="flex-1">Kate Morrison</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Landing Page</td>
+                                        <td class="min-w-[150px]">Meadow Lane Oakland, New York</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>Today, 19:40</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#8A8CD9]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>In Progress</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order2" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order2" class="ml-1.5 block">#CM9802</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-11.png" alt="">
+                                                <p class="flex-1">Koray Okumus</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Client Project (Sktech)</td>
+                                        <td class="min-w-[150px]">Bagwell Avenue Ocala</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>Yesterday</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#4AA785]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Competed</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order3" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order3" class="ml-1.5 block">#CM9803</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-19.png" alt="">
+                                                <p class="flex-1">Lana Steiner</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Admin Dashboard</td>
+                                        <td class="min-w-[150px]">Washburn Baton Rouge</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>19 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#59A8D4]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Pending</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order4" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order4" class="ml-1.5 block">#CM9804</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-6.png" alt="">
+                                                <p class="flex-1">Natali Craig</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">App Landing Page</td>
+                                        <td class="min-w-[150px]">Nest Lane Olivette</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>18 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#FFC555]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Approved</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order5" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order5" class="ml-1.5 block">#CM9804</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-8.png" alt="">
+                                                <p class="flex-1">Orlando Diggs</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">CRM Admin pages</td>
+                                        <td class="min-w-[150px]">Larry San Francisco</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>15 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-black/40 dark:text-white/40">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Rejected</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order6" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order6" class="ml-1.5 block">#CM9801</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-10.png" alt="">
+                                                <p class="flex-1">Kate Morrison</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Landing Page</td>
+                                        <td class="min-w-[150px]">Meadow Lane Oakland, New York</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>Today, 19:40</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#8A8CD9]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>In Progress</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order7" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order7" class="ml-1.5 block">#CM9802</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-11.png" alt="">
+                                                <p class="flex-1">Koray Okumus</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Client Project (Sktech)</td>
+                                        <td class="min-w-[150px]">Bagwell Avenue Ocala</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>Yesterday</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#4AA785]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Competed</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order8" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order8" class="ml-1.5 block">#CM9803</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-19.png" alt="">
+                                                <p class="flex-1">Lana Steiner</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">Admin Dashboard</td>
+                                        <td class="min-w-[150px]">Washburn Baton Rouge</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>19 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#59A8D4]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Pending</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order9" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order9" class="ml-1.5 block">#CM9804</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-6.png" alt="">
+                                                <p class="flex-1">Natali Craig</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">App Landing Page</td>
+                                        <td class="min-w-[150px]">Nest Lane Olivette</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>18 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-[#FFC555]">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Approved</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="group text-xs border-b border-black/20 dark:border-white/5">
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <input id="order10" name="remember-me" type="checkbox" class="h-3 w-3 rounded border-0 border-black/20 group-hover:border checked:border text-black dark:bg-transparent dark:border-white/20 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-0">
+                                                <label for="order10" class="ml-1.5 block">#CM9804</label>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap min-w-[150px]">
+                                            <div class="flex items-center gap-2">
+                                                <img class="w-6 h-6 flex-none rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="../images/avatar-8.png" alt="">
+                                                <p class="flex-1">Orlando Diggs</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">CRM Admin pages</td>
+                                        <td class="min-w-[150px]">Larry San Francisco</td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center gap-1">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2V1.5C10.5 1.22386 10.7239 1 11 1C11.2761 1 11.5 1.22386 11.5 1.5V2H13C13 2 13.4142 2 13.7071 2.29289C13.7071 2.29289 14 2.58579 14 3V13C14 13 14 13.4142 13.7071 13.7071C13.7071 13.7071 13.4142 14 13 14H3C3 14 2.58579 14 2.29289 13.7071C2.29289 13.7071 2 13.4142 2 13V3C2 3 2 2.58579 2.29289 2.29289C2.29289 2.29289 2.58579 2 3 2H4.5V1.5C4.5 1.22386 4.72386 1 5 1C5.27614 1 5.5 1.22386 5.5 1.5V2H10.5ZM3 6V13H13V6H3ZM13 5H3V3H4.5V3.5C4.5 3.77614 4.72386 4 5 4C5.27614 4 5.5 3.77614 5.5 3.5V3H10.5V3.5C10.5 3.77614 10.7239 4 11 4C11.2761 4 11.5 3.77614 11.5 3.5V3H13V5Z" fill="currentColor" fill-opacity="0.4"></path>
+                                                </svg>
+                                                <p>15 Aug 22</p>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap">
+                                            <div class="flex items-center text-xs text-black/40 dark:text-white/40">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                                <p>Rejected</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="p-1 text-transparent group-hover:text-black dark:group-hover:text-white">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8C3 7.44772 3.44772 7 4 7Z" fill="currentcolor"></path>
+                                                    <path d="M8 7C8.55228 7 9 7.44772 9 8C9 8.55229 8.55228 9 8 9C7.44772 9 7 8.55229 7 8C7 7.44772 7.44772 7 8 7Z" fill="currentcolor"></path>
+                                                    <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55229 11.4477 9 12 9C12.5523 9 13 8.55229 13 8Z" fill="currentcolor"></path>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex justify-end items-center gap-2">
+                            <button type="button" class="p-1 bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9254 4.55806C13.1915 4.80214 13.1915 5.19786 12.9254 5.44194L8.4375 9.55806C8.17138 9.80214 8.17138 10.1979 8.4375 10.4419L12.9254 14.5581C13.1915 14.8021 13.1915 15.1979 12.9254 15.4419C12.6593 15.686 12.2278 15.686 11.9617 15.4419L7.47378 11.3258C6.67541 10.5936 6.67541 9.40641 7.47378 8.67418L11.9617 4.55806C12.2278 4.31398 12.6593 4.31398 12.9254 4.55806Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
+                            <ul class="flex gap-2">
+                                <li><a href="javaScript:;" class="inline-block w-7 h-7 leading-7 text-center bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">1</a></li>
+                                <li><a href="javaScript:;" class="inline-block w-7 h-7 leading-7 text-center bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">2</a></li>
+                                <li><a href="javaScript:;" class="inline-block w-7 h-7 leading-7 text-center bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">3</a></li>
+                                <li><a href="javaScript:;" class="inline-block w-7 h-7 leading-7 text-center bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">4</a></li>
+                                <li><a href="javaScript:;" class="inline-block w-7 h-7 leading-7 text-center bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">5</a></li>
+                            </ul>
+                            <button type="button" class="p-1 bg-transparent rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.07459 15.4419C6.80847 15.1979 6.80847 14.8021 7.07459 14.5581L11.5625 10.4419C11.8286 10.1979 11.8286 9.80214 11.5625 9.55806L7.07459 5.44194C6.80847 5.19786 6.80847 4.80214 7.07459 4.55806C7.34072 4.31398 7.77219 4.31398 8.03831 4.55806L12.5262 8.67418C13.3246 9.40641 13.3246 10.5936 12.5262 11.3258L8.03831 15.4419C7.77219 15.686 7.34072 15.686 7.07459 15.4419Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Footer -->
+                <footer class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+                    <p class="text-xs text-black/40 dark:text-white/40">© 2025 shunya.ek</p>
+                    <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+                        <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a></li>
+                        <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a></li>
+                        <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact Us</a></li>
+                    </ul>
+                </footer>
+                <!-- End Footer -->
+            </div>
+            <!-- End Content -->
+        

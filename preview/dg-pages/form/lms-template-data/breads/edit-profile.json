@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "/edit-profile/basic-info",
+      "label": "Basic Information"
+    },
+    {
+      "url": "/edit-profile/contact-info",
+      "label": "Contact Information"
+    },
+    {
+      "url": "/edit-profile/change-password",
+      "label": "Change Password"
+    }
+  ],
+  "breadcrumb": "Edit Profile"
+}

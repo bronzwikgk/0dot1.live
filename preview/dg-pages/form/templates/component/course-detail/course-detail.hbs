@@ -1,0 +1,44 @@
+<div class="grid grid-cols-1 gap-7">
+  <div class="bg-lightwhite dark:bg-white/5 p-5">
+    <section class="bg-teal-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-center space-x-3">
+        <!-- Text Content -->
+        <div class="flex-1 sm:mr-8 lg:w-1/2">
+          <div class="px-2 py-1 mb-4">
+            <!-- Toolbar -->
+            <div class="mb-4 flex-wrap">
+              <ul class="flex flex-wrap items-center space-x-2">
+                {{#each navigation}}
+                <li class="flex items-center space-x-2">
+                  <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white" href="{{url}}">
+                    {{name}}
+                  </a>
+                  <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          <h1 class="text-5xl font-bold text-gray-800 mb-4">{{course.title}}</h1>
+          <p class="font-light text-gray-600 mb-4">{{course.description}}</p>
+          <button type="button" class="btn text-black dark:text-black border bg-indigo-300 dark:bg-indigo-300 border-indigo-300 hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white inline-flex items-center">
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M0 0l10 10L0 20z" />
+            </svg>
+            Get Started
+          </button>
+          <div class="mt-4">
+            <span class="inline-block bg-yellow-300 text-yellow-800 text-xs px-2 py-1 rounded">{{course.rating}}</span>
+            <span class="ml-2 text-gray-600 text-sm">({{course.students}} Students)</span>
+          </div>
+        </div>
+        <!-- Image Content -->
+        <div class="flex-1 flex justify-end mt-8 sm:mt-0">
+          <img class="rounded-lg shadow-xl" src="{{course.image}}" alt="Course Preview">
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

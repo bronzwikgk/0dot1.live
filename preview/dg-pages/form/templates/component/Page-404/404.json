@@ -1,0 +1,7 @@
+{
+  "images": {
+    "light": "../images/image404.svg",
+    "dark": "../images/image404-dark.svg"
+  },
+  "link": "/"
+}

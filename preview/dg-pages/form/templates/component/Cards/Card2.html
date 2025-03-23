@@ -1,0 +1,14 @@
+<div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
+    <h2 class="font-semibold text-lg">API Overview</h2>
+    <div class="grid grid-flow-row divide-y divide-black/10 dark:divide-white/10">
+        {{#each apiItems}}
+        <div class="py-4 flex flex-col sm:flex-row items-start flex-wrap gap-3">
+            <div class="flex-1">
+                <h3 class="font-semibold">{{title}}</h3>
+                <p class="text-xs text-black/40 dark:text-white/40">{{description}}</p>
+            </div>
+            <a href="{{link}}" class="btn flex-none text-xs px-2 py-[5px]">{{buttonText}}</a>
+        </div>
+        {{/each}}
+    </div>
+</div>

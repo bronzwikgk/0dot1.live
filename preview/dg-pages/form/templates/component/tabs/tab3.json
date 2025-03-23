@@ -1,0 +1,20 @@
+{
+  "tabs": [
+    {
+      "name": "profile",
+      "content": "Lorem Ipsum is simply dummy text..."
+    },
+    {
+      "name": "dashboard",
+      "content": "It is a long established fact..."
+    },
+    {
+      "name": "settings",
+      "content": "Contrary to popular belief..."
+    },
+    {
+      "name": "contacts",
+      "content": "There are many variations of passages..."
+    }
+  ]
+}

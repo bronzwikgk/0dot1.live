@@ -1,0 +1,74 @@
+{
+  "formFields": [
+    {
+      "label": "Basic Input Text",
+      "type": "text",
+      "placeholder": "User name",
+      "classes": "form-input",
+      "required": ""
+    },
+    {
+      "label": "Email Input",
+      "type": "text",
+      "placeholder": "Email..",
+      "classes": "form-input",
+      "required": ""
+    },
+    {
+      "label": "Basic Input Text",
+      "type": "text",
+      "placeholder": "User Name",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Label Text",
+      "type": "text",
+      "placeholder": "User Name",
+      "classes": "form-input mt-2 py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Email Input",
+      "type": "email",
+      "placeholder": "email@mail.com",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Password Input",
+      "type": "password",
+      "placeholder": "Enter Password",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Url Input",
+      "type": "url",
+      "placeholder": "https://dummyurl.com",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Search Input",
+      "type": "search",
+      "placeholder": "Search...",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Telephone Input",
+      "type": "tel",
+      "placeholder": "0-(000)-111-1111",
+      "classes": "form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    },
+    {
+      "label": "Rounded Input",
+      "type": "text",
+      "placeholder": "User Name",
+      "classes": "form-input !rounded-full py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white focus:ring-0 focus:shadow-none;",
+      "required": "required"
+    }
+  ]
+}

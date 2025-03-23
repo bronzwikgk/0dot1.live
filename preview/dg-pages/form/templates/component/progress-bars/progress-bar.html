@@ -1,0 +1,35 @@
+<!-- Start Content -->
+<div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+    <div class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+        <div class="px-2 py-1 mb-4">
+            <h2 class="text-lg font-semibold">Progress Bar</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+            {{#each progressBars}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{title}}</p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-3">
+                    {{#each bars}}
+                    <div class="w-full h-4 bg-black/10 dark:bg-white/10 rounded-full">
+                        <div class="bg-{{color}} h-4 rounded-full w-{{width}}">{{label}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- Start Footer -->
+    <footer class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+        <p class="text-xs text-black/40 dark:text-white/40">© 2025 shunya.ek</p>
+        <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a></li>
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a></li>
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact Us</a></li>
+        </ul>
+    </footer>
+    <!-- End Footer -->
+</div>
+<!-- End Content -->

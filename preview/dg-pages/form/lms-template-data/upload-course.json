@@ -1,0 +1,94 @@
+{
+    "formId": "upload-course-content-form",
+    "inputs": [
+      {
+        "id": "courseId",
+        "label": "Course ID",
+        "name": "courseId",
+        "type": "text",
+        "placeholder": "Enter the Course ID",
+        "required": true
+      },
+      {
+        "id": "courseTitle",
+        "label": "Course Title",
+        "name": "courseTitle",
+        "type": "text",
+        "placeholder": "Enter the Course Title",
+        "required": true
+      },
+      {
+        "id": "contentTitle",
+        "label": "Content Title",
+        "name": "contentTitle",
+        "type": "text",
+        "placeholder": "Enter content title",
+        "required": true
+      },
+      {
+        "id": "contentType",
+        "label": "Content Type",
+        "name": "contentType",
+        "isSelect": true,
+        "options": ["Video", "PDF", "Presentation", "Document", "Quiz", "Assignment", "Other"],
+        "required": true
+      },
+      {
+        "id": "uploadFile",
+        "label": "Upload File",
+        "name": "uploadFile",
+        "type": "file",
+        "isFile": true,
+        "required": true
+      },
+      {
+        "id": "videoUrl",
+        "label": "Video URL (If hosted externally)",
+        "name": "videoUrl",
+        "type": "url",
+        "placeholder": "Enter video URL (YouTube, Vimeo, etc.)",
+        "required": false
+      },
+      {
+        "id": "contentDescription",
+        "label": "Content Description",
+        "name": "contentDescription",
+        "type": "textarea",
+        "placeholder": "Provide a brief description of the content",
+        "required": false
+      },
+      {
+        "id": "contentOrder",
+        "label": "Content Order",
+        "name": "contentOrder",
+        "type": "number",
+        "placeholder": "Enter the order number of this content",
+        "required": true
+      },
+      {
+        "id": "accessRestrictions",
+        "label": "Access Restrictions",
+        "name": "accessRestrictions",
+        "isSelect": true,
+        "options": ["None", "After Previous Content Completion", "After Quiz Completion"],
+        "required": false
+      },
+      {
+        "id": "isDownloadable",
+        "label": "Allow Download",
+        "name": "isDownloadable",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "enablePreview",
+        "label": "Enable Preview Before Enrollment",
+        "name": "enablePreview",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      }
+    ]
+  }
+  

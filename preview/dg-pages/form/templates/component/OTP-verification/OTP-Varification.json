@@ -1,0 +1,22 @@
+{
+  "otpDigits": [
+    {
+      "id": "first"
+    },
+    {
+      "id": "second"
+    },
+    {
+      "id": "third"
+    },
+    {
+      "id": "fourth"
+    },
+    {
+      "id": "fifth"
+    },
+    {
+      "id": "sixth"
+    }
+  ]
+}

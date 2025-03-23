@@ -1,0 +1,32 @@
+{
+    "cards": [
+        {
+            "title": "Courses Created",
+            "value": "18",
+            "percentageChange": "+15%",
+            "isPositive": true,
+            "color": "lightblue-100"
+        },
+        {
+            "title": "Total Enrollments",
+            "value": "450",
+            "percentageChange": "+20%",
+            "isPositive": true,
+            "color": "lightpurple-100"
+        },
+        {
+            "title": "Average Ratings",
+            "value": "4.5/5",
+            "percentageChange": "+0.5",
+            "isPositive": true,
+            "color": "lightblue-100"
+        },
+        {
+            "title": "Feedback Received",
+            "value": "95",
+            "percentageChange": "+10%",
+            "isPositive": true,
+            "color": "lightpurple-100"
+        }
+    ]
+}

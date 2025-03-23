@@ -1,0 +1,32 @@
+{
+  "dropdownItems": [
+    {
+      "label": "Primary",
+      "size": "2.5",
+      "padding": "6",
+      "textSize": "base",
+      "svgSize": "6"
+    },
+    {
+      "label": "Secondary",
+      "size": "2",
+      "padding": "5",
+      "textSize": "15px",
+      "svgSize": "5"
+    },
+    {
+      "label": "Success",
+      "size": "1.5",
+      "padding": "4",
+      "textSize": "base",
+      "svgSize": "4"
+    },
+    {
+      "label": "Danger",
+      "size": "1",
+      "padding": "3",
+      "textSize": "13px",
+      "svgSize": "3"
+    }
+  ]
+}

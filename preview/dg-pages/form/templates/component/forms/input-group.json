@@ -1,0 +1,82 @@
+{
+  "inputGroups": [
+    {
+      "title": "Input Group",
+      "inputs": [
+        {
+          "leftIcon": "@",
+          "placeholder": "Username"
+        },
+        {
+          "placeholder": "Username",
+          "rightIcon": "@site.com"
+        },
+        {
+          "leftIcon": "$",
+          "placeholder": "Enter Price",
+          "rightIcon": ".00"
+        }
+      ]
+    },
+    {
+      "title": "Other Input",
+      "inputs": [
+        {
+          "placeholder": "Username"
+        },
+        {
+          "leftIcon": "$",
+          "placeholder": "Price",
+          "buttonLabel": "Purchase"
+        },
+        {
+          "rightIcon": "<svg>...</svg>",
+          "placeholder": "Search...",
+          "buttonLabel": "Dropdown"
+        }
+      ]
+    },
+    {
+      "title": "Icon Input",
+      "inputs": [
+        {
+          "leftIcon": "<svg>...</svg>",
+          "placeholder": "Notification"
+        },
+        {
+          "placeholder": "Notification",
+          "rightIcon": "<svg>...</svg>"
+        }
+      ]
+    },
+    {
+      "title": "Button addons",
+      "inputs": [
+        {
+          "buttonLabel": "Button",
+          "placeholder": "text"
+        },
+        {
+          "placeholder": "text",
+          "buttonLabel": "Button"
+        }
+      ]
+    }
+  ],
+  "year": 2023,
+  "company": "Snow",
+  "footerLinks": [
+    {
+      "url": "#",
+      "label": "About"
+    },
+    {
+      "url": "#",
+      "label": "Support"
+    },
+    {
+      "url": "#",
+      "label": "Contact Us"
+    }
+  ]
+}

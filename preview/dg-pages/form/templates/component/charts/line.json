@@ -1,0 +1,33 @@
+{
+  "chartTitle": "Line Chart",
+  "dataPoints": [
+    {
+      "label": "Mon",
+      "value": 300
+    },
+    {
+      "label": "Tue",
+      "value": 240
+    },
+    {
+      "label": "Wed",
+      "value": 180
+    },
+    {
+      "label": "Thu",
+      "value": 120
+    },
+    {
+      "label": "Fri",
+      "value": 60
+    },
+    {
+      "label": "Sat",
+      "value": 0
+    },
+    {
+      "label": "Sun",
+      "value": 0
+    }
+  ]
+}

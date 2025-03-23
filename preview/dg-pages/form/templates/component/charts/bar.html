@@ -1,0 +1,33 @@
+<div class="bg-lightwhite dark:bg-white/5 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{title}}</p>
+    </div>
+    <div id="barchart" style="min-height: 315px;">
+        <div id="{{chartId}}" class="apexcharts-canvas {{chartId}} apexcharts-theme-light" style="width: 704px; height: 300px;">
+            <svg id="SvgjsSvg1212" width="704" height="300" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                {{#each yAxisLabels}}
+                <g id="SvgjsG1313" class="apexcharts-yaxis" rel="{{@index}}" transform="translate({{this.x}}, 0)">
+                    <g id="SvgjsG1314" class="apexcharts-yaxis-texts-g">
+                        <text id="SvgjsText1316" font-family="Helvetica, Arial, sans-serif" x="20" y="{{this.y}}" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1317">{{this.label}}</tspan><title>{{this.label}}</title></text>
+                    </g>
+                </g>
+                {{/each}}
+                {{#each barData}}
+                <g id="SvgjsG1214" class="apexcharts-inner apexcharts-graphical" transform="translate({{this.x}}, {{this.y}})">
+                    <defs id="SvgjsDefs1213">
+                        <linearGradient id="SvgjsLinearGradient1218" x1="0" y1="0" x2="0" y2="1">
+                            <stop id="SvgjsStop1219" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop>
+                            <stop id="SvgjsStop1220" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop>
+                            <stop id="SvgjsStop1221" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop>
+                        </linearGradient>
+                        <clipPath id="gridRectMask{{chartId}}">
+                            <rect id="SvgjsRect1223" width="{{this.width}}" height="{{this.height}}" x="-2" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect>
+                        </clipPath>
+                    </defs>
+                    <path id="SvgjsPath1230" d="{{this.path}}" fill="{{this.color}}" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="{{@index}}" clip-path="url(#gridRectMask{{chartId}})" cy="{{this.cy}}" cx="{{this.cx}}" j="{{@index}}" val="{{this.value}}" barHeight="{{this.barHeight}}" barWidth="{{this.barWidth}}"></path>
+                </g>
+                {{/each}}
+            </svg>
+        </div>
+    </div>
+</div>

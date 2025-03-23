@@ -1,0 +1,79 @@
+<!-- Start Content -->
+<div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+    <div class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+        <div class="px-2 py-1 mb-4">
+            <h2 class="text-lg font-semibold">Badges</h2>
+        </div>
+        <div class="grid grid-cols-1 gap-7">
+            {{#each badges}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{name}}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="inline-flex items-center rounded text-xs justify-center px-2 py-1 {{color}} text-black">
+                        {{name}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{#each roundedBadges}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{name}}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="inline-flex items-center rounded-full text-xs justify-center px-2 py-1 {{color}} text-black">
+                        {{name}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{#each glowBadges}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{name}}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="inline-flex items-center rounded-full shadow-3xl text-xs {{shadow}} justify-center px-2 py-1 {{color}} text-black">
+                        {{name}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{#each badgesInButtons}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">{{name}}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <button class="btn">{{name}} <span class="px-1 {{color}} text-xs text-black rounded ml-1">{{count}}</span></button>
+                </div>
+            </div>
+            {{/each}}
+            {{#each roundedBadgesWithSize}}
+            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                <div class="mb-5">
+                    <p class="text-sm font-semibold">Rounded badges with size</p>
+                </div>
+                <div class="inline-flex flex-wrap gap-2">
+                    <div>
+                        <span class="bg-violet-500 text-white text-[10px] px-1.5 py-0.5 rounded">{{size}}</span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- Start Footer -->
+    <footer class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+        <p class="text-xs text-black/40 dark:text-white/40">© 2025 shunya.ek</p>
+        <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a></li>
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a></li>
+            <li><a href="javascirpt:;" class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact Us</a></li>
+        </ul>
+    </footer>
+    <!-- End Footer -->
+</div>
+<!-- End Content -->

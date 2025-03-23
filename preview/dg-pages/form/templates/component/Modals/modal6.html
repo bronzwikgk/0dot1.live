@@ -1,0 +1,29 @@
+{{#each modals}}
+<div x-data="{{xData}}">
+    <button type="button" class="btn" @click="toggle">{{buttonText}}</button>
+    <div class="fixed inset-0 bg-black/60 dark:bg-white/10 z-[999] hidden {{openClass}}" :class="open &amp;&amp; '!block'">
+        <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
+            <div x-show="open" x-transition="" x-transition.duration.300="" class="bg-white dark:bg-black relative shadow-3xl border-0 p-0 rounded-lg overflow-hidden w-full max-w-{{maxWidth}} my-8" style="display: none;">
+                <div class="flex bg-white dark:bg-black border-b border-black/10 dark:border-white/10 items-center justify-between px-5 py-3">
+                    <h5 class="font-semibold text-lg">{{title}}</h5>
+                    <button type="button" class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white" @click="toggle">
+                        <svg class="w-5 h-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="{{closeIconPath}}" fill="currentcolor"></path>
+                            <path d="{{closeIconPath}}" fill="currentcolor"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <div class="text-sm text-black dark:text-white">
+                        <p>{{content}}</p>
+                    </div>
+                    <div class="flex justify-end items-center mt-8 gap-4">
+                        <button type="button" class="btn !bg-lightred !text-white" @click="toggle">Discard</button>
+                        <button type="button" class="btn" @click="toggle">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

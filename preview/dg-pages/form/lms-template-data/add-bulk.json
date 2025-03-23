@@ -1,0 +1,62 @@
+{
+    "formId": "add-bulk-user-form",
+    "inputs": [
+      {
+        "id": "uploadFile",
+        "label": "Upload User List (CSV/Excel)",
+        "name": "uploadFile",
+        "type": "file",
+        "isFile": true,
+        "required": true
+      },
+      {
+        "id": "fileFormat",
+        "label": "File Format",
+        "name": "fileFormat",
+        "isSelect": true,
+        "options": ["CSV", "Excel"],
+        "required": true
+      },
+      {
+        "id": "templateDownload",
+        "label": "Download Sample Template",
+        "name": "templateDownload",
+        "type": "link",
+        "url": "/templates/bulk_user_upload_template.csv",
+        "text": "Download Template"
+      },
+      {
+        "id": "defaultUserRole",
+        "label": "Default User Role",
+        "name": "defaultUserRole",
+        "isSelect": true,
+        "options": ["Student", "Instructor", "Admin"],
+        "required": true
+      },
+      {
+        "id": "enrollmentStatus",
+        "label": "Default Enrollment Status",
+        "name": "enrollmentStatus",
+        "isSelect": true,
+        "options": ["Active", "Pending", "Suspended"],
+        "required": true
+      },
+      {
+        "id": "sendCredentials",
+        "label": "Send Login Credentials to Users",
+        "name": "sendCredentials",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "notes",
+        "label": "Additional Notes",
+        "name": "notes",
+        "type": "textarea",
+        "placeholder": "Add any additional notes (optional)",
+        "required": false
+      }
+    ]
+  }
+  

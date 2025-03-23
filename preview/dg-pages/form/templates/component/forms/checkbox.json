@@ -1,0 +1,148 @@
+{
+  "checkboxSections": [
+    {
+      "title": "Checkbox",
+      "options": [
+        {
+          "color": "text-indigo-300",
+          "label": "Primary"
+        },
+        {
+          "color": "text-lightgreen-200",
+          "label": "Success"
+        },
+        {
+          "color": "text-lightpurple-200",
+          "label": "Secondary"
+        },
+        {
+          "color": "text-lightred",
+          "label": "Danger"
+        },
+        {
+          "color": "text-lightyellow",
+          "label": "Warning"
+        },
+        {
+          "color": "text-lightblue-200",
+          "label": "Info"
+        },
+        {
+          "color": "text-black",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "title": "Rounded",
+      "options": [
+        {
+          "color": "text-indigo-300 rounded-full",
+          "label": "Primary"
+        },
+        {
+          "color": "text-lightgreen-200 rounded-full",
+          "label": "Success"
+        },
+        {
+          "color": "text-lightpurple-200 rounded-full",
+          "label": "Secondary"
+        },
+        {
+          "color": "text-lightred rounded-full",
+          "label": "Danger"
+        },
+        {
+          "color": "text-lightyellow rounded-full",
+          "label": "Warning"
+        },
+        {
+          "color": "text-lightblue-200 rounded-full",
+          "label": "Info"
+        },
+        {
+          "color": "text-black rounded-full",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "title": "Outline",
+      "options": [
+        {
+          "color": "outline-primary",
+          "label": "Primary"
+        },
+        {
+          "color": "outline-success",
+          "label": "Success"
+        },
+        {
+          "color": "outline-secondary",
+          "label": "Secondary"
+        },
+        {
+          "color": "outline-danger",
+          "label": "Danger"
+        },
+        {
+          "color": "outline-warning",
+          "label": "Warning"
+        },
+        {
+          "color": "outline-info",
+          "label": "Info"
+        },
+        {
+          "color": "outline-dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "title": "Rounded",
+      "options": [
+        {
+          "color": "outline-primary rounded-full",
+          "label": "Primary"
+        },
+        {
+          "color": "outline-success rounded-full",
+          "label": "Success"
+        },
+        {
+          "color": "outline-secondary rounded-full",
+          "label": "Secondary"
+        },
+        {
+          "color": "outline-danger rounded-full",
+          "label": "Danger"
+        },
+        {
+          "color": "outline-warning rounded-full",
+          "label": "Warning"
+        },
+        {
+          "color": "outline-info rounded-full",
+          "label": "Info"
+        },
+        {
+          "color": "outline-dark rounded-full",
+          "label": "Dark"
+        }
+      ]
+    }
+  ],
+  "footerText": "© 2025 shunya.ek",
+  "footerLinks": [
+    {
+      "text": "About"
+    },
+    {
+      "text": "Support"
+    },
+    {
+      "text": "Contact Us"
+    }
+  ]
+}

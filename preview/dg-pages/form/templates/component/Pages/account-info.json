@@ -1,0 +1,30 @@
+{
+  "teamSizes": [
+    {
+      "label": "1-1"
+    },
+    {
+      "label": "2-10"
+    },
+    {
+      "label": "10-50"
+    },
+    {
+      "label": "50+"
+    }
+  ],
+  "accountPlans": [
+    {
+      "title": "Company Account",
+      "description": "Use images to enhance your post flow."
+    },
+    {
+      "title": "Developer Account",
+      "description": "Use images to your post time."
+    },
+    {
+      "title": "Testing Account",
+      "description": "Use images to enhance time travel rivers."
+    }
+  ]
+}

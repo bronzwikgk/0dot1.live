@@ -1,0 +1,53 @@
+{
+  "buttons": [
+    {
+      "width": "2.5",
+      "height": "2.5",
+      "text_color": "black/60",
+      "hover_text_color": "white",
+      "bg_color": "black/10",
+      "hover_bg_color": "black",
+      "dark_text_color": "white/60",
+      "dark_hover_text_color": "black",
+      "dark_bg_color": "white/10",
+      "dark_hover_bg_color": "white",
+      "path": "M25.7067 6.70748 ...",
+      "label": ""
+    },
+    {
+      "width": "3.5",
+      "height": "2",
+      "text_color": "white",
+      "bg_color": "black",
+      "dark_text_color": "black",
+      "dark_bg_color": "white",
+      "label": "1"
+    },
+    {
+      "width": "3.5",
+      "height": "2",
+      "text_color": "black/60",
+      "hover_text_color": "white",
+      "bg_color": "black/10",
+      "hover_bg_color": "black",
+      "dark_text_color": "white/60",
+      "dark_hover_text_color": "black",
+      "dark_bg_color": "white/10",
+      "dark_hover_bg_color": "white",
+      "label": "2"
+    },
+    {
+      "width": "3.5",
+      "height": "2",
+      "text_color": "black/60",
+      "hover_text_color": "white",
+      "bg_color": "black/10",
+      "hover_bg_color": "black",
+      "dark_text_color": "white/60",
+      "dark_hover_text_color": "black",
+      "dark_bg_color": "white/10",
+      "dark_hover_bg_color": "white",
+      "label": "3"
+    }
+  ]
+}

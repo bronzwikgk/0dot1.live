@@ -1,0 +1,46 @@
+<!-- Template -->
+<div class="space-y-2 font-semibold" x-data="{ current: 1 }">
+    {{#each accordionItems}}
+    <div class="border border-black/20 dark:border-white/20 rounded">
+        <button type="button" class="p-4 w-full flex items-center {{#if isActive}} text-black/70 dark:text-white/70 {{else}} !text-black dark:!text-white {{/if}}" x-on:click="current === {{index}} ? current = null : current = {{index}}">
+            {{title}}
+            <div class="ml-auto {{#if isActive}} rotate-180 {{/if}}" :class="{'rotate-180' : current === {{index}}}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z" fill="currentcolor"></path>
+                </svg>
+            </div>
+        </button>
+        <div x-show="current === {{index}}" x-collapse="">
+            <div class="space-y-2 p-4 text-black dark:text-white text-sm border-t border-black/10 dark:border-white/10">
+                <p>
+                    {{content}}
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<!-- JSON Data -->
+{
+    "accordionItems": [
+        {
+            "title": "Accordion Item #1",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isActive": current === 1,
+            "index": 1
+        },
+        {
+            "title": "Accordion Item #2",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isActive": current === 2,
+            "index": 2
+        },
+        {
+            "title": "Accordion Item #3",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "isActive": current === 3,
+            "index": 3
+        }
+    ]
+}

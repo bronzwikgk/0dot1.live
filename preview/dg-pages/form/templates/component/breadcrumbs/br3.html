@@ -1,0 +1,33 @@
+<!-- Template for the list of items -->
+<ul class="flex flex-wrap items-center space-x-2">
+    {{#each items}}
+    <li class="flex items-center space-x-2">
+        <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white" href="#">
+            <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="{{this.icon}}" fill="currentColor"></path>
+            </svg>
+        </a>
+        <svg class="h-3.5 w-3.5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="{{this.arrowIcon}}" fill="currentColor"></path>
+        </svg>
+    </li>
+    {{/each}}
+</ul>
+
+<!-- JSON data for dynamic content -->
+{
+    "items": [
+        {
+            "icon": "M26.7311 15.6823 ...",
+            "arrowIcon": "M20.5858 16 ..."
+        },
+        {
+            "icon": "M26.7311 15.6823 ...",
+            "arrowIcon": "M20.5858 16 ..."
+        },
+        {
+            "icon": "M26.7311 15.6823 ...",
+            "arrowIcon": "M20.5858 16 ..."
+        }
+    ]
+}

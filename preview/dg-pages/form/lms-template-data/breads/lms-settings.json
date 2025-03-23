@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "https://example.com/settings/general",
+      "label": "General Settings"
+    },
+    {
+      "url": "https://example.com/settings/notifications",
+      "label": "Notification Settings"
+    },
+    {
+      "url": "https://example.com/settings/security",
+      "label": "Security Settings"
+    }
+  ],
+  "breadcrumb": "LMS Settings"
+}

@@ -1,0 +1,94 @@
+<!-- template.hbs -->
+<div
+  x-data="basic"
+  class="border bg-lightwhite dark:bg-white/5 dark:border-white/10 border-black/10 p-5 rounded-md"
+>
+  <div class="mb-5">
+    <p class="text-sm font-semibold">Simple DataTable</p>
+  </div>
+  <div class="">
+    <div
+      class="dataTable-wrapper dataTable-loading no-footer searchable fixed-columns"
+    >
+      <div class="dataTable-top">
+        <div class="dataTable-dropdown">
+          <label>
+            <select class="dataTable-selector">
+              <option value="5" selected="">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+        </div>
+        <div class="dataTable-search">
+          <input
+            class="dataTable-input"
+            placeholder="Search..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="dataTable-container">
+        <table
+          id="myTable"
+          class="whitespace-nowrap table-hover table-bordered dataTable-table"
+        >
+          <thead>
+            <tr>
+              <th style="width: 7.11575%">ID</th>
+              <th style="width: 15.2277%">First Name</th>
+              <th style="width: 15.0854%">Last Name</th>
+              <th style="width: 36.7173%">Email</th>
+              <th style="width: 25.9013%">Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each users}}
+              <tr>
+                <td>{{id}}</td>
+                <td>{{firstName}}</td>
+                <td>{{lastName}}</td>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="dataTable-bottom">
+        <div class="dataTable-info">Showing {{start}} to {{end}} of {{total}} entries</div>
+        <nav class="dataTable-pagination">
+          <ul class="dataTable-pagination-list">
+            {{#each pages}}
+              <li class="{{#if active}}active{{/if}}">
+                <a href="#" data-page="{{page}}">{{page}}</a>
+              </li>
+            {{/each}}
+            <li class="pager">
+              <a href="#" data-page="{{nextPage}}">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4.5 h-4.5"
+                >
+                  <path
+                    d="M9 5L15 12L9 19"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

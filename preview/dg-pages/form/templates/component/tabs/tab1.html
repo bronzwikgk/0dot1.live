@@ -1,0 +1,21 @@
+<!-- Template Component -->
+<div x-data={{dynamicData}}>
+    <ul class="flex flex-wrap text-sm text-center text-black/50 dark:text-white/50 border-b border-lightblue-100">
+        {{#each tabs}}
+        <li class="mr-2">
+            <a href="javaScript:;" @click="activeDefTab = '{{tabName}}'" :class="activeDefTab === '{{tabName}}' ? 'bg-lightblue-100 text-black' : 'bg-transparent font-normal text-black/40 dark:text-white/40 hover:bg-lightblue-100 hover:text-black dark:hover:text-black'" class="inline-block p-4 rounded-t-lg bg-{{tabColor}} text-black">
+                {{tabDisplayName}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="tab-content mt-3 text-[13px]">
+        {{#each tabs}}
+        <div x-show="activeDefTab === '{{tabName}}'" class="">
+            <p>
+                {{tabContent}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

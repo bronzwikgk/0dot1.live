@@ -1,0 +1,24 @@
+<div class="space-y-2" x-data="{ current: 1 }">
+    {{#each accordionItems as |item|}}
+    <div class="border border-black/20 dark:border-white/20 rounded">
+        <button type="button" class="p-4 w-full flex items-center text-black/70 dark:text-white/70 {{#if (eq current item.id)}}!text-black dark:!text-white{{/if}}" x-on:click="{{#if (eq current item.id)}}current = null{{else}}current = item.id{{/if}}">
+            <svg class="w-5 h-5 mr-2" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- SVG Paths -->
+            </svg>
+            Accordion Item #{{item.id}}
+            <div class="ml-auto {{#if (eq current item.id)}}rotate-180{{/if}}">
+                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- SVG Paths -->
+                </svg>
+            </div>
+        </button>
+        <div {{#if (eq current item.id)}}x-show="true"{{else}}x-show="false"{{/if}} x-collapse="">
+            <div class="space-y-2 p-4 text-black text-sm border-t border-black/10 dark:text-white dark:border-white/10">
+                <p>
+                    {{item.content}}
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

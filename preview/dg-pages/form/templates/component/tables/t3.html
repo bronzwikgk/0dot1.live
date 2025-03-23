@@ -1,0 +1,35 @@
+<!-- template.hbs -->
+
+<div class="table-responsive">
+    <table class="table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Assigned to</th>
+                <th>Time Spend</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+            <tr>
+                <td class="whitespace-nowrap">{{name}}</td>
+                <td>
+                    <div class="flex items-center justify-start -space-x-1.5">
+                        {{#each assignedTo}}
+                        <img class="w-6 h-6 rounded-full overflow-hidden object-cover ring-2 ring-white dark:ring-black" src="{{this}}" alt="">
+                        {{/each}}
+                    </div>
+                </td>
+                <td>{{timeSpend}}</td>
+                <td class="flex items-center text-xs py-3" style="color: {{statusColor}}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z" fill="currentcolor"></path>
+                    </svg>
+                    <p>{{status}}</p>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

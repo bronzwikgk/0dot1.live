@@ -1,0 +1,20 @@
+{
+    "navigation": [
+      {
+        "name": "Home",
+        "url": "#"
+      },
+      {
+        "name": "Courses",
+        "url": "#"
+      }
+    ],
+    "course": {
+      "title": "ITIL® 4 Foundation",
+      "description": "The ITIL 4 Foundation guidance provides a comprehensive end-to-end operating model for the creation, delivery, and continual improvement of technology-enabled products and services. It offers insights into how modern IT and digital service organizations function, emphasizing the role of value streams in enhancing speed and efficiency. Additionally, it highlights the importance of cultural and behavioral principles in driving work that benefits the broader organization.",
+      "rating": "4.4 ★",
+      "students": "44,825",
+      "image": "https://placehold.co/600x400/orange/white"
+    }
+  }
+  

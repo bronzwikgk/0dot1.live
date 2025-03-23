@@ -1,0 +1,17 @@
+<div class="bg-lightpurple-100 dark:bg-white/5 rounded-2xl p-5 2xl:p-10">
+    <p class="px-1 text-lg font-semibold mb-6">PRO version</p>
+    <p class="text-5xl font-semibold mb-8">${{price}}<span class="mr-2">{{#if annual}}109.9{{else}}9.9{{/if}}</span><span class="text-sm font-normal text-black/40 dark:text-white/40">{{#if annual}}/Year{{else}}/Month{{/if}}</span></p>
+    <ul class="grid grid-cols-1 gap-1 text-sm leading-5 mb-8">
+        {{#each features}}
+            <li class="flex items-center gap-x-2 py-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="{{iconPath}}" fill="currentcolor"></path>
+                </svg>
+                {{name}}
+            </li>
+        {{/each}}
+    </ul>
+    <button class="bg-black text-white border border-black dark:bg-lightpurple-200 dark:text-black dark:border-lightpurple-200 hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white font-semibold p-2.5 w-full text-center rounded-2xl text-lg transition-all duration-300">
+        Choose Plan
+    </button>
+</div>

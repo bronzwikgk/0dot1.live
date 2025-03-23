@@ -1,0 +1,31 @@
+{
+    "tabs": [
+        {
+            "label": "Total Enrollments",
+            "active": true
+        },
+        {
+            "label": "Revenue Generated",
+            "active": false
+        },
+        {
+            "label": "Student Engagement",
+            "active": false
+        },
+        {
+            "label": "Course Ratings",
+            "active": false
+        }
+    ],
+    "timeFilters": [
+        {
+            "period": "Current Week",
+            "color": "#1C1C1C"
+        },
+        {
+            "period": "Previous Week",
+            "color": "#A8C5DA"
+        }
+    ],
+    "dropdownItems": ["Weekly", "Monthly", "Yearly"]
+}

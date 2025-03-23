@@ -1,0 +1,25 @@
+<div class="bg-lightwhite dark:bg-white/5 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{chartTitle}}</p>
+    </div>
+    <div id="linechart" style="min-height: 315px;">
+        <div id="apexchartslhlctidkk" class="apexcharts-canvas apexchartslhlctidkk apexcharts-theme-light" style="width: 704px; height: 300px;">
+            <svg id="SvgjsSvg1001" width="704" height="300" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                <rect id="SvgjsRect1007" width="0" height="0" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fefefe"></rect>
+                <g id="SvgjsG1071" class="apexcharts-yaxis" rel="0" transform="translate(9.5625, 0)">
+                    {{#each dataPoints}}
+                        <text font-family="Inter, sans-serif" x="20" y="{{this.yPos}}" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label apexcharts-yaxis-title" style="font-family: Inter, sans-serif;">
+                            <tspan>{{this.value}}</tspan>
+                            <title>{{this.value}}</title>
+                        </text>
+                    {{/each}}
+                </g>
+                <g id="SvgjsG1003" class="apexcharts-inner apexcharts-graphical" transform="translate(37.5625, 30)">
+                    <!-- Area Chart Paths -->
+                </g>
+                <line id="SvgjsLine1046" x1="0" y1="0" x2="654.4947910308838" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line>
+                <g id="SvgjsG1048" class="apexcharts-annotations"></g>
+            </svg>
+        </div>
+    </div>
+</div>

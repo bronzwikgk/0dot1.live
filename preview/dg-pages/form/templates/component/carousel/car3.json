@@ -1,0 +1,26 @@
+{
+  "carouselItems": [
+    {
+      "image": "carousel1.jpeg",
+      "title": "Where does it come from",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      "active": true,
+      "next": false
+    },
+    {
+      "image": "carousel2.jpeg",
+      "title": "Where does it come from",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      "active": false,
+      "next": true
+    },
+    {
+      "image": "carousel3.jpeg",
+      "title": "Where does it come from",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      "active": false,
+      "next": false
+    }
+  ],
+  "prevButtonDisabled": true
+}

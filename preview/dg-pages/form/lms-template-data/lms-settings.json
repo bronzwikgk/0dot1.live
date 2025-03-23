@@ -1,0 +1,126 @@
+{
+    "formId": "lms-settings-form",
+    "inputs": [
+      {
+        "id": "siteName",
+        "label": "LMS Site Name",
+        "name": "siteName",
+        "type": "text",
+        "placeholder": "Enter LMS name",
+        "required": true
+      },
+      {
+        "id": "siteLogo",
+        "label": "Upload Site Logo",
+        "name": "siteLogo",
+        "type": "file",
+        "isImage": true,
+        "required": false
+      },
+      {
+        "id": "primaryLanguage",
+        "label": "Primary Language",
+        "name": "primaryLanguage",
+        "isSelect": true,
+        "options": ["English", "Hindi", "Spanish", "French", "German", "Chinese", "Other"],
+        "required": true
+      },
+      {
+        "id": "defaultTimeZone",
+        "label": "Default Time Zone",
+        "name": "defaultTimeZone",
+        "isSelect": true,
+        "options": ["UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5", "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC+0", "UTC+1", "UTC+2", "UTC+3", "UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"],
+        "required": true
+      },
+      {
+        "id": "currency",
+        "label": "Default Currency",
+        "name": "currency",
+        "isSelect": true,
+        "options": ["INR", "EUR", "GBP", "INR", "AUD", "CAD", "Other"],
+        "required": true
+      },
+      {
+        "id": "enableCourseApproval",
+        "label": "Require Admin Approval for Course Publishing",
+        "name": "enableCourseApproval",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "enableEnrollmentApproval",
+        "label": "Require Admin Approval for Enrollment",
+        "name": "enableEnrollmentApproval",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "defaultUserRole",
+        "label": "Default User Role",
+        "name": "defaultUserRole",
+        "isSelect": true,
+        "options": ["Student", "Instructor"],
+        "required": true
+      },
+      {
+        "id": "enableCertificates",
+        "label": "Enable Course Completion Certificates",
+        "name": "enableCertificates",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "supportEmail",
+        "label": "Support Email",
+        "name": "supportEmail",
+        "type": "email",
+        "placeholder": "Enter support email",
+        "required": true
+      },
+      {
+        "id": "contactNumber",
+        "label": "Support Contact Number",
+        "name": "contactNumber",
+        "type": "tel",
+        "placeholder": "Enter support contact number",
+        "required": false
+      },
+      {
+        "id": "enableNotifications",
+        "label": "Enable Email Notifications",
+        "name": "enableNotifications",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "enableChatSupport",
+        "label": "Enable Chat Support",
+        "name": "enableChatSupport",
+        "isSelect": true,
+        "options": ["Yes", "No"],
+        "required": true
+      },
+      {
+        "id": "termsAndConditions",
+        "label": "LMS Terms and Conditions",
+        "name": "termsAndConditions",
+        "type": "textarea",
+        "placeholder": "Enter or update LMS terms and conditions",
+        "required": true
+      },
+      {
+        "id": "privacyPolicy",
+        "label": "LMS Privacy Policy",
+        "name": "privacyPolicy",
+        "type": "textarea",
+        "placeholder": "Enter or update LMS privacy policy",
+        "required": true
+      }
+    ]
+  }
+  

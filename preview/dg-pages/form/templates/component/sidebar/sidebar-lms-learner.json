@@ -1,0 +1,82 @@
+{
+    "logo": {
+        "link": "/",
+        "light": "./images/logo.svg",
+        "dark": "../images/dark-logo.svg"
+    },
+    "menuItems": [
+        {
+            "id": "dashboard",
+            "title": "Dashboard",
+            
+            "submenus": [
+                { "title": "Overview", "link": "/dashboard" },
+                { "title": "My Progress", "link": "/dashboard/progress" },
+                { "title": "Achievements", "link": "/dashboard/achievements" }
+            ]
+        },
+        { "header": true, "title": "Courses" },
+        {
+            "id": "my_courses",
+            "title": "My Courses",
+            
+            "submenus": [
+                { "title": "Enrolled Courses", "link": "/courses" },
+                { "title": "In Progress", "link": "/courses/in-progress" },
+                { "title": "Completed", "link": "/courses/completed" }
+            ]
+        },
+        {
+            "id": "explore_courses",
+            "title": "Explore Courses",
+           
+            "submenus": [
+                { "title": "All Courses", "link": "/explore" },
+                { "title": "Popular", "link": "/explore/popular" },
+                { "title": "Recommended", "link": "/explore/recommended" }
+            ]
+        },
+        { "header": true, "title": "Certifications" },
+        {
+            "id": "certificates",
+            "title": "My Certificates",
+            
+            "submenus": [
+                { "title": "Earned Certificates", "link": "/certificates" },
+                { "title": "Pending Approvals", "link": "/certificates/pending" }
+            ]
+        },
+        { "header": true, "title": "Community & Support" },
+        {
+            "id": "forums",
+            "title": "Community",
+           
+            "submenus": [
+                { "title": "Discussion Forums", "link": "/community/forums" },
+                { "title": "Q&A Sessions", "link": "/community/qa" },
+                { "title": "Groups", "link": "/community/groups" }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "Support",
+          
+            "submenus": [
+                { "title": "Help Center", "link": "/support" },
+                { "title": "Contact Us", "link": "/support/contact" },
+                { "title": "FAQs", "link": "/support/faqs" }
+            ]
+        },
+        { "header": true, "title": "Settings" },
+        {
+            "id": "settings",
+            "title": "Profile & Settings",
+           
+            "submenus": [
+                { "title": "Profile", "link": "/settings/profile" },
+                { "title": "Preferences", "link": "/settings/preferences" },
+                { "title": "Notification Settings", "link": "/settings/notifications" }
+            ]
+        }
+    ]
+}

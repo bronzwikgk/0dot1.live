@@ -1,0 +1,62 @@
+{
+  "buttons": [
+    {
+      "label": "First",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    },
+    {
+      "label": "Prev",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    },
+    {
+      "label": "1",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    },
+    {
+      "label": "2",
+      "class": "text-black border border-black dark:text-white dark:border-white"
+    },
+    {
+      "label": "3",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    },
+    {
+      "label": "Next",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    },
+    {
+      "label": "Last",
+      "class": "text-black/60 hover:text-black border border-black/10 hover:border-black dark:text-white/60 dark:hover:text-white dark:border-white/10 dark:hover:border-white"
+    }
+  ],
+  "links": [
+    {
+      "label": "Previous",
+      "class": "text-black/60 bg-white rounded-l-lg border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    },
+    {
+      "label": "1",
+      "class": "text-black/50 bg-white border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    },
+    {
+      "label": "2",
+      "class": "text-black/50 bg-white border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    },
+    {
+      "label": "3",
+      "class": "text-white bg-black border border-black/10 dark:text-black dark:bg-white dark:border-white/10"
+    },
+    {
+      "label": "4",
+      "class": "text-black/50 bg-white border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    },
+    {
+      "label": "5",
+      "class": "text-black/50 bg-white border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    },
+    {
+      "label": "Next",
+      "class": "text-black/50 bg-white rounded-r-lg border border-black/10 hover:bg-black hover:text-white dark:text-white/60 dark:bg-black dark:border-white/10 dark:hover:bg-white dark:hover:text-black"
+    }
+  ]
+}

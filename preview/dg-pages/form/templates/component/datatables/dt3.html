@@ -1,0 +1,95 @@
+<div
+  x-data="basic"
+  class="border bg-lightwhite dark:bg-white/5 dark:border-white/10 border-black/10 p-5 rounded-md"
+>
+  <div class="mb-5">
+    <p class="text-sm font-semibold">Striped DataTable</p>
+  </div>
+  <div class="">
+    <div
+      class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns"
+    >
+      <div class="dataTable-top">
+        <div class="dataTable-dropdown">
+          <label
+            ><select class="dataTable-selector">
+              <option value="5" selected="">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select></label
+          >
+        </div>
+        <div class="dataTable-search">
+          <input class="dataTable-input" placeholder="Search..." type="text" />
+        </div>
+      </div>
+      <div class="dataTable-container">
+        <table
+          id="myTableStriped"
+          class="whitespace-nowrap table-striped table-hover table-bordered dataTable-table"
+        >
+          <thead>
+            <tr>
+              <th data-sortable="" style="width: 9.83592%">
+                <a href="#" class="dataTable-sorter">ID</a>
+              </th>
+              <th data-sortable="" style="width: 17.0021%">
+                <a href="#" class="dataTable-sorter">First Name</a>
+              </th>
+              <th data-sortable="" style="width: 16.8616%">
+                <a href="#" class="dataTable-sorter">Last Name</a>
+              </th>
+              <th data-sortable="" style="width: 32.5991%">
+                <a href="#" class="dataTable-sorter">Email</a>
+              </th>
+              <th data-sortable="" style="width: 23.4657%">
+                <a href="#" class="dataTable-sorter">Phone</a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{firstName}}</td>
+              <td>{{lastName}}</td>
+              <td>{{email}}</td>
+              <td>{{phone}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="dataTable-bottom">
+        <div class="dataTable-info">Showing 1 to 5 of 25 entries</div>
+        <nav class="dataTable-pagination">
+          <ul class="dataTable-pagination-list">
+            {{#each pages}}
+            <li class="{{#if active}}active{{/if}}"><a href="#" data-page="{{pageNumber}}">{{pageNumber}}</a></li>
+            {{/each}}
+            <li class="pager">
+              <a href="#" data-page="{{nextPage}}"
+                ><svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4.5 h-4.5"
+                >
+                  <path
+                    d="M9 5L15 12L9 19"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path></svg></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

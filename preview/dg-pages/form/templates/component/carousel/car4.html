@@ -1,0 +1,20 @@
+<div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+    <div class="mb-4">
+        <p class="text-sm font-semibold">{{pageTitle}}</p>
+    </div>
+    <div class="swiper mySwiper4 h-96 swiper-initialized swiper-vertical swiper-backface-hidden">
+        <div class="swiper-wrapper" id="swiper-wrapper-{{uniqueId}}" aria-live="polite">
+            {{#each slides}}
+            <div class="swiper-slide {{#if active}}swiper-slide-active{{/if}} {{#if next}}swiper-slide-next{{/if}}" role="group" aria-label="{{slideNumber}} / {{totalSlides}}" style="height: 384px;">
+                <img src="{{imagePath}}" class="object-cover w-full 2xl:w-auto" alt="">
+            </div>
+            {{/each}}
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-vertical">
+            {{#each slides}}
+            <span class="swiper-pagination-bullet {{#if active}}swiper-pagination-bullet-active{{/if}}" tabindex="0" role="button" aria-label="Go to slide {{slideNumber}}" {{#if active}}aria-current="true"{{/if}}></span>
+            {{/each}}
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+</div>

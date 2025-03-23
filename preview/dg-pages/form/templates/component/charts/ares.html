@@ -1,0 +1,24 @@
+<div class="bg-lightwhite dark:bg-white/5 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{dynamicText}}</p>
+    </div>
+    <div id="areachart" style="min-height: 315px;">
+        <div id="apexchartsrxiyw2q6" class="apexcharts-canvas apexchartsrxiyw2q6 apexcharts-theme-light" style="width: 704px; height: 300px;">
+            <svg id="SvgjsSvg1095" width="704" height="300" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                {{#each yAxisLabels}}
+                    <text font-family="Helvetica, Arial, sans-serif" x="20" y="{{this.y}}" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label" style="font-family: Helvetica, Arial, sans-serif;">
+                        <tspan>{{this.label}}</tspan>
+                        <title>{{this.label}}</title>
+                    </text>
+                {{/each}}
+                {{#each xAxisLabels}}
+                    <text font-family="Helvetica, Arial, sans-serif" x="{{this.x}}" y="262.42666563796996" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label" style="font-family: Helvetica, Arial, sans-serif;">
+                        <tspan>{{this.label}}</tspan>
+                        <title>{{this.label}}</title>
+                    </text>
+                {{/each}}
+                <!-- Other SVG elements for chart rendering -->
+            </svg>
+        </div>
+    </div>
+</div>

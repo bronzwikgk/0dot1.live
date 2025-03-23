@@ -1,0 +1,115 @@
+{
+    "formId": "add-course-form",
+    "inputs": [
+      {
+        "id": "courseTitle",
+        "label": "Course Title",
+        "name": "courseTitle",
+        "type": "text",
+        "placeholder": "Enter the course title",
+        "required": true
+      },
+      {
+        "id": "courseDescription",
+        "label": "Course Description",
+        "name": "courseDescription",
+        "type": "textarea",
+        "placeholder": "Provide a brief course overview",
+        "required": true
+      },
+      {
+        "id": "courseCategory",
+        "label": "Category",
+        "name": "courseCategory",
+        "isSelect": true,
+        "options": ["Programming", "Design", "Marketing", "Business", "Data Science", "Health & Fitness", "Finance", "Language Learning", "Other"],
+        "required": true
+      },
+      {
+        "id": "courseLevel",
+        "label": "Difficulty Level",
+        "name": "courseLevel",
+        "isSelect": true,
+        "options": ["Beginner", "Intermediate", "Advanced"],
+        "required": true
+      },
+      {
+        "id": "courseLanguage",
+        "label": "Course Language",
+        "name": "courseLanguage",
+        "isSelect": true,
+        "options": ["English", "Hindi", "Spanish", "French", "German", "Chinese", "Other"],
+        "required": true
+      },
+      {
+        "id": "courseDuration",
+        "label": "Duration (in hours)",
+        "name": "courseDuration",
+        "type": "number",
+        "placeholder": "Enter estimated course duration",
+        "required": true
+      },
+      {
+        "id": "coursePrice",
+        "label": "Course Price (INR)",
+        "name": "coursePrice",
+        "type": "number",
+        "placeholder": "Enter course price",
+        "required": true
+      },
+      {
+        "id": "courseThumbnail",
+        "label": "Course Thumbnail",
+        "name": "courseThumbnail",
+        "type": "file",
+        "isImage": true
+      },
+      {
+        "id": "courseInstructor",
+        "label": "Instructor Name",
+        "name": "courseInstructor",
+        "type": "text",
+        "placeholder": "Enter instructor's full name",
+        "required": true
+      },
+      {
+        "id": "instructorBio",
+        "label": "Instructor Bio",
+        "name": "instructorBio",
+        "type": "textarea",
+        "placeholder": "Short bio about the instructor",
+        "required": false
+      },
+      {
+        "id": "startDate",
+        "label": "Start Date",
+        "name": "startDate",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "endDate",
+        "label": "End Date",
+        "name": "endDate",
+        "type": "date",
+        "required": false
+      },
+      {
+        "id": "enrollmentStatus",
+        "label": "Enrollment Status",
+        "name": "enrollmentStatus",
+        "isSelect": true,
+        "options": ["Open", "Closed", "Upcoming"],
+        "required": true
+      },
+      {
+        "id": "courseMaterials",
+        "label": "Upload Course Materials",
+        "name": "courseMaterials",
+        "type": "file",
+        "isFile": true,
+        "required": false
+      }
+    ]
+  }
+  

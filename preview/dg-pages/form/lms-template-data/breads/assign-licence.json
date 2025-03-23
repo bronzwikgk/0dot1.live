@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "#",
+      "label": "Dashboard"
+    },
+    {
+      "url": "#",
+      "label": "Licences"
+    },
+    {
+      "url": "#",
+      "label": "Assign Licence"
+    }
+  ],
+  "breadcrumb": "Assign Licence"
+}

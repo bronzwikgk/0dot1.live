@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "/edit-quiz/general",
+      "label": "General"
+    },
+    {
+      "url": "/edit-quiz/questions",
+      "label": "Questions"
+    },
+    {
+      "url": "/edit-quiz/settings",
+      "label": "Settings"
+    }
+  ],
+  "breadcrumb": "Edit Quiz"
+}

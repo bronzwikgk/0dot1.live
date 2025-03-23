@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "bulk1.html",
+      "label": "Bulk Item 1"
+    },
+    {
+      "url": "bulk2.html",
+      "label": "Bulk Item 2"
+    },
+    {
+      "url": "bulk3.html",
+      "label": "Bulk Item 3"
+    }
+  ],
+  "breadcrumb": "Add Bulk"
+}

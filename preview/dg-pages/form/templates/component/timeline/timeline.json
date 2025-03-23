@@ -1,0 +1,33 @@
+{
+  "timelineItems": [
+    {
+      "title": "Image with Text",
+      "imageSrc": "../images/instagram.svg",
+      "heading": "Branding",
+      "description": "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi",
+      "showDivider": true,
+      "showIndicator": true
+    },
+    {
+      "title": "Image with Text",
+      "imageSrc": "../images/web-development.svg",
+      "heading": "Development",
+      "description": "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi",
+      "showDivider": true,
+      "showIndicator": true
+    },
+    {
+      "title": "Image with Text",
+      "imageSrc": "../images/graphic-designer.svg",
+      "heading": "Design",
+      "description": "Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi",
+      "showDivider": true,
+      "showIndicator": true
+    }
+  ],
+  "year": "2023",
+  "company": "Snow",
+  "aboutLink": "javascirpt:;",
+  "supportLink": "javascirpt:;",
+  "contactLink": "javascirpt:;"
+}

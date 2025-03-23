@@ -1,0 +1,18 @@
+<div class="flex flex-col items-center justify-center gap-3">
+    <ul class="inline-flex items-center -space-x-px m-auto">
+        {{#each buttons}}
+            <li class="{{#if isLast}}!ml-2{{else}}mr-2{{/if}}">
+                <button type="button" class="flex justify-center px-{{size}} py-{{size}} rounded transition text-{{textColor}}/60 hover:text-{{textColor}} border border-{{borderColor}}/10 hover:border-{{borderColor}} dark:text-{{textColorDark}}/60 dark:hover:text-{{textColorDark}} dark:border-{{borderColorDark}}/10 dark:hover:border-{{borderColorDark}}">
+                    {{#if icon}}
+                        <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="{{iconPath}}" fill="currentColor"></path>
+                        </svg>
+                    {{/if}}
+                    {{#unless isDots}}
+                        {{label}}
+                    {{/unless}}
+                </button>
+            </li>
+        {{/each}}
+    </ul>
+</div>

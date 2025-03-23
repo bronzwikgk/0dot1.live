@@ -1,0 +1,6 @@
+{
+  "imageSrc": "../images/image404.svg",
+  "darkImageSrc": "../images/image404-dark.svg",
+  "isDarkMode": true,
+  "link": "/"
+}

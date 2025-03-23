@@ -1,0 +1,22 @@
+<!-- Handlebars Template -->
+
+<div x-data="{activebarwithunderline: '{{activeTab}}'}">
+    <ul class="text-sm text-center text-black/50 dark:text-white/50 divide-x shadow dark:shadow-white/10 divide-black/20 dark:divide-white/10 rounded-lg sm:flex w-full">
+        {{#each tabs}}
+        <li class="w-full">
+            <a href="javaScript:;" @click="activebarwithunderline = '{{name}}'" :class="activebarwithunderline === '{{name}}' ? 'text-white bg-black dark:text-black dark:bg-white ' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-black dark:hover:bg-white'" class="inline-flex w-full justify-center p-4 {{#if isRoundedL}}rounded-l-lg{{/if}} {{#if isRoundedR}}rounded-r-lg{{/if}} text-white bg-black dark:text-black dark:bg-white">
+                {{displayName}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="tab-content mt-3 text-[13px]">
+        {{#each tabs}}
+        <div x-show="activebarwithunderline === '{{name}}'" class="" style="display: none;">
+            <p>
+                {{content}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

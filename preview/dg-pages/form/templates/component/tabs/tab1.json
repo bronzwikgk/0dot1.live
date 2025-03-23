@@ -1,0 +1,31 @@
+{
+  "dynamicData": {
+    "activeDefTab": "profile",
+    "tabs": [
+      {
+        "tabName": "profile",
+        "tabDisplayName": "Profile",
+        "tabColor": "lightblue-100",
+        "tabContent": "Lorem Ipsum is simply dummy text..."
+      },
+      {
+        "tabName": "dashboard",
+        "tabDisplayName": "Dashboard",
+        "tabColor": "transparent",
+        "tabContent": "It is a long established fact..."
+      },
+      {
+        "tabName": "settings",
+        "tabDisplayName": "Settings",
+        "tabColor": "transparent",
+        "tabContent": "Contrary to popular belief, Lorem Ipsum..."
+      },
+      {
+        "tabName": "contacts",
+        "tabDisplayName": "Contacts",
+        "tabColor": "transparent",
+        "tabContent": "There are many variations of passages..."
+      }
+    ]
+  }
+}

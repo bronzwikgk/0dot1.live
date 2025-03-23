@@ -1,0 +1,24 @@
+<!-- Handlebars Template -->
+<div x-data="{activebarwithicon: '{{activeBarWithIcon}}'}">
+    <ul class="text-sm text-center text-black/50 dark:text-white/50 divide-x shadow dark:shadow-white/10 divide-black/20 dark:divide-white/20 rounded-lg sm:flex w-full">
+        {{#each menuItems}}
+        <li class="w-full">
+            <a href="javaScript:;" @click="activebarwithicon = '{{name}}'" :class="activebarwithicon === '{{name}}' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4 {{#if isRounded}}sm:rounded-{{position}}-lg{{/if}} text-white bg-black dark:bg-white dark:text-black">
+                <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    {{svgPath}}
+                </svg>
+                {{displayName}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="tab-content mt-3 text-[13px]">
+        {{#each content}}
+        <div x-show="activebarwithicon === '{{name}}'" class="">
+            <p>
+                {{description}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

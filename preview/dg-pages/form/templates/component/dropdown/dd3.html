@@ -1,0 +1,24 @@
+<div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+    <div class="mb-5">
+        <p class="text-sm font-semibold">{{title}}</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3">
+        {{#each buttons}}
+        <div x-data="{ dropdown: false}" class="dropdown">
+            <button type="button" class="btn inline-flex p-0 align-middle">
+                <span class="px-3 leading-[2.8]">{{text}}</span>
+                <p class="bg-white bg-opacity-20 w-10 h-10 py-3 align-middle rounded-l" @click="dropdown = !dropdown" @keydown.escape="dropdown = false">
+                    <svg class="w-4 h-4 mx-auto" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="{{icon}}" fill="currentColor"></path>
+                    </svg>
+                </p>
+            </button>
+            <ul x-show="dropdown" @click.away="dropdown = false" x-transition="" x-transition.duration.300ms="" class="right-0 whitespace-nowrap" style="display: none;">
+                {{#each actions}}
+                <li><a href="javascript:;">{{this}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </div>
+</div>

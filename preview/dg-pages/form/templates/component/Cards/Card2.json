@@ -1,0 +1,16 @@
+{
+  "apiItems": [
+    {
+      "title": "How to set API",
+      "description": "Use images to enhance your post, improve its flow, add humor and explain complex topics.",
+      "link": "javaScript;",
+      "buttonText": "Get Started"
+    },
+    {
+      "title": "Developer Tools",
+      "description": "Plan your blog post by choosing a topic, creating an outline conduct research, and checking facts.",
+      "link": "javaScript;",
+      "buttonText": "Create Rule"
+    }
+  ]
+}

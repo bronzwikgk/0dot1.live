@@ -1,0 +1,139 @@
+{
+  "formId": "edit-profile-form",
+  "inputs": [
+    {
+      "id": "fullName",
+      "label": "Full Name",
+      "name": "fullName",
+      "type": "text",
+      "placeholder": "Enter your full name",
+      "required": true
+    },
+    {
+      "id": "email",
+      "label": "Email Address",
+      "name": "email",
+      "type": "email",
+      "placeholder": "Enter your email",
+      "required": true
+    },
+    {
+      "id": "phone",
+      "label": "Phone Number",
+      "name": "phone",
+      "type": "tel",
+      "placeholder": "Enter your phone number",
+      "required": true
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "name": "gender",
+      "isSelect": true,
+      "options": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "id": "dob",
+      "label": "Date of Birth",
+      "name": "dob",
+      "type": "date",
+      "required": true
+    },
+    {
+      "id": "profilePic",
+      "label": "Profile Picture",
+      "name": "profilePic",
+      "type": "file",
+      "isImage": true
+    },
+    {
+      "id": "bio",
+      "label": "Bio",
+      "name": "bio",
+      "type": "textarea",
+      "placeholder": "Write a short bio about yourself",
+      "required": false
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn Profile",
+      "name": "linkedin",
+      "type": "url",
+      "placeholder": "Enter your LinkedIn profile link",
+      "required": false
+    },
+    {
+      "id": "country",
+      "label": "Country",
+      "name": "country",
+      "isSelect": true,
+      "options": [
+        "USA",
+        "UK",
+        "Canada",
+        "India",
+        "Australia",
+        "Germany",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "id": "timezone",
+      "label": "Time Zone",
+      "name": "timezone",
+      "isSelect": true,
+      "options": [
+        "UTC-12",
+        "UTC-11",
+        "UTC-10",
+        "UTC-9",
+        "UTC-8",
+        "UTC-7",
+        "UTC-6",
+        "UTC-5",
+        "UTC-4",
+        "UTC-3",
+        "UTC-2",
+        "UTC-1",
+        "UTC+0",
+        "UTC+1",
+        "UTC+2",
+        "UTC+3",
+        "UTC+4",
+        "UTC+5",
+        "UTC+6",
+        "UTC+7",
+        "UTC+8",
+        "UTC+9",
+        "UTC+10",
+        "UTC+11",
+        "UTC+12"
+      ],
+      "required": true
+    },
+    {
+      "id": "password",
+      "label": "New Password",
+      "name": "password",
+      "type": "password",
+      "placeholder": "Enter new password",
+      "required": false
+    },
+    {
+      "id": "confirmPassword",
+      "label": "Confirm New Password",
+      "name": "confirmPassword",
+      "type": "password",
+      "placeholder": "Confirm your new password",
+      "required": false
+    },
+    { "label": "Submit", "isSubmit": true, "id": "submit-btn","name": "submit" },
+    { "label": "Reset", "isReset": true, "id": "reset-btn", "name": "reset" }
+  ]
+}

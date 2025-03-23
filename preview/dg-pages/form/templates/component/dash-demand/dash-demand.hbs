@@ -1,0 +1,11 @@
+<div class="bg-lightwhite dark:bg-white/5 p-6 rounded-2xl">
+    <h2 class="text-sm font-semibold text-black dark:text-white mb-4">Most In-Demand Courses</h2>
+    <div class="flex flex-col gap-[18px]">
+        {{#each courses}}
+        <div class="flex gap-4 items-center group">
+            <p class="w-48 flex-none">{{name}}</p>
+            <div class="w-{{width}}/12 h-[6px] relative bg-black/10 dark:bg-white/10 group-hover:bg-black dark:group-hover:bg-white rounded-tr-[4px] rounded-br-[4px] after:h-3 after:w-[1px] after:bg-black/10 dark:after:bg-white/20 group-hover:after:bg-black dark:group-hover:after:bg-white after:absolute after:left-0 after:-top-[3px]"></div>
+        </div>
+        {{/each}}
+    </div>
+</div>

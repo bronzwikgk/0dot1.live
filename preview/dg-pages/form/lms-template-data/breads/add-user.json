@@ -1,0 +1,17 @@
+{
+  "menuItems": [
+    {
+      "url": "/dashboard",
+      "label": "Dashboard"
+    },
+    {
+      "url": "/users",
+      "label": "Users"
+    },
+    {
+      "url": "/add-user",
+      "label": "Add User"
+    }
+  ],
+  "breadcrumb": "Add User"
+}

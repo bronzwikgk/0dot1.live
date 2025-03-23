@@ -1,0 +1,25 @@
+{
+    "cards": [
+        {
+            "title": "Courses In Progress",
+            "value": "3",
+            "percentageChange": "+1",
+            "isPositive": true,
+            "color": "lightblue-100"
+        },
+        {
+            "title": "Courses Completed",
+            "value": "12",
+            "percentageChange": "+2",
+            "isPositive": true,
+            "color": "lightpurple-100"
+        },
+        {
+            "title": "Certificates Earned",
+            "value": "8",
+            "percentageChange": "+2",
+            "isPositive": true,
+            "color": "lightblue-100"
+        }
+    ]
+}
