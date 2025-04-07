@@ -40,8 +40,8 @@
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
 
-            <!-- Start Sidebar -->
-            <nav
+        <!-- Start Sidebar -->
+        <nav
             class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
             <div class="bg-white dark:bg-black h-full">
                 <!-- Start Logo -->
@@ -85,10 +85,10 @@
                     </li>
 
                     <li class="menu nav-item">
-                        <a href="/lms/users/students" class="nav-link group text-black dark:text-white">
+                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
                             <div class="flex pl-5 items-center">
                                 <i class="ri-user-line"></i>
-                                <span class="pl-1">Students</span>
+                                <span class="pl-1">Learner</span>
                             </div>
                         </a>
                     </li>
@@ -119,15 +119,15 @@
                         <ul x-show="activeMenu === 'new'" x-collapse=""
                             class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
                             style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="./addCourse Form.html" title="">Course</a></li>
-                            <li><a href="./addModules Form.html" title="">Modules</a></li>
-                            <li><a href="./addLesson Form.html" title="">Lesson</a></li>
-                            <li><a href="./addContent Form.html" title="">Content</a></li>
-                            <li><a href="./addQuiz Form.html" title="">Quiz</a></li>
-                            <li><a href="./addUser Form.html" title="">User</a></li>
-                            <li><a href="./addLicense Form.html" title="">License</a></li>
-                            <li><a href="./addOpen Batch Form.html" title="">Open Batch</a></li>
-                            
+                            <li><a href="./add_course.html" title="">Course</a></li>
+                            <li><a href="./add_module.html" title="">Modules</a></li>
+                            <li><a href="./add_lesson.html" title="">Lesson</a></li>
+                            <li><a href="./add_content.html" title="">Content</a></li>
+                            <li><a href="./add_quiz.html" title="">Quiz</a></li>
+                            <li><a href="./add_user.html" title="">User</a></li>
+                            <li><a href="./add_license.html">License</a></li>
+                            <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
+
                         </ul>
                     </li>
 
@@ -154,88 +154,37 @@
                         <ul x-show="activeMenu === 'courses'" x-collapse
                             class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
                             <li><a href="./my-courses.html" title="">All Courses</a></li>
-                            <li><a href="/lms/modules" title="">Modules</a></li>
-                            <li><a href="/lms/lessons" title="">Lessons</a></li>
-                            <li><a href="/lms/quizzes" title="">Quizzes</a></li>
-                            <li><a href="/lms/certificates" title="">Certificates</a></li>
+                            <li><a href="./view-course.html" title="">View Course</a></li>
+
                         </ul>
                     </li>
 
-                    <!-- Section Header -->
-                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Training Management</h2>
-                    <li class="menu nav-item">
-                        <a href="/lms/training/sessions" class="nav-link group text-black dark:text-white">
-                            <div class="flex pl-5 items-center">
-                                <i class="ri-timer-line"></i>
-                                <span class="pl-1">Training Sessions</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="menu nav-item">
-                        <a href="/lms/training/batches" class="nav-link group text-black dark:text-white">
-                            <div class="flex pl-5 items-center">
-                                <i class="ri-group-line"></i>
-                                <span class="pl-1">Batches</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="menu nav-item">
-                        <a href="/lms/training/attendance" class="nav-link group text-black dark:text-white">
-                            <div class="flex pl-5 items-center">
-                                <i class="ri-calendar-check-line"></i>
-                                <span class="pl-1">Attendance</span>
-                            </div>
-                        </a>
-                    </li>
+
+
 
                     <!-- Section Header -->
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
                     <li class="menu nav-item">
-                        <a href="/lms/reports" class="nav-link group text-black dark:text-white">
+                        <a href="./report.html" class="nav-link group text-black dark:text-white">
                             <div class="flex pl-5 items-center">
                                 <i class="ri-bar-chart-line"></i>
                                 <span class="pl-1">Reports</span>
                             </div>
                         </a>
                     </li>
-                    <li class="menu nav-item">
-                        <a href="/lms/analytics" class="nav-link group text-black dark:text-white">
-                            <div class="flex pl-5 items-center">
-                                <i class="ri-pie-chart-2-line"></i>
-                                <span class="pl-1">Analytics</span>
-                            </div>
-                        </a>
-                    </li>
+
 
                     <!-- Section Header -->
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
                     <li class="menu nav-item">
-                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                            :class="{'active' : activeMenu === 'settings'}"
-                            @click="activeMenu === 'settings' ? activeMenu = null : activeMenu = 'settings'">
-                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'settings'}">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                        fill="currentcolor"></path>
-                                </svg>
-                            </div>
-                            <div class="flex items-center">
+                        <a href="./settings.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
                                 <i class="ri-settings-3-line"></i>
                                 <span class="pl-1">Settings</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'settings'" x-collapse
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                            <li><a href="/lms/settings/general" title="">General Settings</a></li>
-                            <li><a href="/lms/settings/notifications" title="">Notifications</a></li>
-                            <li><a href="/lms/settings/roles" title="">Roles & Permissions</a></li>
-                            <li><a href="/lms/settings/certificates" title="">Certificate Settings</a></li>
-                            <li><a href="/lms/settings/payment" title="">Payment Settings</a></li>
-                        </ul>
                     </li>
+
                 </ul>
                 <!-- End LMS Super Admin Sidebar -->
 
@@ -486,7 +435,7 @@
                     <div class="px-2 py-1 mb-4">
                         <!-- Toolbar -->
                         <div class="flex justify-between items-center mb-4 flex-wrap">
-                            <h2 class="text-lg font-semibold">My Courses</h2>
+                            <h2 class="text-lg font-semibold">Learners</h2>
                             <div class="flex flex-wrap justify-center gap-3">
                                 <div x-data="dropdown" @click.outside="open = false" class="dropdown">
                                     <button
@@ -1028,31 +977,28 @@
                 itemsPerPage: 10,
                 currentPage: 1,
                 items: Array.from({ length: 50 }, (_, i) => ({
-    id: i + 1,
-    avatar: 'https://placehold.co/600x400/green/white', // Placeholder image URL for learner avatar
-    name: [
-        'Amit Sharma', 'Priya Nair', 'Rahul Verma', 'Sneha Iyer', 'Karan Mehta',
-        'Divya Gupta', 'Arjun Reddy', 'Neha Singh', 'Vikram Desai', 'Pooja Joshi',
-        'Siddharth Rao', 'Ananya Pillai', 'Ravi Shankar', 'Meera Menon', 'Harsh Vardhan',
-        'Lakshmi Devi', 'Manish Kapoor', 'Sunita Rani', 'Deepak Mishra', 'Ruchi Bhatia'
-    ][Math.floor(Math.random() * 20)],
-    email: [
-        'amit.sharma@example.in', 'priya.nair@example.in', 'rahul.verma@example.in',
-        'sneha.iyer@example.in', 'karan.mehta@example.in', 'divya.gupta@example.in',
-        'arjun.reddy@example.in', 'neha.singh@example.in', 'vikram.desai@example.in',
-        'pooja.joshi@example.in', 'siddharth.rao@example.in', 'ananya.pillai@example.in',
-        'ravi.shankar@example.in', 'meera.menon@example.in', 'harsh.vardhan@example.in',
-        'lakshmi.devi@example.in', 'manish.kapoor@example.in', 'sunita.rani@example.in',
-        'deepak.mishra@example.in', 'ruchi.bhatia@example.in'
-    ][Math.floor(Math.random() * 20)],
-    role: 'Learner',
-    dateAdded: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
-    lastLogin: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
-    profileLink: "./view-learner.html"
-}))
-
-
-,
+                    id: i + 1,
+                    avatar: 'https://placehold.co/600x400/green/white', // Placeholder image URL for learner avatar
+                    name: [
+                        'Amit Sharma', 'Priya Nair', 'Rahul Verma', 'Sneha Iyer', 'Karan Mehta',
+                        'Divya Gupta', 'Arjun Reddy', 'Neha Singh', 'Vikram Desai', 'Pooja Joshi',
+                        'Siddharth Rao', 'Ananya Pillai', 'Ravi Shankar', 'Meera Menon', 'Harsh Vardhan',
+                        'Lakshmi Devi', 'Manish Kapoor', 'Sunita Rani', 'Deepak Mishra', 'Ruchi Bhatia'
+                    ][Math.floor(Math.random() * 20)],
+                    email: [
+                        'amit.sharma@example.in', 'priya.nair@example.in', 'rahul.verma@example.in',
+                        'sneha.iyer@example.in', 'karan.mehta@example.in', 'divya.gupta@example.in',
+                        'arjun.reddy@example.in', 'neha.singh@example.in', 'vikram.desai@example.in',
+                        'pooja.joshi@example.in', 'siddharth.rao@example.in', 'ananya.pillai@example.in',
+                        'ravi.shankar@example.in', 'meera.menon@example.in', 'harsh.vardhan@example.in',
+                        'lakshmi.devi@example.in', 'manish.kapoor@example.in', 'sunita.rani@example.in',
+                        'deepak.mishra@example.in', 'ruchi.bhatia@example.in'
+                    ][Math.floor(Math.random() * 20)],
+                    role: 'Learner',
+                    dateAdded: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
+                    lastLogin: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
+                    profileLink: "./view-learner.html"
+                })),
 
                 paginatedItems: [],
 

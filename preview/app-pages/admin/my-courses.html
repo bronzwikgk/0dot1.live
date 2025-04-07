@@ -39,210 +39,159 @@
 
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
-        
-       <!-- Start Sidebar -->
-       <nav
-       class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
-       <div class="bg-white dark:bg-black h-full">
-           <!-- Start Logo -->
-           <div class="flex p-4">
-               <a class="main-logo flex justify-center flex-1 w-full" href="/crm">
-                   <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                       alt="logo" class="block dark:hidden w-20">
-                   <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                       alt="logo" class="hidden dark:block w-20">
-               </a>
-           </div>
-           <!-- End Logo -->
 
-           <!-- Start Menu -->
-           <!-- Start LMS Super Admin Sidebar -->
-           <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-5 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-               x-data="{ activeMenu: null }">
+        <!-- Start Sidebar -->
+        <nav
+            class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+            <div class="bg-white dark:bg-black h-full">
+                <!-- Start Logo -->
+                <div class="flex p-4">
+                    <a class="main-logo flex justify-center flex-1 w-full" href="/crm">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="block dark:hidden w-20">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="hidden dark:block w-20">
+                    </a>
+                </div>
+                <!-- End Logo -->
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
-               <!-- Menu Item -->
-               <li class="menu nav-item">
-                   <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-dashboard-line"></i>
-                           <span class="pl-1">Overview</span>
-                       </div>
-                   </a>
-               </li>
+                <!-- Start Menu -->
+                <!-- Start LMS Super Admin Sidebar -->
+                <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-5 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+                    x-data="{ activeMenu: null }">
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
-               <!-- Menu Items -->
-               <li class="menu nav-item">
-                   <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-shield-user-line"></i>
-                           <span class="pl-1">Admins</span>
-                       </div>
-                   </a>
-               </li>
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-dashboard-line"></i>
+                                <span class="pl-1">Overview</span>
+                            </div>
+                        </a>
+                    </li>
 
-               <li class="menu nav-item">
-                   <a href="/lms/users/students" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-user-line"></i>
-                           <span class="pl-1">Students</span>
-                       </div>
-                   </a>
-               </li>
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
+                    <!-- Menu Items -->
+                    <li class="menu nav-item">
+                        <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-shield-user-line"></i>
+                                <span class="pl-1">Admins</span>
+                            </div>
+                        </a>
+                    </li>
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                   <span>CRM Actions</span>
-               </h2>
-               <!-- Menu Item -->
-               <li class="menu nav-item">
-                   <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
-                       :class="{'active' : activeMenu === 'new'}"
-                       @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
-                       <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                           :class="{'!rotate-90' : activeMenu === 'new'}">
-                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                               xmlns="http://www.w3.org/2000/svg">
-                               <path fill-rule="evenodd" clip-rule="evenodd"
-                                   d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                   fill="currentcolor"></path>
-                           </svg>
-                       </div>
-                       <div class="flex items-center">
-                           <i class="ri-add-circle-line"></i>
-                           <span class="pl-1">New Record</span>
-                       </div>
-                   </a>
-                   <ul x-show="activeMenu === 'new'" x-collapse=""
-                       class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                       style="display: none; height: 0px; overflow: hidden;" hidden="">
-                       <li><a href="./addCourse Form.html" title="">Course</a></li>
-                       <li><a href="./addModules Form.html" title="">Modules</a></li>
-                       <li><a href="./addLesson Form.html" title="">Lesson</a></li>
-                       <li><a href="./addContent Form.html" title="">Content</a></li>
-                       <li><a href="./addQuiz Form.html" title="">Quiz</a></li>
-                       <li><a href="./addUser Form.html" title="">User</a></li>
-                       <li><a href="./addLicense Form.html" title="">License</a></li>
-                       <li><a href="./addOpen Batch Form.html" title="">Open Batch</a></li>
-                       
-                   </ul>
-               </li>
+                    <li class="menu nav-item">
+                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-user-line"></i>
+                                <span class="pl-1">Learner</span>
+                            </div>
+                        </a>
+                    </li>
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
-               <li class="menu nav-item">
-                   <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                       :class="{'active' : activeMenu === 'courses'}"
-                       @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
-                       <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                           :class="{'!rotate-90' : activeMenu === 'courses'}">
-                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                               xmlns="http://www.w3.org/2000/svg">
-                               <path fill-rule="evenodd" clip-rule="evenodd"
-                                   d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                   fill="currentcolor"></path>
-                           </svg>
-                       </div>
-                       <div class="flex items-center">
-                           <i class="ri-book-open-line"></i>
-                           <span class="pl-1">Courses</span>
-                       </div>
-                   </a>
-                   <ul x-show="activeMenu === 'courses'" x-collapse
-                       class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                       <li><a href="./my-courses.html" title="">All Courses</a></li>
-                       <li><a href="/lms/modules" title="">Modules</a></li>
-                       <li><a href="/lms/lessons" title="">Lessons</a></li>
-                       <li><a href="/lms/quizzes" title="">Quizzes</a></li>
-                       <li><a href="/lms/certificates" title="">Certificates</a></li>
-                   </ul>
-               </li>
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                        <span>CRM Actions</span>
+                    </h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'new'}"
+                            @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'new'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-add-circle-line"></i>
+                                <span class="pl-1">New Record</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'new'" x-collapse=""
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                            style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="./add_course.html" title="">Course</a></li>
+                            <li><a href="./add_module.html" title="">Modules</a></li>
+                            <li><a href="./add_lesson.html" title="">Lesson</a></li>
+                            <li><a href="./add_content.html" title="">Content</a></li>
+                            <li><a href="./add_quiz.html" title="">Quiz</a></li>
+                            <li><a href="./add_user.html" title="">User</a></li>
+                            <li><a href="./add_license.html">License</a></li>
+                            <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Training Management</h2>
-               <li class="menu nav-item">
-                   <a href="/lms/training/sessions" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-timer-line"></i>
-                           <span class="pl-1">Training Sessions</span>
-                       </div>
-                   </a>
-               </li>
-               <li class="menu nav-item">
-                   <a href="/lms/training/batches" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-group-line"></i>
-                           <span class="pl-1">Batches</span>
-                       </div>
-                   </a>
-               </li>
-               <li class="menu nav-item">
-                   <a href="/lms/training/attendance" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-calendar-check-line"></i>
-                           <span class="pl-1">Attendance</span>
-                       </div>
-                   </a>
-               </li>
+                        </ul>
+                    </li>
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
-               <li class="menu nav-item">
-                   <a href="/lms/reports" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-bar-chart-line"></i>
-                           <span class="pl-1">Reports</span>
-                       </div>
-                   </a>
-               </li>
-               <li class="menu nav-item">
-                   <a href="/lms/analytics" class="nav-link group text-black dark:text-white">
-                       <div class="flex pl-5 items-center">
-                           <i class="ri-pie-chart-2-line"></i>
-                           <span class="pl-1">Analytics</span>
-                       </div>
-                   </a>
-               </li>
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'courses'}"
+                            @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'courses'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-book-open-line"></i>
+                                <span class="pl-1">Courses</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'courses'" x-collapse
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
+                            <li><a href="./my-courses.html" title="">All Courses</a></li>
+                            <li><a href="./view-course.html" title="">View Course</a></li>
 
-               <!-- Section Header -->
-               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
-               <li class="menu nav-item">
-                   <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                       :class="{'active' : activeMenu === 'settings'}"
-                       @click="activeMenu === 'settings' ? activeMenu = null : activeMenu = 'settings'">
-                       <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                           :class="{'!rotate-90' : activeMenu === 'settings'}">
-                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                               xmlns="http://www.w3.org/2000/svg">
-                               <path fill-rule="evenodd" clip-rule="evenodd"
-                                   d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                   fill="currentcolor"></path>
-                           </svg>
-                       </div>
-                       <div class="flex items-center">
-                           <i class="ri-settings-3-line"></i>
-                           <span class="pl-1">Settings</span>
-                       </div>
-                   </a>
-                   <ul x-show="activeMenu === 'settings'" x-collapse
-                       class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                       <li><a href="/lms/settings/general" title="">General Settings</a></li>
-                       <li><a href="/lms/settings/notifications" title="">Notifications</a></li>
-                       <li><a href="/lms/settings/roles" title="">Roles & Permissions</a></li>
-                       <li><a href="/lms/settings/certificates" title="">Certificate Settings</a></li>
-                       <li><a href="/lms/settings/payment" title="">Payment Settings</a></li>
-                   </ul>
-               </li>
-           </ul>
-           <!-- End LMS Super Admin Sidebar -->
+                        </ul>
+                    </li>
 
-           <!-- End Menu -->
-       </div>
-   </nav>
-   <!-- End sidebar -->
+
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
+                    <li class="menu nav-item">
+                        <a href="./report.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Reports</span>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
+                    <li class="menu nav-item">
+                        <a href="./settings.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-settings-3-line"></i>
+                                <span class="pl-1">Settings</span>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- End LMS Super Admin Sidebar -->
+
+                <!-- End Menu -->
+            </div>
+        </nav>
+        <!-- End sidebar -->
 
         <!-- Start Content Area -->
         <div class="main-content flex-1">

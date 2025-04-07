@@ -4,27 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
-    <!-- Site Tiltle -->
-    <title>My Profile</title>
-    <!-- Site favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ducisgroup">
+    <meta name="author" content="shunya.ek">
+    <!-- Site Title -->
+    <title>Ducisgroup</title>
+    <!-- Site Favicon -->
     <link rel="shortcut icon" href="../beauty/images/favicon.ico">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg&#x3D;&#x3D;"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom Style -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 
 <body x-data="main"
     class="antialiased relative font-inter bg-white dark:bg-black text-black dark:text-white text-sm font-normal overflow-x-hidden vertical"
     :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.rightsidebar ? 'right-sidebar' : '', $store.app.menu, $store.app.layout]">
-
     <!-- Start Menu Sidebar Olverlay -->
     <div class="fixed inset-0 bg-[black]/60 z-40 lg:hidden hidden" :class="{'hidden' : !$store.app.sidebar}"
         @click="$store.app.toggleSidebar()"></div>
@@ -213,11 +215,10 @@
                                     <a href="javaScript:;"
                                         class="flex items-center text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white">Home</a>
                                 </li>
-
                                 <li class="flex items-center">
                                     <span class="text-black/40 dark:text-white/40">/</span>
-                                    <a href="javaScript:;" class="flex items-center px-3 text-black dark:text-white">My
-                                        Profile</a>
+                                    <a href="javaScript:;"
+                                        class="flex items-center px-3 text-black dark:text-white">Form</a>
                                 </li>
                             </ol>
                         </nav>
@@ -329,379 +330,97 @@
             </div>
 
             <!-- End Topbar -->
+
             <!-- Start Content -->
             <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
-                <div class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
-                    <div x-data="{activeTab:'overview'}" class="tabs flex flex-col">
-                        <div class="grid grid-cols-1 md:grid-cols-3 justify-between gap-4 items-center mb-5">
-                            <div class="tabs-list md:col-span-2 flex text-sm flex-nowrap overflow-auto">
-                                <button @click="activeTab = 'overview'"
-                                    :class="{'border-black text-black font-semibold dark:border-lightpurple-200 dark:text-lightpurple-200': activeTab === 'overview', 'border-transparent text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-lightpurple-200': activeTab !== 'overview'}"
-                                    class="border-b-2 mx-2 my-1">
-                                    Overview
-                                </button>
 
-                            </div>
-                            <div class="flex gap-2 justify-center md:justify-end flex-none items-center">
+                <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
 
+                    <div class="px-2 py-1 mb-4">
+                        <h2 class="text-lg font-semibold">Add New Content</h2>
 
-                                <div x-data="{ dropdown: false }" class="dropdown">
-                                    <button @click="dropdown = !dropdown" @keydown.escape="dropdown = false"
-                                        class="p-1 text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300">
-                                        <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="5" cy="10" r="1.25" fill="currentcolor"></circle>
-                                            <circle cx="10" cy="10" r="1.25" fill="currentcolor"></circle>
-                                            <circle cx="15" cy="10" r="1.25" fill="currentcolor"></circle>
-                                        </svg>
-                                    </button>
-                                    <ul x-show="dropdown" @click.away="dropdown = false" x-transition
-                                        class="right-0 bg-white dark:bg-darkgray-700 shadow-md rounded-lg mt-2 p-2 whitespace-nowrap">
-                                        <li><a href="javascript:;"
-                                                class="block px-3 py-1 hover:bg-gray-100 dark:hover:bg-darkgray-600">Weekly</a>
-                                        </li>
-                                        <li><a href="javascript:;"
-                                                class="block px-3 py-1 hover:bg-gray-100 dark:hover:bg-darkgray-600">Monthly</a>
-                                        </li>
-                                        <li><a href="javascript:;"
-                                                class="block px-3 py-1 hover:bg-gray-100 dark:hover:bg-darkgray-600">Yearly</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="flex flex-wrap items-center space-x-2 py-3">
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="/">Dashboard</a>
+                                <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </li>
 
-                        <div class="tab-content">
-                            <div x-show="activeTab === 'overview'" class="flex flex-col gap-7">
-                                <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
-                                    <div class="flex items-start justify-between gap-4 mb-[2px]">
-                                        <h2 class="text-lg font-semibold">Sunil Mohal</h2>
-                                        <img class="w-[42px] h-[42px] flex-none rounded-full overflow-hidden object-cover"
-                                            src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">
-                                    </div>
-                                    <div class="flex flex-wrap gap-4 items-center mb-4">
-                                        <div class="flex items-center gap-1 text-xs text-black/40 dark:text-white/40">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M11.8465 2.26238C10.4873 1.6875 9 1.6875 9 1.6875C7.51265 1.6875 6.15347 2.26238 6.15347 2.26238C4.84109 2.81747 3.82928 3.82928 3.82928 3.82928C2.81748 4.84109 2.26238 6.15347 2.26238 6.15347C1.6875 7.51265 1.6875 9 1.6875 9C1.6875 10.4873 2.26238 11.8465 2.26238 11.8465C2.81747 13.1589 3.82928 14.1707 3.82928 14.1707C3.90704 14.2485 3.98657 14.3235 4.06715 14.3959C4.09662 14.4287 4.1301 14.4583 4.16709 14.4837C5.11036 15.2964 6.15347 15.7376 6.15347 15.7376C7.51265 16.3125 9 16.3125 9 16.3125C10.4873 16.3125 11.8465 15.7376 11.8465 15.7376C12.6786 15.3857 13.3899 14.8501 13.799 14.5053C13.8585 14.4704 13.9102 14.4253 13.9523 14.373C14.0928 14.2486 14.1707 14.1707 14.1707 14.1707C15.1825 13.1589 15.7376 11.8465 15.7376 11.8465C16.3125 10.4873 16.3125 9 16.3125 9C16.3125 7.51265 15.7376 6.15347 15.7376 6.15347C15.1825 4.84109 14.1707 3.82928 14.1707 3.82928C13.1589 2.81747 11.8465 2.26238 11.8465 2.26238ZM6.59172 14.7015C6.04988 14.4723 5.56846 14.151 5.21752 13.882C5.81067 12.9896 6.64596 12.4769 6.64596 12.4769C7.7291 11.8121 9 11.8125 9 11.8125C10.2709 11.8125 11.354 12.4769 11.354 12.4769C12.036 12.8955 12.5166 13.4997 12.7791 13.8899C12.0784 14.418 11.4083 14.7015 11.4083 14.7015C10.2592 15.1875 9 15.1875 9 15.1875C7.74079 15.1875 6.59172 14.7015 6.59172 14.7015ZM6.05746 11.5181C6.05746 11.5181 6.39649 11.3101 6.93432 11.1023C6.82429 11.0195 6.71668 10.9271 6.61351 10.824C6.61351 10.824 5.625 9.83547 5.625 8.4375C5.625 8.4375 5.625 7.03953 6.61351 6.05101C6.61351 6.05101 7.60203 5.0625 9 5.0625C9 5.0625 10.398 5.0625 11.3865 6.05101C11.3865 6.05101 12.375 7.03953 12.375 8.4375C12.375 8.4375 12.375 9.83547 11.3865 10.824C11.3865 10.824 11.2708 10.9397 11.0625 11.092C11.3547 11.2016 11.654 11.341 11.9425 11.5181C11.9425 11.5181 12.8853 12.0968 13.6153 13.1114C13.9039 12.7751 14.3886 12.148 14.7015 11.4083C14.7015 11.4083 15.1875 10.2592 15.1875 9C15.1875 9 15.1875 7.74079 14.7015 6.59172C14.7015 6.59172 14.2319 5.48143 13.3752 4.62478C13.3752 4.62478 12.5186 3.76813 11.4083 3.29851C11.4083 3.29851 10.2592 2.8125 9 2.8125C9 2.8125 7.74078 2.8125 6.59172 3.29851C6.59172 3.29851 5.48143 3.76813 4.62478 4.62478C4.62478 4.62478 3.76813 5.48143 3.29851 6.59172C3.29851 6.59172 2.8125 7.74078 2.8125 9C2.8125 9 2.8125 10.2592 3.29851 11.4083C3.29851 11.4083 3.68218 12.3154 4.38853 13.1224C4.73326 12.6405 5.2946 11.9864 6.05746 11.5181ZM10.591 10.0285C9.93198 10.6875 9 10.6875 9 10.6875C8.06802 10.6875 7.40901 10.0285 7.40901 10.0285C6.75 9.36948 6.75 8.4375 6.75 8.4375C6.75 7.50552 7.40901 6.84651 7.40901 6.84651C8.06802 6.1875 9 6.1875 9 6.1875C9.93198 6.1875 10.591 6.84651 10.591 6.84651C11.25 7.50552 11.25 8.4375 11.25 8.4375C11.25 9.36948 10.591 10.0285 10.591 10.0285Z"
-                                                    fill="currentcolor"></path>
-                                            </svg>
-                                            <p>ITIL Foundation Instructor</p>
-                                        </div>
-                                        <div class="flex items-center gap-1 text-xs text-black/40 dark:text-white/40">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M9 4.5C9 4.5 10.165 4.5 10.9887 5.32376C10.9887 5.32376 11.8125 6.14752 11.8125 7.3125C11.8125 7.3125 11.8125 8.47748 10.9887 9.30124C10.9887 9.30124 10.165 10.125 9 10.125C9 10.125 7.83502 10.125 7.01126 9.30124C7.01126 9.30124 6.1875 8.47748 6.1875 7.3125C6.1875 7.3125 6.1875 6.14752 7.01126 5.32376C7.01126 5.32376 7.83502 4.5 9 4.5ZM9 5.625C9 5.625 8.30101 5.625 7.80676 6.11926C7.80676 6.11926 7.3125 6.61351 7.3125 7.3125C7.3125 7.3125 7.3125 8.01149 7.80676 8.50574C7.80676 8.50574 8.30101 9 9 9C9 9 9.69899 9 10.1932 8.50574C10.1932 8.50574 10.6875 8.01149 10.6875 7.3125C10.6875 7.3125 10.6875 6.61351 10.1932 6.11926C10.1932 6.11926 9.69899 5.625 9 5.625Z"
-                                                    fill="currentcolor"></path>
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M14.7165 4.94465C14.7165 4.94465 15.1875 6.08173 15.1875 7.3125C15.1875 7.3125 15.1875 10.6869 12.237 14.08C12.237 14.08 11.3302 15.1228 10.2432 16.0468C10.2432 16.0468 9.69576 16.5121 9.32257 16.7733C9.12889 16.9089 8.87111 16.9089 8.67743 16.7733C8.67743 16.7733 8.30424 16.5121 7.75679 16.0468C7.75679 16.0468 6.66978 15.1228 5.76303 14.08C5.76303 14.08 2.8125 10.6869 2.8125 7.3125C2.8125 7.3125 2.8125 6.08173 3.2835 4.94465C3.2835 4.94465 3.75449 3.80756 4.62478 2.93728C4.62478 2.93728 5.49506 2.06699 6.63215 1.596C6.63215 1.596 7.76923 1.125 9 1.125C9 1.125 10.2308 1.125 11.3679 1.596C11.3679 1.596 12.5049 2.06699 13.3752 2.93728C13.3752 2.93728 14.2455 3.80756 14.7165 4.94465ZM14.0625 7.3125C14.0625 7.3125 14.0625 6.30551 13.6771 5.37516C13.6771 5.37516 13.2918 4.44483 12.5797 3.73277C12.5797 3.73277 11.8677 3.02072 10.9373 2.63536C10.9373 2.63536 10.007 2.25 9 2.25C9 2.25 7.99301 2.25 7.06266 2.63536C7.06266 2.63536 6.13232 3.02072 5.42027 3.73277C5.42027 3.73277 4.70822 4.44482 4.32286 5.37516C4.32286 5.37516 3.9375 6.30551 3.9375 7.3125C3.9375 7.3125 3.9375 10.2662 6.61197 13.3418C6.61197 13.3418 7.46303 14.3206 8.4854 15.1896C8.4854 15.1896 8.77076 15.4321 9 15.6113C9 15.6113 9.22924 15.4321 9.5146 15.1896C9.5146 15.1896 10.537 14.3206 11.388 13.3418C11.388 13.3418 14.0625 10.2662 14.0625 7.3125Z"
-                                                    fill="currentcolor"></path>
-                                            </svg>
-                                            <p>Delhi, India</p>
-                                        </div>
-                                        <div class="flex items-center gap-1 text-xs text-black/40 dark:text-white/40">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M1.6875 13.5V3.9375C1.6875 3.62684 1.93934 3.375 2.25 3.375H15.75C16.0607 3.375 16.3125 3.62684 16.3125 3.9375V13.5C16.3125 13.5 16.3125 13.966 15.983 14.2955C15.983 14.2955 15.6535 14.625 15.1875 14.625H2.8125C2.8125 14.625 2.34651 14.625 2.01701 14.2955C2.01701 14.2955 1.6875 13.966 1.6875 13.5ZM2.8125 13.5H15.1875V4.5H2.8125V13.5Z"
-                                                    fill="currentcolor"></path>
-                                                <path
-                                                    d="M2.6301 3.52285C2.52635 3.42775 2.39073 3.375 2.25 3.375C2.24185 3.375 2.23371 3.37518 2.22557 3.37553C2.07652 3.38201 1.93616 3.44743 1.83535 3.5574C1.74025 3.66115 1.6875 3.79677 1.6875 3.9375C1.6875 3.94565 1.68768 3.95379 1.68803 3.96193C1.69451 4.11098 1.75993 4.25134 1.8699 4.35215L8.6199 10.5396C8.83496 10.7368 9.16504 10.7368 9.3801 10.5396L16.1297 4.35249C16.2459 4.24595 16.3125 4.09517 16.3125 3.9375L16.3125 3.93282C16.3113 3.79371 16.2587 3.65996 16.1646 3.5574C16.0638 3.44743 15.9235 3.38201 15.7744 3.37553C15.7663 3.37518 15.7581 3.375 15.75 3.375L15.7474 3.37501C15.6076 3.37565 15.473 3.42836 15.3699 3.52285L9 9.36193L2.6301 3.52285Z"
-                                                    fill="currentcolor"></path>
-                                            </svg>
-                                            <p>sunilmohal@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-0 md:flex md:divide-x divide-black/10 dark:divide-white/10">
-                                        <div class="md:pr-7 shrink-0">
-                                            <p class="mb-1">Profile Compleation</p>
-                                            <div
-                                                class="w-[163px] bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden">
-                                                <div class="bg-lightpurple-200 whitespace-nowrap text-center px-1.5 text-lg font-semibold text-black"
-                                                    style="width: 99%;">
-                                                    99%
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="md:px-7">
-                                            <p class="mb-1">Earnings</p>
-                                            <p class="text-lg font-semibold">$4,500</p>
-                                        </div>
-                                        <div class="md:px-7">
-                                            <p class="mb-1">Projects</p>
-                                            <p class="text-lg font-semibold">75</p>
-                                        </div>
-                                        <div class="md:pl-7">
-                                            <p class="mb-1">Success Rate</p>
-                                            <p class="text-lg font-semibold">60%</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
-                                    <div class="flex flex-wrap gap-3 items-center justify-between mb-4">
-                                        <h3 class="text-sm font-semibold">Profile Details</h3>
-                                        <a href="javaScript:;" class="text-xs text-black/40 dark:text-white/40">Edit
-                                            Profile</a>
-                                    </div>
-                                    <div class="max-w-md grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                                        <p class="text-xs text-black/40 dark:text-white/40">Company</p>
-                                        <p class="text-sm">Ducis Group</p>
-                                        <div class="flex items-center gap-1">
-                                            <p class="text-xs text-black/40 dark:text-white/40">Contact Phone</p>
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M9 1.6875C9 1.6875 10.4873 1.6875 11.8465 2.26238C11.8465 2.26238 13.1589 2.81747 14.1707 3.82928C14.1707 3.82928 15.1825 4.84109 15.7376 6.15347C15.7376 6.15347 16.3125 7.51265 16.3125 9C16.3125 9 16.3125 10.4873 15.7376 11.8465C15.7376 11.8465 15.1825 13.1589 14.1707 14.1707C14.1707 14.1707 13.1589 15.1825 11.8465 15.7376C11.8465 15.7376 10.4873 16.3125 9 16.3125C9 16.3125 7.51265 16.3125 6.15347 15.7376C6.15347 15.7376 4.84109 15.1825 3.82928 14.1707C3.82928 14.1707 2.81747 13.1589 2.26238 11.8465C2.26238 11.8465 1.6875 10.4873 1.6875 9C1.6875 9 1.6875 7.51265 2.26238 6.15347C2.26238 6.15347 2.81748 4.84109 3.82928 3.82928C3.82928 3.82928 4.84109 2.81747 6.15347 2.26238C6.15347 2.26238 7.51265 1.6875 9 1.6875ZM9 2.8125C9 2.8125 7.74078 2.8125 6.59172 3.29851C6.59172 3.29851 5.48143 3.76813 4.62478 4.62478C4.62478 4.62478 3.76813 5.48143 3.29851 6.59172C3.29851 6.59172 2.8125 7.74078 2.8125 9C2.8125 9 2.8125 10.2592 3.29851 11.4083C3.29851 11.4083 3.76813 12.5186 4.62478 13.3752C4.62478 13.3752 5.48143 14.2319 6.59172 14.7015C6.59172 14.7015 7.74079 15.1875 9 15.1875C9 15.1875 10.2592 15.1875 11.4083 14.7015C11.4083 14.7015 12.5186 14.2319 13.3752 13.3752C13.3752 13.3752 14.2319 12.5186 14.7015 11.4083C14.7015 11.4083 15.1875 10.2592 15.1875 9C15.1875 9 15.1875 7.74079 14.7015 6.59172C14.7015 6.59172 14.2319 5.48143 13.3752 4.62478C13.3752 4.62478 12.5186 3.76813 11.4083 3.29851C11.4083 3.29851 10.2592 2.8125 9 2.8125Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                                <path
-                                                    d="M9 12.9375H9.5625C9.87316 12.9375 10.125 12.6857 10.125 12.375C10.125 12.0643 9.87316 11.8125 9.5625 11.8125V8.4375C9.5625 8.12684 9.31066 7.875 9 7.875H8.4375C8.12684 7.875 7.875 8.12684 7.875 8.4375C7.875 8.74816 8.12684 9 8.4375 9V12.375C8.4375 12.6857 8.68934 12.9375 9 12.9375Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                                <path
-                                                    d="M9.70312 5.90625C9.70312 6.37224 9.32533 6.75 8.85938 6.75C8.39342 6.75 8.01562 6.37224 8.01562 5.90625C8.01562 5.44026 8.39342 5.0625 8.85938 5.0625C9.32533 5.0625 9.70312 5.44026 9.70312 5.90625Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <p class="text-sm">+91 4546 454 935</p>
-                                            <p class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px]">
-                                                Competed</p>
-                                        </div>
-                                        <p class="text-xs text-black/40 dark:text-white/40">Company Site</p>
-                                        <p class="text-sm">Ducisgroup.com</p>
-                                        <div class="flex items-center gap-1">
-                                            <p class="text-xs text-black/40 dark:text-white/40">Country</p>
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M9 1.6875C9 1.6875 10.4873 1.6875 11.8465 2.26238C11.8465 2.26238 13.1589 2.81747 14.1707 3.82928C14.1707 3.82928 15.1825 4.84109 15.7376 6.15347C15.7376 6.15347 16.3125 7.51265 16.3125 9C16.3125 9 16.3125 10.4873 15.7376 11.8465C15.7376 11.8465 15.1825 13.1589 14.1707 14.1707C14.1707 14.1707 13.1589 15.1825 11.8465 15.7376C11.8465 15.7376 10.4873 16.3125 9 16.3125C9 16.3125 7.51265 16.3125 6.15347 15.7376C6.15347 15.7376 4.84109 15.1825 3.82928 14.1707C3.82928 14.1707 2.81747 13.1589 2.26238 11.8465C2.26238 11.8465 1.6875 10.4873 1.6875 9C1.6875 9 1.6875 7.51265 2.26238 6.15347C2.26238 6.15347 2.81748 4.84109 3.82928 3.82928C3.82928 3.82928 4.84109 2.81747 6.15347 2.26238C6.15347 2.26238 7.51265 1.6875 9 1.6875ZM9 2.8125C9 2.8125 7.74078 2.8125 6.59172 3.29851C6.59172 3.29851 5.48143 3.76813 4.62478 4.62478C4.62478 4.62478 3.76813 5.48143 3.29851 6.59172C3.29851 6.59172 2.8125 7.74078 2.8125 9C2.8125 9 2.8125 10.2592 3.29851 11.4083C3.29851 11.4083 3.76813 12.5186 4.62478 13.3752C4.62478 13.3752 5.48143 14.2319 6.59172 14.7015C6.59172 14.7015 7.74079 15.1875 9 15.1875C9 15.1875 10.2592 15.1875 11.4083 14.7015C11.4083 14.7015 12.5186 14.2319 13.3752 13.3752C13.3752 13.3752 14.2319 12.5186 14.7015 11.4083C14.7015 11.4083 15.1875 10.2592 15.1875 9C15.1875 9 15.1875 7.74079 14.7015 6.59172C14.7015 6.59172 14.2319 5.48143 13.3752 4.62478C13.3752 4.62478 12.5186 3.76813 11.4083 3.29851C11.4083 3.29851 10.2592 2.8125 9 2.8125Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                                <path
-                                                    d="M9 12.9375H9.5625C9.87316 12.9375 10.125 12.6857 10.125 12.375C10.125 12.0643 9.87316 11.8125 9.5625 11.8125V8.4375C9.5625 8.12684 9.31066 7.875 9 7.875H8.4375C8.12684 7.875 7.875 8.12684 7.875 8.4375C7.875 8.74816 8.12684 9 8.4375 9V12.375C8.4375 12.6857 8.68934 12.9375 9 12.9375Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                                <path
-                                                    d="M9.70312 5.90625C9.70312 6.37224 9.32533 6.75 8.85938 6.75C8.39342 6.75 8.01562 6.37224 8.01562 5.90625C8.01562 5.44026 8.39342 5.0625 8.85938 5.0625C9.32533 5.0625 9.70312 5.44026 9.70312 5.90625Z"
-                                                    fill="currentColor" fill-opacity="0.2"></path>
-                                            </svg>
-                                        </div>
-                                        <p class="text-sm">India</p>
-                                        <p class="text-xs text-black/40 dark:text-white/40">Communication</p>
-                                        <p class="text-sm">Email, Phone</p>
-                                        <p class="text-xs text-black/40 dark:text-white/40">Allow Changes</p>
-                                        <p class="text-sm">Yes</p>
-                                    </div>
-                                    <div
-                                        class="bg-lightpurple-100/50 dark:bg-white/5 rounded-lg p-4 flex items-start gap-1">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M10 1.875C10 1.875 11.6526 1.875 13.1628 2.51376C13.1628 2.51376 14.621 3.13053 15.7452 4.25476C15.7452 4.25476 16.8695 5.37899 17.4862 6.83719C17.4862 6.83719 18.125 8.34739 18.125 10C18.125 10 18.125 11.6526 17.4862 13.1628C17.4862 13.1628 16.8695 14.621 15.7452 15.7452C15.7452 15.7452 14.621 16.8695 13.1628 17.4862C13.1628 17.4862 11.6526 18.125 10 18.125C10 18.125 8.34739 18.125 6.83719 17.4862C6.83719 17.4862 5.37899 16.8695 4.25476 15.7452C4.25476 15.7452 3.13053 14.621 2.51376 13.1628C2.51376 13.1628 1.875 11.6526 1.875 10C1.875 10 1.875 8.34739 2.51376 6.83719C2.51376 6.83719 3.13053 5.37899 4.25476 4.25476C4.25476 4.25476 5.37899 3.13053 6.83719 2.51376C6.83719 2.51376 8.34739 1.875 10 1.875ZM10 3.125C10 3.125 8.60087 3.125 7.32413 3.66501C7.32413 3.66501 6.09047 4.18681 5.13864 5.13864C5.13864 5.13864 4.18681 6.09047 3.66502 7.32413C3.66502 7.32413 3.125 8.60087 3.125 10C3.125 10 3.125 11.3991 3.66502 12.6759C3.66502 12.6759 4.18681 13.9095 5.13864 14.8614C5.13864 14.8614 6.09047 15.8132 7.32413 16.335C7.32413 16.335 8.60087 16.875 10 16.875C10 16.875 11.3991 16.875 12.6759 16.335C12.6759 16.335 13.9095 15.8132 14.8614 14.8614C14.8614 14.8614 15.8132 13.9095 16.335 12.6759C16.335 12.6759 16.875 11.3991 16.875 10C16.875 10 16.875 8.60087 16.335 7.32413C16.335 7.32413 15.8132 6.09047 14.8614 5.13864C14.8614 5.13864 13.9095 4.18681 12.6759 3.66501C12.6759 3.66501 11.3991 3.125 10 3.125Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M9.375 6.25V10.625C9.375 10.9702 9.65482 11.25 10 11.25C10.3452 11.25 10.625 10.9702 10.625 10.625V6.25C10.625 5.90482 10.3452 5.625 10 5.625C9.65482 5.625 9.375 5.90482 9.375 6.25Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M10.9375 13.4375C10.9375 13.9553 10.5177 14.375 10 14.375C9.48227 14.375 9.0625 13.9553 9.0625 13.4375C9.0625 12.9197 9.48227 12.5 10 12.5C10.5177 12.5 10.9375 12.9197 10.9375 13.4375Z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                        <div>
-                                            <h3 class="text-sm">We need your attention!</h3>
-                                            <p class="text-xs text-black/40 dark:text-white/40">Your payment was
-                                                declined. To start using tools, please <a href="javaScript:;"
-                                                    class="text-lightpurple-300">Add Payment Method.</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
-                                    <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
-                                        <div class="flex flex-wrap gap-3 items-center justify-between mb-4">
-                                            <h3 class="text-sm font-semibold">Sunil Mohal's Activity</h3>
-                                            <a href="javascript:;" class="text-xs text-black/40 dark:text-white/40">View
-                                                All</a>
-                                        </div>
-                                        <div class="grid grid-flow-row gap-4 h-[275px] overflow-y-auto">
-                                            <div class="flex gap-3 group">
-                                                <i class="ri-git-commit-line text-2xl text-blue-500"></i>
-                                                <div class="flex-1">
-                                                    <div class="flex justify-between items-center gap-3">
-                                                        <p class="line-clamp-2">Published new course: "T Service
-                                                            Management – ITIL ®"</p>
-                                                        <span class="text-xs text-gray-500 dark:text-white/50">1 hour
-                                                            ago</span>
-                                                    </div>
-                                                    <span
-                                                        class="px-1.5 text-green-600 bg-green-100 text-xs rounded-[18px] inline-block">Published</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-3 group">
-                                                <i class="ri-edit-box-line text-2xl text-yellow-500"></i>
-                                                <div class="flex-1">
-                                                    <div class="flex justify-between items-center gap-3">
-                                                        <p class="line-clamp-2">Updated course content for "Scrum and
-                                                            Agile"</p>
-                                                        <span
-                                                            class="text-xs text-gray-500 dark:text-white/50">Yesterday</span>
-                                                    </div>
-                                                    <span
-                                                        class="px-1.5 text-blue-600 bg-blue-100 text-xs rounded-[18px] inline-block">Updated</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-3 group">
-                                                <i class="ri-live-line text-2xl text-red-500"></i>
-                                                <div class="flex-1">
-                                                    <div class="flex justify-between items-center gap-3">
-                                                        <p class="line-clamp-2">Hosted a live webinar on "Project
-                                                            Management"</p>
-                                                        <span class="text-xs text-gray-500 dark:text-white/50">3 days
-                                                            ago</span>
-                                                    </div>
-                                                    <span
-                                                        class="px-1.5 text-yellow-600 bg-yellow-100 text-xs rounded-[18px] inline-block">Live</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-3 group">
-                                                <i class="ri-group-line text-2xl text-purple-500"></i>
-                                                <div class="flex-1">
-                                                    <div class="flex justify-between items-center gap-3">
-                                                        <p class="line-clamp-2">Reviewed student assignments for "SDI –
-                                                            Service Desk Manager"</p>
-                                                        <span class="text-xs text-gray-500 dark:text-white/50">5 days
-                                                            ago</span>
-                                                    </div>
-                                                    <span
-                                                        class="px-1.5 text-purple-600 bg-purple-100 text-xs rounded-[18px] inline-block">Reviewed</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
-                                        <div class="flex flex-wrap gap-3 items-center justify-between mb-4">
-                                            <h3 class="text-sm font-semibold">Course Enrollment Report</h3>
-                                            <a href="javascript:;" class="text-xs text-black/40 dark:text-white/40">View
-                                                Details</a>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table-hover text-xs">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Course</th>
-                                                        <th>Enrolled</th>
-                                                        <th>Completion</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">T Service Management – ITIL ®</td>
-                                                        <td>120</td>
-                                                        <td>85%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#8A8CD9] bg-[#EDEDFF] text-xs rounded-[18px] inline-block">
-                                                                Ongoing</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">Scrum and Agile</td>
-                                                        <td>98</td>
-                                                        <td>75%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px] inline-block">
-                                                                Completed</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">Project Management</td>
-                                                        <td>150</td>
-                                                        <td>60%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#59A8D4] bg-[#E2F5FF] text-xs rounded-[18px] inline-block">
-                                                                Pending</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">SDI – Service Desk Manager</td>
-                                                        <td>80</td>
-                                                        <td>90%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px] inline-block">
-                                                                Completed</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">SIAM</td>
-                                                        <td>60</td>
-                                                        <td>50%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#8A8CD9] bg-[#EDEDFF] text-xs rounded-[18px] inline-block">
-                                                                Ongoing</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">ISO Trainings</td>
-                                                        <td>45</td>
-                                                        <td>70%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px] inline-block">
-                                                                Completed</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">DevOps Institute - DOI</td>
-                                                        <td>110</td>
-                                                        <td>40%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#59A8D4] bg-[#E2F5FF] text-xs rounded-[18px] inline-block">
-                                                                Pending</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="whitespace-nowrap">Six Sigma and Quality</td>
-                                                        <td>75</td>
-                                                        <td>95%</td>
-                                                        <td class="whitespace-nowrap">
-                                                            <p
-                                                                class="px-1.5 text-[#4AA785] bg-[#DEF8EE] text-xs rounded-[18px] inline-block">
-                                                                Completed</p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
+                            <li>Add New Content</li>
+                        </ul>
                     </div>
+
+                    <form id="addContentForm" class="bg-white-100 p-10">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="content_title" class="text-sm font-semibold mb-2 block">Content
+                                    Title</label>
+                                <input type="text" id="content_title" name="content_title"
+                                    placeholder="Enter content name"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="content_type" class="text-sm font-semibold mb-2 block">Content Type</label>
+                                <input type="select" id="content_type" name="content_type" placeholder=""
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="content_url" class="text-sm font-semibold mb-2 block">Content URL /
+                                    File</label>
+                                <input type="url" id="content_url" name="content_url"
+                                    placeholder="Link to video or file"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="associated_lesson" class="text-sm font-semibold mb-2 block">Linked
+                                    Lesson</label>
+                                <input type="text" id="associated_lesson" name="associated_lesson"
+                                    placeholder="Lesson ID or title"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                        </div>
+
+                        <div class="mt-7 flex justify-end gap-4">
+                            <input type="submit" value="Add Content" class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="button" value="Reset" class="btn py-[5px] px-4 text-xs font-semibold">
+                        </div>
+                    </form>
+
                 </div>
                 <!-- Start Footer -->
                 <footer
                     class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
-                    <p class="text-xs text-black/40 dark:text-white/40">© 2023 Snow</p>
+                    <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
                     <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
-                        <li><a href="javascirpt:;"
+                        <li>
+                            <a href="javascript:;"
                                 class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a>
                         </li>
-                        <li><a href="javascirpt:;"
+                        <li>
+                            <a href="javascript:;"
                                 class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a>
                         </li>
-                        <li><a href="javascirpt:;"
+                        <li>
+                            <a href="javascript:;"
                                 class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact
-                                Us</a></li>
+                                Us</a>
+                        </li>
                     </ul>
                 </footer>
+
                 <!-- End Footer -->
             </div>
             <!-- End Content -->
@@ -849,7 +568,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="./images/avatar-1.png" class="object-cover" alt="avatar">
+                                <img src="../beauty/images/avatar-1.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -860,7 +579,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="./images/avatar-2.png" class="object-cover" alt="avatar">
+                                <img src="../beauty/images/avatar-2.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -871,7 +590,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="./images/avatar-3.png" class="object-cover" alt="avatar">
+                                <img src="../beauty/images/avatar-3.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -882,7 +601,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="./images/avatar-4.png" class="object-cover" alt="avatar">
+                                <img src="../beauty/images/avatar-4.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -893,7 +612,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="./images/avatar-5.png" class="object-cover" alt="avatar">
+                                <img src="../beauty/images/avatar-5.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -908,33 +627,33 @@
                     <h4 class="font-semibold text-black dark:text-white mb-5">Contacts</h4>
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-6.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                            <img src="../beauty/images/avatar-6.png" class="h-6 w-6 flex-none rounded-full object-cover"
                                 alt="avatar">
                             <p class="text-black dark:text-white">Natali Craig</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-7.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                            <img src="../beauty/images/avatar-7.png" class="h-6 w-6 flex-none rounded-full object-cover"
                                 alt="avatar">
                             <p class="text-black dark:text-white">Drew Cano</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-8.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                            <img src="../beauty/images/avatar-8.png" class="h-6 w-6 flex-none rounded-full object-cover"
                                 alt="avatar">
                             <p class="text-black dark:text-white">Orlando Diggs</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-9.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                            <img src="../beauty/images/avatar-9.png" class="h-6 w-6 flex-none rounded-full object-cover"
                                 alt="avatar">
                             <p class="text-black dark:text-white">Andi Lane</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-10.png" class="h-6 w-6 flex-none rounded-full object-cover"
-                                alt="avatar">
+                            <img src="../beauty/images/avatar-10.png"
+                                class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Kate Morrison</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="./images/avatar-11.png" class="h-6 w-6 flex-none rounded-full object-cover"
-                                alt="avatar">
+                            <img src="../beauty/images/avatar-11.png"
+                                class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Koray Okumus</p>
                         </div>
                     </div>
@@ -943,30 +662,45 @@
         </div>
         <!-- End Right Sidebar -->
     </div>
-    <!-- End Main Content -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+        integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("input[type='file']").forEach(input => {
+                input.addEventListener("change", function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const preview = document.getElementById("preview-" + event.target.id);
+                            if (preview) {
+                                preview.src = e.target.result;
+                                preview.classList.remove("hidden");
+                            }
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        });
+    </script>
 
 
     <!-- All javascirpt -->
     <!-- Alpine js -->
     <script src="../beauty/js/alpine-collaspe.min.js"></script>
     <script src="../beauty/js/alpine-persist.min.js"></script>
+    <script src="../beauty/js/alpine-ui.min.js"></script>
     <script src="../beauty/js/alpine.min.js" defer=""></script>
-
-    <!-- ApexCharts js -->
-    <script src="../beauty/js/apexcharts.js"></script>
-    <script src="../beauty/js/apexcharts-main.js"></script>
 
     <!-- Custom js -->
     <script src="../beauty/js/custom.js"></script>
 
 
-    <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
-        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
-        style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
-        <defs id="SvgjsDefs1002"></defs>
-        <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
-        <path id="SvgjsPath1004" d="M0 0 "></path>
-    </svg>
+
 </body>
 
 </html>
