@@ -81,13 +81,34 @@ body {
     font-size: 16px;
 }
 
+
 .beaker-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
-    justify-items: center;
     margin: 1rem 0;
 }
+
+.beaker-row {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: c;
+}
+
+.beaker {
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
 
 .strip-holder {
     display: flex;
@@ -128,7 +149,7 @@ body {
     opacity: 0.4;
     pointer-events: none;
 }
-
+/* 
 .overlay-acidic {
     background: rgba(255, 0, 102, 0.5);
 }
@@ -139,7 +160,7 @@ body {
 
 .overlay-neutral {
     background: rgba(192, 192, 192, 0.2);
-}
+} */
 
 
 .dropped-strip {
@@ -157,17 +178,6 @@ body {
     pointer-events: none;
 }
 
-.overlay-acidic {
-    background: rgba(255, 0, 102, 0.5);
-}
-
-.overlay-alkaline {
-    background: rgba(0, 153, 255, 0.5);
-}
-
-.overlay-neutral {
-    background: rgba(192, 192, 192, 0.2);
-}
 .dropped-strip {
     pointer-events: none;
     z-index: 5;

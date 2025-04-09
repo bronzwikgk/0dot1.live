@@ -63,35 +63,40 @@
 
             <!-- Beaker Grid -->
             <section class="beaker-grid">
-                <div class="beaker" id="beakerA">
-                    <img src="./water_beaker.png" />
-                    <label>A<br><small>Water</small></label>
+                <div class="beaker-row">
+                    <div class="beaker" id="beakerA">
+                        <img src="./water_beaker.png" />
+                        <label>A<br><small>Water</small></label>
+                    </div>
+                    <div class="beaker" id="beakerB">
+                        <img src="./orange_beaker.png" />
+                        <label>B<br><small>Orange <br> Juice</small></label>
+                    </div>
+                    <div class="beaker" id="beakerC">
+                        <img src="./vinegar_beaker.png" />
+                        <label>C<br><small>Vinegar</small></label>
+                    </div>
+                    <div class="beaker" id="beakerD">
+                        <img src="./tea_beaker.png" />
+                        <label>D<br><small>Tea</small></label>
+                    </div>
                 </div>
-                <div class="beaker" id="beakerB">
-                    <img src="./orange_beaker.png" />
-                    <label>B<br><small>Orange Juice</small></label>
-                </div>
-                <div class="beaker" id="beakerC">
-                    <img src="./vinegar_beaker.png" />
-                    <label>C<br><small>Vinegar</small></label>
-                </div>
-                <div class="beaker" id="beakerD">
-                    <img src="./tea_beaker.png" />
-                    <label>D<br><small>Tea</small></label>
-                </div>
-                <div class="beaker" id="beakerE">
-                    <img src="./soap_beaker.png" />
-                    <label>E<br><small>Liquid Soap</small></label>
-                </div>
-                <div class="beaker" id="beakerF">
-                    <img src="./naoh_beaker.png" />
-                    <label>F<br><small>Sodium Hydroxide</small></label>
-                </div>
-                <div class="beaker" id="beakerG">
-                    <img src="./hcl_beaker.png" />
-                    <label>G<br><small>Hydrochloric Acid</small></label>
+                <div class="beaker-row center-row">
+                    <div class="beaker" id="beakerE">
+                        <img src="./soap_beaker.png" />
+                        <label>E<br><small>Liquid Soap</small></label>
+                    </div>
+                    <div class="beaker" id="beakerF">
+                        <img src="./naoh_beaker.png" />
+                        <label>F<br><small>Sodium <br> Hydroxide</small></label>
+                    </div>
+                    <div class="beaker" id="beakerG">
+                        <img src="./hcl_beaker.png" />
+                        <label>G<br><small>Hydrochloric <br> Acid</small></label>
+                    </div>
                 </div>
             </section>
+
 
             <!-- Observation Table -->
             <section class="observation-table">
@@ -173,6 +178,8 @@
         function placeStripAboveBeaker(beakerEl, stripId, reaction) {
             const color = stripId.includes("blue") ? "blue" : "red";
             const stripClass = `dropped-strip-${color}`;
+
+            // ✅ Only remove same-color strip, not both
             const previous = beakerEl.querySelector(`.${stripClass}`);
             if (previous) previous.remove();
 
@@ -182,12 +189,13 @@
             strip.style.position = "absolute";
             strip.style.width = "40px";
             strip.style.height = "80px";
-            strip.style.left = "50%";
+            strip.style.left = color === "blue" ? "40%" : "60%"; // ✅ Side-by-side
             strip.style.transform = "translateX(-50%)";
             strip.style.top = "-60px";
             beakerEl.style.position = "relative";
             beakerEl.appendChild(strip);
         }
+
 
         function enableDropHandlers() {
             const beakers = document.querySelectorAll('.beaker');
@@ -264,24 +272,22 @@
                     if (beaker) {
                         const originalId = activeStrip.dataset.originalId;
                         const color = originalId.includes("blue") ? "blue" : "red";
-
                         const stripClass = `dropped-strip-${color}`;
                         const previous = beaker.querySelector(`.${stripClass}`);
                         if (previous) previous.remove();
-
                         const reaction = reactionMatrix[beaker.id][color];
-
                         const dropped = document.createElement("img");
                         dropped.src = getStripImage(color, reaction);
                         dropped.className = `dropped-strip ${stripClass}`;
                         dropped.style.position = "absolute";
                         dropped.style.width = "40px";
                         dropped.style.height = "80px";
-                        dropped.style.left = "50%";
+                        dropped.style.left = color === "blue" ? "40%" : "60%"; // ✅ show both
                         dropped.style.transform = "translateX(-50%)";
                         dropped.style.top = "-60px";
                         beaker.style.position = "relative";
                         beaker.appendChild(dropped);
+
 
                         applyReaction(beaker, originalId);
                     }
