@@ -46,87 +46,210 @@
 
         <div class="container">
 
-            <!-- Header Instructions -->
-            <section class="instruction-box">
-                <h1>Litmus Paper Classification</h1>
-                <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each
-                    beaker.
-                    Record what you observe below.</p>
-            </section>
-
-            <!-- Litmus Paper Holder -->
-            <section class="strip-holder">
-                <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
-                <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
-
-            </section>
-
-            <!-- Beaker Grid -->
-            <section class="beaker-grid">
-                <div class="beaker-row">
-                    <div class="beaker" id="beakerA">
-                        <img src="./water_beaker.png" />
-                        <label>A<br><small>Water</small></label>
-                    </div>
-                    <div class="beaker" id="beakerB">
-                        <img src="./orange_beaker.png" />
-                        <label>B<br><small>Orange <br> Juice</small></label>
-                    </div>
-                    <div class="beaker" id="beakerC">
-                        <img src="./vinegar_beaker.png" />
-                        <label>C<br><small>Vinegar</small></label>
-                    </div>
-                    <div class="beaker" id="beakerD">
-                        <img src="./tea_beaker.png" />
-                        <label>D<br><small>Tea</small></label>
-                    </div>
-                </div>
-                <div class="beaker-row center-row">
-                    <div class="beaker" id="beakerE">
-                        <img src="./soap_beaker.png" />
-                        <label>E<br><small>Liquid Soap</small></label>
-                    </div>
-                    <div class="beaker" id="beakerF">
-                        <img src="./naoh_beaker.png" />
-                        <label>F<br><small>Sodium <br> Hydroxide</small></label>
-                    </div>
-                    <div class="beaker" id="beakerG">
-                        <img src="./hcl_beaker.png" />
-                        <label>G<br><small>Hydrochloric <br> Acid</small></label>
-                    </div>
+            <!-- Slide 1: Instruction -->
+            <section class="slide" id="slide1">
+                <img src="./1st.jpg" alt="Instruction Slide" style="width:100%; border-radius:12px;">
+                <div class="nav-buttons" style="position: absolute; bottom: 2px; right: 2px;">
+                    <button onclick="showSlide(2)">Next</button>
                 </div>
             </section>
+            <section class="slide" id="slide2" style="display:none;">
+                <!-- Header Instructions -->
+                <section class="instruction-box">
+                    <h1>Litmus Paper Classification</h1>
+                    <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each
+                        beaker.
+                        Record what you observe below.</p>
+                </section>
 
+                <!-- Litmus Paper Holder -->
+                <section class="strip-holder">
+                    <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
+                    <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
 
-            <!-- Observation Table -->
-            <section class="observation-table">
-                <div class="observation-row">
-                    <label>Beaker A</label>
-                    <select>
-                        <option>No Effect</option>
-                        <option>Turns Pink</option>
-                        <option>Turns Red</option>
-                    </select>
-                    <select>
-                        <option>No Effect</option>
-                        <option>Turns Blue</option>
-                    </select>
-                    <select>
-                        <option>Neutral</option>
-                        <option>Acidic</option>
-                        <option>Alkaline</option>
-                    </select>
+                </section>
+
+                <!-- Beaker Grid -->
+                <section class="beaker-grid">
+                    <div class="beaker-row">
+                        <div class="beaker" id="beakerA">
+                            <img src="./water_beaker.png" />
+                            <label>A<br><small>Water</small></label>
+                        </div>
+                        <div class="beaker" id="beakerB">
+                            <img src="./orange_beaker.png" />
+                            <label>B<br><small>Orange <br> Juice</small></label>
+                        </div>
+                        <div class="beaker" id="beakerC">
+                            <img src="./vinegar_beaker.png" />
+                            <label>C<br><small>Vinegar</small></label>
+                        </div>
+                        <div class="beaker" id="beakerD">
+                            <img src="./tea_beaker.png" />
+                            <label>D<br><small>Tea</small></label>
+                        </div>
+                    </div>
+                    <div class="beaker-row center-row">
+                        <div class="beaker" id="beakerE">
+                            <img src="./soap_beaker.png" />
+                            <label>E<br><small>Liquid Soap</small></label>
+                        </div>
+                        <div class="beaker" id="beakerF">
+                            <img src="./naoh_beaker.png" />
+                            <label>F<br><small>Sodium <br> Hydroxide</small></label>
+                        </div>
+                        <div class="beaker" id="beakerG">
+                            <img src="./hcl_beaker.png" />
+                            <label>G<br><small>Hydrochloric <br> Acid</small></label>
+                        </div>
+                    </div>
+                </section>
+                <div class="nav-buttons">
+                    <button onclick="showSlide(1)">Previous</button>
+                    <button onclick="showSlide(3)">Next</button>
                 </div>
-                <!-- Repeat similar rows for B to G -->
-            </section>
 
-            <!-- Controls -->
-            <section class="action-buttons">
-                <button id="resetActivity">Reset</button>
-                <button id="checkAnswers">Show Answers</button>
-            </section>
 
         </div>
+
+
+
+   <!-- Slide 3: Observation Table -->
+<section class="slide" id="slide3" style="display:none;">
+    <section class="observation-table">
+        <div class="observation-row">
+            <label>Beaker A</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker B</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker C</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker D</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker E</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker F</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+        <div class="observation-row">
+            <label>Beaker G</label>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Pink</option>
+                <option>Turns Red</option>
+            </select>
+            <select>
+                <option>No Effect</option>
+                <option>Turns Blue</option>
+            </select>
+            <select>
+                <option>Neutral</option>
+                <option>Acidic</option>
+                <option>Alkaline</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="action-buttons">
+        <button id="resetActivity">Reset</button>
+        <button id="checkAnswers">Show Answers</button>
+    </section>
+
+    <div class="nav-buttons">
+        <button onclick="showSlide(2)">Previous</button>
+    </div>
+</section>
+
+
+    </div>
     </div>
     <script>
         // Version: v1.4.0 – Unified Reaction Engine + Drop Logic (Mobile & Desktop Supported)
@@ -306,6 +429,13 @@
         }
 
         window.addEventListener('load', initLitmusActivity);
+    </script>
+    <script>
+        function showSlide(slideNumber) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.style.display = 'none');
+            document.getElementById(`slide${slideNumber}`).style.display = 'block';
+        }
     </script>
 
 
