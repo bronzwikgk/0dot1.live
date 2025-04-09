@@ -1,0 +1,274 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Litmus Paper Classification (Mobile)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header Instructions -->
+        <section class="instruction-box">
+            <h1>Litmus Paper Classification</h1>
+            <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each beaker.
+                Record what you observe below.</p>
+        </section>
+
+        <!-- Litmus Paper Holder -->
+        <section class="strip-holder">
+            <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
+            <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
+
+        </section>
+
+        <!-- Beaker Grid -->
+        <section class="beaker-grid">
+            <div class="beaker" id="beakerA">
+                <img src="./beaker.png" />
+                <label>A<br><small>Water</small></label>
+            </div>
+            <div class="beaker" id="beakerB">
+                <img src="./beaker.png" />
+                <label>B<br><small>Orange Juice</small></label>
+            </div>
+            <div class="beaker" id="beakerC">
+                <img src="./beaker.png" />
+                <label>C<br><small>Vinegar</small></label>
+            </div>
+            <div class="beaker" id="beakerD">
+                <img src="./beaker.png" />
+                <label>D<br><small>Tea</small></label>
+            </div>
+            <div class="beaker" id="beakerE">
+                <img src="./beaker.png" />
+                <label>E<br><small>Liquid Soap</small></label>
+            </div>
+            <div class="beaker" id="beakerF">
+                <img src="./beaker.png" />
+                <label>F<br><small>Sodium Hydroxide</small></label>
+            </div>
+            <div class="beaker" id="beakerG">
+                <img src="./beaker.png" />
+                <label>G<br><small>Hydrochloric Acid</small></label>
+            </div>
+        </section>
+
+        <!-- Observation Table -->
+        <section class="observation-table">
+            <div class="observation-row">
+                <label>Beaker A</label>
+                <select>
+                    <option>No Effect</option>
+                    <option>Turns Pink</option>
+                    <option>Turns Red</option>
+                </select>
+                <select>
+                    <option>No Effect</option>
+                    <option>Turns Blue</option>
+                </select>
+                <select>
+                    <option>Neutral</option>
+                    <option>Acidic</option>
+                    <option>Alkaline</option>
+                </select>
+            </div>
+            <!-- Repeat similar rows for B to G -->
+        </section>
+
+        <!-- Controls -->
+        <section class="action-buttons">
+            <button id="resetActivity">Reset</button>
+            <button id="checkAnswers">Show Answers</button>
+        </section>
+
+    </div>
+
+    <script>
+        // Version: v1.4.0 – Unified Reaction Engine + Drop Logic (Mobile & Desktop Supported)
+        const reactionMatrix = {
+            beakerA: { type: "neutral", blue: "no-change", red: "no-change" },
+            beakerB: { type: "acidic", blue: "turns-pink", red: "no-change" },
+            beakerC: { type: "acidic", blue: "turns-pink", red: "no-change" },
+            beakerD: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerE: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerF: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerG: { type: "acidic", blue: "turns-red", red: "no-change" } // ✅ fixed
+        };
+
+
+        function applyReaction(beakerEl, stripId) {
+            const beakerId = beakerEl.id;
+            const stripType = stripId.includes("blue") ? "blue" : "red";
+            const result = reactionMatrix[beakerId][stripType];
+
+            let overlayClass = "";
+
+            if (result === "turns-pink") overlayClass = "overlay-acidic";
+            else if (result === "turns-blue") overlayClass = "overlay-alkaline";
+            else overlayClass = "overlay-neutral";
+
+            const existing = beakerEl.querySelector(".reaction-overlay");
+            if (existing) beakerEl.removeChild(existing);
+
+            const overlay = document.createElement("div");
+            overlay.className = `reaction-overlay ${overlayClass}`;
+            beakerEl.appendChild(overlay);
+        }
+
+        function getStripImage(color, reaction) {
+            const map = {
+                blue: {
+                    "turns-pink": "./blue_to_pink_strip.png",
+                    "turns-red": "./blue_to_red_strip.png",
+                    "no-change": "./blue_strip.png"
+                },
+                red: {
+                    "turns-blue": "./red_to_blue_strip.png",
+                    "no-change": "./red_strip.png"
+                }
+            };
+            return map[color][reaction] || "images/default_strip.png";
+        }
+
+        function placeStripAboveBeaker(beakerEl, stripId, reaction) {
+            const color = stripId.includes("blue") ? "blue" : "red";
+            const stripClass = `dropped-strip-${color}`;
+            const previous = beakerEl.querySelector(`.${stripClass}`);
+            if (previous) previous.remove();
+
+            const strip = document.createElement("img");
+            strip.src = getStripImage(color, reaction);
+            strip.className = `dropped-strip ${stripClass}`;
+            strip.style.position = "absolute";
+            strip.style.width = "40px";
+            strip.style.height = "80px";
+            strip.style.left = "50%";
+            strip.style.transform = "translateX(-50%)";
+            strip.style.top = "-60px";
+            beakerEl.style.position = "relative";
+            beakerEl.appendChild(strip);
+        }
+
+        function enableDropHandlers() {
+            const beakers = document.querySelectorAll('.beaker');
+            beakers.forEach(function (beaker) {
+                beaker.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                });
+
+                beaker.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    const stripId = e.dataTransfer.getData('text/plain');
+                    const strip = document.getElementById(stripId);
+                    const stripType = stripId.includes("blue") ? "blue" : "red";
+                    const reaction = reactionMatrix[beaker.id][stripType];
+
+                    applyReaction(beaker, stripId);
+                    placeStripAboveBeaker(beaker, stripId, reaction);
+                });
+            });
+        }
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+            document.body.style.touchAction = 'none';
+        }
+        function enableScroll() {
+            document.body.style.overflow = '';
+            document.body.style.touchAction = '';
+        }
+
+
+        function enableTouchHandlers() {
+            let activeStrip = null;
+            let offsetX = 0;
+            let offsetY = 0;
+            const strips = document.querySelectorAll('.litmus-strip');
+
+            strips.forEach(function (strip) {
+                strip.addEventListener('touchstart', function (e) {
+                    const touch = e.touches[0];
+
+                    activeStrip = strip.cloneNode(true);
+                    activeStrip.dataset.originalId = strip.id;
+
+                    activeStrip.style.position = 'absolute';
+                    activeStrip.style.width = '80px';
+                    activeStrip.style.height = '160px';
+                    activeStrip.style.zIndex = '1000';
+                    activeStrip.style.pointerEvents = 'none';
+
+                    // ✅ pageX/pageY ensures correct placement even after scroll
+                    activeStrip.style.left = (touch.pageX - 40) + 'px';
+                    activeStrip.style.top = (touch.pageY - 80) + 'px';
+
+                    document.body.appendChild(activeStrip);
+                    disableScroll();
+                });
+
+
+                document.addEventListener('touchmove', function (e) {
+                    if (!activeStrip) return;
+                    const touch = e.touches[0];
+                    e.preventDefault();
+
+                    activeStrip.style.left = (touch.pageX - 40) + 'px';
+                    activeStrip.style.top = (touch.pageY - 80) + 'px';
+                }, { passive: false });
+
+                document.addEventListener('touchend', function (e) {
+                    if (!activeStrip) return;
+                    const touch = e.changedTouches[0];
+                    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+                    const beaker = dropTarget && dropTarget.closest('.beaker');
+
+                    if (beaker) {
+                        const originalId = activeStrip.dataset.originalId;
+                        const color = originalId.includes("blue") ? "blue" : "red";
+
+                        const stripClass = `dropped-strip-${color}`;
+                        const previous = beaker.querySelector(`.${stripClass}`);
+                        if (previous) previous.remove();
+
+                        const reaction = reactionMatrix[beaker.id][color];
+
+                        const dropped = document.createElement("img");
+                        dropped.src = getStripImage(color, reaction);
+                        dropped.className = `dropped-strip ${stripClass}`;
+                        dropped.style.position = "absolute";
+                        dropped.style.width = "40px";
+                        dropped.style.height = "80px";
+                        dropped.style.left = "50%";
+                        dropped.style.transform = "translateX(-50%)";
+                        dropped.style.top = "-60px";
+                        beaker.style.position = "relative";
+                        beaker.appendChild(dropped);
+
+                        applyReaction(beaker, originalId);
+                    }
+
+                    document.body.removeChild(activeStrip);
+                    activeStrip = null;
+                    enableScroll(); // ✅ unlock scroll
+                });
+            });
+        }
+
+        function initLitmusActivity() {
+            const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouch) enableTouchHandlers();
+            else enableDropHandlers();
+        }
+
+        window.addEventListener('load', initLitmusActivity);
+    </script>
+
+
+
+</body>
+
+</html>

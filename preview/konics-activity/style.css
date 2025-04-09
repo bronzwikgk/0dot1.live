@@ -1,0 +1,173 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+}
+
+#main-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.instruction-box {
+    background: #fff8dc;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.litmus-strips {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.litmus-strip {
+    height: 60px;
+    cursor: grab;
+}
+
+.beaker-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.beaker {
+    text-align: center;
+    margin: 10px;
+}
+
+.beaker img {
+    width: 80px;
+    height: 130px;
+}
+
+.observation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.observation-table th,
+.observation-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.observation-table input {
+    width: 90%;
+    padding: 4px;
+}
+
+.button-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.button-bar button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.beaker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    margin: 1rem 0;
+}
+
+.strip-holder {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.litmus-strip {
+    width: 150px;
+    height: 160px;
+    object-fit: contain;
+    cursor: grab;
+    border-radius: 8px;
+}
+
+.litmus-strip {
+    width: 80px;
+    height: 160px;
+    object-fit: contain;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.litmus-strip.dragging {
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.reaction-overlay {
+    position: absolute;
+    width: 80px;
+    height: 130px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.overlay-acidic {
+    background: rgba(255, 0, 102, 0.5);
+}
+
+.overlay-alkaline {
+    background: rgba(0, 153, 255, 0.5);
+}
+
+.overlay-neutral {
+    background: rgba(192, 192, 192, 0.2);
+}
+
+
+.dropped-strip {
+    z-index: 10;
+    pointer-events: none;
+}
+
+.reaction-overlay {
+    position: absolute;
+    width: 80px;
+    height: 130px;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.overlay-acidic {
+    background: rgba(255, 0, 102, 0.5);
+}
+
+.overlay-alkaline {
+    background: rgba(0, 153, 255, 0.5);
+}
+
+.overlay-neutral {
+    background: rgba(192, 192, 192, 0.2);
+}
+.dropped-strip {
+    pointer-events: none;
+    z-index: 5;
+    transition: top 0.3s ease, transform 0.3s ease;
+  }
+  

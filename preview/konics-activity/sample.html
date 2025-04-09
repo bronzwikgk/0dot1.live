@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beaker with Real Image + Color Overlay</title>
+  <style>
+    body {
+      background: #222;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .beaker-container {
+      position: relative;
+      width: 120px;
+      height: 200px;
+      margin: 20px;
+      display: inline-block;
+    }
+
+    .beaker-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+      position: relative;
+    }
+
+    .solution-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      border-radius: 0 0 15px 15px;
+      z-index: 2;
+      background-color: hsla(210, 100%, 50%, 0.4); /* default: neutral */
+      transition: background-color 0.3s ease;
+    }
+
+    .controls {
+      margin-top: 30px;
+    }
+
+    .controls button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Realistic Beaker With Color-Changing Solution</h2>
+
+  <div class="beaker-container" id="beakerG">
+    <img src="./beaker.png" class="beaker-img">
+    <div class="solution-overlay"></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="setBeakerColor('G', 'acid')">Acid</button>
+    <button onclick="setBeakerColor('G', 'alkaline')">Alkaline</button>
+    <button onclick="setBeakerColor('G', 'neutral')">Neutral</button>
+  </div>
+
+  <script>
+    function setBeakerColor(id, type) {
+      const overlay = document.querySelector(`#beaker${id} .solution-overlay`);
+      let color = "hsla(210, 100%, 50%, 0.4)"; // neutral
+      if (type === "acid") {
+        color = "hsla(0, 100%, 50%, 0.4)"; // red
+      } else if (type === "alkaline") {
+        color = "hsla(120, 100%, 40%, 0.4)"; // green
+      }
+      overlay.style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>
