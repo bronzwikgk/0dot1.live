@@ -7,87 +7,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Litmus Paper Classification (Mobile)</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
+
+        .mobile-sim {
+            width: 375px;
+            /* Typical mobile width like iPhone */
+            margin: 0 auto;
+            background-size: cover;
+            background-image: url('./bg.png');
+            height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        @media (min-width: 376px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 100vh;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
-    <div class="container">
+    <div class="mobile-sim">
 
-        <!-- Header Instructions -->
-        <section class="instruction-box">
-            <h1>Litmus Paper Classification</h1>
-            <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each beaker.
-                Record what you observe below.</p>
-        </section>
+        <div class="container">
 
-        <!-- Litmus Paper Holder -->
-        <section class="strip-holder">
-            <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
-            <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
+            <!-- Header Instructions -->
+            <section class="instruction-box">
+                <h1>Litmus Paper Classification</h1>
+                <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each
+                    beaker.
+                    Record what you observe below.</p>
+            </section>
 
-        </section>
+            <!-- Litmus Paper Holder -->
+            <section class="strip-holder">
+                <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
+                <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
 
-        <!-- Beaker Grid -->
-        <section class="beaker-grid">
-            <div class="beaker" id="beakerA">
-                <img src="./beaker.png" />
-                <label>A<br><small>Water</small></label>
-            </div>
-            <div class="beaker" id="beakerB">
-                <img src="./beaker.png" />
-                <label>B<br><small>Orange Juice</small></label>
-            </div>
-            <div class="beaker" id="beakerC">
-                <img src="./beaker.png" />
-                <label>C<br><small>Vinegar</small></label>
-            </div>
-            <div class="beaker" id="beakerD">
-                <img src="./beaker.png" />
-                <label>D<br><small>Tea</small></label>
-            </div>
-            <div class="beaker" id="beakerE">
-                <img src="./beaker.png" />
-                <label>E<br><small>Liquid Soap</small></label>
-            </div>
-            <div class="beaker" id="beakerF">
-                <img src="./beaker.png" />
-                <label>F<br><small>Sodium Hydroxide</small></label>
-            </div>
-            <div class="beaker" id="beakerG">
-                <img src="./beaker.png" />
-                <label>G<br><small>Hydrochloric Acid</small></label>
-            </div>
-        </section>
+            </section>
 
-        <!-- Observation Table -->
-        <section class="observation-table">
-            <div class="observation-row">
-                <label>Beaker A</label>
-                <select>
-                    <option>No Effect</option>
-                    <option>Turns Pink</option>
-                    <option>Turns Red</option>
-                </select>
-                <select>
-                    <option>No Effect</option>
-                    <option>Turns Blue</option>
-                </select>
-                <select>
-                    <option>Neutral</option>
-                    <option>Acidic</option>
-                    <option>Alkaline</option>
-                </select>
-            </div>
-            <!-- Repeat similar rows for B to G -->
-        </section>
+            <!-- Beaker Grid -->
+            <section class="beaker-grid">
+                <div class="beaker" id="beakerA">
+                    <img src="./water_beaker.png" />
+                    <label>A<br><small>Water</small></label>
+                </div>
+                <div class="beaker" id="beakerB">
+                    <img src="./orange_beaker.png" />
+                    <label>B<br><small>Orange Juice</small></label>
+                </div>
+                <div class="beaker" id="beakerC">
+                    <img src="./vinegar_beaker.png" />
+                    <label>C<br><small>Vinegar</small></label>
+                </div>
+                <div class="beaker" id="beakerD">
+                    <img src="./tea_beaker.png" />
+                    <label>D<br><small>Tea</small></label>
+                </div>
+                <div class="beaker" id="beakerE">
+                    <img src="./soap_beaker.png" />
+                    <label>E<br><small>Liquid Soap</small></label>
+                </div>
+                <div class="beaker" id="beakerF">
+                    <img src="./naoh_beaker.png" />
+                    <label>F<br><small>Sodium Hydroxide</small></label>
+                </div>
+                <div class="beaker" id="beakerG">
+                    <img src="./hcl_beaker.png" />
+                    <label>G<br><small>Hydrochloric Acid</small></label>
+                </div>
+            </section>
 
-        <!-- Controls -->
-        <section class="action-buttons">
-            <button id="resetActivity">Reset</button>
-            <button id="checkAnswers">Show Answers</button>
-        </section>
+            <!-- Observation Table -->
+            <section class="observation-table">
+                <div class="observation-row">
+                    <label>Beaker A</label>
+                    <select>
+                        <option>No Effect</option>
+                        <option>Turns Pink</option>
+                        <option>Turns Red</option>
+                    </select>
+                    <select>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <select>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+                <!-- Repeat similar rows for B to G -->
+            </section>
 
+            <!-- Controls -->
+            <section class="action-buttons">
+                <button id="resetActivity">Reset</button>
+                <button id="checkAnswers">Show Answers</button>
+            </section>
+
+        </div>
     </div>
-
     <script>
         // Version: v1.4.0 – Unified Reaction Engine + Drop Logic (Mobile & Desktop Supported)
         const reactionMatrix = {
