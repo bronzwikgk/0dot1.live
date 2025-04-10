@@ -39,196 +39,194 @@
 
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
-                <!-- Start Sidebar -->
+        <!-- Start Sidebar -->
         <nav
-        class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
-        <div class="bg-white dark:bg-black h-full">
-            <!-- Start Logo -->
-            <div class="flex p-4">
-                <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
-                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                        alt="logo" class="block dark:hidden w-20">
-                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                        alt="logo" class="hidden dark:block w-20">
-                </a>
+            class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+            <div class="bg-white dark:bg-black h-full">
+                <!-- Start Logo -->
+                <div class="flex p-4">
+                    <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="block dark:hidden w-20">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="hidden dark:block w-20">
+                    </a>
+                </div>
+                <!-- End Logo -->
+
+                <!-- Start Menu -->
+                <!-- Start LMS Super Admin Sidebar -->
+                <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+                    x-data="{ activeMenu: null }">
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-dashboard-line"></i>
+                                <span class="pl-1">Overview</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
+                    <!-- Menu Items -->
+                    <li class="menu nav-item">
+                        <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-shield-user-line"></i>
+                                <span class="pl-1">Admins</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu nav-item">
+                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-user-line"></i>
+                                <span class="pl-1">Learner</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                        <span>LMS Actions</span>
+                    </h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'new'}"
+                            @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'new'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-add-circle-line"></i>
+                                <span class="pl-1">New Record</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'new'" x-collapse=""
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                            style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="./add_course.html" title="">Course</a></li>
+                            <li><a href="./add_module.html" title="">Modules</a></li>
+                            <li><a href="./add_lesson.html" title="">Lesson</a></li>
+                            <li><a href="./add_content.html" title="">Content</a></li>
+                            <li><a href="./add_quiz.html" title="">Quiz</a></li>
+                            <li><a href="./add_user.html" title="">User</a></li>
+                            <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
+                            <li><a href="./add_license.html">License</a></li>
+                            <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'courses'}"
+                            @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'courses'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-book-open-line"></i>
+                                <span class="pl-1">Courses</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'courses'" x-collapse
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
+                            <li><a href="./my-courses.html" title="">All Courses</a></li>
+                            <li><a href="./view-course.html" title="">View Course</a></li>
+
+                        </ul>
+                    </li>
+
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
+                    <li class="menu nav-item">
+                        <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-live-line"></i>
+                                <span class="pl-1">Open Batches</span>
+                            </div>
+                        </a>
+                    </li>
+
+
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
+                    <li class="menu nav-item">
+                        <a href="./report.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Reports</span>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
+                    <li class="menu nav-item">
+                        <a href="./settings.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-settings-3-line"></i>
+                                <span class="pl-1">Settings</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
+                    <li class="menu nav-item">
+                        <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-rocket-line"></i>
+                                <span class="pl-1">Release Notes</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu nav-item">
+                        <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Activity Feed</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu nav-item">
+                        <a href="./documentation.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-article-fill"></i>
+                                <span class="pl-1">Documentation</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End LMS Super Admin Sidebar -->
+
+                <!-- End Menu -->
             </div>
-            <!-- End Logo -->
-
-            <!-- Start Menu -->
-            <!-- Start LMS Super Admin Sidebar -->
-            <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-                x-data="{ activeMenu: null }">
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
-                <!-- Menu Item -->
-                <li class="menu nav-item">
-                    <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-dashboard-line"></i>
-                            <span class="pl-1">Overview</span>
-                        </div>
-                    </a>
-                </li>
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
-                <!-- Menu Items -->
-                <li class="menu nav-item">
-                    <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-shield-user-line"></i>
-                            <span class="pl-1">Admins</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="menu nav-item">
-                    <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-user-line"></i>
-                            <span class="pl-1">Learner</span>
-                        </div>
-                    </a>
-                </li>
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                    <span>LMS Actions</span>
-                </h2>
-                <!-- Menu Item -->
-                <li class="menu nav-item">
-                    <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
-                        :class="{'active' : activeMenu === 'new'}"
-                        @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
-                        <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                            :class="{'!rotate-90' : activeMenu === 'new'}">
-                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="ri-add-circle-line"></i>
-                            <span class="pl-1">New Record</span>
-                        </div>
-                    </a>
-                    <ul x-show="activeMenu === 'new'" x-collapse=""
-                        class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                        style="display: none; height: 0px; overflow: hidden;" hidden="">
-                        <li><a href="./add_course.html" title="">Course</a></li>
-                        <li><a href="./add_module.html" title="">Modules</a></li>
-                        <li><a href="./add_lesson.html" title="">Lesson</a></li>
-                        <li><a href="./add_content.html" title="">Content</a></li>
-                        <li><a href="./add_quiz.html" title="">Quiz</a></li>
-                        <li><a href="./add_user.html" title="">User</a></li>
-                        <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
-                        <li><a href="./add_license.html">License</a></li>
-                        <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
-
-                    </ul>
-                </li>
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
-                <li class="menu nav-item">
-                    <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                        :class="{'active' : activeMenu === 'courses'}"
-                        @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
-                        <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                            :class="{'!rotate-90' : activeMenu === 'courses'}">
-                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                    fill="currentcolor"></path>
-                            </svg>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="ri-book-open-line"></i>
-                            <span class="pl-1">Courses</span>
-                        </div>
-                    </a>
-                    <ul x-show="activeMenu === 'courses'" x-collapse
-                        class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                        <li><a href="./my-courses.html" title="">All Courses</a></li>
-                        <li><a href="./view-course.html" title="">View Course</a></li>
-
-                    </ul>
-                </li>
-
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
-                <li class="menu nav-item">
-                    <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-live-line"></i>
-                            <span class="pl-1">Open Batches</span>
-                        </div>
-                    </a>
-                </li>
-
-
-
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
-                <li class="menu nav-item">
-                    <a href="./report.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-bar-chart-line"></i>
-                            <span class="pl-1">Reports</span>
-                        </div>
-                    </a>
-                </li>
-
-
-                <!-- Section Header -->
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
-                <li class="menu nav-item">
-                    <a href="./settings.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-settings-3-line"></i>
-                            <span class="pl-1">Settings</span>
-                        </div>
-                    </a>
-                </li>
-
-                <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
-                <li class="menu nav-item">
-                    <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-rocket-line"></i>
-                            <span class="pl-1">Release Notes</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="menu nav-item">
-                    <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-bar-chart-line"></i>
-                            <span class="pl-1">Activity Feed</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="menu nav-item">
-                    <a href="./documentation.html" class="nav-link group text-black dark:text-white">
-                        <div class="flex pl-5 items-center">
-                            <i class="ri-article-fill"></i>
-                            <span class="pl-1">Documentation</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- End LMS Super Admin Sidebar -->
-
-            <!-- End Menu -->
-        </div>
-    </nav>
-    <!-- End sidebar -->
-
-
+        </nav>
+        <!-- End sidebar -->
         <!-- Start Content Area -->
         <div class="main-content flex-1">
             <!-- Start Topbar -->
@@ -255,7 +253,7 @@
                                 <li class="flex items-center">
                                     <span class="text-black/40 dark:text-white/40">/</span>
                                     <a href="javaScript:;"
-                                        class="flex items-center px-3 text-black dark:text-white">Form</a>
+                                        class="flex items-center px-3 text-black dark:text-white">Bulk User Import</a>
                                 </li>
                             </ol>
                         </nav>
@@ -374,69 +372,80 @@
                 <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
 
                     <div class="px-2 py-1 mb-4">
-                        <h2 class="text-lg font-semibold">Create User Profile</h2>
+                        <h2 class="text-lg font-semibold">Import Bulk Users</h2>
 
                         <ul class="flex flex-wrap items-center space-x-2 py-3">
                             <li class="flex items-center space-x-2">
                                 <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
                                     href="/">Dashboard</a>
-                                <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </li>
-
-                            <li>Create User Profile</li>
+                            <li>Import Bulk Users</li>
                         </ul>
                     </div>
 
-                    <form id="createUserProfileForm" class="bg-white-100 p-10">
+                    <form id="bulkUserImportForm" class="bg-white-100 p-10">
+
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
                             <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="first_name" class="text-sm font-semibold mb-2 block">First Name</label>
-                                <input type="text" id="first_name" name="first_name" placeholder="Enter first name"
+                                <label for="importFile" class="text-sm font-semibold mb-2 block">Upload User Data
+                                    File</label>
+
+                                <input type="file" id="importFile" name="importFile"
                                     class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
                             <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="last_name" class="text-sm font-semibold mb-2 block">Last Name</label>
-                                <input type="text" id="last_name" name="last_name" placeholder="Enter last name"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                <label for="sendInvite" class="text-sm font-semibold mb-2 block">Send Invite Email to
+                                    Users</label>
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" id="sendInvite" name="sendInvite" class="form-checkbox">
+                                    <span>Enable</span>
+                                </label>
+
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
-                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="email" class="text-sm font-semibold mb-2 block">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Enter email"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
-                            </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
-                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="phone" class="text-sm font-semibold mb-2 block">Phone Number</label>
-                                <input type="text" id="phone" name="phone" placeholder="Enter phone number"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
-                            </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
-                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="role" class="text-sm font-semibold mb-2 block">Assign Role</label>
-                                <input type="select" id="role" name="role" placeholder="Select a role"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
-                            </div>
-                       
-                            <!-- Exclude submit button from being rendered as input field -->
                         </div>
 
                         <div class="mt-7 flex justify-end gap-4">
-                            <input type="submit" value="Create User" class="btn py-[5px] px-4 text-xs font-semibold">
-                            <input type="button" value="Clear" class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="submit" value="Import Users" class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="reset" value="Reset" class="btn py-[5px] px-4 text-xs font-semibold">
                         </div>
+
                     </form>
+                    <!-- Instructions Component -->
+                    <div style="margin-top: 1rem;" class="bg-lightblue-100 shadow-md rounded-lg p-6 mt-5 max-w-4xl mx-auto">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Instructions</h2>
+
+                        <p class="text-gray-700 mb-4">
+                            Please ensure the uploaded CSV file follows this format:
+                        </p>
+
+                        <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                            <li><strong>Name:</strong> Full name of the student (required).</li>
+                            <li><strong>Email:</strong> Valid email address (required).</li>
+                            <li><strong>Password:</strong> Password for the student account (required).</li>
+                            <li><strong>Country:</strong> Select a country from the dropdown (required).</li>
+                            <li><strong>Phone:</strong> Phone number (optional).</li>
+                            <li><strong>Batch:</strong> Batch name or ID (optional).</li>
+                            <li><strong>Company:</strong> Name of the company (optional).</li>
+                            <li><strong>Employee ID:</strong> Employee ID if applicable (optional).</li>
+                        </ul>
+
+                        <h3 class="text-md font-semibold text-gray-800 mt-6 mb-2">Example CSV structure:</h3>
+
+                        <div class="bg-gray-100 text-sm p-4 rounded font-mono overflow-x-auto">
+                            <pre>
+Name,Email,Password,Country,Phone,Batch,Company,Employee ID
+John Doe,john.doe@example.com,password123,USA,1234567890,Batch A,Company X,EMP001
+Jane Smith,jane.smith@example.com,password456,India,,Batch B,,EMP002
+</pre>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- Start Footer -->

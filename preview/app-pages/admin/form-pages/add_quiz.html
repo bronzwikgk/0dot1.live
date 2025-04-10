@@ -10,11 +10,11 @@
     <!-- Site Title -->
     <title>Ducisgroup</title>
     <!-- Site Favicon -->
-    <link rel="shortcut icon" href="../beauty/images/favicon.ico">
+    <link rel="shortcut icon" href="../../beauty/images/favicon.ico">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg&#x3D;&#x3D;" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom Style -->
-    <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../beauty/css/style.css">
     <!-- Remix Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -35,194 +35,385 @@
 
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
-          <!-- Start Sidebar -->
-          <nav
-          class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
-          <div class="bg-white dark:bg-black h-full">
-              <!-- Start Logo -->
-              <div class="flex p-4">
-                  <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
-                      <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                          alt="logo" class="block dark:hidden w-20">
-                      <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                          alt="logo" class="hidden dark:block w-20">
-                  </a>
-              </div>
-              <!-- End Logo -->
+     <!-- Start Sidebar -->
+     <nav
+     class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+     <div class="bg-white dark:bg-black h-full">
+         <!-- Start Logo -->
+         <div class="flex p-4">
+             <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
+                 <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                     alt="logo" class="block dark:hidden w-20">
+                 <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                     alt="logo" class="hidden dark:block w-20">
+             </a>
+         </div>
+         <!-- End Logo -->
 
-              <!-- Start Menu -->
-              <!-- Start LMS Super Admin Sidebar -->
-              <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-                  x-data="{ activeMenu: null }">
+         <!-- Start Menu -->
+         <ul class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+             x-data="{ activeMenu: null }">
 
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
-                  <!-- Menu Item -->
-                  <li class="menu nav-item">
-                      <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-dashboard-line"></i>
-                              <span class="pl-1">Overview</span>
-                          </div>
-                      </a>
-                  </li>
+             <!-- Section Header -->
+             <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                 <span>LMS Actions</span>
+             </h2>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                     :class="{'active' : activeMenu === 'new'}"
+                     @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                     <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                         :class="{'!rotate-90' : activeMenu === 'new'}">
+                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                 fill="currentcolor"></path>
+                         </svg>
+                     </div>
+                     <div class="flex items-center">
+                         <i class="ri-add-circle-line"></i>
+                         <span class="pl-1">New Record</span>
+                     </div>
+                 </a>
+                 <ul x-show="activeMenu === 'new'" x-collapse=""
+                     class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                     style="display: none; height: 0px; overflow: hidden;" hidden="">
+                     <li><a href="./addAccount Form.html" title="">Account</a></li>
+                     <li><a href="./addEntity Create Form.html" title="">Entity Create</a></li>
+                     <li><a href="./addAccount.html" title="">Account</a></li>
+                     <li><a href="./addEvent Form.html" title="">Event</a></li>
+                     <li><a href="./addActivity Form.html" title="">Activity</a></li>
+                     <li><a href="./addActivity.html" title="">Activity</a></li>
+                     <li><a href="./addAdd Learner Form.html" title="">Learner</a></li>
+                     <li><a href="./addAdd Role Form.html" title="">Role</a></li>
+                     <li><a href="./addAdd Sales Activity Form.html" title="">Sales Activity</a></li>
+                     <li><a href="./addLog Follow Up Form.html" title="">Follow Up</a></li>
+                     <li><a href="./addAdd Trainer Form.html" title="">Trainer</a></li>
+                     <li><a href="./addLogin Form.html" title="">Login</a></li>
+                     <li><a href="./addAsset Form.html" title="">Asset</a></li>
+                     <li><a href="./addLog User Activity Form.html" title="">User Activity</a></li>
+                     <li><a href="./addAssign Deal Owner Form.html" title="">Assign Deal Owner</a></li>
+                     <li><a href="./addAssign Learner To Batch Form.html" title="">Assign Learner To Batch</a>
+                     </li>
+                     <li><a href="./addOpportunity Activity Log Form.html" title="">Opportunity Activity Log</a>
+                     </li>
+                     <li><a href="./addOpportunity Form.html" title="">Opportunity</a></li>
+                     <li><a href="./addAssign Opportunity Owner Form.html" title="">Assign Opportunity Owner</a>
+                     </li>
+                     <li><a href="./addAssign Permission Form.html" title="">Assign Permission</a></li>
+                     <li><a href="./addAssign Role To User Form.html" title="">Assign Role To User</a></li>
+                     <li><a href="./addAssign Trainer To Batch Form.html" title="">Assign Trainer To Batch</a>
+                     </li>
+                     <li><a href="./addCalendar Event Form.html" title="">Calendar Event</a></li>
+                     <li><a href="./addCampaign Form.html" title="">Campaign</a></li>
+                     <li><a href="./addCase Form.html" title="">Case</a></li>
+                     <li><a href="./addContact Form.html" title="">Contact</a></li>
+                     <li><a href="./addContract Drafting Form.html" title="">Contract Drafting</a></li>
+                     <li><a href="./addContract Form.html" title="">Contract</a></li>
+                     <li><a href="./addConvert Inquiry Form.html" title="">Convert Inquiry</a></li>
+                     <li><a href="./addCreate Batch Form.html" title="">Create Batch</a></li>
+                     <li><a href="./addCreate Deal Form.html" title="">Create Deal</a></li>
+                     <li><a href="./addCreate Department Form.html" title="">Create Department</a></li>
+                     <li><a href="./addCreate Opportunity Form.html" title="">Create Opportunity</a></li>
+                     <li><a href="./addCreate Reminder Form.html" title="">Create Reminder</a></li>
+                     <li><a href="./addCreate Role Form.html" title="">Create Role</a></li>
+                     <li><a href="./addCreate Sales Pipeline Form.html" title="">Create Sales Pipeline</a></li>
+                     <li><a href="./addCreate User Profile Form.html" title="">Create User Profile</a></li>
+                     <li><a href="./addCustomer Issue Logger Form.html" title="">Customer Issue</a></li>
+                     <li><a href="./addDeal Follow Up Form.html" title="">Deal Follow Up</a></li>
+                     <li><a href="./addDepartment Creation Form.html" title="">Department Creation</a></li>
+                     <li><a href="./addDocument Upload Form.html" title="">Document Upload</a></li>
+                     <li><a href="./addEdit Batch Form.html" title="">Edit Batch</a></li>
+                     <li><a href="./addEdit Department Form.html" title="">Edit Department</a></li>
+                     <li><a href="./addEdit Role Form.html" title="">Edit Role</a></li>
+                     <li><a href="./addEdit Sales Pipeline Form.html" title="">Edit Sales Pipeline</a></li>
+                     <li><a href="./addEdit User Profile Form.html" title="">Edit User Profile</a></li>
+                     <li><a href="./addRecord Feedback Form.html" title="">Feedback</a></li>
+                     <li><a href="./addInquiry Capture Form.html" title="">Inquiry</a></li>
+                     <li><a href="./addInvoice Creation Form.html" title="">Invoice</a></li>
+                     <li><a href="./addInvoice Form.html" title="">Invoice</a></li>
+                     <li><a href="./addLead Form.html" title="">Lead</a></li>
+                     <li><a href="./addMeeting Scheduler Form.html" title="">Meeting</a></li>
+                     <li><a href="./addReminder Setup Form.html" title="">Notification</a></li>
+                     <li><a href="./addOrder Form.html" title="">Order</a></li>
+                     <li><a href="./addPassword Reset Form.html" title="">Password Reset</a></li>
+                     <li><a href="./addProduct Form.html" title="">Product</a></li>
+                     <li><a href="./addQuotation Generator Form.html" title="">Quotation</a></li>
+                     <li><a href="./addQuote Form.html" title="">Quote</a></li>
+                     <li><a href="./addRaise Support Ticket Form.html" title="">Raise Support Ticket</a></li>
+                     <li><a href="./addCreate Reminder Form.html" title="">Reminder</a></li>
+                     <li><a href="./addRespond To Ticket Form.html" title="">Respond To Ticket</a></li>
+                     <li><a href="./addRole Assignment Form.html" title="">Role Assignment</a></li>
+                     <li><a href="./addRole Entity Permission Form.html" title="">Role Entity Permission</a></li>
+                     <li><a href="./addSales Pipeline Stage Editor Form.html" title="">Sales Pipeline Stage</a>
+                     </li>
+                     <li><a href="./addSchedule Meeting Form.html" title="">Schedule Meeting</a></li>
+                     <li><a href="./addSchedule Training Session Form.html" title="">Schedule Training
+                             Session</a></li>
+                     <li><a href="./addTask Creation Form.html" title="">Task</a></li>
+                     <li><a href="./addTask Form.html" title="">Task</a></li>
+                     <li><a href="./addTicket Form.html" title="">Ticket</a></li>
+                     <li><a href="./addTicket Resolution Form.html" title="">Ticket Resolution</a></li>
+                     <li><a href="./addUpdate Deal Status Form.html" title="">Update Deal Status</a></li>
+                     <li><a href="./addUpdate Meeting Status Form.html" title="">Update Meeting Status</a></li>
+                     <li><a href="./addUpdate Opportunity Status Form.html" title="">Update Opportunity
+                             Status</a></li>
+                     <li><a href="./addUpdate Sales Activity Form.html" title="">Update Sales Activity</a></li>
+                     <li><a href="./addUser Form.html" title="">User</a></li>
+                     <li><a href="./addUser Permission Matrix Form.html" title="">User Permission Matrix</a></li>
+                     <li><a href="./addUser Profile Edit Form.html" title="">User Profile Edit</a></li>
+                     <li><a href="./addUser Registration Form.html" title="">User Registration</a></li>
+                     <li><a href="./addView User Activity Log Form.html" title="">View User Activity Log</a></li>
+                 </ul>
+             </li>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="./dashboard-superadmin.html/activity/recent" title=""
+                     class="nav-link group text-black dark:text-white">
+                     <div class="flex pl-5 items-center">
+                         <i class="ri-time-line"></i>
+                         <span class="pl-1">Recent Interactions</span>
+                     </div>
+                 </a>
+             </li>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="./dashboard-superadmin.html/activity/drafts" title=""
+                     class="nav-link group text-black dark:text-white">
+                     <div class="flex pl-5 items-center">
+                         <i class="ri-file-edit-line"></i>
+                         <span class="pl-1">Drafts</span>
+                     </div>
+                 </a>
+             </li>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="./dashboard-superadmin.html/activity/inbox" title=""
+                     class="nav-link group text-black dark:text-white">
+                     <div class="flex pl-5 items-center">
+                         <i class="ri-inbox-line"></i>
+                         <span class="pl-1">Inbox</span>
+                     </div>
+                 </a>
+             </li>
+             <!-- Section Header -->
+             <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                 <span>Team Collaboration</span>
+             </h2>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                     :class="{'active' : activeMenu === 'communication'}"
+                     @click="activeMenu === 'communication' ? activeMenu = null : activeMenu = 'communication'">
+                     <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                         :class="{'!rotate-90' : activeMenu === 'communication'}">
+                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                 fill="currentcolor"></path>
+                         </svg>
+                     </div>
+                     <div class="flex items-center">
+                         <i class="ri-message-3-line"></i>
+                         <span class="pl-1">Communication</span>
+                     </div>
+                 </a>
+                 <ul x-show="activeMenu === 'communication'" x-collapse=""
+                     class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                     style="display: none; height: 0px; overflow: hidden;" hidden="">
+                     <li><a href="./dashboard-superadmin.html/team/discussions" title="">Discussions</a></li>
+                     <li><a href="./dashboard-superadmin.html/team/chats" title="">Chat Logs</a></li>
+                 </ul>
+             </li>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="./dashboard-superadmin.html/team/calendar" title=""
+                     class="nav-link group text-black dark:text-white">
+                     <div class="flex pl-5 items-center">
+                         <i class="ri-calendar-line"></i>
+                         <span class="pl-1">Team Calendar</span>
+                     </div>
+                 </a>
+             </li>
+             <!-- Section Header -->
+             <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                 <span>Collections</span>
+             </h2>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                     :class="{'active' : activeMenu === 'collection'}"
+                     @click="activeMenu === 'collection' ? activeMenu = null : activeMenu = 'collection'">
+                     <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                         :class="{'!rotate-90' : activeMenu === 'collection'}">
+                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                 fill="currentcolor"></path>
+                         </svg>
+                     </div>
+                     <div class="flex items-center">
+                         <i class="ri-folder-line"></i>
+                         <span class="pl-1">My CRM Space</span>
+                     </div>
+                 </a>
+                 <ul x-show="activeMenu === 'collection'" x-collapse=""
+                     class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                     style="display: none; height: 0px; overflow: hidden;" hidden="">
+                     <li><a href="./dashboard-superadmin.html/my-collection/user" title="">User</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/role" title="">Role</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/department" title="">Department</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/permission" title="">Permission</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/user-profile"
+                             title="">UserProfile</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/user-activity-log"
+                             title="">UserActivityLog</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/inquiry" title="">Inquiry</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/opportunity" title="">Opportunity</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/contact" title="">Contact</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/company" title="">Company</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/deal" title="">Deal</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/deal-stage" title="">DealStage</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/sales-pipeline"
+                             title="">SalesPipeline</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/sales-activity"
+                             title="">SalesActivity</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/follow-up" title="">FollowUp</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/task" title="">Task</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/meeting" title="">Meeting</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/event" title="">Event</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/reminder" title="">Reminder</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/notification"
+                             title="">Notification</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/document" title="">Document</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/contract" title="">Contract</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/invoice" title="">Invoice</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/quotation" title="">Quotation</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/batch" title="">Batch</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/trainer" title="">Trainer</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/learner" title="">Learner</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/training-session"
+                             title="">TrainingSession</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/feedback" title="">Feedback</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/support-ticket"
+                             title="">SupportTicket</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/ticket-category"
+                             title="">TicketCategory</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/ticket-response"
+                             title="">TicketResponse</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/customer-issue"
+                             title="">CustomerIssue</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/transaction" title="">Transaction</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/payment" title="">Payment</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/salary" title="">Salary</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/audit-log" title="">AuditLog</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/report" title="">Report</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/kpi" title="">KPI</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/course" title="">Course</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/modules" title="">Modules</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/lessons" title="">Lessons</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/liceses" title="">Liceses</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/quiz" title="">Quiz</a></li>
+                     <li><a href="./dashboard-superadmin.html/my-collection/content" title="">Content</a></li>
+                 </ul>
+             </li>
+             <!-- Section Header -->
+             <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                 <span>System Settings</span>
+             </h2>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                     :class="{'active' : activeMenu === 'settings'}"
+                     @click="activeMenu === 'settings' ? activeMenu = null : activeMenu = 'settings'">
+                     <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                         :class="{'!rotate-90' : activeMenu === 'settings'}">
+                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                 fill="currentcolor"></path>
+                         </svg>
+                     </div>
+                     <div class="flex items-center">
+                         <i class="ri-settings-3-line"></i>
+                         <span class="pl-1">Settings</span>
+                     </div>
+                 </a>
+                 <ul x-show="activeMenu === 'settings'" x-collapse=""
+                     class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                     style="display: none; height: 0px; overflow: hidden;" hidden="">
+                     <li><a href="./dashboard-superadmin.html/settings/preferences" title="">CRM Preferences</a>
+                     </li>
+                     <li><a href="./dashboard-superadmin.html/settings/permissions" title="">User Permissions</a>
+                     </li>
+                 </ul>
+             </li>
+             <!-- Menu Item -->
+             <li class="menu nav-item">
+                 <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                     :class="{'active' : activeMenu === ''}"
+                     @click="activeMenu === '' ? activeMenu = null : activeMenu = ''">
+                     <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                         :class="{'!rotate-90' : activeMenu === ''}">
+                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                 fill="currentcolor"></path>
+                         </svg>
+                     </div>
+                     <div class="flex items-center">
+                         <i class="ri-user-settings-line"></i>
+                         <span class="pl-1">Roles</span>
+                     </div>
+                 </a>
+                 <ul x-show="activeMenu === ''" x-collapse=""
+                     class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                     style="display: none; height: 0px; overflow: hidden;" hidden="">
+                     <li><a href="./dashboard-sales-head.html" title="Sales Head">Sales Head</a></li>
+                     <li><a href="./dashboard-sales-lead.html" title="Sales Lead">Sales Lead</a></li>
+                     <li><a href="./dashboard-business-head.html" title="Business Head">Business Head</a></li>
+                     <li><a href="./dashboard-hr-manager.html" title="HR Manager">HR Manager</a></li>
+                     <li><a href="./dashboard-hr-executive.html" title="HR Executive">HR Executive</a></li>
+                     <li><a href="./dashboard-open-batches.html" title="Open Batch Lead">Open Batch Lead</a></li>
+                     <li><a href="./dashboard-trainer.html" title="Trainer">Trainer</a></li>
+                     <li><a href="./dashboard-support-lead.html" title="Support Lead">Support Lead</a></li>
+                     <li><a href="./dashboard-support-executive.html" title="Support Executive">Support
+                             Executive</a></li>
+                     <li><a href="./dashboard-tech-support-lead.html" title="Tech Support Lead">Tech Support
+                             Lead</a></li>
+                     <li><a href="./dashboard-tech-support-executive.html" title="Tech Support Executive">Tech
+                             Support Executive</a></li>
+                     <li><a href="./dashboard-finance-head.html" title="Finance Head">Finance Head</a></li>
+                     <li><a href="./dashboard-finance-executive.html" title="Finance Executive">Finance
+                             Executive</a></li>
+                     <li><a href="./dashboard-superadmin.html" title="Super Admin">Super Admin</a></li>
+                     <li><a href="./dashboard-admin.html" title="Admin">Admin</a></li>
+                     <li><a href="./dashboard-site-customer.html" title="Site Customer">Site Customer</a></li>
+                     <li><a href="./dashboard-open-batches-learner.html" title="Open Batches Learner">Open
+                             Batches Learner</a></li>
+                     <li><a href="./dashboard-e-learner.html" title="E-Learning Course Learner">E-Learning Course
+                             Learner</a></li>
+                     <li><a href="./dashboard-customer.html" title="Customer">Customer</a></li>
+                 </ul>
+             </li>
 
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
-                  <!-- Menu Items -->
-                  <li class="menu nav-item">
-                      <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-shield-user-line"></i>
-                              <span class="pl-1">Admins</span>
-                          </div>
-                      </a>
-                  </li>
-
-                  <li class="menu nav-item">
-                      <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-user-line"></i>
-                              <span class="pl-1">Learner</span>
-                          </div>
-                      </a>
-                  </li>
-
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                      <span>LMS Actions</span>
-                  </h2>
-                  <!-- Menu Item -->
-                  <li class="menu nav-item">
-                      <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
-                          :class="{'active' : activeMenu === 'new'}"
-                          @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
-                          <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                              :class="{'!rotate-90' : activeMenu === 'new'}">
-                              <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                      fill="currentcolor"></path>
-                              </svg>
-                          </div>
-                          <div class="flex items-center">
-                              <i class="ri-add-circle-line"></i>
-                              <span class="pl-1">New Record</span>
-                          </div>
-                      </a>
-                      <ul x-show="activeMenu === 'new'" x-collapse=""
-                          class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                          style="display: none; height: 0px; overflow: hidden;" hidden="">
-                          <li><a href="./add_course.html" title="">Course</a></li>
-                          <li><a href="./add_module.html" title="">Modules</a></li>
-                          <li><a href="./add_lesson.html" title="">Lesson</a></li>
-                          <li><a href="./add_content.html" title="">Content</a></li>
-                          <li><a href="./add_quiz.html" title="">Quiz</a></li>
-                          <li><a href="./add_user.html" title="">User</a></li>
-                          <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
-                          <li><a href="./add_license.html">License</a></li>
-                          <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
-
-                      </ul>
-                  </li>
-
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
-                  <li class="menu nav-item">
-                      <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                          :class="{'active' : activeMenu === 'courses'}"
-                          @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
-                          <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                              :class="{'!rotate-90' : activeMenu === 'courses'}">
-                              <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                      fill="currentcolor"></path>
-                              </svg>
-                          </div>
-                          <div class="flex items-center">
-                              <i class="ri-book-open-line"></i>
-                              <span class="pl-1">Courses</span>
-                          </div>
-                      </a>
-                      <ul x-show="activeMenu === 'courses'" x-collapse
-                          class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                          <li><a href="./my-courses.html" title="">All Courses</a></li>
-                          <li><a href="./view-course.html" title="">View Course</a></li>
-
-                      </ul>
-                  </li>
-
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
-                  <li class="menu nav-item">
-                      <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-live-line"></i>
-                              <span class="pl-1">Open Batches</span>
-                          </div>
-                      </a>
-                  </li>
-
-
-
-
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
-                  <li class="menu nav-item">
-                      <a href="./report.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-bar-chart-line"></i>
-                              <span class="pl-1">Reports</span>
-                          </div>
-                      </a>
-                  </li>
-
-
-                  <!-- Section Header -->
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
-                  <li class="menu nav-item">
-                      <a href="./settings.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-settings-3-line"></i>
-                              <span class="pl-1">Settings</span>
-                          </div>
-                      </a>
-                  </li>
-
-                  <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
-                  <li class="menu nav-item">
-                      <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-rocket-line"></i>
-                              <span class="pl-1">Release Notes</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu nav-item">
-                      <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-bar-chart-line"></i>
-                              <span class="pl-1">Activity Feed</span>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="menu nav-item">
-                      <a href="./documentation.html" class="nav-link group text-black dark:text-white">
-                          <div class="flex pl-5 items-center">
-                              <i class="ri-article-fill"></i>
-                              <span class="pl-1">Documentation</span>
-                          </div>
-                      </a>
-                  </li>
-              </ul>
-              <!-- End LMS Super Admin Sidebar -->
-
-              <!-- End Menu -->
-          </div>
-      </nav>
-      <!-- End sidebar -->
+         </ul>
+         <!-- End Menu -->
+     </div>
+ </nav>
+ <!-- End sidebar -->
 
         <!-- Start Content Area -->
         <div class="main-content flex-1">
@@ -809,7 +1000,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="../beauty/images/avatar-1.png" class="object-cover" alt="avatar">
+                                <img src="../../beauty/images/avatar-1.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -820,7 +1011,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="../beauty/images/avatar-2.png" class="object-cover" alt="avatar">
+                                <img src="../../beauty/images/avatar-2.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -831,7 +1022,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="../beauty/images/avatar-3.png" class="object-cover" alt="avatar">
+                                <img src="../../beauty/images/avatar-3.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -842,7 +1033,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="../beauty/images/avatar-4.png" class="object-cover" alt="avatar">
+                                <img src="../../beauty/images/avatar-4.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -853,7 +1044,7 @@
                         </div>
                         <div class="flex gap-2">
                             <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
-                                <img src="../beauty/images/avatar-5.png" class="object-cover" alt="avatar">
+                                <img src="../../beauty/images/avatar-5.png" class="object-cover" alt="avatar">
                             </div>
                             <div class="flex-1">
                                 <p
@@ -868,32 +1059,32 @@
                     <h4 class="font-semibold text-black dark:text-white mb-5">Contacts</h4>
                     <div class="flex flex-col gap-4">
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-6.png"
+                            <img src="../../beauty/images/avatar-6.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Natali Craig</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-7.png"
+                            <img src="../../beauty/images/avatar-7.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Drew Cano</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-8.png"
+                            <img src="../../beauty/images/avatar-8.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Orlando Diggs</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-9.png"
+                            <img src="../../beauty/images/avatar-9.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Andi Lane</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-10.png"
+                            <img src="../../beauty/images/avatar-10.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Kate Morrison</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img src="../beauty/images/avatar-11.png"
+                            <img src="../../beauty/images/avatar-11.png"
                                 class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
                             <p class="text-black dark:text-white">Koray Okumus</p>
                         </div>
@@ -932,13 +1123,13 @@
 
     <!-- All javascirpt -->
     <!-- Alpine js -->
-    <script src="../beauty/js/alpine-collaspe.min.js"></script>
-    <script src="../beauty/js/alpine-persist.min.js"></script>
-    <script src="../beauty/js/alpine-ui.min.js"></script>
-    <script src="../beauty/js/alpine.min.js" defer=""></script>
+    <script src="../../beauty/js/alpine-collaspe.min.js"></script>
+    <script src="../../beauty/js/alpine-persist.min.js"></script>
+    <script src="../../beauty/js/alpine-ui.min.js"></script>
+    <script src="../../beauty/js/alpine.min.js" defer=""></script>
 
     <!-- Custom js -->
-    <script src="../beauty/js/custom.js"></script>
+    <script src="../../beauty/js/custom.js"></script>
 
 
 
