@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Litmus Paper Classification (Mobile)</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <style>
         html,
         body {
@@ -22,7 +22,7 @@
             /* Typical mobile width like iPhone */
             margin: 0 auto;
             background-size: cover;
-            background-image: url('./bg.png');
+            background-image: url('./assets/bg.png');
             height: 100%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
@@ -48,7 +48,7 @@
 
             <!-- Slide 1: Instruction -->
             <section class="slide" id="slide1">
-                <img src="./1st.jpg" alt="Instruction Slide" style="width:100%; border-radius:12px;">
+                <img src="./assets/1st.jpg" alt="Instruction Slide" style="width:100%; border-radius:12px;">
                 <div class="nav-buttons" style="position: absolute; bottom: 2px; right: 2px;">
                     <button onclick="showSlide(2)">Next</button>
                 </div>
@@ -64,8 +64,8 @@
 
                 <!-- Litmus Paper Holder -->
                 <section class="strip-holder">
-                    <img src="./blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
-                    <img src="./red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
+                    <img src="./assets/blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="false" />
+                    <img src="./assets/red_litmus.png" class="litmus-strip" id="redStrip" draggable="false" />
 
                 </section>
 
@@ -73,33 +73,33 @@
                 <section class="beaker-grid">
                     <div class="beaker-row">
                         <div class="beaker" id="beakerA">
-                            <img src="./water_beaker.png" />
+                            <img src="./assets/water_beaker.png" />
                             <label>A<br><small>Water</small></label>
                         </div>
                         <div class="beaker" id="beakerB">
-                            <img src="./orange_beaker.png" />
+                            <img src="./assets/orange_beaker.png" />
                             <label>B<br><small>Orange <br> Juice</small></label>
                         </div>
                         <div class="beaker" id="beakerC">
-                            <img src="./vinegar_beaker.png" />
+                            <img src="./assets/vinegar_beaker.png" />
                             <label>C<br><small>Vinegar</small></label>
                         </div>
                         <div class="beaker" id="beakerD">
-                            <img src="./tea_beaker.png" />
+                            <img src="./assets/tea_beaker.png" />
                             <label>D<br><small>Tea</small></label>
                         </div>
                     </div>
                     <div class="beaker-row center-row">
                         <div class="beaker" id="beakerE">
-                            <img src="./soap_beaker.png" />
+                            <img src="./assets/soap_beaker.png" />
                             <label>E<br><small>Liquid Soap</small></label>
                         </div>
                         <div class="beaker" id="beakerF">
-                            <img src="./naoh_beaker.png" />
+                            <img src="./assets/naoh_beaker.png" />
                             <label>F<br><small>Sodium <br> Hydroxide</small></label>
                         </div>
                         <div class="beaker" id="beakerG">
-                            <img src="./hcl_beaker.png" />
+                            <img src="./assets/hcl_beaker.png" />
                             <label>G<br><small>Hydrochloric <br> Acid</small></label>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
 
             <section class="action-buttons">
                 <button id="resetActivity">Reset</button>
-                <button id="checkAnswers">Show Answers</button>
+                <button id="checkAnswers">Check Answers</button>
             </section>
 
             <div class="nav-buttons">
@@ -344,13 +344,13 @@
         function getStripImage(color, reaction) {
             const map = {
                 blue: {
-                    "turns-pink": "./blue_to_pink_strip.png",
-                    "turns-red": "./blue_to_red_strip.png",
-                    "no-change": "./blue_strip.png"
+                    "turns-pink": "./assets/blue_to_pink_strip.png",
+                    "turns-red": "./assets/blue_to_red_strip.png",
+                    "no-change": "./assets/blue_strip.png"
                 },
                 red: {
-                    "turns-blue": "./red_to_blue_strip.png",
-                    "no-change": "./red_strip.png"
+                    "turns-blue": "./assets/red_to_blue_strip.png",
+                    "no-change": "./assets/red_strip.png"
                 }
             };
             return map[color][reaction] || "images/default_strip.png";
@@ -496,6 +496,80 @@
         }
     </script>
 
+<script>
+    const correctAnswers = {
+        "beakerA": { "red": "No Effect", "blue": "No Effect", "nature": "Neutral" },
+        "beakerB": { "red": "No Effect", "blue": "Turns Pink", "nature": "Acidic" },
+        "beakerC": { "red": "No Effect", "blue": "Turns Pink", "nature": "Acidic" },
+        "beakerD": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+        "beakerE": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+        "beakerF": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+        "beakerG": { "red": "No Effect", "blue": "Turns Red", "nature": "Acidic" },
+    };
+
+    document.getElementById("checkAnswers").addEventListener("click", function () {
+        document.querySelectorAll(".observation-row").forEach(function (row, index) {
+            const beakerKey = "beaker" + String.fromCharCode(65 + index);
+            const selects = row.querySelectorAll("select");
+            const answers = correctAnswers[beakerKey];
+
+            selects.forEach((select, idx) => {
+                const value = select.value;
+                const key = idx === 0 ? "red" : idx === 1 ? "blue" : "nature";
+
+                let icon = row.querySelector(`.icon-${key}`);
+                if (!icon) {
+                    icon = document.createElement("span");
+                    icon.className = `icon-${key}`;
+                    icon.style.marginLeft = "10px";
+                    icon.style.fontWeight = "bold";
+                    select.parentNode.insertBefore(icon, select.nextSibling);
+                }
+
+                if (value === answers[key]) {
+                    icon.innerHTML = "✔️";
+                    icon.style.color = "green";
+                } else {
+                    icon.innerHTML = "❌";
+                    icon.style.color = "red";
+                }
+            });
+        });
+    });
+</script>
+<script>
+    document.getElementById('resetActivity').addEventListener('click', function () {
+        
+        // Reset dropdowns and remove icons properly
+        document.querySelectorAll('.observation-row').forEach(function (row) {
+            
+            // Reset all selects to default
+            row.querySelectorAll('select').forEach(function (sel) {
+                sel.selectedIndex = 0;
+            });
+    
+            // Remove all feedback icons in current row
+            row.querySelectorAll('.icon-red, .icon-blue, .icon-nature').forEach(function (icon) {
+                icon.remove();
+            });
+        });
+    
+        // Remove dropped strips
+        document.querySelectorAll('.beaker .dropped-strip').forEach(function (el) {
+            el.remove();
+        });
+    
+        // Remove reaction overlays
+        document.querySelectorAll('.beaker .reaction-overlay').forEach(function (el) {
+            el.remove();
+        });
+    
+        // Optional: Reset to Slide 1 if needed
+        // showSlide(1);
+    });
+    </script>
+    
+    
 
 
 </body>
