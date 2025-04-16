@@ -1,0 +1,617 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Litmus Paper Classification (Mobile)</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
+
+        .mobile-sim {
+            width: 375px;
+            /* Typical mobile width like iPhone */
+            margin: 0 auto;
+            background-size: cover;
+            background-image: url('./assets/bg.png');
+            height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        @media (min-width: 376px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 100vh;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mobile-sim">
+
+        <div class="container">
+
+            <!-- Slide 1: Instruction -->
+            <section class="slide" id="slide1">
+                <img src="./assets/1st-bg.png" alt="Instruction Slide" style="width:100%; border-radius:12px;">
+                <!-- HTML -->
+                <div class="instruction-box-1">
+                    Drag and dip the blue and red litmus paper, one at a time, into solutions in the different beakers.
+                    Make clear observations and type them in the table provided.
+                </div>
+
+                <!-- CSS -->
+                <style>
+                    .instruction-box-1 {
+                        position: absolute;
+                        bottom: 100px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 90%;
+                        max-width: 600px;
+                        background-color: rgba(0, 0, 0, 0.75);
+                        color: white;
+                        padding: 16px;
+                        font-family: Arial, sans-serif;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        border-radius: 8px;
+                        text-align: center;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border: 1px solid #ffffff44;
+                    }
+                </style>
+
+                <div class="nav-buttons" style="position: absolute; bottom: 2px; right: 2px;">
+                    <button onclick="showSlide(2)">Next</button>
+                </div>
+            </section>
+            <section class="slide" id="slide2" style="display:none;">
+                <!-- Header Instructions -->
+                <section class="instruction-box">
+                    <h1>Litmus Paper Classification</h1>
+                    <p>Drag the <span class="blue">blue</span> or <span class="red">red</span> litmus paper into each
+                        beaker.
+                        Record what you observe below.</p>
+                </section>
+
+                <!-- Litmus Paper Holder -->
+                <section class="strip-holder">
+                    <img src="./assets/blue_litmus.png" class="litmus-strip" id="blueStrip" draggable="true" />
+                    <img src="./assets/red_litmus.png" class="litmus-strip" id="redStrip" draggable="true" />
+
+
+                </section>
+
+                <!-- Beaker Grid -->
+                <section class="beaker-grid">
+                    <div class="beaker-row">
+                        <div class="beaker" id="beakerA">
+                            <img src="./assets/water_beaker.png" />
+                            <label>A<br><small>Water</small></label>
+                        </div>
+                        <div class="beaker" id="beakerB">
+                            <img src="./assets/orange_beaker.png" />
+                            <label>B<br><small>Orange <br> Juice</small></label>
+                        </div>
+                        <div class="beaker" id="beakerC">
+                            <img src="./assets/vinegar_beaker.png" />
+                            <label>C<br><small>Vinegar</small></label>
+                        </div>
+                        <div class="beaker" id="beakerD">
+                            <img src="./assets/tea_beaker.png" />
+                            <label>D<br><small>Tea</small></label>
+                        </div>
+                    </div>
+                    <div class="beaker-row center-row">
+                        <div class="beaker" id="beakerE">
+                            <img src="./assets/soap_beaker.png" />
+                            <label>E<br><small>Liquid Soap</small></label>
+                        </div>
+                        <div class="beaker" id="beakerF">
+                            <img src="./assets/naoh_beaker.png" />
+                            <label>F<br><small>Sodium <br> Hydroxide</small></label>
+                        </div>
+                        <div class="beaker" id="beakerG">
+                            <img src="./assets/hcl_beaker.png" />
+                            <label>G<br><small> Dilute Hydrochloric <br> Acid</small></label>
+                        </div>
+                    </div>
+                </section>
+                <div class="nav-buttons">
+                    <button onclick="showSlide(1)">Previous</button>
+                    <button onclick="showSlide(3)">Next</button>
+                </div>
+
+
+        </div>
+
+
+        <!-- Slide 3: Observation Table -->
+        <section class="slide" id="slide3" style="display:none;">
+            <section class="observation-table">
+
+                <!-- Beaker A - Water -->
+                <div class="observation-row">
+                    <label>Beaker A - Water</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker B - Orange Juice -->
+                <div class="observation-row">
+                    <label>Beaker B - Orange Juice</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker C - Vinegar -->
+                <div class="observation-row">
+                    <label>Beaker C - Vinegar</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker D - Tea -->
+                <div class="observation-row">
+                    <label>Beaker D - Tea</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker E - Liquid Soap -->
+                <div class="observation-row">
+                    <label>Beaker E - Liquid Soap</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker F - Sodium Hydroxide -->
+                <div class="observation-row">
+                    <label>Beaker F - Sodium Hydroxide</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+                <!-- Beaker G - Dilute Hydrochloric Acid -->
+                <div class="observation-row">
+                    <label>Beaker G - Dilute Hydrochloric Acid</label>
+                    <label>Effect on Red Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Blue</option>
+                    </select>
+                    <label>Effect on Blue Litmus</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>No Effect</option>
+                        <option>Turns Red</option>
+                        <option>Turns Pink</option>
+                    </select>
+                    <label>Nature</label>
+                    <select>
+                        <option selected disabled>Select</option>
+                        <option>Neutral</option>
+                        <option>Acidic</option>
+                        <option>Alkaline</option>
+                    </select>
+                </div>
+
+            </section>
+
+            <section class="action-buttons">
+                <button id="resetActivity">Reset</button>
+                <button id="checkAnswers">Check Answers</button>
+            </section>
+
+            <div class="nav-buttons">
+                <button onclick="showSlide(2)">Previous</button>
+            </div>
+        </section>
+
+
+
+    </div>
+    </div>
+    <script>
+        // Version: v1.4.0 – Unified Reaction Engine + Drop Logic (Mobile & Desktop Supported)
+        const reactionMatrix = {
+            beakerA: { type: "neutral", blue: "no-change", red: "no-change" },
+            beakerB: { type: "acidic", blue: "turns-pink", red: "no-change" },
+            beakerC: { type: "acidic", blue: "turns-pink", red: "no-change" },
+            beakerD: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerE: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerF: { type: "alkaline", blue: "no-change", red: "turns-blue" },
+            beakerG: { type: "acidic", blue: "turns-red", red: "no-change" } // ✅ fixed
+        };
+
+
+        function applyReaction(beakerEl, stripId) {
+            const beakerId = beakerEl.id;
+            const stripType = stripId.includes("blue") ? "blue" : "red";
+            const result = reactionMatrix[beakerId][stripType];
+
+            let overlayClass = "";
+
+            if (result === "turns-pink") overlayClass = "overlay-acidic";
+            else if (result === "turns-blue") overlayClass = "overlay-alkaline";
+            else overlayClass = "overlay-neutral";
+
+            const existing = beakerEl.querySelector(".reaction-overlay");
+            if (existing) beakerEl.removeChild(existing);
+
+            const overlay = document.createElement("div");
+            overlay.className = `reaction-overlay ${overlayClass}`;
+            beakerEl.appendChild(overlay);
+        }
+
+        function getStripImage(color, reaction) {
+            const map = {
+                blue: {
+                    "turns-pink": "./assets/blue_to_pink_strip.png",
+                    "turns-red": "./assets/blue_to_red_strip.png",
+                    "no-change": "./assets/blue_strip.png"
+                },
+                red: {
+                    "turns-blue": "./assets/red_to_blue_strip.png",
+                    "no-change": "./assets/red_strip.png"
+                }
+            };
+            return map[color][reaction] || "images/default_strip.png";
+        }
+
+        function placeStripAboveBeaker(beakerEl, stripId, reaction) {
+            const color = stripId.includes("blue") ? "blue" : "red";
+            const stripClass = `dropped-strip-${color}`;
+
+            // ✅ Only remove same-color strip, not both
+            const previous = beakerEl.querySelector(`.${stripClass}`);
+            if (previous) previous.remove();
+
+            const strip = document.createElement("img");
+            strip.src = getStripImage(color, reaction);
+            strip.className = `dropped-strip ${stripClass}`;
+            strip.style.position = "absolute";
+            strip.style.width = "40px";
+            strip.style.height = "80px";
+            strip.style.left = color === "blue" ? "40%" : "60%"; // ✅ Side-by-side
+            strip.style.transform = "translateX(-50%)";
+            strip.style.top = "-60px";
+            beakerEl.style.position = "relative";
+            beakerEl.appendChild(strip);
+        }
+
+        function enableDragStartHandlers() {
+            const strips = document.querySelectorAll('.litmus-strip');
+            strips.forEach(function (strip) {
+                strip.addEventListener('dragstart', function (e) {
+                    e.dataTransfer.setData('text/plain', strip.id);
+                });
+            });
+        }
+
+        function enableDropHandlers() {
+            const beakers = document.querySelectorAll('.beaker');
+            beakers.forEach(function (beaker) {
+                beaker.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                });
+
+                beaker.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    const stripId = e.dataTransfer.getData('text/plain');
+                    const strip = document.getElementById(stripId);
+                    const stripType = stripId.includes("blue") ? "blue" : "red";
+                    const reaction = reactionMatrix[beaker.id][stripType];
+
+                    applyReaction(beaker, stripId);
+                    placeStripAboveBeaker(beaker, stripId, reaction);
+                });
+            });
+        }
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+            document.body.style.touchAction = 'none';
+        }
+        function enableScroll() {
+            document.body.style.overflow = '';
+            document.body.style.touchAction = '';
+        }
+
+
+        function enableTouchHandlers() {
+            let activeStrip = null;
+            let offsetX = 0;
+            let offsetY = 0;
+            const strips = document.querySelectorAll('.litmus-strip');
+
+            strips.forEach(function (strip) {
+                strip.addEventListener('touchstart', function (e) {
+                    const touch = e.touches[0];
+
+                    activeStrip = strip.cloneNode(true);
+                    activeStrip.dataset.originalId = strip.id;
+
+                    activeStrip.style.position = 'absolute';
+                    activeStrip.style.width = '80px';
+                    activeStrip.style.height = '160px';
+                    activeStrip.style.zIndex = '1000';
+                    activeStrip.style.pointerEvents = 'none';
+
+                    // ✅ pageX/pageY ensures correct placement even after scroll
+                    activeStrip.style.left = (touch.pageX - 40) + 'px';
+                    activeStrip.style.top = (touch.pageY - 80) + 'px';
+
+                    document.body.appendChild(activeStrip);
+                    disableScroll();
+                });
+
+
+                document.addEventListener('touchmove', function (e) {
+                    if (!activeStrip) return;
+                    const touch = e.touches[0];
+                    e.preventDefault();
+
+                    activeStrip.style.left = (touch.pageX - 40) + 'px';
+                    activeStrip.style.top = (touch.pageY - 80) + 'px';
+                }, { passive: false });
+
+                document.addEventListener('touchend', function (e) {
+                    if (!activeStrip) return;
+                    const touch = e.changedTouches[0];
+                    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+                    const beaker = dropTarget && dropTarget.closest('.beaker');
+
+                    if (beaker) {
+                        const originalId = activeStrip.dataset.originalId;
+                        const color = originalId.includes("blue") ? "blue" : "red";
+                        const stripClass = `dropped-strip-${color}`;
+                        const previous = beaker.querySelector(`.${stripClass}`);
+                        if (previous) previous.remove();
+                        const reaction = reactionMatrix[beaker.id][color];
+                        const dropped = document.createElement("img");
+                        dropped.src = getStripImage(color, reaction);
+                        dropped.className = `dropped-strip ${stripClass}`;
+                        dropped.style.position = "absolute";
+                        dropped.style.width = "40px";
+                        dropped.style.height = "80px";
+                        dropped.style.left = color === "blue" ? "40%" : "60%"; // ✅ show both
+                        dropped.style.transform = "translateX(-50%)";
+                        dropped.style.top = "-60px";
+                        beaker.style.position = "relative";
+                        beaker.appendChild(dropped);
+
+
+                        applyReaction(beaker, originalId);
+                    }
+
+                    document.body.removeChild(activeStrip);
+                    activeStrip = null;
+                    enableScroll(); // ✅ unlock scroll
+                });
+            });
+        }
+
+        function initLitmusActivity() {
+            const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouch) enableTouchHandlers();
+            else {
+                enableDropHandlers();
+                enableDragStartHandlers(); // ✅ required for desktop
+            }
+
+        }
+
+        window.addEventListener('load', initLitmusActivity);
+    </script>
+    <script>
+        function showSlide(slideNumber) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.style.display = 'none');
+            document.getElementById(`slide${slideNumber}`).style.display = 'block';
+        }
+    </script>
+
+    <script>
+        const correctAnswers = {
+            "beakerA": { "red": "No Effect", "blue": "No Effect", "nature": "Neutral" },
+            "beakerB": { "red": "No Effect", "blue": "Turns Pink", "nature": "Acidic" },
+            "beakerC": { "red": "No Effect", "blue": "Turns Pink", "nature": "Acidic" },
+            "beakerD": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+            "beakerE": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+            "beakerF": { "red": "Turns Blue", "blue": "No Effect", "nature": "Alkaline" },
+            "beakerG": { "red": "No Effect", "blue": "Turns Red", "nature": "Acidic" },
+        };
+
+        document.getElementById("checkAnswers").addEventListener("click", function () {
+            document.querySelectorAll(".observation-row").forEach(function (row, index) {
+                const beakerKey = "beaker" + String.fromCharCode(65 + index);
+                const selects = row.querySelectorAll("select");
+                const answers = correctAnswers[beakerKey];
+
+                selects.forEach((select, idx) => {
+                    const value = select.value;
+                    const key = idx === 0 ? "red" : idx === 1 ? "blue" : "nature";
+
+                    let icon = row.querySelector(`.icon-${key}`);
+                    if (!icon) {
+                        icon = document.createElement("span");
+                        icon.className = `icon-${key}`;
+                        icon.style.marginLeft = "10px";
+                        icon.style.fontWeight = "bold";
+                        select.parentNode.insertBefore(icon, select.nextSibling);
+                    }
+
+                    if (value === answers[key]) {
+                        icon.innerHTML = "✔️";
+                        icon.style.color = "green";
+                    } else {
+                        icon.innerHTML = "❌";
+                        icon.style.color = "red";
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('resetActivity').addEventListener('click', function () {
+
+            // Reset dropdowns and remove icons properly
+            document.querySelectorAll('.observation-row').forEach(function (row) {
+
+                // Reset all selects to default
+                row.querySelectorAll('select').forEach(function (sel) {
+                    sel.selectedIndex = 0;
+                });
+
+                // Remove all feedback icons in current row
+                row.querySelectorAll('.icon-red, .icon-blue, .icon-nature').forEach(function (icon) {
+                    icon.remove();
+                });
+            });
+
+            // Remove dropped strips
+            document.querySelectorAll('.beaker .dropped-strip').forEach(function (el) {
+                el.remove();
+            });
+
+            // Remove reaction overlays
+            document.querySelectorAll('.beaker .reaction-overlay').forEach(function (el) {
+                el.remove();
+            });
+
+            // Optional: Reset to Slide 1 if needed
+            // showSlide(1);
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
