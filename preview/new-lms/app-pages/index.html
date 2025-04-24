@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://snow-lara.netlify.app/login -->
+<html x-data="main" class="light" :class="[$store.app.mode]">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ducisgroup LMS - Login">
+    <meta name="author" content="shunya.ek">
+
+    <!-- Site Tiltle -->
+    <title>Ducisgroup LMS - Login</title>
+
+    <!-- Site favicon -->
+
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" href="./beauty/css/style.css">
+    <link rel="stylesheet" href="./beauty/css/toast.css">
+    <style type="text/css">
+        @font-face {
+            font-family: 'Atlassian Sans';
+            font-style: normal;
+            font-weight: 400 653;
+            font-display: swap;
+            src:
+                url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/AtlassianSans-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+                U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body
+    class="antialiased relative font-inter bg-lightwhite dark:bg-black text-black dark:text-white text-sm font-normal overflow-x-hidden">
+    <!-- Start Header -->
+    <header>
+        <nav class="bg-lightwhite dark:bg-black px-4 lg:px-7 py-4">
+            <div class="flex flex-wrap justify-between items-center">
+                <a class="main-logo flex justify-center" href="/crm">
+                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                        alt="logo" class="block dark:hidden w-20">
+                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                        alt="logo" class="hidden dark:block w-20">
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <div class="mr-2">
+                        <a href="javascript:;" class="text-black dark:text-white"
+                            x-show="$store.app.mode === &#39;light&#39;" @click="$store.app.toggleMode(&#39;dark&#39;)">
+                            <i class="ri-moon-fill" style="font-size: 16px;"></i>
+                        </a>
+                        <a href="javascript:;" class="text-black dark:text-white"
+                            x-show="$store.app.mode === &#39;dark&#39;" @click="$store.app.toggleMode(&#39;light&#39;)"
+                            style="display: none;">
+                            <i class="ri-moon-line" style="font-size: 16px;"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+    <!-- Start Content -->
+    <div class="min-h-[calc(100vh-134px)] py-4 px-4 sm:px-12 flex justify-center items-center">
+        <div
+            class="max-w-[680px] flex-none w-full bg-white dark:bg-white/5 p-4 sm:p-10 lg:px-[146px] lg:py-[107px] rounded-2xl loginform">
+            <h1 class="text-2xl font-semibold mb-2 text-center">Sign In</h1>
+
+            <div class="flex items-center mb-7">
+                <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+
+                <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+            </div>
+            <form class="mb-4">
+                <div class="mb-4">
+                    <input type="text" value="" placeholder="Email" class="form-input">
+                </div>
+                <div class="mb-2">
+                    <input type="password" value="" placeholder="Password" class="form-input">
+                </div>
+                <div class="mb-7 text-right">
+                    <a class="text-lightpurple-300" href="https://snow-lara.netlify.app/forgot-password">Forgot
+                        Password?</a>
+                </div>
+                <button type="button"
+                    class="py-2 px-4 bg-black dark:bg-lightpurple-200 w-full rounded-lg text-white dark:text-black text-lg font-semibold border border-black dark:border-lightpurple-200 hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white transition-all duration-300">
+                    Sign In
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- End Content -->
+    <!-- Start Footer -->
+    <footer class="p-7 flex items-center justify-center">
+        <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
+    </footer>
+    <!-- End Footer -->
+
+
+
+    <!-- All javascirpt -->
+    <!-- Alpine js -->
+    <script src="./beauty/js/alpine-collaspe.min.js"></script>
+    <script src="./beauty/js/alpine-persist.min.js"></script>
+    <script src="./beauty/js/alpine.min.js" defer=""></script>
+    <!-- Custom js -->
+    <script src="./beauty/js/custom.js"></script>
+    <script src="./beauty/js/toast.js"></script>
+    <script type="module">
+        import { post } from './beauty/js/api-client.js'; // path to your enhanced apiClient.js
+
+        const loginForm = document.querySelector('form');
+        const emailInput = loginForm.querySelector('input[type="text"]');
+        const passwordInput = loginForm.querySelector('input[type="password"]');
+        const loginBtn = loginForm.querySelector('button');
+
+        loginBtn.addEventListener('click', async () => {
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!email || !password) {
+                showToast('Please enter both email and password', 'danger');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            loginBtn.innerText = 'Signing In...';
+
+            try {
+                const result = await post('/auth/login', { email, password });
+
+                // Save tokens
+                localStorage.setItem('access_token', result.token);
+                if (result.refreshToken) {
+                    localStorage.setItem('refresh_token', result.refreshToken);
+                }
+
+                // Role-based routing
+                if (result.role === 'Admin') {
+                    showToast('Welcome Admin! Redirecting...', 'primary');
+                    setTimeout(() => window.location.href = './admin/dashboard-superadmin.html', 1200);
+                } else if (result.role === 'Learner') {
+                    showToast('Welcome Learner! Redirecting...', 'primary');
+                    setTimeout(() => window.location.href = './learner/dashboard-e-learner.html', 1200);
+                } else {
+                    showToast('Unknown role. Contact admin.', 'danger');
+                }
+            } catch (err) {
+                showToast(`Login failed: ${err.message}`, 'danger');
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.innerText = 'Sign In';
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

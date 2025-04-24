@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html x-data="main" class="light" :class="[$store.app.mode]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ducisgroup">
+    <meta name="author" content="shunya.ek">
+    <!-- Site Title -->
+    <title>Ducisgroup</title>
+    <!-- Site Favicon -->
+    <link rel="shortcut icon" href="../beauty/images/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body x-data="main"
+    class="antialiased relative font-inter bg-white dark:bg-black text-black dark:text-white text-sm font-normal overflow-x-hidden vertical"
+    :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.rightsidebar ? 'right-sidebar' : '', $store.app.menu, $store.app.layout]">
+    <!-- Start Menu Sidebar Olverlay -->
+    <div class="fixed inset-0 bg-[black]/60 z-40 lg:hidden hidden" :class="{'hidden' : !$store.app.sidebar}"
+        @click="$store.app.toggleSidebar()"></div>
+    <!-- End Menu Sidebar Olverlay -->
+
+    <!-- Start Right Sidebar Olverlay -->
+    <div class="fixed inset-0 bg-[black]/60 z-50 2xl:hidden hidden" :class="{'hidden' : !$store.app.rightsidebar}"
+        @click="$store.app.rightSidebar()"></div>
+    <!-- End Right Sidebar Olverlay -->
+
+    <!-- Start Main Content -->
+    <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
+       <!-- Start Sidebar -->
+       <nav
+       class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+       <div class="bg-white dark:bg-black h-full">
+           <!-- Start Logo -->
+           <div class="flex p-4">
+               <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
+                   <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                       alt="logo" class="block dark:hidden w-20">
+                   <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                       alt="logo" class="hidden dark:block w-20">
+               </a>
+           </div>
+           <!-- End Logo -->
+
+           <!-- Start Menu -->
+           <!-- Start LMS Super Admin Sidebar -->
+           <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+               x-data="{ activeMenu: null }">
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
+               <!-- Menu Item -->
+               <li class="menu nav-item">
+                   <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-dashboard-line"></i>
+                           <span class="pl-1">Overview</span>
+                       </div>
+                   </a>
+               </li>
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
+               <!-- Menu Items -->
+               <li class="menu nav-item">
+                   <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-shield-user-line"></i>
+                           <span class="pl-1">Admins</span>
+                       </div>
+                   </a>
+               </li>
+
+               <li class="menu nav-item">
+                   <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-user-line"></i>
+                           <span class="pl-1">Learner</span>
+                       </div>
+                   </a>
+               </li>
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                   <span>LMS Actions</span>
+               </h2>
+               <!-- Menu Item -->
+               <li class="menu nav-item">
+                   <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                       :class="{'active' : activeMenu === 'new'}"
+                       @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                       <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                           :class="{'!rotate-90' : activeMenu === 'new'}">
+                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" clip-rule="evenodd"
+                                   d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                   fill="currentcolor"></path>
+                           </svg>
+                       </div>
+                       <div class="flex items-center">
+                           <i class="ri-add-circle-line"></i>
+                           <span class="pl-1">New Record</span>
+                       </div>
+                   </a>
+                   <ul x-show="activeMenu === 'new'" x-collapse=""
+                       class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                       style="display: none; height: 0px; overflow: hidden;" hidden="">
+                       <li><a href="./add_course.html" title="">Course</a></li>
+                       <li><a href="./add_module.html" title="">Modules</a></li>
+                       <li><a href="./add_lesson.html" title="">Lesson</a></li>
+                       <li><a href="./add_content.html" title="">Content</a></li>
+                       <li><a href="./add_quiz.html" title="">Quiz</a></li>
+                       <li><a href="./add_user.html" title="">User</a></li>
+                       <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
+                       <li><a href="./add_license.html">License</a></li>
+                       <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
+
+                   </ul>
+               </li>
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
+               <li class="menu nav-item">
+                   <a href="javascript:;" class="nav-link group text-black dark:text-white"
+                       :class="{'active' : activeMenu === 'courses'}"
+                       @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
+                       <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                           :class="{'!rotate-90' : activeMenu === 'courses'}">
+                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" clip-rule="evenodd"
+                                   d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                   fill="currentcolor"></path>
+                           </svg>
+                       </div>
+                       <div class="flex items-center">
+                           <i class="ri-book-open-line"></i>
+                           <span class="pl-1">Courses</span>
+                       </div>
+                   </a>
+                   <ul x-show="activeMenu === 'courses'" x-collapse
+                       class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
+                       <li><a href="./my-courses.html" title="">All Courses</a></li>
+                       <li><a href="./view-course.html" title="">View Course</a></li>
+
+                   </ul>
+               </li>
+
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
+               <li class="menu nav-item">
+                   <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-live-line"></i>
+                           <span class="pl-1">Open Batches</span>
+                       </div>
+                   </a>
+               </li>
+
+
+
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
+               <li class="menu nav-item">
+                   <a href="./report.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-bar-chart-line"></i>
+                           <span class="pl-1">Reports</span>
+                       </div>
+                   </a>
+               </li>
+
+
+               <!-- Section Header -->
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
+               <li class="menu nav-item">
+                   <a href="./settings.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-settings-3-line"></i>
+                           <span class="pl-1">Settings</span>
+                       </div>
+                   </a>
+               </li>
+
+               <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
+               <li class="menu nav-item">
+                   <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-rocket-line"></i>
+                           <span class="pl-1">Release Notes</span>
+                       </div>
+                   </a>
+               </li>
+               <li class="menu nav-item">
+                   <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-bar-chart-line"></i>
+                           <span class="pl-1">Activity Feed</span>
+                       </div>
+                   </a>
+               </li>
+               <li class="menu nav-item">
+                   <a href="./documentation.html" class="nav-link group text-black dark:text-white">
+                       <div class="flex pl-5 items-center">
+                           <i class="ri-article-fill"></i>
+                           <span class="pl-1">Documentation</span>
+                       </div>
+                   </a>
+               </li>
+           </ul>
+           <!-- End LMS Super Admin Sidebar -->
+
+           <!-- End Menu -->
+       </div>
+   </nav>
+   <!-- End sidebar -->
+
+        <!-- Start Content Area -->
+        <div class="main-content flex-1">
+            <!-- Start Topbar -->
+            <div class="border-b border-black/10 dark:border-white/10 py-[22px] px-7 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <button type="button" class="text-black dark:text-white" @click="$store.app.toggleSidebar()">
+                        <i class="ri-sidebar-fold-line" style="font-size: 1.2rem;"></i>
+                    </button>
+                    <button type="button" class="text-black dark:text-white">
+                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <nav aria-label="breadcrumb" class="w-full py-1 px-2">
+                            <ol class="flex space-x-3">
+                                <li class="flex items-center">
+                                    <a href="./dashboard-superadmin.html"
+                                        class="flex items-center text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white">Home</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-black/40 dark:text-white/40">/</span>
+                                    <a href="#"
+                                        class="flex items-center px-3 text-black dark:text-white">Settings</a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5">
+                    <!-- Search Form -->
+                    <form class="md:flex items-center hidden">
+                        <label for="voice-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-[6px] pointer-events-none">
+                                <svg class="text-black/20 dark:text-white/20" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.3496 14.3563C14.2563 14.4483 14.1306 14.4999 13.9996 14.5001C13.8668 14.4995 13.7393 14.4481 13.6434 14.3563L10.9434 11.6501C9.80622 12.6052 8.34425 13.0845 6.86236 12.9879C5.38046 12.8913 3.99306 12.2264 2.98951 11.1317C1.98596 10.0371 1.44375 8.59729 1.47597 7.1126C1.50818 5.62791 2.11233 4.21298 3.16241 3.1629C4.21249 2.11282 5.62743 1.50867 7.11212 1.47645C8.59681 1.44424 10.0366 1.98645 11.1313 2.99C12.2259 3.99355 12.8908 5.38095 12.9874 6.86285C13.084 8.34474 12.6047 9.80671 11.6496 10.9438L14.3496 13.6438C14.3969 13.6904 14.4344 13.7458 14.46 13.807C14.4856 13.8681 14.4988 13.9338 14.4988 14.0001C14.4988 14.0664 14.4856 14.132 14.46 14.1932C14.4344 14.2544 14.3969 14.3098 14.3496 14.3563ZM7.24961 12.0001C8.18907 12.0001 9.10743 11.7215 9.88857 11.1996C10.6697 10.6776 11.2785 9.93579 11.638 9.06784C11.9976 8.19989 12.0916 7.24483 11.9083 6.32342C11.7251 5.40201 11.2727 4.55564 10.6084 3.89134C9.94407 3.22704 9.0977 2.77465 8.17629 2.59137C7.25488 2.40809 6.29981 2.50215 5.43186 2.86167C4.56391 3.22119 3.82206 3.83001 3.30013 4.61114C2.77819 5.39227 2.49961 6.31064 2.49961 7.2501C2.50126 8.50937 3.00224 9.71659 3.89268 10.607C4.78312 11.4975 5.99034 11.9984 7.24961 12.0001Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <input type="text" id="voice-search"
+                                class="bg-black/5 dark:bg-white/10 border-0 text-black dark:text-white/40 text-sm rounded-lg block max-w-[160px] w-full px-[26px] p-1 focus:ring-0 focus:outline-0"
+                                placeholder="Search..." required="">
+                            <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-2">
+                                <svg aria-hidden="true"
+                                    class="w-4 h-4 text-black/20 dark:text-white/20 hover:text-black dark:hover:text-white"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M7 4a3 3 0 006 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <a href="javascript:;" class="text-black dark:text-white"
+                                x-show="$store.app.mode === 'light'" @click="$store.app.toggleMode('dark')">
+                                <i class="ri-sun-line"></i>
+                            </a>
+                            <a href="javascript:;" class="text-black dark:text-white"
+                                x-show="$store.app.mode === 'dark'" @click="$store.app.toggleMode('light')"
+                                style="display: none;">
+                                <i class="ri-moon-line"></i>
+                            </a>
+                        </div>
+                        <button type="button" class="relative w-7 h-7 p-1 text-black dark:text-white"
+                            @click="$store.app.rightSidebar()">
+                            <i class="ri-notification-3-line"></i>
+                            <span class="flex absolute w-3 h-3 right-px top-[5px]">
+                                <span
+                                    class="animate-ping absolute -left-[3px] -top-[3px] inline-flex h-full w-full rounded-full bg-black/50 dark:bg-white/50 opacity-75"></span>
+                                <span
+                                    class="relative inline-flex rounded-full w-[6px] h-[6px] bg-black dark:bg-white"></span>
+                            </span>
+                        </button>
+                        <div class="profile" x-data="dropdown" @click.outside="open = false">
+                            <button type="button" class="flex items-center gap-1.5 xl:gap-0" @click="toggle()">
+                                <img class="h-7 w-7 rounded-full xl:mr-2"
+                                    src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Header Avatar">
+                                <span class="fw-medium hidden xl:block">Sunil Mohal</span>
+                                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </button>
+                            <ul x-show="open" x-transition="" x-transition.duration.300ms="" style="display: none;">
+                                <li>
+                                    <div class="flex items-center !p-1">
+                                        <div class="flex-none">
+                                            <img class="h-7 w-7 rounded-full object-cover"
+                                                src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png"
+                                                alt="image">
+                                        </div>
+                                        <div class="pl-2">
+                                            <h4 class="text-sm text-black dark:text-white font-medium leading-none">
+                                                Sunil Mohal</h4>
+                                            <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                                                href="javaScript:;">sunil@ducis.com</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="h-px bg-black/5 my-1"></li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-user-line " style="margin-right: 5px;"></i> Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-settings-4-line" style="margin-right: 5px;"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-mail-line" style="margin-right: 5px;"></i> Messages
+                                    </a>
+                                </li>
+                                <li class="h-px bg-black/5 my-1"></li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-logout-box-line " style="margin-right: 5px;"></i> Sign Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Topbar -->
+
+            <!-- Start Content -->
+            <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+
+                <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+                    <div class="px-2 py-1 mb-4">
+                        <h2 class="text-lg font-semibold">Edit Profile</h2>
+
+                        <ul class="flex flex-wrap items-center space-x-2 py-3">
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="/edit-profile/basic-info">Home</a>
+                                <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="./settings.html">Settings</a>
+                                <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </li>
+
+                            <li>Edit Profile</li>
+                        </ul>
+                    </div>
+                    <form id="edit-profile-form" class="bg-white-100 p-10">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="fullName" class="text-sm font-semibold mb-2 block">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="email" class="text-sm font-semibold mb-2 block">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="phone" class="text-sm font-semibold mb-2 block">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="gender" class="text-sm font-semibold mb-2 block">Gender</label>
+                                <select id="gender" name="gender"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="dob" class="text-sm font-semibold mb-2 block">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" placeholder=""
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="profilePic" class="text-sm font-semibold mb-2 block">Profile Picture</label>
+                                <input type="file" id="profilePic" name="profilePic" placeholder=""
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                                <img id="preview-profilePic" src="#" alt="Image Preview"
+                                    class="mt-2 hidden w-full h-32 object-cover border border-black/10 rounded-lg">
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="bio" class="text-sm font-semibold mb-2 block">Bio</label>
+                                <input type="textarea" id="bio" name="bio"
+                                    placeholder="Write a short bio about yourself"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="linkedin" class="text-sm font-semibold mb-2 block">LinkedIn Profile</label>
+                                <input type="url" id="linkedin" name="linkedin"
+                                    placeholder="Enter your LinkedIn profile link"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="country" class="text-sm font-semibold mb-2 block">Country</label>
+                                <select id="country" name="country"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="India">India</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="timezone" class="text-sm font-semibold mb-2 block">Time Zone</label>
+                                <select id="timezone" name="timezone"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                    <option value="UTC-12">UTC-12</option>
+                                    <option value="UTC-11">UTC-11</option>
+                                    <option value="UTC-10">UTC-10</option>
+                                    <option value="UTC-9">UTC-9</option>
+                                    <option value="UTC-8">UTC-8</option>
+                                    <option value="UTC-7">UTC-7</option>
+                                    <option value="UTC-6">UTC-6</option>
+                                    <option value="UTC-5">UTC-5</option>
+                                    <option value="UTC-4">UTC-4</option>
+                                    <option value="UTC-3">UTC-3</option>
+                                    <option value="UTC-2">UTC-2</option>
+                                    <option value="UTC-1">UTC-1</option>
+                                    <option value="UTC+0">UTC+0</option>
+                                    <option value="UTC+1">UTC+1</option>
+                                    <option value="UTC+2">UTC+2</option>
+                                    <option value="UTC+3">UTC+3</option>
+                                    <option value="UTC+4">UTC+4</option>
+                                    <option value="UTC+5">UTC+5</option>
+                                    <option value="UTC+6">UTC+6</option>
+                                    <option value="UTC+7">UTC+7</option>
+                                    <option value="UTC+8">UTC+8</option>
+                                    <option value="UTC+9">UTC+9</option>
+                                    <option value="UTC+10">UTC+10</option>
+                                    <option value="UTC+11">UTC+11</option>
+                                    <option value="UTC+12">UTC+12</option>
+                                </select>
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="password" class="text-sm font-semibold mb-2 block">New Password</label>
+                                <input type="password" id="password" name="password" placeholder="Enter new password"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="confirmPassword" class="text-sm font-semibold mb-2 block">Confirm New
+                                    Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword"
+                                    placeholder="Confirm your new password"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="mt-7 flex justify-end gap-4">
+                            <input style="cursor: pointer;" type="submit" value="Update Profile"
+                                class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="button" value="Clear" class="btn py-[5px] px-4 text-xs font-semibold">
+                        </div>
+                    </form>
+                </div>
+                <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+
+                    <div id="reset-pass" class="px-2 py-1 mb-4">
+                        <h2 class="text-lg font-semibold">Password Reset</h2>
+
+                        <ul class="flex flex-wrap items-center space-x-2 py-3">
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="./dashboard-superadmin.html">Dashboard</a>
+                                <svg x-ignore="" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </li>
+
+                            <li>Password Reset</li>
+                        </ul>
+                    </div>
+
+                    <form id="passwordResetForm" class="bg-white-100 p-10">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="email" class="text-sm font-semibold mb-2 block">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email used to register"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="new_password" class="text-sm font-semibold mb-2 block">New Password</label>
+                                <input type="password" id="new_password" name="new_password" placeholder="New password"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                            <!-- Exclude reset button from being rendered as input field -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="confirm_password" class="text-sm font-semibold mb-2 block">Confirm
+                                    Password</label>
+                                <input type="password" id="confirm_password" name="confirm_password"
+                                    placeholder="Re-enter new password"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                            </div>
+                            <!-- Exclude submit button from being rendered as input field -->
+                        </div>
+
+                        <div class="mt-7 flex justify-end gap-4">
+                            <input type="submit" value="Reset Password" class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="button" value="Clear" class="btn py-[5px] px-4 text-xs font-semibold">
+                        </div>
+                    </form>
+
+                </div>
+                <!-- Start Footer -->
+                <footer
+                    class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+                    <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
+                    <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact
+                                Us</a>
+                        </li>
+                    </ul>
+                </footer>
+
+                <!-- End Footer -->
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Content Area -->
+
+        <!-- Start Right Sidebar -->
+        <div
+            class="right-sidebar fixed right-0 bg-white dark:bg-black bottom-0 z-50 w-[280px] border-l border-black/10 dark:border-white/10 transition-all duration-300">
+            <div class="flex flex-col gap-9 px-6 py-[22px] h-screen overflow-y-auto overflow-x-hidden">
+                <div>
+                    <h4 class="font-semibold text-black dark:text-white mb-5">Notifications</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none p-1 text-black bg-lightblue-100 rounded-lg">
+                                <svg width="32" height="32" class="w-4 h-4" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6 13C6 13 6 10.9662 6.78626 9.10724C6.78626 9.10724 7.54538 7.31249 8.92893 5.92893C8.92893 5.92893 10.3125 4.54538 12.1072 3.78626C12.1072 3.78626 13.9662 3 16 3C16 3 18.0338 3 19.8928 3.78626C19.8928 3.78626 21.6875 4.54538 23.0711 5.92893C23.0711 5.92893 24.4546 7.31249 25.2137 9.10724C25.2137 9.10724 26 10.9662 26 13V19C26 19 26 21.0338 25.2137 22.8928C25.2137 22.8928 24.4546 24.6875 23.0711 26.0711C23.0711 26.0711 21.6875 27.4546 19.8928 28.2137C19.8928 28.2137 18.0338 29 16 29C16 29 13.9662 29 12.1072 28.2137C12.1072 28.2137 10.3125 27.4546 8.92893 26.0711C8.92893 26.0711 7.54538 24.6875 6.78626 22.8928C6.78626 22.8928 6 21.0338 6 19V13ZM8 13V19C8 19 8 22.3137 10.3431 24.6569C10.3431 24.6569 12.6863 27 16 27C16 27 19.3137 27 21.6569 24.6569C21.6569 24.6569 24 22.3137 24 19V13C24 13 24 9.68629 21.6569 7.34315C21.6569 7.34315 19.3137 5 16 5C16 5 12.6863 5 10.3431 7.34315C10.3431 7.34315 8 9.68629 8 13Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M25 18H28C28.5523 18 29 17.5523 29 17C29 16.4477 28.5523 16 28 16H25C24.4477 16 24 16.4477 24 17C24 17.5523 24.4477 18 25 18Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 18H7C7.55228 18 8 17.5523 8 17C8 16.4477 7.55228 16 7 16H4C3.44772 16 3 16.4477 3 17C3 17.5523 3.44772 18 4 18Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 22H7.225C7.77728 22 8.225 21.5523 8.225 21C8.225 20.4477 7.77728 20 7.225 20H4C3.44772 20 3 20.4477 3 21C3 21.5523 3.44772 22 4 22Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 14H28C28.5523 14 29 13.5523 29 13C29 12.4477 28.5523 12 28 12H4C3.44772 12 3 12.4477 3 13C3 13.5523 3.44772 14 4 14Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M15 17V28C15 28.5523 15.4477 29 16 29C16.5523 29 17 28.5523 17 28V17C17 16.4477 16.5523 16 16 16C15.4477 16 15 16.4477 15 17Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M24.775 22H28C28.5523 22 29 21.5523 29 21C29 20.4477 28.5523 20 28 20H24.775C24.2227 20 23.775 20.4477 23.775 21C23.775 21.5523 24.2227 22 24.775 22Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M6.2989 4.22515L9.2739 7.05015C9.45973 7.22661 9.70622 7.325 9.96249 7.325L9.96437 7.325L9.98834 7.32467C10.2535 7.31781 10.505 7.20591 10.6876 7.01359C10.8641 6.82776 10.9625 6.58127 10.9625 6.325L10.9625 6.32312L10.9622 6.29915C10.9553 6.03402 10.8434 5.78247 10.6511 5.59985L7.67608 2.77485C7.49024 2.59839 7.24376 2.5 6.98749 2.5L6.96163 2.50033C6.69651 2.50719 6.44496 2.61909 6.26234 2.81141C6.08587 2.99724 5.98749 3.24373 5.98749 3.5L5.98782 3.52585C5.99468 3.79098 6.10658 4.04253 6.2989 4.22515Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M24.299 2.77477L21.3365 5.58727C21.1442 5.76988 21.0322 6.02141 21.0254 6.28653L21.025 6.3125L21.0253 6.33458C21.0308 6.58313 21.1286 6.82071 21.2998 7.00101C21.4824 7.19335 21.7339 7.30528 21.9991 7.31216L22.025 7.3125L22.0471 7.31226C22.2957 7.30677 22.5332 7.20889 22.7135 7.03773L25.676 4.22523C25.8684 4.04262 25.9803 3.79109 25.9872 3.52596L25.9875 3.5L25.9873 3.47791C25.9818 3.22937 25.8839 2.99179 25.7128 2.81149C25.5301 2.61915 25.2786 2.50722 25.0135 2.50034L24.9875 2.5L24.9654 2.50024C24.7169 2.50573 24.4793 2.60361 24.299 2.77477Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    You have a bug that needs to be fixed.</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">5m ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none p-1 text-black bg-lightpurple-100 rounded-lg">
+                                <svg width="32" height="32" class="w-4 h-4" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16 3C16 3 17.8304 3 19.5035 3.70768C19.5035 3.70768 21.1188 4.39089 22.364 5.63604C22.364 5.63604 23.6091 6.88119 24.2923 8.49649C24.2923 8.49649 25 10.1696 25 12C25 12 25 13.8304 24.2923 15.5035C24.2923 15.5035 23.6091 17.1188 22.364 18.364C22.364 18.364 21.1188 19.6091 19.5035 20.2923C19.5035 20.2923 17.8304 21 16 21C16 21 14.1696 21 12.4965 20.2923C12.4965 20.2923 10.8812 19.6091 9.63604 18.364C9.63604 18.364 8.39089 17.1188 7.70768 15.5035C7.70768 15.5035 7 13.8304 7 12C7 12 7 10.1696 7.70768 8.49649C7.70768 8.49649 8.39089 6.88119 9.63604 5.63604C9.63604 5.63604 10.8812 4.39089 12.4965 3.70767C12.4965 3.70767 14.1696 3 16 3ZM16 5C16 5 13.1005 5 11.0503 7.05025C11.0503 7.05025 9 9.1005 9 12C9 12 9 14.8995 11.0503 16.9497C11.0503 16.9497 13.1005 19 16 19C16 19 18.8995 19 20.9497 16.9497C20.9497 16.9497 23 14.8995 23 12C23 12 23 9.1005 20.9497 7.05025C20.9497 7.05025 18.8995 5 16 5Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M22.5005 22.7409C25.5174 24.4828 27.2589 27.4999 27.2589 27.4999C27.3915 27.7296 27.6099 27.8973 27.8661 27.9659C27.9505 27.9886 28.0376 28 28.125 28C28.1355 28 28.146 27.9999 28.1564 27.9995C28.3212 27.9943 28.4821 27.9485 28.6249 27.8661C28.9344 27.6875 29.125 27.3573 29.125 27C29.125 26.9846 29.1246 26.9691 29.1239 26.9537C29.1165 26.7941 29.071 26.6385 28.9911 26.5001C26.9816 23.0188 23.5006 21.0089 23.5006 21.0089C20.0196 18.9989 16 18.9989 16 18.9989C11.9804 18.9989 8.4994 21.0089 8.4994 21.0089C5.01869 23.0187 3.00924 26.4996 3.00924 26.4996C2.9215 26.6516 2.875 26.8245 2.875 27L2.87516 27.0181C2.87664 27.0995 2.88803 27.1803 2.9091 27.2589C2.97776 27.5151 3.14538 27.7335 3.37508 27.8661C3.52708 27.9538 3.69949 28 3.875 28C3.89351 28 3.91201 27.9995 3.93049 27.9985C4.26751 27.9797 4.57233 27.7923 4.74107 27.4999C6.48262 24.4828 9.49948 22.7409 9.49948 22.7409C12.5163 20.9989 16 20.9989 16 20.9989C19.4837 20.9989 22.5005 22.7409 22.5005 22.7409Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    New user registered</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">1:23 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none p-1 text-black bg-lightblue-100 rounded-lg">
+                                <svg width="32" height="32" class="w-4 h-4" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6 13C6 13 6 10.9662 6.78626 9.10724C6.78626 9.10724 7.54538 7.31249 8.92893 5.92893C8.92893 5.92893 10.3125 4.54538 12.1072 3.78626C12.1072 3.78626 13.9662 3 16 3C16 3 18.0338 3 19.8928 3.78626C19.8928 3.78626 21.6875 4.54538 23.0711 5.92893C23.0711 5.92893 24.4546 7.31249 25.2137 9.10724C25.2137 9.10724 26 10.9662 26 13V19C26 19 26 21.0338 25.2137 22.8928C25.2137 22.8928 24.4546 24.6875 23.0711 26.0711C23.0711 26.0711 21.6875 27.4546 19.8928 28.2137C19.8928 28.2137 18.0338 29 16 29C16 29 13.9662 29 12.1072 28.2137C12.1072 28.2137 10.3125 27.4546 8.92893 26.0711C8.92893 26.0711 7.54538 24.6875 6.78626 22.8928C6.78626 22.8928 6 21.0338 6 19V13ZM8 13V19C8 19 8 22.3137 10.3431 24.6569C10.3431 24.6569 12.6863 27 16 27C16 27 19.3137 27 21.6569 24.6569C21.6569 24.6569 24 22.3137 24 19V13C24 13 24 9.68629 21.6569 7.34315C21.6569 7.34315 19.3137 5 16 5C16 5 12.6863 5 10.3431 7.34315C10.3431 7.34315 8 9.68629 8 13Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M25 18H28C28.5523 18 29 17.5523 29 17C29 16.4477 28.5523 16 28 16H25C24.4477 16 24 16.4477 24 17C24 17.5523 24.4477 18 25 18Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 18H7C7.55228 18 8 17.5523 8 17C8 16.4477 7.55228 16 7 16H4C3.44772 16 3 16.4477 3 17C3 17.5523 3.44772 18 4 18Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 22H7.225C7.77728 22 8.225 21.5523 8.225 21C8.225 20.4477 7.77728 20 7.225 20H4C3.44772 20 3 20.4477 3 21C3 21.5523 3.44772 22 4 22Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M4 14H28C28.5523 14 29 13.5523 29 13C29 12.4477 28.5523 12 28 12H4C3.44772 12 3 12.4477 3 13C3 13.5523 3.44772 14 4 14Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M15 17V28C15 28.5523 15.4477 29 16 29C16.5523 29 17 28.5523 17 28V17C17 16.4477 16.5523 16 16 16C15.4477 16 15 16.4477 15 17Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M24.775 22H28C28.5523 22 29 21.5523 29 21C29 20.4477 28.5523 20 28 20H24.775C24.2227 20 23.775 20.4477 23.775 21C23.775 21.5523 24.2227 22 24.775 22Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M6.2989 4.22515L9.2739 7.05015C9.45973 7.22661 9.70622 7.325 9.96249 7.325L9.96437 7.325L9.98834 7.32467C10.2535 7.31781 10.505 7.20591 10.6876 7.01359C10.8641 6.82776 10.9625 6.58127 10.9625 6.325L10.9625 6.32312L10.9622 6.29915C10.9553 6.03402 10.8434 5.78247 10.6511 5.59985L7.67608 2.77485C7.49024 2.59839 7.24376 2.5 6.98749 2.5L6.96163 2.50033C6.69651 2.50719 6.44496 2.61909 6.26234 2.81141C6.08587 2.99724 5.98749 3.24373 5.98749 3.5L5.98782 3.52585C5.99468 3.79098 6.10658 4.04253 6.2989 4.22515Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M24.299 2.77477L21.3365 5.58727C21.1442 5.76988 21.0322 6.02141 21.0254 6.28653L21.025 6.3125L21.0253 6.33458C21.0308 6.58313 21.1286 6.82071 21.2998 7.00101C21.4824 7.19335 21.7339 7.30528 21.9991 7.31216L22.025 7.3125L22.0471 7.31226C22.2957 7.30677 22.5332 7.20889 22.7135 7.03773L25.676 4.22523C25.8684 4.04262 25.9803 3.79109 25.9872 3.52596L25.9875 3.5L25.9873 3.47791C25.9818 3.22937 25.8839 2.99179 25.7128 2.81149C25.5301 2.61915 25.2786 2.50722 25.0135 2.50034L24.9875 2.5L24.9654 2.50024C24.7169 2.50573 24.4793 2.60361 24.299 2.77477Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    You have a bug that needs to be fixed.</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">0:32 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none p-1 text-black bg-lightpurple-100 rounded-lg">
+                                <svg width="32" height="32" class="w-4 h-4" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.0001 11C16.0001 11 18.0712 11 19.5357 12.4645C19.5357 12.4645 21.0001 13.9289 21.0001 16C21.0001 16 21.0001 18.0711 19.5357 19.5355C19.5357 19.5355 18.0712 21 16.0001 21C16.0001 21 13.9291 21 12.4646 19.5355C12.4646 19.5355 11.0001 18.0711 11.0001 16C11.0001 16 11.0001 13.9289 12.4646 12.4645C12.4646 12.4645 13.9291 11 16.0001 11ZM16.0001 13C16.0001 13 14.7575 13 13.8788 13.8787C13.8788 13.8787 13.0001 14.7574 13.0001 16C13.0001 16 13.0001 17.2426 13.8788 18.1213C13.8788 18.1213 14.7575 19 16.0001 19C16.0001 19 17.2428 19 18.1214 18.1213C18.1214 18.1213 19.0001 17.2426 19.0001 16C19.0001 16 19.0001 14.7574 18.1214 13.8787C18.1214 13.8787 17.2428 13 16.0001 13Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M10.3443 10.3449C10.5319 10.1574 10.6376 9.90267 10.6376 9.63745C10.6376 9.37243 10.5324 9.11824 10.3451 8.93074C10.1576 8.7432 9.90283 8.63745 9.63762 8.63745C9.37259 8.63745 9.1184 8.74266 8.9309 8.92995C7.54836 10.311 6.79081 12.1123 6.79081 12.1123C5.99988 13.9737 5.99988 16 5.99988 16C5.99988 18.0262 6.79225 19.891 6.79225 19.891C7.54836 21.6889 8.9309 23.0699 8.9309 23.0699C9.1184 23.2572 9.37259 23.3624 9.63762 23.3624C9.90283 23.3623 10.1577 23.2568 10.3451 23.0692C10.5324 22.8817 10.6376 22.6275 10.6376 22.3625C10.6375 22.0972 10.532 21.8424 10.3443 21.655C9.23969 20.5515 8.63298 19.1089 8.63298 19.1089C7.99988 17.6189 7.99988 16 7.99988 16C7.99988 14.381 8.63442 12.8876 8.63442 12.8876C9.23969 11.4484 10.3443 10.3449 10.3443 10.3449Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M23.0697 8.93034C24.452 10.3112 25.208 12.1089 25.208 12.1089C26.0003 13.9737 26.0003 16 26.0003 16C26.0003 18.0262 25.2094 19.8876 25.2094 19.8876C24.4519 21.6889 23.0693 23.0699 23.0693 23.0699C22.8943 23.2447 22.6608 23.3485 22.4138 23.3611C22.3968 23.362 22.3797 23.3624 22.3626 23.3624C22.0972 23.3624 21.8427 23.2569 21.6551 23.0692C21.4794 22.8933 21.3755 22.6583 21.3637 22.4099C21.363 22.3941 21.3626 22.3783 21.3626 22.3624C21.3628 22.0972 21.4683 21.8424 21.6559 21.655C22.7605 20.5515 23.3658 19.1123 23.3658 19.1123C24.0003 17.6189 24.0003 16 24.0003 16C24.0003 14.381 23.3672 12.891 23.3672 12.891C22.7605 11.4484 21.6559 10.3449 21.6559 10.3449C21.4681 10.1574 21.3626 9.90286 21.3626 9.63745C21.3626 9.37448 21.4662 9.12209 21.6509 8.93494L21.6551 8.93073C21.8207 8.76492 22.0393 8.66255 22.2728 8.6415C22.3024 8.63882 22.3322 8.63747 22.3621 8.63745C22.6228 8.63745 22.8738 8.73929 23.0605 8.92125L23.0697 8.93034Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M6.8072 6.8072L6.81177 6.80261C6.99651 6.61546 7.1001 6.36307 7.1001 6.1001C7.1001 5.83456 6.99449 5.57993 6.80656 5.39234L6.79799 5.3839C6.61125 5.20193 6.36083 5.1001 6.1001 5.1001C6.07041 5.10012 6.03981 5.10147 6.01024 5.10414C5.7767 5.12521 5.558 5.22768 5.39234 5.39364C3.32494 7.46503 2.17976 10.159 2.17976 10.159C1 12.9622 1 16.0001 1 16.0001C1 19.038 2.1784 21.838 2.1784 21.838C3.32458 24.535 5.39234 26.6066 5.39234 26.6066C5.5797 26.7943 5.83396 26.8999 6.09918 26.9001C6.11489 26.9001 6.13152 26.8997 6.14721 26.899C6.39554 26.8873 6.6306 26.7835 6.80655 26.6079C6.99448 26.4203 7.10009 26.1656 7.1001 25.9001C7.1001 25.8832 7.09967 25.8662 7.0988 25.8493C7.08623 25.6023 6.98258 25.3687 6.80785 25.1936C5.01375 23.3962 4.0218 21.0622 4.0218 21.0622C3 18.6343 3 16.0001 3 16.0001C3 13.3659 4.02043 10.9412 4.02043 10.9412C5.01357 8.60439 6.8072 6.8072 6.8072 6.8072Z"
+                                        fill="currentcolor"></path>
+                                    <path
+                                        d="M26.6085 5.39425L26.6073 5.39299C26.4199 5.20568 26.166 5.10034 25.9011 5.1001C25.6362 5.1001 25.3812 5.2052 25.1937 5.39234C25.0062 5.57988 24.9001 5.83488 24.9001 6.1001C24.9001 6.365 25.0053 6.61907 25.1924 6.80655C26.9865 8.60396 27.9784 10.938 27.9784 10.938C29.0002 13.3659 29.0002 16.0001 29.0002 16.0001C29.0002 18.6343 27.9798 21.059 27.9798 21.059C26.9865 23.3962 25.1924 25.1936 25.1924 25.1936C25.0053 25.3811 24.9001 25.6352 24.9001 25.9001C24.9004 26.1653 25.006 26.4205 25.1937 26.6079C25.3812 26.795 25.6352 26.9001 25.9001 26.9001C26.1654 26.8999 26.4205 26.7943 26.6079 26.6066C28.6757 24.535 29.8205 21.8412 29.8205 21.8412C31.0002 19.038 31.0002 16.0001 31.0002 16.0001C31.0002 12.9622 29.8218 10.1622 29.8218 10.1622C28.6758 7.4656 26.6085 5.39425 26.6085 5.39425Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Andi Lane subscribed to you</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">Yesterday 12:39 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-black dark:text-white mb-5">Activities</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
+                                <img src="../beauty/images/avatar-1.png" class="object-cover" alt="avatar">
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Edited the details of Project X</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">5m ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
+                                <img src="../beauty/images/avatar-2.png" class="object-cover" alt="avatar">
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Released a new version</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">1:23 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
+                                <img src="../beauty/images/avatar-3.png" class="object-cover" alt="avatar">
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Submitted a bug</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">Yesterday 12:39 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
+                                <img src="../beauty/images/avatar-4.png" class="object-cover" alt="avatar">
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Modified A data in Page X</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">Last Thursday 3:34 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 flex-none rounded-full overflow-hidden">
+                                <img src="../beauty/images/avatar-5.png" class="object-cover" alt="avatar">
+                            </div>
+                            <div class="flex-1">
+                                <p
+                                    class="whitespace-nowrap overflow-hidden text-ellipsis w-[200px] text-black dark:text-white">
+                                    Deleted a page in Project X</p>
+                                <p class="text-xs text-black/40 dark:text-white/40">Aug 11</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-black dark:text-white mb-5">Contacts</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-6.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                                alt="avatar">
+                            <p class="text-black dark:text-white">Natali Craig</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-7.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                                alt="avatar">
+                            <p class="text-black dark:text-white">Drew Cano</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-8.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                                alt="avatar">
+                            <p class="text-black dark:text-white">Orlando Diggs</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-9.png" class="h-6 w-6 flex-none rounded-full object-cover"
+                                alt="avatar">
+                            <p class="text-black dark:text-white">Andi Lane</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-10.png"
+                                class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
+                            <p class="text-black dark:text-white">Kate Morrison</p>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img src="../beauty/images/avatar-11.png"
+                                class="h-6 w-6 flex-none rounded-full object-cover" alt="avatar">
+                            <p class="text-black dark:text-white">Koray Okumus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Right Sidebar -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+        integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("input[type='file']").forEach(input => {
+                input.addEventListener("change", function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const preview = document.getElementById("preview-" + event.target.id);
+                            if (preview) {
+                                preview.src = e.target.result;
+                                preview.classList.remove("hidden");
+                            }
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- All javascirpt -->
+    <!-- Alpine js -->
+    <script src="../beauty/js/alpine-collaspe.min.js"></script>
+    <script src="../beauty/js/alpine-persist.min.js"></script>
+    <script src="../beauty/js/alpine-ui.min.js"></script>
+    <script src="../beauty/js/alpine.min.js" defer=""></script>
+    <!-- Custom js -->
+    <script src="../beauty/js/custom.js"></script>
+</body>
+
+</html>
