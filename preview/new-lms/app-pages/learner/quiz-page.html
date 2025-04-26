@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 
@@ -55,22 +60,22 @@
                 <!-- End Logo -->
 
                 <!-- Start Menu -->
+                <!-- Start Menu -->
                 <ul class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-                    x-data="{ activeMenu: null }">
-
+                    x-data="{ activeMenu: 'new' }"> <!-- ✅ Default menu set -->
 
                     <!-- Menu Item -->
                     <li class="menu nav-item mb-5 pb-5">
                         <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
-                            :class="{'active' : activeMenu === 'new'}"
+                            :class="{ 'active': activeMenu === 'new' }"
                             @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
                             <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                :class="{'!rotate-90' : activeMenu === 'new'}">
+                                :class="{ '!rotate-90': activeMenu === 'new' }">
                                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                        fill="currentcolor"></path>
+                                        fill="currentColor"></path>
                                 </svg>
                             </div>
                             <div class="flex items-center">
@@ -78,57 +83,23 @@
                                 <span class="pl-1">Questions</span>
                             </div>
                         </a>
-                        <ul x-show="activeMenu === 'new'" x-collapse=""
-                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80 pb-5"
-                            style="display: none; height: 0px; overflow: hidden;" hidden="">
-                            <li><a href="#" title="">Question 1</a></li>
-                            <li><a href="#" title="">Question 2</a></li>
-                            <li><a href="#" title="">Question 3</a></li>
-                            <li><a href="#" title="">Question 4</a></li>
-                            <li><a href="#" title="">Question 5</a></li>
-                            <li><a href="#" title="">Question 6</a></li>
-                            <li><a href="#" title="">Question 7</a></li>
-                            <li><a href="#" title="">Question 8</a></li>
-                            <li><a href="#" title="">Question 9</a></li>
-                            <li><a href="#" title="">Question 10</a></li>
-                            <li><a href="#" title="">Question 11</a></li>
-                            <li><a href="#" title="">Question 12</a></li>
-                            <li><a href="#" title="">Question 13</a></li>
-                            <li><a href="#" title="">Question 14</a></li>
-                            <li><a href="#" title="">Question 15</a></li>
-                            <li><a href="#" title="">Question 16</a></li>
-                            <li><a href="#" title="">Question 17</a></li>
-                            <li><a href="#" title="">Question 18</a></li>
-                            <li><a href="#" title="">Question 19</a></li>
-                            <li><a href="#" title="">Question 20</a></li>
-                            <li><a href="#" title="">Question 21</a></li>
-                            <li><a href="#" title="">Question 22</a></li>
-                            <li><a href="#" title="">Question 23</a></li>
-                            <li><a href="#" title="">Question 24</a></li>
-                            <li><a href="#" title="">Question 25</a></li>
-                            <li><a href="#" title="">Question 26</a></li>
-                            <li><a href="#" title="">Question 27</a></li>
-                            <li><a href="#" title="">Question 28</a></li>
-                            <li><a href="#" title="">Question 29</a></li>
-                            <li><a href="#" title="">Question 30</a></li>
-                            <li><a href="#" title="">Question 31</a></li>
-                            <li><a href="#" title="">Question 32</a></li>
-                            <li><a href="#" title="">Question 33</a></li>
-                            <li><a href="#" title="">Question 34</a></li>
-                            <li><a href="#" title="">Question 35</a></li>
-                            <li><a href="#" title="">Question 36</a></li>
-                            <li><a href="#" title="">Question 37</a></li>
-                            <li><a href="#" title="">Question 38</a></li>
-                            <li><a href="#" title="">Question 39</a></li>
-                            <li><a href="#" title="">Question 40</a></li>
+
+                        <!-- ✅ Sub-menu expanded by default -->
+                        <ul x-show="activeMenu === 'new'" x-collapse x-cloak
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80 pb-5">
+
                         </ul>
-
                     </li>
-
-
-
-
                 </ul>
+                <!-- End Menu -->
+
+                <!-- Optional: Add this CSS globally -->
+                <style>
+                    [x-cloak] {
+                        display: none !important;
+                    }
+                </style>
+
                 <!-- End Menu -->
             </div>
         </nav>
@@ -246,807 +217,68 @@
                 <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
 
                     <div class="px-2 py-1 mb-4">
-                        <h2 class="text-4xl font-semibold">ITIL 4 Foundation Exam Simulator - Test 1</h2>
+                        <h2 id="quiz-title" class="text-4xl font-semibold"></h2>
                         <ul class="flex flex-wrap items-center space-x-2 py-3">
                             <li class="flex items-center space-x-2">
                                 <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
-                                   href="./dashboard-superadmin.html">Dashboard</a>
+                                    href="./dashboard-superadmin.html">Dashboard</a>
                                 <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M9 5l7 7-7 7"/>
+                                        d="M9 5l7 7-7 7" />
                                 </svg>
                             </li>
                             <li class="flex items-center space-x-2">
                                 <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
-                                   href="#">My Courses</a>
+                                    href="#">My Courses</a>
                                 <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M9 5l7 7-7 7"/>
+                                        d="M9 5l7 7-7 7" />
                                 </svg>
                             </li>
                             <li class="flex items-center space-x-2">
                                 <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
-                                   href="#">ITIL 4 Foundation</a>
+                                    href="#">ITIL 4 Foundation</a>
                                 <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M9 5l7 7-7 7"/>
+                                        d="M9 5l7 7-7 7" />
                                 </svg>
                             </li>
                             <li class="flex items-center space-x-2">
                                 <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
-                                   href="#">Exam Simulator</a>
+                                    href="#">Exam Simulator</a>
                                 <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M9 5l7 7-7 7"/>
+                                        d="M9 5l7 7-7 7" />
                                 </svg>
                             </li>
                             <li class="text-black dark:text-white">Test 5</li>
                         </ul>
-                        
+
                     </div>
-                    <div class="rounded bg-lightred p-3 mb-5 text-white font-bold sticky top-10" style="position: sticky;top: 10px;"><i class="ri-time-line" ></i> Time Left - 00:45:25</div>
-                    <form id="accountForm" class="bg-white-100 p-10">
-                        <div class="grid grid-cols-1 lg:grid-cols-1 gap-7">
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
+                    <div class="rounded bg-lightred p-3 mb-5 text-white font-bold sticky top-10 right-0 float-right"
+                        style="position: sticky;top: 10px; width:200px;float: right;"><i class="ri-time-line"></i> Time
+                        Left - 00:45:25</div>
+                    <form id="quiz-container" class="bg-white-100 p-10" style="margin-top: 5rem;">
+                        <div id="quiz-progress" class="text-sm text-gray-500 mb-4"></div>
 
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="border border-black/10 dark:border-white/10rounded-md">
-                                <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">Question
-                                    1 of
-                                    40</h2>
-                                <div class="p-5">
-                                    <p class="text-base">A CIO has made value stream mapping a key part of an overall IT
-                                        improvement effort. A
-                                        value stream map for existing services is being developed.
-                                        <br>
-                                        Which approach would produce the BEST results?
-
-                                    </p>
-                                    <div class="grid grid-cols-1  gap-7">
-                                        <div class="p-5 rounded-md">
-                                            <div class="grid grid-cols-1 gap-3">
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                                <label class="inline-flex">
-                                                    <input type="radio" name="default_text_color"
-                                                        class="form-radio peer text-indigo-300" checked="">
-                                                    <span class="peer-checked:text-indigo-300">
-                                                        Hire process consultants to develop process maps, and minimize
-                                                        the
-                                                        involvement of staff in the design of the future state of the
-                                                        value
-                                                        stream</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-
-
+                        <div id="quiz-content" class="mb-6">
+                            <!-- JS will render question and options here -->
                         </div>
+
+                        <div id="quiz-nav" class="mt-6 flex justify-between"></div>
 
                         <div class="mt-7 flex justify-end gap-4">
-                            <button type="button" class="btn text-black dark:text-black border bg-indigo-300 dark:bg-indigo-300 border-indigo-300 hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white">Submit Quiz</button>
+                            <button type="button" onclick="submitQuiz()"
+                                class="btn text-black dark:text-black border bg-indigo-300 dark:bg-indigo-300 border-indigo-300 hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white">
+                                Submit Quiz
+                            </button>
                         </div>
                     </form>
+
 
                 </div>
                 <!-- Start Footer -->
@@ -1080,7 +312,158 @@
         integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script type="module">
+        import { get } from '../beauty/js/api-client.js';
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const contentId = urlParams.get('contentId');
+
+        if (!contentId) {
+            alert("Missing contentId");
+            throw new Error("Missing contentId in URL");
+        }
+
+        let quizData = null;
+        let currentIndex = 0;
+        const userAnswers = {}; // { questionId: selectedOption }
+
+        const quizContainer = document.getElementById("quiz-container");
+        const titleEl = document.getElementById("quiz-title");
+        const navEl = document.getElementById("quiz-nav");
+        const progressEl = document.getElementById("quiz-progress");
+
+        async function loadQuiz() {
+            try {
+                const res = await get(`/test/details/content/${contentId}`);
+                quizData = res.test;
+                titleEl.textContent = quizData.description;
+
+                const questions = quizData.questions;
+                renderAllQuestions(questions);
+                initializeTimer(attempt.startTime, quizData.timeLimit);
+
+                renderSidebarNav(quizData.questions);
+
+            } catch (err) {
+                console.error("Quiz Load Error:", err);
+                alert("Failed to load quiz.");
+            }
+        }
+
+        function initializeTimer(startTime, timeLimitInMinutes) {
+            const start = new Date(startTime).getTime();
+            const end = start + timeLimitInMinutes * 60 * 1000;
+
+            const countdownContainer = document.getElementById("countdown");
+            if (!countdownContainer) return;
+
+            function updateCountdown() {
+                const now = Date.now();
+                const remaining = end - now;
+
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    countdownContainer.innerHTML = `<span class="h5 text-danger">00:00:00</span>`;
+                    alert("⏳ Time's up! Auto-submitting the quiz.");
+                    submitQuiz(); // Make sure this function exists globally
+                    return;
+                }
+
+                const hrs = String(Math.floor(remaining / 3600000)).padStart(2, "0");
+                const mins = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
+                const secs = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
+
+                countdownContainer.innerHTML = `<span class="h5 text-white">${hrs}:${mins}:${secs}</span>`;
+            }
+
+            const timerInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+        }
+
+
+        function renderAllQuestions(questions) {
+            const container = document.getElementById("quiz-content");
+            container.innerHTML = questions.map((q, index) => {
+                return `
+      <div id="question-${index + 1}" class="border border-black/10 dark:border-white/10 rounded-md mb-6 scroll-mt-20">
+        <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">
+          Question ${index + 1} of ${questions.length}
+        </h2>
+        <div class="p-5">
+          <p class="text-base mb-4">${q.question}</p>
+          <div class="grid grid-cols-1 gap-3">
+            ${q.options.map((opt, optIdx) => `
+              <label class="inline-flex items-start space-x-2">
+                <input type="radio" name="question_${index}" value="${optIdx}" class="form-radio text-indigo-300" />
+                <span>${opt}</span>
+              </label>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+            }).join("");
+        }
+
+        function renderSidebarNav(questions) {
+            const sidebarList = document.querySelector('.sub-menu');
+            sidebarList.innerHTML = ""; // Clear existing
+            questions.forEach((_, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#question-${index + 1}" title="Go to Question ${index + 1}">Question ${index + 1}</a>`;
+                sidebarList.appendChild(li);
+            });
+        }
+
+
+
+        //         function renderNavigation() {
+        //             navEl.innerHTML = `
+        //     <button ${currentIndex === 0 ? "disabled" : ""} onclick="prevQuestion()" class="btn">Previous</button>
+        //     <button ${currentIndex === quizData.questions.length - 1 ? "disabled" : ""} onclick="nextQuestion()" class="btn ml-2">Next</button>
+        //     <button onclick="submitQuiz()" class="btn btn-primary ml-2">Submit</button>
+        //   `;
+        //         }
+
+        // Expose to global
+        window.selectAnswer = (questionId, answer) => {
+            userAnswers[questionId] = answer;
+        };
+
+        window.prevQuestion = () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+                renderNavigation();
+            }
+        };
+
+        window.nextQuestion = () => {
+            if (currentIndex < quizData.questions.length - 1) {
+                currentIndex++;
+                renderQuestion();
+                renderNavigation();
+            }
+        };
+
+        window.submitQuiz = () => {
+            console.log("Submitting Answers:", userAnswers);
+            alert("Your responses are saved locally. Submit API not connected yet.");
+        };
+
+        window.addEventListener("hashchange", () => {
+            document.querySelectorAll('.sub-menu a').forEach((a) => {
+                a.classList.remove("text-blue-600", "font-bold");
+                if (a.getAttribute('href') === window.location.hash) {
+                    a.classList.add("text-blue-600", "font-bold");
+                }
+            });
+        });
+
+
+        loadQuiz();
+
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll("input[type='file']").forEach(input => {

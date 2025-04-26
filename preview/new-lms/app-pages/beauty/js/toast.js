@@ -38,6 +38,8 @@
     }
   
     function showToastTailwind(message, type) {
+      console.log("Toast message:", message, "Type:", type);
+      
       var container = injectContainer();
       var toast = document.createElement('div');
       toast.className = 'flex items-center rounded p-3 shadow-md ' + getBgClass(type);
