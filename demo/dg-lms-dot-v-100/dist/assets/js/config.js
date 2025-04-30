@@ -1,3 +1,3 @@
 // config.js
-const BASE_URL = "https://test.unbelong.in/api";
+const BASE_URL = "http://localhost:3000/api";
 export default BASE_URL;

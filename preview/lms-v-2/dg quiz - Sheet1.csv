@@ -1,0 +1,637 @@
+Question,Correct Answer,Type,Option 1,Rationale 1,Option 2,Rationale 2,Option 3,Rationale 3,Option 4,Rationale 4,Syllabus Ref
+"A banking organization has moved the majority of its services online and is closing down its branch offices.
+ 
+ What is this an example of?",Digital organization,MCQ,Digital organization,"Correct. A digital organization is ""An organization that is enabled by digital
+technology to do business significantly differently, or to do significantly different
+business."" Ref 2.3",Safety culture,"Incorrect. Safety culture relates to the “shared beliefs, perceptions, and values”
+that an organization fosters (not. its use of technology). Safety culture is “a climate
+in which people are comfortable being (and expressing) themselves.” Ref 3.2.2.2",High velocity IT,"Incorrect. This change is focused on business enablement, but there is no
+indication that speed is a consideration. High velocity IT is “The application of digital
+technology for significant business enablement, where time to market, time to
+customer, time to change, and speed in general are crucial.” Ref 2.1",Continuous delivery,"Incorrect. Continuous delivery relates to how software is released. Continuous
+delivery means that “built software can be released to production at any time.” Ref
+4.2.5",1.1.a
+"An organization is undergoing a digital transformation, and is encouraging the adoption of new behaviour patterns. An investigation has revealed that some team members avoid experimentation and prefer to search or wait for a single correct solution.
+ 
+ Which TWO key behaviour patterns are MOST LIKELY to be affected by this attitude?
+ 
+ 1. Accept ambiguity and uncertainty
+ 2. Commit to continual learning
+ 3. Help get customersÕ jobs done
+ 4. Trust and be trusted",1 and 2,MCQ,1 and 2,"A. Correct.
+(1) Experimentation is important for acceptance of uncertainty and continual
+learning. ""It is important to favour experimentation and not be afraid to fail safely and
+mindfully. Practitioners should not be scared of the unknown. They should be able
+to accept that things are not perfect, and have techniques to deal with that."" Ref
+3.1.1
+(2) ""It is important that practitioners commit themselves to continually learning and
+improving their knowledge and the level of information they have. Data-driven
+experiments can be used to challenge and improve hypotheses."" Ref 3.1.5",2 and 3,,3 and 4,"B, C, D. Incorrect.
+(3) Experimentation is important for continual learning. However, for getting
+customer's job done it is less critical. The other key behaviour pattern requiring
+experimentation is acceptance of ambiguity and uncertainty. Ref. 3.1.1, 3.1.4, 3.1.5
+(4) Experimentation is important for acceptance of ambiguity and uncertainty.
+However, for the 'trust and be trusted' pattern it is less critical. The other key
+behaviour pattern requiring experimentation is continual learning. Ref. 3.1.1, 3.1.2,
+3.1.5",1 and 4,,3.2.e
+"An organization has several value streams for the creation of new services. The organization has found that users are not sufficiently informed about the changes which will affect them, and that user complaints about new services have not been escalated to the correct teams.
+ 
+ Which practice would MOST help to improve this situation?",Service desk,MCQ,Problem management,"Incorrect. The purpose of the problem management practice is ""to reduce the
+likelihood and impact of incidents by identifying actual and potential causes of
+incidents, and managing workarounds and known errors."" Ref Problem
+Management Practice Guide 2.1",Risk management,"Incorrect. The purpose of the risk management practice is ""to ensure that the
+organization understands and effectively handles risks."" Ref Risk Management
+Practice Guide 2.1",Service design,"Incorrect. ""The purpose of the service design practice is to design products and
+services that are fit for purpose, fit for use, and that can be delivered by the
+organization and its ecosystem."" Ref Service Design Practice Guide 2.1",Service desk,"Correct. ""As a bi-directional communications gateway between the service
+provider and its users, a key focus on the service desk practice is to effectively
+capture, record, and integrate communications into relevant value streams."" Ref
+Service Desk Practice Guide 2.4.2",4.8.b
+"An organization wants to develop software quickly.
+ 
+ What is the BEST way to incorporate security requirements into the development efforts?",Train all developers in information security management so they can take responsibility for the security of the products they develop,MCQ,Train all developers in information security management so they can take responsibility for the security of the products they develop,"Correct. ""Integrating information security duties into the daily work of
+practitioners"" is the best way to ensure security. ""Staff who have been trained well,
+and who follow information security policies and other controls, can help to detect,
+prevent, and correct security incidents. Poorly trained or insufficiently motivated staff
+can be a major vulnerability."" Ref 4.5.2",Assign an information security management expert to each development team so they can provide guidance to developers,"Incorrect. ""Traditionally, duties are separated in order to reduce the risk of fraud
+and error; for example, the risk that untested and unauthorized code will be
+deployed into production. This can, however, lead to delay, and frustration at the
+perceived bureaucracy. The separation of duties is not an objective in itself: it is a
+method of reaching an objective."" Ref 4.5.2",Maintain a separate information security management team that reviews and approves all production software," Incorrect. ""In high-velocity environments, information security is integrated as
+much as possible into the daily work of development and operations"". Ref 4.5.2",Add security controls to production software after it has been developed to speed up the development process," Incorrect. ""In high-velocity environments, information security is integrated as
+much as possible into the daily work of development and operations"". Ref 4.5.2",4.9
+What do Lean and Agile consider a barrier to high performance?,Large batch sizes of work,MCQ,Large batch sizes of work,"Correct. Making batch sizes of work as small as feasible is a Lean principle that
+is also found in Agile. In the context of Lean, “… small batch sizes of work is one of
+the best predictors of short lead times. It is therefore beneficial to break down larger
+pieces of work into smaller items.” In the context of Agile, “Building on the lean
+principle that small batch sizes of work are beneficial to throughput, working
+software is delivered in frequent increments.” Ref 2.5.2.1, 2.5.2.2",Limiting work-in-progress,"Incorrect. Limiting work-in-progress allows people to focus and helps to increase
+throughput and so is not viewed as a constraint. “Another lean technique to improve
+throughput is to reduce work-in-progress.” Ref 2.5.2.1",Pulling versus pushing work," Incorrect. Lean encourages the use of pull systems such as Kanban to improve
+the flow of work. “Instead of utilizing each workstation in a value stream to maximum
+capacity and ‘pushing’ work onto the next workstation, work should be ‘pulled’ when
+a particular workstation requires input”. Ref 2.5.2.1",Making work visible,"Incorrect. Both Lean and Agile encourage transparency and the use of visual
+control mechanisms such as Kanban boards to make work visible. “Kanban boards
+can be used to support this way of working by providing a visualization of the
+backlog of work, the work in progress, and the completed work.” Ref 2.5.2.1",3.1.c
+Which statement about high velocity IT is CORRECT?,It always considers time as a measure,MCQ,It requires continuous deployment,"Incorrect. Although continuous deployment may be an aim of organizations
+looking to increase velocity, it is not a requirement. Continuous deployment may not
+be practical or possible for companies constrained by regulatory or other
+requirements. Continuous deployment means that “Changes go through the pipeline
+and are automatically put into the production environment, enabling multiple
+production deployments per day.” Ref 4.2.5",It always considers time as a measure,"Correct. ""High velocity IT is the application of digital technology for significant
+business enablement, where time to market, time to customer, time to change, and
+speed in general are crucial.” Ref 2.1",It relates only to product warranty,"Incorrect. High velocity “equates with high performance in general” and does not
+come at the expense of the utility (value) or warranty of the solution. Ref 2.1",It is always a worthwhile investment,"Incorrect. “HVIT provides many organizations with higher degrees of digital
+enablement, but it is not always a prudent investment. For some organizations, it
+does not make sense to undertake such a transformation, as they have other,
+higher priorities.” Ref 2.1",1.1.b 
+Which BEST describes Toyota Kata?,An approach to scientific experimentation that helps to form and sustain new habits,MCQ,An approach for identifying what is good for society,"Incorrect. This describes a situation that can arise when considering the ethics
+associated with high velocity IT approaches. Ethics is ""A system of principles that
+defines what is good for individuals and society."" Ref 3.2.1.1",An approach that helps to improve throughput by improving flow and reducing waste,"Incorrect. This answer describes a lean approach. Lean ""helps to improve
+throughput and reduce waste. HVIT environments benefit from approaches with
+Lean characteristics due to the pressure on time to market and time to customer"".
+Ref 2.5.2",An approach to identifying how parties collaborate to co-create value,"Incorrect. This describes service-dominant logic. Service-dominant logic is ""A
+mental model of an (economic) exchange in which organizations co-create value by
+applying their competencies and other resources for the benefit of each other"". Ref
+2.5.2.5",An approach to scientific experimentation that helps to form and sustain new habits,"Correct. ""Disciplined scientific thinking with incremental improvements reduces
+our natural bias to jump to the wrong conclusions. Practice and coaching help us
+form and sustain new habits, after which we can start improvising. One approach to
+scientific experimentation is Toyota Kata"". Ref 3.2.3.3",3.1.d 
+"A service is meeting all the requirements for utility and warranty, but customer and user experience are not good. 
+ 
+ Which practice will contribute MOST to understanding what experiences would be valued by users and customers?",Business analysis,MCQ,Service desk,"Incorrect. The ‘service desk’ practice may contribute some understanding of user
+experience needs, but is not likely to contribute to an understanding of customer
+experience nearly as well as the ’business analysis’ practice. ""Being empathetic and
+having the emotional intelligence to understand users’ experiential needs."" Ref
+4.4.1, tab 4.21",Service catalogue management,"Incorrect. The ‘service catalogue management’ practice may document the
+intended customer experience, but is reliant on other practices for the information.
+Service catalogue management may help set expectations for customer and user
+experience by ""Describing services and offerings in terms of technical as well as
+experiential aspects."" Ref 4.4.1, tab 4.21",Business analysis,"Correct. ""Business analysis - Understanding user needs and translating them into
+customer experience or user experience requirements, in addition to traditional
+requirements regarding utility and warranty."" Ref 4.4.1, tab 4.21",Software development and management,"Incorrect. The ‘software development and management’ practice may impact
+user and customer experience by how user interfaces are designed, but will not help
+to understand the experiences that would be valued. ""The desired service
+experience informs the design of the user interface."" Ref 4.4.1, tab 4.21",4.7
+"An organization that works in silos and has poor communication has started using chaos engineering tools to test the resilience of its IT systems.
+ 
+  Which practice would be MOST directly impacted by the poor communication?",Monitoring and event management,MCQ,Problem management,"Incorrect. Chaos engineering can be used to proactively detect problems, but this
+practice would not be directly impacted. “The data gathered from chaos engineering
+tools can help to identify underlying problems that require investigation and
+remediation.” Ref 4.3.2, tab 4.18",Service continuity management,"Incorrect. The ‘service continuity management’ practice includes “Designing
+service continuity measures with sufficient resilience and redundancy to cope with
+the unexpected outages caused by chaos engineering tools”. This practice would
+not be directly impacted. Ref 4.3.2, tab 4.18",Infrastructure and platform management,"Incorrect. The ‘infrastructure and platform management’ practice includes
+“Designing infrastructure and platforms for sufficient resilience and redundancy to
+deal with the unexpected outages caused by chaos engineering tools”. This practice
+would not be directly impacted. Ref 4.3.2, tab 4.18",Monitoring and event management,"Correct. “Monitoring and event management tools can be set up to flag outages
+orchestrated by chaos engineering tools, or to monitor the quality of service rather
+than the technical components.” Ref 4.3.2, tab 4.18",4.6.c 
+"A centralized IT department is adopting site reliability engineering to increase the resilience and performance of IT systems. 
+ 
+ What is this an example of?",IT transformation,MCQ,High velocity IT,"Incorrect. The focus of site reliability engineering is on IT operations (vs. business
+enablement) and there is no indication that speed is a consideration. “SRE applies a
+software development mindset to IT operations, and helps to bridge the gap
+between development and operations.” The focus of high velocity IT is on
+“significant business enablement, where time to market, time to customer, time to
+change, and speed in general are crucial.” Ref 2.1, 2.5.2.3",Digital technology,"Incorrect. Site reliability engineering is an approach (not a technology) that
+“applies a software development mindset to IT operations, and helps to bridge the
+gap between development and operations.” “IT transformation is focused on how IT
+services and IS are developed, run, and supported.” Ref 2.4.1, 2.5.2.3",IT transformation,"Correct. This relates to a centralized IT department. “In organizations where
+business and IT are regarded as separate organizational functions, ‘IT
+transformation’ is often used to denote major change that improves how IT services
+are provided.” The focus of site reliability engineering is on IT operations. “IT
+transformation is focused on how IT services and IS are developed, run, and
+supported.” Ref 2.4.1",Digital transformation,"Incorrect. Site reliability engineering is an approach (not a technology) that
+focuses on IT operations. “IT transformation is focused on how IT services and IS
+are developed, run, and supported.” Digital transformation involves the “use of
+digital technology to enable a significant improvement in the realization of an
+organization’s objectives that could not feasibly have been achieved by non-digital
+means”. Ref 2.4, 2.4.1",1.1.d 
+"Due to the monolithic nature of their legacy information systems, an organization is unable to fully reap the benefits of more modern software engineering techniques such as Agile and continuous integration/continuous delivery (CI/CD). 
+ 
+ Which practice includes designing loosely coupled service, technical, and information elements that would enable smaller, more frequent changes?",Architecture management,MCQ,Software development and management,"Incorrect. The ‘software development and management’ practice includes “The
+detailed design, building, running, and management of loosely coupled software
+components” (vs. architectures). Ref 4.2.2, tab 4.6",Deployment management,"Incorrect. Although more loosely-coupled architectures benefit the ‘deployment
+management’ practice, it is the ‘architecture management’ practice that includes the
+design of architectures. “The scope of deployments and deployment patterns are
+reduced with the decoupling of system architecture”. Ref 4.2.2, tab 4.6",Business analysis,"Incorrect. ""Understanding consumer needs and translating them into detailed
+requirements for each component of a loosely coupled service architecture."" This
+relates to the ‘business analysis’ practice. Ref 4.2.2, tab 4.6",Architecture management,"Correct. The ‘architecture management’ practice includes “Designing loosely
+coupled service, technical, and information architectures.” Ref 4.2.2, tab 4.6",4.4.a 
+"An organization is introducing a service for two business units, which have different requirements for service hours. The result of the different requirements is that the service should be available for 24 hours per day, and will need to be designed with high levels of redundancy. Neither customer sees it as their responsibility to invest in such a solution. 
+ 
+ Which practice ensures that this situation is managed appropriately?",Relationship management,MCQ,Relationship management,"Correct. ""The relationship management practice ensures that conflicting
+stakeholder requirements are mediated appropriately."" Ref Relationship
+Management Practice Guide 2.1",Service desk,"Incorrect. The ‘service desk’ practice does not have activities relating to disputes
+over stakeholder requirements. ""The relationship management practice ensures that
+conflicting stakeholder requirements are mediated appropriately."" Ref Relationship
+Management Practice Guide 2.1",Architecture management,"Incorrect. The ‘architecture management’ practice does not have activities
+relating to disputes over stakeholder requirements. ""The relationship management
+practice ensures that conflicting stakeholder requirements are mediated
+appropriately."" Ref Relationship Management Practice Guide 2.1",Risk management,"Incorrect. This is not a risk, it is an issue because a decision needs to be made
+on who will fund the solution. ""The purpose of the risk management practice is to
+ensure that the organization understands and effectively handles risks"". A risk is
+defined as ""A possible event that could cause harm or loss, or make it more difficult
+to achieve objectives. Can also be defined as uncertainty of outcome"". Ref Risk
+Management Practice Guide 2.1, 2.2.1, ITIL 4 Foundation 2.5.3",4.8.a
+"An organization wants to increase the percentage of visitors that perform certain actions when visiting its website, such as providing contact information and making purchases. Constant arguments regarding which features to change in support of this objective have led to wasted time and effort. 
+ 
+ Which approach can the organization use to both achieve its objective and reduce the arguments associated with making changes?",Use A/B testing and base decisions on how visitors react to different versions of website features,MCQ,Produce a minimum viable product and base changes on the feedback obtained from customers,"Incorrect. The minimum viable approach is used when “developing products and
+services, particularly when the market is volatile and unpredictable”, not as a way to
+gain insight regarding the variables that drive desired behaviours. Ref 4.1.2",Calculate the cost of delay associated with each feature change and prioritize accordingly,"Incorrect. Calculating the cost of delay does not provide insight regarding which
+variables drive the desired behaviours. Cost of delay “refers to the financial and
+non-financial benefits that would be lost if a service activity or task were delayed.”
+Ref 4.1.1.1",Use design thinking and make changes that balance the needs and interests of all stakeholders,"Incorrect. Although “Design thinking is particularly useful when addressing…
+problems that have… conflicting hypotheses”, balancing the needs and interests of
+all stakeholders would not necessarily achieve the objective, which is to drive
+certain behaviours. Ref 3.2.1.2",Use A/B testing and base decisions on how visitors react to different versions of website features,"Correct. A/B testing makes it possible to isolate the effect of a new feature and
+measure user behaviour to gather solid data. “A/B testing is a time-limited
+experiment in which one group of users… is provided with an old version of a
+product or service. At the same time, another group of users… is provided with a
+new version of the product or service that includes the new feature. Assuming all
+other factors influencing both groups are equal, the measurements of the groups
+can be compared, thus gathering data for a value-based decision.” Ref 4.1.4",4.1
+"A business analyst has recognized that business managers have conflicting hypotheses about their needs for departmental improvement. They also find it difficult to articulate their requirements. 
+ 
+ Which approach is BEST for obtaining requirements?","Develop multiple prototypes of a possible solution, and adopt what works best",MCQ,Conduct an interview based on a carefully prepared script of detailed questions,"Incorrect. According to the Cynefin framework this approach is more suited to a
+highly predictable situation (an obvious context). “Obvious – Clear causality, where
+predetermined best practice should be applied”. Ref 3.2.3.1","Allocate a week to analyse how the department works, and then make logical conclusions","Incorrect. According to the Cynefin framework this approach is more suited when
+there is enough information to be analysed (a complicated context). “Complicated –
+Unclear but knowable causality that can be determined by analysis or expertise,
+followed by good practice”. Ref 3.2.3.1","Develop multiple prototypes of a possible solution, and adopt what works best","Correct. The conflicting hypotheses of the business managers and their difficulty
+in articulating their requirements indicate that this is a complex context. “Complex –
+Unclear and unknowable causality requiring safe-to-fail experimentation (emergent
+practice)”. Ref 3.2.3.1",Ask the director to enforce what the business analyst considers to be the most plausible solution,"Incorrect. According to the Cynefin framework this approach is more suited to
+extremely urgent and important issues (a chaotic context). “Chaotic – A more
+extreme form of complexity that demands immediate action to transition the situation
+to complex (novel practice)”. Ref 3.2.3.1",3.2.d 
+"A team has been established to find ways to release software more frequently and reliably. The team is exploring the relationship between continuous integration/continuous delivery (CI/CD), and the organizationÕs Ôdeployment managementÕ practice. 
+ 
+ In the context of continuous delivery, which would be involved in the Ôdeployment managementÕ practice?",Using version-controlled repositories to deploy new or changed service components,MCQ,Automating the deployment of changes that have passed all tests in the production environment,"Incorrect. This describes continuous deployment. “Changes go through the
+pipeline and are automatically put into the production environment, enabling multiple
+production deployments per day. Continuous deployment relies on continuous
+delivery.” Ref 4.2.5",Using version-controlled repositories to deploy new or changed service components,"Correct. The 'deployment management' practice uses “version-controlled
+repositories to deploy new or changed service components or return to a previous
+version”. Ref 4.3.4, tab 4.17",Running root-cause analyses and post-mortems following failed deployments,"Incorrect. “Running root-cause analyses and post-mortems” is a responsibility of
+the 'problem management' practice. Ref 4.3.6, tab 4.19",Designing and improving the architecture needed to automate deployments,"Incorrect. This is a responsibility of the ‘architecture management’ practice.
+“Designing and improving service, technical, and information architecture to
+leverage CI/CD capabilities”. Ref 4.2.5, tab 4.10",4.4.f
+"An organization wants to introduce chaos engineering. Various experiments will be conducted in the production environment to see how it responds. 
+ 
+ Which is an example of an extra service continuity management measure to support this way of working?",Validating backup network connectivity and testing it for the anticipated workload,MCQ,"Logging information about bandwidth, throughput, response times, and other performance data during the periods of experimentation","Incorrect. This is an example of a ‘capacity and performance management’
+activity associated with chaos engineering. ""When running this type of test,
+performance information should be captured. As a result, improvements should be
+identified that will ensure services are designed for optimum performance,
+scalability, and capacity."" Ref 4.3.2, tab 4.15",Investigating the results of the experiments to identify potential vulnerabilities in the production environment,"Incorrect. This is an example of a ‘problem management’ activity associated with
+chaos engineering. ""Proactively detecting problems by introducing random failures
+and looking for potential flaws in services/components."" Ref 4.3.2, tab 4.15",Validating backup network connectivity and testing it for the anticipated workload,"Correct. ""Designing service continuity measures with sufficient resilience and
+redundancy to cope with the unexpected outages caused by chaos engineering
+tools"" is a service continuity management activity associated with chaos
+engineering. Ref 4.3.2, tab 4.15",Providing a clear set of service models to understand the impact of service outages on business activities,"Incorrect. This is an example of an ‘architecture management’ activity associated
+with chaos engineering. ""Considering interactions between services and
+components in order to support business and customer demand."" Ref 4.3.2, tab
+4.15",4.6.e 
+"A service provider has created new services to improve business processes. The services have the right functionality and meet all service levels expected by the customers. The sponsors have complained that the improvement in business process performance is not as much as they expect. 
+ 
+ What action should the service provider take next?",Review the user training,MCQ,Review the warranty of the service,"Incorrect. The scenario already states that services have the right functionality.
+""Designing a new or changed product or service should not be done in isolation, but
+should consider the impact it will have on all relevant parties, including customers,
+users, and suppliers."" Ref Service Design Practice Guide 2.1",Review the utility of the service,"Incorrect. The scenario already states that the services meet all service levels
+expected by the customers. ""Designing a new or changed product or service should
+not be done in isolation, but should consider the impact it will have on all relevant
+parties, including customers, users, and suppliers."" Ref Service Design Practice
+Guide 2.1",Review the user training,"Correct. The introduction of new functionality necessitates user training.
+""Designing a new or changed product or service should not be done in isolation, but
+should consider the impact it will have on all relevant parties, including customers,
+users, and suppliers."" Ref Service Design Practice Guide 2.1",Review sponsors' understanding of service levels,"Incorrect. ""Designing a new or changed product or service should not be done in
+isolation, but should consider the impact it will have on all relevant parties, including
+customers, users, and suppliers."" The documented service levels should be written
+in a way that customers understand; training on how to understand the service levels
+should not be necessary. Also, understanding the service levels would not alter the
+sponsors' perceptions that the business process performance has not improved. Ref
+Service Design Practice Guide 2.1",4.8.c 
+"A service provider spends a long time carefully planning and designing its new services with its customers and users. There is high customer and user satisfaction with the services when they are introduced. The satisfaction levels dramatically reduce for most services during the first year of live operation. 
+ 
+ Which is the BEST approach to improve this situation?",Introduce a phased approach to the design,MCQ,Introduce a phased approach to the design,"Correct. ""It is important to consider iterative and incremental approaches to
+service design, which can ensure that products and services introduced to live
+operation can continually adapt in alignment with the evolving needs of the
+organization and its customers."" Ref Service Design Practice Guide 2.1",Improve the measurement and metrics of the new services,"Incorrect. It is important to consider ""the necessary measurement and metrics"",
+but in this scenario the customer and user satisfaction levels are known, and action
+is needed to improve those levels. Ref Service Design Practice Guide 2.1",Increase the length of the initial service design activity,"Incorrect. ""It is important that a holistic, results-driven approach to all aspects of
+service design is adopted"", but this solution exacerbates the issue in the scenario by
+lengthening the initial service design period and locking down the design details for
+long periods. Ref Service Design Practice Guide 2.1",Offer free service upgrades to customers when their satisfaction levels start to dip,"Incorrect. Solutions should address ""the needs of both the organization and
+customer in a cost-effective and resilient way"". This approach might increase
+customer satisfaction but does not address the unnecessarily lengthy initial design
+period, and imposes extra costs on the service provider, which will hinder value
+creation for the service provider. Ref Service Design Practice Guide 2.1",4.8.c 
+"An organization has introduced continuous integration/continuous delivery (CI/CD) to continuously enhance their software with new and better features and bug fixes. Pressure to quickly release these changes often leaves little time for testing activities. 
+ 
+ Which approach would the Ôservice validation and testing' practice recommend to ensure that adequate testing occurs?",Conduct testing throughout the development lifecycle,MCQ,Conduct testing throughout the development lifecycle,"Correct. The 'service validation and testing' practice recommends that testing is
+conducted continuously. “Unit, integration, and regression testing is conducted on
+an ongoing basis throughout the development lifecycle.” Ref 4.2.6, tab 4.12",Stop deployments that cause testing failures,"Incorrect. This is a 'deployment management' activity. ""Changes or deployments
+that cause the continuous testing to fail trigger the team’s Andon cord. The team
+members then swarm to resolve the issue."" This approach will not ensure that
+adequate testing occurs. Ref 4.2.6, tab 4.12",Leverage chaos engineering principles to help test service reliability,"Incorrect. Although this is an activity of the 'service validation and testing'
+practice, the focus is on chaos engineering, vs. CI/CD. “Chaos engineering testing
+principles can help to evaluate service reliability.” Ref 4.3.2, tab 4.15",Automate the installation of software in the testing environment,"Incorrect. This is an activity of the 'deployment management' practice. “The
+systematic/automatic installation of specific versions or packages of software to a
+predetermined environment (integration, user acceptance testing, production).”
+Automation of software deployment in to a test environment may have a minimal
+impact on the ability to conduct testing. Ref 4.2.5, tab 4.10",4.4.e
+"A financial organization is adopting a DevOps approach to the development and management of digital products. The organization is subject to strict regulation and undergoes external audits every year. 
+ 
+ Which practice would BEST help to support the HVIT objective of assured conformance?",Risk management,MCQ,Risk management,"Correct. “Creating a balanced and practical approach between enterprise risk
+management, technical risk management, and new ways of working” is how the ‘risk
+management’ practice contributes to the objective of assured conformance. Ref
+4.5.1, tab 4.22",Relationship management,"Incorrect. The purpose of the ‘relationship management’ practice is “to establish
+and nurture the links between the organization and its stakeholders at strategic and
+tactical levels”. It does not play a major role in assuring conformance. Ref
+Relationship Management Practice Guide 2.1",Availability management,"Incorrect. “The purpose of the availability management practice is to ensure that
+services deliver the agreed levels of availability to meet the needs of the customers
+and the users”. It does not play a major role in assuring conformance. Ref
+Availability Management Practice Guide 2.1",Infrastructure and platform management,"Incorrect. “The purpose of the infrastructure and platform management practice is
+to oversee the infrastructure and platforms used by an organization”. It does not
+play a major role in assuring conformance. Ref Infrastructure and Platform
+Management Practice Guide 2.1",4.10.b 
+"A service provider has been delivering services based on one of their products for five years. The average duration of a contract with a service consumer is two years. 
+ 
+ What is this an example of?",Different perspectives on digital product lifecycle,MCQ,Different perspectives on the service value chain,"Incorrect. ""The ITIL service value chain is useful for describing, at a fairly high
+level of abstraction, the types of activities that a service provider executes."" ""
+Service consumers and service providers have different perspectives on digital
+products. They each have their own product lifecycles, which overlap during the
+period of engagement between the consumer and provider. For the service provider,
+the lifecycle of a product lasts for as long as there are potential customers for that
+product. For the service consumer, the lifecycle continues for as long as the product
+is used, and strictly speaking is a product use lifecycle."" Ref 2.6.3, 2.6.2",Different perceptions of a value stream,"Incorrect. Value streams define the actual series of steps a service provider (vs. a
+consumer) takes to create and deliver products and services. “HVIT organizations
+often are product/service-oriented and have multiple value streams that reflect the
+diversity of their products and services. Their operating models therefore comprise
+multiple value streams.” ""Service consumer and service provider have different
+perspectives on digital products. They each have their own lifecycles, that overlap
+during the period of engagement. For the service provider, the lifecycle is as long as
+there are potential customers for the product. For the service consumer, the lifecycle
+is as long as the product is used – strictly speaking, it is a product use lifecycle."" Ref
+2.6.4, 2.6.2",Different perspectives on digital product lifecycle,"Correct. The digital product lifecycle(s) represent the service provider and
+consumer perspectives relative to co-creating value. ""Service consumers and
+service providers have different perspectives on digital products. They each have
+their own product lifecycles, which overlap during the period of engagement
+between the consumer and provider. For the service provider, the lifecycle of a
+product lasts for as long as there are potential customers for that product. For the
+service consumer, the lifecycle continues for as long as the product is used, and
+strictly speaking is a product use lifecycle."" Ref 2.6.2",Different views on relationship management,"Incorrect. The ‘relationship management’ practice involves a service provider
+establishing and nurturing links with its stakeholders. ""Service consumers and
+service providers have different perspectives on digital products. They each have
+their own product lifecycles, which overlap during the period of engagement
+between the consumer and provider. For the service provider, the lifecycle of a
+product lasts for as long as there are potential customers for that product. For the
+service consumer, the lifecycle continues for as long as the product is used, and
+strictly speaking is a product use lifecycle."" Ref 2.6.2",2.1.d
+"An organization has invested heavily in automation so they can significantly increase the speed of the processing and shipment of customer orders. 
+ 
+ What is this an example of?",Digital transformation,MCQ,Continuous delivery,"Incorrect. Continuous delivery relates to how software is released. Continuous
+delivery means that “built software can be released to production at any time.” Ref
+4.2.5",Digital product,"Incorrect. The automation is not the product itself (it is not directly delivering
+value). It is being used to speed up the shipment of products, which may or may not
+be digital. “ITIL defines a product as a configuration of an organization’s resources
+designed to offer value for a consumer.” “A product is digital when digital technology
+plays a significant role in its goods, resources, or associated service interactions.”
+Ref 2.6.1",IT transformation,"Incorrect. The use of automation in this case relates to how business services
+are handled, vs. IT services. “IT transformation is focused on how IT services and IS
+are developed, run, and supported.” Ref 2.4.1",Digital transformation,"Correct. Digital transformation involves the “use of digital technology to enable a
+significant improvement in the realization of an organization’s objectives that could
+not feasibly have been achieved by non-digital means”. “‘Digital transformation’ is
+often used to indicate major investment in digitizing, robotizing, and other forms of
+automation that enable organizations to do business significantly differently, or do
+significantly different business.” Ref 2.4",1.1.c
+Which is the BEST example of the Ôorganizations and peopleÕ dimension in the context of high velocity IT?,Integrating business and IT staff in a single team,MCQ,Automating the flow of data between Dev and Ops,"Incorrect. This relates to the 'information and technology' dimension. ""Freely
+flowing information is a characteristic of a high-trust organization. This is consistent
+with the generative culture that is often found in High Velocity IT organizations."" Ref
+2.6.7",Integrating business and IT staff in a single team,"Correct. ""In high velocity IT environments where IT in an integral part of the
+organization’s products and services, it is likely that the IT function will be an integral
+part of the lines of business that are responsible for the various products and
+services."" Ref 2.6.7",Using shared communication systems to improve collaboration,"Incorrect. This relates to the 'information and technology' dimension. ""Freely
+flowing information is a characteristic of a high-trust organization. This is consistent
+with the generative culture that is often found in High Velocity IT organizations."" Ref
+2.6.7",Understanding how suppliers contribute to a value stream,"Incorrect. This relates to the 'partners and suppliers' dimension and how
+suppliers fit within the value stream. ""It is therefore crucial to analyse the
+dependencies and take appropriate action"". Ref 2.3.7",2.1.c
+"A manager often focuses on avoiding risk, and blames staff when things go wrong. The manager also does not listen to suggestions and allow experimentation. This has resulted in a lack of innovation in the manager's team, and several of the team's senior members have left the organization. 
+ 
+ Which TWO behaviours from safety culture would allow this manager to increase innovation and retain more staff?
+ 
+ 1. Focus on inclusion and ignore toxic relationships
+ 2. Treat failures as improvement opportunities
+ 3. Encourage continual organizational learning
+ 4. Encourage collaboration and discourage conflict",2 and 3,MCQ,1 and 2,,2 and 3,"Correct.
+(2) Managers need to be realistic about failure and “Acknowledge that failure will
+happen and that people are not to blame, but the system”, and “It is therefore crucial
+that things like not blaming people and treating failures as improvement
+opportunities are more than espoused corporate values.” Ref 3.2.2.2
+(3) “In high velocity IT environments, it is crucial that people feel able to share their
+opinions and experiment with improvement without the fear of judgement or
+embarrassment.” This is necessary in order for continual learning. Ref 3.2.2.2",3 and 4,,1 and 4,"A, C, D. Incorrect.
+(1) Stress and burnout can be reduced by ""paying attention to unfair treatment, toxic
+relationships, lack of recognition, lack of control, conflicting values, and insufficient
+resources."" Ref 3.1.2
+(4) There is no indication of conflict within the team. Open and honest
+communication – even when it involves conflict – is critical in a safety culture. Stress
+and burnout can be reduced by ""paying attention to unfair treatment, toxic
+relationships, lack of recognition, lack of control, conflicting values, and insufficient
+resources."" Ref 3.1.2",3.2.b 
+"A service provider plans to launch a number of mobile phone apps into a new but volatile market where speed to market and regular enhancements are essential to build competitive advantage. 
+ 
+ What contribution is made by the 'software development and management' practice to achieving this advantage?",Leveraging infrastructure as code to support the need to make rapid changes to the apps,MCQ,Analysing and documenting user requirements to ensure that their expectations are met,"Incorrect. This is how the ‘business analysis’ practice contributes to the ""fast
+development"" objective. ""Understanding consumer needs and translating them into
+detailed requirements for each component…"" Ref 4.2.2, tab 4.6",Leveraging infrastructure as code to support the need to make rapid changes to the apps,"Correct. The ‘software development and management’ practice should be
+involved in deciding the approach taken to developing software quickly and reliably.
+The software development and management practice success factor ""agree and
+improve an organization's approach to development and management of software"",
+""concerns itself with the tactical decision to select from this pre-defined set of
+approaches, the best approach for each software product, based on the
+organization's requirements for the product"". The ‘software development and
+management’ practice contributes to fast development by ""Developing software
+architecture and code to leverage fast delivery/provisioning of virtual hardware
+infrastructure"". Ref 4.2.1, tab 4.5, Software Development and Management Practice
+Guide 2.4.1",Ensuring that the Ôdefinition of doneÕ includes non-functional requirements to reduce the likelihood that the apps will fail in the live environment,"Incorrect. This is how the ‘software development and management’ practice
+contributes to the ""resilient operations"" objective. ""Software can be developed (or
+configured) to meet a definition of done before it is deployed into live environments,
+ensuring that code is understandable, maintainable, and ready to support future
+changes"". Ref 4.3.3, tab 4.16",Prioritizing the requirements so that the expenditure used to develop the mobile apps provides the appropriate return on investment,"Incorrect. This answer refers to how the ‘software development and
+management’ practice contributes to ‘valuable investments’, not fast
+development. The ‘software development and management’ practice contributes to
+valuable investment by ""Using a ‘minimum viable’ approach as a decision-making
+tool to prioritize work on software features"". Ref 4.1.2, tab 4.2",4.4.g 
+"An organization has been experiencing outages which have mainly been attributed to the age of its technology and the fact that many components are several versions behind what is supported by the vendor. 
+ 
+ Which practice includes guidance to help remedy this type of technical debt?",Infrastructure and platform management,MCQ,Monitoring and event management,"Incorrect. ""The purpose of the monitoring and event management practice is to
+systematically observe services and service components, and record and report
+selected changes of state identified as events."" Ref Monitoring and Event
+Management Practice Guide 2.1",Infrastructure and platform management," Correct. The ‘infrastructure and platform management’ practice includes
+“Identifying and reducing technical debt by creating or modifying infrastructure and
+platform service components."" Ref 4.3.1, tab 4.14",Service desk,"Incorrect. The purpose of the ‘service desk’ practice includes capturing incident
+demand and engaging with users. “Communicating with external users who need
+assistance with incidents and requests requires knowledge of existing technical debt
+and efforts planned to resolve it."" Ref 4.3.1, tab 4.14, Service Desk Practice Guide
+2.1",Incident management,"Incorrect. ""The purpose of the incident management practice is to minimize the
+negative impact of incidents by restoring normal service operation as quickly as
+possible."" Ref Incident Management Practice Guide 2.1",4.6.f
+"An organization has found that poor website speed is having an impact on customer experience and is causing the organization to lose sales. The organization has challenged the IT department to remedy the matter prior to the launch of a new marketing campaign. 
+ 
+ Which is the BEST technique that the capacity and performance management practice can consider to address this problem?",AIOps,MCQ,ChatOps,"Incorrect. Although ChatOps can be used to improve collaboration during
+incidents, it is, in this context, a reactive approach. “ChatOps is a model in which
+people, tools, process, and automation are connected in a transparent flow.” Ref
+4.3.6",Site reliability engineering (SRE),"Incorrect. This approach is useful, but it is not the BEST approach as it is less
+proactive and does not take into consideration the need for capacity planning
+relative to the marketing campaigns. “Improving monitoring in order to better
+understand the system when things go wrong.” Ref 4.3.7, tab 4.20",AIOps,"Correct. This approach recommends proactive monitoring and also takes into
+consideration the need for capacity planning relative to the marketing campaigns.
+“AIOps platforms are used to enhance and partially replace many primary IT
+operations functions, such as availability and performance monitoring, failure
+recognition, predictive analysis, and event correlation and analysis.” “AIOps
+provides capabilities for identifying patterns and anomalies, determining the capacity
+and utilization of assets, and planning the capacity of future products or services.”
+Ref 4.3.5, tab 4.18",Chaos engineering,"Incorrect. This approach is useful, but it is not the BEST approach as it does not
+recommend doing anything with the information and does not take into
+consideration the need for capacity planning relative to the marketing campaigns.
+“When running this type of test, performance information should be captured. As a
+result, improvements should be identified that will ensure services are designed for
+optimum performance, scalability, and capacity.” Ref 4.3.2, tab 4.15",4.6.b 
+"An organization uses cost of delay to prioritize a backlog. Only one of four items can be included in the next sprint. 
+ 
+ Which item should be included?","If item B is delayed: there will be a direct cost of £800, an indirect cost of about £3000, and a major non-financial impact on future development efforts",MCQ,"If item A is delayed: there will be a direct cost of £1000, an indirect cost of about £2000, and a major non-financial impact on future development efforts","Incorrect. The financial cost of delay should include both direct and indirect costs,
+and the total cost of delay for B (£3,800) is more than for A (£3,000). ""Some delays
+may bring loss indirectly"". Ref Portfolio Management Practice Guide 2.4.1","If item B is delayed: there will be a direct cost of £800, an indirect cost of about £3000, and a major non-financial impact on future development efforts","Correct. Both financial and non-financial costs should be considered, and 'A
+major non-financial impact' should be prevented by selecting A or B. The financial
+cost of delay should include both direct and indirect costs, and the total cost of delay
+for B (£3,800) is more than for A (£3,000). ""This technique assesses the financial
+and non-financial benefits that are (expected to be) lost when the task execution is
+delayed"" and ""Some delays may bring loss indirectly"". Ref Portfolio Management
+Practice Guide 2.4.1","If item C is delayed: there will be a direct cost of £1200, an indirect cost of about £2000, but no significant non-financial impact"," Incorrect. Both financial and non-financial costs should be considered and 'A
+major non-financial impact' should be prevented by selecting A or B. ""This technique
+assesses the financial and non-financial benefits that are (expected to be) lost when
+the task execution is delayed"". Ref Portfolio Management Practice Guide 2.4.1","If item D is delayed: there will be a direct cost of £1000, an indirect cost of about £3000, but no significant non-financial impact","Incorrect. Both financial and non-financial costs should be considered and 'A
+major non-financial impact' should be prevented by selecting A or B. ""This technique
+assesses the financial and non-financial benefits that are (expected to be) lost when
+the task execution is delayed"". Ref Portfolio Management Practice Guide 2.4.1",4.2.a 
+Which TWO of the service value chain activities are the MOST closely related to the high-velocity IT objective of 'fast development'?,Obtain/build' and 'design and transition',MCQ,Obtain/build' and 'design and transition',"Correct. ""The fast development objective is mainly achieved by the application
+development and infrastructure engineering that takes place as part of the design
+and transition and obtain/build value chain activities"". Ref 2.5.1",Design and transition' and 'deliver and support',"Incorrect. ‘Design and transition’ is a value chain activity helping to achieve fast
+development, however ‘deliver and support’ is not. ""The fast development objective
+is mainly achieved by the application development and infrastructure engineering
+that takes place as part of the design and transition and obtain/build value chain
+activities."" Ref 2.5.1",Deliver and support' and 'obtain/build',"Incorrect. ‘Obtain/build’ is a correct value chain activity associated to fast
+development, however ‘deliver and support’ is not. ""The fast development objective
+is mainly achieved by the application development and infrastructure engineering
+that takes place as part of the design and transition and obtain/build value chain
+activities."" Ref 2.5.1",Design and transition' and 'resilient operations',"Incorrect. ‘Resilient operations’ is not a service value chain activity, it is one of
+the HVIT objectives. Ref 2.5.1",1.3.b 
+Which statement is CORRECT when considering a transformation to high-velocity IT?,It is acceptable to take risks which may lead to competitive advantage,MCQ,It is acceptable to take risks which may lead to competitive advantage,"Correct. ""...there may be situations where risks are consciously taken in order to
+gain or retain competitive advantage."" Ref 2.1",High-velocity IT focuses on using data to improve the performance of physical devices,"Incorrect. This activity is more associated with operational technology, which is
+""The application of digital technology for detecting or causing changes in physical
+devices through monitoring and/or control."" Ref 2.2.2",The impact on the culture of the organization does not need to be considered,"Incorrect. There might be an impact on the culture of the organization, because
+organizations ""may choose not to try to increase velocity because they think the
+amount of cultural change involved would be too difficult to achieve, or unlikely to
+generate an acceptable return on investment."" Ref 2.1",Risks can be minimized by making a significant change rather than incremental improvements,"Incorrect. ""Increasing velocity within an organization will always involve costs and
+risks, particularly when there is a steep change rather than gradual improvement"".
+Ref 2.1",1.2
+"An employee has some concerns at work but does not share this information with others because they fear that this would damage their reputation and position. 
+ 
+ What is PRIMARILY concerned with preventing this situation?",Safety culture,MCQ,Design thinking,"Incorrect. 'Design thinking' refers to the ""cognitive and practical processes by
+which design concepts are developed”. Ref 3.2.1.2",Integration of duties,"Incorrect. 'Integration of duties' is ""Having a task that is prone to fraud or error
+performed by one person because other controls have been applied. This serves as
+an alternative to separation (or segregation) of duties.” Ref 4.5.2",Safety culture,"Correct. 'Safety culture' is a climate in which people are comfortable being (and
+expressing) themselves. In such a culture, people ""are therefore more likely to point
+out risks than when they fear that this would damage their reputation and position.”
+Ref 3.2.2.2",Toyota Kata,"Incorrect. 'Toyota Kata' is ""A mental model and behaviour pattern for scientific
+thinking and routines for practice and coaching.” Ref 3.2.3.3",3.1.b
+"A service provider has recently adopted a high-velocity IT approach using agile software development. The time taken to deliver new functionality has decreased rapidly, however the related services have experienced a sharp increase in interruptions caused by incidents. 
+ 
+ Which is the BEST action to take to address these issues?",Extend the Ôdefinition of doneÕ to include the fulfillment of operational non-functional requirements,MCQ,Improve prioritization to ensure that investments are used to develop the most urgent functional requirements,"Incorrect. This answer focuses on the functional requirements and supports the
+high velocity objective ‘valuable investments’. Instead the organization should focus
+on the objective ‘resilient operations’. ""Techniques that can be used to achieve
+valuable investments include: ...prioritization techniques"". Ref 4.1",Revert to a waterfall software development approach until the cause of the issues is identified,"Incorrect. The question implies that more focus is required on the high velocity
+objective ’resilient operations’, not reverting to old ways. Reverting to old methods of
+development is a backward step and cannot be guaranteed to resolve the issues.
+More attention should be given to the resilience and performance requirement of the
+software. ""The scope of the resilient operations objective includes ensuring that
+digital products are available for use whenever needed"". Ref 4.3",Increase collaboration with the service consumer in order to focus more attention on how value is co-created,"Incorrect. This answer focuses on the high velocity objective ‘co-created
+value’. Instead the organization should focus on the objective ‘resilient operations’.
+""The scope of the co-created value objective includes co-creating value from digital
+products through the close collaboration of the service provider and the service
+consumer"". Ref 4.4",Extend the Ôdefinition of doneÕ to include the fulfillment of operational non-functional requirements,"Correct. From the question it can be seen that more focus is required on the high
+velocity objective ‘resilient operations’. Extending the ‘definition of done’ to include
+resilience requirements is a good way to enhance the agile approach and address
+the operational issues. ""A definition of done describes criteria that are related to the
+functionality that contributes to a product’s or service’s utility, and the non-functional
+requirements that contribute to its warranty. These non-functional requirements
+should be defined and agreed with whoever is responsible for operations. A
+definition of done that includes non-functional requirements therefore contributes to
+resilient operations and to value co-created through improved usability, and also to
+faster development because less rework is needed"". Ref 4.3.3",4.5
+"Recently, there have been errors in a business-critical service which have led to incidents. Support teams have used a variety of resolutions to try to restore service. Some of the resolutions have led to further incidents. 
+ 
+ Which activity should be employed in the future to reduce the amount of technical debt created by these resolutions?",Perform problem analysis to understand the cause(s) of the incidents and then propose a more effective workaround than the resolutions used by the service desk,MCQ,Perform problem analysis to understand the cause(s) of the incidents and then propose a more effective workaround than the resolutions used by the service desk,"Correct. This is an example of ""Applying problem control and error control
+methods to manage technical debt."" Ref 4.3.1, tab 4.14","Use chaos engineering tools to proactively identify problems, so that the organization can use redundancy in the most effective way","Incorrect. The use of chaos engineering tools in this way would not address the
+situation in the question, which is concerned with reducing technical debt because
+of poor quality incident resolutions. Ref 4.3.1, tab 4.14",Route all incidents of this type directly to a specialist problem control team to enable a swift problem diagnosis and resolution,"Incorrect. Despite the attempts to prevent any more incidents from happening
+and therefore reducing technical debt, incidents should still be resolved. Incident
+escalation should support incident resolution. Ref 4.3.1, tab 4.14",Analyse the incident resolutions to find the most successful and use that resolution as the basis of a request for change,"Incorrect. The incident resolutions are not derived from a thorough understanding
+of the outages and should not be the basis of a permanent change. The resolutions
+also do not fix the errors. Such a change might not prevent any further technical
+debt from occurring. Ref 4.3.1, tab 4.14",4.6.d 
+"Which high-velocity IT objective involves researching new products and services, and continuously evaluating existing products and services?",Valuable investments,MCQ,Valuable investments,"Correct. The ‘valuable investments’ objective involves identifying and justifying
+digital investments. “New digital products and services should be envisaged and
+evaluated in terms of profitability”, and “It is also important to continually evaluate
+investments after they have been justified and approved, because more valuable
+options for investment may exist.” Ref 4.1",Fast development,"Incorrect. ‘Fast development’ involves realizing “new and improved digital
+products and services frequently, quickly, and reliably.” Ref 4.2",Resilient operations,"Incorrect. ‘Resilient operations’ involve ensuring “that digital products are
+available for use whenever needed.” Ref 4.3",Assured conformance,"Incorrect. ‘Assured conformance’ involves assuring “that service provision and
+service consumption comply with corporate and regulatory directives with respect to
+governance, risk, and compliance.” There is no reference to corporate and
+regulatory directives in this question. Ref 4.5",1.3.a 
+"A service provider is developing an application for a new service consumer. During a prototyping session with potential users conflicting requirements were identified that could increase the cost of the application and threaten its viability. 
+ 
+ Which practice would BEST help to prioritize the conflicting requirements?",Relationship management,MCQ,Relationship management,"Correct. The ‘relationship management’ practice is best placed to liaise with all
+stakeholders to resolve conflict and prioritize requirements. The relationship
+management practice contributes to valuable investments by ""Involvement in
+establishing customers’ priorities for new or changed products and services."" and
+""Involvement in addressing complaints and mediating conflicting requirements"". Ref
+4.1.3, tab 4.3",Service validation and testing,"Incorrect. The ‘service validation and testing’ practice supports the ‘valuable
+investment’ objective by checking that components support the minimum viable
+product. It cannot resolve conflict between user requirements. The service validation
+and testing practice contributes to valuable investments by ""Developing test cases
+to check that all service components support the minimum viable product or
+service"". Ref 4.1.2, tab 4.2",Information security management,"Incorrect. The ‘information security management’ practice does support the
+‘valuable investment’ objective, but it does not help to resolve conflicting user
+requirements. The purpose of the ‘information security management’ practice is ""to
+protect the information needed by the organization to conduct its business"". Ref
+Information Security Management Practice Guide 2.1",Risk management,"Incorrect. The ‘risk management’ practice does support the ‘valuable investment’
+objective, but it does not help to resolve conflicting user requirements. ""The purpose
+of risk management is to ensure that the organization understands and effectively
+handles risks"". Ref Risk Management Practice Guide 2.1",4.2.b 
+"An organization has a high number of IT changes and is concerned about the speed of deployment. Many changes are initiated without understanding the impact of the workload on the people involved in the changes. 
+ 
+ Which technique for fast development would MOST help to resolve this situation?",Kanban,MCQ,Kanban,"Correct. Kanban would help to visualize and understand the workloads. ""Kanban
+is a set of principles, practices, and regular activities aimed at developing and
+managing a predictable, rhythmic, and constant flow of work."" Ref 4.2.7",Retrospectives,"Incorrect. Retrospectives would help the organization to understand how well a
+sprint was undertaken. As the issue of human workload has already been identified,
+retrospectives would not help to resolve it. ""In Agile software development, a
+retrospective is a meeting held by a team at the end of an iteration (or ‘sprint’) or
+project to discuss what went well, what could be improved, and how to benefit from
+the findings in the future."" Ref 4.2.3.1",Infrastructure as code,"Incorrect. ‘Infrastructure as code’ would help to increase the speed of deployment
+but would not resolve the issue of the lack of understanding of human workloads.
+""Infrastructure as code (IaC) enables faster provisioning of environments,
+contributing to faster development and more resilient operations."" Ref 4.2.1",Loosely coupled information system architecture,"Incorrect. Loosely coupled information system architecture would help to
+increase the speed of deployment, through limiting the interactions required
+between teams, but it would not resolve the issue of the lack of understanding of
+human workloads. ""Loosely coupled information system architecture is based on
+relatively small, independent components. This architecture enables work to be
+done in small, relatively independent, product- or service-based teams and platformbased teams."" Ref 4.2.2",4.3
+"A service provider adopted a high-velocity IT approach to developing some of its services six months ago. Updates are now deployed regularly and successfully. However, there is evidence that the number of service failures is increasing. The development teams have suggested revising the Ôdefinition of doneÕ to resolve the issues. 
+ 
+ How can the availability management practice contribute to improving the Ôdefinition of doneÕ?",By ensuring that achievable warranty requirements are negotiated and agreed with customers,MCQ,By ensuring that when releases are moved to the live environment all software components are verified to ensure requirements are met,"Incorrect. It is the ‘deployment management’ practice that should verify
+components before moving them to live environments, not the availability
+management practice. The deployment management practice contributes to the
+resilient operation objective. ""When moving releases to live environments, teams
+should verify that deliverables for support are complete: all requirements, user
+stories, and tests should be accepted"". Ref 4.3.3, tab 4.16",By ensuring that test activities are developed around an up-to-date Ôdefinition of doneÕ,"Incorrect. The ‘service validation and testing’ practice contribution to ‘definition of
+done’ is ""Testing activities can be structured around a definition of done to ensure
+that multiple types of tests are conducted"". Ref 4.3.3, tab 4.16",By ensuring that achievable warranty requirements are negotiated and agreed with customers,"Correct. The ‘availability management’ practice ensures that negotiated warranty
+requirements can be included in the ‘definition of done’. The ‘availability
+management’ practice contributes to the ‘resilient operations’ objective. ""Detailed
+warranty requirements for the new or changed service should be negotiated and
+agreed with stakeholders"". Ref 4.3.3, tab 4.16","By ensuring that code is understandable, maintainable, and able to support future changes","Incorrect. It is the ‘software development and management’ practice that will
+ensure that code is understandable, maintainable, and able to support future
+changes, not the ‘availability management’ practice. The software development and
+management’ practice contributes to the ‘resilient operations’ objective. ""Software
+can be developed (or configured) to meet a definition of done before it is deployed
+into live environments, ensuring that code is understandable, maintainable, and
+ready to support future changes"". Ref 4.3.3, tab 4.16",4.6.a
+"An organization has adopted agile ways of working and is using continuous integration/continuous delivery. The organization's Ôbusiness analysisÕ practice is modelled on waterfall ways of working. There is a linear flow from establishing customer requirements to verifying those requirements during build, test and deployment. 
+ 
+ How should the Ôbusiness analysisÕ practice change to better align itself with the new ways of working?",Combine the business analysis role with other development roles,MCQ,Retain the step of establishing customer requirements but minimize all other activities,"Incorrect. CI/CD automates integration testing and deployment, but it does not
+automate business analysis activity. ""Continuous integration is the automation
+achieved in the build and code testing process each time the code is committed”.
+“Continuous delivery is focused on the process of building and testing new releases
+and promoting them to the production environment."" Ref 4.2.5",Establish customer requirements at the start of the engagement with the customer,"Incorrect. ,Business analysis activities should be interwoven throughout the
+development period. ""When business analysis is performed by a product team, it is
+less project-driven and more a continual activity."" Ref Business Analysis Practice
+Guide 2.1",Combine the business analysis role with other development roles,"Correct. Business analysis activities should be embedded within the development
+activities. ""When business analysis is performed by a product team, it is less projectdriven and more a continual activity."" Ref Business Analysis Practice Guide 2.1",Make the business analysis activities the responsibility of the business relationship manager,"Incorrect. ""In the agile context, the business analysis practice is less associated
+with a specific team or role, and increasingly applied by multi-skilled practitioners
+performing such a role as product or service owner."" Ref Business Analysis Practice
+Guide 2.1",4.4.c
+Which high-velocity IT objective applies to all of the service value chain activities?,Assured conformance,MCQ,Fast development,"Incorrect. ""The fast development objective is mainly achieved by the application
+development and infrastructure engineering that takes place as part of the design
+and transition and obtain/build value chain activities."" Ref 2.5.1",Valuable investments,"Incorrect. ""The valuable investments objective is mainly achieved by the decisionmaking that occurs as part of the plan value chain activity.” Ref 2.5.1",Assured conformance,"Correct. “The five objectives are closely related to specific value chain activities,
+except for assured conformance, that applies to the whole value chain.” Ref 2.5.1",Resilient operations,"Incorrect. ""The resilient operations objective is mainly achieved by running and
+maintaining the system as part of the deliver and support value chain activity.” Ref
+2.5.1",2.1.b
+"An organization wants to make sure that their plans to manage information security incidents will be effective. 
+ 
+ What would be the BEST approach to take to ensure this?",Test the plans regularly by walking through them with the relevant teams,MCQ,Engage a supplier to independently test the plans and recommend how they should be improved,"Incorrect. A supplier may be able to test the plans to some extent, but it is
+important that the teams involved in managing security incidents are involved in a
+walk through. ""Regularly walking through the plans and procedures, teams discover
+flaws and inefficiencies and then update information security plans and controls in
+order to reflect findings"". Ref Information Security Management Practice Guide 2.4.3",Use chaos engineering to test the plans by injecting security incidents on a regular basis,"Incorrect. Chaos engineering can be used to find and terminate some instances
+of security vulnerabilities, which will help to prevent security incidents, but it will not
+be able to fully test and improve plans for detecting and correcting security
+incidents. ""Security monkey - Finds and terminates instances of security violations
+or vulnerabilities."" ""Regularly walking through the plans and procedures, teams
+discover flaws and inefficiencies and then update information security plans and
+controls in order to reflect findings"". Ref Information Security Management Practice
+Guide 2.4.3",Test the plans regularly by walking through them with the relevant teams,"Correct. ""Testing is therefore a critical part of the overall information security
+management and the only way of ensuring that the selected plans and controls are
+actually working in practice"". ""Regularly walking through the plans and procedures,
+teams discover flaws and inefficiencies and then update information security plans
+and controls in order to reflect findings"". Ref Information Security Management
+Practice Guide 2.4.3","Add controls to the plans to prevent, detect, and correct security incidents","Incorrect. The question makes it clear that plans have already been designed to
+manage information security incidents, and that the organization wants to make sure
+these plans will be effective. Designing more controls will not achieve this, it is
+important to test the controls that have already been designed to ensure that they
+work properly. ""Experience has shown that plans that have not been tested do not
+work as intended, if at all."" Ref Information Security Management Practice Guide
+2.4.3",4.10.a

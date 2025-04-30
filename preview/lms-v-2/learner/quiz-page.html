@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html x-data="main" class="light" :class="[$store.app.mode]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ducisgroup">
+    <meta name="author" content="shunya.ek">
+    <!-- Site Title -->
+    <title>Take Quiz</title>
+    <!-- Site Favicon -->
+    <link rel="shortcut icon" href="../beauty/images/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+
+<body x-data="main"
+    class="antialiased relative font-inter bg-white dark:bg-black text-black dark:text-white text-sm font-normal overflow-x-hidden vertical"
+    :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.rightsidebar ? 'right-sidebar' : '', $store.app.menu, $store.app.layout]">
+    <!-- Start Menu Sidebar Olverlay -->
+    <div class="fixed inset-0 bg-[black]/60 z-40 lg:hidden hidden" :class="{'hidden' : !$store.app.sidebar}"
+        @click="$store.app.toggleSidebar()"></div>
+    <!-- End Menu Sidebar Olverlay -->
+
+    <!-- Start Right Sidebar Olverlay -->
+    <div class="fixed inset-0 bg-[black]/60 z-50 2xl:hidden hidden" :class="{'hidden' : !$store.app.rightsidebar}"
+        @click="$store.app.rightSidebar()"></div>
+    <!-- End Right Sidebar Olverlay -->
+
+    <!-- Start Main Content -->
+    <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
+        <!-- Start Sidebar -->
+        <nav
+            class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+            <div class="bg-white dark:bg-black h-full">
+                <!-- Start Logo -->
+                <div class="flex p-4">
+                    <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-e-learner.html">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="block dark:hidden w-20">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="hidden dark:block w-20">
+                    </a>
+                </div>
+                <!-- End Logo -->
+
+                <!-- Start Menu -->
+                <!-- Start Menu -->
+                <ul class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+                    x-data="{ activeMenu: 'new' }"> <!-- ✅ Default menu set -->
+
+                    <!-- Menu Item -->
+                    <li class="menu nav-item mb-5 pb-5">
+                        <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                            :class="{ 'active': activeMenu === 'new' }"
+                            @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{ '!rotate-90': activeMenu === 'new' }">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-question-line"></i>
+                                <span class="pl-1">Questions</span>
+                            </div>
+                        </a>
+
+                        <!-- ✅ Sub-menu expanded by default -->
+                        <ul x-show="activeMenu === 'new'" x-collapse x-cloak
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80 pb-5">
+
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Menu -->
+
+                <!-- Optional: Add this CSS globally -->
+                <style>
+                    [x-cloak] {
+                        display: none !important;
+                    }
+                </style>
+
+                <!-- End Menu -->
+            </div>
+        </nav>
+        <!-- End sidebar -->
+
+        <!-- Start Content Area -->
+        <div class="main-content flex-1">
+            <!-- Start Topbar -->
+            <div class="border-b border-black/10 dark:border-white/10 py-[22px] px-7 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <button type="button" class="text-black dark:text-white" @click="$store.app.toggleSidebar()">
+                        <i class="ri-sidebar-fold-line" style="font-size: 1.2rem;"></i>
+                    </button>
+                    <button type="button" class="text-black dark:text-white">
+                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <nav aria-label="breadcrumb" class="w-full py-1 px-2">
+                            <ol class="flex space-x-3">
+                                <li class="flex items-center">
+                                    <a href="javaScript:;"
+                                        class="flex items-center text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white">ITIL
+                                        4 Foundation</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-black/40 dark:text-white/40">/</span>
+                                    <a href="javaScript:;"
+                                        class="flex items-center px-3 text-black dark:text-white">Take Quiz</a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5">
+
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <a href="javascript:;" class="text-black dark:text-white"
+                                x-show="$store.app.mode === 'light'" @click="$store.app.toggleMode('dark')">
+                                <i class="ri-sun-line"></i>
+                            </a>
+                            <a href="javascript:;" class="text-black dark:text-white"
+                                x-show="$store.app.mode === 'dark'" @click="$store.app.toggleMode('light')"
+                                style="display: none;">
+                                <i class="ri-moon-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="profile" x-data="dropdown" @click.outside="open = false">
+                            <button type="button" class="flex items-center gap-1.5 xl:gap-0" @click="toggle()">
+                                <img class="h-7 w-7 rounded-full xl:mr-2"
+                                    src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Header Avatar">
+                                <span class="fw-medium hidden xl:block profile-name"></span>
+                                <svg class="w-4 h-4" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.70711 11.2929C6.51957 11.1054 6.26522 11 6 11C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071L15.2929 22.7071C15.6834 23.0976 16.3166 23.0976 16.7071 22.7071L26.7071 12.7071C26.8946 12.5196 27 12.2652 27 12C27 11.7348 26.8946 11.4804 26.7071 11.2929C26.5196 11.1054 26.2652 11 26 11C25.7348 11 25.4804 11.1054 25.2929 11.2929L16 20.5858L6.70711 11.2929Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </button>
+                            <ul x-show="open" x-transition="" x-transition.duration.300ms="" style="display: none;">
+                                <li>
+                                    <div class="flex items-center !p-1">
+
+                                        <div class="pl-2">
+                                            <h4
+                                                class="text-sm text-black dark:text-white font-medium leading-none profile-name">
+                                            </h4>
+                                            <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs profile-email"
+                                                href="javaScript:;"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="h-px bg-black/5 my-1"></li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-user-line " style="margin-right: 5px;"></i> Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-settings-4-line" style="margin-right: 5px;"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-mail-line" style="margin-right: 5px;"></i> Messages
+                                    </a>
+                                </li>
+                                <li class="h-px bg-black/5 my-1"></li>
+                                <li>
+                                    <a href="javaScript:;" class="flex items-center">
+                                        <i class="ri-logout-box-line " style="margin-right: 5px;"></i> Sign Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Topbar -->
+
+            <!-- Start Content -->
+            <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
+
+                <div id="form-container" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
+
+                    <div class="px-2 py-1 mb-4">
+                        <h2 id="quiz-title" class="text-4xl font-semibold"></h2>
+                        <ul class="flex flex-wrap items-center space-x-2 py-3">
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="./dashboard-superadmin.html">Dashboard</a>
+                                <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="#">My Courses</a>
+                                <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="#">ITIL 4 Foundation</a>
+                                <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <a class="text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+                                    href="#">Exam Simulator</a>
+                                <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </li>
+                            <li class="text-black dark:text-white">Test 5</li>
+                        </ul>
+
+                    </div>
+                    <div class="rounded bg-lightred p-3 mb-5 text-white font-bold sticky top-10 right-0 float-right"
+                        style="position: sticky;top: 10px; width:200px;float: right;" id="countdown"><i
+                            class="ri-time-line"></i> Time
+                        Left - 00:45:25</div>
+                    <form id="quiz-container" class="bg-white-100 p-10" style="margin-top: 5rem;">
+                        <div id="quiz-progress" class="text-sm text-gray-500 mb-4"></div>
+
+                        <div id="quiz-content" class="mb-6">
+                            <!-- JS will render question and options here -->
+                        </div>
+
+                        <div id="quiz-nav" class="mt-6 flex justify-between"></div>
+
+                        <div class="mt-7 flex justify-end gap-4">
+                            <button type="button" onclick="window.reviewQuiz()"
+                                class="btn text-black dark:text-black border bg-indigo-300 dark:bg-indigo-300 border-indigo-300 hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white">
+                                Submit Quiz
+                            </button>
+                        </div>
+                    </form>
+
+
+                    <!-- 💡 Review Screen Container (Initially Hidden) -->
+                    <div id="review-container" class="p-4" style="display: none;"></div>
+
+
+
+                </div>
+                <!-- Start Footer -->
+                <footer
+                    class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
+                    <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
+                    <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"
+                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact
+                                Us</a>
+                        </li>
+                    </ul>
+                </footer>
+
+                <!-- End Footer -->
+            </div>
+            <!-- End Content -->
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+        integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
+        crossorquiz-contigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module">
+        import { get, post } from '../beauty/js/api-client.js';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const attemptId = urlParams.get('attemptId');
+        if (!attemptId) {
+            alert("Missing attemptId");
+            throw new Error("Missing attemptId in URL");
+        }
+
+        let quizData = null;
+        let currentIndex = 0;
+        let userAnswers = {}; // { question_id: answerText }
+        let flaggedQuestions = [];
+        const reviewContainer = document.getElementById("review-container");
+        const quizContainer = document.getElementById("quiz-container");
+        const quizContent = document.getElementById("quiz-content");
+        const titleEl = document.getElementById("quiz-title");
+        const navEl = document.getElementById("quiz-nav");
+        const sidebarEl = document.querySelector('.sub-menu');
+
+        // Load quiz data
+        async function loadQuiz() {
+            try {
+                const res = await get(`/test/details/attempt/${attemptId}`);
+                quizData = res.test;
+                titleEl.textContent = quizData.description;
+
+                initializeTimer(res.attempt.startTime, quizData.timeLimit);
+                renderSidebarNav();
+                renderQuestion();
+                renderNavigation();
+            } catch (err) {
+                console.error("Quiz Load Error:", err);
+                alert("Failed to load quiz.");
+            }
+        }
+
+        // Timer
+        function initializeTimer(startTime, timeLimitInMinutes) {
+            const end = new Date(startTime).getTime() + timeLimitInMinutes * 60 * 1000;
+            const countdown = document.getElementById("countdown");
+
+            const update = () => {
+                const remaining = end - Date.now();
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("⏳ Time's up!");
+                    submitQuiz();
+                } else {
+                    const hrs = String(Math.floor(remaining / 3600000)).padStart(2, "0");
+                    const mins = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
+                    const secs = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
+                    countdown.innerHTML = `<i class="ri-time-line"></i> Time Left - <span class="h5 text-white">${hrs}:${mins}:${secs}</span>`;
+                }
+            };
+            const timerInterval = setInterval(update, 1000);
+            update();
+        }
+
+        // Sidebar
+        function renderSidebarNav() {
+            sidebarEl.innerHTML = "";
+            quizData.questions.forEach((_, idx) => {
+                const isFlagged = flaggedQuestions.includes(idx);
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="javascript:;" onclick="gotoQuestion(${idx})" class="${isFlagged ? 'text-red-500 font-bold' : ''}">
+                  ${isFlagged ? '🚩 ' : ''}Question ${idx + 1}
+                </a>`;
+                sidebarEl.appendChild(li);
+            });
+        }
+
+        // Main Question Renderer
+        function renderQuestion() {
+            const q = quizData.questions[currentIndex];
+            quizContent.innerHTML = `
+                <div class="border border-black/10 dark:border-white/10 rounded-md mb-6 scroll-mt-20">
+                  <h2 class="text-sm p-4 bg-lightwhite dark:bg-white/5 font-semibold mb-2 block">
+                    Question ${currentIndex + 1} of ${quizData.questions.length}
+                  </h2>
+                  <div class="p-5">
+                    <p class="text-base mb-4">${q.question.replace(/\n/g, '<br>')}</p>
+                    <div class="grid grid-cols-1 gap-3">
+                      ${q.options.map(opt => `
+                        <label class="inline-flex items-start space-x-2">
+                          <input type="radio" name="question_${q.question_id}" value="${opt.label}" class="form-radio peer text-indigo-300"
+                          ${userAnswers[q.question_id] === opt.label ? 'checked' : ''} />
+                          <span class="peer-checked:text-indigo-500">${opt.label}. ${opt.text}</span>
+                        </label>
+                      `).join("")}
+                    </div>
+                    <div class="w-full text-right">
+                      <button type="button" onclick="toggleFlag(${currentIndex})" class="flag-button bg-yellow-200 text-black p-2 rounded">
+                        ${flaggedQuestions.includes(currentIndex) ? '🚩 Unflag' : '🚩 Flag for Review'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              `;
+        }
+
+        // Navigation Controls
+        function renderNavigation() {
+            navEl.innerHTML = `
+                <button ${currentIndex === 0 ? "disabled" : ""} onclick="gotoQuestion(${currentIndex - 1})" class="btn">Previous</button>
+                <button ${currentIndex === quizData.questions.length - 1 ? "disabled" : ""} onclick="gotoQuestion(${currentIndex + 1})" class="btn">Next</button>
+              `;
+        }
+
+        // Capture answer
+        quizContent.addEventListener("change", (e) => {
+            const input = e.target;
+            const q = quizData.questions[currentIndex];
+            if (input.name.startsWith("question_")) {
+                userAnswers[q.question_id] = input.value;
+            }
+        });
+
+        // Toggle Flag
+        window.toggleFlag = (index) => {
+            if (flaggedQuestions.includes(index)) {
+                flaggedQuestions = flaggedQuestions.filter(i => i !== index);
+            } else {
+                flaggedQuestions.push(index);
+            }
+            renderQuestion();
+            renderSidebarNav();
+        };
+
+        // Move to specific question
+        window.gotoQuestion = (index) => {
+            currentIndex = index;
+            renderQuestion();
+            renderNavigation();
+
+
+        };
+
+        window.reviewQuiz = () => {
+            const qHtml = quizData.questions.map((q, index) => {
+                const answered = userAnswers[q.question_id] !== undefined;
+                return `
+        <tr class="${answered ? 'bg-green-50' : 'bg-red-50'}">
+          <td class="px-3 py-2">${index + 1}</td>
+          <td>${answered ? 'Answered' : 'Not Answered'}</td>
+          <td>${flaggedQuestions.includes(index) ? '🚩' : ''}</td>
+        </tr>
+      `;
+            }).join('');
+
+            quizContainer.style.display = 'none';
+            reviewContainer.style.display = 'block';
+            reviewContainer.innerHTML = `
+      <div class="bg-white dark:bg-black p-6 rounded">
+        <h3 class="text-xl font-bold mb-4">Review Your Answers</h3>
+        <table class="w-full border">
+          <thead><tr><th>Q#</th><th>Status</th><th>Flag</th></tr></thead>
+          <tbody>${qHtml}</tbody>
+        </table>
+        <div class="flex justify-between mt-4">
+          <button onclick="hideReview()" class="btn btn-warning">Return to Attempt</button>
+          <button onclick="submitFinalQuiz()" class="btn btn-success">Submit All and Finish</button>
+        </div>
+      </div>
+    `;
+        };
+
+        window.hideReview = () => {
+            quizContainer.style.display = 'block';
+            reviewContainer.style.display = 'none';
+        };
+
+        window.submitFinalQuiz = async () => {
+            const responses = Object.entries(userAnswers).map(([qid, response]) => ({ question_id: qid, response }));
+
+            try {
+                const result = await post('/test/submit', {
+                    attempt_id: attemptId,
+                    responses
+                });
+                alert("Quiz submitted successfully!");
+                window.location.href = `./quiz-result.html?attemptId=${attemptId}`;
+            } catch (error) {
+                console.error("Submit Error:", error);
+                alert("Failed to submit quiz.");
+            }
+        };
+
+        // Submit Quiz
+        window.submitQuiz = async () => {
+            const responses = Object.entries(userAnswers).map(([question_id, label]) => {
+                const q = quizData.questions.find(q => q.question_id === question_id);
+                const opt = q.options.find(o => o.label === label);
+                return { question_id, response: opt.text };
+            });
+
+            if (!responses.length) return alert("Please answer at least one question.");
+
+            try {
+                const result = await post('/test/submit', { attempt_id: attemptId, responses });
+                alert("✅ Quiz submitted!");
+                window.location.href = `./quiz-result.html?attemptId=${attemptId}`;
+            } catch (err) {
+                console.error(err);
+                alert("❌ Submission failed.");
+            }
+        };
+
+        loadQuiz();
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("input[type='file']").forEach(input => {
+                input.addEventListener("change", function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const preview = document.getElementById("preview-" + event.target.id);
+                            if (preview) {
+                                preview.src = e.target.result;
+                                preview.classList.remove("hidden");
+                            }
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Add this before the closing </body> tag -->
+    <script type="module">
+        import { updateProfileInfo } from '../beauty/js/updateProfile.js';
+        updateProfileInfo()
+        // The profile info will be updated automatically when the page loads
+    </script>
+
+    <!-- All javascirpt -->
+    <!-- Alpine js -->
+    <script src="../beauty/js/alpine-collaspe.min.js"></script>
+    <script src="../beauty/js/alpine-persist.min.js"></script>
+    <script src="../beauty/js/alpine-ui.min.js"></script>
+    <script src="../beauty/js/alpine.min.js" defer=""></script>
+
+    <!-- Custom js -->
+    <script src="../beauty/js/custom.js"></script>
+
+
+
+</body>
+
+</html>

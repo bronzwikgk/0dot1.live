@@ -1,0 +1,16 @@
+- Create to be renamed - Create
+Company
+Role 
+Permission
+Course 
+Modules 
+Lessons 
+Content 
+Exam Simulator 
+Mock Test 
+Open Batch 
+User 
+- Add User 
+- Impor user 
+License 
+

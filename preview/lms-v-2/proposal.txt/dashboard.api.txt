@@ -1,0 +1,18 @@
+# Dashboard - Admin
+Widgets  
+- Total No. of companies from where students are enrolled
+- Total No. of active companies from where students are enrolled
+- Total no. of countries where students are enrolled
+- total no. of course uploaded
+- Total no. of Active courses
+- Total No. of licenses 
+- Total No. of Users 
+- total No. of Active License (based on expiry) 
+- Total no. of Active users
+
+
+Bar Chart 
+- % age of students completing courses
+
+
+
