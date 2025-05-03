@@ -39,195 +39,195 @@
 
     <!-- Start Main Content -->
     <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
-               <!-- Start Sidebar -->
-               <nav
-               class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
-               <div class="bg-white dark:bg-black h-full">
-                   <!-- Start Logo -->
-                   <div class="flex p-4">
-                       <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
-                           <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                               alt="logo" class="block dark:hidden w-20">
-                           <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
-                               alt="logo" class="hidden dark:block w-20">
-                       </a>
-                   </div>
-                   <!-- End Logo -->
-   
-                   <!-- Start Menu -->
-                   <!-- Start LMS Super Admin Sidebar -->
-                   <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
-                       x-data="{ activeMenu: null }">
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
-                       <!-- Menu Item -->
-                       <li class="menu nav-item">
-                           <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-dashboard-line"></i>
-                                   <span class="pl-1">Overview</span>
-                               </div>
-                           </a>
-                       </li>
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
-                       <!-- Menu Items -->
-                       <li class="menu nav-item">
-                           <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-shield-user-line"></i>
-                                   <span class="pl-1">Admins</span>
-                               </div>
-                           </a>
-                       </li>
-   
-                       <li class="menu nav-item">
-                           <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-user-line"></i>
-                                   <span class="pl-1">Learner</span>
-                               </div>
-                           </a>
-                       </li>
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
-                           <span>LMS Actions</span>
-                       </h2>
-                       <!-- Menu Item -->
-                       <li class="menu nav-item">
-                           <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
-                               :class="{'active' : activeMenu === 'new'}"
-                               @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
-                               <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                   :class="{'!rotate-90' : activeMenu === 'new'}">
-                                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path fill-rule="evenodd" clip-rule="evenodd"
-                                           d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                           fill="currentcolor"></path>
-                                   </svg>
-                               </div>
-                               <div class="flex items-center">
-                                   <i class="ri-add-circle-line"></i>
-                                   <span class="pl-1">Create</span>
-                               </div>
-                           </a>
-                           <ul x-show="activeMenu === 'new'" x-collapse=""
-                               class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
-                               style="display: none; height: 0px; overflow: hidden;" hidden="">
-                               <li><a href="./add_course.html" title="">Course</a></li>
-                               <li><a href="./add_module.html" title="">Modules</a></li>
-                               <li><a href="./add_lesson.html" title="">Lesson</a></li>
-                               <li><a href="./add_content.html" title="">Content</a></li>
-                               <li><a href="./add_quiz.html" title="">Quiz</a></li>
-                               <li><a href="./add_user.html" title="">User</a></li>
-                               <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
-                               <li><a href="./add_license.html">License</a></li>
-                               <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
-   
-                           </ul>
-                       </li>
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
-                       <li class="menu nav-item">
-                           <a href="javascript:;" class="nav-link group text-black dark:text-white"
-                               :class="{'active' : activeMenu === 'courses'}"
-                               @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
-                               <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
-                                   :class="{'!rotate-90' : activeMenu === 'courses'}">
-                                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path fill-rule="evenodd" clip-rule="evenodd"
-                                           d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
-                                           fill="currentcolor"></path>
-                                   </svg>
-                               </div>
-                               <div class="flex items-center">
-                                   <i class="ri-book-open-line"></i>
-                                   <span class="pl-1">Courses</span>
-                               </div>
-                           </a>
-                           <ul x-show="activeMenu === 'courses'" x-collapse
-                               class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
-                               <li><a href="./my-courses.html" title="">All Courses</a></li>
-                               <li><a href="./view-course.html" title="">View Course</a></li>
-   
-                           </ul>
-                       </li>
-   
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
-                       <li class="menu nav-item">
-                           <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-live-line"></i>
-                                   <span class="pl-1">Open Batches</span>
-                               </div>
-                           </a>
-                       </li>
-   
-   
-   
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
-                       <li class="menu nav-item">
-                           <a href="./report.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-bar-chart-line"></i>
-                                   <span class="pl-1">Reports</span>
-                               </div>
-                           </a>
-                       </li>
-   
-   
-                       <!-- Section Header -->
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
-                       <li class="menu nav-item">
-                           <a href="./settings.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-settings-3-line"></i>
-                                   <span class="pl-1">Settings</span>
-                               </div>
-                           </a>
-                       </li>
-   
-                       <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
-                       <li class="menu nav-item">
-                           <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-rocket-line"></i>
-                                   <span class="pl-1">Release Notes</span>
-                               </div>
-                           </a>
-                       </li>
-                       <li class="menu nav-item">
-                           <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-bar-chart-line"></i>
-                                   <span class="pl-1">Activity Feed</span>
-                               </div>
-                           </a>
-                       </li>
-                       <li class="menu nav-item">
-                           <a href="./documentation.html" class="nav-link group text-black dark:text-white">
-                               <div class="flex pl-5 items-center">
-                                   <i class="ri-article-fill"></i>
-                                   <span class="pl-1">Documentation</span>
-                               </div>
-                           </a>
-                       </li>
-                   </ul>
-                   <!-- End LMS Super Admin Sidebar -->
-   
-                   <!-- End Menu -->
-               </div>
-           </nav>
-           <!-- End sidebar -->
-  
+        <!-- Start Sidebar -->
+        <nav
+            class="sidebar fixed top-0 bottom-0 z-40 flex-none w-[212px] border-r border-black/10 dark:border-white/10 transition-all duration-300">
+            <div class="bg-white dark:bg-black h-full">
+                <!-- Start Logo -->
+                <div class="flex p-4">
+                    <a class="main-logo flex justify-center flex-1 w-full" href="./dashboard-superadmin.html">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="block dark:hidden w-20">
+                        <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                            alt="logo" class="hidden dark:block w-20">
+                    </a>
+                </div>
+                <!-- End Logo -->
+
+                <!-- Start Menu -->
+                <!-- Start LMS Super Admin Sidebar -->
+                <ul class="relative h-[calc(100vh-58px)] flex flex-col pb-10 gap-1 overflow-y-auto overflow-x-hidden p-4 py-0"
+                    x-data="{ activeMenu: null }">
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Dashboard</h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="./dashboard-superadmin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-dashboard-line"></i>
+                                <span class="pl-1">Overview</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
+                    <!-- Menu Items -->
+                    <li class="menu nav-item">
+                        <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-shield-user-line"></i>
+                                <span class="pl-1">Admins</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu nav-item">
+                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-user-line"></i>
+                                <span class="pl-1">Learner</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">
+                        <span>LMS Actions</span>
+                    </h2>
+                    <!-- Menu Item -->
+                    <li class="menu nav-item">
+                        <a href="javascript:;" title="" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'new'}"
+                            @click="activeMenu === 'new' ? activeMenu = null : activeMenu = 'new'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'new'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-add-circle-line"></i>
+                                <span class="pl-1">Create</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'new'" x-collapse=""
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80"
+                            style="display: none; height: 0px; overflow: hidden;" hidden="">
+                            <li><a href="./add_course.html" title="">Course</a></li>
+                            <li><a href="./add_module.html" title="">Modules</a></li>
+                            <li><a href="./add_lesson.html" title="">Lesson</a></li>
+                            <li><a href="./add_content.html" title="">Content</a></li>
+                            <li><a href="./add_quiz.html" title="">Quiz</a></li>
+                            <li><a href="./add_user.html" title="">User</a></li>
+                            <li><a href="./add_bulk_user.html" title="">Bulk User</a></li>
+                            <li><a href="./add_license.html">License</a></li>
+                            <li><a href="./add_open_batch.html" title="">Open Batch</a></li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Course Management</h2>
+                    <li class="menu nav-item">
+                        <a href="javascript:;" class="nav-link group text-black dark:text-white"
+                            :class="{'active' : activeMenu === 'courses'}"
+                            @click="activeMenu === 'courses' ? activeMenu = null : activeMenu = 'courses'">
+                            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center"
+                                :class="{'!rotate-90' : activeMenu === 'courses'}">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z"
+                                        fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-book-open-line"></i>
+                                <span class="pl-1">Courses</span>
+                            </div>
+                        </a>
+                        <ul x-show="activeMenu === 'courses'" x-collapse
+                            class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
+                            <li><a href="./my-courses.html" title="">All Courses</a></li>
+                            <li><a href="./view-course.html" title="">View Course</a></li>
+
+                        </ul>
+                    </li>
+
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Batch Management</h2>
+                    <li class="menu nav-item">
+                        <a href="./open-batches.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-live-line"></i>
+                                <span class="pl-1">Open Batches</span>
+                            </div>
+                        </a>
+                    </li>
+
+
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Reports & Analytics</h2>
+                    <li class="menu nav-item">
+                        <a href="./report.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Reports</span>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <!-- Section Header -->
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">System Settings</h2>
+                    <li class="menu nav-item">
+                        <a href="./settings.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-settings-3-line"></i>
+                                <span class="pl-1">Settings</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">Docs</h2>
+                    <li class="menu nav-item">
+                        <a href="./release-notes.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-rocket-line"></i>
+                                <span class="pl-1">Release Notes</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu nav-item">
+                        <a href="./activity-feed.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-bar-chart-line"></i>
+                                <span class="pl-1">Activity Feed</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu nav-item">
+                        <a href="./documentation.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-article-fill"></i>
+                                <span class="pl-1">Documentation</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End LMS Super Admin Sidebar -->
+
+                <!-- End Menu -->
+            </div>
+        </nav>
+        <!-- End sidebar -->
+
 
         <!-- Start Content Area -->
         <div class="main-content flex-1">
@@ -331,7 +331,9 @@
                                                 alt="image">
                                         </div>
                                         <div class="pl-2">
-                                            <h4 class="text-sm text-black dark:text-white font-medium leading-none profile-name">                                             </h4>
+                                            <h4
+                                                class="text-sm text-black dark:text-white font-medium leading-none profile-name">
+                                            </h4>
                                             <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs profile-email"
                                                 href="javaScript:;"></a>
                                         </div>
@@ -392,48 +394,71 @@
 
                     <form id="addContentForm" class="bg-white-100 p-10">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
+
+                            <!-- Course Selection -->
                             <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="content_title" class="text-sm font-semibold mb-2 block">Content
-                                    Title</label>
-                                <input type="text" id="content_title" name="content_title"
-                                    placeholder="Enter content name"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                <label for="courseList" class="text-sm font-semibold mb-2 block">Select Course</label>
+                                <select id="courseList" name="course_id"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required
+                                    onchange="fetchModules()">
+                                    <option value="">Select a Course</option>
+                                </select>
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
+
+                            <!-- Module Selection -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="moduleList" class="text-sm font-semibold mb-2 block">Select Module</label>
+                                <select id="moduleList" name="module_id"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required
+                                    onchange="fetchLessons()">
+                                    <option value="">Select a Course First</option>
+                                </select>
+                            </div>
+
+                            <!-- Lesson Selection -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
+                                <label for="lessonList" class="text-sm font-semibold mb-2 block">Select Lesson</label>
+                                <select id="lessonList" name="lesson_id"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                    <option value="">Select a Module First</option>
+                                </select>
+                            </div>
+
+                            <!-- Content Type -->
                             <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
                                 <label for="content_type" class="text-sm font-semibold mb-2 block">Content Type</label>
-                                <input type="select" id="content_type" name="content_type" placeholder=""
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                <select id="content_type" name="content_type"
+                                    class="form-select w-full py-2.5 px-4 border border-black/10 rounded-lg" required>
+                                    <option value="">Select Type</option>
+                                    <option value="PDF">PDF</option>
+                                    <option value="SCORM">SCORM</option>
+                                </select>
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
+
+                            <!-- Upload File -->
                             <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="content_url" class="text-sm font-semibold mb-2 block">Content URL /
-                                    File</label>
-                                <input type="url" id="content_url" name="content_url"
-                                    placeholder="Link to video or file"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+                                <label for="content_file" class="text-sm font-semibold mb-2 block">Upload File</label>
+                                <input type="file" id="content_file" name="file"
+                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg" required />
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
-                            <!-- Exclude reset button from being rendered as input field -->
-                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md">
-                                <label for="associated_lesson" class="text-sm font-semibold mb-2 block">Linked
-                                    Lesson</label>
-                                <input type="text" id="associated_lesson" name="associated_lesson"
-                                    placeholder="Lesson ID or title"
-                                    class="form-input w-full py-2.5 px-4 border border-black/10 rounded-lg">
+
+                            <!-- Content Description -->
+                            <div class="border border-black/10 dark:border-white/10 p-5 rounded-md col-span-2">
+                                <label for="content_description" class="text-sm font-semibold mb-2 block">Content
+                                    Description</label>
+                                <textarea id="content_description" name="description"
+                                    class="form-textarea w-full py-2.5 px-4 border border-black/10 rounded-lg"
+                                    placeholder="Enter content description..."></textarea>
                             </div>
-                            <!-- Exclude submit button from being rendered as input field -->
+
                         </div>
 
                         <div class="mt-7 flex justify-end gap-4">
                             <input type="submit" value="Add Content" class="btn py-[5px] px-4 text-xs font-semibold">
-                            <input type="button" value="Reset" class="btn py-[5px] px-4 text-xs font-semibold">
+                            <input type="reset" value="Reset" class="btn py-[5px] px-4 text-xs font-semibold">
                         </div>
                     </form>
+
 
                 </div>
                 <!-- Start Footer -->
@@ -702,6 +727,109 @@
         integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script type="module">
+        import { get, post } from '../beauty/js/api-client.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCourses();
+
+            // Event listeners
+            document.getElementById('courseList').addEventListener('change', loadModules);
+            document.getElementById('moduleList').addEventListener('change', loadLessons);
+            document.getElementById('addContentForm').addEventListener('submit', submitContentForm);
+        });
+
+        async function loadCourses() {
+            try {
+                const data = await get('/courses');
+                const courseList = document.getElementById('courseList');
+                courseList.innerHTML = '<option value="">Select a Course</option>';
+
+                data.courses.forEach(course => {
+                    const opt = document.createElement('option');
+                    opt.value = course._id;
+                    opt.textContent = course.title;
+                    courseList.appendChild(opt);
+                });
+            } catch (err) {
+                console.error('Failed to load courses:', err);
+                alert('Failed to load courses.');
+            }
+        }
+
+        async function loadModules() {
+            const courseId = document.getElementById('courseList').value;
+            if (!courseId) return;
+
+            try {
+                const data = await get(`/admin/modules/${courseId}`);
+                const moduleList = document.getElementById('moduleList');
+                moduleList.innerHTML = '<option value="">Select a Module</option>';
+
+                data.modules.forEach(mod => {
+                    const opt = document.createElement('option');
+                    opt.value = mod._id;
+                    opt.textContent = mod.title;
+                    moduleList.appendChild(opt);
+                });
+            } catch (err) {
+                console.error('Failed to load modules:', err);
+                alert('Failed to load modules.');
+            }
+        }
+
+        async function loadLessons() {
+            const moduleId = document.getElementById('moduleList').value;
+            if (!moduleId) return;
+
+            try {
+                const data = await get(`/lesson/modules/${moduleId}`);
+                const lessonList = document.getElementById('lessonList');
+                lessonList.innerHTML = '<option value="">Select a Lesson</option>';
+
+                data.lessons.forEach(lesson => {
+                    const opt = document.createElement('option');
+                    opt.value = lesson._id;
+                    opt.textContent = lesson.title;
+                    lessonList.appendChild(opt);
+                });
+            } catch (err) {
+                console.error('Failed to load lessons:', err);
+                alert('Failed to load lessons.');
+            }
+        }
+
+        async function submitContentForm(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('addContentForm');
+            const lessonId = form.lesson_id.value;
+            const contentType = form.content_type.value;
+            const file = form.file.files[0];
+            const description = form.description.value;
+
+            if (!lessonId || !contentType || !file) {
+                alert('All required fields must be filled.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('lesson_id', lessonId);
+            formData.append('content_type', contentType);
+            formData.append('file', file);
+            formData.append('description', description);
+
+            try {
+                const result = await post('/content/upload-content', formData);
+                alert(result.message || 'Content added successfully!');
+                form.reset();
+            } catch (err) {
+                console.error('Failed to upload content:', err);
+                alert('Failed to upload content.');
+            }
+        }
+
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

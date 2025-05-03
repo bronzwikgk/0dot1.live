@@ -642,17 +642,24 @@
                                         <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col"
                                             style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
                                             <!-- Thumbnail -->
-                                            <img :src="file.thumbnail" alt="Course Thumbnail"
-                                                class="w-full h-48 object-cover">
+                                            <a :href="file.couseLink">
+                                                <img :src="file.thumbnail" alt="Course Thumbnail"
+                                                    class="w-full h-48 object-cover ">
+                                            </a>
+
 
                                             <!-- Content Area -->
                                             <div class="p-4">
-                                                <h5 class="text-lg font-bold text-gray-900 truncate"
-                                                    x-text="file.courseName"></h5>
+                                                <h5 class="text-lg font-bold text-gray-900 truncate">
+                                                    <a :href="file.couseLink" class="hover:underline"
+                                                        x-text="file.courseName"></a>
+                                                </h5>
+
                                                 <p class="text-sm text-gray-500" x-text="file.instructor"></p>
                                                 <p class="text-xs text-gray-400 mt-1"
                                                     x-text="'Enrolled: ' + file.numStudents + ' students'"></p>
-                                                <p class="text-xs text-gray-400" x-text="file.lastAccessed"></p>
+                                                <p class="text-xs text-gray-400"
+                                                    x-text="'Last Accessed :' + file.lastAccessed"></p>
 
                                                 <!-- Progress and Status -->
                                                 <div class="mt-2">
@@ -690,15 +697,13 @@
                                                 <th class="p-3 cursor-pointer" @click="sortTable('enrollmentDate')">
                                                     Enrollment Date <span x-text="sortIcon('enrollmentDate')"></span>
                                                 </th>
-                                                <th class="p-3 cursor-pointer" @click="sortTable('numStudents')">Number
-                                                    of Students <span x-text="sortIcon('numStudents')"></span></th>
+
                                                 <th class="p-3 cursor-pointer" @click="sortTable('lastAccessed')">Last
                                                     Accessed <span x-text="sortIcon('lastAccessed')"></span></th>
                                                 <th class="p-3 cursor-pointer" @click="sortTable('progress')">Progress
                                                     <span x-text="sortIcon('progress')"></span>
                                                 </th>
-                                                <th class="p-3 cursor-pointer" @click="sortTable('status')">Status <span
-                                                        x-text="sortIcon('status')"></span></th>
+
                                             </tr>
                                         </thead>
 
@@ -707,13 +712,17 @@
                                                 <tr class="border-b">
                                                     <td class="p-3"><img :src="item.thumbnail" alt="Course Thumbnail"
                                                             class="w-16 h-16 object-cover"></td>
-                                                    <td class="p-3" x-text="item.courseName"></td>
+                                                    <td class="p-3">
+                                                        <a :href="item.couseLink" class="text-blue-600 hover:underline"
+                                                            x-text="item.courseName"></a>
+                                                    </td>
+
                                                     <td class="p-3" x-text="item.instructor"></td>
                                                     <td class="p-3" x-text="item.enrollmentDate"></td>
-                                                    <td class="p-3" x-text="item.numStudents"></td>
+
                                                     <td class="p-3" x-text="item.lastAccessed"></td>
                                                     <td class="p-3" x-text="item.progress + '%'"></td>
-                                                    <td class="p-3" x-text="item.status"></td>
+
                                                 </tr>
                                             </template>
                                         </tbody>
@@ -1004,27 +1013,60 @@
 
     <!-- Custom js -->
     <script src="../beauty/js/custom.js"></script>
+    <script src="../beauty/js/toast.js"></script>
     <script>
+        const BASE_URL = "https://lmsback.ducisgroup.com/test/api";
+        // const BASE_URL = "http://localhost:3000/api";
+        
         function tableData() {
             return {
-                view: 'list',
+                view: 'grid',
                 search: '',
                 sortColumn: '',
                 sortDirection: 'asc',
                 itemsPerPage: 10,
                 currentPage: 1,
-                items: Array.from({ length: 50 }, (_, i) => ({
-                    id: i + 1,
-                    thumbnail: 'https://placehold.co/600x400/orange/white',  // A placeholder image URL
-                    courseName: ['IT Service Management – ITIL ®', 'Scrum and Agile', 'Project Management', 'SDI – Service Desk Manager', 'SIAM', 'ISO Trainings', 'Devops Institute - DOI', 'Six Sigma and Quality'][Math.floor(Math.random() * 8)],
-                    instructor: ['Dr. Smith', 'Prof. Adams', 'Dr. Lee', 'Ms. Taylor', 'Mr. Clark'][Math.floor(Math.random() * 5)],
-                    enrollmentDate: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
-                    numStudents: Math.floor(Math.random() * 200),
-                    lastAccessed: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
-                    progress: Math.floor(Math.random() * 100),
-                    status: ['Enrolled', 'In Progress', 'Completed', 'Dropped'][Math.floor(Math.random() * 4)],
-                    couseLink: "./view-course.html"
-                })),
+                items: [],
+
+                async loadData() {
+                    try {
+                        const token = localStorage.getItem('access_token'); // or 'studentToken' if that's what you use
+
+                        const response = await fetch(`${BASE_URL}/courses`, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch: ${response.status}`);
+                        }
+
+                        const data = await response.json();
+
+                        this.items = data.courses.map((course, index) => {
+                            
+                            return {
+                                id: index + 1,
+                                thumbnail: course.image_url || 'https://placehold.co/600x400/orange/white',
+                                courseName: course.title,
+                                instructor: 'Instructor Name', // Adjust if instructor becomes available
+                                enrollmentDate: new Date(course.created_at).toISOString().split('T')[0],
+                                lastAccessed: new Date(course.updated_at).toISOString().split('T')[0],
+                                progress: Math.floor((course.completedLessons / course.totalLessons) * 100 || 0),
+                                couseLink: `./view-course.html?courseId=${course._id}`
+
+                            };
+                        });
+
+                        this.resetPagination();
+                    } catch (err) {
+                        showToast('Failed to load courses. Please try again.', 'danger');
+                        console.error(err);
+                    }
+                },
 
 
                 paginatedItems: [],
@@ -1108,8 +1150,10 @@
                     this.updatePagination();
                 },
 
-                init() {
+                async init() {
                     this.updatePagination();
+                    console.log(await this.loadData());
+
                 }
             };
         }
