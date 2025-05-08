@@ -76,19 +76,20 @@
                     <h2 class="pl-3 my-2 text-black/40 dark:text-white/40 text-sm">User Management</h2>
                     <!-- Menu Items -->
                     <li class="menu nav-item">
-                        <a href="./explorer-admin.html" class="nav-link group text-black dark:text-white">
+                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
                             <div class="flex pl-5 items-center">
-                                <i class="ri-shield-user-line"></i>
-                                <span class="pl-1">Admins</span>
+                                <i class="ri-user-line"></i>
+                                <span class="pl-1">Users</span>
                             </div>
                         </a>
                     </li>
 
+                    <!-- Menu Items -->
                     <li class="menu nav-item">
-                        <a href="./explorer-learner.html" class="nav-link group text-black dark:text-white">
+                        <a href="./explorer-license.html" class="nav-link group text-black dark:text-white">
                             <div class="flex pl-5 items-center">
-                                <i class="ri-user-line"></i>
-                                <span class="pl-1">Learner</span>
+                                <i class="ri-shield-user-line"></i>
+                                <span class="pl-1">License</span>
                             </div>
                         </a>
                     </li>
@@ -155,7 +156,7 @@
                         <ul x-show="activeMenu === 'courses'" x-collapse
                             class="sub-menu flex flex-col gap-1 text-black dark:text-white/80">
                             <li><a href="./my-courses.html" title="">All Courses</a></li>
-                            <li><a href="./view-course.html" title="">View Course</a></li>
+                            <li><a href="./explore-tests.html" title="">Mock Tests</a></li>
 
                         </ul>
                     </li>
@@ -1003,7 +1004,7 @@
 
                     const row = `
         <tr>
-          <td>${license.course_id}</td>
+          <td>${license.course_id.title}</td>
           <td>${assignedName}</td>
           <td>${duration}</td>
           <td>${status}</td>

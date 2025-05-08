@@ -123,3 +123,8 @@ export function put(endpoint, body, headers) {
 export function del(endpoint, headers) {
   return request(endpoint, 'DELETE', null, headers);
 }
+
+export function patch(endpoint, body, headers) {
+  return request(endpoint, 'PATCH', body, headers);
+}
+

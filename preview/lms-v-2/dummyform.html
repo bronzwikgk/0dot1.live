@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Paper Form – All Question Types</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+    h3 { margin-top: 30px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    select, textarea, input[type="text"], input[type="number"] {
+      width: 100%; padding: 6px; margin-top: 5px; box-sizing: border-box;
+    }
+    .submit-btn { margin-top: 30px; padding: 10px 20px; background: #007BFF; color: #fff; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>📝 Test Paper Demo Form</h2>
+
+  <form id="test-form">
+
+    <!-- 1. MCQ -->
+    <h3>1. What is the capital of France?</h3>
+    <label><input type="radio" name="q1" value="A"> A. Berlin</label><br>
+    <label><input type="radio" name="q1" value="B"> B. Paris</label><br>
+    <label><input type="radio" name="q1" value="C"> C. Rome</label><br>
+    <label><input type="radio" name="q1" value="D"> D. Madrid</label><br>
+
+    <!-- 2. Subjective -->
+    <h3>2. Explain the working of a transistor.</h3>
+    <textarea name="q2" rows="5" placeholder="Write your answer here..."></textarea>
+
+    <!-- 3. True/False -->
+    <h3>3. The Earth revolves around the Sun.</h3>
+    <label><input type="radio" name="q3" value="True"> True</label><br>
+    <label><input type="radio" name="q3" value="False"> False</label><br>
+
+    <!-- 4. Fill in the Blanks -->
+    <h3>4. Water boils at ___ degrees Celsius.</h3>
+    <input type="text" name="q4" placeholder="Enter your answer">
+
+    <!-- 5. Match the Column -->
+    <h3>5. Match the following:</h3>
+    <table>
+      <tr>
+        <th>Column A</th>
+        <th>Your Match</th>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>
+          <select name="q5_1">
+            <option value="">Select</option>
+            <option value="Red">Red</option>
+            <option value="Yellow">Yellow</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Banana</td>
+        <td>
+          <select name="q5_2">
+            <option value="">Select</option>
+            <option value="Red">Red</option>
+            <option value="Yellow">Yellow</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 6. Code -->
+    <h3>6. Write a function to reverse a string in Python.</h3>
+    <textarea name="q6_code" rows="8" placeholder="def reverse_string(s): ..."></textarea>
+
+    <!-- 7. Numerical -->
+    <h3>7. What is the square root of 144?</h3>
+    <input type="number" name="q7" step="0.01" placeholder="Enter value">
+
+    <button class="submit-btn" type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('test-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const entries = {};
+      for (const [key, value] of formData.entries()) {
+        entries[key] = value;
+      }
+      alert("Form Submitted!\n" + JSON.stringify(entries, null, 2));
+      console.log(entries);
+    });
+  </script>
+
+</body>
+</html>
