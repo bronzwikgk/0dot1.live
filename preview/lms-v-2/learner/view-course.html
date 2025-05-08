@@ -694,7 +694,7 @@
         function getLessonLink(lesson) {
             const type = lesson.content?.content_type;
             const id = lesson._id;
-            if (type === "PDF") return `/showPdf.html?lessonId=${id}`;
+            if (type === "PDF") return `./showPdf.html?lessonId=${id}`;
             if (type === "SCORM") return `${BASE_URL}/scorm/${id}/launch?token=${localStorage.getItem('access_token')}`;
             if (type === "TestPaper") return `./view-quiz.html?contentId=${lesson.content._id}`;
             return "#";
