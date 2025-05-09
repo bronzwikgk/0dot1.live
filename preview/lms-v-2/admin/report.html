@@ -378,28 +378,46 @@
             <!-- Start Content -->
             <div class="h-[calc(100vh-73px)] overflow-y-auto overflow-x-hidden">
                 <div x-data="sales" class="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
-                    
+
                     <h2 class="text-lg font-semibold">Progress Reports</h2>
                     <div id="ProgressReport" class="section p-4 sm:p-7 min-h-[calc(100vh-145px)]">
-                        <div class="flex justify-between
-                        gap-4 mb-4 w-full">
-                            <div class="flex items-center gap-4">
-                                <select id="courseSelect" class="border p-2 rounded text-black dark:text-white bg-white dark:bg-black" style="width: 300px;">
+                        <div class="flex flex-col sm:flex-row sm:justify-between gap-4 mb-4 w-full flex-wrap">
+
+                            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+
+                                <select id="courseSelect"
+                                    class="border p-2 rounded text-black dark:text-white bg-white dark:bg-black w-full sm:w-[300px]">
                                     <option value="">Select Course</option>
                                 </select>
-                                <button id="generateReportBtn" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Generate Report</button>
+                                <select id="countrySelect"
+                                    class="border p-2 rounded text-black dark:text-white bg-white dark:bg-black w-full sm:w-[300px] ">
+                                    <option value="">All Countries</option>
+                                    <!-- Populate dynamically -->
+                                </select>
+
+                                <select id="companySelect"
+                                    class="border p-2 rounded text-black dark:text-white bg-white dark:bg-black w-full sm:w-[300px] ">
+                                    <option value="">All Companies</option>
+                                    <!-- Populate dynamically -->
+                                </select>
+
+
                             </div>
                             <div>
-                                <button id="downloadReportBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 ">
+                                <button id="generateReportBtn"
+                                    class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Generate
+                                    Report</button>
+                                <button id="downloadReportBtn"
+                                    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 ">
                                     Download Excel
                                 </button>
-                                
+
                             </div>
-                            
+
                         </div>
-                        
-                        
-                        
+
+
+
                         <div class="grid grid-cols-1 gap-7">
                             <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
 
@@ -760,9 +778,9 @@
 
     <script type="module">
         import { get } from '../beauty/js/api-client.js';
-    
+
         let cachedReportData = []; // Cache to enable Excel download
-    
+
         async function loadCourses() {
             const courseDropdown = document.getElementById('courseSelect');
             try {
@@ -777,23 +795,30 @@
                 console.error('Failed to load courses', err);
             }
         }
-    
+
         async function fetchAllLearnerReports(courseId) {
             const tableBody = document.querySelector('#ProgressReport table tbody');
+            const country = document.getElementById('countrySelect').value;
+            const company = document.getElementById('companySelect').value;
             tableBody.innerHTML = '';
             cachedReportData = [];
-    
+            let url = `/progress/report/${courseId}`;
+            const params = new URLSearchParams();
+            if (country) params.append('country', country);
+            if (company) params.append('company', company);
+            if ([...params].length > 0) url += `?${params.toString()}`;
+
             try {
-                const { reports } = await get(`/progress/report/${courseId}`);
+                const { reports } = await get(url);
                 cachedReportData = reports;
-    
+
                 reports.forEach((report, i) => {
                     const row = document.createElement('tr');
-    
+
                     const intro = report.lessons[0]?.contents[0] || {};
                     const started = intro.startTime || '--';
                     const completed = intro.endTime || '--';
-    
+
                     row.innerHTML += `
                         <td class="py-2">${i + 1}</td>
                         <td class="py-2">${report.name}</td>
@@ -803,7 +828,7 @@
                         <td class="py-2">${completed}</td>
                         <td class="py-2">--</td>
                     `;
-    
+
                     report.lessons.forEach(lesson => {
                         lesson.contents.forEach(content => {
                             const isCompleted = content.status === 'completed' ? 'Yes' : 'No';
@@ -815,16 +840,16 @@
                             `;
                         });
                     });
-    
+
                     tableBody.appendChild(row);
                 });
-    
+
             } catch (err) {
                 console.error('Error loading report', err);
                 tableBody.innerHTML = '<tr><td colspan="50" class="py-4 text-center">Failed to load report.</td></tr>';
             }
         }
-    
+
         function exportToExcel(data) {
             const rows = data.map((report, index) => {
                 const row = {
@@ -832,7 +857,7 @@
                     "Student": report.name,
                     "Email": report.email
                 };
-    
+
                 report.lessons.forEach((lesson, lIndex) => {
                     lesson.contents.forEach((content, cIndex) => {
                         const key = `Lesson${lIndex + 1}_Content${cIndex + 1}_${content.type}`;
@@ -840,25 +865,26 @@
                         row[`${key}_Score`] = content.score !== undefined ? content.score : '--';
                     });
                 });
-    
+
                 return row;
             });
-    
+
             const worksheet = XLSX.utils.json_to_sheet(rows);
             const workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, 'Progress Report');
             XLSX.writeFile(workbook, 'LMS_Progress_Report.xlsx');
         }
-    
+
         document.getElementById('generateReportBtn').addEventListener('click', () => {
             const courseId = document.getElementById('courseSelect').value;
+
             if (!courseId) {
                 alert('Please select a course');
                 return;
             }
             fetchAllLearnerReports(courseId);
         });
-    
+
         document.getElementById('downloadReportBtn').addEventListener('click', () => {
             if (!cachedReportData.length) {
                 alert('Please generate the report first.');
@@ -866,10 +892,36 @@
             }
             exportToExcel(cachedReportData);
         });
-    
+
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const { countries, companies } = await get('/report/report-meta');
+
+                const countrySelect = document.getElementById('countrySelect');
+                const companySelect = document.getElementById('companySelect');
+
+                countries.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = opt.text = c;
+                    countrySelect.appendChild(opt);
+                });
+
+                companies.forEach(c => {
+                    if (c) {
+                        const opt = document.createElement('option');
+                        opt.value = opt.text = c;
+                        companySelect.appendChild(opt);
+                    }
+                });
+            } catch (err) {
+                console.error('Failed to load filter meta:', err);
+            }
+        });
+
         loadCourses();
     </script>
-    
+
 
 
 
