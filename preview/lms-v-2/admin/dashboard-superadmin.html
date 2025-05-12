@@ -352,14 +352,10 @@
                                         <i class="ri-settings-4-line" style="margin-right: 5px;"></i> Settings
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="javaScript:;" class="flex items-center">
-                                        <i class="ri-mail-line" style="margin-right: 5px;"></i> Messages
-                                    </a>
-                                </li>
+
                                 <li class="h-px bg-black/5 my-1"></li>
-                                <li>
-                                    <a href="javaScript:;" class="flex items-center">
+                                <li id="signout">
+                                    <a href="javaScript:;" class="flex items-center" >
                                         <i class="ri-logout-box-line " style="margin-right: 5px;"></i> Sign Out
                                     </a>
                                 </li>
@@ -404,7 +400,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="recent-licenses-table-body">
-                                          
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -413,16 +409,17 @@
                             </div>
 
                             <div class="bg-lightwhite dark:bg-white/5 p-6 rounded-2xl">
-                                <h2 class="text-sm font-semibold text-black dark:text-white mb-4">Course Completion Overview</h2>
-                              
+                                <h2 class="text-sm font-semibold text-black dark:text-white mb-4">Course Completion
+                                    Overview</h2>
+
                                 <div id="completion-bars-container" class="flex flex-col gap-[18px]">
-                                  <!-- Progress bars will be dynamically inserted here -->
+                                    <!-- Progress bars will be dynamically inserted here -->
                                 </div>
-                              </div>
-                              
+                            </div>
+
 
                         </div>
-                   
+
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
@@ -442,8 +439,8 @@
                                         </thead>
                                         <tbody id="recent-users-table-body">
                                             <!-- Dynamic user rows will be inserted here -->
-                                          </tbody>
-                                          
+                                        </tbody>
+
                                     </table>
                                 </div>
                             </div>
@@ -913,9 +910,13 @@
     <!-- Custom js -->
     <script src="../beauty/js/custom.js"></script>
     <!-- Add this before the closing </body> tag -->
+
+
     <script type="module">
         import { updateProfileInfo } from '../beauty/js/updateProfile.js';
         updateProfileInfo()
+        import { setupLogout } from '../beauty/js/authUtils.js';
+        setupLogout();
         // The profile info will be updated automatically when the page loads
     </script>
 
@@ -1065,15 +1066,15 @@
             }
         }
         async function loadRecentUsersTable() {
-  try {
-    const dashboardData = await fetchAdminDashboardData();
-    const recentUsers = dashboardData.recent.users;
+            try {
+                const dashboardData = await fetchAdminDashboardData();
+                const recentUsers = dashboardData.recent.users;
 
-    const tableBody = document.getElementById('recent-users-table-body');
-    tableBody.innerHTML = ''; // Clear previous rows
+                const tableBody = document.getElementById('recent-users-table-body');
+                tableBody.innerHTML = ''; // Clear previous rows
 
-    recentUsers.forEach(user => {
-      const row = `
+                recentUsers.forEach(user => {
+                    const row = `
          <tr>
           <td class="whitespace-nowrap">
             <div>
@@ -1091,14 +1092,14 @@
         </tr>
       `;
 
-      tableBody.innerHTML += row;
-    });
+                    tableBody.innerHTML += row;
+                });
 
-  } catch (error) {
-    console.error('Error loading recent users:', error.message);
-    alert('Failed to load recent users.');
-  }
-}
+            } catch (error) {
+                console.error('Error loading recent users:', error.message);
+                alert('Failed to load recent users.');
+            }
+        }
 
         window.addEventListener('DOMContentLoaded', loadDashboardCards);
         loadRecentLicensesTable()
