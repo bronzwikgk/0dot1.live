@@ -6,7 +6,8 @@ export class Navbar {
 
     render() {
         return `
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- start:navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container px-5">
                     <a href="https://ducisgroup.com/">
                         <img style="width: 100px" 
@@ -27,17 +28,17 @@ export class Navbar {
                                     <li><a class="dropdown-item" href="#wwa">Who We Are</a></li>
                                     <li><a class="dropdown-item" href="#wwo">What We Offer</a></li>
                                     <li><a class="dropdown-item" href="#oa">Our Accreditations</a></li>
-                                    <li><a class="dropdown-item" href="#st">Stats</a></li>
+                                    <li><a class="dropdown-item" href="#st">Our Reach</a></li>
                                     <li><a class="dropdown-item" href="#mot">Meet Our Team</a></li>
                                     <li><a class="dropdown-item" href="#cu">Contact Us</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Offering</a>
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                                 <ul class="dropdown-menu dropdown-menu-end m-0 p-0" aria-labelledby="navbarDropdown1">
-                                    <li><a class="dropdown-item" href="./offering.html#t&c">Training & Certifications</a></li>
-                                    <li><a class="dropdown-item" href="./offering.html#cons">Consultancy</a></li>
-                                    <li><a class="dropdown-item" href="./offering.html#atva">ATVA</a></li>
+                                    <li><a class="dropdown-item" href="./shop.html#t&c">Training & Certifications</a></li>
+                                    <li><a class="dropdown-item" href="./shop.html#cons">Consultancy</a></li>
+                                    <li><a class="dropdown-item" href="./shop.html#atva">ATVA</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">

@@ -42,7 +42,7 @@ async function placeOrder(userId, paymentMethod, amount) {
         // Use the data (payment, order, transaction) as needed
         // For example, redirect the user, display a confirmation, etc.
         // Example:
-        window.location.href = `./offering.html`;
+        window.location.href = `./shop.html`;
 
     } catch (error) {
         console.error('Error placing order:', error);

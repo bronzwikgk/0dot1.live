@@ -13,130 +13,133 @@
         text-decoration: none;
       }
 
-.blog-post {
-  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
-}
+      .blog-post {
+        -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+      }
 
-.blog-post .blog-img .overlay,
-.blog-post .blog-img .post-meta {
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
+      .blog-post .blog-img .overlay,
+      .blog-post .blog-img .post-meta {
+        position: absolute;
+        opacity: 0;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
 
-.blog-post .blog-img .overlay {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+      .blog-post .blog-img .overlay {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
 
-.blog-post .blog-img .post-meta {
-  bottom: 5%;
-  right: 5%;
-  z-index: 1;
-}
+      .blog-post .blog-img .post-meta {
+        bottom: 5%;
+        right: 5%;
+        z-index: 1;
+      }
 
-.blog-post .blog-img .post-meta .read-more:hover {
-  color: #6dc77a !important;
-}
+      .blog-post .blog-img .post-meta .read-more:hover {
+        color: #6dc77a !important;
+      }
 
-.blog-post .content h1, .blog-post .content h2, .blog-post .content h3, .blog-post .content h4, .blog-post .content h5, .blog-post .content h6 {
-  line-height: 1.2;
-}
+      .blog-post .content h1,
+      .blog-post .content h2,
+      .blog-post .content h3,
+      .blog-post .content h4,
+      .blog-post .content h5,
+      .blog-post .content h6 {
+        line-height: 1.2;
+      }
 
-.blog-post .content .title {
-  font-size: 18px;
-}
+      .blog-post .content .title {
+        font-size: 18px;
+      }
 
-.blog-post .content .title:hover {
-  color: #6dc77a !important;
-}
+      .blog-post .content .title:hover {
+        color: #6dc77a !important;
+      }
 
-.blog-post .content .author .name:hover {
-  color: #6dc77a !important;
-}
+      .blog-post .content .author .name:hover {
+        color: #6dc77a !important;
+      }
 
-.blog-post:hover {
-  -webkit-transform: translateY(-7px);
-          transform: translateY(-7px);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
+      .blog-post:hover {
+        -webkit-transform: translateY(-7px);
+        transform: translateY(-7px);
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      }
 
-.blog-post:hover .blog-img .overlay {
-  opacity: 0.65;
-}
+      .blog-post:hover .blog-img .overlay {
+        opacity: 0.65;
+      }
 
-.blog-post:hover .blog-img .post-meta {
-  opacity: 1;
-}
+      .blog-post:hover .blog-img .post-meta {
+        opacity: 1;
+      }
 
-.blog-post .post-meta .like i,
-.profile-post .like i {
-  -webkit-text-stroke: 2px #dd2427;
-  -webkit-text-fill-color: transparent;
-}
+      .blog-post .post-meta .like i,
+      .profile-post .like i {
+        -webkit-text-stroke: 2px #dd2427;
+        -webkit-text-fill-color: transparent;
+      }
 
-.blog-post .post-meta .like:active i, .blog-post .post-meta .like:focus i,
-.profile-post .like:active i,
-.profile-post .like:focus i {
-  -webkit-text-stroke: 0px #dd2427;
-  -webkit-text-fill-color: #dd2427;
-}
+      .blog-post .post-meta .like:active i,
+      .blog-post .post-meta .like:focus i,
+      .profile-post .like:active i,
+      .profile-post .like:focus i {
+        -webkit-text-stroke: 0px #dd2427;
+        -webkit-text-fill-color: #dd2427;
+      }
 
-.avatar.avatar-ex-sm {
-    height: 36px;
-}
-.shadow {
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
-}
+      .avatar.avatar-ex-sm {
+        height: 36px;
+      }
+      .shadow {
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
+      }
 
-.text-muted {
-    color: #8492a6 !important;
-}
+      .text-muted {
+        color: #8492a6 !important;
+      }
 
+      .para-desc {
+        max-width: 600px;
+      }
+      .text-muted {
+        color: #8492a6 !important;
+      }
 
-.para-desc {
-    max-width: 600px;
-}
-.text-muted {
-    color: #8492a6 !important;
-}
+      .section-title .title {
+        letter-spacing: 0.5px;
+        font-size: 30px;
+      }
 
-.section-title .title {
-    letter-spacing: 0.5px;
-    font-size: 30px;
-}
+      .blog-post {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        border: 1px solid #ddd; /* Optional: For visual debugging */
+      }
 
+      .blog-img img {
+        width: 100%;
+        height: auto;
+        display: block; /* Ensures no extra gaps at the bottom of images */
+      }
 
-
-.blog-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  border: 1px solid #ddd; /* Optional: For visual debugging */
-}
-
-.blog-img img {
-  width: 100%;
-  height: auto;
-  display: block; /* Ensures no extra gaps at the bottom of images */
-}
-
-.content {
-  flex-grow: 1; /* Ensures the content container stretches to fill the remaining space */
-  padding: 1rem;
-}
-
+      .content {
+        flex-grow: 1; /* Ensures the content container stretches to fill the remaining space */
+        padding: 1rem;
+      }
     </style>
   </head>
 
   <body>
+    <!-- start:navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-5">
         <a href="/"><img style="width: 100px" src="../assets/assets_dg-site/logo/dg logo/ducis group logo v 0-0-2 trans dark.webp" alt="Company Logo" class="me-3"></a>
@@ -145,75 +148,42 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown0">
-                <li>
-                  <a class="dropdown-item" href="./about.html#wu">Why Us</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#wwa">Who We Are</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#wwo">What We Offer</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#oa">Our Accreditations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#st">Stats</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#mot">Meet Our Team</a>
-                </li>
-                <li></li>
-                <li>
-                  <a class="dropdown-item" href="./about.html#cu">Contact Us</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Offering</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
-                <li>
-                  <a class="dropdown-item" href="./offering.html#t&amp;c">Training &amp; certifications</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./offering.html#cons">Consultancy</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./offering.html#atva">ATVA</a>
-                </li>
-                <!-- <li>
-                <a class="dropdown-item" href="#shop">Shop</a>
-              </li> -->
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="./page-dg-site-empty-page.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
-              <li>
-                <a class="dropdown-item" href="./online-bootcamp-all-schedule-cources.html">Open Batches</a>
-              </li>
-                <!-- <li>
-                <a class="dropdown-item" href="./resource.html#comm">Community Forum</a>
-              </li> -->
-                <li>
-                  <a class="dropdown-item" href="./resource.html#mock">Mock Test</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./resource.html#cf">Case Studies</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./resource.html#blog">Blog</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./resource.html#faq">FAQ</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          
+
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+    <ul class="dropdown-menu dropdown-menu-end m-0 p-0" aria-labelledby="navbarDropdown0">
+      <li><a class="dropdown-item" href="./about.html#wu">Why Us</a></li>
+      <li><a class="dropdown-item" href="./about.html#wwa">Who We Are</a></li>
+      <li><a class="dropdown-item" href="./about.html#wwo">What We Offer</a></li>
+      <li><a class="dropdown-item" href="./about.html#oa">Our Accreditations</a></li>
+      <li><a class="dropdown-item" href="./about.html#st">Our Reach</a></li>
+      <li><a class="dropdown-item" href="./about.html#mot">Meet Our Team</a></li>
+      <li><a class="dropdown-item" href="./about.html#cu">Contact Us</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="./page-dg-site-empty-page.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+    <ul class="dropdown-menu dropdown-menu-end m-0 p-0" aria-labelledby="navbarDropdown2">
+      <li><a class="dropdown-item" href="./resource.html#mock">Mock Test</a></li>
+      <li><a class="dropdown-item" href="./resource.html#cf">Case Studies</a></li>
+      <li><a class="dropdown-item" href="./resource.html#faq">FAQ</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+    <ul class="dropdown-menu dropdown-menu-end m-0 p-0" aria-labelledby="navbarDropdown1">
+      <li><a class="dropdown-item" href="./shop.html#t&amp;c">Training &amp; certifications</a></li>
+      <li><a class="dropdown-item" href="./shop.html#cons">Consultancy</a></li>
+      <li><a class="dropdown-item" href="./shop.html#atva">ATVA</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a class="nav-link" href="./blogPage.html" role="button">Blog</a></li>
+  <li class="nav-item"><a class="nav-link" href="./online-bootcamp-all-schedule-cources.html" role="button">Public Batches</a></li>
+</ul>
+
+
 
           <!-- CTA Button -->
           <div class="d-flex align-items-center">
@@ -233,10 +203,10 @@
               <h1 class="display-5 text-white mb-5">Blogs Page</h1>
               <p class="fw-normal text-white text-white-80 mb-5">
                 Welcome to our blog page, where we dive deep into topics that
-                matter to you. Whether you're here to explore the latest trends,
-                gather expert tips, or spark new ideas, you'll find a wide
-                variety of content curated to inform, inspire, and ignite your
-                curiosity.
+                matter to you. Whether you're here to explore the latest
+                trends, gather expert tips, or spark new ideas, you'll find
+                a wide variety of content curated to inform, inspire, and ignite
+                your curiosity.
               </p>
             </div>
           </div>
@@ -249,65 +219,75 @@
 
     <div class="container-fluid">
       <div class="row">
-   
         <!-- Main Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-md-4">
-         <br>
+          <br>
           <div id="product-container" class="row">
             <div class="container mt-100 mt-60">
               <div class="row">
-                  <div class="col-12 text-center">
-                      <div class="section-title mb-4 pb-2">
-                          <h4 class="title mb-4">Latest Blog </h4>
-                         
-                      </div>
-                  </div><!--end col-->
-              </div><!--end row-->
-          
+                <div class="col-12 text-center">
+                  <div class="section-title mb-4 pb-2">
+                    <h4 class="title mb-4">Latest Blog</h4>
+                  </div>
+                </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
+
               <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4 pt-2">
                   <div class="blog-post rounded border">
-                      <div class="blog-img d-block overflow-hidden position-relative">
-                          <img src="../assets/assets_dg-site/Blog-image/demo-blog.jpg" class="img-fluid rounded-top" alt="">
-                          
-                      </div>
-                      <div class="content p-3" style="background-color: #fff;">
-                          
-                          <h4 class="mt-2"><a href="./blog-service-management.html" class="text-dark title">Service Management, ITIL 4 and English Language Skills – A Growing Market in MENA and SE Asia</a></h4>
-                          <p class="text-muted mt-2">Sunil Mohal, founder of Ducis Group – based in Delhi, India – has been involved in IT service management ..</p>
-                          <div class="pt-3 mt-3 border-top d-flex">
-                              
-                              <div class="author mt-2">
-                                  <h6 class="mb-0">Sunil Mohal</h6>
-                              </div>
-                          </div>
-                      </div>
-                  </div><!--end blog post-->
-              </div><!--end col-->
-              <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                <div class="blog-post rounded border">
                     <div class="blog-img d-block overflow-hidden position-relative">
-                        <img src="../assets/assets_dg-site/Blog-image/blog.jpg" class="img-fluid rounded-top" alt="">
-                        
+                      <img src="../assets/assets_dg-site/Blog-image/demo-blog.jpg" class="img-fluid rounded-top" alt="">
                     </div>
-                    <div class="content p-3" style="background-color: #fff;">
-                        
-                        <h4 class="mt-2"><a href="./blog-single-source-of-truth.html" class="text-dark title">ITIL ® Master – Single Source of Truth</a></h4>
-                        <p class="text-muted mt-2">The ITIL Master Designation is a highly regarded certification for IT Service Management Professionals, awarded to practitioners demonstrating a broad range of</p>
-                        <div class="pt-3 mt-3 border-top d-flex">
-                    
-                            <div class="author mt-2">
-                                <h6 class="mb-0">Sunil Mohal</h6>
-                            </div>
+                    <div class="content p-3" style="background-color: #fff">
+                      <h4 class="mt-2">
+                        <a href="./blog-service-management.html" class="text-dark title">Service Management, ITIL 4 and English Language
+                          Skills – A Growing Market in MENA and SE
+                          Asia</a>
+                      </h4>
+                      <p class="text-muted mt-2">
+                        Sunil Mohal, founder of Ducis Group – based in
+                        Delhi, India – has been involved in IT service
+                        management ..
+                      </p>
+                      <div class="pt-3 mt-3 border-top d-flex">
+                        <div class="author mt-2">
+                          <h6 class="mb-0">Sunil Mohal</h6>
                         </div>
+                      </div>
                     </div>
-                </div><!--end blog post-->
-            </div><!--end col-->
-                  
-              
-              </div><!--end row-->
-          </div>
-
+                  </div>
+                  <!--end blog post-->
+                </div>
+                <!--end col-->
+                <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                  <div class="blog-post rounded border">
+                    <div class="blog-img d-block overflow-hidden position-relative">
+                      <img src="../assets/assets_dg-site/Blog-image/blog.jpg" class="img-fluid rounded-top" alt="">
+                    </div>
+                    <div class="content p-3" style="background-color: #fff">
+                      <h4 class="mt-2">
+                        <a href="./blog-single-source-of-truth.html" class="text-dark title">ITIL ® Master – Single Source of Truth</a>
+                      </h4>
+                      <p class="text-muted mt-2">
+                        The ITIL Master Designation is a highly regarded
+                        certification for IT Service Management Professionals,
+                        awarded to practitioners demonstrating a broad range of
+                      </p>
+                      <div class="pt-3 mt-3 border-top d-flex">
+                        <div class="author mt-2">
+                          <h6 class="mb-0">Sunil Mohal</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--end blog post-->
+                </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
+            </div>
           </div>
           <nav aria-label="Page navigation example">
             <ul class="pagination"></ul>
@@ -343,7 +323,7 @@
     </section>
 
     <section id="template-ui-section-footer-option1-sample">
-      <footer class="text-center text-lg-start text-dark" style="background-color: #eceff1;padding-top:1rem">
+      <footer class="text-center text-lg-start text-dark" style="background-color: #eceff1; padding-top: 1rem">
         <!-- <div class="container text-center p-4">
           <h4 class="fw-bold mb-4">Get the latest Ducisgroup Updates</h4>
           <div class="row mw-75 m-auto">
@@ -373,37 +353,69 @@
             <!-- Grid row -->
             <div class="row mt-3">
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold">Ducis Management Consulting Private Limited</h6>
+                <h6 class="text-uppercase fw-bold">
+                  Ducis Management Consulting Private Limited
+                </h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px">
-                <p><i class="fas fa-home mr-3"></i> Innov8 Coworking, Pride Plaza Hotel H43F+65, Aerocity, New Delhi, Delhi 110037</p>
+                <p>
+                  <i class="fas fa-home mr-3"></i> Innov8 Coworking, Pride Plaza
+                  Hotel H43F+65, Aerocity, New Delhi, Delhi 110037
+                </p>
                 <p><i class="fas fa-envelope mr-3"></i> info@ducisgroup.com</p>
                 <p><i class="fas fa-phone mr-3"></i> +91-9818023130</p>
-                <p><i class="fas fa-building mr-3"></i> COMPANY REGISTRATION NO U93090DL2018PTC382922</p>
+                <p>
+                  <i class="fas fa-building mr-3"></i> COMPANY REGISTRATION NO
+                  U93090DL2018PTC382922
+                </p>
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold">DUCIS TECHNOLOGY CONSULTING FZCO</h6>
+                <h6 class="text-uppercase fw-bold">
+                  DUCIS TECHNOLOGY CONSULTING FZCO
+                </h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px">
-                <p><i class="fas fa-home mr-3"></i> Duqe Square Business Center, <br> Quarter Deck, Mina Rashid, QE2, Dubai</p>
+                <p>
+                  <i class="fas fa-home mr-3"></i> Duqe Square Business Center,
+                  <br>
+                  Quarter Deck, Mina Rashid, QE2, Dubai
+                </p>
                 <p><i class="fas fa-envelope mr-3"></i> Sunil@ducisgroup.ae</p>
                 <p><i class="fas fa-phone mr-3"></i> +971 55 867 6586</p>
               </div>
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold">Quick Links</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px">
-                <p><a href="./offering.html" class="text-dark no-underline">Our Offering</a></p>
-                <p><a href="./offering.html#t&amp;c" class="text-dark no-underline">Get Certified</a></p>
-                <p><a href="./online-bootcamp-all-schedule-cources.html" class="text-dark no-underline">Open Batches</a></p>
-                <p><a href="./offering.html#shop" class="text-dark no-underline">Shop</a></p>
-                <p><a href="../html/shiv-pages/page-dg-site-Partner-us.html" class="text-dark no-underline">Partner us</a></p>
-                <p><a href="../html/shiv-pages/page-dg-site-faq-dev-shiv.html" class="text-dark no-underline">FAQ</a></p>
+                <p>
+                  <a href="./shop.html" class="text-dark no-underline">Shop</a>
+                </p>
+                <p>
+                  <a href="./shop.html#t&amp;c" class="text-dark no-underline">Get Certified</a>
+                </p>
+                <p>
+                  <a href="./online-bootcamp-all-schedule-cources.html" class="text-dark no-underline">Open Batches</a>
+                </p>
+
+                <p>
+                  <a href="../html/shiv-pages/page-dg-site-Partner-us.html" class="text-dark no-underline">Partner us</a>
+                </p>
+                <p>
+                  <a href="../html/shiv-pages/page-dg-site-faq-dev-shiv.html" class="text-dark no-underline">FAQ</a>
+                </p>
               </div>
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold">Policies</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px">
-                <p><a href="./shiv-pages/page-dg-site-cookie-policy-dev-shiv.html" class="text-dark">Cookie Policy</a></p>
-                <p><a href="./shiv-pages/page-dg-site-refund-policy-dev-shiv.html" class="text-dark">Refund Policy</a></p>
-                <p><a href="./shiv-pages/page-dg-site-privacy-policy-dev-shiv.html" class="text-dark">Privacy Policy</a></p>
-                <p><a href="./shiv-pages/page-dg-site-terms-and-conditions-policy-dev-shiv.html" class="text-dark">Terms &amp; Conditions</a></p>
+                <p>
+                  <a href="./shiv-pages/page-dg-site-cookie-policy-dev-shiv.html" class="text-dark">Cookie Policy</a>
+                </p>
+                <p>
+                  <a href="./shiv-pages/page-dg-site-refund-policy-dev-shiv.html" class="text-dark">Refund Policy</a>
+                </p>
+                <p>
+                  <a href="./shiv-pages/page-dg-site-privacy-policy-dev-shiv.html" class="text-dark">Privacy Policy</a>
+                </p>
+                <p>
+                  <a href="./shiv-pages/page-dg-site-terms-and-conditions-policy-dev-shiv.html" class="text-dark">Terms &amp; Conditions</a>
+                </p>
               </div>
             </div>
             <!-- Grid row -->
@@ -437,14 +449,15 @@
           <div class="row d-flex justify-content-center mw-100 px-3 m-auto">
             <div>
               <p style="font-size: 14px">
-                <b>Disclaimer:</b> ITIL® is a registered trademark of PeopleCert
-                Group, used under permission of PeopleCert Group. All rights
-                reserved. The Swirl logo™ is a trademark of PeopleCert Group,
-                used under permission of PeopleCert Group. All rights reserved.
-                PRINCE2® / MSP® 5 / MoP® / MoV ®/ P3O ®/ MoR ®, are a registered
-                trademark of PeopleCert Group, used under permission of
-                PeopleCert Group. All rights reserved. COBIT® is a trademark of
-                ISACA® registered in the United States and other countries.
+                <b>Disclaimer:</b> ITIL® is a registered trademark of
+                PeopleCert Group, used under permission of PeopleCert Group. All
+                rights reserved. The Swirl logo™ is a trademark of
+                PeopleCert Group, used under permission of PeopleCert Group. All
+                rights reserved. PRINCE2® / MSP® 5 / MoP® / MoV
+                ®/ P3O ®/ MoR ®, are a registered trademark of
+                PeopleCert Group, used under permission of PeopleCert Group. All
+                rights reserved. COBIT® is a trademark of ISACA®
+                registered in the United States and other countries.
               </p>
             </div>
           </div>
@@ -460,9 +473,6 @@
     <script src="../js/components/navbar.js"></script>
     <script src="/dot/dg-site-v-0-11-0/js/pages/Search.js"></script>
     <script src="/dot/dg-site-v-0-11-0/js/pages/ProductFilter.js"></script>
-    
-  
-  
   
 
 </body></html>

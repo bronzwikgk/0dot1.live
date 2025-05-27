@@ -26,7 +26,7 @@ async function loginUser(event) {
         localStorage.setItem('token', data.token);
         localStorage.setItem("cartId",data.cartId);
         localStorage.setItem("userId",data.userId)
-        window.location.href = './offering.html';
+        window.location.href = './shop.html';
 
     } catch (error) {
         console.error('Error logging in:', error);

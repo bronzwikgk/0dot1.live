@@ -149,7 +149,7 @@ class AuthService {
 
                     setTimeout(() => {
                         document.body.removeChild(messageDiv);
-                        window.location.href = "./offering.html";
+                        window.location.href = "./shop.html";
                     }, 1500);
 
                     return responseData;

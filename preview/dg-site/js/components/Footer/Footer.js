@@ -71,12 +71,12 @@ export class Footer {
                   style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
                 <p>
-                  <a href="./offering.html" class="text-dark no-underline"
+                  <a href="./shop.html" class="text-dark no-underline"
                     >Our Offering</a
                   >
                 </p>
                 <p>
-                  <a href="./offering.html#t&c" class="text-dark no-underline"
+                  <a href="./shop.html#t&c" class="text-dark no-underline"
                     >Get Certified</a
                   >
                 </p>
@@ -88,7 +88,7 @@ export class Footer {
                   >
                 </p>
                 <p>
-                  <a href="./offering.html#shop" class="text-dark no-underline"
+                  <a href="./shop.html#shop" class="text-dark no-underline"
                     >Shop</a
                   >
                 </p>
@@ -100,7 +100,7 @@ export class Footer {
                   >
                 </p>
                 <p>
-                  <a href="./offering.html#cons" class="text-dark no-underline"
+                  <a href="./shop.html#cons" class="text-dark no-underline"
                     >Become a Consultant</a
                   >
                 </p>

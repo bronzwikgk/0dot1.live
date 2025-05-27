@@ -27,7 +27,7 @@ export class Navbar {
                                     <li><a class="dropdown-item" href="#wwa">Who We Are</a></li>
                                     <li><a class="dropdown-item" href="#wwo">What We Offer</a></li>
                                     <li><a class="dropdown-item" href="#oa">Our Accreditations</a></li>
-                                    <li><a class="dropdown-item" href="#st">Stats</a></li>
+                                    <li><a class="dropdown-item" href="#st">Our Reach</a></li>
                                     <li><a class="dropdown-item" href="#mot">Meet Our Team</a></li>
                                     <li><a class="dropdown-item" href="#cu">Contact Us</a></li>
                                 </ul>
