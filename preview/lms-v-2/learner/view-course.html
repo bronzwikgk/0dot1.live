@@ -21,6 +21,7 @@
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+<script src="../beauty/js/checkAuth.js"></script>
 </head>
 
 <body x-data="main"
@@ -75,6 +76,14 @@
                             <div class="flex pl-5 items-center">
                                 <i class="ri-video-line"></i>
                                 <span class="pl-1">My Courses</span>
+                            </div>
+                        </a>
+                    </li>
+                       <li class="menu nav-item">
+                        <a href="./explore-tests.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-live-line"></i>
+                                <span class="pl-1">Mock Tests</span>
                             </div>
                         </a>
                     </li>
@@ -746,8 +755,10 @@ document.getElementById('get-started-btn').href = `${BASE_URL}/scorm/${modulesWi
     </script>
 
     <script type="module">
-        import { updateProfileInfo } from '../beauty/js/updateProfile.js';
+import { updateProfileInfo } from '../beauty/js/updateProfile.js';
         updateProfileInfo()
+        import { setupLogout } from '../beauty/js/authUtils.js';
+        setupLogout();
         // The profile info will be updated automatically when the page loads
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>

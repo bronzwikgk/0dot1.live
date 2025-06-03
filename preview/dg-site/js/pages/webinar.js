@@ -1,4 +1,5 @@
 import BASE_URL from '../config.js';
+import { LMS_BASE_URL } from '../config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Attach event listener to all "Book Now" buttons
@@ -22,32 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Handle the form submission
+  // ek
   const submitButton = document.getElementById('submitBooking');
+
   if (submitButton) {
     submitButton.addEventListener('click', async function (event) {
       event.preventDefault();
 
       const form = document.getElementById('bookingForm');
-      if (!form) {
-        console.error('Form not found.');
-        return;
-      }
+      if (!form) return console.error('Form not found.');
 
-      // Collect form data
+      // Prepare data
       const formData = {
-        webinarTitle: form['training-name'].value || '',
-        webinarDate: form['start-date'].value || '',
+        formType: 'webinar-booking', // ✅ required
+        openBatchTitle: form['training-name'].value || '',
+        openBatchDate: form['start-date'].value || '',
         name: form.name?.value || '',
         email: form.email?.value || '',
         country: form.country?.value || '',
-        phoneNumber: form.phone?.value || '',
+        phone: form.phone?.value || '',
         company: form.company?.value || '',
         designation: form.designation?.value || ''
       };
 
       try {
-        // Send POST request to the backend
-        const response = await fetch(`${BASE_URL}/webinars/register`, {
+        const response = await fetch(`${LMS_BASE_URL}/api/leads`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -57,63 +57,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = await response.json();
 
-        // Function to create and configure a message div automatically
-function createMessageDiv() {
-  var messageDiv = document.createElement('div');
-  messageDiv.id = 'success-message'; // Assign ID
-  messageDiv.style.position = 'fixed';
-  messageDiv.style.top = '50%';
-  messageDiv.style.left = '50%';
-  messageDiv.style.transform = 'translate(-50%, -50%)';
-  messageDiv.style.backgroundColor = 'lightgreen';
-  messageDiv.style.padding = '30px';
-  messageDiv.style.borderRadius = '10px';
-  messageDiv.style.zIndex = '1000'; // Ensure it's on top
-  return messageDiv;
-}
+        const createMessageDiv = (text = '', bg = 'lightgreen') => {
+          const div = document.createElement('div');
+          div.id = 'success-message';
+          div.style.cssText = `
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: ${bg};
+          padding: 30px;
+          border-radius: 10px;
+          z-index: 1000;
+        `;
+          div.textContent = text;
+          return div;
+        };
 
-// Example usage in a response handler
-if (response.ok) {
-  form.reset(); // Clear the form first
+        if (response.ok) {
+          form.reset();
 
-  // Optionally close the modal before displaying the message
-  const closeButton = document.getElementById('close-booking-modal');
-  if (closeButton) {
-      closeButton.click();
-  } else {
-      console.warn('Close button not found.');
+          const closeButton = document.getElementById('close-booking-modal');
+          if (closeButton) closeButton.click();
+
+          setTimeout(() => {
+            const messageDiv = createMessageDiv(data.message || 'Registration successful');
+            document.body.appendChild(messageDiv);
+            setTimeout(() => document.body.removeChild(messageDiv), 2000);
+          }, 500);
+        } else {
+          const errorDiv = createMessageDiv(data.error || 'Unknown error', 'tomato');
+          document.body.appendChild(errorDiv);
+          setTimeout(() => document.body.removeChild(errorDiv), 2000);
+        }
+      } catch (error) {
+        console.error('Error during form submission:', error);
+        const networkErrorDiv = createMessageDiv('An error occurred while submitting the registration.', 'tomato');
+        document.body.appendChild(networkErrorDiv);
+        setTimeout(() => document.body.removeChild(networkErrorDiv), 2000);
+      }
+    });
   }
-
-  // Delay displaying the message until after the form has closed
-  setTimeout(() => {
-      var messageDiv = createMessageDiv();
-      messageDiv.textContent = data.message || 'Registration successful';
-      document.body.appendChild(messageDiv);
-
-      // Remove the message after 2 seconds
-      setTimeout(() => {
-          document.body.removeChild(messageDiv);
-      }, 2000);
-  }, 500); // Short delay before showing the message, adjust as needed
-}
-else {
-  // Display error using a message div instead of an alert
-  var errorMessage = data.error || 'Unknown error';
-  var errorDiv = createMessageDiv(errorMessage, 'tomato');
-  setTimeout(() => {
-    document.body.removeChild(errorDiv);
-  }, 2000);
-}
-} catch (error) {
-console.error('Error during form submission:', error);
-// Display network or processing errors
-var networkErrorDiv = createMessageDiv('An error occurred while submitting the registration.', 'tomato');
-setTimeout(() => {
-  document.body.removeChild(networkErrorDiv);
-}, 2000);
-}
-});
-} else {
-console.error('Submit button not found.');
-}
+  else {
+    console.error('Submit button not found.');
+  }
 });

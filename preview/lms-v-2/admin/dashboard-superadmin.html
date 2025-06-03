@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="../beauty/js/checkAuth.js"></script>
 </head>
 
 
@@ -355,7 +356,7 @@
 
                                 <li class="h-px bg-black/5 my-1"></li>
                                 <li id="signout">
-                                    <a href="javaScript:;" class="flex items-center" >
+                                    <a href="javaScript:;" class="flex items-center">
                                         <i class="ri-logout-box-line " style="margin-right: 5px;"></i> Sign Out
                                     </a>
                                 </li>
@@ -385,7 +386,7 @@
 
 
 
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-7">
+                        <div class="grid grid-cols-1 md:grid-cols-1 gap-7">
                             <div class="md:col-span-3 bg-lightwhite dark:bg-white/5 p-6 rounded-2xl">
                                 <h2 class="text-sm font-semibold mb-4">Recent Issued Licenses</h2>
 
@@ -396,7 +397,8 @@
                                                 <th>Course</th>
                                                 <th>Assigned to</th>
                                                 <th>Duration</th>
-                                                <th>Status</th>
+                                                <th>Expiry Date</th>
+                                                <th>Issuace Date</th>
                                             </tr>
                                         </thead>
                                         <tbody id="recent-licenses-table-body">
@@ -408,20 +410,19 @@
 
                             </div>
 
+
+
+
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div class="bg-lightwhite dark:bg-white/5 p-6 rounded-2xl">
-                                <h2 class="text-sm font-semibold text-black dark:text-white mb-4">Course Completion
-                                    Overview</h2>
+                                <h2 class="text-sm font-semibold text-black dark:text-white mb-4">Student Per Courses
+                                </h2>
 
                                 <div id="completion-bars-container" class="flex flex-col gap-[18px]">
                                     <!-- Progress bars will be dynamically inserted here -->
                                 </div>
                             </div>
-
-
-                        </div>
-
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
                                 <div class="flex flex-wrap gap-3 items-center justify-between mb-4">
                                     <h3 class="text-sm font-semibold">Recently Added Users</h3>
@@ -445,102 +446,11 @@
                                 </div>
                             </div>
 
-                            <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6">
-                                <div class="flex flex-wrap gap-3 items-center justify-between mb-4">
-                                    <h3 class="text-sm font-semibold">Team Activity Log</h3>
-                                    <a href="javascript:;" class="text-xs text-black/40 dark:text-white/40">See Full
-                                        Log</a>
-                                </div>
-                                <div class="grid grid-flow-row gap-4 h-[275px] overflow-y-auto">
-                                    <div class="flex gap-3 group">
-                                        <div class="w-[54px] h-[54px] flex-none overflow-hidden rounded-lg relative">
-                                            <img src="https://placehold.co//64x64?text&#x3D;Task" alt="New Task">
-                                        </div>
-                                        <div class="flex-1">
-                                            <div class="flex justify-between items-center gap-3">
-                                                <p class="line-clamp-2">Compliance Task Created</p>
-                                                <div x-data="dropdown" @click.outside="open = false"
-                                                    class="dropdown text-right w-24">
-                                                    <a href="javaScript:;" @click="toggle"
-                                                        class="hidden group-hover:inline-block">
-                                                        <i class="ri-more-2-fill text-xl"></i>
-                                                    </a>
-                                                    <ul x-show="open" x-transition="" x-transition.duration.300ms=""
-                                                        class="right-0 hidden" style="display: none;">
-                                                        <li><a href="javaScript:;" @click="toggle">Today</a></li>
-                                                        <li><a href="javaScript:;" @click="toggle">This Week</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between gap-3">
-                                                <p class="text-xs text-black/40 dark:text-white/40">By: Dev Mehta</p>
-                                                <p
-                                                    class="px-1.5 text-[#38BDF8] bg-[#E0F2FE] text-xs rounded-[18px] inline-block">
-                                                    Assigned</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3 group">
-                                        <div class="w-[54px] h-[54px] flex-none overflow-hidden rounded-lg relative">
-                                            <img src="https://placehold.co//64x64?text&#x3D;Meeting" alt="Meeting">
-                                        </div>
-                                        <div class="flex-1">
-                                            <div class="flex justify-between items-center gap-3">
-                                                <p class="line-clamp-2">HR Induction Session Scheduled</p>
-                                                <div x-data="dropdown" @click.outside="open = false"
-                                                    class="dropdown text-right w-24">
-                                                    <a href="javaScript:;" @click="toggle"
-                                                        class="hidden group-hover:inline-block">
-                                                        <i class="ri-more-2-fill text-xl"></i>
-                                                    </a>
-                                                    <ul x-show="open" x-transition="" x-transition.duration.300ms=""
-                                                        class="right-0 hidden" style="display: none;">
-                                                        <li><a href="javaScript:;" @click="toggle">Today</a></li>
-                                                        <li><a href="javaScript:;" @click="toggle">This Week</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between gap-3">
-                                                <p class="text-xs text-black/40 dark:text-white/40">Host: Tanvi Das</p>
-                                                <p
-                                                    class="px-1.5 text-[#FACC15] bg-[#FEF9C3] text-xs rounded-[18px] inline-block">
-                                                    Scheduled</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3 group">
-                                        <div class="w-[54px] h-[54px] flex-none overflow-hidden rounded-lg relative">
-                                            <img src="https://placehold.co//64x64?text&#x3D;Report" alt="Report">
-                                        </div>
-                                        <div class="flex-1">
-                                            <div class="flex justify-between items-center gap-3">
-                                                <p class="line-clamp-2">Monthly Report Submitted</p>
-                                                <div x-data="dropdown" @click.outside="open = false"
-                                                    class="dropdown text-right w-24">
-                                                    <a href="javaScript:;" @click="toggle"
-                                                        class="hidden group-hover:inline-block">
-                                                        <i class="ri-more-2-fill text-xl"></i>
-                                                    </a>
-                                                    <ul x-show="open" x-transition="" x-transition.duration.300ms=""
-                                                        class="right-0 hidden" style="display: none;">
-                                                        <li><a href="javaScript:;" @click="toggle">Today</a></li>
-                                                        <li><a href="javaScript:;" @click="toggle">This Week</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between gap-3">
-                                                <p class="text-xs text-black/40 dark:text-white/40">By: Mehul Jain</p>
-                                                <p
-                                                    class="px-1.5 text-[#22C55E] bg-[#DCFCE7] text-xs rounded-[18px] inline-block">
-                                                    Completed</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+
+
+                        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div class="bg-lightwhite dark:bg-white/5 rounded-2xl p-6 grid grid-flow-row">
                                 <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
                                     <h3 class="text-sm font-semibold">Team Login Sessions</h3>
@@ -627,7 +537,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -635,21 +545,7 @@
                 <footer
                     class="p-7 bg-white dark:bg-black flex flex-wrap items-center justify-center sm:justify-between gap-3">
                     <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
-                    <ul class="flex items-center text-black/40 dark:text-white/40 text-xs">
-                        <li>
-                            <a href="javascript:;"
-                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">About</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;"
-                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Support</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;"
-                                class="px-2 py-1 hover:text-black dark:hover:text-white transition-all duration-300">Contact
-                                Us</a>
-                        </li>
-                    </ul>
+
                 </footer>
 
                 <!-- End Footer -->
@@ -917,28 +813,34 @@
         updateProfileInfo()
         import { setupLogout } from '../beauty/js/authUtils.js';
         setupLogout();
+
         // The profile info will be updated automatically when the page loads
     </script>
 
     <script type="module">
-        import { get } from '../beauty/js/api-client.js'; // Adjust path if needed
+        import { get } from '../beauty/js/api-client.js';
 
-        export async function fetchAdminDashboardData() {
+        let dashboardCache = null; // 🔁 Shared cache
+
+        async function fetchAdminDashboardData() {
+            if (dashboardCache) return dashboardCache;
+
             try {
                 const data = await get('/admin/dashboard');
-                console.log(data);
-
+                dashboardCache = data; // ✅ Cache the result
+                console.log('[Dashboard] Data fetched:', data);
                 return data;
             } catch (error) {
-                console.error('Error fetching Admin Dashboard Data:', error.message);
+                console.error('[Dashboard] Fetch failed:', error.message);
                 throw error;
             }
         }
 
-        async function loadDashboardCards() {
+        async function loadDashboardCards(widgets) {
             try {
-                const dashboardData = await fetchAdminDashboardData();
-                const widgets = dashboardData.widgets;
+                ;
+                const container = document.getElementById('dashboard-cards');
+                container.innerHTML = '';
 
                 const widgetMap = {
                     totalCompanies: 'Total Companies',
@@ -952,160 +854,124 @@
                     activeUsers: 'Active Users'
                 };
 
-                const container = document.getElementById('dashboard-cards');
-                container.innerHTML = ''; // Clear old content
-
                 Object.keys(widgets).forEach((key, index) => {
                     const title = widgetMap[key] || key;
                     const value = widgets[key];
                     const isEven = index % 2 === 0;
 
-                    const card = `
-        <div class="${isEven ? 'bg-lightblue-100' : 'bg-lightpurple-100'} rounded-2xl p-6">
-          <p class="text-sm font-semibold text-black mb-2">${title}</p>
-          <div class="flex items-center justify-between">
-            <h2 class="text-2xl leading-9 font-semibold text-black">${value}</h2>
-            <div class="flex items-center gap-1">
-              <p class="text-xs leading-[18px] text-black">+0.00%</p>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.45488 5.60777L14 4L12.6198 9.6061L10.898 7.9532L8.12069 10.8463C8.02641 10.9445 7.89615 11 7.76 11C7.62385 11 7.49359 10.9445 7.39931 10.8463L5.36 8.72199L2.36069 11.8463C2.16946 12.0455 1.85294 12.0519 1.65373 11.8607C1.45453 11.6695 1.44807 11.3529 1.63931 11.1537L4.99931 7.65373C5.09359 7.55552 5.22385 7.5 5.36 7.5C5.49615 7.5 5.62641 7.55552 5.72069 7.65373L7.76 9.77801L10.1766 7.26067L8.45488 5.60777Z" fill="#1C1C1C"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      `;
-
-                    container.innerHTML += card;
+                    container.innerHTML += `
+                <div class="${isEven ? 'bg-lightblue-100' : 'bg-lightpurple-100'} rounded-2xl p-6">
+                  <p class="text-sm font-semibold text-black mb-2">${title}</p>
+                  <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-semibold text-black">${value}</h2>
+                    <div class="flex items-center gap-1">
+                      <p class="text-xs text-black">+0.00%</p>
+                      <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8.45 5.61L14 4l-1.38 5.61L10.9 7.95 8.12 10.85a.5.5 0 01-.72 0L5.36 8.72 2.36 11.85a.5.5 0 01-.71-.7l3.36-3.5a.5.5 0 01.71 0l2.4 2.12 2.42-2.52-1.09-1.59z" fill="#1C1C1C"/></svg>
+                    </div>
+                  </div>
+                </div>
+            `;
                 });
-
-            } catch (error) {
-                console.error('Error loading dashboard cards:', error.message);
+            } catch (e) {
                 alert('Failed to load dashboard summary.');
             }
         }
 
-        async function loadRecentLicensesTable() {
+        async function loadRecentLicensesTable(recent) {
             try {
-                const dashboardData = await fetchAdminDashboardData();
-                const recentLicenses = dashboardData.recent.licenses;
 
-                const tableBody = document.querySelector('#recent-licenses-table-body');
-                tableBody.innerHTML = ''; // Clear previous rows
+                const licenses = recent.licenses;
+                const tbody = document.getElementById('recent-licenses-table-body');
+                tbody.innerHTML = '';
 
-                recentLicenses.forEach(license => {
-                    const assignedName = license.assigned_to?.name || 'Unknown';
-                    const courseTitle = license.course_id?.title || 'Unknown Course';
-                    const issueDate = new Date(license.created_at);
-                    const expiryDate = license.expiry_date ? new Date(license.expiry_date) : null;
+                for (var i = 0; i < licenses.length; i++) {
+                    const item = licenses[i];
+                    const row = document.createElement('tr');
 
-                    const duration = expiryDate ? formatDuration(issueDate, expiryDate) : 'Unlimited';
+                    row.innerHTML = `
+                <td>${item.course_id?.title || '—'}</td>
+                <td>${item.assigned_to?.name || item.assigned_to?.email || '—'}</td>
+                <td>${getDuration(item.created_at, item.expiry_date)}</td>
+                <td>${formatDate(item.expiry_date)}</td>
+                <td>${formatDate(item.created_at)}</td>
+            `;
 
-                    const isActive = !license.expiry_date || expiryDate > new Date();
-                    const status = isActive ? 'Active' : 'Expired';
-
-                    const row = `
-        <tr>
-          <td>${license.course_id.title}</td>
-          <td>${assignedName}</td>
-          <td>${duration}</td>
-          <td>${status}</td>
-        </tr>
-      `;
-
-                    tableBody.innerHTML += row;
-                });
-
-            } catch (error) {
-                console.error('Error loading recent licenses:', error.message);
+                    tbody.appendChild(row);
+                }
+            } catch (e) {
                 alert('Failed to load recent licenses.');
             }
         }
 
-        async function loadCourseCompletionBars() {
+        async function loadCourseCompletionBars(barChart) {
             try {
-                const dashboardData = await fetchAdminDashboardData();
-                const completionData = dashboardData.barChart.completedPercentages;
 
                 const container = document.getElementById('completion-bars-container');
-                container.innerHTML = ''; // Clear previous
+                container.innerHTML = '';
 
-                completionData.forEach(item => {
-                    const { courseTitle, completionRate } = item;
-
-                    const progressBar = `
-        <div class="flex gap-4 items-center group">
-          <p class="w-48 flex-none">${courseTitle}</p>
-          <div class="relative w-full bg-black/10 dark:bg-white/10 group-hover:bg-black dark:group-hover:bg-white rounded-tr-[4px] rounded-br-[4px] h-[6px]">
-            <div class="h-[6px] rounded-tr-[4px] rounded-br-[4px] bg-blue-500" style="width: ${completionRate}%;"></div>
-          </div>
-        </div>
-      `;
-
-                    container.innerHTML += progressBar;
+                barChart.studentCounts.forEach(({ courseTitle, studentCount }) => {
+                    container.innerHTML += `
+                <div class="flex gap-4 items-center group">
+                  <p class="w-48 flex-none">${courseTitle}</p>
+                  <div class="relative w-full rounded-tr-[4px] rounded-br-[4px] h-[6px]">
+                    <div class="h-[6px] bg-black/10" style="width: ${studentCount}%;"></div>
+                  </div>
+                </div>
+            `;
                 });
-
-            } catch (error) {
-                console.error('Error loading course completion bars:', error.message);
+            } catch (e) {
                 alert('Failed to load course progress.');
             }
         }
 
-        // Helper to format duration between two dates
-        function formatDuration(startDate, endDate) {
-            const diffMs = endDate - startDate;
-            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-            if (diffDays > 365) {
-                const years = (diffDays / 365).toFixed(1);
-                return `${years} year${years >= 2 ? 's' : ''}`;
-            } else if (diffDays > 30) {
-                const months = (diffDays / 30).toFixed(1);
-                return `${months} month${months >= 2 ? 's' : ''}`;
-            } else {
-                return `${diffDays} day${diffDays !== 1 ? 's' : ''}`;
-            }
-        }
-        async function loadRecentUsersTable() {
+        async function loadRecentUsersTable(recent) {
             try {
-                const dashboardData = await fetchAdminDashboardData();
-                const recentUsers = dashboardData.recent.users;
 
-                const tableBody = document.getElementById('recent-users-table-body');
-                tableBody.innerHTML = ''; // Clear previous rows
+                const users = recent.users;
+                const tbody = document.getElementById('recent-users-table-body');
+                tbody.innerHTML = '';
 
-                recentUsers.forEach(user => {
-                    const row = `
-         <tr>
-          <td class="whitespace-nowrap">
-            <div>
-              <div class="font-semibold">${user.name}</div>
-              <div class="text-xs text-black/50 dark:text-white/50">${user.email}</div>
-            </div>
-          </td>
-          <td class="whitespace-nowrap">${user.company || 'N/A'}</td>
-          <td class="whitespace-nowrap">${user.country || 'N/A'}</td>
-          <td class="whitespace-nowrap">
-            <span class="px-2 py-1 rounded-full text-xs ${user.status === 'active' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}">
-              ${user.status === 'active' ? 'Active' : 'Inactive'}
-            </span>
-          </td>
-        </tr>
-      `;
-
-                    tableBody.innerHTML += row;
+                users.forEach(user => {
+                    tbody.innerHTML += `
+                <tr>
+                  <td><div><div class="font-semibold">${user.name}</div><div class="text-xs text-black/50">${user.email}</div></div></td>
+                  <td>${user.company || 'N/A'}</td>
+                  <td>${user.country || 'N/A'}</td>
+                  <td>
+                    <span class="px-2 py-1 rounded-full text-xs ${user.status === 'active' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}">
+                      ${user.status === 'active' ? 'Active' : 'Inactive'}
+                    </span>
+                  </td>
+                </tr>
+            `;
                 });
-
-            } catch (error) {
-                console.error('Error loading recent users:', error.message);
+            } catch (e) {
                 alert('Failed to load recent users.');
             }
         }
 
-        window.addEventListener('DOMContentLoaded', loadDashboardCards);
-        loadRecentLicensesTable()
-        loadCourseCompletionBars()
-        loadRecentUsersTable()
-    </script>s
+        // Helpers
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+
+        function getDuration(start, end) {
+            const s = new Date(start), e = new Date(end);
+            const months = (e.getFullYear() - s.getFullYear()) * 12 + (e.getMonth() - s.getMonth());
+            return months >= 12 && months % 12 === 0 ? `${months / 12} year` : `${months} month${months !== 1 ? 's' : ''}`;
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', async () => {
+            let { widgets, recent, barChart } = await fetchAdminDashboardData();
+            loadDashboardCards(widgets);
+            loadRecentLicensesTable(recent);
+            loadCourseCompletionBars(barChart);
+            loadRecentUsersTable(recent);
+        });
+    </script>
+
     <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
         style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
@@ -1113,6 +979,6 @@
         <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
         <path id="SvgjsPath1004" d="M0 0 "></path>
     </svg>
-</body>
+    </body>
 
 </html>

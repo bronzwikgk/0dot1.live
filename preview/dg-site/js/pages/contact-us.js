@@ -1,4 +1,5 @@
 import countries from '../country_list.js';
+import { LMS_BASE_URL } from '../config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const countrySelect = document.getElementById('countrys'); // Ensure these IDs match your HTML
@@ -33,46 +34,48 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error("Required form elements (countrys, country-codes, phones) are missing from the DOM.");
   }
 
-  // Handling form submission
+  // ek
   const contactForm = document.getElementById('contactForm');
-
-  // Log whether the contact form was found
   console.log("contactForm found: ", !!contactForm);
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (event) => {
-      event.preventDefault(); // Prevent the default form submission
+      event.preventDefault();
 
-      // Get form data
       const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData.entries()); // Convert FormData to a plain object
+      const data = Object.fromEntries(formData.entries());
+
+      // ✅ Inject required `formType`
+      const payload = {
+        ...data,
+        formType: 'contact-us'
+      };
 
       try {
-        const response = await fetch('https://unbelong.in/api/get-in-touch', {
+        const response = await fetch(`${LMS_BASE_URL}/api/leads`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data), // Send the data as JSON
+          body: JSON.stringify(payload),
         });
 
         const result = await response.json();
 
-        // Display dynamic message instead of alert
         showMessage(result.message || 'Your inquiry has been sent successfully.', response.ok ? 'lightgreen' : 'tomato');
-        
+
         if (response.ok) {
-          contactForm.reset(); // Reset the form after submission
+          contactForm.reset();
         }
       } catch (error) {
         console.error('Error:', error);
-        // Display dynamic error message instead of alert
         showMessage('There was a problem submitting your form. Please try again.', 'tomato');
       }
     });
   } else {
     console.error("Contact form is missing from the DOM.");
   }
+
 });
 
 // Function to create and display messages dynamically

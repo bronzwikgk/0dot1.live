@@ -1,4 +1,5 @@
 import BASE_URL from './config.js';
+import { LMS_BASE_URL } from './config.js';
 import countries from './country_list.js';
 
 
@@ -37,17 +38,18 @@ console.log(countries);
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
 
-    // Construct the form data object
-    const formData = {
-      name,
-      email,
-      country,
-      phone,
-      message,
-    };
+   // Construct the form data object with formType
+  const formData = {
+    formType: 'get-in-touch',  // ✅ Mandatory
+    name,
+    email,
+    country,
+    phone,
+    message
+  };
 
     try {
-      const response = await fetch(`${BASE_URL}/api/get-in-touch`, {
+      const response = await fetch(`${LMS_BASE_URL}/api/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

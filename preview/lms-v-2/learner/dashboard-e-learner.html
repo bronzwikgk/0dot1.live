@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../beauty/js/checkAuth.js"></script>
+
+    <script src="../beauty/js/checkAuth.js"></script>
 </head>
 
 <body x-data="main"
@@ -75,6 +78,14 @@
                             <div class="flex pl-5 items-center">
                                 <i class="ri-video-line"></i>
                                 <span class="pl-1">My Courses</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu nav-item">
+                        <a href="./explore-tests.html" class="nav-link group text-black dark:text-white">
+                            <div class="flex pl-5 items-center">
+                                <i class="ri-live-line"></i>
+                                <span class="pl-1">Mock Tests</span>
                             </div>
                         </a>
                     </li>
@@ -189,7 +200,7 @@
                             </button>
                         </div>
                     </form> -->
-                    
+
                     <div class="flex items-center gap-2">
                         <div>
                             <a href="javascript:;" class="text-black dark:text-white"
@@ -212,7 +223,7 @@
                                     class="relative inline-flex rounded-full w-[6px] h-[6px] bg-black dark:bg-white"></span>
                             </span>
                         </button> -->
-                        <div class="profile" x-data="dropdown" @click.outside="open = false" >
+                        <div class="profile" x-data="dropdown" @click.outside="open = false">
                             <button type="button" class="flex items-center gap-1.5 xl:gap-0" @click="toggle()">
                                 <img class="h-7 w-7 rounded-full xl:mr-2"
                                     src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Header Avatar">
@@ -224,7 +235,8 @@
                                         fill="currentColor"></path>
                                 </svg>
                             </button>
-                            <ul x-show="open" x-transition="" x-transition.duration.300ms="" style="display: none; overflow: hidden;">
+                            <ul x-show="open" x-transition="" x-transition.duration.300ms=""
+                                style="display: none; overflow: hidden;">
                                 <li>
                                     <div class="flex items-center !p-1">
 
@@ -730,6 +742,8 @@
     <script type="module">
         import { updateProfileInfo } from '../beauty/js/updateProfile.js';
         updateProfileInfo()
+        import { setupLogout } from '../beauty/js/authUtils.js';
+        setupLogout();
         // The profile info will be updated automatically when the page loads
     </script>
 

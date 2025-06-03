@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html x-data="main" class="light" :class="[$store.app.mode]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ducisgroup LMS - Register">
+    <meta name="author" content="shunya.ek">
+    <title>Ducisgroup LMS - Register</title>
+
+    <link rel="stylesheet" type="text/css" href="./beauty/css/style.css">
+    <link rel="stylesheet" href="./beauty/css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./beauty/js/checkAuth.js"></script>
+</head>
+
+<body class="antialiased font-inter bg-lightwhite dark:bg-black text-black dark:text-white text-sm overflow-x-hidden">
+    <header>
+        <nav class="bg-lightwhite dark:bg-black px-4 lg:px-7 py-4">
+            <div class="flex justify-between items-center">
+                <a class="main-logo flex justify-center" href="/">
+                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                        alt="logo" class="block dark:hidden w-20">
+                    <img src="https://www.ducisgroup.com/assets/assets_dg-site/logo/dg%20logo/ducis%20group%20logo%20v%200-0-2%20trans%20dark.webp"
+                        alt="logo" class="hidden dark:block w-20">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="min-h-[calc(100vh-134px)] py-4 px-4 sm:px-12 flex justify-center items-center">
+        <div
+            class="max-w-[680px] w-full bg-white dark:bg-white/5 p-4 sm:p-10 lg:px-[100px] lg:py-[70px] rounded-2xl loginform">
+            <h1 class="text-2xl font-semibold mb-2 text-center">Create Account</h1>
+
+            <div class="flex items-center mb-7">
+                <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+                <div class="w-full h-[2px] bg-black/10 dark:bg-white/10"></div>
+            </div>
+
+            <form class="mb-4">
+                <div class="mb-4">
+                    <input type="text" placeholder="Full Name" class="form-input" id="name">
+                </div>
+                <div class="mb-4">
+                    <input type="email" placeholder="Email" class="form-input" id="email">
+                </div>
+                <div class="mb-4">
+                    <input type="tel" placeholder="Phone (optional)" class="form-input" id="phone">
+                </div>
+                <button type="button"
+                    class="py-2 px-4 bg-black dark:bg-lightpurple-200 w-full rounded-lg text-white dark:text-black text-lg font-semibold border border-black dark:border-lightpurple-200 hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white transition-all duration-300"
+                    id="registerBtn">
+                    Register
+                </button>
+            </form>
+
+            <div class="text-center text-sm mt-4">
+                Already have an account? <a href="./index.html" class="text-lightpurple-300 font-semibold">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="p-7 flex items-center justify-center">
+        <p class="text-xs text-black/40 dark:text-white/40">© 2025 Ducisgroup</p>
+    </footer>
+
+    <script src="./beauty/js/alpine-collaspe.min.js"></script>
+    <script src="./beauty/js/alpine-persist.min.js"></script>
+    <script src="./beauty/js/alpine.min.js" defer></script>
+    <script src="./beauty/js/custom.js"></script>
+    <script src="./beauty/js/toast.js"></script>
+
+    <script type="module">
+        import { post } from './beauty/js/api-client.js';
+
+        const registerBtn = document.getElementById('registerBtn');
+        registerBtn.addEventListener('click', async () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email) {
+                showToast('Name and Email are required.', 'danger');
+                return;
+            }
+
+            registerBtn.disabled = true;
+            registerBtn.innerText = 'Registering...';
+
+            try {
+                const result = await post('/auth/register', { name, email, phone });
+
+                showToast(result.message, 'success');
+                window.location.href = './register-success.html';
+
+
+            } catch (err) {
+                showToast(`Registration failed: ${err.message}`, 'danger');
+            } finally {
+                registerBtn.disabled = false;
+                registerBtn.innerText = 'Register';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

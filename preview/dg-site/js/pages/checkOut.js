@@ -1,6 +1,7 @@
 // Import necessary services
 import { CartService } from "../services/CartService.js";
 import { HttpService } from "../services/HttpService.js";
+import { getSessionIdentifier } from "../Utils/session.js";
 import BASE_URL from "../config.js";
 
 
@@ -184,58 +185,63 @@ function calculateTotals(cartData) {
 }
 
 // On Checkout Page
+// ek
 async function initiatePayment() {
     console.log("Initiating payment...");
 
     try {
-        // const email = document.getElementById("email").value; // Get email from input field
-        // Get items from the cart
-        const totalAmount = document.getElementById("grand-total").textContent.replace(/[^\d.-]/g, ''); // Calculate total amount from cart
- 
+        const { type, value } = getSessionIdentifier(); // Get userId or guestId
+        const totalAmount = document.getElementById("grand-total").textContent.replace(/[^\d.-]/g, '');
 
-        // Send the items with the totalPrice to the backend
-        const orderResponse = await httpService.post('/api/order/create', {
-            amount: parseFloat(totalAmount),  // Amount in rupees
-            userId: localStorage.getItem("userId"), // Fetch the userId from local storage
-         
-        });
+        // Prepare payload
+        const payload = {
+            amount: parseFloat(totalAmount),
+            [type]: value
+        };
+
+        // Attach guestInfo if type is guestId
+        if (type === "guestId") {
+            payload.guestInfo = {
+                name: document.getElementById("billingFullName").value,
+                email: document.getElementById("billingEmail").value,
+                phone: document.getElementById("billingPhone").value,
+                address: document.getElementById("billingAddress")?.value || ""
+            };
+        }
+
+        const orderResponse = await httpService.post('/api/order/create', payload);
 
         if (orderResponse && orderResponse.data) {
-            console.log(orderResponse);
-            
-            // Step 2: Initialize Razorpay instance with the order details from backend
             const options = {
-                key: orderResponse.data.key_id, // Razorpay Key ID
-                amount: orderResponse.data.amount, // Amount in paise
+                key: orderResponse.data.key_id,
+                amount: orderResponse.data.amount,
                 currency: orderResponse.data.currency,
                 name: 'Ducisgroup',
                 description: 'Payment for your order',
-                order_id: orderResponse.data.id, // Razorpay order ID
+                order_id: orderResponse.data.id,
                 handler: async function (razorpayResponse) {
                     showMessage('Payment successful!', 'lightgreen');
 
-                    // After successful payment, verify the payment on the backend
-                    const paymentVerificationResponse = await httpService.post('/api/payment/verify', {
+                    const verifyPayload = {
                         razorpay_order_id: razorpayResponse.razorpay_order_id,
                         razorpay_payment_id: razorpayResponse.razorpay_payment_id,
                         razorpay_signature: razorpayResponse.razorpay_signature,
-                        userId: localStorage.getItem("userId"), // Pass the userId for verification
-                        orderId: orderResponse.orderId, // Pass the order ID from backend
-                    });
+                        [type]: value,
+                        orderId: orderResponse.orderId
+                    };
 
-                    if (paymentVerificationResponse && paymentVerificationResponse.success) {
-                        const orderId = paymentVerificationResponse.order._id; // Assuming the response includes the order object
+                    const verificationRes = await httpService.post('/api/payment/verify', verifyPayload);
 
+                    if (verificationRes && verificationRes.success) {
                         showMessage('Order placed successfully!', 'lightgreen');
-                        window.location.href = `./orderPlaced.html?orderId=${paymentVerificationResponse.order._id}`; // Redirect with orderId in query string
+                        window.location.href = `./orderPlaced.html?orderId=${verificationRes.order._id}`;
                     } else {
                         showMessage('Failed to place order. Please contact support.', 'tomato');
                     }
-
                 },
                 prefill: {
                     name: document.getElementById("billingFullName").value,
-                    email: document.getElementById("billingEmail").value, // Use the captured email
+                    email: document.getElementById("billingEmail").value,
                     contact: document.getElementById("billingPhone").value
                 },
                 theme: {
@@ -243,8 +249,8 @@ async function initiatePayment() {
                 }
             };
 
-            const razorpay = new Razorpay(options); // Create a Razorpay instance
-            razorpay.open(); // Open the Razorpay payment interface
+            const razorpay = new Razorpay(options);
+            razorpay.open();
         } else {
             showMessage('Failed to initiate payment. Please try again.', 'tomato');
         }

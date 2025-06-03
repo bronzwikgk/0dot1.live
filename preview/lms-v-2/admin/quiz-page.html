@@ -26,6 +26,7 @@
             scroll-behavior: smooth;
         }
     </style>
+<script src="../beauty/js/checkAuth.js"></script>
 </head>
 
 
@@ -546,8 +547,10 @@
     </script>
     <!-- Add this before the closing </body> tag -->
     <script type="module">
-        import { updateProfileInfo } from '../beauty/js/updateProfile.js';
+import { updateProfileInfo } from '../beauty/js/updateProfile.js';
         updateProfileInfo()
+        import { setupLogout } from '../beauty/js/authUtils.js';
+        setupLogout();
         // The profile info will be updated automatically when the page loads
     </script>
 

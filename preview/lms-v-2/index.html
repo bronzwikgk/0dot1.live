@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA&#x3D;&#x3D;"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./beauty/js/checkAuth.js"></script>
 </head>
 
 <body
@@ -93,6 +94,11 @@
                     Sign In
                 </button>
             </form>
+            <div class="text-center text-sm mt-4">
+                Don’t have an account? <a href="./register.html" class="text-lightpurple-300 font-semibold">Register
+                    Now</a>
+            </div>
+
 
         </div>
     </div>
@@ -139,6 +145,7 @@
                 localStorage.setItem('access_token', result.token);
                 localStorage.setItem('user_name', JSON.stringify(result.name));
                 localStorage.setItem('user_email', JSON.stringify(result.email));
+                localStorage.setItem('user_role', JSON.stringify(result.role));
                 if (result.refreshToken) {
                     localStorage.setItem('refresh_token', result.refreshToken);
                 }
@@ -162,8 +169,7 @@
         });
     </script>
 
-
-
+    
 </body>
 
 </html>

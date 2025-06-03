@@ -1,4 +1,5 @@
 import countries from "../country_list.js";
+import { LMS_BASE_URL } from "../config.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.querySelector('#contact-us-product');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const course = document.querySelector('#contact-us-courses').value;
     const organization = document.querySelector('#contact-us-organization').value.trim();
     const message = document.querySelector('#contact-us-message').value.trim();
-    const page = window.location.pathname; // Captures the page URL for backend tracking
+    // const page = window.location.pathname; // Captures the page URL for backend tracking
 
     // Validation
     if (!name || !email || !country || !phone || !course || !organization || !message) {
@@ -44,21 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Prepare data for submission
+    // ek
     const formData = {
+      formType: 'course-enquiry', // ✅ required
       name,
       email,
       country,
       phone,
       course,
-      organization,
+      org: organization, // ✅ match schema field
       message,
-      page,
+      
     };
 
     try {
-      // Send data to the backend
-      const response = await fetch('https://unbelong.in/api/contact', {
+      const response = await fetch(`${LMS_BASE_URL}/api/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok) {
         showMessage('Thank you for contacting us! Your message has been submitted.', 'lightgreen');
-        contactForm.reset(); // Clear the form fields
+        contactForm.reset();
       } else {
         showMessage(`Error: ${result.message}`, 'tomato');
       }
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error submitting the form:', error);
       showMessage('There was an error submitting your message. Please try again later.', 'tomato');
     }
+
   });
 });
 

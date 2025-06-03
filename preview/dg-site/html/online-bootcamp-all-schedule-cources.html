@@ -574,7 +574,7 @@
       });
     </script>
 
-    <script>
+    <!-- <script>
       function parseStartDate(dateRange) {
         const months = {
           Jan: 0,
@@ -646,15 +646,15 @@
       document.addEventListener("DOMContentLoaded", () => {
         sortTableByStartDate();
       });
-    </script>
+    </script> -->
 
     <script>
       // Fetch data and populate table, then sort
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("https://app.ducisgroup.com/getopenBatch") // Replace with the correct API endpoint
+        fetch("http://localhost:3000/api/open-batch/upcoming/list") // Replace with the correct API endpoint
           .then((response) => response.json())
           .then((data) => {
-            const courses = data.courses; // Replace with actual API response structure
+            const courses = data; // Replace with actual API response structure
             const tableBody = document.querySelector(
               ".table-container .table tbody",
             );
@@ -675,7 +675,7 @@
               tableBody.innerHTML += row; // Append rows dynamically
             });
 
-            sortTableByStartDate(); // Sort rows after adding them
+            
           })
           .catch((error) => {
             console.error("Error fetching courses:", error);

@@ -21,6 +21,7 @@
         integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="../beauty/css/style.css">
+<script src="../beauty/js/checkAuth.js"></script>
 </head>
 
 <body x-data="main"
@@ -718,7 +719,7 @@
         function getLessonLink(lesson) {
             const type = lesson.content?.content_type;
             const id = lesson._id;
-            if (type === "PDF") return `/showPdf.html?lessonId=${id}`;
+            if (type === "PDF") return `./showPdf.html?lessonId=${id}`;
             if (type === "SCORM") return `${BASE_URL}/scorm/${id}/launch?token=${localStorage.getItem('access_token')}`;
             if (type === "TestPaper") return `./view-quiz.html?contentId=${lesson.content._id}`;
             return "#";
@@ -872,8 +873,10 @@
     </script>
 
     <script type="module">
-        import { updateProfileInfo } from '../beauty/js/updateProfile.js';
+import { updateProfileInfo } from '../beauty/js/updateProfile.js';
         updateProfileInfo()
+        import { setupLogout } from '../beauty/js/authUtils.js';
+        setupLogout();
         // The profile info will be updated automatically when the page loads
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
