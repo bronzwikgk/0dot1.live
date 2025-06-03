@@ -651,7 +651,7 @@
     <script>
       // Fetch data and populate table, then sort
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("http://localhost:3000/api/open-batch/upcoming/list") // Replace with the correct API endpoint
+        fetch("https://lmsback.ducisgroup.com/test/api/open-batch/upcoming/list") // Replace with the correct API endpoint
           .then((response) => response.json())
           .then((data) => {
             const courses = data; // Replace with actual API response structure
